@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La croix — Jean 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;
+    --gold:#d3a94f;--line:#23273a;--crimson:#a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,-apple-system,sans-serif}
+  html[dir="rtl"] .ui{font-family:'Amiri',system-ui,sans-serif}
+
+  /* top bar */
+  .top{
+    max-width:1060px;margin:0 auto;padding:18px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{
+    font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    color:var(--muted);padding:6px 12px;cursor:pointer;
+  }
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .langs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* fil / étapes */
+  .thread{max-width:1060px;margin:26px auto 0;padding:0 20px}
+  .thread .lbl{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;text-align:center}
+  html[dir="rtl"] .thread .lbl{letter-spacing:.06em}
+  .dots{display:flex;justify-content:center;align-items:center;gap:0;margin-top:14px;flex-wrap:wrap}
+  .dot{display:flex;flex-direction:column;align-items:center;width:86px}
+  .dot .pt{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
+  .dot.on .pt{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(211,169,79,.6)}
+  .dot .nm{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted);margin-top:7px;text-align:center;line-height:1.3}
+  html[dir="rtl"] .dot .nm{font-size:11px}
+  .dot.on .nm{color:var(--gold)}
+  .dots .seg{height:1px;width:34px;background:var(--line);margin-bottom:22px}
+
+  /* hero */
+  .hero{max-width:820px;margin:0 auto;padding:58px 22px 30px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:15px}
+  .verse{font-size:clamp(30px,6vw,54px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:600px;margin:26px auto 0;color:var(--muted);font-size:16px}
+
+  /* strates */
+  main{max-width:820px;margin:0 auto;padding:10px 22px 70px}
+  .strate{margin-top:54px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .snum{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:18px;flex:none;
+  }
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .strate p{font-size:17.5px;margin-bottom:16px}
+  .strate p .g{color:var(--gold)}
+
+  .mental{
+    border:1px solid var(--line);border-inline-start:3px solid var(--gold);
+    background:var(--bg2);border-radius:0 10px 10px 0;
+    padding:18px 22px;margin-top:8px;font-size:16.5px;
+  }
+  html[dir="rtl"] .mental{border-radius:10px 0 0 10px}
+  .mental b{color:var(--gold);font-weight:normal}
+
+  h3.sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:26px;margin:34px 0 12px}
+  html[dir="rtl"] h3.sub{font-family:'Amiri',serif;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .cardE{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .cardE .cref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  html[dir="rtl"] .cardE .cref{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .cardE h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  html[dir="rtl"] .cardE h4{font-family:'Amiri',serif}
+  .cardE p{font-size:14.5px;color:#c6c0b2;margin:0}
+  .cardE .key{display:block;margin-top:10px;color:var(--gold);font-style:italic;font-size:14.5px}
+
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{
+    cursor:pointer;list-style:none;padding:16px 20px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+
+  .next{
+    margin-top:60px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(135deg,var(--bg2),#171426);
+    padding:28px;display:block;text-decoration:none;color:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px;margin:0}
+
+  footer{max-width:820px;margin:0 auto 46px;padding:0 22px;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line);padding-top:22px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.strate,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="thread">
+  <div class="lbl" id="steplbl"></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+const C={
+fr:{
+  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  steplbl:"Le fil de l'Agneau · étape 3 sur 7",
+  steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
+  eyebrow:"Jean 19 · Jérusalem, 14 nisan, vers l'an 30 — récit d'un témoin oculaire (Jean 19:35)",
+  verse:"« <span class='g'>Tout est accompli.</span> »",
+  scene:"Nous quittons le trône pour Golgotha. L'évangéliste précise qu'il était là : « celui qui l'a vu en a rendu témoignage » (19:35). Le chapitre est écrit comme un procès-verbal — et chaque détail relie la croix au fil de l'Agneau.",
+  s1:"L'essentiel · 90 secondes",s2:"Comprendre",s3:"Aller plus loin",
+  s1p:[
+  "Sur la croix, Jésus ne dit pas « je suis vaincu » ni « c'est terminé ». Le grec dit <span class='g'>tetelestai</span> : accompli, achevé, soldé. Un mot d'artisan et de comptable : la tâche est menée à son terme, la dette est payée.",
+  "Accompli — mais quoi ? Jean répond par les détails : l'heure de la condamnation, l'hysope tendue à ses lèvres, la tunique tirée au sort, les os qu'on ne brise pas, le côté percé. Chacun de ces détails est un verset de l'Ancien Testament qui arrive à destination.",
+  "La croix n'est pas un accident que Dieu aurait rattrapé : c'est le rendez-vous préparé depuis la première page. À cette étape, le fil de l'Agneau se noue."],
+  mental:"<b>L'image à retenir :</b> <i>tetelestai</i> — le tampon « payé » apposé sur une dette. Le dernier mot de la croix n'est pas un soupir : c'est une signature.",
+  h1:"Quatre détails, quatre Écritures",
+  intro:"Jean écrit en témoin, mais il souligne chaque détail « afin que l'Écriture fût accomplie » :",
+  cards:[
+  ["Jean 19:14","L'heure","« C'était la préparation de la Pâque, environ la sixième heure. » Au moment où Jésus est condamné, on se prépare à immoler les agneaux au Temple. Jean donne l'heure pour qu'on entende les bêlements derrière la sentence.","Il meurt à l'heure des agneaux."],
+  ["Jean 19:24, 28-29","La tunique et l'hysope","La tunique tirée au sort accomplit le Psaume 22:19 ; le vinaigre tendu, le Psaume 69:22. Et l'éponge est fixée à une branche d'hysope — la plante qui servait à appliquer le sang de l'agneau sur les portes (Exode 12:22).","Le détail le plus humble porte la Pâque."],
+  ["Jean 19:33-37","Les os et le côté","On brise les jambes des deux autres crucifiés ; pas les siennes : « Aucun de ses os ne sera brisé » (Exode 12:46). Le côté percé accomplit Zacharie 12:10 : « Ils verront celui qu'ils ont percé. »","La règle de l'agneau pascal, à la lettre."]],
+  h2:"« Tout est accompli »",
+  s2b:[
+  "<i>Tetelestai</i> n'est pas un cri de défaite mais une déclaration d'achèvement. Elle répond au verset qui précède : « Jésus, qui savait que tout était déjà consommé… » (19:28), et à sa prière de la veille : « j'ai achevé l'œuvre que tu m'as donnée à faire » (17:4). L'œuvre confiée par le Père est menée à terme.",
+  "Puis Jean choisit ses mots : « il <span class='g'>remit</span> l'esprit » (19:30). La vie n'est pas arrachée : elle est remise. Jésus l'avait annoncé : « Personne ne me l'ôte, mais je la donne de moi-même » (Jean 10:18). La croix est une offrande, pas seulement une exécution."],
+  h3:"Le sang et l'eau",
+  s2c:["Du côté percé sortent « du sang et de l'eau » (19:34), et Jean, témoin, y insiste solennellement. Le sang : l'offrande et l'alliance (Exode 24:8). L'eau : la vie donnée, les fleuves d'eau vive promis (Jean 7:38) et la « source ouverte pour le péché » de Zacharie 13:1. Les chrétiens y ont très tôt reconnu leurs deux signes de la vie nouvelle — la section L'Offrande y reviendra."],
+  deep:[
+  ["Tetelestai, un mot de reçu","Le verbe <i>teleô</i> signifie mener à terme ; des reçus et quittances de l'époque l'emploient au sens de « payé ». Sans réduire la croix à une métaphore commerciale, le NT assume le registre du prix : « vous avez été rachetés à grand prix » (1 Corinthiens 6:20), « rachetés… par le sang précieux de Christ, comme d'un agneau sans défaut » (1 Pierre 1:18-19)."],
+  ["La sixième heure : une difficulté honnête","Marc 15:25 situe la crucifixion à la troisième heure ; Jean 19:14 place la condamnation « environ la sixième ». Solutions proposées : systèmes horaires différents, heures rondes approximatives, ou intention théologique de Jean (l'heure des agneaux). Nous exposons la difficulté au lieu de la cacher : c'est la politique du site, et le détail du débat est dans le dossier de référence."],
+  ["L'hysope, signature discrète","Matthieu et Marc parlent d'un roseau ; Jean seul nomme l'hysope — botaniquement fragile pour porter une éponge, et c'est précisément pourquoi beaucoup y voient une signature théologique : l'instrument du sang pascal (Exode 12:22) reparaît à l'instant où meurt l'Agneau. L'évangéliste écrit pour des lecteurs qui connaissent leur Exode."],
+  ["Le témoin oculaire","« Celui qui l'a vu en a rendu témoignage, et son témoignage est vrai » (19:35) — même insistance en 21:24 et en 1 Jean 1:1 (« ce que nous avons vu de nos yeux… et que nos mains ont touché »). Pour la section « Bible fiable » : les évangiles se présentent comme des témoignages, un genre qui s'expose à la vérification — pas comme des mythes."],
+  ["« Ils verront celui qu'ils ont percé »","Zacharie 12:10, cité en 19:37, est repris en Apocalypse 1:7 : la parole plantée à Golgotha rouvre le dernier livre. Et chez Zacharie, c'est Dieu qui parle à la première personne de « celui qu'ils ont percé » — l'un des textes de notre fil « Un seul Dieu — Père, Fils, Esprit »."]],
+  nlbl:"Étape suivante",ntitle:"Isaïe 53 — écrit sept siècles avant",
+  ntext:"Remontons à la prophétie la plus troublante de la Bible : le portrait de la croix, rédigé vers 700 av. J.-C.",
+  foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Parcours « Le fil de l'Agneau » — étape 3 sur 7."
+},
+en:{
+  dir:"ltr",brand:"THE LAMB OF GOD",
+  steplbl:"The thread of the Lamb · step 3 of 7",
+  steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
+  eyebrow:"John 19 · Jerusalem, 14 Nisan, c. AD 30 — an eyewitness account (John 19:35)",
+  verse:"“<span class='g'>It is finished.</span>”",
+  scene:"We leave the throne for Golgotha. The evangelist states that he was there: “he who has seen has testified” (19:35). The chapter is written like an official report — and every detail ties the cross to the thread of the Lamb.",
+  s1:"The essentials · 90 seconds",s2:"Understand",s3:"Go deeper",
+  s1p:[
+  "On the cross, Jesus does not say “I am defeated” nor “it's over”. The Greek says <span class='g'>tetelestai</span>: accomplished, completed, settled. A craftsman's and an accountant's word: the task is carried to its end, the debt is paid.",
+  "Finished — but what? John answers with details: the hour of the sentence, the hyssop lifted to his lips, the tunic decided by lot, the bones left unbroken, the pierced side. Each of these details is an Old Testament verse arriving at its destination.",
+  "The cross is not an accident that God somehow salvaged: it is the appointment prepared since the first page. At this step, the thread of the Lamb is tied."],
+  mental:"<b>The image to keep:</b> <i>tetelestai</i> — the stamp “paid” pressed onto a debt. The last word of the cross is not a sigh: it is a signature.",
+  h1:"Four details, four Scriptures",
+  intro:"John writes as a witness, yet he underlines each detail “that the Scripture might be fulfilled”:",
+  cards:[
+  ["John 19:14","The hour","“It was the Preparation Day of the Passover, at about the sixth hour.” As Jesus is sentenced, the slaughter of the lambs is being prepared at the Temple. John gives the hour so that we hear the bleating behind the verdict.","He dies at the hour of the lambs."],
+  ["John 19:24, 28-29","The tunic and the hyssop","The tunic decided by lot fulfils Psalm 22:18; the vinegar, Psalm 69:21. And the sponge is fixed on a branch of hyssop — the plant used to apply the lamb's blood to the doorposts (Exodus 12:22).","The humblest detail carries the Passover."],
+  ["John 19:33-37","The bones and the side","They break the legs of the other two; not his: “A bone of him will not be broken” (Exodus 12:46). The pierced side fulfils Zechariah 12:10: “They will look on him whom they pierced.”","The rule of the Passover lamb, to the letter."]],
+  h2:"“It is finished”",
+  s2b:[
+  "<i>Tetelestai</i> is not a cry of defeat but a declaration of completion. It answers the preceding verse: “Jesus, seeing that all things were now finished…” (19:28), and his prayer of the night before: “I accomplished the work which you have given me to do” (17:4). The work entrusted by the Father is carried to its end.",
+  "Then John chooses his words: “he <span class='g'>gave up</span> his spirit” (19:30). Life is not torn from him: it is handed over. Jesus had announced it: “No one takes it away from me, but I lay it down by myself” (John 10:18). The cross is an offering, not merely an execution."],
+  h3:"The blood and the water",
+  s2c:["From the pierced side come “blood and water” (19:34), and John, as witness, solemnly insists on it. The blood: the offering and the covenant (Exodus 24:8). The water: life given, the rivers of living water promised (John 7:38) and the “spring opened for sin” of Zechariah 13:1. Christians very early recognized here their two signs of new life — the section The Offering will return to it."],
+  deep:[
+  ["Tetelestai, a word from receipts","The verb <i>teleô</i> means to bring to completion; receipts of the period use it in the sense of “paid”. Without reducing the cross to a commercial metaphor, the NT does assume the register of price: “you were bought with a price” (1 Corinthians 6:20), “redeemed… with precious blood, as of a lamb without blemish” (1 Peter 1:18-19)."],
+  ["The sixth hour: an honest difficulty","Mark 15:25 places the crucifixion at the third hour; John 19:14 places the sentence “about the sixth”. Proposed solutions: different systems of counting hours, rounded approximations, or John's theological intention (the hour of the lambs). We display the difficulty instead of hiding it: that is this site's policy, and the details of the debate are in the reference dossier."],
+  ["The hyssop, a discreet signature","Matthew and Mark mention a reed; John alone names hyssop — botanically frail for carrying a sponge, which is precisely why many read it as a theological signature: the instrument of the Passover blood (Exodus 12:22) reappears at the instant the Lamb dies. The evangelist writes for readers who know their Exodus."],
+  ["The eyewitness","“He who has seen has testified, and his testimony is true” (19:35) — the same insistence in 21:24 and in 1 John 1:1 (“that which we have seen with our eyes… and our hands touched”). For the “A Bible worthy of trust” section: the Gospels present themselves as testimony, a genre that exposes itself to verification — not as myth."],
+  ["“They will look on him whom they pierced”","Zechariah 12:10, quoted in 19:37, returns in Revelation 1:7: the word planted at Golgotha reopens the last book. And in Zechariah, it is God who speaks in the first person of “him whom they pierced” — one of the texts of our thread “One God — Father, Son, Spirit”."]],
+  nlbl:"Next step",ntitle:"Isaiah 53 — written seven centuries before",
+  ntext:"Let us climb back to the most troubling prophecy in the Bible: the portrait of the cross, written around 700 BC.",
+  foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>“The thread of the Lamb” — step 3 of 7."
+},
+ar:{
+  dir:"rtl",brand:"حَمَلُ الله",
+  steplbl:"خيط الحمل · الخطوة ٣ من ٧",
+  steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
+  eyebrow:"يوحنا ١٩ · أورشليم، ١٤ نيسان، نحو سنة ٣٠ م — رواية شاهد عيان (يوحنا ١٩: ٣٥)",
+  verse:"«<span class='g'>قَدْ أُكْمِلَ.</span>»",
+  scene:"نترك العرشَ إلى الجلجثة. يذكر الإنجيليُّ أنه كان هناك: «وَالَّذِي عَايَنَ شَهِدَ» (١٩: ٣٥). الأصحاح مكتوب كمحضرِ شاهد — وكلُّ تفصيل فيه يربط الصليبَ بخيط الحمل.",
+  s1:"الخلاصة · ٩٠ ثانية",s2:"للفهم",s3:"للتعمّق",
+  s1p:[
+  "على الصليب لا يقول يسوع «قد هُزمت» ولا «انتهى الأمر». اليونانية تقول <span class='g'>تيتيليستاي</span>: أُكمِل، أُنجِز، سُدِّد. كلمةُ صانعٍ ومحاسب: العملُ بلغ غايته، والدَّينُ دُفع.",
+  "أُكمِل — ولكن ماذا؟ يجيب يوحنا بالتفاصيل: ساعة الحكم، والزوفا المرفوعة إلى شفتيه، والقميص الذي اقترعوا عليه، والعظام التي لم تُكسر، والجنب المطعون. كلُّ تفصيل من هذه آيةٌ من العهد القديم تصل إلى غايتها.",
+  "الصليب ليس حادثًا تداركه الله: إنه الموعد المُعَدُّ منذ الصفحة الأولى. في هذه الخطوة يُعقَد خيطُ الحمل."],
+  mental:"<b>الصورة التي تبقى:</b> <i>تيتيليستاي</i> — ختمُ «مدفوع» على صكِّ دَين. آخرُ كلمة على الصليب ليست تنهيدة: إنها توقيع.",
+  h1:"أربعة تفاصيل، أربع كتابات",
+  intro:"يكتب يوحنا كشاهد، لكنه يبرز كل تفصيل «لِيَتِمَّ الْكِتَابُ»:",
+  cards:[
+  ["يوحنا ١٩: ١٤","الساعة","«وَكَانَ اسْتِعْدَادُ الْفِصْحِ، وَنَحْوَ السَّاعَةِ السَّادِسَةِ.» في اللحظة التي يُحكَم فيها على يسوع، كان الهيكل يستعدّ لذبح الحملان. يذكر يوحنا الساعةَ لكي نسمع ثغاءَ الحملان خلف الحكم.","يموت في ساعة الحملان."],
+  ["يوحنا ١٩: ٢٤، ٢٨-٢٩","القميص والزوفا","القميص الذي اقترعوا عليه يتمّم مزمور ٢٢: ١٨؛ والخل يتمّم مزمور ٦٩: ٢١. والإسفنجة وُضعت على زوفا — النبتة التي كان يُرشّ بها دمُ الحمل على الأبواب (خروج ١٢: ٢٢).","أصغرُ التفاصيل يحمل الفصح."],
+  ["يوحنا ١٩: ٣٣-٣٧","العظام والجنب","كسروا ساقَي المصلوبَين الآخرَين، أما هو فلا: «عَظْمٌ لاَ يُكْسَرُ مِنْهُ» (خروج ١٢: ٤٦). والجنب المطعون يتمّم زكريا ١٢: ١٠: «سَيَنْظُرُونَ إِلَى الَّذِي طَعَنُوهُ.»","قاعدةُ حمل الفصح، بالحرف."]],
+  h2:"«قَدْ أُكْمِلَ»",
+  s2b:[
+  "<i>تيتيليستاي</i> ليست صرخةَ هزيمة بل إعلانَ إتمام. إنها تجيب الآيةَ السابقة: «يَسُوعُ وَهُوَ عَالِمٌ أَنَّ كُلَّ شَيْءٍ قَدْ كَمَلَ…» (١٩: ٢٨)، وصلاتَه في الليلة السابقة: «الْعَمَلَ الَّذِي أَعْطَيْتَنِي لأَعْمَلَ قَدْ أَكْمَلْتُهُ» (١٧: ٤). العملُ الموكَل من الآب بلغ تمامه.",
+  "ثم ينتقي يوحنا كلماته: «وَأَسْلَمَ الرُّوحَ» (١٩: ٣٠). الحياةُ لم تُنتزَع منه: بل <span class='g'>سلّمها</span>. وقد سبق أن أعلنها: «لَيْسَ أَحَدٌ يَأْخُذُهَا مِنِّي، بَلْ أَضَعُهَا أَنَا مِنْ ذَاتِي» (يوحنا ١٠: ١٨). الصليبُ تقدمةٌ، لا مجرّدُ إعدام."],
+  h3:"الدم والماء",
+  s2c:["من الجنب المطعون خرج «دَمٌ وَمَاءٌ» (١٩: ٣٤)، ويوحنا الشاهدُ يشدّد على ذلك رسميًا. الدم: التقدمة والعهد (خروج ٢٤: ٨). الماء: الحياة المبذولة، وأنهار الماء الحي الموعودة (يوحنا ٧: ٣٨)، و«الينبوع المفتوح للخطية» في زكريا ١٣: ١. وقد رأى المسيحيون فيه باكرًا علامتَي الحياة الجديدة — وسيعود إليه قسمُ «التقدمة»."],
+  deep:[
+  ["تيتيليستاي: كلمة الإيصالات","الفعل <i>تيليو</i> يعني الإتمام؛ وإيصالاتُ تلك الحقبة تستعمله بمعنى «مدفوع». من غير أن نختزل الصليب في استعارة تجارية، فإن العهد الجديد يتبنّى لغةَ الثمن: «قَدِ اشْتُرِيتُمْ بِثَمَنٍ» (١ كورنثوس ٦: ٢٠)، «افْتُدِيتُمْ... بِدَمٍ كَرِيمٍ كَمَا مِنْ حَمَل بِلاَ عَيْبٍ» (١ بطرس ١: ١٨-١٩)."],
+  ["الساعة السادسة: صعوبة نعرضها بأمانة","مرقس ١٥: ٢٥ يضع الصلب في الساعة الثالثة؛ ويوحنا ١٩: ١٤ يضع الحكم «نحو السادسة». الحلول المقترحة: نظامان مختلفان لعدّ الساعات، أو تقريبٌ في الأرقام، أو قصدٌ لاهوتي عند يوحنا (ساعة الحملان). نعرض الصعوبةَ بدل إخفائها: هذه سياسةُ الموقع، وتفصيلُ النقاش في ملفّ المراجع."],
+  ["الزوفا: توقيعٌ خفيّ","متى ومرقس يذكران قصبة؛ ويوحنا وحده يسمّي الزوفا — وهي نباتٌ أضعفُ من أن يحمل إسفنجة، ولهذا بالضبط يرى كثيرون فيها توقيعًا لاهوتيًا: أداةُ دمِ الفصح (خروج ١٢: ٢٢) تعود في اللحظة التي يموت فيها الحمل. الإنجيليُّ يكتب لقرّاء يعرفون سفرَ الخروج."],
+  ["شاهد العيان","«وَالَّذِي عَايَنَ شَهِدَ، وَشَهَادَتُهُ حَقٌّ» (١٩: ٣٥) — والإصرار نفسه في ٢١: ٢٤ وفي ١ يوحنا ١: ١ («الَّذِي رَأَيْنَاهُ بِعُيُونِنَا... وَلَمَسَتْهُ أَيْدِينَا»). لقسم «كتاب جدير بالثقة»: الأناجيل تقدّم نفسها شهادةً، وهو جنسٌ أدبي يعرّض نفسه للتحقّق — لا أسطورة."],
+  ["«سينظرون إلى الذي طعنوه»","زكريا ١٢: ١٠، المقتبس في ١٩: ٣٧، يعود في رؤيا ١: ٧: الكلمةُ المغروسة في الجلجثة تفتتح السفرَ الأخير. وفي زكريا، اللهُ نفسه هو المتكلم بضمير الأنا عن «الذي طعنوه» — وهذا من نصوص خيطنا «إلهٌ واحد — الآب والابن والروح»."]],
+  nlbl:"الخطوة التالية",ntitle:"إشعياء ٥٣ — كُتب قبل سبعة قرون",
+  ntext:"لنصعد إلى أكثر نبوءات الكتاب إذهالًا: صورةُ الصليب، مكتوبةً نحو سنة ٧٠٠ قبل الميلاد.",
+  foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٣ من ٧."
+}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;
+  document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('steplbl').textContent=c.steplbl;
+  const dots=document.getElementById('dots');dots.innerHTML="";
+  c.steps.forEach((s,i)=>{
+    if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
+    const d=document.createElement('div');d.className='dot'+(i===2?' on':'');
+    d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
+  });
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅰ</div><h2>${c.s1}</h2><div class="l"></div></div>
+    ${c.s1p.map(p=>`<p>${p}</p>`).join("")}
+    <div class="mental">${c.mental}</div>
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅱ</div><h2>${c.s2}</h2><div class="l"></div></div>
+    <h3 class="sub">${c.h1}</h3>
+    <p>${c.intro}</p>
+    <div class="cards">${c.cards.map(k=>`
+      <div class="cardE"><div class="cref">${k[0]}</div><h4>${k[1]}</h4><p>${k[2]}</p><span class="key">${k[3]}</span></div>`).join("")}
+    </div>
+    <h3 class="sub">${c.h2}</h3>
+    ${c.s2b.map(p=>`<p>${p}</p>`).join("")}
+    <h3 class="sub">${c.h3}</h3>
+    ${c.s2c.map(p=>`<p>${p}</p>`).join("")}
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#">
+    <div class="nlbl">${c.nlbl}</div>
+    <h3>${c.ntitle}</h3>
+    <p>${c.ntext}</p>
+  </a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

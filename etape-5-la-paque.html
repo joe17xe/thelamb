@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voici l'Agneau — Jean 1:29</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;
+    --gold:#d3a94f;--line:#23273a;--crimson:#a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,-apple-system,sans-serif}
+  html[dir="rtl"] .ui{font-family:'Amiri',system-ui,sans-serif}
+
+  /* top bar */
+  .top{
+    max-width:1060px;margin:0 auto;padding:18px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{
+    font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    color:var(--muted);padding:6px 12px;cursor:pointer;
+  }
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .langs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* fil / étapes */
+  .thread{max-width:1060px;margin:26px auto 0;padding:0 20px}
+  .thread .lbl{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;text-align:center}
+  html[dir="rtl"] .thread .lbl{letter-spacing:.06em}
+  .dots{display:flex;justify-content:center;align-items:center;gap:0;margin-top:14px;flex-wrap:wrap}
+  .dot{display:flex;flex-direction:column;align-items:center;width:86px}
+  .dot .pt{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
+  .dot.on .pt{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(211,169,79,.6)}
+  .dot .nm{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted);margin-top:7px;text-align:center;line-height:1.3}
+  html[dir="rtl"] .dot .nm{font-size:11px}
+  .dot.on .nm{color:var(--gold)}
+  .dots .seg{height:1px;width:34px;background:var(--line);margin-bottom:22px}
+
+  /* hero */
+  .hero{max-width:820px;margin:0 auto;padding:58px 22px 30px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:15px}
+  .verse{font-size:clamp(30px,6vw,54px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:600px;margin:26px auto 0;color:var(--muted);font-size:16px}
+
+  /* strates */
+  main{max-width:820px;margin:0 auto;padding:10px 22px 70px}
+  .strate{margin-top:54px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .snum{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:18px;flex:none;
+  }
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .strate p{font-size:17.5px;margin-bottom:16px}
+  .strate p .g{color:var(--gold)}
+
+  .mental{
+    border:1px solid var(--line);border-inline-start:3px solid var(--gold);
+    background:var(--bg2);border-radius:0 10px 10px 0;
+    padding:18px 22px;margin-top:8px;font-size:16.5px;
+  }
+  html[dir="rtl"] .mental{border-radius:10px 0 0 10px}
+  .mental b{color:var(--gold);font-weight:normal}
+
+  h3.sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:26px;margin:34px 0 12px}
+  html[dir="rtl"] h3.sub{font-family:'Amiri',serif;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .cardE{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .cardE .cref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  html[dir="rtl"] .cardE .cref{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .cardE h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  html[dir="rtl"] .cardE h4{font-family:'Amiri',serif}
+  .cardE p{font-size:14.5px;color:#c6c0b2;margin:0}
+  .cardE .key{display:block;margin-top:10px;color:var(--gold);font-style:italic;font-size:14.5px}
+
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{
+    cursor:pointer;list-style:none;padding:16px 20px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+
+  .next{
+    margin-top:60px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(135deg,var(--bg2),#171426);
+    padding:28px;display:block;text-decoration:none;color:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px;margin:0}
+
+  footer{max-width:820px;margin:0 auto 46px;padding:0 22px;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line);padding-top:22px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.strate,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="thread">
+  <div class="lbl" id="steplbl"></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+const C={
+fr:{
+  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  steplbl:"Le fil de l'Agneau · étape 1 sur 7",
+  steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
+  eyebrow:"Jean 1:29 · Au bord du Jourdain, vers l'an 30",
+  verse:"« Voici <span class='g'>l'Agneau de Dieu</span>, qui ôte le péché du monde. »",
+  scene:"Le lendemain, Jean vit Jésus venir à lui. Devant la foule venue se faire baptiser, il tendit le doigt et prononça cette phrase. Tout ce site remonte le fil de ces neuf mots.",
+  s1:"L'essentiel · 90 secondes",s2:"Comprendre",s3:"Aller plus loin",
+  s1p:[
+  "Pour présenter Jésus au monde, Jean-Baptiste ne dit pas « voici le roi », ni « voici le maître », ni même « voici le prophète ». Il dit : <span class='g'>voici l'agneau</span>.",
+  "Pour ses auditeurs, ce mot n'était pas une image poétique. Il ouvrait quinze siècles de mémoire : l'agneau dont le sang avait protégé Israël la nuit de la sortie d'Égypte, l'agneau offert chaque matin et chaque soir au Temple, l'agneau silencieux annoncé par le prophète Isaïe.",
+  "Une phrase, trois échos, toute la Bible. Ce mot d'agneau est le fil rouge qui traverse les Écritures du premier livre au dernier — et c'est ce fil que nous allons remonter ensemble, étape par étape."],
+  mental:"<b>L'image à retenir :</b> le doigt tendu de Jean-Baptiste. Toute l'Ancienne Alliance est ce doigt tendu vers quelqu'un.",
+  h1:"Ce que la foule a entendu",
+  intro:"Au bord du Jourdain, le mot « agneau » réveille trois souvenirs précis :",
+  cards:[
+  ["Exode 12","L'agneau de la Pâque","Chaque année, chaque famille immole un agneau « sans défaut » en mémoire de la nuit où son sang, sur les portes, a protégé Israël du jugement.","L'agneau, c'est la délivrance."],
+  ["Exode 29:38-39","L'agneau de chaque jour","Au Temple, un agneau est offert chaque matin et un autre chaque soir — le tamid, l'offrande « perpétuelle ». Jamais le peuple ne s'approche de Dieu sans agneau.","L'agneau, c'est la communion constante."],
+  ["Isaïe 53:7","L'agneau qui se tait","« Semblable à un agneau qu'on mène à la boucherie… il n'a point ouvert la bouche. » Sept siècles avant, Isaïe décrit un serviteur qui porte, en silence, le péché des autres.","L'agneau, c'est le substitut."]],
+  h2:"« Qui ôte le péché du monde »",
+  s2b:[
+  "Le verbe grec (<i>aírein</i>) signifie à la fois soulever, porter et emporter. L'Agneau ne recouvre pas le péché : il le prend sur lui et l'emporte, comme le bouc du grand jour des Expiations emportait les fautes du peuple loin du camp (Lévitique 16).",
+  "Et Jean ne dit pas « le péché d'Israël » : il dit « <span class='g'>du monde</span> ». Dès la première annonce, l'offrande déborde toutes les frontières."],
+  h3:"« L'Agneau de Dieu »",
+  s2c:["Deux mots décisifs. Dans toute l'histoire biblique, c'est l'homme qui apporte la victime. Ici, le mouvement s'inverse : c'est <span class='g'>Dieu qui fournit l'Agneau</span>. Abraham l'avait dit à Isaac sur le chemin de Morija : « Dieu se pourvoira lui-même de l'agneau » (Genèse 22:8). Au Jourdain, cette promesse trouve son visage."],
+  deep:[
+  ["Deux mots grecs pour un agneau","Jean 1:29 emploie <i>amnos</i>, le terme des sacrifices ; il n'apparaît que quatre fois dans le Nouveau Testament (Jean 1:29 et 1:36 ; Actes 8:32 ; 1 Pierre 1:19), toujours en contexte sacrificiel. L'Apocalypse emploie un autre mot, <i>arnion</i> — vingt-huit fois : l'agneau immolé devenu figure de gloire."],
+  ["Une hypothèse de traduction","Jean-Baptiste parlait vraisemblablement araméen. Or le mot <i>talya</i> signifie à la fois « agneau » et « serviteur ». Plusieurs savants (Burney, Jeremias) ont suggéré que sa phrase désignait d'un seul mot « l'Agneau de Dieu » et « le Serviteur de Dieu » d'Isaïe 53. Hypothèse débattue — mais elle dit une chose sûre : les deux figures n'en font qu'une."],
+  ["L'heure de Jean","Dans le quatrième évangile, Jésus est condamné « vers la sixième heure » du « jour de la préparation de la Pâque » (Jean 19:14) — l'heure où l'on commençait à immoler les agneaux au Temple. Et Jean note qu'aucun de ses os ne fut brisé (19:36), règle propre à l'agneau pascal (Exode 12:46). L'évangéliste veut que le lecteur voie ce qu'il a vu."],
+  ["L'arrière-plan sonore","L'historien Flavius Josèphe rapporte que lors d'une seule fête de Pâque, plus de 250 000 agneaux pouvaient être immolés à Jérusalem. Quand Jean dit « voici l'Agneau », il parle à un peuple pour qui ce mot a une odeur, un son et un coût."],
+  ["La prophétie précède l'événement","Le grand rouleau d'Isaïe découvert à Qumrân (1QIsaᵃ) a été copié vers 125 av. J.-C. Il contient Isaïe 53 en entier, plus d'un siècle avant la crucifixion. Ce n'est pas un argument de foi : c'est un fait de manuscrit — développé dans la section « Une Bible digne de confiance »."]],
+  nlbl:"Étape suivante",ntitle:"L'Agneau immolé règne — Apocalypse 5",
+  ntext:"Avant de remonter le temps, un détour par la fin : pourquoi le ciel tout entier chante un agneau égorgé.",
+  foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Page étalon — gabarit de référence du site."
+},
+en:{
+  dir:"ltr",brand:"THE LAMB OF GOD",
+  steplbl:"The thread of the Lamb · step 1 of 7",
+  steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
+  eyebrow:"John 1:29 · On the banks of the Jordan, c. AD 30",
+  verse:"“Behold, <span class='g'>the Lamb of God</span>, who takes away the sin of the world!”",
+  scene:"The next day, John saw Jesus coming toward him. Before the crowd that had come to be baptized, he pointed and spoke this sentence. This entire site follows the thread of those few words.",
+  s1:"The essentials · 90 seconds",s2:"Understand",s3:"Go deeper",
+  s1p:[
+  "To present Jesus to the world, John the Baptist does not say “behold the king”, nor “behold the teacher”, nor even “behold the prophet”. He says: <span class='g'>behold the lamb</span>.",
+  "For his hearers this was no poetic image. It opened fifteen centuries of memory: the lamb whose blood had shielded Israel on the night of the exodus from Egypt, the lamb offered every morning and evening at the Temple, the silent lamb foretold by the prophet Isaiah.",
+  "One sentence, three echoes, the whole Bible. “Lamb” is the scarlet thread running through Scripture from the first book to the last — and it is this thread we will follow together, step by step."],
+  mental:"<b>The image to keep:</b> John's outstretched finger. The whole Old Covenant is that finger, pointing to someone.",
+  h1:"What the crowd heard",
+  intro:"By the Jordan, the word “lamb” awakens three precise memories:",
+  cards:[
+  ["Exodus 12","The Passover lamb","Every year, every family slaughters a lamb “without defect” in memory of the night when its blood on the doorposts shielded Israel from judgment.","The lamb means deliverance."],
+  ["Exodus 29:38-39","The daily lamb","At the Temple, one lamb is offered every morning and another every evening — the tamid, the “perpetual” offering. The people never approach God without a lamb.","The lamb means constant communion."],
+  ["Isaiah 53:7","The lamb that is silent","“As a lamb that is led to the slaughter… he didn't open his mouth.” Seven centuries earlier, Isaiah describes a servant who silently carries the sin of others.","The lamb means the substitute."]],
+  h2:"“Who takes away the sin of the world”",
+  s2b:[
+  "The Greek verb (<i>aírein</i>) means at once to lift, to carry and to carry away. The Lamb does not merely cover sin: he takes it upon himself and removes it, as the goat of the Day of Atonement carried the people's faults far from the camp (Leviticus 16).",
+  "And John does not say “the sin of Israel”: he says “<span class='g'>of the world</span>”. From its very first announcement, the offering overflows every border."],
+  h3:"“The Lamb of God”",
+  s2c:["Two decisive words. Throughout biblical history, it is man who brings the victim. Here the movement is reversed: <span class='g'>God himself provides the Lamb</span>. Abraham had said it to Isaac on the road to Moriah: “God will provide himself the lamb” (Genesis 22:8). At the Jordan, that promise finds its face."],
+  deep:[
+  ["Two Greek words for one lamb","John 1:29 uses <i>amnos</i>, the sacrificial term; it appears only four times in the New Testament (John 1:29 and 1:36; Acts 8:32; 1 Peter 1:19), always in a sacrificial context. Revelation uses another word, <i>arnion</i> — twenty-eight times: the slain lamb become a figure of glory."],
+  ["A translation hypothesis","John the Baptist most likely spoke Aramaic, and the word <i>talya</i> means both “lamb” and “servant”. Several scholars (Burney, Jeremias) have suggested that his sentence named, in a single word, both “the Lamb of God” and “the Servant of God” of Isaiah 53. A debated hypothesis — but it says one sure thing: the two figures are one."],
+  ["John's hour","In the fourth Gospel, Jesus is condemned “about the sixth hour” of “the preparation day of the Passover” (John 19:14) — the hour when the slaughter of the lambs began at the Temple. And John notes that none of his bones was broken (19:36), the rule of the Passover lamb (Exodus 12:46). The evangelist wants the reader to see what he saw."],
+  ["The sound in the background","The historian Flavius Josephus reports that at a single Passover, more than 250,000 lambs could be slaughtered in Jerusalem. When John says “behold the Lamb”, he speaks to a people for whom that word has a smell, a sound and a cost."],
+  ["The prophecy precedes the event","The Great Isaiah Scroll discovered at Qumran (1QIsaᵃ) was copied around 125 BC. It contains Isaiah 53 in full, more than a century before the crucifixion. This is not an argument of faith: it is a fact of manuscripts — developed in our section “A Bible worthy of trust”."]],
+  nlbl:"Next step",ntitle:"The slain Lamb reigns — Revelation 5",
+  ntext:"Before travelling back in time, a detour to the very end: why all heaven sings to a slaughtered lamb.",
+  foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Reference page — the site's master template."
+},
+ar:{
+  dir:"rtl",brand:"حَمَلُ الله",
+  steplbl:"خيط الحمل · الخطوة ١ من ٧",
+  steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
+  eyebrow:"يوحنا ١: ٢٩ · على ضفاف الأردن، نحو سنة ٣٠ م",
+  verse:"«هُوَذَا <span class='g'>حَمَلُ اللهِ</span> الَّذِي يَرْفَعُ خَطِيَّةَ الْعَالَمِ.»",
+  scene:"في الغد نظر يوحنا يسوعَ مقبلًا إليه، فأشار بإصبعه أمام الجموع التي جاءت لتعتمد ونطق بهذه الكلمات. هذا الموقع كلّه يتتبّع خيط هذه الكلمات القليلة.",
+  s1:"الخلاصة · ٩٠ ثانية",s2:"للفهم",s3:"للتعمّق",
+  s1p:[
+  "حين قدّم يوحنا المعمدان يسوعَ للعالم لم يقل «هوذا الملك» ولا «هوذا المعلّم» ولا حتى «هوذا النبي»، بل قال: <span class='g'>هوذا الحمل</span>.",
+  "لم تكن هذه الكلمة صورةً شعرية في آذان سامعيه، بل فتحت خمسة عشر قرنًا من الذاكرة: حمل الفصح الذي حمى دمُه بني إسرائيل ليلة الخروج من مصر، والحمل الذي كان يُقدَّم في الهيكل كلَّ صباح ومساء، والحمل الصامت الذي أنبأ به النبي إشعياء.",
+  "جملة واحدة، ثلاثة أصداء، الكتاب كلّه. كلمة «الحمل» هي الخيط الذي يمتدّ عبر الأسفار من أولها إلى آخرها — وهذا هو الخيط الذي سنتتبّعه معًا خطوةً خطوة."],
+  mental:"<b>الصورة التي تبقى:</b> إصبع يوحنا الممدودة. العهد القديم كلّه هو تلك الإصبع الممدودة نحو شخصٍ آتٍ.",
+  h1:"ما الذي سمعته الجموع؟",
+  intro:"على ضفاف الأردن، أيقظت كلمة «الحمل» ثلاث ذكريات محدّدة:",
+  cards:[
+  ["خروج ١٢","حمل الفصح","في كل سنة كانت كل عائلة تذبح حملًا «صحيحًا بلا عيب» تذكارًا لليلة التي حمى فيها دمُه على الأبواب بني إسرائيل من الدينونة.","الحمل هو النجاة."],
+  ["خروج ٢٩: ٣٨-٣٩","حمل كل يوم","في الهيكل كان يُقدَّم حملٌ كلَّ صباح وآخر كلَّ مساء — المحرقة «الدائمة». لم يقترب الشعب من الله يومًا بغير حمل.","الحمل هو الشركة الدائمة."],
+  ["إشعياء ٥٣: ٧","الحمل الصامت","«كَشَاةٍ تُسَاقُ إِلَى الذَّبْحِ… فَلَمْ يَفْتَحْ فَاهُ.» قبل سبعة قرون وصف إشعياء عبدًا يحمل في صمتٍ خطيةَ الآخرين.","الحمل هو البديل."]],
+  h2:"«الَّذِي يَرْفَعُ خَطِيَّةَ الْعَالَمِ»",
+  s2b:[
+  "الفعل اليوناني (<i>أيْرين</i>) يعني في آنٍ واحد: أن يرفع، وأن يحمل، وأن يُزيل. الحملُ لا يستر الخطية فحسب، بل يأخذها على نفسه ويُبعدها، كما كان تيسُ يوم الكفارة يحمل آثام الشعب بعيدًا عن المحلّة (لاويين ١٦).",
+  "ولم يقل يوحنا «خطية إسرائيل» بل «خطية <span class='g'>العالم</span>». منذ الإعلان الأول، الذبيحة تتجاوز كل الحدود."],
+  h3:"«حَمَلُ اللهِ»",
+  s2c:["كلمتان حاسمتان. في التاريخ الكتابي كلّه، الإنسان هو الذي يأتي بالذبيحة. أما هنا فالحركة معكوسة: <span class='g'>الله نفسه هو الذي يقدّم الحمل</span>. قالها إبراهيم لإسحاق في طريق المريّا: «اَللهُ يَرَى لَهُ الْخَرُوفَ» (تكوين ٢٢: ٨). وعلى ضفاف الأردن وجد هذا الوعدُ وجهَه."],
+  deep:[
+  ["كلمتان يونانيتان للحمل","يستعمل يوحنا ١: ٢٩ كلمة <i>أمنوس</i>، وهي كلمة الذبائح، ولا ترد في العهد الجديد إلا أربع مرات (يوحنا ١: ٢٩ و٣٦؛ أعمال ٨: ٣٢؛ ١ بطرس ١: ١٩) وكلّها في سياق الذبيحة. أما سفر الرؤيا فيستعمل كلمة أخرى، <i>أرنيون</i>، ثماني وعشرين مرة: الحمل المذبوح وقد صار صورةَ المجد."],
+  ["فرضية في الترجمة","كان يوحنا المعمدان يتكلم الآرامية على الأرجح، وكلمة <i>طَلْيا</i> تعني «الحمل» و«العبد» معًا. رأى بعض الدارسين (بيرني، يِرِمياس) أن عبارته كانت تعني بكلمة واحدة «حمل الله» و«عبد الله» الذي في إشعياء ٥٣. فرضية يُناقَش فيها — لكنها تقول أمرًا مؤكدًا: الصورتان صورة واحدة."],
+  ["ساعة يوحنا","في الإنجيل الرابع يُحكَم على يسوع «نحو الساعة السادسة» من يوم «استعداد الفصح» (يوحنا ١٩: ١٤) — وهي الساعة التي كان يبدأ فيها ذبحُ الحملان في الهيكل. ويلاحظ يوحنا أن عظمًا منه لم يُكسَر (١٩: ٣٦)، وهي قاعدة حمل الفصح (خروج ١٢: ٤٦). الإنجيلي يريد أن يرى القارئُ ما رآه هو."],
+  ["الخلفية المسموعة","يروي المؤرخ يوسيفوس أن أكثر من ربع مليون حمل كان يمكن أن يُذبح في أورشليم في عيد فصح واحد. حين قال يوحنا «هوذا الحمل» كان يخاطب شعبًا لهذه الكلمة عنده رائحة وصوت وثمن."],
+  ["النبوءة تسبق الحدث","دَرْجُ إشعياء الكبير المكتشف في قمران نُسخ نحو سنة ١٢٥ قبل الميلاد، وهو يحوي إشعياء ٥٣ كاملًا، قبل الصلب بأكثر من قرن. ليست هذه حجةً إيمانية بل واقعة مخطوطات — نفصّلها في قسم «كتابٌ جدير بالثقة»."]],
+  nlbl:"الخطوة التالية",ntitle:"الحملُ المذبوح يملك — رؤيا ٥",
+  ntext:"قبل أن نعود في الزمن، وقفة عند النهاية: لماذا تُرنّم السماء كلّها لحملٍ مذبوح؟",
+  foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>صفحة معيارية — النموذج المرجعي للموقع."
+}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;
+  document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('steplbl').textContent=c.steplbl;
+  const dots=document.getElementById('dots');dots.innerHTML="";
+  c.steps.forEach((s,i)=>{
+    if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
+    const d=document.createElement('div');d.className='dot'+(i===0?' on':'');
+    d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
+  });
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅰ</div><h2>${c.s1}</h2><div class="l"></div></div>
+    ${c.s1p.map(p=>`<p>${p}</p>`).join("")}
+    <div class="mental">${c.mental}</div>
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅱ</div><h2>${c.s2}</h2><div class="l"></div></div>
+    <h3 class="sub">${c.h1}</h3>
+    <p>${c.intro}</p>
+    <div class="cards">${c.cards.map(k=>`
+      <div class="cardE"><div class="cref">${k[0]}</div><h4>${k[1]}</h4><p>${k[2]}</p><span class="key">${k[3]}</span></div>`).join("")}
+    </div>
+    <h3 class="sub">${c.h2}</h3>
+    ${c.s2b.map(p=>`<p>${p}</p>`).join("")}
+    <h3 class="sub">${c.h3}</h3>
+    ${c.s2c.map(p=>`<p>${p}</p>`).join("")}
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#">
+    <div class="nlbl">${c.nlbl}</div>
+    <h3>${c.ntitle}</h3>
+    <p>${c.ntext}</p>
+  </a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

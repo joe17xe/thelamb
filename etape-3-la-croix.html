@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaïe 53 — le portrait avant le modèle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;
+    --gold:#d3a94f;--line:#23273a;--crimson:#a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,-apple-system,sans-serif}
+  html[dir="rtl"] .ui{font-family:'Amiri',system-ui,sans-serif}
+
+  /* top bar */
+  .top{
+    max-width:1060px;margin:0 auto;padding:18px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{
+    font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    color:var(--muted);padding:6px 12px;cursor:pointer;
+  }
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .langs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* fil / étapes */
+  .thread{max-width:1060px;margin:26px auto 0;padding:0 20px}
+  .thread .lbl{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;text-align:center}
+  html[dir="rtl"] .thread .lbl{letter-spacing:.06em}
+  .dots{display:flex;justify-content:center;align-items:center;gap:0;margin-top:14px;flex-wrap:wrap}
+  .dot{display:flex;flex-direction:column;align-items:center;width:86px}
+  .dot .pt{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
+  .dot.on .pt{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(211,169,79,.6)}
+  .dot .nm{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted);margin-top:7px;text-align:center;line-height:1.3}
+  html[dir="rtl"] .dot .nm{font-size:11px}
+  .dot.on .nm{color:var(--gold)}
+  .dots .seg{height:1px;width:34px;background:var(--line);margin-bottom:22px}
+
+  /* hero */
+  .hero{max-width:820px;margin:0 auto;padding:58px 22px 30px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:15px}
+  .verse{font-size:clamp(30px,6vw,54px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:600px;margin:26px auto 0;color:var(--muted);font-size:16px}
+
+  /* strates */
+  main{max-width:820px;margin:0 auto;padding:10px 22px 70px}
+  .strate{margin-top:54px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .snum{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:18px;flex:none;
+  }
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .strate p{font-size:17.5px;margin-bottom:16px}
+  .strate p .g{color:var(--gold)}
+
+  .mental{
+    border:1px solid var(--line);border-inline-start:3px solid var(--gold);
+    background:var(--bg2);border-radius:0 10px 10px 0;
+    padding:18px 22px;margin-top:8px;font-size:16.5px;
+  }
+  html[dir="rtl"] .mental{border-radius:10px 0 0 10px}
+  .mental b{color:var(--gold);font-weight:normal}
+
+  h3.sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:26px;margin:34px 0 12px}
+  html[dir="rtl"] h3.sub{font-family:'Amiri',serif;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .cardE{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .cardE .cref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  html[dir="rtl"] .cardE .cref{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .cardE h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  html[dir="rtl"] .cardE h4{font-family:'Amiri',serif}
+  .cardE p{font-size:14.5px;color:#c6c0b2;margin:0}
+  .cardE .key{display:block;margin-top:10px;color:var(--gold);font-style:italic;font-size:14.5px}
+
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{
+    cursor:pointer;list-style:none;padding:16px 20px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+
+  .next{
+    margin-top:60px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(135deg,var(--bg2),#171426);
+    padding:28px;display:block;text-decoration:none;color:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px;margin:0}
+
+  footer{max-width:820px;margin:0 auto 46px;padding:0 22px;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line);padding-top:22px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.strate,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="thread">
+  <div class="lbl" id="steplbl"></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+const C={
+fr:{
+  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  steplbl:"Le fil de l'Agneau · étape 4 sur 7",
+  steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
+  eyebrow:"Isaïe 52:13–53:12 · Jérusalem, vers 700 av. J.-C. — copie intégrale retrouvée à Qumrân (1QIsaᵃ, ~125 av. J.-C.)",
+  verse:"« Semblable à <span class='g'>un agneau qu'on mène à la boucherie</span>… il n'a point ouvert la bouche. »",
+  scene:"Sept siècles avant Golgotha, un prophète décrit un serviteur défiguré, silencieux, condamné avec les coupables, enseveli chez un riche — et dont la mort justifie les multitudes. Ce chant est la charnière de tout le fil : l'agneau y devient une personne.",
+  s1:"L'essentiel · 90 secondes",s2:"Comprendre",s3:"Aller plus loin",
+  s1p:[
+  "Isaïe 53 est le quatrième « chant du Serviteur ». Il décrit un innocent qui souffre non pour ses fautes, mais pour celles des autres : « le châtiment qui nous donne la paix est tombé sur lui, et c'est par ses meurtrissures que nous sommes guéris » (53:5).",
+  "Le portrait est d'une précision troublante : méprisé, <span class='g'>silencieux devant ses juges</span>, « mis au nombre des malfaiteurs », mis dans la tombe « avec le riche », puis — « il verra une postérité, il prolongera ses jours » : la souffrance débouche sur une vie au-delà de la mort.",
+  "C'est le texte que lisait le voyageur éthiopien quand Philippe le rejoignit sur la route de Gaza : « De qui le prophète parle-t-il ? » (Actes 8:34). Toute cette page répond à une question posée dans la Bible elle-même."],
+  mental:"<b>L'image à retenir :</b> un portrait peint sept cents ans avant son modèle. La question n'est pas « est-il ressemblant ? » — elle saute aux yeux — mais « qui a guidé la main du peintre ? ».",
+  h1:"Le chant en trois mouvements",
+  intro:"Cinq strophes, que l'on retient en trois mouvements :",
+  cards:[
+  ["Isaïe 52:13-15","L'élévation annoncée","Le chant commence par la fin : « mon serviteur prospérera, il montera, il s'élèvera » — puis montre un visage défiguré qui « purifiera des nations ». L'exaltation encadre la souffrance : elle n'est jamais le dernier mot.","La gloire est annoncée d'abord."],
+  ["Isaïe 53:1-9","La descente","Sans éclat, méprisé, frappé, silencieux « comme un agneau », arraché par un jugement inique, tombe prévue avec les méchants « et avec le riche dans sa mort ». Chaque trait attend son visage.","L'innocent prend la place des coupables."],
+  ["Isaïe 53:10-12","Le retournement","« Après avoir livré sa vie en sacrifice pour le péché, il verra une postérité… mon serviteur juste justifiera beaucoup d'hommes. » Et le sacrifice n'est pas subi : « il s'est livré lui-même à la mort ».","L'offrande volontaire justifie les multitudes."]],
+  h2:"« Un sacrifice pour le péché »",
+  s2b:[
+  "Au verset 10, la vie du Serviteur est appelée <i>asham</i> — le « sacrifice de culpabilité » du Lévitique (ch. 5), celui qui répare une dette envers Dieu. C'est le seul passage de la Bible où un homme est dit devenir lui-même ce sacrifice. Le vocabulaire de l'agneau cesse d'être une image : il devient une <span class='g'>identité</span>.",
+  "Et le chant est écrit au « nous » : <i>nos</i> souffrances, <i>nos</i> péchés, <i>notre</i> paix, « nous tous » comme des brebis errantes (53:6). Le lecteur n'est pas spectateur du poème : il y est écrit."],
+  h3:"Le NT l'a-t-il inventé après coup ?",
+  s2c:["C'est la question honnête, et elle a une réponse en deux faits. D'abord le manuscrit : le rouleau complet d'Isaïe retrouvé à Qumrân est daté d'environ 125 av. J.-C. — le texte précède l'événement de plus d'un siècle, matériellement. Ensuite la lecture : l'identification messianique du passage n'est pas une invention chrétienne — le Targum Jonathan appelle le Serviteur « le Messie » (tout en déplaçant ses souffrances vers d'autres). Le vrai débat ancien n'est pas « de qui parle le sommet du chant ? », mais « le Messie peut-il souffrir ? ». La croix répond."],
+  deep:[
+  ["Dix correspondances vérifiables","Silencieux devant ses juges (53:7 → Marc 14:61) ; compté parmi les malfaiteurs (53:12 → Luc 22:37, crucifié entre deux brigands) ; intercède pour les coupables (53:12 → « Père, pardonne-leur », Luc 23:34) ; tombe du riche (53:9 → Joseph d'Arimathée, Matthieu 27:57-60) ; ni violence ni fraude (53:9 → 1 Pierre 2:22) ; porte nos péchés (53:4-5 → 1 Pierre 2:24) ; brebis errantes (53:6 → 1 Pierre 2:25) ; postérité et jours prolongés après la mort (53:10) ; part avec les grands (53:12) ; aspersion de nations nombreuses (52:15). Le site en fera une frise « annoncé / accompli »."],
+  ["Le chapitre que le NT cite le plus","Isaïe 53 est cité ou évoqué par Matthieu (8:17), Luc (22:37), Jean (12:38), les Actes (8:32-35), Paul (Romains 10:16), Pierre (1 Pierre 2:22-25) et Hébreux (9:28). Fait décisif : ces citations viennent d'auteurs différents écrivant à des communautés différentes — la lecture « le Serviteur, c'est Jésus » appartient à la couche la plus ancienne et la plus unanime de la foi chrétienne."],
+  ["L'objection classique : « le serviteur, c'est Israël »","Ailleurs chez Isaïe, le serviteur est explicitement Israël (49:3). Mais en 49:5-6 le serviteur a une mission <i>envers</i> Israël — il s'en distingue donc ; et en 53, il souffre « pour mon peuple » (53:8) et il est sans péché (53:9), ce qui ne peut décrire la nation. Position du site : le Serviteur est l'Israël-en-une-personne, celui qui accomplit la vocation du peuple. L'objection est présentée avec respect : elle est au cœur du dialogue avec le judaïsme."],
+  ["Le manuscrit de Qumrân","1QIsaᵃ, le « Grand rouleau d'Isaïe » : 54 colonnes, le livre entier, daté par la paléographie et le carbone vers 125 av. J.-C., exposé aujourd'hui à Jérusalem. Sur Isaïe 53, ses variantes sont mineures et n'affectent aucun trait du portrait. Pièce maîtresse de notre section « Bible fiable » — et réponse concrète, datée et matérielle à l'objection de falsification (taḥrīf) pour l'édition arabe."],
+  ["Pourquoi le chant dit « nous »","Le poème est une confession à la première personne du pluriel : la voix de ceux qui comprendront — trop tard pour l'empêcher, juste à temps pour être guéris. De l'Éthiopien des Actes à d'innombrables lecteurs d'aujourd'hui, ce chapitre a été une porte d'entrée. Le site le proposera en lecture intégrale, seul en pleine page, sans aucun commentaire, à la fin de cette étape."]],
+  nlbl:"Étape suivante",ntitle:"La Pâque — Exode 12",
+  ntext:"La nuit fondatrice : l'agneau sans défaut, le sang sur les portes, et une délivrance qui devient calendrier.",
+  foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Parcours « Le fil de l'Agneau » — étape 4 sur 7."
+},
+en:{
+  dir:"ltr",brand:"THE LAMB OF GOD",
+  steplbl:"The thread of the Lamb · step 4 of 7",
+  steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
+  eyebrow:"Isaiah 52:13–53:12 · Jerusalem, c. 700 BC — full copy found at Qumran (1QIsaᵃ, c. 125 BC)",
+  verse:"“As <span class='g'>a lamb that is led to the slaughter</span>… he didn't open his mouth.”",
+  scene:"Seven centuries before Golgotha, a prophet describes a servant disfigured, silent, condemned with the guilty, buried with the rich — and whose death justifies the many. This song is the hinge of the whole thread: here the lamb becomes a person.",
+  s1:"The essentials · 90 seconds",s2:"Understand",s3:"Go deeper",
+  s1p:[
+  "Isaiah 53 is the fourth “Servant song”. It describes an innocent man who suffers not for his own faults, but for those of others: “the punishment that brought our peace was on him; and by his wounds we are healed” (53:5).",
+  "The portrait is troublingly precise: despised, <span class='g'>silent before his judges</span>, “numbered with the transgressors”, assigned a grave “with the rich”, and then — “he will see his offspring, he will prolong his days”: the suffering opens onto life beyond death.",
+  "This is the very text the Ethiopian traveller was reading when Philip joined him on the Gaza road: “Of whom does the prophet speak?” (Acts 8:34). This whole page answers a question asked inside the Bible itself."],
+  mental:"<b>The image to keep:</b> a portrait painted seven hundred years before its model. The question is not “is it a good likeness?” — that is plain to see — but “who guided the painter's hand?”.",
+  h1:"The song in three movements",
+  intro:"Five stanzas, remembered in three movements:",
+  cards:[
+  ["Isaiah 52:13-15","The exaltation announced","The song begins with the end: “my servant will prosper, he will be exalted and lifted up” — then shows a disfigured face that will “sprinkle many nations”. Exaltation frames the suffering: it is never the last word.","Glory is announced first."],
+  ["Isaiah 53:1-9","The descent","Without splendour, despised, struck, silent “as a lamb”, taken away by an unjust judgment, a grave assigned with the wicked “and with the rich in his death”. Every trait awaits its face.","The innocent takes the place of the guilty."],
+  ["Isaiah 53:10-12","The reversal","“When you make his soul an offering for sin, he will see his offspring… my righteous servant will justify many.” And the sacrifice is not merely endured: “he poured out his soul to death”.","The willing offering justifies the many."]],
+  h2:"“An offering for sin”",
+  s2b:[
+  "In verse 10 the Servant's life is called an <i>asham</i> — the “guilt offering” of Leviticus (ch. 5), the sacrifice that repairs a debt toward God. It is the only passage in the Bible where a man is said to become that sacrifice himself. The vocabulary of the lamb ceases to be an image: it becomes an <span class='g'>identity</span>.",
+  "And the song is written in the first person plural: <i>our</i> sufferings, <i>our</i> sins, <i>our</i> peace, “all we like sheep have gone astray” (53:6). The reader is not a spectator of the poem: he is written into it."],
+  h3:"Did the NT invent it after the fact?",
+  s2c:["That is the honest question, and it has a two-fact answer. First the manuscript: the complete Isaiah scroll found at Qumran is dated to about 125 BC — the text precedes the event by more than a century, materially. Then the reading: the messianic identification of the passage is not a Christian invention — Targum Jonathan calls the Servant “the Messiah” (while transferring his sufferings to others). The real ancient debate is not “of whom does the song's summit speak?” but “can the Messiah suffer?”. The cross answers."],
+  deep:[
+  ["Ten verifiable correspondences","Silent before his judges (53:7 → Mark 14:61); numbered with transgressors (53:12 → Luke 22:37, crucified between two criminals); intercedes for the guilty (53:12 → “Father, forgive them”, Luke 23:34); the rich man's tomb (53:9 → Joseph of Arimathea, Matthew 27:57-60); no violence, no deceit (53:9 → 1 Peter 2:22); bears our sins (53:4-5 → 1 Peter 2:24); straying sheep (53:6 → 1 Peter 2:25); offspring and prolonged days after death (53:10); a portion with the great (53:12); sprinkling of many nations (52:15). The site will turn these into an “announced / fulfilled” frieze."],
+  ["The chapter the NT quotes most","Isaiah 53 is quoted or echoed by Matthew (8:17), Luke (22:37), John (12:38), Acts (8:32-35), Paul (Romans 10:16), Peter (1 Peter 2:22-25) and Hebrews (9:28). The decisive fact: these citations come from different authors writing to different communities — the reading “the Servant is Jesus” belongs to the oldest and most unanimous layer of Christian faith."],
+  ["The classic objection: “the servant is Israel”","Elsewhere in Isaiah, the servant is explicitly Israel (49:3). But in 49:5-6 the servant has a mission <i>toward</i> Israel — hence distinct from it; and in 53 he suffers “for my people” (53:8) and is without sin (53:9), which cannot describe the nation. The site's position: the Servant is Israel-in-one-person, the one who fulfils the people's calling. The objection is presented with respect: it stands at the heart of the dialogue with Judaism."],
+  ["The Qumran manuscript","1QIsaᵃ, the “Great Isaiah Scroll”: 54 columns, the entire book, dated by palaeography and carbon to about 125 BC, on display today in Jerusalem. In Isaiah 53 its variants are minor and affect no trait of the portrait. The centrepiece of our “A Bible worthy of trust” section — and a concrete, dated, material answer to the charge of falsification (taḥrīf) for the Arabic edition."],
+  ["Why the song says “we”","The poem is a confession in the first person plural: the voice of those who will understand — too late to prevent it, just in time to be healed. From the Ethiopian of Acts to countless readers today, this chapter has been a doorway. At the end of this step, the site will offer it in full, alone on the page, without a single comment."]],
+  nlbl:"Next step",ntitle:"The Passover — Exodus 12",
+  ntext:"The founding night: the lamb without defect, the blood on the doorposts, and a deliverance that becomes a calendar.",
+  foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>“The thread of the Lamb” — step 4 of 7."
+},
+ar:{
+  dir:"rtl",brand:"حَمَلُ الله",
+  steplbl:"خيط الحمل · الخطوة ٤ من ٧",
+  steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
+  eyebrow:"إشعياء ٥٢: ١٣ – ٥٣: ١٢ · أورشليم، نحو ٧٠٠ ق.م — نسخة كاملة اكتُشفت في قمران (نحو ١٢٥ ق.م)",
+  verse:"«<span class='g'>كَشَاةٍ تُسَاقُ إِلَى الذَّبْحِ</span>… فَلَمْ يَفْتَحْ فَاهُ.»",
+  scene:"قبل الجلجثة بسبعة قرون، يصف نبيٌّ عبدًا مشوَّهَ المنظر، صامتًا، محكومًا عليه مع الأثمة، مدفونًا عند غني — وموتُه يبرّر كثيرين. هذا النشيد هو مفصل الخيط كلّه: فيه يصير الحملُ شخصًا.",
+  s1:"الخلاصة · ٩٠ ثانية",s2:"للفهم",s3:"للتعمّق",
+  s1p:[
+  "إشعياء ٥٣ هو «نشيد العبد» الرابع. يصف بريئًا يتألم لا عن ذنوبه بل عن ذنوب الآخرين: «تَأْدِيبُ سَلاَمِنَا عَلَيْهِ، وَبِحُبُرِهِ شُفِينَا» (٥٣: ٥).",
+  "الصورة دقيقة إلى حدّ الذهول: محتقَر، <span class='g'>صامت أمام قضاته</span>، «أُحْصِيَ مَعَ أَثَمَةٍ»، جُعل قبره «مَعَ غَنِيٍّ»، ثم — «يَرَى نَسْلاً تَطُولُ أَيَّامُهُ»: الألم يفضي إلى حياةٍ بعد الموت.",
+  "هذا هو النصُّ الذي كان المسافر الحبشيُّ يقرأه حين لحق به فيلبس على طريق غزة: «عَنْ مَنْ يَقُولُ النَّبِيُّ هذَا؟» (أعمال ٨: ٣٤). هذه الصفحة كلّها تجيب سؤالًا مطروحًا داخل الكتاب المقدس نفسه."],
+  mental:"<b>الصورة التي تبقى:</b> لوحةٌ رُسمت قبل صاحبها بسبعمئة سنة. السؤال ليس «هل تشبهه؟» — فالشبه باهر — بل «من الذي قاد يدَ الرسّام؟».",
+  h1:"النشيد في ثلاث حركات",
+  intro:"خمس مقاطع، تُحفَظ في ثلاث حركات:",
+  cards:[
+  ["إشعياء ٥٢: ١٣-١٥","الارتفاع المعلَن أولًا","يبدأ النشيد من النهاية: «هُوَذَا عَبْدِي يَعْقِلُ، يَتَعَالَى وَيَرْتَقِي» — ثم يُري وجهًا مشوَّهًا «يَنْضِحُ أُمَمًا كَثِيرَةً». المجدُ يؤطّر الألم: الألم ليس الكلمة الأخيرة أبدًا.","المجد يُعلَن أولًا."],
+  ["إشعياء ٥٣: ١-٩","النزول","بلا بهاء، محتقَر، مضروب، صامت «كَشَاةٍ»، مأخوذ بحكمٍ جائر، قبرُه مع الأشرار «وَمَعَ غَنِيٍّ عِنْدَ مَوْتِهِ». كلُّ ملمحٍ ينتظر وجهَه.","البريء يأخذ مكان المذنبين."],
+  ["إشعياء ٥٣: ١٠-١٢","الانقلاب","«إِذَا جَعَلَ نَفْسَهُ ذَبِيحَةَ إِثْمٍ يَرَى نَسْلاً… وَعَبْدِي الْبَارُّ بِمَعْرِفَتِهِ يُبَرِّرُ كَثِيرِينَ.» والذبيحةُ ليست مفروضة عليه: «سَكَبَ لِلْمَوْتِ نَفْسَهُ».","التقدمة الطوعية تبرّر الكثيرين."]],
+  h2:"«ذَبِيحَةُ إِثْمٍ»",
+  s2b:[
+  "في الآية ١٠ تُدعى حياةُ العبد <i>آشام</i> — «ذبيحة الإثم» في سفر اللاويين (أصحاح ٥)، الذبيحة التي تسدّد دَينًا نحو الله. وهذا هو الموضع الوحيد في الكتاب الذي يُقال فيه إن إنسانًا يصير هو نفسُه تلك الذبيحة. لغةُ الحمل تكفّ عن أن تكون صورة: تصير <span class='g'>هوية</span>.",
+  "والنشيد مكتوب بضمير «نحن»: أحزانُنا، آثامُنا، سلامُنا، «كُلُّنَا كَغَنَمٍ ضَلَلْنَا» (٥٣: ٦). القارئ ليس متفرجًا على القصيدة: إنه مكتوبٌ فيها."],
+  h3:"هل اخترعه العهدُ الجديد لاحقًا؟",
+  s2c:["هذا هو السؤال الأمين، وجوابه واقعتان. أولًا المخطوطة: دَرْجُ إشعياء الكامل المكتشف في قمران مؤرَّخٌ نحو ١٢٥ ق.م — فالنص يسبق الحدث بأكثر من قرن، ماديًا. ثانيًا القراءة: التفسير المسيحاني للنص ليس اختراعًا مسيحيًا — فترجوم يوناثان يسمّي العبدَ «المسيّا» (وإن نقل آلامه إلى غيره). فالنقاش القديم الحقيقي ليس «عمّن يتكلم ذروةُ النشيد؟» بل «هل يمكن للمسيّا أن يتألم؟». والصليب يجيب."],
+  deep:[
+  ["عشر مطابقات يمكن التحقق منها","صامتٌ أمام قضاته (٥٣: ٧ → مرقس ١٤: ٦١)؛ أُحصي مع أثمة (٥٣: ١٢ → لوقا ٢٢: ٣٧، مصلوبًا بين لصّين)؛ يشفع في المذنبين (٥٣: ١٢ → «يَا أَبَتَاهُ اغْفِرْ لَهُمْ»، لوقا ٢٣: ٣٤)؛ قبرُ الغني (٥٣: ٩ → يوسف الرامي، متى ٢٧: ٥٧-٦٠)؛ لا ظلم ولا غش (٥٣: ٩ → ١ بطرس ٢: ٢٢)؛ يحمل خطايانا (٥٣: ٤-٥ → ١ بطرس ٢: ٢٤)؛ غنمٌ ضالة (٥٣: ٦ → ١ بطرس ٢: ٢٥)؛ نسلٌ وأيام تطول بعد الموت (٥٣: ١٠)؛ نصيبٌ مع العظماء (٥٣: ١٢)؛ نضحُ أممٍ كثيرة (٥٢: ١٥). سيجعلها الموقع شريطًا بصريًا: «أُعلن / تمّ»."],
+  ["الأصحاح الأكثر اقتباسًا في العهد الجديد","يقتبس إشعياءَ ٥٣ أو يلمّح إليه: متى (٨: ١٧)، ولوقا (٢٢: ٣٧)، ويوحنا (١٢: ٣٨)، وأعمال الرسل (٨: ٣٢-٣٥)، وبولس (رومية ١٠: ١٦)، وبطرس (١ بطرس ٢: ٢٢-٢٥)، والعبرانيين (٩: ٢٨). الواقعة الحاسمة: هذه الاقتباسات من كتّاب مختلفين إلى جماعات مختلفة — فقراءةُ «العبد هو يسوع» تنتمي إلى أقدم طبقات الإيمان المسيحي وأكثرها إجماعًا."],
+  ["الاعتراض الشهير: «العبد هو إسرائيل»","في مواضع أخرى عند إشعياء، العبدُ هو إسرائيل صراحةً (٤٩: ٣). لكن في ٤٩: ٥-٦ للعبد رسالةٌ <i>نحو</i> إسرائيل — فهو إذًا متميّز عنه؛ وفي ٥٣ يتألم «مِنْ أَجْلِ ذَنْبِ شَعْبِي» (٥٣: ٨) وهو بلا خطية (٥٣: ٩)، وهذا لا يصفُ أمّةً. موقفُ الموقع: العبد هو إسرائيل-في-شخصٍ-واحد، مَن يُتمّ دعوةَ الشعب. ونعرض الاعتراضَ باحترام: فهو في قلب الحوار مع اليهودية."],
+  ["مخطوطة قمران","دَرْجُ إشعياء الكبير: ٥٤ عمودًا، السفرُ بأكمله، مؤرَّخ بالخط والكربون نحو ١٢٥ ق.م، معروضٌ اليوم في أورشليم. وفي إشعياء ٥٣ فروقُه طفيفة لا تمسّ ملمحًا واحدًا من الصورة. إنه حجرُ الزاوية في قسم «كتاب جدير بالثقة» — وجوابٌ ماديٌّ مؤرَّخ على دعوى التحريف في النسخة العربية."],
+  ["لماذا يقول النشيد «نحن»؟","القصيدة اعترافٌ بضمير الجمع: صوتُ الذين سيفهمون — بعد فوات منعِ الأمر، وفي الوقت المناسب تمامًا للشفاء. من الحبشيّ في سفر الأعمال إلى قرّاء لا يُحصَون اليوم، كان هذا الأصحاحُ بابَ دخول. وسيعرضه الموقع كاملًا، وحده في صفحة، بلا تعليق واحد، في ختام هذه الخطوة."]],
+  nlbl:"الخطوة التالية",ntitle:"الفصح — خروج ١٢",
+  ntext:"الليلة المؤسِّسة: الحملُ الصحيح بلا عيب، والدمُ على الأبواب، ونجاةٌ تصير تقويمًا.",
+  foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٤ من ٧."
+}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;
+  document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('steplbl').textContent=c.steplbl;
+  const dots=document.getElementById('dots');dots.innerHTML="";
+  c.steps.forEach((s,i)=>{
+    if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
+    const d=document.createElement('div');d.className='dot'+(i===3?' on':'');
+    d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
+  });
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅰ</div><h2>${c.s1}</h2><div class="l"></div></div>
+    ${c.s1p.map(p=>`<p>${p}</p>`).join("")}
+    <div class="mental">${c.mental}</div>
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅱ</div><h2>${c.s2}</h2><div class="l"></div></div>
+    <h3 class="sub">${c.h1}</h3>
+    <p>${c.intro}</p>
+    <div class="cards">${c.cards.map(k=>`
+      <div class="cardE"><div class="cref">${k[0]}</div><h4>${k[1]}</h4><p>${k[2]}</p><span class="key">${k[3]}</span></div>`).join("")}
+    </div>
+    <h3 class="sub">${c.h2}</h3>
+    ${c.s2b.map(p=>`<p>${p}</p>`).join("")}
+    <h3 class="sub">${c.h3}</h3>
+    ${c.s2c.map(p=>`<p>${p}</p>`).join("")}
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#">
+    <div class="nlbl">${c.nlbl}</div>
+    <h3>${c.ntitle}</h3>
+    <p>${c.ntext}</p>
+  </a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+# Installer Claude Code sur votre VPS Hostinger — guide prêt à coller
+
+## Avant de commencer
+1. Dans hPanel → votre VPS → **Overview**, notez l'adresse IP.
+2. Ouvrez un terminal : soit le **Browser terminal** de hPanel, soit SSH depuis votre machine :
+   `ssh root@VOTRE_IP`
+3. Il vous faudra un compte Claude (abonnement Pro/Max) **ou** une clé API Anthropic (console.anthropic.com). Ne partagez jamais cette clé avec personne — pas même dans un chat avec Claude.
+
+---
+
+## Étape 1 — Mise à jour et utilisateur de travail (à coller tel quel)
+```bash
+apt update && apt upgrade -y
+adduser --gecos "" agneau        # choisissez un mot de passe fort
+usermod -aG sudo agneau
+su - agneau
+```
+> Travailler avec un utilisateur dédié plutôt que root est une protection de base du serveur.
+
+## Étape 2 — Node.js LTS (requis par Claude Code : Node 18+)
+```bash
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt install -y nodejs git build-essential
+node -v   # doit afficher v22.x
+```
+
+## Étape 3 — Installer Claude Code
+```bash
+sudo npm install -g @anthropic-ai/claude-code
+claude --version
+```
+
+## Étape 4 — Se connecter
+```bash
+claude
+```
+Au premier lancement, Claude Code propose la connexion :
+- **Compte Claude Pro/Max** : il affiche une URL — ouvrez-la sur votre téléphone/PC, connectez-vous, collez le code retourné dans le terminal.
+- **Clé API** : choisissez l'option Anthropic Console et collez votre clé (elle reste sur votre serveur, dans votre session).
+
+## Étape 5 — Le rendre utilisable « à distance » confortablement
+Claude Code tourne dans le terminal du VPS ; pour y revenir de n'importe où :
+```bash
+sudo apt install -y tmux
+tmux new -s claude      # ouvre une session persistante
+claude                  # lancez Claude dedans
+# Quitter sans fermer : Ctrl+B puis D  ·  Revenir : tmux attach -t claude
+```
+Depuis un téléphone, une app SSH (Termius, Blink…) vers `agneau@VOTRE_IP` + `tmux attach` vous redonne la session en cours.
+
+## Étape 6 — Préparer le terrain du site (optionnel mais recommandé)
+```bash
+mkdir -p ~/agneau-de-dieu && cd ~/agneau-de-dieu
+git init
+claude
+```
+Puis dites simplement à Claude Code, sur le serveur :
+> « Lis le fichier architecture-technique-vps.md (uploadez-le dans le dossier), et mets en place le squelette Next.js + Prisma + SQLite décrit, avec les routes /fr /en /ar. »
+
+Il exécutera l'installation décrite dans notre document d'architecture, sur place.
+
+---
+
+## Sécurité minimale du VPS (5 minutes, à ne pas sauter)
+```bash
+sudo apt install -y ufw
+sudo ufw allow OpenSSH
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw enable
+```
+Et dans hPanel, activez les sauvegardes automatiques du VPS.
+
+## En cas de problème
+- `claude: command not found` → rouvrez le terminal (le PATH npm global doit se recharger) ou `hash -r`.
+- Node < 18 → reprenez l'étape 2.
+- Erreur d'authentification → `claude logout` puis `claude` pour recommencer la connexion.

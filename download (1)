@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Agneau immolé règne — Apocalypse 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;
+    --gold:#d3a94f;--line:#23273a;--crimson:#a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,-apple-system,sans-serif}
+  html[dir="rtl"] .ui{font-family:'Amiri',system-ui,sans-serif}
+
+  /* top bar */
+  .top{
+    max-width:1060px;margin:0 auto;padding:18px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{
+    font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    color:var(--muted);padding:6px 12px;cursor:pointer;
+  }
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .langs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* fil / étapes */
+  .thread{max-width:1060px;margin:26px auto 0;padding:0 20px}
+  .thread .lbl{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;text-align:center}
+  html[dir="rtl"] .thread .lbl{letter-spacing:.06em}
+  .dots{display:flex;justify-content:center;align-items:center;gap:0;margin-top:14px;flex-wrap:wrap}
+  .dot{display:flex;flex-direction:column;align-items:center;width:86px}
+  .dot .pt{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
+  .dot.on .pt{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(211,169,79,.6)}
+  .dot .nm{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted);margin-top:7px;text-align:center;line-height:1.3}
+  html[dir="rtl"] .dot .nm{font-size:11px}
+  .dot.on .nm{color:var(--gold)}
+  .dots .seg{height:1px;width:34px;background:var(--line);margin-bottom:22px}
+
+  /* hero */
+  .hero{max-width:820px;margin:0 auto;padding:58px 22px 30px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:15px}
+  .verse{font-size:clamp(30px,6vw,54px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:600px;margin:26px auto 0;color:var(--muted);font-size:16px}
+
+  /* strates */
+  main{max-width:820px;margin:0 auto;padding:10px 22px 70px}
+  .strate{margin-top:54px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .snum{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:18px;flex:none;
+  }
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .strate p{font-size:17.5px;margin-bottom:16px}
+  .strate p .g{color:var(--gold)}
+
+  .mental{
+    border:1px solid var(--line);border-inline-start:3px solid var(--gold);
+    background:var(--bg2);border-radius:0 10px 10px 0;
+    padding:18px 22px;margin-top:8px;font-size:16.5px;
+  }
+  html[dir="rtl"] .mental{border-radius:10px 0 0 10px}
+  .mental b{color:var(--gold);font-weight:normal}
+
+  h3.sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:26px;margin:34px 0 12px}
+  html[dir="rtl"] h3.sub{font-family:'Amiri',serif;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .cardE{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .cardE .cref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  html[dir="rtl"] .cardE .cref{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .cardE h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  html[dir="rtl"] .cardE h4{font-family:'Amiri',serif}
+  .cardE p{font-size:14.5px;color:#c6c0b2;margin:0}
+  .cardE .key{display:block;margin-top:10px;color:var(--gold);font-style:italic;font-size:14.5px}
+
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{
+    cursor:pointer;list-style:none;padding:16px 20px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+
+  .next{
+    margin-top:60px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(135deg,var(--bg2),#171426);
+    padding:28px;display:block;text-decoration:none;color:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px;margin:0}
+
+  footer{max-width:820px;margin:0 auto 46px;padding:0 22px;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line);padding-top:22px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.strate,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="thread">
+  <div class="lbl" id="steplbl"></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+const C={
+fr:{
+  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  steplbl:"Le fil de l'Agneau · étape 2 sur 7",
+  steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
+  eyebrow:"Apocalypse 5:6 · Patmos, vers l'an 95",
+  verse:"« Je vis, au milieu du trône, <span class='g'>un Agneau qui était là comme immolé</span>. »",
+  scene:"Exilé sur l'île de Patmos, Jean voit le ciel ouvert. Dans la main de Dieu, un livre scellé de sept sceaux — et personne, nulle part, qui soit digne de l'ouvrir. Jean pleure. C'est ici que commence la plus grande surprise de la Bible.",
+  s1:"L'essentiel · 90 secondes",s2:"Comprendre",s3:"Aller plus loin",
+  s1p:[
+  "Un ancien console Jean : « Ne pleure point. Voici, le lion de la tribu de Juda… a vaincu » (Apocalypse 5:5). Le lion : l'image royale promise à Juda depuis Genèse 49. Jean se retourne donc pour voir un lion.",
+  "Et il voit <span class='g'>un agneau</span> — debout, portant les marques de l'égorgement. Ce qu'il <em>entend</em> (le lion vainqueur) et ce qu'il <em>voit</em> (l'agneau immolé) sont une seule et même personne. C'est le coup de théâtre central de toute l'Apocalypse.",
+  "Le message tient en une phrase : la victoire de Dieu ne ressemble pas à nos victoires. Elle porte pour toujours les marques de l'offrande. Voilà pourquoi ce parcours commence par la fin : c'est elle qui dévoile le sens de tout le fil que nous allons remonter."],
+  mental:"<b>L'image à retenir :</b> l'oreille entend un lion, l'œil voit un agneau. Le retournement de cette seconde-là contient toute la foi chrétienne.",
+  h1:"Trois mots qui changent tout",
+  intro:"Le verset décrit l'Agneau par trois traits, et chacun est une théologie entière :",
+  cards:[
+  ["Apocalypse 5:6","« Debout »","L'Agneau n'est pas couché sur un autel : il se tient. La mort est derrière lui — c'est la résurrection dite en un seul mot.","L'immolé est vivant."],
+  ["Apocalypse 5:6","« Comme immolé »","Le grec emploie le mot même des sacrifices : égorgé. Le ciel ne cache pas la croix : il la montre et il la couronne. Les marques restent, transfigurées.","La gloire n'efface pas l'offrande."],
+  ["Apocalypse 5:6, 13","« Au milieu du trône »","L'Agneau n'est pas devant le trône comme une victime : il est au centre, et toute créature lui adresse la louange réservée à Dieu.","L'offrande est sur le trône."]],
+  h2:"« Le chant nouveau »",
+  s2b:[
+  "Alors le ciel entonne un chant qui n'avait jamais été chanté : « Tu as été immolé, et tu as racheté pour Dieu par ton sang des hommes de toute tribu, de toute langue, de tout peuple et de toute nation » (Apocalypse 5:9). L'agneau d'Exode 12 sauvait une nation ; celui-ci rachète de <span class='g'>toutes</span> les nations — exactement ce que Jean-Baptiste annonçait : « le péché du monde ».",
+  "Et le chant continue : « tu as fait d'eux un royaume et des sacrificateurs » (5:10) — la vocation donnée au Sinaï (Exode 19:6) est accomplie et élargie. La boucle du fil se referme."],
+  h3:"Pourquoi commencer par la fin ?",
+  s2c:["Parce que la fin certifie le fil. L'Agneau de l'Apocalypse porte les traits de l'agneau pascal (immolé), du Serviteur d'Isaïe (égorgé sans se défendre) et du Fils (sur le trône). Quand nous remonterons vers Isaïe 53, l'Exode et Morija, nous saurons déjà où chaque figure conduit. Lire la Bible à partir du Christ, ce n'est pas tricher avec l'ordre des pages : c'est lire une histoire dont on connaît enfin le héros."],
+  deep:[
+  ["Le mot de l'Apocalypse : arnion","Le quatrième évangile disait <i>amnos</i> ; l'Apocalypse dit <i>arnion</i> — vingt-huit fois pour le Christ. C'est le titre dominant du livre, plus fréquent que « Christ » ou « Seigneur ». Beaucoup y entendent un diminutif (« petit agneau ») : face aux bêtes monstrueuses du livre, Dieu vainc par ce qui semble le plus fragile."],
+  ["Sept cornes, sept yeux","La corne dit la puissance (Daniel 7–8 ; Psaume 18:3) et le chiffre sept la plénitude ; les sept yeux reprennent Zacharie 4:10 — « les yeux de l'Éternel, qui parcourent toute la terre » — appliqués à l'Agneau comme « les sept esprits de Dieu envoyés par toute la terre ». L'immolé n'est pas un survivant diminué : plénitude de puissance, de vision et de l'Esprit."],
+  ["La litanie de l'Agneau","L'Apocalypse décline le titre jusqu'au bout : le sang de l'Agneau (7:14 ; 12:11), la colère de l'Agneau (6:16), le livre de vie de l'Agneau (13:8 ; 21:27), les noces de l'Agneau (19:7-9), l'épouse de l'Agneau (21:9), le trône « de Dieu et de l'Agneau » (22:1-3), l'Agneau lampe de la cité (21:23). Le dernier livre de la Bible est, littéralement, le livre de l'Agneau."],
+  ["« Immolé dès la fondation du monde »","Apocalypse 13:8 peut se lire de deux façons, selon que « dès la fondation du monde » porte sur l'inscription des noms dans le livre de vie (comme en 17:8) ou sur l'immolation de l'Agneau. Les deux lectures sont anciennes, et les deux disent une vérité : le salut n'est pas le plan B de Dieu — l'offrande était dans son cœur avant le commencement."],
+  ["Une seule adoration","Au verset 13, la louange monte « à celui qui est assis sur le trône ET à l'Agneau » — une seule doxologie pour les deux, et les quatre êtres vivants répondent « Amen ». Dans un livre farouchement monothéiste, où l'ange refuse par deux fois d'être adoré (19:10 ; 22:9), l'Agneau est adoré sans réserve. Ce fait rejoint notre fil « Un seul Dieu — Père, Fils, Esprit » : Ésaïe 44:6 → Apocalypse 22:13."],
+  ["La parodie qui confirme","Au chapitre 13, une bête surgit avec « deux cornes semblables à celles d'un agneau », mais elle « parlait comme un dragon » (13:11). Le mal lui-même imite l'Agneau : la contrefaçon est l'hommage involontaire rendu à l'original."]],
+  nlbl:"Étape suivante",ntitle:"La croix — Jean 19",
+  ntext:"Redescendons du ciel vers Golgotha : l'heure, l'hysope, les os intacts, et le « tout est accompli » qui noue le fil.",
+  foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Parcours « Le fil de l'Agneau » — étape 2 sur 7."
+},
+en:{
+  dir:"ltr",brand:"THE LAMB OF GOD",
+  steplbl:"The thread of the Lamb · step 2 of 7",
+  steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
+  eyebrow:"Revelation 5:6 · Patmos, c. AD 95",
+  verse:"“I saw, in the middle of the throne, <span class='g'>a Lamb standing, as though it had been slain</span>.”",
+  scene:"Exiled on the island of Patmos, John sees heaven opened. In God's hand, a scroll sealed with seven seals — and no one, anywhere, worthy to open it. John weeps. Here begins the greatest surprise in the Bible.",
+  s1:"The essentials · 90 seconds",s2:"Understand",s3:"Go deeper",
+  s1p:[
+  "An elder comforts John: “Don't weep. Behold, the Lion of the tribe of Judah… has overcome” (Revelation 5:5). The lion: the royal image promised to Judah since Genesis 49. So John turns to see a lion.",
+  "And he sees <span class='g'>a lamb</span> — standing, bearing the marks of slaughter. What he <em>hears</em> (the conquering lion) and what he <em>sees</em> (the slain lamb) are one and the same person. This is the central turning point of the whole book of Revelation.",
+  "The message fits in one sentence: God's victory does not look like our victories. It bears forever the marks of the offering. That is why this journey begins at the end: the end reveals the meaning of the whole thread we are about to follow back."],
+  mental:"<b>The image to keep:</b> the ear hears a lion, the eye sees a lamb. The whole Christian faith is contained in that one-second reversal.",
+  h1:"Three words that change everything",
+  intro:"The verse describes the Lamb with three traits, and each one is an entire theology:",
+  cards:[
+  ["Revelation 5:6","“Standing”","The Lamb is not lying on an altar: he stands. Death is behind him — the resurrection said in a single word.","The slain one is alive."],
+  ["Revelation 5:6","“As though slain”","The Greek uses the very word of the sacrifices: slaughtered. Heaven does not hide the cross: it displays it and crowns it. The marks remain, transfigured.","Glory does not erase the offering."],
+  ["Revelation 5:6, 13","“In the middle of the throne”","The Lamb is not before the throne as a victim: he is at the centre, and every creature addresses to him the praise reserved for God.","The offering is on the throne."]],
+  h2:"“The new song”",
+  s2b:[
+  "Then heaven sings a song never sung before: “You were killed, and bought us for God with your blood out of every tribe, language, people, and nation” (Revelation 5:9). The lamb of Exodus 12 saved one nation; this one redeems out of <span class='g'>every</span> nation — exactly what John the Baptist announced: “the sin of the world”.",
+  "And the song continues: “you made them a kingdom and priests” (5:10) — the calling given at Sinai (Exodus 19:6) is fulfilled and enlarged. The loop of the thread closes."],
+  h3:"Why begin at the end?",
+  s2c:["Because the end certifies the thread. The Lamb of Revelation bears the traits of the Passover lamb (slain), of Isaiah's Servant (slaughtered without resisting) and of the Son (on the throne). When we climb back toward Isaiah 53, the Exodus and Moriah, we will already know where each figure leads. Reading the Bible from Christ is not cheating with the order of the pages: it is reading a story whose hero we finally know."],
+  deep:[
+  ["Revelation's word: arnion","The fourth Gospel said <i>amnos</i>; Revelation says <i>arnion</i> — twenty-eight times for Christ. It is the dominant title of the book, more frequent than “Christ” or “Lord”. Many hear in it a diminutive (“little lamb”): facing the monstrous beasts of the book, God conquers through what seems most fragile."],
+  ["Seven horns, seven eyes","The horn speaks of power (Daniel 7–8; Psalm 18:2) and the number seven of fullness; the seven eyes take up Zechariah 4:10 — “the eyes of Yahweh, which run back and forth through the whole earth” — applied to the Lamb as “the seven Spirits of God, sent out into all the earth”. The slain one is not a diminished survivor: fullness of power, of vision, of the Spirit."],
+  ["The litany of the Lamb","Revelation declines the title to the very end: the blood of the Lamb (7:14; 12:11), the wrath of the Lamb (6:16), the Lamb's book of life (13:8; 21:27), the wedding of the Lamb (19:7-9), the bride of the Lamb (21:9), the throne “of God and of the Lamb” (22:1-3), the Lamb as the lamp of the city (21:23). The last book of the Bible is, literally, the book of the Lamb."],
+  ["“Slain from the foundation of the world”","Revelation 13:8 can be read in two ways, depending on whether “from the foundation of the world” qualifies the writing of the names in the book of life (as in 17:8) or the slaying of the Lamb. Both readings are ancient, and both say something true: salvation is not God's plan B — the offering was in his heart before the beginning."],
+  ["A single worship","In verse 13 the praise rises “to him who sits on the throne AND to the Lamb” — one doxology for both, and the four living creatures answer “Amen”. In a fiercely monotheistic book, where the angel twice refuses to be worshipped (19:10; 22:9), the Lamb is worshipped without reserve. This joins our thread “One God — Father, Son, Spirit”: Isaiah 44:6 → Revelation 22:13."],
+  ["The parody that confirms","In chapter 13 a beast rises with “two horns like a lamb”, but it “spoke like a dragon” (13:11). Evil itself imitates the Lamb: the counterfeit is the involuntary homage paid to the original."]],
+  nlbl:"Next step",ntitle:"The Cross — John 19",
+  ntext:"Let us come down from heaven to Golgotha: the hour, the hyssop, the unbroken bones, and the “It is finished” that ties the thread.",
+  foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>“The thread of the Lamb” — step 2 of 7."
+},
+ar:{
+  dir:"rtl",brand:"حَمَلُ الله",
+  steplbl:"خيط الحمل · الخطوة ٢ من ٧",
+  steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
+  eyebrow:"رؤيا ٥: ٦ · بَطْمُس، نحو سنة ٩٥ م",
+  verse:"«فَإِذَا فِي وَسَطِ الْعَرْشِ <span class='g'>خَرُوفٌ قَائِمٌ كَأَنَّهُ مَذْبُوحٌ</span>.»",
+  scene:"في منفاه في جزيرة بطمس يرى يوحنا السماءَ مفتوحة. في يمين الله سِفرٌ مختوم بسبعة ختوم — ولا أحد في أي مكان مستحقٌّ أن يفتحه. فيبكي يوحنا. وهنا تبدأ أعظم مفاجأة في الكتاب المقدس.",
+  s1:"الخلاصة · ٩٠ ثانية",s2:"للفهم",s3:"للتعمّق",
+  s1p:[
+  "يعزّي أحدُ الشيوخ يوحنا: «لاَ تَبْكِ. هُوَذَا قَدْ غَلَبَ الأَسَدُ الَّذِي مِنْ سِبْطِ يَهُوذَا» (رؤيا ٥: ٥). الأسد: الصورة الملكية الموعودة ليهوذا منذ تكوين ٤٩. فيلتفت يوحنا لكي يرى أسدًا.",
+  "فيرى <span class='g'>خروفًا</span> — قائمًا، وعليه آثار الذبح. ما <em>سمعه</em> (الأسد الغالب) وما <em>رآه</em> (الخروف المذبوح) شخصٌ واحد بعينه. هذه هي المفاجأة المركزية في سفر الرؤيا كلّه.",
+  "الرسالة في جملة واحدة: انتصار الله لا يشبه انتصاراتنا؛ إنه يحمل إلى الأبد آثارَ التقدمة. لهذا يبدأ هذا المسار من النهاية: فالنهاية هي التي تكشف معنى الخيط كلّه الذي سنتتبّعه راجعين."],
+  mental:"<b>الصورة التي تبقى:</b> الأذن تسمع أسدًا، والعين ترى خروفًا. الإيمان المسيحي كلّه في انقلاب تلك اللحظة.",
+  h1:"ثلاث كلمات تغيّر كلَّ شيء",
+  intro:"يصف النصُّ الخروفَ بثلاث سمات، وكلٌّ منها لاهوتٌ كامل:",
+  cards:[
+  ["رؤيا ٥: ٦","«قَائِمٌ»","الخروف ليس ممدَّدًا على مذبح: إنه واقف. الموت صار خلفه — إنها القيامة في كلمة واحدة.","المذبوح حيّ."],
+  ["رؤيا ٥: ٦","«كَأَنَّهُ مَذْبُوحٌ»","اليونانية تستعمل كلمة الذبائح نفسها. السماء لا تخفي الصليب بل تُظهره وتتوّجه. الآثار باقية، وقد تجلّت.","المجد لا يمحو التقدمة."],
+  ["رؤيا ٥: ٦، ١٣","«فِي وَسَطِ الْعَرْشِ»","الخروف ليس أمام العرش كضحية: إنه في المركز، وكلُّ خليقة ترفع إليه التسبيح المحفوظ لله وحده.","التقدمة على العرش."]],
+  h2:"«الترنيمة الجديدة»",
+  s2b:[
+  "حينئذ ترنّم السماء ترنيمةً لم تُرنَّم من قبل: «ذُبِحْتَ وَاشْتَرَيْتَنَا لِلهِ بِدَمِكَ مِنْ كُلِّ قَبِيلَةٍ وَلِسَانٍ وَشَعْبٍ وَأُمَّةٍ» (رؤيا ٥: ٩). حملُ خروج ١٢ أنقذ أمّةً واحدة؛ أما هذا فيفتدي من <span class='g'>كل</span> الأمم — وهو عينُ ما أعلنه يوحنا المعمدان: «خطية العالم».",
+  "وتتابع الترنيمة: «وَجَعَلْتَنَا لإِلهِنَا مُلُوكًا وَكَهَنَةً» (٥: ١٠) — فالدعوة المعطاة في سيناء (خروج ١٩: ٦) قد تمّت واتّسعت. وهكذا تلتئم حلقةُ الخيط."],
+  h3:"لماذا نبدأ من النهاية؟",
+  s2c:["لأن النهاية تصادق على الخيط. خروفُ الرؤيا يحمل ملامحَ حملِ الفصح (مذبوح)، وعبدِ إشعياء (يُساق ولا يقاوم)، والابنِ (على العرش). فحين نصعد راجعين نحو إشعياء ٥٣ والخروج والمريّا، سنعرف سلفًا إلى أين تقود كلُّ صورة. قراءة الكتاب انطلاقًا من المسيح ليست تحايلًا على ترتيب الصفحات: إنها قراءة قصةٍ عرفنا بطلها أخيرًا."],
+  deep:[
+  ["كلمة الرؤيا: أرنيون","الإنجيل الرابع قال <i>أمنوس</i>؛ أما الرؤيا فتقول <i>أرنيون</i> — ثماني وعشرين مرة للمسيح. إنه اللقب الغالب في السفر، أكثرُ ورودًا من «المسيح» و«الرب». ويسمع فيه كثيرون صيغةَ تصغير («الحمل الصغير»): أمام وحوش السفر الهائلة، يغلب اللهُ بما يبدو الأضعف."],
+  ["سبعة قرون وسبع أعين","القرنُ رمزُ القوة (دانيال ٧–٨؛ مزمور ١٨)، والسبعةُ رمزُ الكمال؛ والأعينُ السبع من زكريا ٤: ١٠ — «أَعْيُنُ الرَّبِّ الْجَائِلَةُ فِي الأَرْضِ كُلِّهَا» — مطبَّقةً على الخروف بوصفها «سبعة أرواح الله المرسَلة إلى كل الأرض». المذبوح ليس ناجيًا منقوصًا: كمالُ القوة، وكمالُ البصر، وكمالُ الروح."],
+  ["لازمة الخروف","تُصرّف الرؤيا اللقبَ حتى النهاية: دم الخروف (٧: ١٤؛ ١٢: ١١)، غضب الخروف (٦: ١٦)، سفر حياة الخروف (١٣: ٨؛ ٢١: ٢٧)، عرس الخروف (١٩: ٧-٩)، عروس الخروف (٢١: ٩)، عرش «الله والخروف» (٢٢: ١-٣)، والخروف سراجُ المدينة (٢١: ٢٣). آخرُ أسفار الكتاب هو، حرفيًا، سفرُ الخروف."],
+  ["«المذبوح منذ تأسيس العالم»","يمكن قراءة رؤيا ١٣: ٨ بطريقتين، بحسب ما إذا كانت عبارة «منذ تأسيس العالم» تعود على كتابة الأسماء في سفر الحياة (كما في ١٧: ٨) أو على ذبح الخروف. القراءتان قديمتان، وكلتاهما تقول حقًا: الخلاص ليس خطةَ الله البديلة — فالتقدمة كانت في قلبه قبل البدء."],
+  ["سجودٌ واحد","في الآية ١٣ يرتفع التسبيح «لِلْجَالِسِ عَلَى الْعَرْشِ وَلِلْخَرُوفِ» — تمجيدٌ واحد لكليهما، والحيواناتُ الأربعة تجيب «آمين». في سفرٍ شديد التوحيد، يرفض فيه الملاكُ السجودَ مرتين (١٩: ١٠؛ ٢٢: ٩)، يُسجَد للخروف بلا تحفّظ. وهذا يلتقي بخيطنا «إلهٌ واحد — الآب والابن والروح»: إشعياء ٤٤: ٦ → رؤيا ٢٢: ١٣."],
+  ["المحاكاة التي تشهد","في الأصحاح ١٣ يطلع وحشٌ «لَهُ قَرْنَانِ شِبْهُ خَرُوفٍ» لكنه «يَتَكَلَّمُ كَتِنِّينٍ» (١٣: ١١). الشرُّ نفسه يقلّد الخروف: والتزييفُ إكرامٌ غيرُ مقصود للأصل."]],
+  nlbl:"الخطوة التالية",ntitle:"الصليب — يوحنا ١٩",
+  ntext:"لننزل من السماء إلى الجلجثة: الساعة، والزوفا، والعظام التي لم تُكسر، و«قَدْ أُكْمِلَ» التي تعقد الخيط.",
+  foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٢ من ٧."
+}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;
+  document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('steplbl').textContent=c.steplbl;
+  const dots=document.getElementById('dots');dots.innerHTML="";
+  c.steps.forEach((s,i)=>{
+    if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
+    const d=document.createElement('div');d.className='dot'+(i===1?' on':'');
+    d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
+  });
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅰ</div><h2>${c.s1}</h2><div class="l"></div></div>
+    ${c.s1p.map(p=>`<p>${p}</p>`).join("")}
+    <div class="mental">${c.mental}</div>
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅱ</div><h2>${c.s2}</h2><div class="l"></div></div>
+    <h3 class="sub">${c.h1}</h3>
+    <p>${c.intro}</p>
+    <div class="cards">${c.cards.map(k=>`
+      <div class="cardE"><div class="cref">${k[0]}</div><h4>${k[1]}</h4><p>${k[2]}</p><span class="key">${k[3]}</span></div>`).join("")}
+    </div>
+    <h3 class="sub">${c.h2}</h3>
+    ${c.s2b.map(p=>`<p>${p}</p>`).join("")}
+    <h3 class="sub">${c.h3}</h3>
+    ${c.s2c.map(p=>`<p>${p}</p>`).join("")}
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#">
+    <div class="nlbl">${c.nlbl}</div>
+    <h3>${c.ntitle}</h3>
+    <p>${c.ntext}</p>
+  </a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

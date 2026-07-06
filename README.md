@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morija — Genèse 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;
+    --gold:#d3a94f;--line:#23273a;--crimson:#a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,-apple-system,sans-serif}
+  html[dir="rtl"] .ui{font-family:'Amiri',system-ui,sans-serif}
+
+  /* top bar */
+  .top{
+    max-width:1060px;margin:0 auto;padding:18px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{
+    font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    color:var(--muted);padding:6px 12px;cursor:pointer;
+  }
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .langs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* fil / étapes */
+  .thread{max-width:1060px;margin:26px auto 0;padding:0 20px}
+  .thread .lbl{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;text-align:center}
+  html[dir="rtl"] .thread .lbl{letter-spacing:.06em}
+  .dots{display:flex;justify-content:center;align-items:center;gap:0;margin-top:14px;flex-wrap:wrap}
+  .dot{display:flex;flex-direction:column;align-items:center;width:86px}
+  .dot .pt{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
+  .dot.on .pt{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(211,169,79,.6)}
+  .dot .nm{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted);margin-top:7px;text-align:center;line-height:1.3}
+  html[dir="rtl"] .dot .nm{font-size:11px}
+  .dot.on .nm{color:var(--gold)}
+  .dots .seg{height:1px;width:34px;background:var(--line);margin-bottom:22px}
+
+  /* hero */
+  .hero{max-width:820px;margin:0 auto;padding:58px 22px 30px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:15px}
+  .verse{font-size:clamp(30px,6vw,54px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:600px;margin:26px auto 0;color:var(--muted);font-size:16px}
+
+  /* strates */
+  main{max-width:820px;margin:0 auto;padding:10px 22px 70px}
+  .strate{margin-top:54px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .snum{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:18px;flex:none;
+  }
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .strate p{font-size:17.5px;margin-bottom:16px}
+  .strate p .g{color:var(--gold)}
+
+  .mental{
+    border:1px solid var(--line);border-inline-start:3px solid var(--gold);
+    background:var(--bg2);border-radius:0 10px 10px 0;
+    padding:18px 22px;margin-top:8px;font-size:16.5px;
+  }
+  html[dir="rtl"] .mental{border-radius:10px 0 0 10px}
+  .mental b{color:var(--gold);font-weight:normal}
+
+  h3.sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:26px;margin:34px 0 12px}
+  html[dir="rtl"] h3.sub{font-family:'Amiri',serif;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .cardE{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .cardE .cref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  html[dir="rtl"] .cardE .cref{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .cardE h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  html[dir="rtl"] .cardE h4{font-family:'Amiri',serif}
+  .cardE p{font-size:14.5px;color:#c6c0b2;margin:0}
+  .cardE .key{display:block;margin-top:10px;color:var(--gold);font-style:italic;font-size:14.5px}
+
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{
+    cursor:pointer;list-style:none;padding:16px 20px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+
+  .next{
+    margin-top:60px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(135deg,var(--bg2),#171426);
+    padding:28px;display:block;text-decoration:none;color:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px;margin:0}
+
+  footer{max-width:820px;margin:0 auto 46px;padding:0 22px;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line);padding-top:22px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.strate,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="thread">
+  <div class="lbl" id="steplbl"></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+const C={
+fr:{
+  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  steplbl:"Le fil de l'Agneau · étape 6 sur 7",
+  steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
+  eyebrow:"Genèse 22 · Pays de Morija, âge des patriarches (~XIXᵉ s. av. J.-C.) — le récit que la tradition juive appelle l'Aqédah, « la ligature » d'Isaac",
+  verse:"« Mon fils, <span class='g'>Dieu se pourvoira lui-même de l'agneau</span>. »",
+  scene:"Trois jours de marche. Un père, un fils, du bois, du feu, un couteau — et pas d'agneau. Isaac pose la seule question du récit : « où est l'agneau ? ». La réponse d'Abraham est la phrase la plus lourde d'avenir de l'Ancien Testament.",
+  s1:"L'essentiel · 90 secondes",s2:"Comprendre",s3:"Aller plus loin",
+  s1p:[
+  "Dieu éprouve Abraham : « prends ton fils, ton unique, celui que tu aimes ». Le récit est d'une sobriété totale — pas un mot des sentiments — et chaque détail compte : le bois chargé sur le fils, le père et le fils qui « marchent ensemble », la question laissée en suspens.",
+  "Au sommet, la main est arrêtée : « n'avance pas ta main sur l'enfant ». Un bélier retenu dans un buisson est offert « <span class='g'>à la place de son fils</span> » (22:13). C'est la première fois que la Bible montre, en récit, la substitution : un autre meurt à ma place.",
+  "Abraham nomme le lieu « L'Éternel-verra » (<i>Yhwh-Yireh</i>) — « d'où l'on dit aujourd'hui : à la montagne de l'Éternel, il sera pourvu » (22:14). Le récit lui-même se sait inachevé : il attend quelque chose sur cette montagne."],
+  mental:"<b>L'image à retenir :</b> le fils qui monte la colline, le bois sur le dos. Deux mille ans plus tard, sur la même hauteur, la scène se rejouera — et cette fois, la main ne sera pas retenue.",
+  h1:"Trois échos que le Nouveau Testament entend",
+  intro:"Trois traits du récit, trois versets qui les attendent :",
+  cards:[
+  ["Genèse 22:2 → Jean 3:16","« Ton fils, ton unique, que tu aimes »","Première apparition du verbe « aimer » dans la Bible : un père et son fils. Jean reprend la formule : « Dieu a tant aimé le monde qu'il a donné son Fils unique ». Ce que Dieu n'a pas exigé d'Abraham, il l'a donné lui-même.","Le vocabulaire de Jean 3:16 naît ici."],
+  ["Genèse 22:6 → Jean 19:17","Le fils porte le bois","« Abraham prit le bois de l'holocauste et le chargea sur Isaac, son fils » — « Jésus, portant sa croix, arriva au lieu du Crâne ». Isaac monte librement, en silence : il n'est pas une victime traînée, il marche « ensemble » avec son père.","Deux montées, un même geste."],
+  ["Genèse 22:13 → Romains 8:32","Le substitut","Le bélier meurt « à la place de son fils ». Paul renverse la scène : Dieu « n'a point épargné son propre Fils, mais l'a livré pour nous tous » — et son verbe « ne pas épargner » reprend, dans la Bible grecque, le « tu n'as pas épargné ton fils » de Genèse 22:12.","Sur Morija, Dieu épargne ; au Calvaire, il n'épargne pas."]],
+  h2:"« Dieu se pourvoira lui-même »",
+  s2b:[
+  "La réponse d'Abraham (22:8) est volontairement ouverte : <i>Elohim yireh-lo ha-seh</i> — « Dieu verra pour lui l'agneau ». Sur le moment, c'est une confiance ; après coup, c'est une prophétie. Le bélier de Morija répond pour un matin ; « l'Agneau <span class='g'>de Dieu</span> » (Jean 1:29) répond pour toujours — le génitif de Jean est la réponse exacte à la promesse d'Abraham.",
+  "Et le lieu insiste : « la montagne de l'Éternel », où « il sera pourvu » (22:14). Or 2 Chroniques 3:1 identifie Morija à la colline du Temple de Jérusalem. Le fil géographique rejoint le fil théologique."],
+  h3:"Ce que ce récit ne dit pas",
+  s2c:["Précision indispensable : la Bible interdit expressément le sacrifice d'enfant (Lévitique 18:21 ; Jérémie 19:5 — « ce que je n'ai point commandé, et qui ne m'est point monté au cœur »). Genèse 22 n'est pas la légitimation d'un tel acte : c'en est l'arrêt définitif, mis en récit. L'épreuve révèle la confiance d'Abraham, et Dieu y répond en fournissant lui-même la victime. Le récit enseigne la substitution — jamais l'immolation des fils."],
+  deep:[
+  ["L'Aqédah dans la tradition juive","La « ligature d'Isaac » a nourri une méditation juive immense : les targums prêtent à Isaac un consentement adulte, et la tradition associe l'Aqédah à la Pâque et au son du chofar (la corne de bélier). G. Vermes a montré l'ancienneté de ces lectures. Pour le dialogue : la lecture « sacrificielle » de Genèse 22 est juive avant d'être chrétienne."],
+  ["Hébreux 11:19 : la logique de résurrection","« Abraham estimait que Dieu est puissant, même pour ressusciter d'entre les morts ; aussi le recouvra-t-il par une sorte de figure. » Le NT lit les trois jours de marche (22:4) comme un deuil traversé : pour Abraham, Isaac était déjà remis à Dieu ; au « troisième jour », il le retrouve. La typologie n'est pas plaquée sur le texte : elle est écrite dans Hébreux."],
+  ["Le silence d'Isaac","Isaac parle une fois — « où est l'agneau ? » — puis se tait : porteur du bois, lié sans résistance rapportée. Isaïe dira du Serviteur : « il n'a point ouvert la bouche » (53:7). Le Fil Rouge relie ces silences sans forcer les textes : la ressemblance est dans le récit lui-même."],
+  ["Et le Coran ?","La sourate 37 raconte l'épreuve d'Abraham et conclut : « Nous l'avons racheté par une immolation grandiose » (37:107). Le texte coranique affirme donc, lui aussi : Dieu a fourni un substitut pour épargner le fils. Point de contact précieux pour le « chemin du chercheur » — la question ouverte devient : de quelle immolation « grandiose » s'agit-il, et que préfigurait-elle ? (Le nom du fils n'est pas donné dans ce passage ; nous le signalons honnêtement.)"],
+  ["Yhwh-Yireh, le nom qui attend","Le nom donné au lieu (22:14) est un futur : « il sera pourvu ». La Genèse laisse volontairement la promesse ouverte, comme une porte entrebâillée. Notre parcours étant descendant, vous connaissez déjà la réponse — c'est toute la force pédagogique de lire Morija après Golgotha."]],
+  nlbl:"Étape suivante",ntitle:"Le commencement — Genèse 3–4",
+  ntext:"Dernière étape, la plus ancienne : la promesse plantée le jour même de la chute, et la première offrande agréée.",
+  foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Parcours « Le fil de l'Agneau » — étape 6 sur 7."
+},
+en:{
+  dir:"ltr",brand:"THE LAMB OF GOD",
+  steplbl:"The thread of the Lamb · step 6 of 7",
+  steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
+  eyebrow:"Genesis 22 · Land of Moriah, age of the patriarchs (c. 19th century BC) — the account Jewish tradition calls the Akedah, “the binding” of Isaac",
+  verse:"“<span class='g'>God will provide himself the lamb</span>, my son.”",
+  scene:"Three days' walk. A father, a son, wood, fire, a knife — and no lamb. Isaac asks the only question of the story: “where is the lamb?”. Abraham's answer is the most future-laden sentence in the Old Testament.",
+  s1:"The essentials · 90 seconds",s2:"Understand",s3:"Go deeper",
+  s1p:[
+  "God tests Abraham: “take your son, your only one, whom you love”. The story is utterly sober — not a word about feelings — and every detail counts: the wood loaded on the son, father and son “walking together”, the question left hanging.",
+  "At the summit, the hand is stopped: “don't lay your hand on the boy”. A ram caught in a thicket is offered “<span class='g'>in the place of his son</span>” (22:13). It is the first time the Bible shows substitution in a narrative: another dies in my place.",
+  "Abraham names the place “The LORD will provide” (<i>Yhwh-Yireh</i>) — “as it is said to this day: on the mountain of the LORD it will be provided” (22:14). The story knows itself unfinished: it is waiting for something on that mountain."],
+  mental:"<b>The image to keep:</b> the son climbing the hill, the wood on his back. Two thousand years later, on the same height, the scene will be replayed — and this time the hand will not be held back.",
+  h1:"Three echoes the New Testament hears",
+  intro:"Three traits of the story, three verses waiting for them:",
+  cards:[
+  ["Genesis 22:2 → John 3:16","“Your son, your only one, whom you love”","The first appearance of the verb “to love” in the Bible: a father and his son. John takes up the formula: “God so loved the world that he gave his one and only Son”. What God did not require of Abraham, he gave himself.","The vocabulary of John 3:16 is born here."],
+  ["Genesis 22:6 → John 19:17","The son carries the wood","“Abraham took the wood of the burnt offering and laid it on Isaac his son” — “Jesus, carrying his cross, went out to the place called the Skull”. Isaac climbs freely, in silence: not a victim dragged along, he walks “together” with his father.","Two ascents, one same gesture."],
+  ["Genesis 22:13 → Romans 8:32","The substitute","The ram dies “in the place of his son”. Paul reverses the scene: God “didn't spare his own Son, but delivered him up for us all” — and his verb “not to spare” echoes, in the Greek Bible, the “you have not spared your son” of Genesis 22:12.","On Moriah God spares; at Calvary he does not."]],
+  h2:"“God will provide himself”",
+  s2b:[
+  "Abraham's answer (22:8) is deliberately open: <i>Elohim yireh-lo ha-seh</i> — “God will see to the lamb for himself”. In the moment, it is trust; in hindsight, it is prophecy. The ram of Moriah answers for one morning; “the Lamb <span class='g'>of God</span>” (John 1:29) answers forever — John's genitive is the exact reply to Abraham's promise.",
+  "And the place insists: “the mountain of the LORD”, where “it will be provided” (22:14). Now 2 Chronicles 3:1 identifies Moriah with the Temple hill of Jerusalem. The geographical thread joins the theological one."],
+  h3:"What this story does not say",
+  s2c:["An indispensable clarification: the Bible expressly forbids child sacrifice (Leviticus 18:21; Jeremiah 19:5 — “which I didn't command, nor did it come into my mind”). Genesis 22 is not the legitimation of such an act: it is its definitive halt, told as a story. The trial reveals Abraham's trust, and God answers it by providing the victim himself. The story teaches substitution — never the immolation of sons."],
+  deep:[
+  ["The Akedah in Jewish tradition","The “binding of Isaac” fed an immense Jewish meditation: the targums lend Isaac an adult consent, and tradition links the Akedah to Passover and to the sound of the shofar (the ram's horn). G. Vermes showed the antiquity of these readings. For dialogue: the “sacrificial” reading of Genesis 22 is Jewish before it is Christian."],
+  ["Hebrews 11:19: the logic of resurrection","“Abraham concluded that God is able to raise up even from the dead; figuratively speaking, he also did receive him back.” The NT reads the three days' walk (22:4) as a mourning traversed: for Abraham, Isaac was already given over to God; on the “third day”, he receives him back. The typology is not forced onto the text: it is written in Hebrews."],
+  ["Isaac's silence","Isaac speaks once — “where is the lamb?” — then falls silent: bearer of the wood, bound without any recorded resistance. Isaiah will say of the Servant: “he didn't open his mouth” (53:7). The Scarlet Thread links these silences without forcing the texts: the resemblance lies in the narrative itself."],
+  ["And the Qur'an?","Surah 37 recounts Abraham's trial and concludes: “We ransomed him with a tremendous sacrifice” (37:107). So the Qur'anic text also affirms: God provided a substitute to spare the son. A precious point of contact for the “seeker's path” — the open question becomes: what was that “tremendous” sacrifice, and what did it prefigure? (The son's name is not given in that passage; we note it honestly.)"],
+  ["Yhwh-Yireh, the name that waits","The name given to the place (22:14) is a future: “it will be provided”. Genesis deliberately leaves the promise open, like a door ajar. Since our journey runs backwards, you already know the answer — that is the whole pedagogical force of reading Moriah after Golgotha."]],
+  nlbl:"Next step",ntitle:"The Beginning — Genesis 3–4",
+  ntext:"The last and oldest step: the promise planted on the very day of the fall, and the first accepted offering.",
+  foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>“The thread of the Lamb” — step 6 of 7."
+},
+ar:{
+  dir:"rtl",brand:"حَمَلُ الله",
+  steplbl:"خيط الحمل · الخطوة ٦ من ٧",
+  steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
+  eyebrow:"تكوين ٢٢ · أرض المريّا، عصر الآباء (نحو القرن التاسع عشر ق.م) — الرواية التي يسمّيها التقليد اليهودي «العَقيدة»: رَبْطُ إسحاق",
+  verse:"«<span class='g'>اَللهُ يَرَى لَهُ الْخَرُوفَ</span> يَا ابْنِي.»",
+  scene:"ثلاثة أيام من المسير. أبٌ، وابنٌ، وحطبٌ، ونارٌ، وسكّين — ولا حَمَل. يسأل إسحاق السؤالَ الوحيد في الرواية: «أين الخروف؟». وجوابُ إبراهيم هو الجملة الأثقل مستقبلًا في العهد القديم كلّه.",
+  s1:"الخلاصة · ٩٠ ثانية",s2:"للفهم",s3:"للتعمّق",
+  s1p:[
+  "يمتحن اللهُ إبراهيم: «خُذِ ابْنَكَ وَحِيدَكَ الَّذِي تُحِبُّهُ». الروايةُ في غاية الرصانة — لا كلمةَ واحدة عن المشاعر — وكلُّ تفصيل محسوب: الحطبُ الموضوع على الابن، والأبُ والابن «يذهبان كلاهما معًا»، والسؤالُ المعلَّق.",
+  "على القمة تُمسَك اليد: «لاَ تَمُدَّ يَدَكَ إِلَى الْغُلاَمِ». وكبشٌ ممسَكٌ في الغابة يُقدَّم «<span class='g'>عِوَضًا عَنِ ابْنِهِ</span>» (٢٢: ١٣). إنها المرةُ الأولى التي يُري فيها الكتابُ، في قصة، معنى البدل: آخَرُ يموت مكاني.",
+  "ويسمّي إبراهيمُ المكانَ «يهوه يِرأه» — الربُّ يرى — «حَتَّى إِنَّهُ يُقَالُ الْيَوْمَ: فِي جَبَلِ الرَّبِّ يُرَى» (٢٢: ١٤). الروايةُ نفسها تعرف أنها غيرُ مكتملة: إنها تنتظر شيئًا على ذلك الجبل."],
+  mental:"<b>الصورة التي تبقى:</b> الابنُ يصعد التلَّ والحطبُ على ظهره. بعد ألفي سنة، وعلى المرتفع نفسه، سيُعاد المشهد — وهذه المرةَ لن تُمسَك اليد.",
+  h1:"ثلاثة أصداء يسمعها العهد الجديد",
+  intro:"ثلاثة ملامح في الرواية، وثلاث آيات تنتظرها:",
+  cards:[
+  ["تكوين ٢٢: ٢ → يوحنا ٣: ١٦","«ابنك وحيدك الذي تحبه»","أولُ ظهور لفعل «أحبّ» في الكتاب المقدس: أبٌ وابنه. ويستعيد يوحنا الصيغة: «هكَذَا أَحَبَّ اللهُ الْعَالَمَ حَتَّى بَذَلَ ابْنَهُ الْوَحِيدَ». ما لم يطلبه اللهُ من إبراهيم في النهاية، بذله هو نفسُه.","هنا تُولد مفردات يوحنا ٣: ١٦."],
+  ["تكوين ٢٢: ٦ → يوحنا ١٩: ١٧","الابن يحمل الحطب","«فَأَخَذَ إِبْرَاهِيمُ حَطَبَ الْمُحْرَقَةِ وَوَضَعَهُ عَلَى إِسْحَاقَ ابْنِهِ» — «فَخَرَجَ وَهُوَ حَامِلٌ صَلِيبَهُ إِلَى الْمَوْضِعِ الَّذِي يُقَالُ لَهُ جُمْجُمَةُ». إسحاق يصعد بحرّية وصمت: ليس ضحيةً تُجَرّ، بل يمشي «معًا» مع أبيه.","صعودان، والإيماءة واحدة."],
+  ["تكوين ٢٢: ١٣ → رومية ٨: ٣٢","البديل","الكبش يموت «عِوَضًا عَنِ ابْنِهِ». وبولس يقلب المشهد: اللهُ «لَمْ يُشْفِقْ عَلَى ابْنِهِ، بَلْ بَذَلَهُ لأَجْلِنَا أَجْمَعِينَ» — وفعلُه «لم يُشفق» يردّد، في الترجمة اليونانية، قولَ تكوين ٢٢: ١٢: «لَمْ تُمْسِكِ ابْنَكَ».","في المريّا يُشفق الله؛ وفي الجلجثة لا يُشفق."]],
+  h2:"«اَللهُ يَرَى لَهُ»",
+  s2b:[
+  "جوابُ إبراهيم (٢٢: ٨) مفتوحٌ عمدًا: <i>إلوهيم يِرأه-لو هاسِّه</i> — «اللهُ يرى له الخروف». في لحظته كان ثقةً؛ وبعد وقوع الأمر صار نبوءة. كبشُ المريّا أجاب عن صباحٍ واحد؛ أما «حَمَلُ <span class='g'>اللهِ</span>» (يوحنا ١: ٢٩) فيجيب إلى الأبد — وإضافةُ يوحنا («حمل الله») هي الجوابُ الحرفي لوعد إبراهيم («الله يرى له»).",
+  "والمكانُ يلحّ: «جَبَلُ الرَّبِّ» حيث «يُرَى» (٢٢: ١٤). و٢ أخبار ٣: ١ يطابق بين المريّا وتلِّ الهيكل في أورشليم. الخيطُ الجغرافي يلتقي بالخيط اللاهوتي."],
+  h3:"ما لا تقوله هذه الرواية",
+  s2c:["توضيحٌ لا غنى عنه: الكتابُ المقدس يحرّم صراحةً ذبحَ الأولاد (لاويين ١٨: ٢١؛ إرميا ١٩: ٥ — «الَّذِي لَمْ أُوصِ وَلَمْ أَتَكَلَّمْ بِهِ وَلَمْ يَصْعَدْ عَلَى قَلْبِي»). تكوين ٢٢ ليس تشريعًا لهذا الفعل: بل هو إيقافُه النهائي، مرويًّا قصةً. الامتحانُ يكشف ثقةَ إبراهيم، واللهُ يجيبها بأن يقدّم هو نفسُه الذبيحة. الروايةُ تعلّم البدلَ — لا ذبحَ الأبناء أبدًا."],
+  deep:[
+  ["«العَقيدة» في التقليد اليهودي","غذّى «رَبْطُ إسحاق» تأملًا يهوديًا هائلًا: فالترجومات تنسب إلى إسحاق رضًى ناضجًا، والتقليدُ يربط العَقيدةَ بالفصح وبصوت الشوفار (قرن الكبش). وقد بيّن ج. فيرمس قِدَمَ هذه القراءات. للحوار: القراءةُ «الذبائحية» لتكوين ٢٢ يهوديةٌ قبل أن تكون مسيحية."],
+  ["عبرانيين ١١: ١٩: منطق القيامة","«إِذْ حَسِبَ أَنَّ اللهَ قَادِرٌ عَلَى الإِقَامَةِ مِنَ الأَمْوَاتِ أَيْضًا، الَّذِينَ مِنْهُمْ أَخَذَهُ أَيْضًا فِي مِثَال.» يقرأ العهدُ الجديد أيامَ المسير الثلاثة (٢٢: ٤) حِدادًا مُجتازًا: كان إسحاقُ عند إبراهيم قد سُلِّم لله؛ وفي «اليوم الثالث» استعاده. الرمزيةُ ليست مفروضةً على النص: إنها مكتوبةٌ في العبرانيين."],
+  ["صمت إسحاق","يتكلم إسحاق مرةً واحدة — «أين الخروف؟» — ثم يصمت: حاملَ الحطب، مربوطًا من دون مقاومةٍ مذكورة. وسيقول إشعياء عن العبد: «فَلَمْ يَفْتَحْ فَاهُ» (٥٣: ٧). يربط «الخيطُ الأحمر» بين هذه الأصمات من دون إكراه النصوص: فالشبهُ في الرواية نفسها."],
+  ["والقرآن؟","تروي سورةُ الصافات امتحانَ إبراهيم وتختم: «وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ» (٣٧: ١٠٧). فالنصُّ القرآني يؤكد هو أيضًا: اللهُ قدّم بديلًا لينجوَ الابن. نقطةُ التقاءٍ ثمينة لـ«طريق الباحث» — ويصير السؤالُ المفتوح: أيُّ «ذِبحٍ عظيم» هذا، وماذا كان يُنبئ؟ (اسمُ الابن غيرُ مذكور في ذلك المقطع؛ ونشير إلى ذلك بأمانة.)"],
+  ["«يهوه يرأه»: الاسم الذي ينتظر","الاسمُ المعطى للمكان (٢٢: ١٤) بصيغة مستقبل: «يُرَى» — سيُدبَّر. يترك سفرُ التكوين الوعدَ مفتوحًا عمدًا، كبابٍ موارب. ولأن مسارنا نازلٌ من المسيح، فأنت تعرف الجوابَ سلفًا — وتلك هي القوةُ التعليمية في قراءة المريّا بعد الجلجثة."]],
+  nlbl:"الخطوة التالية",ntitle:"البداية — تكوين ٣–٤",
+  ntext:"الخطوة الأخيرة والأقدم: الوعدُ المغروس يومَ السقوط نفسِه، وأولُ تقدمةٍ مقبولة.",
+  foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٦ من ٧."
+}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;
+  document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('steplbl').textContent=c.steplbl;
+  const dots=document.getElementById('dots');dots.innerHTML="";
+  c.steps.forEach((s,i)=>{
+    if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
+    const d=document.createElement('div');d.className='dot'+(i===5?' on':'');
+    d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
+  });
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅰ</div><h2>${c.s1}</h2><div class="l"></div></div>
+    ${c.s1p.map(p=>`<p>${p}</p>`).join("")}
+    <div class="mental">${c.mental}</div>
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅱ</div><h2>${c.s2}</h2><div class="l"></div></div>
+    <h3 class="sub">${c.h1}</h3>
+    <p>${c.intro}</p>
+    <div class="cards">${c.cards.map(k=>`
+      <div class="cardE"><div class="cref">${k[0]}</div><h4>${k[1]}</h4><p>${k[2]}</p><span class="key">${k[3]}</span></div>`).join("")}
+    </div>
+    <h3 class="sub">${c.h2}</h3>
+    ${c.s2b.map(p=>`<p>${p}</p>`).join("")}
+    <h3 class="sub">${c.h3}</h3>
+    ${c.s2c.map(p=>`<p>${p}</p>`).join("")}
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#">
+    <div class="nlbl">${c.nlbl}</div>
+    <h3>${c.ntitle}</h3>
+    <p>${c.ntext}</p>
+  </a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>
