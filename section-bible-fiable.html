@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Une Bible digne de confiance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Section · Une Bible digne de confiance",
+eyebrow:"Le socle du site — des faits datés et vérifiables, présentés sans triomphalisme",
+verse:"« Ta parole est <span class='g'>la vérité</span>. »",
+scene:"Emmaüs suppose une chose : que les textes expliqués soient bien antérieurs, et fidèlement transmis. Cette section pose quatre piliers — des manuscrits, un désert, des prophéties, un fil — avec des faits que chacun peut vérifier.",
+stations:[
+{ctx:"Pilier 1 · Les manuscrits",t:"Un texte préservé",img:"On ne restaure pas un texte antique avec la foi, mais avec des copies — et le Nouveau Testament en a plus que tout autre.",
+p:"Environ 5 800 manuscrits grecs du Nouveau Testament sont catalogués, auxquels s'ajoutent des milliers de copies anciennes en latin, syriaque ou copte, et des citations des Pères si nombreuses qu'elles permettraient à elles seules d'en reconstituer l'essentiel. Le plus ancien fragment connu (P52, un passage de Jean 18) est daté de la première moitié du IIᵉ siècle — quelques décennies après la rédaction ; les grands codex complets (Sinaiticus, Vaticanus) datent du IVᵉ. Pour la plupart des œuvres de l'Antiquité, on compte les copies en dizaines et l'écart en siècles.",
+o:["Ésaïe 40:8","L'herbe sèche, la fleur tombe ; mais la parole de notre Dieu subsiste éternellement."],
+n:["1 Pierre 1:25","Et cette parole est celle qui vous a été annoncée par l'Évangile."]},
+{ctx:"Pilier 2 · Qumrân, 1947",t:"La preuve par le désert",img:"Des bergers trouvent dans des grottes la bibliothèque qui répond d'avance à l'objection.",
+p:"Avant 1947, nos plus anciens manuscrits hébreux complets de l'Ancien Testament dataient du Moyen Âge. Les manuscrits de la mer Morte ont reculé la documentation d'un millénaire : le Grand rouleau d'Isaïe (1QIsaᵃ, copié vers 125 av. J.-C.) contient le livre entier — Isaïe 53 compris — avec des variantes mineures qui ne changent aucun trait du portrait. La transmission dont on doutait est devenue mesurable : mille ans de copie, un texte stable.",
+o:["Ésaïe 53:5 — rouleau de Qumrân, ~125 av. J.-C.","Il était blessé pour nos péchés… et c'est par ses meurtrissures que nous sommes guéris."],
+n:["Actes 8:35","Philippe, commençant par ce passage de l'Écriture, lui annonça la bonne nouvelle de Jésus."]},
+{ctx:"Pilier 3 · Les prophéties",t:"Des annonces datées, des accomplissements publics",img:"Un livre qui met lui-même sa crédibilité dans des prédictions vérifiables.",
+p:"Bethléhem nommée (Michée 5:1), le roi humble sur un âne (Zacharie 9:9), les trente pièces jetées au potier (11:12-13), le transpercé (12:10), l'agneau muet compté parmi les malfaiteurs (Isaïe 53) : des textes matériellement antérieurs — Qumrân pour l'hébreu, la Septante traduite en grec dès le IIIᵉ siècle av. J.-C. — à des événements publics. Isaïe en fait le critère de Dieu lui-même : « Annoncez ce qui arrivera » (41:22-23). Notre frise « annoncé / accompli » alignera douze cas, sources en main.",
+o:["Ésaïe 46:9-10","Je suis Dieu, et nul n'est semblable à moi. J'annonce dès le commencement ce qui doit arriver."],
+n:["Luc 24:44","Il faut que s'accomplisse tout ce qui est écrit de moi dans la loi de Moïse, dans les prophètes et dans les psaumes."]},
+{ctx:"Pilier 4 · Le fil unique",t:"Un seul fil sur quinze siècles",img:"66 livres, une quarantaine d'auteurs, trois langues, quinze siècles — et un seul héros.",
+p:"Bergers, rois, prêtres, pêcheurs, un médecin, un percepteur d'impôts ; du désert du Sinaï aux prisons de Rome ; sans aucun comité de rédaction. Et pourtant un fil unique, que notre diagramme du Fil Rouge rend visible et touchable : plus de cent correspondances éditorialisées ici, des dizaines de milliers de renvois recensés par la tradition. La cohérence n'est pas un slogan : c'est une carte.",
+o:["Genèse 3:15","Sa postérité t'écrasera la tête."],
+n:["Apocalypse 12:11","Ils l'ont vaincu à cause du sang de l'Agneau."]}],
+vh:"Quatre repères à retenir",vintro:"Les chiffres qui portent la section — chacun renvoie à une source publique :",
+verbs:["≈ 5 800<small>manuscrits grecs du NT catalogués</small>","IIᵉ siècle<small>P52, plus ancien fragment de Jean</small>","125 av. J.-C.<small>rouleau d'Isaïe complet (Qumrân)</small>","IIIᵉ s. av. J.-C.<small>Septante : les prophéties déjà traduites</small>"],
+vp:"Aucun de ces repères n'est un argument d'autorité : le Sinaiticus est numérisé et consultable en ligne, le rouleau d'Isaïe est exposé à Jérusalem, les éditions critiques publient toutes les variantes. La position du site : <b>donner les faits, les dates et les sources — et laisser le lecteur juger</b>.",
+ch:"Notre cadre d'honnêteté",
+c1:["Ce que les faits établissent","Que les textes sont antérieurs aux événements qu'ils annoncent ; que leur transmission est massivement documentée et mesurable ; que les variantes de copie sont cataloguées, publiées, et qu'aucune ne touche un point de foi."],
+c2:["Ce que les textes affirment d'eux-mêmes","« Ta parole est la vérité » (Jean 17:17) · « Toute Écriture est inspirée de Dieu » (2 Timothée 3:16) · « La parole de notre Dieu subsiste éternellement » (Ésaïe 40:8). Nous citons ces affirmations pour ce qu'elles sont : le témoignage du livre sur lui-même."],
+c3:["Ce que nous ne prétendons pas","Les manuscrits prouvent la fidélité de la transmission, non l'inspiration ; les prophéties établissent une antériorité troublante, non une contrainte. La dernière marche — croire — reste une réponse libre. Une référence honnête le dit ; c'est même ce qui la rend crédible."],
+dh:"Réponses aux questions honnêtes",
+deep:[
+["« La Bible a-t-elle été falsifiée ? » (taḥrīf)","L'objection suppose une altération après coup. Or les manuscrits antérieurs à l'islam existent et se consultent : Qumrân (avant J.-C.) pour l'Ancien Testament, P52 et les grands codex du IVᵉ siècle pour le Nouveau — le Sinaiticus est intégralement numérisé en ligne. Falsifier « la Bible » aurait exigé de corriger à l'identique des milliers de copies dispersées sur trois continents, en plusieurs langues, détenues par des communautés souvent rivales. Le Coran lui-même renvoie ses contemporains à la Torah et à l'Évangile alors en circulation (sourates 5:47 ; 10:94). Les variantes réelles entre manuscrits existent — elles sont cataloguées et publiées, et aucune ne touche un point de foi."],
+["« Qui a choisi les livres, et quand ? »","Les Églises n'ont pas créé le canon par décret tardif : elles ont reconnu des livres déjà reçus. Les quatre évangiles et les lettres de Paul circulent en collections dès le IIᵉ siècle — une liste comme le fragment de Muratori (souvent daté vers 170) en témoigne — et les listes du IVᵉ siècle (Athanase, 367) entérinent un usage établi. Critères constants : origine apostolique, réception universelle, cohérence avec la foi reçue. Les « évangiles » écartés (Thomas et autres) sont plus tardifs et d'un autre genre — une page en strate 3 leur sera consacrée, textes en main."],
+["« Et les contradictions ? »","Distinguons trois choses. Les variantes de copie : cataloguées, mineures, publiées. Les différences de témoignage : quatre témoins ne racontent pas sous un seul angle — c'est un indice d'indépendance, pas de fraude ; des récits harmonisés au mot près seraient suspects. Les vraies difficultés : elles existent, nous les listons et les traitons une à une — l'heure de la crucifixion (Marc 15:25 / Jean 19:14) est déjà exposée à l'étape 3 du parcours. Une référence n'escamote pas ses dossiers difficiles : elle les ouvre."],
+["« Les traductions changent-elles le sens ? »","Traduire n'est pas altérer : les traductions modernes se font directement sur les manuscrits anciens, à partir d'éditions critiques publiques qui signalent chaque variante. C'est pourquoi ce site affiche systématiquement la référence de chaque citation — chacun peut comparer Segond, World English Bible, Van Dyck, ou remonter au grec et à l'hébreu en strate 3."],
+["« Pourquoi croire des témoins croyants ? »","Parce que leur témoignage s'expose : noms, lieux, dates, autorités citées, détails vérifiables — « celui qui l'a vu en a rendu témoignage » (Jean 19:35). Parce qu'ils n'y ont rien gagné que la persécution. Et parce que le cœur du message — mort, ensevelissement, résurrection, apparitions — est transmis par 1 Corinthiens 15:3-7 comme une tradition « reçue », formulée dans les années 30. On peut discuter leur conclusion ; on ne peut pas en faire une légende tardive."]],
+nlbl:"Repartir sur la route",ntitle:"Refaire le chemin d'Emmaüs",
+ntext:"Les textes sont antérieurs et fidèlement transmis — reste à les laisser expliquer « ce qui le concernait ». Le parcours de l'Agneau vous attend, en sept étapes.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Section « Une Bible digne de confiance » — page pivot ; frise des prophéties et page manuscrits à venir."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Section · A Bible worthy of trust",
+eyebrow:"The site's foundation — dated, verifiable facts, presented without triumphalism",
+verse:"“Your word is <span class='g'>truth</span>.”",
+scene:"Emmaus assumes one thing: that the texts explained are truly earlier, and faithfully transmitted. This section sets four pillars — manuscripts, a desert, prophecies, a thread — with facts anyone can check.",
+stations:[
+{ctx:"Pillar 1 · The manuscripts",t:"A preserved text",img:"You do not restore an ancient text with faith, but with copies — and the New Testament has more than any other.",
+p:"About 5,800 Greek manuscripts of the New Testament are catalogued, plus thousands of early copies in Latin, Syriac or Coptic, and quotations by the Fathers so numerous that they alone would allow most of it to be reconstructed. The oldest known fragment (P52, a passage of John 18) is dated to the first half of the 2nd century — a few decades after composition; the great complete codices (Sinaiticus, Vaticanus) date from the 4th. For most works of antiquity, the copies are counted in dozens and the gap in centuries.",
+o:["Isaiah 40:8","The grass withers, the flower fades; but the word of our God stands forever."],
+n:["1 Peter 1:25","This is the word of Good News which was preached to you."]},
+{ctx:"Pillar 2 · Qumran, 1947",t:"The proof from the desert",img:"Shepherds find in caves the library that answers the objection in advance.",
+p:"Before 1947, our oldest complete Hebrew manuscripts of the Old Testament dated from the Middle Ages. The Dead Sea Scrolls pushed the documentation back a thousand years: the Great Isaiah Scroll (1QIsaᵃ, copied around 125 BC) contains the whole book — Isaiah 53 included — with minor variants that change no trait of the portrait. The transmission people doubted became measurable: a thousand years of copying, a stable text.",
+o:["Isaiah 53:5 — Qumran scroll, c. 125 BC","He was wounded for our transgressions… and by his wounds we are healed."],
+n:["Acts 8:35","Philip, beginning from this Scripture, preached to him Jesus."]},
+{ctx:"Pillar 3 · The prophecies",t:"Dated announcements, public fulfilments",img:"A book that itself stakes its credibility on verifiable predictions.",
+p:"Bethlehem named (Micah 5:2), the humble king on a donkey (Zechariah 9:9), the thirty pieces thrown to the potter (11:12-13), the pierced one (12:10), the silent lamb numbered with transgressors (Isaiah 53): texts materially earlier — Qumran for the Hebrew, the Septuagint translated into Greek from the 3rd century BC — than public events. Isaiah makes it God's own criterion: “declare the things that are to come” (41:22-23). Our “announced / fulfilled” frieze will line up twelve cases, sources in hand.",
+o:["Isaiah 46:9-10","I am God, and there is none like me. I declare the end from the beginning."],
+n:["Luke 24:44","All things must be fulfilled which are written in the law of Moses, the prophets, and the psalms, concerning me."]},
+{ctx:"Pillar 4 · The single thread",t:"One thread across fifteen centuries",img:"66 books, some forty authors, three languages, fifteen centuries — and one hero.",
+p:"Shepherds, kings, priests, fishermen, a physician, a tax collector; from the Sinai desert to the prisons of Rome; with no editorial committee. And yet a single thread, which our Scarlet Thread diagram makes visible and touchable: more than a hundred curated correspondences here, tens of thousands of cross-references recorded by tradition. Coherence is not a slogan: it is a map.",
+o:["Genesis 3:15","He will bruise your head."],
+n:["Revelation 12:11","They overcame him because of the Lamb's blood."]}],
+vh:"Four figures to remember",vintro:"The numbers that carry this section — each points to a public source:",
+verbs:["≈ 5,800<small>catalogued Greek NT manuscripts</small>","2nd century<small>P52, oldest fragment of John</small>","125 BC<small>complete Isaiah scroll (Qumran)</small>","3rd c. BC<small>Septuagint: the prophecies already translated</small>"],
+vp:"None of these is an argument from authority: the Sinaiticus is digitized and viewable online, the Isaiah scroll is on display in Jerusalem, the critical editions publish every variant. The site's stance: <b>give the facts, the dates and the sources — and let the reader judge</b>.",
+ch:"Our framework of honesty",
+c1:["What the facts establish","That the texts predate the events they announce; that their transmission is massively documented and measurable; that the copying variants are catalogued, published, and that none touches a point of faith."],
+c2:["What the texts claim about themselves","“Your word is truth” (John 17:17) · “Every Scripture is God-breathed” (2 Timothy 3:16) · “The word of our God stands forever” (Isaiah 40:8). We quote these claims for what they are: the book's testimony about itself."],
+c3:["What we do not claim","Manuscripts prove the faithfulness of transmission, not inspiration; prophecies establish a troubling priority, not a compulsion. The last step — believing — remains a free response. An honest reference says so; that is precisely what makes it credible."],
+dh:"Answers to the honest questions",
+deep:[
+["“Has the Bible been falsified?” (taḥrīf)","The objection assumes an alteration after the fact. But the manuscripts earlier than Islam exist and can be consulted: Qumran (before Christ) for the Old Testament, P52 and the great 4th-century codices for the New — the Sinaiticus is fully digitized online. Falsifying “the Bible” would have required correcting, identically, thousands of copies scattered over three continents, in several languages, held by often rival communities. The Qur'an itself refers its contemporaries to the Torah and the Gospel then in circulation (surahs 5:47; 10:94). Real variants between manuscripts exist — they are catalogued and published, and none touches a point of faith."],
+["“Who chose the books, and when?”","The churches did not create the canon by late decree: they recognized books already received. The four Gospels and Paul's letters circulate as collections from the 2nd century — a list like the Muratorian fragment (often dated around 170) bears witness — and the 4th-century lists (Athanasius, 367) ratify an established usage. Constant criteria: apostolic origin, universal reception, coherence with the received faith. The discarded “gospels” (Thomas and others) are later and of another kind — a layer-3 page will examine them, texts in hand."],
+["“What about the contradictions?”","Let us distinguish three things. Copying variants: catalogued, minor, published. Differences of testimony: four witnesses do not narrate from a single angle — a sign of independence, not fraud; word-for-word harmonized accounts would be suspicious. Real difficulties: they exist, we list them and treat them one by one — the hour of the crucifixion (Mark 15:25 / John 19:14) is already set out at step 3 of the journey. A reference does not hide its hard files: it opens them."],
+["“Do translations change the meaning?”","Translating is not altering: modern translations are made directly from the ancient manuscripts, from public critical editions that flag every variant. That is why this site always displays the reference of each quotation — anyone can compare Segond, the World English Bible, Van Dyck, or go back to the Greek and Hebrew in layer 3."],
+["“Why trust believing witnesses?”","Because their testimony exposes itself: names, places, dates, authorities cited, checkable details — “he who has seen has testified” (John 19:35). Because they gained nothing by it but persecution. And because the heart of the message — death, burial, resurrection, appearances — is handed on in 1 Corinthians 15:3-7 as a “received” tradition, formulated in the 30s. One may dispute their conclusion; one cannot make it a late legend."]],
+nlbl:"Back on the road",ntitle:"Walk the Emmaus road again",
+ntext:"The texts are earlier and faithfully transmitted — it remains to let them explain “the things concerning himself”. The journey of the Lamb awaits, in seven steps.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Section “A Bible worthy of trust” — pivot page; prophecy frieze and manuscripts page to come."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"قسم · كتابٌ جدير بالثقة",
+eyebrow:"أساس الموقع — وقائع مؤرَّخة يمكن التحقق منها، تُعرَض بلا تباهٍ",
+verse:"«كَلاَمُكَ هُوَ <span class='g'>حَقٌّ</span>.»",
+scene:"درسُ عمواس يفترض أمرًا واحدًا: أن النصوصَ المشروحة سابقةٌ فعلًا، ومنقولةٌ بأمانة. يقيم هذا القسمُ أربعةَ أعمدة — مخطوطات، وصحراء، ونبوءات، وخيط — بوقائعَ يستطيع كلُّ أحدٍ فحصَها.",
+stations:[
+{ctx:"العمود ١ · المخطوطات",t:"نصٌّ محفوظ",img:"لا يُستعاد نصٌّ قديم بالإيمان بل بالنسخ — وللعهد الجديد منها أكثر من أي كتاب آخر.",
+p:"نحو ٥٨٠٠ مخطوطة يونانية للعهد الجديد مفهرسة، تُضاف إليها آلافُ النسخ القديمة باللاتينية والسريانية والقبطية، واقتباساتُ الآباء التي تكفي وحدها لإعادة بناء معظم النص. أقدمُ قصاصة معروفة (البردية P52، مقطع من يوحنا ١٨) مؤرَّخة في النصف الأول من القرن الثاني — بعد التدوين بعقودٍ قليلة؛ والمجلّدان الكاملان الكبيران (السينائية والفاتيكانية) من القرن الرابع. أما معظمُ مؤلفات العالم القديم فنسخُها تُعَدّ بالعشرات والفجوةُ بالقرون.",
+o:["إشعياء ٤٠: ٨","يَبِسَ الْعُشْبُ، ذَبُلَ الزَّهْرُ، وَأَمَّا كَلِمَةُ إِلهِنَا فَتَثْبُتُ إِلَى الأَبَدِ."],
+n:["١ بطرس ١: ٢٥","وَهذِهِ هِيَ الْكَلِمَةُ الَّتِي بُشِّرْتُمْ بِهَا."]},
+{ctx:"العمود ٢ · قمران، ١٩٤٧",t:"البرهان الآتي من الصحراء",img:"رعاةٌ يجدون في كهوفٍ المكتبةَ التي تجيب الاعتراضَ سلفًا.",
+p:"قبل سنة ١٩٤٧ كانت أقدمُ مخطوطاتنا العبرية الكاملة للعهد القديم من القرون الوسطى. ثم جاءت مخطوطاتُ البحر الميت فأرجعت التوثيقَ ألفَ سنة: دَرْجُ إشعياء الكبير (نُسخ نحو ١٢٥ ق.م) يحوي السفرَ كاملًا — ومنه إشعياء ٥٣ — بفوارقَ طفيفة لا تغيّر ملمحًا واحدًا من الصورة. النقلُ الذي شُكَّ فيه صار قابلًا للقياس: ألفُ سنة من النسخ، ونصٌّ ثابت.",
+o:["إشعياء ٥٣: ٥ — دَرج قمران، نحو ١٢٥ ق.م","وَهُوَ مَجْرُوحٌ لأَجْلِ مَعَاصِينَا... وَبِحُبُرِهِ شُفِينَا."],
+n:["أعمال ٨: ٣٥","فَابْتَدَأَ فِيلُبُّسُ مِنْ هذَا الْكِتَابِ وَبَشَّرَهُ بِيَسُوعَ."]},
+{ctx:"العمود ٣ · النبوءات",t:"إعلاناتٌ مؤرَّخة، وإتماماتٌ علنية",img:"كتابٌ يضع هو نفسُه مصداقيتَه في تنبؤاتٍ قابلة للفحص.",
+p:"بيتُ لحم مسمّاةً (ميخا ٥: ٢)، والملكُ الوديع على أتان (زكريا ٩: ٩)، والثلاثون من الفضة المطروحة إلى الفخاري (١١: ١٢-١٣)، والمطعون (١٢: ١٠)، والحملُ الصامت المُحصى مع أثمة (إشعياء ٥٣): نصوصٌ سابقةٌ ماديًا — قمران للعبرية، والسبعينية المترجَمة إلى اليونانية منذ القرن الثالث ق.م — لأحداثٍ علنية. وإشعياء يجعل ذلك معيارَ الله نفسِه: «أَخْبِرُوا بِالآتِيَاتِ» (٤١: ٢٢-٢٣). وسيصفّ شريطُنا «أُعلن / تمّ» اثنتي عشرة حالة، والمصادرُ في اليد.",
+o:["إشعياء ٤٦: ٩-١٠","أَنَا اللهُ وَلَيْسَ مِثْلِي. مُخْبِرٌ مُنْذُ الْبَدْءِ بِالأَخِيرِ."],
+n:["لوقا ٢٤: ٤٤","لاَ بُدَّ أَنْ يَتِمَّ جَمِيعُ مَا هُوَ مَكْتُوبٌ عَنِّي فِي نَامُوسِ مُوسَى وَالأَنْبِيَاءِ وَالْمَزَامِيرِ."]},
+{ctx:"العمود ٤ · الخيط الواحد",t:"خيطٌ واحد عبر خمسة عشر قرنًا",img:"٦٦ سفرًا، ونحو أربعين كاتبًا، وثلاث لغات، وخمسة عشر قرنًا — وبطلٌ واحد.",
+p:"رعاةٌ وملوك وكهنة وصيادون، وطبيبٌ وجابي ضرائب؛ من برّية سيناء إلى سجون رومية؛ ومن دون أي لجنة تحرير. ومع ذلك خيطٌ واحد يجعله مخططُ «الخيط الأحمر» مرئيًا وملموسًا: أكثر من مئة مطابقة محرَّرة هنا، وعشراتُ آلاف الإحالات التي رصدها التقليد. التماسكُ ليس شعارًا: إنه خريطة.",
+o:["تكوين ٣: ١٥","هُوَ يَسْحَقُ رَأْسَكِ."],
+n:["رؤيا ١٢: ١١","وَهُمْ غَلَبُوهُ بِدَمِ الْخَرُوفِ."]}],
+vh:"أربعة معالم تُحفَظ",vintro:"الأرقام التي يقوم عليها هذا القسم — وكلٌّ منها يحيل إلى مصدر علني:",
+verbs:["≈ ٥٨٠٠<small>مخطوطة يونانية مفهرسة للعهد الجديد</small>","القرن الثاني<small>P52: أقدم قصاصة من يوحنا</small>","١٢٥ ق.م<small>دَرج إشعياء الكامل (قمران)</small>","القرن ٣ ق.م<small>السبعينية: النبوءات مترجمةٌ سلفًا</small>"],
+vp:"ليس في هذه المعالم حجةُ سلطة: فالمخطوطة السينائية مرقمنةٌ ومتاحة على الإنترنت، ودَرجُ إشعياء معروضٌ في أورشليم، والطبعاتُ النقدية تنشر كلَّ الفوارق. موقفُ الموقع: <b>نقدّم الوقائعَ والتواريخَ والمصادر — ونترك للقارئ الحكم</b>.",
+ch:"إطارُ أمانتنا",
+c1:["ما تثبته الوقائع","أن النصوص سابقةٌ للأحداث التي تعلنها؛ وأن نقلَها موثَّقٌ توثيقًا هائلًا وقابلٌ للقياس؛ وأن فوارقَ النسخ مفهرسةٌ ومنشورة، وليس فيها ما يمسّ عقيدة."],
+c2:["ما تقوله النصوص عن نفسها","«كَلاَمُكَ هُوَ حَقٌّ» (يوحنا ١٧: ١٧) · «كُلُّ الْكِتَابِ هُوَ مُوحًى بِهِ مِنَ اللهِ» (٢ تيموثاوس ٣: ١٦) · «كَلِمَةُ إِلهِنَا تَثْبُتُ إِلَى الأَبَدِ» (إشعياء ٤٠: ٨). نقتبس هذه الشهادات على أنها ما هي: شهادةُ الكتاب عن نفسه."],
+c3:["ما لا ندّعيه","المخطوطاتُ تثبت أمانةَ النقل لا الوحيَ؛ والنبوءاتُ تثبت أسبقيةً مذهلة لا إكراهًا. الخطوةُ الأخيرة — أن تؤمن — تبقى جوابًا حرًّا. والمرجعُ الأمين يقول ذلك؛ بل هذا بالذات ما يجعله جديرًا بالثقة."],
+dh:"أجوبة الأسئلة الصادقة",
+deep:[
+["«هل حُرّف الكتاب المقدس؟» (التحريف)","الاعتراض يفترض تغييرًا لاحقًا. لكن المخطوطات السابقة للإسلام موجودةٌ ومتاحة للفحص: قمران (قبل الميلاد) للعهد القديم، وP52 ومجلّدات القرن الرابع الكبرى للعهد الجديد — والسينائية مرقمنةٌ بكاملها على الإنترنت. ولو أراد أحدٌ «تحريف الكتاب» للزمه أن يصحّح، بصورة متطابقة، آلافَ النسخ المبعثرة في ثلاث قارات، بلغاتٍ عدة، بأيدي جماعاتٍ كثيرًا ما كانت متنافسة. والقرآن نفسُه يحيل معاصريه إلى التوراة والإنجيل المتداولَين آنذاك (المائدة ٤٧؛ يونس ٩٤). أما الفوارقُ الحقيقية بين المخطوطات فموجودة — وهي مفهرسة ومنشورة، وليس فيها ما يمسّ عقيدة."],
+["«من اختار الأسفار، ومتى؟»","لم تُنشئ الكنائسُ القانونَ بمرسوم متأخر: بل اعترفت بأسفارٍ كانت مقبولةً أصلًا. فالأناجيلُ الأربعة ورسائلُ بولس تتداول مجموعاتٍ منذ القرن الثاني — وتشهد بذلك قائمةٌ كقصاصة موراتوري (تؤرَّخ غالبًا نحو ١٧٠) — وقوائمُ القرن الرابع (أثناسيوس، ٣٦٧) صادقت على استعمالٍ راسخ. والمعايير ثابتة: أصلٌ رسولي، وقبولٌ شامل، وانسجامٌ مع الإيمان المتسلَّم. أما «الأناجيل» المستبعَدة (توما وغيره) فمتأخرةٌ ومن جنسٍ آخر — وستُفرَد لها صفحةٌ في الطبقة الثالثة، والنصوصُ في اليد."],
+["«وماذا عن التناقضات؟»","لنميّز ثلاثة أمور. فوارقُ النسخ: مفهرسة، طفيفة، منشورة. واختلافاتُ الشهادة: أربعةُ شهود لا يروون من زاوية واحدة — وهذه علامةُ استقلال لا علامةُ تلفيق؛ ولو تطابقت الرواياتُ حرفًا بحرف لكانت هي المريبة. والصعوباتُ الحقيقية: موجودة، ونحن نعدّدها ونعالجها واحدةً واحدة — وساعةُ الصلب (مرقس ١٥: ٢٥ / يوحنا ١٩: ١٤) معروضةٌ منذ الآن في الخطوة ٣. المرجعُ لا يُخفي ملفاته الصعبة: بل يفتحها."],
+["«هل تغيّر الترجماتُ المعنى؟»","الترجمةُ ليست تغييرًا: فالترجمات الحديثة تُصنَع مباشرةً على المخطوطات القديمة، من طبعاتٍ نقدية علنية تشير إلى كل فارق. ولهذا يعرض الموقعُ دائمًا مرجعَ كلِّ اقتباس — وبوسع كل أحدٍ أن يقارن بين فانديك وسيجون وWEB، أو أن يرجع إلى اليونانية والعبرية في الطبقة الثالثة."],
+["«ولماذا نصدّق شهودًا مؤمنين؟»","لأن شهادتهم تعرّض نفسَها للفحص: أسماءٌ وأماكن وتواريخ وسلطاتٌ مذكورة وتفاصيلُ قابلة للتحقق — «وَالَّذِي عَايَنَ شَهِدَ» (يوحنا ١٩: ٣٥). ولأنهم لم يربحوا منها إلا الاضطهاد. ولأن قلبَ الرسالة — الموت والدفن والقيامة والظهورات — منقولٌ في ١ كورنثوس ١٥: ٣-٧ تقليدًا «مُتسلَّمًا» صيغ في ثلاثينيات القرن الأول. يمكن مناقشةُ خلاصتهم؛ أما جعلُها أسطورةً متأخرة فمستحيل."]],
+nlbl:"عودةٌ إلى الطريق",ntitle:"أعِد السير في طريق عمواس",
+ntext:"النصوصُ سابقةٌ ومنقولةٌ بأمانة — يبقى أن ندعَها تشرح «الأمور المختصة به». مسارُ الحمل بانتظارك، في سبع خطوات.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>قسم «كتاب جدير بالثقة» — صفحة محورية؛ شريط النبوءات وصفحة المخطوطات لاحقًا."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

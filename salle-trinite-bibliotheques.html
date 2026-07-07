@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La grande salle — Père, Fils, Esprit : les bibliothèques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b0d16;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;
+    --pere:#8fb8d8;--fils:#d3a94f;--esprit:#e8e2d0;--socle:#8b8fa3}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,serif;line-height:1.65;overflow-x:hidden}
+  html[dir="rtl"] body{font-family:'Amiri',serif;line-height:1.95}
+  .display{font-family:'Cormorant Garamond',serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,sans-serif}
+  .top{max-width:1180px;margin:0 auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  /* Entrée de la salle */
+  .hall{max-width:800px;margin:0 auto;padding:54px 22px 8px;text-align:center}
+  .kicker{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  html[dir="rtl"] .kicker{letter-spacing:.06em}
+  h1{font-size:clamp(30px,5.6vw,52px);line-height:1.1}
+  h1 .g{color:var(--gold)}
+  .lede{max-width:640px;margin:18px auto 0;color:var(--muted);font-size:16px}
+  /* Le socle : l'inscription gravée */
+  .stone{max-width:860px;margin:30px auto 0;padding:20px 26px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(180deg,#141727,#0e1120);text-align:center;position:relative}
+  .stone::before{content:"";position:absolute;top:-1px;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--socle),transparent)}
+  .stone .s1{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,3vw,25px);font-style:italic}
+  html[dir="rtl"] .stone .s1{font-family:'Amiri',serif;font-style:normal}
+  .stone .s2{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--socle);margin-top:8px}
+  html[dir="rtl"] .stone .s2{letter-spacing:.04em}
+  /* Le principe (bannière Torah/Injil) */
+  .principle{max-width:860px;margin:16px auto 0;padding:14px 22px;border:1px dashed color-mix(in srgb,var(--gold) 45%,transparent);
+    border-radius:12px;text-align:center;background:color-mix(in srgb,var(--gold) 4%,transparent)}
+  .principle p{font-size:15px;color:#d8d2c2}
+  .principle .g{color:var(--gold)}
+  /* Clarification "Fils" */
+  .clarify{max-width:860px;margin:22px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 2px}
+  @media(max-width:640px){.clarify{grid-template-columns:1fr}}
+  .cl{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--bg2)}
+  .cl .h{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .cl .h{letter-spacing:.04em}
+  .cl.no .h{color:#c97a7a}.cl.yes .h{color:#7cb47c}
+  .cl p{font-size:14px;color:#cfc9bb}
+  /* Portes des bibliothèques */
+  .doors{max-width:1100px;margin:34px auto 0;padding:0 18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.doors{grid-template-columns:1fr}}
+  .doorbtn{display:block;text-align:start;background:linear-gradient(165deg,var(--bg2),#0d1019);border:1px solid var(--line);
+    border-radius:14px;padding:20px 20px;cursor:pointer;color:var(--ink);transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+  .doorbtn:hover{transform:translateY(-3px);border-color:var(--dc)}
+  .doorbtn::after{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:var(--dc)}
+  .doorbtn .tag{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dc);margin-bottom:8px}
+  html[dir="rtl"] .doorbtn .tag{letter-spacing:.04em}
+  .doorbtn h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1.05}
+  html[dir="rtl"] .doorbtn h2{font-family:'Amiri',serif}
+  .doorbtn .cnt{font-family:system-ui,sans-serif;font-size:11.5px;color:var(--muted);margin-top:6px}
+  /* Bibliothèques */
+  .lib{max-width:1100px;margin:40px auto 0;padding:0 18px;scroll-margin-top:20px}
+  .libhead{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px;flex-wrap:wrap}
+  .libhead h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,4vw,34px);color:var(--lc)}
+  html[dir="rtl"] .libhead h2{font-family:'Amiri',serif}
+  .libhead .sub{color:var(--muted);font-size:14px;font-style:italic}
+  html[dir="rtl"] .libhead .sub{font-style:normal}
+  .shelf{margin-top:20px}
+  .shelf .st{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  html[dir="rtl"] .shelf .st{letter-spacing:.05em}
+  .shelf .st::after{content:"";flex:1;height:1px;background:var(--line)}
+  .books{display:flex;flex-wrap:wrap;gap:8px}
+  .book{font-family:system-ui,sans-serif;font-size:12.5px;padding:9px 14px;border:1px solid var(--line);border-radius:8px;
+    background:#0e1120;color:#cfc9bb;cursor:pointer;transition:border-color .15s,background .15s;border-inline-start:3px solid var(--lc)}
+  .book:hover{border-color:var(--lc)}
+  .book.active{background:color-mix(in srgb,var(--lc) 14%,#0e1120);color:var(--ink);border-color:var(--lc)}
+  .book.star{box-shadow:0 0 0 1px color-mix(in srgb,var(--gold) 55%,transparent)}
+  /* Lutrin (panneau de lecture) */
+  .lectern{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);padding:22px 26px;position:relative;overflow:hidden;display:none}
+  .lectern.show{display:block;animation:fadeup .35s ease}
+  @keyframes fadeup{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .lectern::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:var(--lc)}
+  .lectern .ref{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lc)}
+  html[dir="rtl"] .lectern .ref{letter-spacing:.03em}
+  .lectern .verse{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,3vw,25px);font-style:italic;line-height:1.4;margin-top:8px}
+  html[dir="rtl"] .lectern .verse{font-family:'Amiri',serif;font-style:normal}
+  .lectern .note{color:var(--muted);font-size:14.5px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  /* Porte d'Abraham */
+  .abradoor{max-width:1100px;margin:26px auto 0;padding:0 18px}
+  .abrain{border:1px solid color-mix(in srgb,var(--gold) 50%,transparent);border-radius:14px;padding:20px 24px;
+    background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 7%,transparent),transparent);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .abrain .ic{font-size:26px}
+  .abrain .t{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  html[dir="rtl"] .abrain .t{font-family:'Amiri',serif}
+  .abrain p{color:#cfc9bb;font-size:14.5px;flex:1;min-width:260px}
+  /* Parcours guidé + pied */
+  .guided{max-width:860px;margin:40px auto 0;padding:20px 24px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .guided .t{font-family:'Cormorant Garamond',serif;font-size:21px}
+  html[dir="rtl"] .guided .t{font-family:'Amiri',serif}
+  .guided p{color:var(--muted);font-size:13.5px}
+  .guided a{font-family:system-ui,sans-serif;font-size:13px;background:var(--gold);color:#141018;border-radius:8px;padding:11px 18px;text-decoration:none;font-weight:600;white-space:nowrap}
+  footer{max-width:860px;margin:38px auto 48px;padding:22px 22px 0;border-top:1px solid var(--line);text-align:center;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<section class="hall">
+  <div class="kicker" id="kicker"></div>
+  <h1 class="display" id="title"></h1>
+  <p class="lede" id="lede"></p>
+</section>
+
+<div class="stone">
+  <div class="s1 display" id="stone1"></div>
+  <div class="s2" id="stone2"></div>
+</div>
+
+<div class="principle"><p id="principle"></p></div>
+
+<div class="clarify">
+  <div class="cl no"><div class="h" id="clnoh"></div><p id="clno"></p></div>
+  <div class="cl yes"><div class="h" id="clyesh"></div><p id="clyes"></p></div>
+</div>
+
+<div class="doors" id="doors"></div>
+
+<div id="libs"></div>
+
+<div class="abradoor"><div class="abrain">
+  <div class="ic">🚪</div>
+  <div style="flex:1;min-width:260px"><div class="t" id="abrat"></div><p id="abrap"></p></div>
+</div></div>
+
+<div class="guided">
+  <div><div class="t" id="guidt"></div><p id="guidp"></p></div>
+  <a href="salle-trinite.html" id="guida"></a>
+</div>
+
+<footer id="foot"></footer>
+
+<script>
+const LC={pere:"var(--pere)",fils:"var(--fils)",esprit:"var(--esprit)"};
+const T={
+fr:{dir:"ltr",brand:"UN SEUL DIEU",
+ kicker:"La grande salle · trois bibliothèques",
+ title:"Le Père, le Fils, l'Esprit : <span class='g'>ouvrons les livres</span>",
+ lede:"Cette salle ne contient pas d'arguments : elle contient des rayonnages. Chaque livre est un verset — de la Torah, des Psaumes, des Prophètes, de l'Évangile. Touchez un livre : il s'ouvre sur le lutrin. Lisez, et jugez sur pièces.",
+ stone1:"« Écoute, Israël : l'Éternel, notre Dieu, l'Éternel est UN. »",
+ stone2:"Deutéronome 6:4 — le socle gravé au seuil : tout, dans cette salle, se soumet à cette ligne",
+ principle:"Le principe de la salle : <span class='g'>aucun prophète ne contredit la Torah ni l'Évangile</span>. Alors nous n'apportons rien d'extérieur — nous ouvrons la Torah, les Psaumes, les Prophètes et l'Injil, et nous laissons les textes parler.",
+ clnoh:"« Fils de Dieu » — ce que le mot NE dit PAS",
+ clno:"Aucune filiation charnelle. Dieu n'a pas pris d'épouse et n'a pas engendré comme les hommes — les chrétiens rejettent cette idée aussi fermement que quiconque. Si c'était là le sens, nous le refuserions ensemble.",
+ clyesh:"Ce que les textes disent",
+ clyes:"Une relation éternelle, sans commencement : la Parole qui était « au commencement » auprès de Dieu, tournée vers lui, et qui est Dieu. Comme la lumière naît du soleil sans venir après lui. Les rayonnages ci-dessous en donnent les pièces.",
+ doorsLbl:["Bibliothèque","références"],
+ libs:[
+  {k:"pere",name:"Le Père",sub:"Dieu se nomme Père — dès la Torah et les Prophètes",
+   shelves:[
+    {t:"Torah & Prophètes",refs:[
+     {r:"Deutéronome 32:6",v:"N'est-il pas ton père, ton créateur ? N'est-ce pas lui qui t'a fait, et qui t'a affermi ?",n:"Moïse lui-même, dans son cantique, nomme Dieu « père » d'Israël."},
+     {r:"Ésaïe 63:16",v:"Tu es cependant notre père… c'est toi, Éternel, qui es notre père, notre rédempteur : voilà ton nom de toute éternité.",n:"« Notre père » est un nom de Dieu — de toute éternité, dit Ésaïe."},
+     {r:"Psaume 103:13",v:"Comme un père a compassion de ses enfants, l'Éternel a compassion de ceux qui le craignent.",n:"La tendresse paternelle, au cœur du psautier."},
+     {r:"Jérémie 31:9",v:"Car je suis un père pour Israël, et Éphraïm est mon premier-né.",n:"Dieu se déclare père — et nomme un « premier-né »."},
+     {r:"Malachie 2:10",v:"N'avons-nous pas tous un seul père ? N'est-ce pas un seul Dieu qui nous a créés ?",n:"Un seul père, un seul Dieu : les deux mots ensemble, dans le dernier prophète."}]},
+    {t:"Évangile & Apôtres",refs:[
+     {r:"Matthieu 6:9",v:"Voici donc comment vous devez prier : Notre Père qui es aux cieux !",n:"Jésus met « Père » sur les lèvres de tous ses disciples."},
+     {r:"Jean 6:27",v:"…le Fils de l'homme vous la donnera ; car c'est lui que le Père, Dieu, a marqué de son sceau.",n:"« Le Père, Dieu » : l'identité est explicite."},
+     {r:"2 Corinthiens 1:3",v:"Béni soit Dieu, le Père de notre Seigneur Jésus-Christ, le Père des miséricordes.",n:"La formule qui ouvre les lettres des apôtres."}]}]},
+  {k:"fils",name:"Le Fils",sub:"la plus grande bibliothèque — Torah, Psaumes, Prophètes, Injil, et l'abaissement par amour",
+   shelves:[
+    {t:"Étagère Torah",refs:[
+     {r:"Genèse 1:26",v:"Puis Dieu dit : Faisons l'homme à notre image, selon notre ressemblance.",n:"Le pluriel du Créateur, dès la première page. Un indice — pas une preuve seule."},
+     {r:"Genèse 22:2 · 8",v:"Prends ton fils, ton unique, celui que tu aimes… Mon fils, Dieu se pourvoira lui-même de l'agneau.",n:"Le père et le fils montent ensemble. La Torah met en scène ce que le ciel accomplira. → La porte d'Abraham, en bas de la salle.",star:true},
+     {r:"Exode 4:22",v:"Tu diras à Pharaon : Ainsi parle l'Éternel : Israël est mon fils, mon premier-né.",n:"Le mot « fils de Dieu » est dans la Torah — pour un peuple, avant de désigner l'Unique."},
+     {r:"Deutéronome 18:15",v:"L'Éternel, ton Dieu, te suscitera du milieu de toi un prophète comme moi : vous l'écouterez !",n:"Moïse annonce quelqu'un qu'il faudra écouter. La voix du ciel reprendra ce mot exact : « écoutez-le »."}]},
+    {t:"Étagère Psaumes & Sagesse",refs:[
+     {r:"Psaume 2:7",v:"L'Éternel m'a dit : Tu es mon fils ! Je t'ai engendré aujourd'hui.",n:"Dieu lui-même dit « mon fils » à son Roi-Messie. Le verset que la voix du Jourdain citera.",star:true},
+     {r:"Psaume 110:1",v:"Parole de l'Éternel à mon Seigneur : Assieds-toi à ma droite…",n:"David appelle son descendant « mon Seigneur ». Jésus posera la question : comment ? (Matthieu 22:43-45)."},
+     {r:"Proverbes 30:4",v:"Qui a arrêté toutes les eaux ? … Quel est son nom, et quel est le nom de son fils ? Le sais-tu ?",n:"La question est posée par la Torah elle-même — et laissée ouverte, comme une attente."},
+     {r:"Proverbes 8:30",v:"J'étais à l'œuvre auprès de lui, et je faisais tous les jours ses délices.",n:"La Sagesse, auprès de Dieu à la création, se réjouissant devant lui."}]},
+    {t:"Étagère Prophètes",refs:[
+     {r:"Ésaïe 9:5",v:"Un enfant nous est né… on l'appellera Admirable, Conseiller, Dieu puissant, Père éternel, Prince de la paix.",n:"Un enfant qui porte des noms divins. Écrit sept siècles avant Bethléhem.",star:true},
+     {r:"Ésaïe 7:14",v:"La vierge deviendra enceinte, elle enfantera un fils, et elle lui donnera le nom d'Emmanuel.",n:"Emmanuel : « Dieu avec nous ». Le nom est le programme."},
+     {r:"Michée 5:1",v:"De toi sortira pour moi celui qui dominera sur Israël, et dont les origines remontent aux temps anciens, aux jours de l'éternité.",n:"Né à Bethléhem — et pourtant d'origine éternelle. Les deux dans le même verset."},
+     {r:"Daniel 7:13-14",v:"Sur les nuées arriva quelqu'un de semblable à un fils de l'homme… tous les peuples le servirent. Sa domination ne passera point.",n:"Un « Fils de l'homme » que toutes les nations servent — un culte réservé à Dieu."},
+     {r:"Daniel 3:25",v:"Je vois quatre hommes… et la figure du quatrième ressemble à celle d'un fils des dieux.",n:"Dans la fournaise, un quatrième. Même un roi païen le voit. Un clin d'œil du texte — pas une démonstration."},
+     {r:"Ésaïe 48:16",v:"Et maintenant, le Seigneur, l'Éternel, m'a envoyé avec son Esprit.",n:"Celui qui parle, l'Éternel qui envoie, et l'Esprit : trois, dans une seule ligne d'Ésaïe."}]},
+    {t:"Étagère Injil (l'Évangile)",refs:[
+     {r:"Jean 1:1",v:"Au commencement était la Parole, et la Parole était avec Dieu, et la Parole était Dieu.",n:"« Était » — pas « fut créée ». La Parole est là depuis le commencement : éternelle.",star:true},
+     {r:"Jean 1:14",v:"Et la Parole a été faite chair, et elle a habité parmi nous, pleine de grâce et de vérité.",n:"L'éternelle Parole entre dans le temps. Littéralement : elle a « dressé sa tente »."},
+     {r:"Matthieu 3:17",v:"Et voici, une voix fit entendre des cieux ces paroles : Celui-ci est mon Fils bien-aimé.",n:"Ce n'est pas l'Église qui le nomme Fils : c'est la voix du ciel, au Jourdain."},
+     {r:"Jean 8:58",v:"En vérité, en vérité, je vous le dis, avant qu'Abraham fût, je suis.",n:"« Je suis » : le Nom du buisson ardent (Exode 3:14). Ses auditeurs comprennent — ils prennent des pierres."},
+     {r:"Jean 10:30",v:"Moi et le Père nous sommes un.",n:"Distincts (« moi et le Père ») et un. Toute la salle tient dans ces sept mots."},
+     {r:"Jean 17:5",v:"Père, glorifie-moi auprès de toi-même de la gloire que j'avais auprès de toi avant que le monde fût.",n:"Une gloire possédée avant le monde : la relation n'a pas de commencement."}]},
+    {t:"Étagère de l'abaissement — « la forme d'un esclave, par amour »",refs:[
+     {r:"Philippiens 2:6-8",v:"Lui qui existait en forme de Dieu… s'est dépouillé lui-même, en prenant une forme de serviteur… il s'est humilié, se rendant obéissant jusqu'à la mort de la croix.",n:"Il n'a pas perdu sa nature : il a déposé sa gloire. Le mot grec dit bien « esclave » (doulos). Volontairement. Par amour.",star:true},
+     {r:"2 Corinthiens 8:9",v:"…de riche qu'il était, il s'est fait pauvre pour vous, afin que par sa pauvreté vous fussiez enrichis.",n:"Le mouvement entier de l'Évangile en une ligne : descendre pour enrichir."},
+     {r:"Jean 3:16",v:"Car Dieu a tant aimé le monde qu'il a donné son Fils unique…",n:"« Donné » : le verbe de l'offrande. L'écho exact de Morija : « ton fils, ton unique, que tu aimes »."},
+     {r:"Romains 8:32",v:"Lui qui n'a point épargné son propre Fils, mais qui l'a livré pour nous tous…",n:"Le mot dit à Abraham (« tu n'as pas refusé ton fils », Genèse 22:16) — retourné : c'est Dieu qui n'a pas épargné le sien.",star:true}]}]},
+  {k:"esprit",name:"L'Esprit Saint",sub:"présent dès la première page — et traité partout comme quelqu'un",
+   shelves:[
+    {t:"Torah, Psaumes & Prophètes",refs:[
+     {r:"Genèse 1:2",v:"…et l'Esprit de Dieu se mouvait au-dessus des eaux.",n:"Deuxième verset de la Bible : l'Esprit est là, planant comme l'oiseau qui couve."},
+     {r:"Psaume 51:13",v:"Ne me rejette pas loin de ta face, ne me retire pas ton Esprit saint.",n:"David prie pour ne pas perdre l'Esprit saint : une présence, pas une abstraction."},
+     {r:"Ésaïe 63:10",v:"Mais ils ont été rebelles, ils ont attristé son Esprit saint.",n:"On n'attriste pas une force. On attriste quelqu'un. Déjà chez Ésaïe."},
+     {r:"Joël 3:1",v:"Après cela, je répandrai mon Esprit sur toute chair ; vos fils et vos filles prophétiseront.",n:"La promesse pour tous — que Pierre déclarera accomplie à la Pentecôte."},
+     {r:"Ézéchiel 36:27",v:"Je mettrai mon Esprit en vous, et je ferai en sorte que vous suiviez mes ordonnances.",n:"Non plus une loi sur la pierre : l'Esprit au-dedans."}]},
+    {t:"Évangile & Apôtres",refs:[
+     {r:"Jean 14:26",v:"Le consolateur, l'Esprit-Saint que le Père enverra en mon nom, vous enseignera toutes choses.",n:"Il enseigne, il rappelle, il console : des verbes de personne."},
+     {r:"Actes 5:3-4",v:"Pourquoi Satan a-t-il rempli ton cœur, au point de mentir au Saint-Esprit ?… Ce n'est pas à des hommes que tu as menti, mais à Dieu.",n:"Mentir à l'Esprit = mentir à Dieu. Le texte fait l'équation lui-même.",star:true},
+     {r:"Éphésiens 4:30",v:"N'attristez pas le Saint-Esprit de Dieu, par lequel vous avez été scellés.",n:"L'écho exact d'Ésaïe 63:10 — six siècles plus tard, le même mot."},
+     {r:"Romains 8:26",v:"L'Esprit lui-même intercède par des soupirs inexprimables.",n:"Il intercède : il parle pour nous. Encore un verbe de personne."},
+     {r:"2 Corinthiens 13:13",v:"Que la grâce du Seigneur Jésus-Christ, l'amour de Dieu, et la communion du Saint-Esprit soient avec vous tous !",n:"La bénédiction finale de Paul : les trois, dans un même souffle."}]}]}],
+ abrat:"La porte d'Abraham — au fond de la salle",
+ abrap:"Une porte relie deux rayonnages. Sur l'étagère Torah : « prends ton fils, ton unique, que tu aimes » — et le père et le fils montent ensemble, et Dieu pourvoit l'agneau (Genèse 22). Sur l'étagère de l'abaissement : « il n'a point épargné son propre Fils » (Romains 8:32). L'histoire qu'Abraham a vécue en figure, Dieu l'a accomplie en personne — non plus en demandant, mais en donnant. C'est la porte arrière entre la Torah et l'Évangile : le père, le fils, et l'agneau pourvu.",
+ guidt:"Vous préférez être guidé ?",
+ guidp:"La même salle existe en parcours : quatre étapes, du Shema au Jourdain, en dix minutes.",
+ guida:"Suivre le parcours guidé →",
+ foot:"Textes : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR). Chaque référence est citée pour être vérifiée dans votre propre Bible.<br>La grande salle « Un seul Dieu — Père, Fils, Esprit » : des rayonnages, pas des arguments."},
+en:{dir:"ltr",brand:"ONE GOD",
+ kicker:"The great hall · three libraries",
+ title:"The Father, the Son, the Spirit: <span class='g'>let us open the books</span>",
+ lede:"This hall holds no arguments: it holds shelves. Each book is a verse — from the Torah, the Psalms, the Prophets, the Gospel. Touch a book: it opens on the lectern. Read, and judge from the texts themselves.",
+ stone1:"“Hear, O Israel: the LORD our God, the LORD is ONE.”",
+ stone2:"Deuteronomy 6:4 — the foundation carved at the threshold: everything in this hall submits to this line",
+ principle:"The hall's principle: <span class='g'>no prophet contradicts the Torah or the Gospel</span>. So we bring nothing from outside — we open the Torah, the Psalms, the Prophets and the Injil, and we let the texts speak.",
+ clnoh:"“Son of God” — what the word does NOT say",
+ clno:"No carnal filiation. God took no consort and did not beget as men do — Christians reject that idea as firmly as anyone. If that were the meaning, we would refuse it together.",
+ clyesh:"What the texts do say",
+ clyes:"An eternal relation, without beginning: the Word who was “in the beginning” with God, turned toward him, and who is God. As light is born of the sun without coming after it. The shelves below give the evidence.",
+ doorsLbl:["Library","references"],
+ libs:[
+  {k:"pere",name:"The Father",sub:"God names himself Father — from the Torah and the Prophets on",
+   shelves:[
+    {t:"Torah & Prophets",refs:[
+     {r:"Deuteronomy 32:6",v:"Isn't he your father who has bought you? He has made you and established you.",n:"Moses himself, in his song, names God the “father” of Israel."},
+     {r:"Isaiah 63:16",v:"You are our Father… you, LORD, are our Father; our Redeemer from everlasting is your name.",n:"“Our Father” is a name of God — from everlasting, says Isaiah."},
+     {r:"Psalm 103:13",v:"Like a father has compassion on his children, so the LORD has compassion on those who fear him.",n:"Fatherly tenderness, at the heart of the psalter."},
+     {r:"Jeremiah 31:9",v:"For I am a father to Israel. Ephraim is my firstborn.",n:"God declares himself father — and names a “firstborn”."},
+     {r:"Malachi 2:10",v:"Don't we all have one father? Hasn't one God created us?",n:"One father, one God: both words together, in the last prophet."}]},
+    {t:"Gospel & Apostles",refs:[
+     {r:"Matthew 6:9",v:"Pray like this: Our Father in heaven!",n:"Jesus puts “Father” on the lips of all his disciples."},
+     {r:"John 6:27",v:"…the Son of Man will give it to you; for God the Father has sealed him.",n:"“God the Father”: the identity is explicit."},
+     {r:"2 Corinthians 1:3",v:"Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies.",n:"The formula that opens the apostles' letters."}]}]},
+  {k:"fils",name:"The Son",sub:"the largest library — Torah, Psalms, Prophets, Injil, and the lowering out of love",
+   shelves:[
+    {t:"Torah shelf",refs:[
+     {r:"Genesis 1:26",v:"God said: Let us make man in our image, after our likeness.",n:"The Creator's plural, from the first page. A clue — not a proof on its own."},
+     {r:"Genesis 22:2 · 8",v:"Take your son, your only one, whom you love… My son, God will provide himself the lamb.",n:"Father and son climb together. The Torah stages what heaven will accomplish. → Abraham's door, at the back of the hall.",star:true},
+     {r:"Exodus 4:22",v:"You shall tell Pharaoh: Thus says the LORD, Israel is my son, my firstborn.",n:"“Son of God” is Torah language — for a people, before it names the Only One."},
+     {r:"Deuteronomy 18:15",v:"The LORD your God will raise up for you a prophet like me from among you: you shall listen to him!",n:"Moses announces one who must be heard. The voice from heaven will repeat the exact word: “listen to him”."}]},
+    {t:"Psalms & Wisdom shelf",refs:[
+     {r:"Psalm 2:7",v:"The LORD said to me: You are my son! Today I have become your father.",n:"God himself says “my son” to his King-Messiah. The verse the Jordan voice will quote.",star:true},
+     {r:"Psalm 110:1",v:"The LORD says to my Lord: Sit at my right hand…",n:"David calls his descendant “my Lord”. Jesus will ask: how? (Matthew 22:43-45)."},
+     {r:"Proverbs 30:4",v:"Who has bound the waters?… What is his name, and what is his son's name, if you know?",n:"The question is asked by the Scriptures themselves — and left open, like an expectation."},
+     {r:"Proverbs 8:30",v:"Then I was the craftsman by his side, and I was daily his delight.",n:"Wisdom, beside God at creation, rejoicing before him."}]},
+    {t:"Prophets shelf",refs:[
+     {r:"Isaiah 9:6",v:"For to us a child is born… his name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.",n:"A child bearing divine names. Written seven centuries before Bethlehem.",star:true},
+     {r:"Isaiah 7:14",v:"The virgin will conceive, and bear a son, and shall call his name Immanuel.",n:"Immanuel: “God with us”. The name is the program."},
+     {r:"Micah 5:2",v:"Out of you one will come forth to me who is to be ruler in Israel; whose goings forth are from of old, from ancient days.",n:"Born in Bethlehem — yet of eternal origin. Both in the same verse."},
+     {r:"Daniel 7:13-14",v:"There came with the clouds one like a son of man… all the peoples served him. His dominion shall not pass away.",n:"A “Son of Man” whom all nations serve — a service reserved for God."},
+     {r:"Daniel 3:25",v:"I see four men… and the appearance of the fourth is like a son of the gods.",n:"In the furnace, a fourth. Even a pagan king sees it. A wink of the text — not a demonstration."},
+     {r:"Isaiah 48:16",v:"And now the Lord GOD has sent me, and his Spirit.",n:"The one who speaks, the LORD who sends, and the Spirit: three, in one line of Isaiah."}]},
+    {t:"Injil (Gospel) shelf",refs:[
+     {r:"John 1:1",v:"In the beginning was the Word, and the Word was with God, and the Word was God.",n:"“Was” — not “was created”. The Word is there from the beginning: eternal.",star:true},
+     {r:"John 1:14",v:"And the Word became flesh and lived among us, full of grace and truth.",n:"The eternal Word enters time. Literally: he “pitched his tent”."},
+     {r:"Matthew 3:17",v:"Behold, a voice out of the heavens said: This is my beloved Son.",n:"It is not the Church that names him Son: it is the voice from heaven, at the Jordan."},
+     {r:"John 8:58",v:"Most certainly, I tell you, before Abraham came into existence, I AM.",n:"“I AM”: the Name of the burning bush (Exodus 3:14). His hearers understand — they pick up stones."},
+     {r:"John 10:30",v:"I and the Father are one.",n:"Distinct (“I and the Father”) and one. The whole hall holds in these seven words."},
+     {r:"John 17:5",v:"Father, glorify me with your own self with the glory which I had with you before the world existed.",n:"A glory possessed before the world: the relation has no beginning."}]},
+    {t:"The lowering shelf — “the form of a slave, out of love”",refs:[
+     {r:"Philippians 2:6-8",v:"Who, existing in the form of God… emptied himself, taking the form of a servant… he humbled himself, becoming obedient to death, yes, the death of the cross.",n:"He did not lose his nature: he laid down his glory. The Greek word truly says “slave” (doulos). Willingly. Out of love.",star:true},
+     {r:"2 Corinthians 8:9",v:"…though he was rich, yet for your sakes he became poor, that you through his poverty might become rich.",n:"The whole movement of the Gospel in one line: descending to enrich."},
+     {r:"John 3:16",v:"For God so loved the world, that he gave his one and only Son…",n:"“Gave”: the verb of offering. The exact echo of Moriah: “your son, your only one, whom you love”."},
+     {r:"Romans 8:32",v:"He who didn't spare his own Son, but delivered him up for us all…",n:"The word said to Abraham (“you have not withheld your son”, Genesis 22:16) — reversed: it is God who did not spare his own.",star:true}]}]},
+  {k:"esprit",name:"The Holy Spirit",sub:"present from the first page — and treated everywhere as someone",
+   shelves:[
+    {t:"Torah, Psalms & Prophets",refs:[
+     {r:"Genesis 1:2",v:"…and the Spirit of God was hovering over the surface of the waters.",n:"Second verse of the Bible: the Spirit is there, hovering like a brooding bird."},
+     {r:"Psalm 51:11",v:"Don't throw me from your presence, and don't take your Holy Spirit from me.",n:"David prays not to lose the Holy Spirit: a presence, not an abstraction."},
+     {r:"Isaiah 63:10",v:"But they rebelled and grieved his Holy Spirit.",n:"You do not grieve a force. You grieve someone. Already in Isaiah."},
+     {r:"Joel 2:28",v:"Afterward, I will pour out my Spirit on all flesh; your sons and your daughters will prophesy.",n:"The promise for all — which Peter will declare fulfilled at Pentecost."},
+     {r:"Ezekiel 36:27",v:"I will put my Spirit within you, and cause you to walk in my statutes.",n:"No longer a law on stone: the Spirit within."}]},
+    {t:"Gospel & Apostles",refs:[
+     {r:"John 14:26",v:"The Counselor, the Holy Spirit, whom the Father will send in my name, will teach you all things.",n:"He teaches, he reminds, he comforts: verbs of a person."},
+     {r:"Acts 5:3-4",v:"Why has Satan filled your heart to lie to the Holy Spirit?… You haven't lied to men, but to God.",n:"Lying to the Spirit = lying to God. The text makes the equation itself.",star:true},
+     {r:"Ephesians 4:30",v:"Don't grieve the Holy Spirit of God, in whom you were sealed.",n:"The exact echo of Isaiah 63:10 — six centuries later, the same word."},
+     {r:"Romans 8:26",v:"The Spirit himself makes intercession for us with groanings which can't be uttered.",n:"He intercedes: he speaks for us. Another verb of a person."},
+     {r:"2 Corinthians 13:14",v:"The grace of the Lord Jesus Christ, God's love, and the fellowship of the Holy Spirit be with you all.",n:"Paul's final blessing: the three, in one breath."}]}]}],
+ abrat:"Abraham's door — at the back of the hall",
+ abrap:"One door joins two shelves. On the Torah shelf: “take your son, your only one, whom you love” — and father and son climb together, and God provides the lamb (Genesis 22). On the lowering shelf: “he did not spare his own Son” (Romans 8:32). The story Abraham lived as a figure, God accomplished in person — no longer asking, but giving. This is the back door between the Torah and the Gospel: the father, the son, and the lamb provided.",
+ guidt:"Would you rather be guided?",
+ guidp:"The same hall exists as a path: four steps, from the Shema to the Jordan, in ten minutes.",
+ guida:"Follow the guided path →",
+ foot:"Texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR). Every reference is cited to be checked in your own Bible.<br>The great hall “One God — Father, Son, Spirit”: shelves, not arguments."},
+ar:{dir:"rtl",brand:"إلهٌ واحد",
+ kicker:"القاعة الكبرى · ثلاث مكتبات",
+ title:"الآب، والابن، والروح: <span class='g'>لنفتح الكتب</span>",
+ lede:"هذه القاعةُ لا تحوي حججًا: بل رفوفًا. كلُّ كتابٍ آية — من التوراة، والمزامير، والأنبياء، والإنجيل. المس كتابًا: ينفتح على المنبر. اقرأ، واحكم من النصوص نفسها.",
+ stone1:"«اِسْمَعْ يَا إِسْرَائِيلُ: الرَّبُّ إِلهُنَا رَبٌّ وَاحِدٌ.»",
+ stone2:"تثنية ٦: ٤ — الأساسُ المنقوش على العتبة: كلُّ ما في هذه القاعة يخضع لهذا السطر",
+ principle:"مبدأ القاعة: <span class='g'>لا نبيَّ يناقض التوراةَ ولا الإنجيل</span>. لذلك لا نأتي بشيءٍ من خارج — بل نفتح التوراةَ والمزاميرَ والأنبياءَ والإنجيل، وندع النصوصَ تتكلم.",
+ clnoh:"«ابن الله» — ما لا تعنيه الكلمة",
+ clno:"لا بنوّةَ جسدية. اللهُ لم يتخذ صاحبةً ولم يلد كما يلد البشر — والمسيحيون يرفضون هذه الفكرة بحزمٍ كأشدّ ما يكون. لو كان هذا هو المعنى، لرفضناه معًا.",
+ clyesh:"ما تقوله النصوص",
+ clyes:"علاقةٌ أزلية بلا بداية: الكلمةُ الذي كان «في البدء» عند الله، متجهًا نحوه، وهو الله. كما يُولَد النورُ من الشمس دون أن يأتي بعدها. والرفوفُ أدناه تعطي البيّنات.",
+ doorsLbl:["مكتبة","مرجعًا"],
+ libs:[
+  {k:"pere",name:"الآب",sub:"اللهُ يسمّي نفسَه أبًا — منذ التوراة والأنبياء",
+   shelves:[
+    {t:"التوراة والأنبياء",refs:[
+     {r:"تثنية ٣٢: ٦",v:"أَلَيْسَ هُوَ أَبَاكَ وَمُقْتَنِيَكَ؟ هُوَ عَمِلَكَ وَأَنْشَأَكَ.",n:"موسى نفسُه، في نشيده، يسمّي اللهَ «أبا» إسرائيل."},
+     {r:"إشعياء ٦٣: ١٦",v:"أَنْتَ يَا رَبُّ أَبُونَا، وَلِيُّنَا مُنْذُ الأَبَدِ اسْمُكَ.",n:"«أبونا» اسمٌ لله — منذ الأبد، يقول إشعياء."},
+     {r:"مزمور ١٠٣: ١٣",v:"كَمَا يَتَرَأَّفُ الأَبُ عَلَى الْبَنِينَ يَتَرَأَّفُ الرَّبُّ عَلَى خَائِفِيهِ.",n:"حنانُ الأبوّة، في قلب المزامير."},
+     {r:"إرميا ٣١: ٩",v:"لأَنِّي صِرْتُ لإِسْرَائِيلَ أَبًا، وَأَفْرَايِمُ هُوَ بِكْرِي.",n:"اللهُ يعلن نفسَه أبًا — ويسمّي «بكرًا»."},
+     {r:"ملاخي ٢: ١٠",v:"أَلَيْسَ أَبٌ وَاحِدٌ لِكُلِّنَا؟ أَلَيْسَ إِلهٌ وَاحِدٌ خَلَقَنَا؟",n:"أبٌ واحد، إلهٌ واحد: الكلمتان معًا، عند آخر الأنبياء."}]},
+    {t:"الإنجيل والرسل",refs:[
+     {r:"متى ٦: ٩",v:"فَصَلُّوا أَنْتُمْ هكَذَا: أَبَانَا الَّذِي فِي السَّمَاوَاتِ!",n:"يسوع يضع «أبانا» على شفاه تلاميذه جميعًا."},
+     {r:"يوحنا ٦: ٢٧",v:"…ابْنُ الإِنْسَانِ يُعْطِيكُمْ، لأَنَّ هذَا اللهُ الآبُ قَدْ خَتَمَهُ.",n:"«اللهُ الآب»: الهويةُ صريحة."},
+     {r:"٢ كورنثوس ١: ٣",v:"مُبَارَكٌ اللهُ أَبُو رَبِّنَا يَسُوعَ الْمَسِيحِ، أَبُو الرَّأْفَةِ.",n:"الصيغةُ التي تفتتح رسائلَ الرسل."}]}]},
+  {k:"fils",name:"الابن",sub:"أكبر المكتبات — التوراة، والمزامير، والأنبياء، والإنجيل، والاتضاعُ حبًّا",
+   shelves:[
+    {t:"رفّ التوراة",refs:[
+     {r:"تكوين ١: ٢٦",v:"وَقَالَ اللهُ: نَعْمَلُ الإِنْسَانَ عَلَى صُورَتِنَا كَشَبَهِنَا.",n:"جمعُ الخالق، منذ الصفحة الأولى. قرينةٌ — لا برهانٌ وحدها."},
+     {r:"تكوين ٢٢: ٢ · ٨",v:"خُذِ ابْنَكَ وَحِيدَكَ الَّذِي تُحِبُّهُ… يَا ابْنِي، اللهُ يَرَى لَهُ الْخَرُوفَ.",n:"الأبُ والابنُ يصعدان معًا. التوراةُ تمثّل ما ستتمّه السماء. ← بابُ إبراهيم، في آخر القاعة.",star:true},
+     {r:"خروج ٤: ٢٢",v:"وَتَقُولُ لِفِرْعَوْنَ: هكَذَا يَقُولُ الرَّبُّ: إِسْرَائِيلُ ابْنِي الْبِكْرُ.",n:"عبارةُ «ابن الله» في التوراة — لشعبٍ، قبل أن تسمّي الوحيد."},
+     {r:"تثنية ١٨: ١٥",v:"يُقِيمُ لَكَ الرَّبُّ إِلهُكَ نَبِيًّا مِنْ وَسَطِكَ مِثْلِي. لَهُ تَسْمَعُونَ.",n:"موسى يعلن مَن يجب أن يُسمَع له. وصوتُ السماء سيعيد الكلمةَ نفسَها: «له اسمعوا»."}]},
+    {t:"رفّ المزامير والحكمة",refs:[
+     {r:"مزمور ٢: ٧",v:"قَالَ لِي الرَّبُّ: أَنْتَ ابْنِي، أَنَا الْيَوْمَ وَلَدْتُكَ.",n:"اللهُ نفسُه يقول «ابني» لملكه المسيح. الآيةُ التي سيقتبسها صوتُ الأردن.",star:true},
+     {r:"مزمور ١١٠: ١",v:"قَالَ الرَّبُّ لِرَبِّي: اجْلِسْ عَنْ يَمِينِي…",n:"داودُ يدعو نسلَه «ربّي». وسيطرح يسوعُ السؤال: كيف؟ (متى ٢٢: ٤٣-٤٥)."},
+     {r:"أمثال ٣٠: ٤",v:"مَنْ صَرَّ الْمِيَاهَ؟… مَا اسْمُهُ؟ وَمَا اسْمُ ابْنِهِ إِنْ عَرَفْتَ؟",n:"السؤالُ يطرحه الكتابُ نفسُه — ويتركه مفتوحًا، كانتظار."},
+     {r:"أمثال ٨: ٣٠",v:"كُنْتُ عِنْدَهُ صَانِعًا، وَكُنْتُ كُلَّ يَوْمٍ لَذَّتَهُ.",n:"الحكمةُ، عند الله في الخلق، تفرح أمامه."}]},
+    {t:"رفّ الأنبياء",refs:[
+     {r:"إشعياء ٩: ٦",v:"لأَنَّهُ يُولَدُ لَنَا وَلَدٌ… وَيُدْعَى اسْمُهُ عَجِيبًا، مُشِيرًا، إِلهًا قَدِيرًا، أَبًا أَبَدِيًّا، رَئِيسَ السَّلاَمِ.",n:"ولدٌ يحمل أسماءً إلهية. كُتب قبل بيت لحم بسبعة قرون.",star:true},
+     {r:"إشعياء ٧: ١٤",v:"هَا الْعَذْرَاءُ تَحْبَلُ وَتَلِدُ ابْنًا وَتَدْعُو اسْمَهُ عِمَّانُوئِيلَ.",n:"عمانوئيل: «اللهُ معنا». الاسمُ هو البرنامج."},
+     {r:"ميخا ٥: ٢",v:"مِنْكِ يَخْرُجُ لِي الَّذِي يَكُونُ مُتَسَلِّطًا عَلَى إِسْرَائِيلَ، وَمَخَارِجُهُ مُنْذُ الْقَدِيمِ، مُنْذُ أَيَّامِ الأَزَلِ.",n:"يولَد في بيت لحم — وأصلُه أزلي. الاثنان في الآية نفسها."},
+     {r:"دانيال ٧: ١٣-١٤",v:"وَإِذَا مَعَ سُحُبِ السَّمَاءِ مِثْلُ ابْنِ إِنْسَانٍ… وَكُلُّ الشُّعُوبِ تَعَبَّدُوا لَهُ. سُلْطَانُهُ سُلْطَانٌ أَبَدِيٌّ.",n:"«ابنُ إنسان» تتعبّد له الشعوبُ كلُّها — عبادةٌ محفوظة لله."},
+     {r:"دانيال ٣: ٢٥",v:"هَا أَنَا نَاظِرٌ أَرْبَعَةَ رِجَال… وَمَنْظَرُ الرَّابِعِ شَبِيهٌ بِابْنِ الآلِهَةِ.",n:"في الأتون، رابعٌ. حتى ملكٌ وثنيٌّ يراه. غمزةٌ من النص — لا برهان."},
+     {r:"إشعياء ٤٨: ١٦",v:"وَالآنَ السَّيِّدُ الرَّبُّ أَرْسَلَنِي وَرُوحُهُ.",n:"المتكلّم، والربُّ المُرسِل، والروح: ثلاثةٌ في سطرٍ واحد من إشعياء."}]},
+    {t:"رفّ الإنجيل",refs:[
+     {r:"يوحنا ١: ١",v:"فِي الْبَدْءِ كَانَ الْكَلِمَةُ، وَالْكَلِمَةُ كَانَ عِنْدَ اللهِ، وَكَانَ الْكَلِمَةُ اللهَ.",n:"«كان» — لا «خُلق». الكلمةُ موجودٌ منذ البدء: أزليّ.",star:true},
+     {r:"يوحنا ١: ١٤",v:"وَالْكَلِمَةُ صَارَ جَسَدًا وَحَلَّ بَيْنَنَا، مَمْلُوءًا نِعْمَةً وَحَقًّا.",n:"الكلمةُ الأزلي يدخل الزمن. حرفيًا: «نصب خيمته»."},
+     {r:"متى ٣: ١٧",v:"وَصَوْتٌ مِنَ السَّمَاوَاتِ قَائِلاً: هذَا هُوَ ابْنِي الْحَبِيبُ.",n:"ليست الكنيسةُ من سمّاه الابن: بل صوتُ السماء، عند الأردن."},
+     {r:"يوحنا ٨: ٥٨",v:"اَلْحَقَّ الْحَقَّ أَقُولُ لَكُمْ: قَبْلَ أَنْ يَكُونَ إِبْرَاهِيمُ أَنَا كَائِنٌ.",n:"«أنا كائن»: اسمُ العليقة الملتهبة (خروج ٣: ١٤). سامعوه يفهمون — فيرفعون حجارة."},
+     {r:"يوحنا ١٠: ٣٠",v:"أَنَا وَالآبُ وَاحِدٌ.",n:"متمايزان («أنا والآب») وواحد. القاعةُ كلُّها في هذه الكلمات."},
+     {r:"يوحنا ١٧: ٥",v:"وَالآنَ مَجِّدْنِي أَنْتَ أَيُّهَا الآبُ عِنْدَ ذَاتِكَ بِالْمَجْدِ الَّذِي كَانَ لِي عِنْدَكَ قَبْلَ كَوْنِ الْعَالَمِ.",n:"مجدٌ مملوكٌ قبل العالم: العلاقةُ بلا بداية."}]},
+    {t:"رفّ الاتضاع — «صورة عبد، حبًّا»",refs:[
+     {r:"فيلبي ٢: ٦-٨",v:"الَّذِي إِذْ كَانَ فِي صُورَةِ اللهِ… أَخْلَى نَفْسَهُ، آخِذًا صُورَةَ عَبْدٍ… وَضَعَ نَفْسَهُ وَأَطَاعَ حَتَّى الْمَوْتَ، مَوْتَ الصَّلِيبِ.",n:"لم يفقد طبيعتَه: بل وضع مجدَه. والكلمةُ اليونانية تقول حقًّا «عبدًا» (دولوس). طوعًا. حبًّا.",star:true},
+     {r:"٢ كورنثوس ٨: ٩",v:"…افْتَقَرَ وَهُوَ غَنِيٌّ، لِكَيْ تَسْتَغْنُوا أَنْتُمْ بِفَقْرِهِ.",n:"حركةُ الإنجيل كلُّها في سطر: ينزل ليُغني."},
+     {r:"يوحنا ٣: ١٦",v:"لأَنَّهُ هكَذَا أَحَبَّ اللهُ الْعَالَمَ حَتَّى بَذَلَ ابْنَهُ الْوَحِيدَ…",n:"«بذل»: فعلُ التقدمة. الصدى الحرفي للمريّا: «ابنك وحيدك الذي تحبه»."},
+     {r:"رومية ٨: ٣٢",v:"اَلَّذِي لَمْ يُشْفِقْ عَلَى ابْنِهِ، بَلْ بَذَلَهُ لأَجْلِنَا أَجْمَعِينَ…",n:"الكلمةُ المقولة لإبراهيم («لم تُمسك ابنك»، تكوين ٢٢: ١٦) — معكوسةً: اللهُ هو الذي لم يُشفق على ابنه.",star:true}]}]},
+  {k:"esprit",name:"الروح القدس",sub:"حاضرٌ منذ الصفحة الأولى — ويُعامَل في كل مكانٍ كشخص",
+   shelves:[
+    {t:"التوراة والمزامير والأنبياء",refs:[
+     {r:"تكوين ١: ٢",v:"…وَرُوحُ اللهِ يَرِفُّ عَلَى وَجْهِ الْمِيَاهِ.",n:"ثاني آيةٍ في الكتاب: الروحُ هناك، يرفّ كالطائر الحاضن."},
+     {r:"مزمور ٥١: ١١",v:"لاَ تَطْرَحْنِي مِنْ قُدَّامِ وَجْهِكَ، وَرُوحَكَ الْقُدُّوسَ لاَ تَنْزِعْهُ مِنِّي.",n:"داودُ يصلّي ألا يفقد الروحَ القدوس: حضورٌ، لا فكرةٌ مجردة."},
+     {r:"إشعياء ٦٣: ١٠",v:"وَلكِنَّهُمْ تَمَرَّدُوا وَأَحْزَنُوا رُوحَ قُدْسِهِ.",n:"لا تُحزَن قوةٌ. يُحزَن شخصٌ. منذ إشعياء."},
+     {r:"يوئيل ٢: ٢٨",v:"وَيَكُونُ بَعْدَ ذلِكَ أَنِّي أَسْكُبُ رُوحِي عَلَى كُلِّ بَشَرٍ، فَيَتَنَبَّأُ بَنُوكُمْ وَبَنَاتُكُمْ.",n:"الوعدُ للجميع — الذي سيعلن بطرسُ تمامَه في الخمسين."},
+     {r:"حزقيال ٣٦: ٢٧",v:"وَأَجْعَلُ رُوحِي فِي دَاخِلِكُمْ، وَأَجْعَلُكُمْ تَسْلُكُونَ فِي فَرَائِضِي.",n:"لا شريعةً على حجرٍ بعدُ: الروحُ في الداخل."}]},
+    {t:"الإنجيل والرسل",refs:[
+     {r:"يوحنا ١٤: ٢٦",v:"وَأَمَّا الْمُعَزِّي، الرُّوحُ الْقُدُسُ، الَّذِي سَيُرْسِلُهُ الآبُ بِاسْمِي، فَهُوَ يُعَلِّمُكُمْ كُلَّ شَيْءٍ.",n:"يعلّم، ويذكّر، ويعزّي: أفعالُ شخص."},
+     {r:"أعمال ٥: ٣-٤",v:"لِمَاذَا مَلأَ الشَّيْطَانُ قَلْبَكَ لِتَكْذِبَ عَلَى الرُّوحِ الْقُدُسِ؟… أَنْتَ لَمْ تَكْذِبْ عَلَى النَّاسِ بَلْ عَلَى اللهِ.",n:"الكذبُ على الروح = الكذبُ على الله. النصُّ يصنع المعادلةَ بنفسه.",star:true},
+     {r:"أفسس ٤: ٣٠",v:"وَلاَ تُحْزِنُوا رُوحَ اللهِ الْقُدُّوسَ الَّذِي بِهِ خُتِمْتُمْ.",n:"الصدى الحرفي لإشعياء ٦٣: ١٠ — بعد ستة قرون، الكلمةُ نفسُها."},
+     {r:"رومية ٨: ٢٦",v:"الرُّوحُ نَفْسُهُ يَشْفَعُ فِينَا بِأَنَّاتٍ لاَ يُنْطَقُ بِهَا.",n:"يشفع: يتكلم لأجلنا. فعلُ شخصٍ آخر."},
+     {r:"٢ كورنثوس ١٣: ١٤",v:"نِعْمَةُ رَبِّنَا يَسُوعَ الْمَسِيحِ، وَمَحَبَّةُ اللهِ، وَشَرِكَةُ الرُّوحِ الْقُدُسِ مَعَ جَمِيعِكُمْ.",n:"بركةُ بولس الختامية: الثلاثةُ في نَفَسٍ واحد."}]}]}],
+ abrat:"بابُ إبراهيم — في آخر القاعة",
+ abrap:"بابٌ واحد يصل رفّين. على رفّ التوراة: «خُذِ ابْنَكَ وَحِيدَكَ الَّذِي تُحِبُّهُ» — والأبُ والابنُ يصعدان معًا، واللهُ يرى الخروف (تكوين ٢٢). وعلى رفّ الاتضاع: «لَمْ يُشْفِقْ عَلَى ابْنِهِ» (رومية ٨: ٣٢). القصةُ التي عاشها إبراهيمُ رمزًا، أتمّها اللهُ بنفسه — لا طالبًا بعدُ، بل باذلًا. هذا هو البابُ الخلفي بين التوراة والإنجيل: الأبُ، والابنُ، والخروفُ المُعَدّ.",
+ guidt:"أتفضّل أن تُرشَد؟",
+ guidp:"القاعةُ نفسُها موجودة مسارًا: أربعُ خطوات، من الشِّمَع إلى الأردن، في عشر دقائق.",
+ guida:"← اتبع المسار المُرشَد",
+ foot:"النصوص: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي). كلُّ مرجعٍ مذكورٌ لتتحقق منه في كتابك المقدس.<br>القاعةُ الكبرى «إلهٌ واحد — الآب والابن والروح»: رفوفٌ، لا حجج."}};
+
+function render(l){
+  const c=T[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  for(const id of ["brand","kicker","lede","stone2","clnoh","clno","clyesh","clyes","abrat","abrap","guidt","guidp","guida"])
+    document.getElementById(id).textContent=c[id]||c[id.replace('h','')]||"";
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('kicker').textContent=c.kicker;
+  document.getElementById('title').innerHTML=c.title;
+  document.getElementById('lede').textContent=c.lede;
+  document.getElementById('stone1').textContent=c.stone1;
+  document.getElementById('stone2').textContent=c.stone2;
+  document.getElementById('principle').innerHTML=c.principle;
+  document.getElementById('clnoh').textContent=c.clnoh;
+  document.getElementById('clno').textContent=c.clno;
+  document.getElementById('clyesh').textContent=c.clyesh;
+  document.getElementById('clyes').textContent=c.clyes;
+  document.getElementById('abrat').textContent=c.abrat;
+  document.getElementById('abrap').textContent=c.abrap;
+  document.getElementById('guidt').textContent=c.guidt;
+  document.getElementById('guidp').textContent=c.guidp;
+  document.getElementById('guida').textContent=c.guida;
+  document.getElementById('foot').innerHTML=c.foot;
+  // portes
+  const doors=document.getElementById('doors');doors.innerHTML="";
+  c.libs.forEach(lib=>{
+    const total=lib.shelves.reduce((a,s)=>a+s.refs.length,0);
+    const b=document.createElement('button');b.className='doorbtn ui';b.style.setProperty('--dc',LC[lib.k]);
+    b.innerHTML=`<div class="tag">${c.doorsLbl[0]}</div><h2 class="display">${lib.name}</h2><div class="cnt">${total} ${c.doorsLbl[1]}</div>`;
+    b.addEventListener('click',()=>document.getElementById('lib-'+lib.k).scrollIntoView({behavior:'smooth'}));
+    doors.appendChild(b);
+  });
+  // bibliothèques
+  const libsBox=document.getElementById('libs');libsBox.innerHTML="";
+  c.libs.forEach(lib=>{
+    const sec=document.createElement('section');sec.className='lib';sec.id='lib-'+lib.k;sec.style.setProperty('--lc',LC[lib.k]);
+    let inner=`<div class="libhead"><h2>${lib.name}</h2><span class="sub">${lib.sub}</span></div>`;
+    lib.shelves.forEach((sh,si)=>{
+      inner+=`<div class="shelf"><div class="st">${sh.t}</div><div class="books">`;
+      sh.refs.forEach((rf,ri)=>{
+        inner+=`<button class="book${rf.star?' star':''}" data-lib="${lib.k}" data-s="${si}" data-r="${ri}">${rf.r}</button>`;
+      });
+      inner+=`</div></div>`;
+    });
+    inner+=`<div class="lectern" id="lect-${lib.k}"><div class="ref"></div><div class="verse"></div><div class="note"></div></div>`;
+    sec.innerHTML=inner;
+    libsBox.appendChild(sec);
+  });
+  // interactions livres
+  libsBox.querySelectorAll('.book').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const lib=c.libs.find(x=>x.k===b.dataset.lib);
+      const rf=lib.shelves[+b.dataset.s].refs[+b.dataset.r];
+      const sec=document.getElementById('lib-'+lib.k);
+      sec.querySelectorAll('.book').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const lect=document.getElementById('lect-'+lib.k);
+      lect.querySelector('.ref').textContent=rf.r;
+      lect.querySelector('.verse').textContent="« "+rf.v+" »";
+      lect.querySelector('.note').textContent=rf.n;
+      lect.classList.add('show');
+      if(window.innerWidth<760) lect.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  });
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

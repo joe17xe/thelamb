@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Résurrection — l'Agneau vivant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Pilier · La Résurrection — l'Agneau vivant",
+eyebrow:"1 Corinthiens 15 · Corinthe, vers l'an 55 — mais le texte cité remonte, lui, aux années 30",
+verse:"« Christ est mort… il a été enseveli… <span class='g'>il est ressuscité</span> le troisième jour, selon les Écritures. »",
+scene:"Tout le parcours a conduit à la croix. Mais si le récit s'arrêtait là, l'Agneau resterait au tombeau — et l'offrande, sans réponse. La résurrection est le sceau du ciel : l'offrande a été reçue. L'Agneau immolé se tient debout.",
+stations:[
+{ctx:"1 Corinthiens 15:3-7 · le plus ancien texte",t:"Un credo daté des années 30",img:"Avant les évangiles, une formule déjà transmise : mort, enseveli, ressuscité, apparu.",
+p:"Paul écrit vers l'an 55, mais il précise : « je vous ai transmis ce que j'avais reçu ». Ce sont les mots techniques de la tradition — la formule lui a été livrée bien avant, sans doute à Jérusalem dans les années 30, à quelques années des faits. Elle est brève, rythmée, faite pour être mémorisée : Christ est mort pour nos péchés, il a été enseveli, il est ressuscité, il est apparu à Céphas, aux douze, puis à plus de cinq cents frères « dont la plupart sont encore vivants ». Autrement dit : allez les interroger. Le cœur de la foi n'est pas une légende tardive — c'est un témoignage daté, vérifiable, assumé par des noms.",
+o:["Osée 6:2","Le troisième jour il nous relèvera, et nous vivrons devant lui."],
+n:["1 Corinthiens 15:3-4","Christ est mort pour nos péchés, selon les Écritures ; il a été enseveli, et il est ressuscité le troisième jour."]},
+{ctx:"Apocalypse 5:6 · l'image centrale",t:"L'Agneau immolé — debout",img:"Au centre du trône, un agneau qui porte les marques de la mort, et qui est pourtant vivant.",
+p:"C'est l'image la plus étrange et la plus juste de toute la Bible : « un agneau qui était là comme immolé » — mais debout, vivant, au centre du trône. La mort a laissé ses marques, elle n'a pas gardé sa proie. La résurrection ne gomme pas la croix : le Ressuscité montre ses plaies (« voyez mes mains », Luc 24:39 ; « avance ton doigt », Jean 20:27). La victoire porte pour toujours les cicatrices de l'offrande. L'Agneau n'est pas immolé puis glorifié comme deux étapes séparées : il règne en tant qu'immolé.",
+o:["Psaume 16:10","Tu ne livreras pas mon âme au séjour des morts, tu ne permettras pas que ton bien-aimé voie la corruption."],
+n:["Apocalypse 5:6","Je vis, au milieu du trône, un agneau qui était là comme immolé."]},
+{ctx:"Jean 2 · Matthieu 12 · l'annonce",t:"Le signe qu'il avait promis",img:"Un seul signe donné d'avance : trois jours, comme Jonas ; ce temple relevé.",
+p:"Jésus n'avait promis qu'un signe : celui de Jonas, « trois jours et trois nuits » (Matthieu 12:40). Et dès le début, au Temple, il avait dit une phrase que personne n'avait comprise : « détruisez ce temple, et en trois jours je le relèverai » — « il parlait du temple de son corps » (Jean 2:19-21). La résurrection n'est donc pas un rebondissement heureux : c'est l'accomplissement d'une parole donnée à l'avance, et la preuve que tout le reste était vrai. C'est aussi le premier pont vers la page suivante : son corps est le vrai Temple.",
+o:["Jonas 2:1","Jonas fut dans le ventre du poisson trois jours et trois nuits."],
+n:["Jean 2:19","Détruisez ce temple, et en trois jours je le relèverai."]},
+{ctx:"Romains 4:25 · ce que cela change",t:"La preuve que l'offrande est reçue",img:"Sans la résurrection, la croix est un martyre. Avec elle, c'est une victoire agréée.",
+p:"Pourquoi est-ce décisif ? Parce que la résurrection est la signature de Dieu au bas de l'offrande. « Il a été livré pour nos offenses, et il est ressuscité pour notre justification » (Romains 4:25). Un agneau immolé qui reste mort n'aurait rien prouvé ; un agneau immolé que Dieu relève, c'est Dieu qui déclare : « j'accepte ». Paul est catégorique : « si Christ n'est pas ressuscité, votre foi est vaine » (15:17). Tout le parcours tient à ce matin-là. L'Agneau vit — donc l'offrande a été reçue, et le pardon tient.",
+o:["Ésaïe 53:11","Après avoir livré sa vie… il verra la lumière et sera rassasié.",],
+n:["Romains 4:25","Il a été livré pour nos offenses, et ressuscité pour notre justification."]}],
+vh:"Ce que change le matin de Pâques",
+vintro:"Retirez la résurrection, et tout le parcours s'effondre. Voici, ligne à ligne, ce qui tient grâce à elle :",
+verbs:["L'offrande<small>agréée : Dieu a dit « je reçois »</small>","La croix<small>non un échec, mais une victoire</small>","Les Écritures<small>« selon les Écritures » : la promesse tenue</small>","Notre espérance<small>« prémices de ceux qui dorment » (15:20)</small>"],
+vp:"Paul appelle le Christ ressuscité « les prémices » (1 Corinthiens 15:20) — le premier fruit de la moisson, présenté à Dieu le lendemain du sabbat de la Pâque (Lévitique 23:10-11). Or Jésus ressuscite précisément « le premier jour de la semaine » (Jean 20:1), au temps des prémices : le premier d'une immense récolte. Sa résurrection n'est pas un cas isolé, c'est une ouverture — « comme tous meurent en Adam, tous revivront en Christ » (15:22). Le tombeau vide n'est pas une fin heureuse : c'est un commencement pour tous.",
+ch:"Le tombeau vide : que disent les faits ?",
+c1:["Ce que confessent tous les chrétiens","Le Christ est réellement mort, réellement enseveli, et réellement ressuscité — corporellement, non symboliquement ; il est apparu à des témoins qui l'ont touché et ont mangé avec lui ; ce fait est le fondement de toute la foi chrétienne. C'est le socle commun, catholique et évangélique."],
+c2:["Ce que rapportent les textes","« Il est ressuscité, il n'est pas ici » (Marc 16:6) · « Il se présenta vivant, avec plusieurs preuves » (Actes 1:3) · « Touchez-moi et voyez » (Luc 24:39) · « Il apparut à plus de cinq cents frères » (1 Corinthiens 15:6) · « Mon Seigneur et mon Dieu ! » (Jean 20:28). Les récits gardent leurs différences de détail — signe de témoins distincts, non d'une version fabriquée."],
+c3:["Ce que nous ne dissimulons pas","Nul n'a filmé la résurrection ; ce que l'histoire documente, ce sont un tombeau trouvé vide, des témoins prêts à mourir pour ce qu'ils affirmaient avoir vu, et une communauté qui bascule son jour de culte au dimanche. On peut discuter l'interprétation ; on ne peut pas faire de ces faits une invention tardive. La dernière marche — croire — reste libre. Une référence le dit."],
+dh:"Aller plus loin",
+deep:[
+["Pourquoi « selon les Écritures » ?","Paul répète la formule pour la mort ET la résurrection (15:3-4). Quels textes ? Le Psaume 16 (« tu ne permettras pas que ton bien-aimé voie la corruption »), cité par Pierre à la Pentecôte (Actes 2:27) ; Osée 6:2 (« le troisième jour ») ; le Serviteur d'Ésaïe 53 qui, après avoir livré sa vie, « verra une postérité » et « sera rassasié » ; le signe de Jonas. La résurrection n'est pas un ajout : elle était inscrite dans l'attente."],
+["Le témoin le plus embarrassant : les femmes","Les quatre évangiles s'accordent sur un point : ce sont des femmes qui découvrent le tombeau vide en premier. Dans le contexte du Ier siècle, où leur témoignage avait peu de poids juridique, personne n'aurait inventé cela pour convaincre. Les historiens y voient un « critère d'embarras » : on ne forge pas un argument à partir d'un détail qui affaiblit sa crédibilité. Le récit porte les marques du réel, pas de la propagande."],
+["Le basculement du jour de culte","Des Juifs pieux, formés depuis toujours à sanctifier le sabbat (le samedi), se mettent à se rassembler « le premier jour de la semaine » (Actes 20:7 ; 1 Corinthiens 16:2). Un tel changement, pour un peuple aussi attaché au sabbat, demande une cause énorme. Le nom donné à ce jour dit tout : « le jour du Seigneur » (Apocalypse 1:10) — le jour de la résurrection."],
+["« Prémices » : la logique agricole du salut","Le lendemain du sabbat pascal, on offrait la première gerbe de la moisson (Lévitique 23). Christ ressuscite ce jour-là : « prémices de ceux qui sont morts » (15:20). L'image est précise : les prémices ne sont pas toute la récolte, mais la garantie que la récolte vient. Sa résurrection n'est pas l'exception qui étonne, c'est le premier épi qui promet le champ entier."],
+["Si l'on retire ce chapitre","Paul fait un exercice vertigineux : il envisage l'hypothèse que le Christ ne soit pas ressuscité. Conclusion : « nous sommes les plus à plaindre de tous les hommes » (15:19), la prédication est vaine, la foi est vaine, les morts sont perdus. Aucune autre religion ne fait dépendre toute sa vérité d'un unique fait historique vérifiable. Le christianisme, lui, met tout sur la table : un tombeau. C'est ce qui le rend falsifiable — et donc sérieux."]],
+nlbl:"Continuer",ntitle:"Le Temple détruit — pourquoi ?",
+ntext:"L'Agneau vivant est le vrai Temple. Quarante ans plus tard, le Temple de pierre tombe. Coïncidence, ou signe ?",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pilier « La Résurrection » — le sceau du ciel sur l'offrande de l'Agneau."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Pillar · The Resurrection — the living Lamb",
+eyebrow:"1 Corinthians 15 · Corinth, c. AD 55 — but the text quoted goes back to the 30s",
+verse:"“Christ died… he was buried… <span class='g'>he was raised</span> on the third day, according to the Scriptures.”",
+scene:"The whole journey has led to the cross. But if the story stopped there, the Lamb would stay in the tomb — and the offering, without answer. The resurrection is heaven's seal: the offering was received. The slain Lamb stands.",
+stations:[
+{ctx:"1 Corinthians 15:3-7 · the oldest text",t:"A creed dated to the 30s",img:"Before the Gospels, a formula already handed on: died, buried, raised, appeared.",
+p:"Paul writes around AD 55, but he specifies: “I delivered to you what I also received”. These are the technical words of tradition — the formula was handed to him well before, likely in Jerusalem in the 30s, within a few years of the events. It is brief, rhythmic, made to be memorized: Christ died for our sins, was buried, was raised, appeared to Cephas, to the twelve, then to more than five hundred brothers “most of whom are still alive”. In other words: go and ask them. The heart of the faith is not a late legend — it is a dated, checkable testimony, owned by names.",
+o:["Hosea 6:2","On the third day he will raise us up, and we will live before him."],
+n:["1 Corinthians 15:3-4","Christ died for our sins according to the Scriptures; he was buried, and he was raised on the third day."]},
+{ctx:"Revelation 5:6 · the central image",t:"The slain Lamb — standing",img:"At the center of the throne, a lamb bearing the marks of death, and yet alive.",
+p:"It is the strangest and truest image in all the Bible: “a lamb standing, as though it had been slain” — but standing, alive, at the center of the throne. Death left its marks, it did not keep its prey. The resurrection does not erase the cross: the Risen One shows his wounds (“see my hands”, Luke 24:39; “put your finger here”, John 20:27). The victory bears forever the scars of the offering. The Lamb is not slain then glorified as two separate stages: he reigns as the slain one.",
+o:["Psalm 16:10","You will not abandon my soul to Sheol, neither will you allow your holy one to see decay."],
+n:["Revelation 5:6","I saw in the middle of the throne a Lamb standing, as though it had been slain."]},
+{ctx:"John 2 · Matthew 12 · the announcement",t:"The sign he had promised",img:"One sign given in advance: three days, like Jonah; this temple raised.",
+p:"Jesus had promised only one sign: that of Jonah, “three days and three nights” (Matthew 12:40). And from the start, at the Temple, he had said a sentence no one understood: “destroy this temple, and in three days I will raise it up” — “he spoke of the temple of his body” (John 2:19-21). The resurrection is therefore not a happy twist: it is the fulfilment of a word given in advance, and the proof that all the rest was true. It is also the first bridge to the next page: his body is the true Temple.",
+o:["Jonah 1:17","Jonah was in the belly of the fish three days and three nights."],
+n:["John 2:19","Destroy this temple, and in three days I will raise it up."]},
+{ctx:"Romans 4:25 · what it changes",t:"The proof the offering is received",img:"Without the resurrection, the cross is a martyrdom. With it, it is an accepted victory.",
+p:"Why is this decisive? Because the resurrection is God's signature at the bottom of the offering. “He was delivered up for our trespasses, and was raised for our justification” (Romans 4:25). A slain lamb that stays dead would have proved nothing; a slain lamb that God raises is God declaring: “I accept”. Paul is categorical: “if Christ has not been raised, your faith is worthless” (15:17). The whole journey hangs on that morning. The Lamb lives — so the offering was received, and the pardon holds.",
+o:["Isaiah 53:11","After the suffering of his soul… he will see the light and be satisfied."],
+n:["Romans 4:25","He was delivered up for our trespasses, and was raised for our justification."]}],
+vh:"What Easter morning changes",
+vintro:"Remove the resurrection, and the whole journey collapses. Here, line by line, is what stands because of it:",
+verbs:["The offering<small>accepted: God said “I receive”</small>","The cross<small>not a failure, but a victory</small>","The Scriptures<small>“according to the Scriptures”: the promise kept</small>","Our hope<small>“firstfruits of those who sleep” (15:20)</small>"],
+vp:"Paul calls the risen Christ “the firstfruits” (1 Corinthians 15:20) — the first of the harvest, presented to God the day after the Passover sabbath (Leviticus 23:10-11). And Jesus rises precisely “on the first day of the week” (John 20:1), at the time of firstfruits: the first of an immense harvest. His resurrection is not an isolated case, it is an opening — “as in Adam all die, so in Christ all will be made alive” (15:22). The empty tomb is not a happy ending: it is a beginning for all.",
+ch:"The empty tomb: what do the facts say?",
+c1:["What all Christians confess","Christ really died, was really buried, and was really raised — bodily, not symbolically; he appeared to witnesses who touched him and ate with him; this fact is the foundation of the whole Christian faith. It is the common ground, Catholic and Evangelical."],
+c2:["What the texts report","“He is risen, he is not here” (Mark 16:6) · “He presented himself alive with many proofs” (Acts 1:3) · “Touch me and see” (Luke 24:39) · “He appeared to more than five hundred brothers” (1 Corinthians 15:6) · “My Lord and my God!” (John 20:28). The accounts keep their differences of detail — a sign of distinct witnesses, not a fabricated version."],
+c3:["What we do not conceal","No one filmed the resurrection; what history documents is a tomb found empty, witnesses ready to die for what they claimed to have seen, and a community that shifts its day of worship to Sunday. One may dispute the interpretation; one cannot make these facts a late invention. The last step — believing — remains free. A reference says so."],
+dh:"Go deeper",
+deep:[
+["Why “according to the Scriptures”?","Paul repeats the phrase for the death AND the resurrection (15:3-4). Which texts? Psalm 16 (“you will not let your holy one see decay”), cited by Peter at Pentecost (Acts 2:27); Hosea 6:2 (“the third day”); the Servant of Isaiah 53 who, after giving his life, “will see his offspring” and “be satisfied”; the sign of Jonah. The resurrection is no add-on: it was written into the expectation."],
+["The most embarrassing witness: the women","The four Gospels agree on one point: women discover the empty tomb first. In the first-century context, where their testimony carried little legal weight, no one would have invented this to convince. Historians see here a “criterion of embarrassment”: you do not forge an argument from a detail that weakens its credibility. The account bears the marks of reality, not of propaganda."],
+["The shift of the day of worship","Pious Jews, trained forever to keep the sabbath (Saturday), begin to gather “on the first day of the week” (Acts 20:7; 1 Corinthians 16:2). Such a change, for a people so attached to the sabbath, demands a huge cause. The name given to that day says everything: “the Lord's day” (Revelation 1:10) — the day of the resurrection."],
+["“Firstfruits”: the agricultural logic of salvation","The day after the Passover sabbath, the first sheaf of the harvest was offered (Leviticus 23). Christ rises that very day: “firstfruits of those who have fallen asleep” (15:20). The image is precise: firstfruits are not the whole harvest, but the guarantee that the harvest is coming. His resurrection is not the exception that astonishes, it is the first ear that promises the whole field."],
+["If you remove this chapter","Paul runs a dizzying exercise: he entertains the hypothesis that Christ was not raised. Conclusion: “we are of all men most to be pitied” (15:19), the preaching is vain, the faith is vain, the dead are lost. No other religion makes its entire truth depend on a single verifiable historical fact. Christianity puts everything on the table: a tomb. That is what makes it falsifiable — and therefore serious."]],
+nlbl:"Continue",ntitle:"The Temple destroyed — why?",
+ntext:"The living Lamb is the true Temple. Forty years later, the Temple of stone falls. Coincidence, or sign?",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pillar “The Resurrection” — heaven's seal on the Lamb's offering."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"ركن · القيامة — الحمل الحيّ",
+eyebrow:"١ كورنثوس ١٥ · كورنثوس، نحو سنة ٥٥ م — لكن النصَّ المقتبَس يعود إلى ثلاثينيات القرن الأول",
+verse:"«الْمَسِيحُ مَاتَ… وَدُفِنَ… <span class='g'>وَقَامَ</span> فِي الْيَوْمِ الثَّالِثِ حَسَبَ الْكُتُبِ.»",
+scene:"قاد المسارُ كلُّه إلى الصليب. لكن لو توقفت الروايةُ هناك، لبقي الحملُ في القبر — والتقدمةُ بلا جواب. القيامةُ هي ختمُ السماء: التقدمةُ قُبلت. الحملُ المذبوح يقف واقفًا.",
+stations:[
+{ctx:"١ كورنثوس ١٥: ٣-٧ · أقدم النصوص",t:"قانونُ إيمانٍ من ثلاثينيات القرن الأول",img:"قبل الأناجيل، صيغةٌ مُسلَّمة سلفًا: مات، دُفن، قام، ظهر.",
+p:"يكتب بولس نحو سنة ٥٥، لكنه يوضّح: «سَلَّمْتُكُمْ مَا قَبِلْتُهُ». وهي كلماتُ التسليم التقنية — تسلَّم الصيغةَ قبل ذلك بكثير، غالبًا في أورشليم في الثلاثينيات، على بُعد سنواتٍ قليلة من الأحداث. وهي موجزة، موقّعة، مصنوعة للحفظ: المسيح مات لأجل خطايانا، ودُفن، وقام، وظهر لصفا، ثم للاثني عشر، ثم لأكثرَ من خمسمئة أخ «أكثرُهم باقٍ إلى الآن». أي: اذهبوا واسألوهم. قلبُ الإيمان ليس أسطورةً متأخرة — بل شهادةٌ مؤرَّخة، قابلةٌ للفحص، يتبنّاها أصحابُ أسماء.",
+o:["هوشع ٦: ٢","فِي الْيَوْمِ الثَّالِثِ يُقِيمُنَا فَنَحْيَا أَمَامَهُ."],
+n:["١ كورنثوس ١٥: ٣-٤","الْمَسِيحُ مَاتَ مِنْ أَجْلِ خَطَايَانَا حَسَبَ الْكُتُبِ، وَدُفِنَ، وَقَامَ فِي الْيَوْمِ الثَّالِثِ."]},
+{ctx:"رؤيا ٥: ٦ · الصورة المركزية",t:"الحمل المذبوح — واقفًا",img:"في وسط العرش، حملٌ يحمل علاماتِ الموت، ومع ذلك حيّ.",
+p:"إنها أغربُ صورةٍ وأصدقُها في الكتاب كلِّه: «خَرُوفٌ قَائِمٌ كَأَنَّهُ مَذْبُوحٌ» — لكنه قائمٌ، حيّ، في وسط العرش. تركَ الموتُ علاماتِه، لكنه لم يحتفظ بفريسته. القيامةُ لا تمحو الصليب: القائمُ يُري جراحه («انْظُرُوا يَدَيَّ»، لوقا ٢٤: ٣٩؛ «هَاتِ إِصْبِعَكَ»، يوحنا ٢٠: ٢٧). النصرُ يحمل إلى الأبد ندوبَ التقدمة. الحملُ ليس مذبوحًا ثم ممجَّدًا كمرحلتين منفصلتين: بل يملك بوصفه المذبوح.",
+o:["مزمور ١٦: ١٠","لأَنَّكَ لَنْ تَتْرُكَ نَفْسِي فِي الْهَاوِيَةِ، لَنْ تَدَعَ تَقِيَّكَ يَرَى فَسَادًا."],
+n:["رؤيا ٥: ٦","فَرَأَيْتُ فِي وَسَطِ الْعَرْشِ خَرُوفًا قَائِمًا كَأَنَّهُ مَذْبُوحٌ."]},
+{ctx:"يوحنا ٢ · متى ١٢ · الإعلان",t:"العلامةُ التي وعد بها",img:"علامةٌ واحدة أُعطيت سلفًا: ثلاثةُ أيام، كيونان؛ وهذا الهيكلُ يُقام.",
+p:"لم يَعِد يسوع إلا بعلامةٍ واحدة: علامةِ يونان، «ثَلاَثَةَ أَيَّامٍ وَثَلاَثَ لَيَال» (متى ١٢: ٤٠). ومنذ البداية، في الهيكل، قال جملةً لم يفهمها أحد: «انْقُضُوا هذَا الْهَيْكَلَ وَفِي ثَلاَثَةِ أَيَّامٍ أُقِيمُهُ» — «كَانَ يَقُولُ عَنْ هَيْكَلِ جَسَدِهِ» (يوحنا ٢: ١٩-٢١). فالقيامةُ ليست انعطافًا سعيدًا: بل إتمامُ كلمةٍ أُعطيت سلفًا، وبرهانُ أن كلَّ الباقي كان صحيحًا. وهي أيضًا أولُ جسرٍ نحو الصفحة التالية: جسدُه هو الهيكلُ الحقيقي.",
+o:["يونان ١: ١٧","وَكَانَ يُونَانُ فِي جَوْفِ الْحُوتِ ثَلاَثَةَ أَيَّامٍ وَثَلاَثَ لَيَال."],
+n:["يوحنا ٢: ١٩","انْقُضُوا هذَا الْهَيْكَلَ وَفِي ثَلاَثَةِ أَيَّامٍ أُقِيمُهُ."]},
+{ctx:"رومية ٤: ٢٥ · ما الذي يتغيّر",t:"البرهانُ أن التقدمةَ قُبلت",img:"بلا القيامة، الصليبُ استشهاد. ومعها، إنه نصرٌ مقبول.",
+p:"لماذا هذا حاسم؟ لأن القيامةَ توقيعُ الله في أسفل التقدمة. «أُسْلِمَ مِنْ أَجْلِ خَطَايَانَا وَأُقِيمَ لأَجْلِ تَبْرِيرِنَا» (رومية ٤: ٢٥). حملٌ مذبوح يبقى ميتًا لَما أثبت شيئًا؛ أما حملٌ مذبوح يقيمه اللهُ، فهو اللهُ يعلن: «أنا أقبل». وبولس قاطع: «إِنْ لَمْ يَكُنِ الْمَسِيحُ قَدْ قَامَ، فَبَاطِلٌ إِيمَانُكُمْ» (١٥: ١٧). المسارُ كلُّه معلَّقٌ بذلك الصباح. الحملُ حيّ — إذًا قُبلت التقدمة، والغفرانُ ثابت.",
+o:["إشعياء ٥٣: ١١","مِنْ تَعَبِ نَفْسِهِ يَرَى وَيَشْبَعُ."],
+n:["رومية ٤: ٢٥","أُسْلِمَ مِنْ أَجْلِ خَطَايَانَا وَأُقِيمَ لأَجْلِ تَبْرِيرِنَا."]}],
+vh:"ما الذي يغيّره صباحُ الفصح",
+vintro:"انزع القيامة، ينهرِ المسارُ كلُّه. وهذا، سطرًا سطرًا، ما يثبت بفضلها:",
+verbs:["التقدمة<small>مقبولة: قال اللهُ «أنا أقبل»</small>","الصليب<small>لا فشلٌ، بل نصر</small>","الكتب<small>«حسب الكتب»: الوعدُ محفوظ</small>","رجاؤنا<small>«باكورةُ الراقدين» (١٥: ٢٠)</small>"],
+vp:"يسمّي بولس المسيحَ القائمَ «الباكورة» (١ كورنثوس ١٥: ٢٠) — أولَ الحصاد، يُقدَّم لله في غد سبت الفصح (لاويين ٢٣: ١٠-١١). ويقوم يسوع تحديدًا «فِي أَوَّلِ الأُسْبُوعِ» (يوحنا ٢٠: ١)، في زمن الباكورة: أولُ حصادٍ هائل. قيامتُه ليست حالةً معزولة، بل افتتاح — «كَمَا فِي آدَمَ يَمُوتُ الْجَمِيعُ، هكَذَا فِي الْمَسِيحِ سَيُحْيَا الْجَمِيعُ» (١٥: ٢٢). القبرُ الفارغ ليس نهايةً سعيدة: بل بدايةٌ للجميع.",
+ch:"القبر الفارغ: ماذا تقول الوقائع؟",
+c1:["ما يعترف به المسيحيون جميعًا","المسيحُ مات حقًّا، ودُفن حقًّا، وقام حقًّا — جسديًّا لا رمزيًّا؛ وظهر لشهودٍ لمسوه وأكلوا معه؛ وهذه الواقعةُ أساسُ الإيمان المسيحي كلِّه. إنها الأرضُ المشتركة، الكاثوليكية والإنجيلية."],
+c2:["ما ترويه النصوص","«قَدْ قَامَ، لَيْسَ هُوَ ههُنَا» (مرقس ١٦: ٦) · «أَرَى نَفْسَهُ حَيًّا بِبَرَاهِينَ كَثِيرَةٍ» (أعمال ١: ٣) · «جُسُّونِي وَانْظُرُوا» (لوقا ٢٤: ٣٩) · «ظَهَرَ لأَكْثَرَ مِنْ خَمْسِمِئَةِ أَخٍ» (١ كورنثوس ١٥: ٦) · «رَبِّي وَإِلهِي!» (يوحنا ٢٠: ٢٨). تحتفظ الرواياتُ باختلافاتها في التفاصيل — علامةُ شهودٍ متمايزين، لا نسخةٍ مصنوعة."],
+c3:["ما لا نُخفيه","لم يصوّر أحدٌ القيامة؛ ما يوثّقه التاريخُ هو قبرٌ وُجد فارغًا، وشهودٌ مستعدون للموت لأجل ما قالوا إنهم رأوه، وجماعةٌ تنقل يومَ عبادتها إلى الأحد. يمكن مناقشةُ التفسير؛ أما جعلُ هذه الوقائع اختراعًا متأخرًا فمستحيل. الخطوةُ الأخيرة — أن تؤمن — تبقى حرة. والمرجعُ الأمين يقول ذلك."],
+dh:"للتعمّق",
+deep:[
+["لماذا «حسب الكتب»؟","يكرّر بولس الصيغةَ للموت وللقيامة معًا (١٥: ٣-٤). أيُّ نصوص؟ المزمور ١٦ («لَنْ تَدَعَ تَقِيَّكَ يَرَى فَسَادًا»)، المقتبَس عند الخمسين (أعمال ٢: ٢٧)؛ وهوشع ٦: ٢ («اليوم الثالث»)؛ وعبدُ إشعياء ٥٣ الذي، بعد أن بذل نفسه، «يَرَى نَسْلاً» و«يَشْبَعُ»؛ وعلامةُ يونان. القيامةُ ليست إضافة: بل كانت مكتوبةً في الانتظار."],
+["أكثرُ الشهود إحراجًا: النساء","تتفق الأناجيلُ الأربعة على نقطة: النساءُ هنّ مَن اكتشفن القبرَ الفارغَ أولًا. وفي سياق القرن الأول، حيث كانت شهادتهنّ قليلةَ الوزن القانوني، ما كان أحدٌ ليختلق ذلك للإقناع. يرى المؤرخون هنا «معيارَ الإحراج»: لا يُصنَع دليلٌ من تفصيلٍ يُضعف مصداقيته. الروايةُ تحمل علاماتِ الواقع، لا الدعاية."],
+["نقلُ يوم العبادة","يهودٌ أتقياء، تربّوا منذ الأزل على تقديس السبت، يبدأون بالاجتماع «فِي أَوَّلِ الأُسْبُوعِ» (أعمال ٢٠: ٧؛ ١ كورنثوس ١٦: ٢). تغييرٌ كهذا، لشعبٍ بهذا التعلّق بالسبت، يستلزم سببًا هائلًا. والاسمُ المعطى لذلك اليوم يقول كلَّ شيء: «يَوْمُ الرَّبِّ» (رؤيا ١: ١٠) — يومُ القيامة."],
+["«الباكورة»: منطقُ الخلاص الزراعي","في غد سبت الفصح كانت تُقدَّم أولُ حزمةٍ من الحصاد (لاويين ٢٣). ويقوم المسيحُ في ذلك اليوم: «باكورةُ الراقدين» (١٥: ٢٠). الصورةُ دقيقة: الباكورةُ ليست كلَّ الحصاد، بل ضمانةُ أن الحصادَ آتٍ. قيامتُه ليست الاستثناءَ الذي يُدهش، بل السنبلةُ الأولى التي تَعِد بالحقل كلِّه."],
+["لو نزعنا هذا الأصحاح","يجري بولس تمرينًا مذهلًا: يفترض أن المسيحَ لم يقُم. النتيجة: «فَنَحْنُ أَشْقَى جَمِيعِ النَّاسِ» (١٥: ١٩)، والكرازةُ باطلة، والإيمانُ باطل، والموتى هالكون. لا دينَ آخرَ يجعل حقيقتَه كلَّها معلَّقةً بواقعةٍ تاريخية واحدة قابلة للفحص. أما المسيحيةُ فتضع كلَّ شيء على الطاولة: قبرًا. وهذا ما يجعلها قابلةً للدحض — ومن ثَمّ جادّة."]],
+nlbl:"تابع",ntitle:"الهيكل المدمَّر — لماذا؟",
+ntext:"الحملُ الحيّ هو الهيكلُ الحقيقي. وبعد أربعين سنة، يسقط هيكلُ الحجر. أمصادفةٌ، أم علامة؟",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>ركن «القيامة» — ختمُ السماء على تقدمة الحمل."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

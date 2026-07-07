@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La route d'Emmaüs — la méthode du site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;
+    --gold:#d3a94f;--line:#23273a;--crimson:#a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,-apple-system,sans-serif}
+  html[dir="rtl"] .ui{font-family:'Amiri',system-ui,sans-serif}
+
+  /* top bar */
+  .top{
+    max-width:1060px;margin:0 auto;padding:18px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{
+    font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em;
+    background:none;border:1px solid var(--line);border-radius:6px;
+    color:var(--muted);padding:6px 12px;cursor:pointer;
+  }
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .langs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* fil / étapes */
+  .thread{max-width:1060px;margin:26px auto 0;padding:0 20px}
+  .thread .lbl{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;text-align:center}
+  html[dir="rtl"] .thread .lbl{letter-spacing:.06em}
+  .dots{display:flex;justify-content:center;align-items:center;gap:0;margin-top:14px;flex-wrap:wrap}
+  .dot{display:flex;flex-direction:column;align-items:center;width:86px}
+  .dot .pt{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg)}
+  .dot.on .pt{background:var(--gold);border-color:var(--gold);box-shadow:0 0 10px rgba(211,169,79,.6)}
+  .dot .nm{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted);margin-top:7px;text-align:center;line-height:1.3}
+  html[dir="rtl"] .dot .nm{font-size:11px}
+  .dot.on .nm{color:var(--gold)}
+  .dots .seg{height:1px;width:34px;background:var(--line);margin-bottom:22px}
+
+  /* hero */
+  .hero{max-width:820px;margin:0 auto;padding:58px 22px 30px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:15px}
+  .verse{font-size:clamp(30px,6vw,54px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:600px;margin:26px auto 0;color:var(--muted);font-size:16px}
+
+  /* strates */
+  main{max-width:820px;margin:0 auto;padding:10px 22px 70px}
+  .strate{margin-top:54px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+  .snum{
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);
+    color:var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;font-size:18px;flex:none;
+  }
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .strate p{font-size:17.5px;margin-bottom:16px}
+  .strate p .g{color:var(--gold)}
+
+  .mental{
+    border:1px solid var(--line);border-inline-start:3px solid var(--gold);
+    background:var(--bg2);border-radius:0 10px 10px 0;
+    padding:18px 22px;margin-top:8px;font-size:16.5px;
+  }
+  html[dir="rtl"] .mental{border-radius:10px 0 0 10px}
+  .mental b{color:var(--gold);font-weight:normal}
+
+  h3.sub{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:26px;margin:34px 0 12px}
+  html[dir="rtl"] h3.sub{font-family:'Amiri',serif;font-weight:700}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .cardE{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:20px 18px}
+  .cardE .cref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  html[dir="rtl"] .cardE .cref{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .cardE h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;margin-bottom:8px}
+  html[dir="rtl"] .cardE h4{font-family:'Amiri',serif}
+  .cardE p{font-size:14.5px;color:#c6c0b2;margin:0}
+  .cardE .key{display:block;margin-top:10px;color:var(--gold);font-style:italic;font-size:14.5px}
+
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{
+    cursor:pointer;list-style:none;padding:16px 20px;
+    font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+
+  .next{
+    margin-top:60px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(135deg,var(--bg2),#171426);
+    padding:28px;display:block;text-decoration:none;color:var(--ink);
+    position:relative;overflow:hidden;
+  }
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px;margin:0}
+
+  footer{max-width:820px;margin:0 auto 46px;padding:0 22px;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line);padding-top:22px}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.strate,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="thread">
+  <div class="lbl" id="steplbl"></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+
+<main id="main"></main>
+
+<footer id="foot"></footer>
+
+<script>
+const C={
+fr:{
+  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  steplbl:"Page fondatrice · la méthode du site",
+  steps:["Jérusalem, le matin","La route","La question","« Moïse et tous les prophètes »","L'auberge","Le pain rompu","Le retour en courant"],
+  eyebrow:"Luc 24:13-35 · Route d'Emmaüs, le soir de Pâques, an 30",
+  verse:"« Commençant par Moïse et par tous les prophètes, <span class='g'>il leur expliqua dans toutes les Écritures ce qui le concernait</span>. »",
+  scene:"Deux disciples quittent Jérusalem, effondrés : leur maître est mort, et des femmes parlent d'un tombeau vide. Un inconnu les rejoint. Ce qu'il fait sur cette route est exactement ce que ce site essaie de faire — voici notre page fondatrice.",
+  s1:"L'essentiel · 90 secondes",s2:"Comprendre",s3:"Aller plus loin",
+  s1p:[
+  "Les deux marcheurs connaissent tous les faits : la condamnation, la croix, le troisième jour, le tombeau vide (24:19-24). Il ne leur manque <span class='g'>aucune information</span>. Il leur manque la clé de lecture.",
+  "Jésus ne commence pas par se montrer. Il commence par l'Écriture : « commençant par Moïse et par tous les prophètes, il leur expliqua dans toutes les Écritures ce qui le concernait » (24:27). Le Ressuscité consacre sa première après-midi à un cours de Bible.",
+  "Résultat : « Notre cœur ne brûlait-il pas au-dedans de nous, lorsqu'il nous parlait en chemin et nous expliquait les Écritures ? » (24:32). Comprendre l'Ancien Testament n'est pas un exercice d'érudition : c'est ce qui fait brûler le cœur. Ce site existe pour refaire, page après page, le chemin d'Emmaüs."],
+  mental:"<b>L'image à retenir :</b> une route de campagne, et toute la Bible relue à la lumière de la croix. « Relier les points » n'est pas notre méthode — c'est la sienne.",
+  h1:"Ce que l'inconnu a dû leur montrer",
+  intro:"Luc ne transcrit pas le cours — mais la prédication des apôtres dans les semaines suivantes permet de le reconstituer :",
+  cards:[
+  ["« Moïse » — la Torah","Les cinq premiers livres","De la postérité qui écrase le serpent (Genèse 3:15) à l'agneau de la Pâque (Exode 12), du bélier de Morija (Genèse 22) au serpent élevé (Nombres 21) et au prophète à venir (Deutéronome 18).","La Loi devient une attente."],
+  ["« Tous les prophètes »","D'Isaïe à Malachie","Le serviteur silencieux et transpercé (Isaïe 53), celui qu'ils ont percé (Zacharie 12:10), le berger frappé (13:7), le roi humble sur un âne (9:9), le Fils de l'homme (Daniel 7), le signe de Jonas.","Les prophètes deviennent un portrait."],
+  ["« Et les psaumes »","Luc 24:44","Le cri de l'abandonné et les vêtements tirés au sort (Psaume 22), l'ami qui trahit (41), le vinaigre (69), la pierre rejetée (118), « tu ne livreras pas ton bien-aimé à la corruption » (16).","Les psaumes deviennent sa prière."]],
+  h2:"« Ne fallait-il pas que le Christ souffrît ? »",
+  s2b:[
+  "La question de Jésus (24:26) est la thèse de ce site : la croix n'est pas l'échec du Messie, elle est son chemin annoncé — « ne fallait-il pas que le Christ souffrît ces choses, et qu'il entrât dans sa gloire ? ». Le mot décisif est « <span class='g'>fallait-il</span> » : une nécessité qui n'est pas celle du destin, mais celle des Écritures données d'avance.",
+  "Et remarquez l'ordre pédagogique : d'abord les Écritures expliquées — le cœur qui brûle ; ensuite le pain rompu — les yeux qui s'ouvrent (24:30-31). Comprendre, puis reconnaître. C'est l'ordre de ce site : le parcours de l'Agneau d'abord, la table de l'Offrande ensuite."],
+  h3:"Pourquoi c'est difficile sans aide",
+  s2c:["Soyons honnêtes : sans les pratiques juives — la Pâque, l'agneau quotidien, Kippour, les prémices — la moitié du Nouveau Testament reste voilée au lecteur d'aujourd'hui. L'Éthiopien des Actes le dit sans détour, son rouleau d'Isaïe à la main : « Comment le pourrais-je, si quelqu'un ne me guide ? » (Actes 8:31). Ce site veut être ce quelqu'un : ni un savant qui écrase, ni un raccourci qui appauvrit — un compagnon de route qui relie les points, texte en main."],
+  deep:[
+  ["Le canon en trois parties","Le soir même, Jésus élargit la formule : « ce qui est écrit de moi dans la loi de Moïse, dans les prophètes et dans les psaumes » (24:44) — la division juive des Écritures (Torah, Prophètes, Écrits, dont les Psaumes ouvrent la troisième partie). Autrement dit : les trois étagères de la bibliothèque, et aucune n'est facultative."],
+  ["« Il leur ouvrit l'esprit » (24:45)","Comprendre les Écritures est à la fois un travail et un don. Le travail, ce site le fournit : textes, contexte, pratiques, données. Le don — « alors il leur ouvrit l'esprit, afin qu'ils comprissent les Écritures » — ne s'installe pas sur un serveur. Nous assumons les deux : rigueur des faits, et humilité sur la dernière clé."],
+  ["Emmaüs et la prédication des Actes","Les premiers sermons chrétiens suivent exactement la méthode d'Emmaüs : citer l'Écriture, montrer l'accomplissement. Pierre à la Pentecôte explique le Psaume 16 (Actes 2) ; Philippe part d'Isaïe 53 « et lui annonça la bonne nouvelle de Jésus » (8:35). Le diagramme du Fil Rouge n'est que la mise en carte de cette méthode apostolique."],
+  ["Reconnu à la fraction du pain","« Il prit le pain, rendit grâces, le rompit, et le leur donna. Alors leurs yeux s'ouvrirent » (24:30-31). Les quatre verbes de notre section L'Offrande — et la reconnaissance à ce geste précis. Puis « il disparut de devant eux » : il ne se laisse plus localiser ; il se donne dans le signe institué et dans les Écritures ouvertes."],
+  ["Le retour en courant","Luc précise la distance — une soixantaine de stades, une bonne dizaine de kilomètres — et le détail qui dit tout : « ils se levèrent à l'heure même » (24:33) pour refaire la route de nuit vers Jérusalem. Quand les Écritures s'ouvrent, on ne garde pas la nouvelle pour soi. C'est la raison d'être de nos pages à partager."]],
+  nlbl:"La suite logique",ntitle:"Une Bible digne de confiance",
+  ntext:"Le cours d'Emmaüs suppose une chose : que les textes cités soient antérieurs et fidèlement transmis. C'est l'objet de la section suivante — des faits, des dates, des manuscrits.",
+  foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Page fondatrice — la charte de méthode du site."
+},
+en:{
+  dir:"ltr",brand:"THE LAMB OF GOD",
+  steplbl:"Founding page · the method of this site",
+  steps:["Jerusalem, morning","The road","The question","“Moses and all the prophets”","The inn","The bread broken","The run back"],
+  eyebrow:"Luke 24:13-35 · Road to Emmaus, Easter evening, AD 30",
+  verse:"“Beginning from Moses and from all the prophets, <span class='g'>he explained to them in all the Scriptures the things concerning himself</span>.”",
+  scene:"Two disciples leave Jerusalem, crushed: their master is dead, and some women speak of an empty tomb. A stranger joins them. What he does on that road is exactly what this site tries to do — this is our founding page.",
+  s1:"The essentials · 90 seconds",s2:"Understand",s3:"Go deeper",
+  s1p:[
+  "The two walkers know all the facts: the sentence, the cross, the third day, the empty tomb (24:19-24). They lack <span class='g'>no information</span>. They lack the key of reading.",
+  "Jesus does not begin by showing himself. He begins with Scripture: “beginning from Moses and from all the prophets, he explained to them in all the Scriptures the things concerning himself” (24:27). The Risen One spends his first afternoon giving a Bible class.",
+  "The result: “Weren't our hearts burning within us, while he spoke to us along the way, and while he opened the Scriptures to us?” (24:32). Understanding the Old Testament is not a scholarly exercise: it is what sets the heart burning. This site exists to walk the Emmaus road again, page after page."],
+  mental:"<b>The image to keep:</b> a country road, and the whole Bible reread in the light of the cross. “Connecting the dots” is not our method — it is his.",
+  h1:"What the stranger must have shown them",
+  intro:"Luke does not transcribe the lesson — but the apostles' preaching in the following weeks lets us reconstruct it:",
+  cards:[
+  ["“Moses” — the Torah","The first five books","From the offspring who crushes the serpent (Genesis 3:15) to the Passover lamb (Exodus 12), from the ram of Moriah (Genesis 22) to the lifted serpent (Numbers 21) and the prophet to come (Deuteronomy 18).","The Law becomes an expectation."],
+  ["“All the prophets”","From Isaiah to Malachi","The silent, pierced servant (Isaiah 53), the one they pierced (Zechariah 12:10), the stricken shepherd (13:7), the humble king on a donkey (9:9), the Son of Man (Daniel 7), the sign of Jonah.","The prophets become a portrait."],
+  ["“And the psalms”","Luke 24:44","The cry of the forsaken and the garments cast by lot (Psalm 22), the betraying friend (41), the vinegar (69), the rejected stone (118), “you will not allow your holy one to see corruption” (16).","The psalms become his prayer."]],
+  h2:"“Didn't the Christ have to suffer?”",
+  s2b:[
+  "Jesus' question (24:26) is the thesis of this site: the cross is not the Messiah's failure, it is his announced road — “didn't the Christ have to suffer these things and to enter into his glory?”. The decisive word is “<span class='g'>have to</span>”: a necessity not of fate, but of Scriptures given in advance.",
+  "And note the pedagogical order: first the Scriptures explained — the burning heart; then the bread broken — the opened eyes (24:30-31). Understand, then recognize. That is the order of this site: the journey of the Lamb first, the table of the Offering next."],
+  h3:"Why it is hard without a guide",
+  s2c:["Let us be honest: without the Jewish practices — the Passover, the daily lamb, Yom Kippur, the firstfruits — half of the New Testament stays veiled to today's reader. The Ethiopian of Acts says it plainly, his Isaiah scroll in hand: “How can I, unless someone explains it to me?” (Acts 8:31). This site wants to be that someone: neither a scholar who crushes, nor a shortcut that impoverishes — a travelling companion who connects the dots, text in hand."],
+  deep:[
+  ["The canon in three parts","That same evening, Jesus widens the formula: “all things which are written in the law of Moses, the prophets, and the psalms, concerning me” (24:44) — the Jewish division of the Scriptures (Torah, Prophets, Writings, the Psalms opening the third part). In other words: the three shelves of the library, and none is optional."],
+  ["“Then he opened their minds” (24:45)","Understanding the Scriptures is both a labour and a gift. The labour, this site provides: texts, context, practices, data. The gift — “then he opened their minds, that they might understand the Scriptures” — cannot be installed on a server. We own both: rigour about the facts, humility about the final key."],
+  ["Emmaus and the preaching of Acts","The first Christian sermons follow exactly the Emmaus method: quote the Scripture, show the fulfilment. Peter at Pentecost expounds Psalm 16 (Acts 2); Philip begins from Isaiah 53 “and preached to him Jesus” (8:35). The Scarlet Thread diagram is nothing but this apostolic method drawn as a map."],
+  ["Recognized in the breaking of the bread","“He took the bread, gave thanks, broke it, and gave it to them. Their eyes were opened” (24:30-31). The four verbs of our section The Offering — and the recognition at that precise gesture. Then “he vanished out of their sight”: he no longer lets himself be located; he gives himself in the instituted sign and in the opened Scriptures."],
+  ["The run back","Luke gives the distance — about sixty stadia, a good seven miles — and the detail that says everything: “they rose up that very hour” (24:33) to walk the road back to Jerusalem by night. When the Scriptures open, you do not keep the news to yourself. That is the reason for our shareable pages."]],
+  nlbl:"The logical next step",ntitle:"A Bible worthy of trust",
+  ntext:"The Emmaus lesson assumes one thing: that the quoted texts are earlier and faithfully transmitted. That is the object of the next section — facts, dates, manuscripts.",
+  foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Founding page — the site's charter of method."
+},
+ar:{
+  dir:"rtl",brand:"حَمَلُ الله",
+  steplbl:"الصفحة المؤسِّسة · منهج الموقع",
+  steps:["أورشليم، صباحًا","الطريق","السؤال","«موسى وجميع الأنبياء»","المنزل","كسر الخبز","العودة ركضًا"],
+  eyebrow:"لوقا ٢٤: ١٣-٣٥ · طريق عمواس، مساء أحد القيامة، سنة ٣٠ م",
+  verse:"«ثُمَّ ابْتَدَأَ مِنْ مُوسَى وَمِنْ جَمِيعِ الأَنْبِيَاءِ <span class='g'>يُفَسِّرُ لَهُمَا الأُمُورَ الْمُخْتَصَّةَ بِهِ فِي جَمِيعِ الْكُتُبِ</span>.»",
+  scene:"تلميذان يغادران أورشليم منهارَين: معلّمهما مات، ونساءٌ يتحدثن عن قبرٍ فارغ. غريبٌ يلحق بهما. ما فعله على تلك الطريق هو بالضبط ما يحاول هذا الموقعُ فعله — هذه صفحتُنا المؤسِّسة.",
+  s1:"الخلاصة · ٩٠ ثانية",s2:"للفهم",s3:"للتعمّق",
+  s1p:[
+  "الماشيان يعرفان كلَّ الوقائع: الحكم، والصليب، واليوم الثالث، والقبر الفارغ (٢٤: ١٩-٢٤). لا تنقصهما <span class='g'>أيُّ معلومة</span>. ينقصهما مفتاحُ القراءة.",
+  "لا يبدأ يسوع بإظهار نفسه، بل يبدأ بالكتاب: «ابْتَدَأَ مِنْ مُوسَى وَمِنْ جَمِيعِ الأَنْبِيَاءِ يُفَسِّرُ لَهُمَا الأُمُورَ الْمُخْتَصَّةَ بِهِ فِي جَمِيعِ الْكُتُبِ» (٢٤: ٢٧). القائمُ من الموت يقضي أولَ عصريةٍ له في درسٍ كتابي.",
+  "والنتيجة: «أَلَمْ يَكُنْ قَلْبُنَا مُلْتَهِبًا فِينَا إِذْ كَانَ يُكَلِّمُنَا فِي الطَّرِيقِ وَيُوضِحُ لَنَا الْكُتُبَ؟» (٢٤: ٣٢). فهمُ العهد القديم ليس ترفًا علميًا: إنه ما يجعل القلبَ يلتهب. هذا الموقعُ قائمٌ ليعيد، صفحةً بعد صفحة, طريقَ عمواس."],
+  mental:"<b>الصورة التي تبقى:</b> طريقٌ ريفية، والكتابُ كلُّه يُقرأ من جديد على ضوء الصليب. «ربطُ النقاط» ليس منهجَنا — إنه منهجُه هو.",
+  h1:"ما الذي لا بدّ أن الغريب أراهما إياه",
+  intro:"لم يدوّن لوقا الدرسَ — لكن كرازة الرسل في الأسابيع التالية تتيح إعادةَ بنائه:",
+  cards:[
+  ["«موسى» — التوراة","الأسفار الخمسة الأولى","من النسل الذي يسحق الحية (تكوين ٣: ١٥) إلى حمل الفصح (خروج ١٢)، ومن كبش المريّا (تكوين ٢٢) إلى الحية المرفوعة (عدد ٢١) والنبي الآتي (تثنية ١٨).","الشريعة تصير انتظارًا."],
+  ["«جميع الأنبياء»","من إشعياء إلى ملاخي","العبد الصامت المطعون (إشعياء ٥٣)، والذي طعنوه (زكريا ١٢: ١٠)، والراعي المضروب (١٣: ٧)، والملك الوديع على أتان (٩: ٩)، وابن الإنسان (دانيال ٧)، وآية يونان.","الأنبياء يصيرون صورةً شخصية."],
+  ["«والمزامير»","لوقا ٢٤: ٤٤","صرخةُ المتروك والثيابُ المقترَع عليها (مزمور ٢٢)، والصديقُ الخائن (٤١)، والخل (٦٩)، والحجرُ المرفوض (١١٨)، و«لَنْ تَدَعَ تَقِيَّكَ يَرَى فَسَادًا» (١٦).","المزامير تصير صلاتَه."]],
+  h2:"«أَمَا كَانَ يَنْبَغِي أَنَّ الْمَسِيحَ يَتَأَلَّمُ؟»",
+  s2b:[
+  "سؤالُ يسوع (٢٤: ٢٦) هو أطروحةُ هذا الموقع: الصليبُ ليس فشلَ المسيّا، بل طريقُه المعلَنة — «أَمَا كَانَ يَنْبَغِي أَنَّ الْمَسِيحَ يَتَأَلَّمُ بِهذَا وَيَدْخُلُ إِلَى مَجْدِهِ؟». الكلمةُ الحاسمة هي «<span class='g'>يَنْبَغِي</span>»: ضرورةٌ ليست قدَرًا أعمى، بل كتبًا أُعطيت سلفًا.",
+  "ولاحظ الترتيبَ التعليمي: أولًا الكتبُ مشروحةً — القلبُ الملتهب؛ ثم الخبزُ مكسورًا — العيونُ المنفتحة (٢٤: ٣٠-٣١). أن نفهم، ثم أن نعرف. وهذا ترتيبُ هذا الموقع: مسارُ الحمل أولًا، ثم مائدةُ التقدمة."],
+  h3:"لماذا يصعب الفهمُ بلا مرشد",
+  s2c:["لنكن صادقين: من دون الممارسات اليهودية — الفصح، وحمل كل يوم، ويوم الكفارة، والبواكير — يبقى نصفُ العهد الجديد محجوبًا عن قارئ اليوم. والحبشيُّ في سفر الأعمال يقولها بلا مواربة، ودرجُ إشعياء في يده: «كَيْفَ يُمْكِنُنِي إِنْ لَمْ يُرْشِدْنِي أَحَدٌ؟» (أعمال ٨: ٣١). يريد هذا الموقعُ أن يكون ذلك «الأحد»: لا عالِمًا يسحق، ولا اختصارًا يُفقِر — بل رفيقَ طريقٍ يربط النقاط، والنصُّ في اليد."],
+  deep:[
+  ["القانون في ثلاثة أقسام","في المساء نفسه يوسّع يسوع الصيغة: «جَمِيعُ مَا هُوَ مَكْتُوبٌ عَنِّي فِي نَامُوسِ مُوسَى وَالأَنْبِيَاءِ وَالْمَزَامِيرِ» (٢٤: ٤٤) — وهو التقسيم اليهودي للكتب (التوراة، الأنبياء، الكتابات التي تفتتحها المزامير). أي: رفوفُ المكتبة الثلاثة، ولا واحدَ منها اختياري."],
+  ["«حِينَئِذٍ فَتَحَ ذِهْنَهُمْ» (٢٤: ٤٥)","فهمُ الكتب عملٌ وعطيةٌ معًا. العملُ يقدّمه هذا الموقع: نصوصٌ وسياقٌ وممارساتٌ ومعطيات. أما العطية — «فَتَحَ ذِهْنَهُمْ لِيَفْهَمُوا الْكُتُبَ» — فلا تُثبَّت على خادم. ونحن نلتزم الاثنين: دقةً في الوقائع، وتواضعًا أمام المفتاح الأخير."],
+  ["عمواس وكرازة سفر الأعمال","تتبع أولى العظات المسيحية منهجَ عمواس بحذافيره: اقتبسِ الكتابَ، وأرِ التمام. بطرس في الخمسين يشرح المزمور ١٦ (أعمال ٢)؛ وفيلبس يبدأ من إشعياء ٥٣ «وَبَشَّرَهُ بِيَسُوعَ» (٨: ٣٥). ومخططُ «الخيط الأحمر» ليس إلا هذا المنهجَ الرسولي مرسومًا خريطةً."],
+  ["عُرف عند كسر الخبز","«أَخَذَ خُبْزًا وَبَارَكَ وَكَسَّرَ وَنَاوَلَهُمَا. فَانْفَتَحَتْ أَعْيُنُهُمَا» (٢٤: ٣٠-٣١). أفعالُ قسمِنا «التقدمة» الأربعة — والمعرفةُ عند هذه الحركة بالذات. ثم «اخْتَفَى عَنْهُمَا»: لم يعد يُحصَر في مكان؛ إنه يهب نفسَه في العلامة التي أسّسها وفي الكتب المفتوحة."],
+  ["العودة ركضًا","يذكر لوقا المسافةَ — نحو ستين غلوة، أي أكثر من عشرة كيلومترات — والتفصيلَ الذي يقول كلَّ شيء: «فَقَامَا فِي تِلْكَ السَّاعَةِ» (٢٤: ٣٣) ليعودا ليلًا إلى أورشليم. حين تنفتح الكتب، لا يُحتفَظ بالخبر للنفس. وهذا سببُ وجود صفحاتنا القابلة للمشاركة."]],
+  nlbl:"الخطوة المنطقية التالية",ntitle:"كتابٌ جدير بالثقة",
+  ntext:"درسُ عمواس يفترض أمرًا واحدًا: أن النصوصَ المقتبسة سابقةٌ ومنقولةٌ بأمانة. وهذا موضوع القسم التالي — وقائع وتواريخ ومخطوطات.",
+  foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>الصفحة المؤسِّسة — ميثاقُ منهج الموقع."
+}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;
+  document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('steplbl').textContent=c.steplbl;
+  const dots=document.getElementById('dots');dots.innerHTML="";
+  c.steps.forEach((s,i)=>{
+    if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
+    const d=document.createElement('div');d.className='dot'+(i===3?' on':'');
+    d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
+  });
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅰ</div><h2>${c.s1}</h2><div class="l"></div></div>
+    ${c.s1p.map(p=>`<p>${p}</p>`).join("")}
+    <div class="mental">${c.mental}</div>
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅱ</div><h2>${c.s2}</h2><div class="l"></div></div>
+    <h3 class="sub">${c.h1}</h3>
+    <p>${c.intro}</p>
+    <div class="cards">${c.cards.map(k=>`
+      <div class="cardE"><div class="cref">${k[0]}</div><h4>${k[1]}</h4><p>${k[2]}</p><span class="key">${k[3]}</span></div>`).join("")}
+    </div>
+    <h3 class="sub">${c.h2}</h3>
+    ${c.s2b.map(p=>`<p>${p}</p>`).join("")}
+    <h3 class="sub">${c.h3}</h3>
+    ${c.s2c.map(p=>`<p>${p}</p>`).join("")}
+  </section>
+  <section class="strate">
+    <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="section-bible-fiable.html">
+    <div class="nlbl">${c.nlbl}</div>
+    <h3>${c.ntitle}</h3>
+    <p>${c.ntext}</p>
+  </a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

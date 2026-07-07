@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La bibliothèque — comment la Bible est composée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0b0d16;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;
+    --loi:#c98a5e;--histoire:#b07d54;--sagesse:#d3a94f;--grands:#6b9bd8;--petits:#8fb8d8;
+    --evangiles:#d05c5c;--actes:#7cb47c;--paul:#a583d6;--generales:#57b3ab;--apocalypse:#d3a94f;--feast:#c99a3e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,serif;line-height:1.6;overflow-x:hidden}
+  html[dir="rtl"] body{font-family:'Amiri',serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,sans-serif}
+  .crumb{max-width:1160px;margin:0 auto;padding:12px 22px 0;font-family:system-ui,sans-serif;font-size:11.5px;color:var(--muted)}
+  .crumb a{color:var(--muted);text-decoration:none}.crumb a:hover{color:var(--gold)}
+  .crumb .sep{margin:0 7px;opacity:.5}
+  .top{max-width:1160px;margin:0 auto;padding:10px 22px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:44px 22px 8px;text-align:center}
+  .kicker{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  html[dir="rtl"] .kicker{letter-spacing:.06em}
+  h1{font-size:clamp(30px,5.5vw,50px);line-height:1.1}h1 .g{color:var(--gold)}
+  .lede{max-width:640px;margin:16px auto 0;color:var(--muted);font-size:16px}
+  .stat{margin-top:20px;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6b6f85}
+  html[dir="rtl"] .stat{letter-spacing:.04em}
+  .whichroom{max-width:860px;margin:22px auto 0;padding:12px 20px;border:1px dashed color-mix(in srgb,var(--gold) 40%,transparent);border-radius:10px;text-align:center;font-family:system-ui,sans-serif;font-size:13px;color:#cfc9bb}
+  .whichroom b{color:var(--gold)}
+  .testament{max-width:1160px;margin:34px auto 0;padding:0 18px}
+  .tlabel{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:18px;font-weight:600}
+  html[dir="rtl"] .tlabel{letter-spacing:.05em}
+  .shelf{margin-bottom:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg2)}
+  .shelfhead{display:flex;align-items:baseline;gap:12px;padding:14px 18px;cursor:pointer;border-inline-start:4px solid var(--sc);flex-wrap:wrap}
+  .shelfhead:hover{background:#141727}
+  .shelfhead h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--sc)}
+  html[dir="rtl"] .shelfhead h2{font-family:'Amiri',serif}
+  .shelfhead .cnt{font-family:system-ui,sans-serif;font-size:11px;color:var(--muted)}
+  .shelfhead .sub{font-family:system-ui,sans-serif;font-size:12.5px;color:#c6c0b2;font-style:italic;flex:1;min-width:200px}
+  html[dir="rtl"] .shelfhead .sub{font-style:normal}
+  .shelfhead .chev{margin-inline-start:auto;color:var(--muted);transition:transform .2s;font-family:system-ui}
+  html[dir="rtl"] .shelfhead .chev{margin-inline-start:0;margin-inline-end:auto}
+  .shelf.open .chev{transform:rotate(90deg)}
+  .shelfbody{display:none;padding:0 18px 18px}
+  .shelf.open .shelfbody{display:block}
+  .intro{font-size:14.5px;color:#cfc9bb;padding:6px 0 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .spines{display:flex;flex-wrap:wrap;gap:7px}
+  .spine{font-family:system-ui,sans-serif;font-size:12.5px;padding:9px 13px;border:1px solid var(--line);border-radius:7px;background:#0e1120;color:#cfc9bb;cursor:pointer;border-inline-start:3px solid var(--sc);transition:border-color .15s,background .15s}
+  .spine:hover{border-color:var(--sc)}
+  .spine.active{background:color-mix(in srgb,var(--sc) 16%,#0e1120);color:var(--ink);border-color:var(--sc)}
+  .spine .sd{font-size:9.5px;color:var(--muted);margin-inline-start:6px}
+  .lectern{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:#0e1120;padding:18px 20px;display:none;position:relative;overflow:hidden}
+  .lectern.show{display:block;animation:fu .3s ease}
+  @keyframes fu{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+  .lectern::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:var(--sc)}
+  .lectern .bn{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--sc)}
+  html[dir="rtl"] .lectern .bn{font-family:'Amiri',serif}
+  .lectern .bd{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .lectern .lbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:10px 0 3px}
+  html[dir="rtl"] .lectern .lbl{letter-spacing:.03em}
+  .lectern .what{font-size:15.5px}
+  .lectern .christ{font-size:15px;font-style:italic;color:#d8d2c2}
+  html[dir="rtl"] .lectern .christ{font-style:normal}
+  .feasts{max-width:1160px;margin:36px auto 0;padding:0 18px}
+  .feasthead{border:1px solid color-mix(in srgb,var(--feast) 45%,transparent);border-radius:12px;padding:18px 22px;background:linear-gradient(160deg,color-mix(in srgb,var(--feast) 8%,transparent),transparent)}
+  .feasthead h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:var(--feast)}
+  html[dir="rtl"] .feasthead h2{font-family:'Amiri',serif}
+  .feasthead p{color:#cfc9bb;font-size:14.5px;margin-top:6px}
+  .fgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+  @media(max-width:720px){.fgrid{grid-template-columns:1fr}}
+  .fcard{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--bg2);border-inline-start:3px solid var(--feast)}
+  .fcard h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px}
+  html[dir="rtl"] .fcard h3{font-family:'Amiri',serif}
+  .fcard .fd{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .fcard .fw{font-size:14px;color:#c6c0b2;margin-bottom:8px}
+  .fcard .fc{font-size:14px;font-style:italic;color:var(--feast);border-top:1px solid var(--line);padding-top:8px}
+  html[dir="rtl"] .fcard .fc{font-style:normal}
+  .canon{max-width:1160px;margin:26px auto 0;padding:0 18px}
+  .canonin{border:1px solid var(--line);border-radius:12px;padding:18px 22px;background:var(--bg2)}
+  .canonin h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--muted)}
+  html[dir="rtl"] .canonin h2{font-family:'Amiri',serif}
+  .canonin p{color:#b6b0a2;font-size:14px;margin-top:6px}
+  .next{max-width:1160px;margin:26px auto 0;padding:0 18px;display:flex;gap:12px;flex-wrap:wrap}
+  .nextbtn{flex:1;min-width:220px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--bg2);color:var(--ink);text-decoration:none;font-family:system-ui,sans-serif;font-size:15px;transition:border-color .2s}
+  .nextbtn:hover{border-color:var(--gold)}
+  footer{max-width:1160px;margin:34px auto 46px;padding:22px 22px 0;border-top:1px solid var(--line);text-align:center;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="crumb" id="crumb"></div>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<section class="hero">
+  <div class="kicker" id="kicker"></div>
+  <h1 class="display" id="title"></h1>
+  <p class="lede" id="lede"></p>
+  <div class="stat" id="stat"></div>
+</section>
+<div class="whichroom" id="whichroom"></div>
+<div class="testament"><div class="tlabel" id="atLabel"></div><div id="atShelves"></div></div>
+<div class="testament"><div class="tlabel" id="ntLabel"></div><div id="ntShelves"></div></div>
+<div class="feasts"><div class="feasthead"><h2 id="feastHead"></h2><p id="feastIntro"></p><div class="fgrid" id="feastGrid"></div></div></div>
+<div class="canon"><div class="canonin"><h2 id="canonHead"></h2><p id="canonBody"></p></div></div>
+<div class="next" id="nextBox"></div>
+<footer id="foot"></footer>
+
+<script>
+// Base de données de la salle "La Bibliothèque" : 66 livres, 10 groupes, 7 fêtes.
+// Chaque livre : {n:nom, a:abbr, d:date approx, w:une phrase "de quoi ça parle", c:lien Christ}
+// Trilingue via clé de langue. Statuts de datation = estimations d'historien (affiché sur la page).
+const LIB={
+fr:{
+ dir:"ltr",brand:"UN SEUL LIVRE",
+ kicker:"La bibliothèque · 66 livres, un seul fil",
+ title:"Comment la Bible est <span class='g'>composée</span>",
+ lede:"Une bibliothèque de 66 livres, écrits sur près de quinze siècles par une quarantaine d'auteurs, sur trois continents, en trois langues — et pourtant traversés d'un seul fil. Touchez une étagère pour comprendre sa logique, ou un livre pour savoir de quoi il parle.",
+ stat:"66 livres · ≈ 40 auteurs · 3 langues · ~1 500 ans · 3 continents · 1 fil",
+ twoLabel:["De quoi est faite la Bible ?","(cette salle) — pour savoir si l'on peut lui faire confiance, voyez la salle « Bible fiable »"],
+ atLabel:"Ancien Testament — 39 livres",ntLabel:"Nouveau Testament — 27 livres",
+ groupLbl:"livres",
+ lecternHint:"— Touchez un livre pour l'ouvrir —",
+ col:{when:"Quand (estimation)",what:"De quoi ça parle",christ:"Le fil vers le Christ"},
+ groups:[
+  {k:"loi",t:"La Loi (Torah)",n:"5 livres",sub:"Les fondations : la création, les promesses, la sortie d'Égypte, l'Alliance.",
+   intro:"Les cinq premiers livres, la « Torah » (l'instruction), attribués à Moïse. Ils posent tout : d'où vient le monde, d'où vient le mal, comment Dieu se choisit un peuple et lui donne une Alliance. Tout le reste de la Bible s'y appuie. C'est ici que naissent l'agneau pascal, le sacrifice, le sacerdoce — les figures que le Christ accomplira.",
+   books:[
+    {n:"Genèse",d:"origines",w:"Création, chute, Noé, Abraham, Isaac, Jacob, Joseph : les commencements et les promesses.",c:"La promesse d'une descendance qui écrasera le serpent (3:15) ; le fils offert à Morija (22)."},
+    {n:"Exode",d:"la sortie",w:"L'esclavage en Égypte, Moïse, les plaies, la Pâque, la mer fendue, le Sinaï, le tabernacle.",c:"L'agneau pascal dont le sang protège (12) — que Jean nommera « l'Agneau de Dieu »."},
+    {n:"Lévitique",d:"le culte",w:"Les sacrifices, le sacerdoce, la pureté, le grand jour des Expiations, les fêtes.",c:"« Le sang fait l'expiation » (17:11) ; tout le système que le Christ accomplira une fois pour toutes."},
+    {n:"Nombres",d:"le désert",w:"Quarante ans d'errance, les murmures, le serpent d'airain, les recensements.",c:"Le serpent élevé qui guérit (21:9) — image de la croix (Jean 3:14)."},
+    {n:"Deutéronome",d:"le rappel",w:"Les discours d'adieu de Moïse : la Loi redonnée avant d'entrer dans la Terre promise.",c:"La promesse d'un prophète « comme Moïse » qu'il faudra écouter (18:15)."}]},
+  {k:"histoire",t:"Les livres historiques",n:"12 livres",sub:"De l'entrée en Terre promise à l'exil et au retour.",
+   intro:"Douze livres qui racontent l'histoire d'Israël : la conquête, les juges, la royauté (Saül, David, Salomon), la division du royaume, sa chute, l'exil à Babylone, puis le retour. C'est le cadre historique sans lequel les prophètes sont illisibles. Le fil rouge : la promesse d'un trône éternel faite à David.",
+   books:[
+    {n:"Josué",d:"~1200",w:"L'entrée en Canaan, la traversée du Jourdain, la prise de Jéricho.",c:"Josué (même nom que « Jésus ») fait entrer le peuple dans le repos promis."},
+    {n:"Juges",d:"~1100",w:"Le cycle des chutes et des libérateurs suscités par Dieu (Gédéon, Samson…).",c:"Chaque « sauveur » partiel fait attendre le Sauveur définitif."},
+    {n:"Ruth",d:"~1100",w:"Une étrangère fidèle, arrière-grand-mère de David : la grâce entre dans la lignée.",c:"Une Moabite dans la généalogie du Messie (Matthieu 1:5) : les nations déjà incluses."},
+    {n:"1 Samuel",d:"~1050",w:"Samuel, Saül, l'ascension de David ; « Dieu regarde au cœur ».",c:"David, le roi selon le cœur de Dieu, type du Messie à venir."},
+    {n:"2 Samuel",d:"~1000",w:"Le règne de David, sa gloire, sa faute, et la grande promesse.",c:"« Ton trône sera affermi pour toujours » (7:13) : la promesse davidique."},
+    {n:"1 Rois",d:"~960",w:"Salomon, le Temple bâti, puis la division du royaume ; Élie.",c:"Le Temple — que le Christ nommera « le temple de son corps »."},
+    {n:"2 Rois",d:"~850–587",w:"La décadence des deux royaumes jusqu'aux deux chutes ; Élisée.",c:"Élie, dont le retour est attendu — accompli en Jean-Baptiste."},
+    {n:"1 Chroniques",d:"~500",w:"Relecture sacerdotale : généalogies, David, préparatifs du Temple.",c:"L'accent sur la lignée de David et le culte, qui pointent vers le Messie-prêtre."},
+    {n:"2 Chroniques",d:"~500",w:"De Salomon à l'exil, vue du côté du Temple et du culte.",c:"L'attente d'un culte parfait, que l'Offrande unique accomplira."},
+    {n:"Esdras",d:"~450",w:"Le retour d'exil, la reconstruction du Temple.",c:"Le second Temple, où l'enfant Jésus sera présenté."},
+    {n:"Néhémie",d:"~430",w:"La reconstruction des murs de Jérusalem, la réforme du peuple.",c:"La ville restaurée, en attente de « la Jérusalem d'en haut »."},
+    {n:"Esther",d:"~470",w:"Une reine juive sauve son peuple d'un génocide en Perse (fête de Pourim).",c:"Dieu, jamais nommé, agit en secret pour sauver — la providence cachée."}]},
+  {k:"sagesse",t:"Les livres poétiques & de sagesse",n:"5 livres",sub:"Le cœur humain devant Dieu : prière, souffrance, amour, sens de la vie.",
+   intro:"Cinq livres qui ne racontent pas l'histoire mais explorent l'expérience : la souffrance de l'innocent, la prière, la sagesse pratique, le vide des choses, l'amour. C'est la Bible qui parle au cœur. Les Psaumes sont le livre le plus cité par Jésus et les apôtres.",
+   books:[
+    {n:"Job",d:"ancien",w:"Pourquoi le juste souffre-t-il ? Un débat vertigineux, sans réponse facile.",c:"Job réclame un médiateur entre Dieu et l'homme (9:33) : le Christ le sera."},
+    {n:"Psaumes",d:"~1000–500",w:"150 prières et chants : louange, plainte, confiance, royauté. Le livre de prière d'Israël.",c:"Le livre le plus cité au sujet du Christ : Ps 22 (la croix), Ps 110 (le Seigneur), Ps 16 (la résurrection)."},
+    {n:"Proverbes",d:"~700",w:"La sagesse pratique du quotidien ; la Sagesse personnifiée, présente à la création.",c:"La Sagesse « auprès de Dieu » avant le monde (8:30) — relue en Christ."},
+    {n:"Ecclésiaste",d:"~300",w:"« Vanité des vanités » : la quête du sens sous le soleil, l'honnêteté du vide.",c:"L'aveu du vide sans Dieu, qui prépare à recevoir la vie « en abondance »."},
+    {n:"Cantique",d:"~900",w:"Un poème d'amour nuptial, célébration de l'amour humain.",c:"Lu par la tradition comme l'amour de Dieu pour son peuple — les noces de l'Agneau."}]},
+  {k:"grands",t:"Les grands prophètes",n:"5 livres",sub:"Les grandes voix de l'avertissement et de l'espérance, autour de l'exil.",
+   intro:"On les appelle « grands » à cause de la longueur de leurs livres, non de leur importance. Ils parlent avant, pendant et après la catastrophe de l'exil (587). Ils dénoncent l'injustice, annoncent le jugement — mais aussi, toujours, une espérance : un serviteur, une alliance nouvelle, un royaume qui ne finit pas.",
+   books:[
+    {n:"Ésaïe",d:"~700",w:"Le prophète le plus cité : jugement et consolation, l'Emmanuel, le Serviteur souffrant.",c:"Ésaïe 53, le chapitre le plus cité du NT : « par ses meurtrissures nous sommes guéris »."},
+    {n:"Jérémie",d:"~600",w:"Le prophète des larmes, témoin de la chute de Jérusalem ; l'alliance nouvelle.",c:"« Je ferai une alliance nouvelle » (31:31) — accomplie à la Cène."},
+    {n:"Lamentations",d:"~586",w:"Cinq poèmes de deuil sur Jérusalem détruite ; « ses compassions se renouvellent ».",c:"Au fond du deuil, l'espérance tenace — figure de l'espérance pascale."},
+    {n:"Ézéchiel",d:"~590",w:"Prêtre exilé : visions saisissantes, le cœur nouveau, le berger, les ossements desséchés.",c:"« Un seul berger, mon serviteur David » (34:23) — « je suis le bon berger »."},
+    {n:"Daniel",d:"~550",w:"À la cour de Babylone : fidélité sous la pression, visions des empires et du Fils de l'homme.",c:"« Un fils de l'homme » recevant un règne éternel (7:13) — titre que Jésus s'attribue."}]},
+  {k:"petits",t:"Les petits prophètes",n:"12 livres",sub:"Douze voix brèves, du VIIIe siècle au retour d'exil.",
+   intro:"« Petits » par la taille seulement. Douze prophètes, sur environ trois siècles, chacun avec un message tranchant : justice sociale, fidélité, jugement, mais toujours une porte d'espérance. Plusieurs annoncent des détails précis sur le Messie — le lieu, l'entrée, l'Esprit répandu.",
+   books:[
+    {n:"Osée",d:"~750",w:"Un mariage brisé comme image de l'amour fidèle de Dieu pour un peuple infidèle.",c:"« J'ai appelé mon fils hors d'Égypte » (11:1) — relu du retour de l'enfant Jésus."},
+    {n:"Joël",d:"débattu",w:"Le « jour de l'Éternel », une invasion de sauterelles, l'Esprit répandu sur tous.",c:"« Je répandrai mon Esprit sur toute chair » (3:1) — accompli à la Pentecôte."},
+    {n:"Amos",d:"~760",w:"Un berger qui tonne contre l'injustice sociale au nom de Dieu.",c:"« Je relèverai la hutte de David » (9:11) — les nations incluses (Actes 15)."},
+    {n:"Abdias",d:"~586",w:"Le plus court : jugement sur Édom, orgueil abaissé.",c:"« La royauté sera à l'Éternel » : le royaume qui vient."},
+    {n:"Jonas",d:"~780",w:"Le prophète en fuite, avalé par un poisson, envoyé à Ninive la païenne.",c:"« Trois jours et trois nuits » (2:1) : le signe de Jonas que Jésus s'applique."},
+    {n:"Michée",d:"~700",w:"Justice, humilité, et le village d'où sortira le dominateur d'Israël.",c:"« De Bethléhem sortira… » (5:1) : le lieu de naissance du Messie."},
+    {n:"Nahum",d:"~650",w:"La chute annoncée de Ninive : Dieu juge les empires cruels.",c:"« Voici sur les montagnes les pieds de celui qui apporte de bonnes nouvelles » (1:15)."},
+    {n:"Habacuc",d:"~600",w:"Le dialogue d'un prophète qui questionne Dieu sur le mal ; « le juste vivra par la foi ».",c:"« Le juste vivra par sa foi » (2:4) : le cœur de l'épître aux Romains."},
+    {n:"Sophonie",d:"~630",w:"Le jour du jugement, mais un reste sauvé ; « Dieu tressaillira de joie ».",c:"Le « reste » sauvé, image du peuple racheté par l'Agneau."},
+    {n:"Aggée",d:"~520",w:"Un appel à rebâtir le Temple après l'exil : « la gloire de cette maison ».",c:"« La gloire de cette dernière maison sera plus grande » (2:9) : le Christ au Temple."},
+    {n:"Zacharie",d:"~520",w:"Visions du roi humble, du berger frappé, de « celui qu'ils ont percé ».",c:"« Ton roi vient, monté sur un âne » (9:9) ; « ils regarderont vers celui qu'ils ont percé » (12:10)."},
+    {n:"Malachie",d:"~430",w:"La dernière voix de l'AT : le messager qui prépare, le retour d'Élie.",c:"« J'enverrai mon messager » (3:1) : Jean-Baptiste, avant quatre siècles de silence."}]}
+ ],
+ groupsNT:[
+  {k:"evangiles",t:"Les Évangiles",n:"4 livres",sub:"Quatre portraits du Christ, un seul visage.",
+   intro:"Quatre récits de la vie, de la mort et de la résurrection de Jésus — non quatre versions concurrentes, mais quatre regards complémentaires, écrits pour des publics différents. Ensemble, ils donnent un portrait en relief. C'est le cœur de la Bible : tout l'AT y conduisait, tout le NT en découle.",
+   books:[
+    {n:"Matthieu",d:"~60–80",w:"Jésus, roi et accomplissement des Écritures, écrit pour des lecteurs juifs.",c:"« Cela arriva afin que s'accomplît ce qui avait été dit » : la formule qui revient sans cesse."},
+    {n:"Marc",d:"~55–70",w:"Le plus court et le plus vif : Jésus le Serviteur, en action, « aussitôt ».",c:"« Le Fils de l'homme est venu… donner sa vie en rançon » (10:45)."},
+    {n:"Luc",d:"~60–80",w:"Le médecin historien : Jésus sauveur des exclus, des pauvres, des étrangers.",c:"La route d'Emmaüs (24) : le Ressuscité explique toutes les Écritures — la clé du site."},
+    {n:"Jean",d:"~85–95",w:"Le plus théologique : Jésus la Parole éternelle faite chair, les sept « Je suis ».",c:"« Au commencement était la Parole » (1:1) ; « Voici l'Agneau de Dieu » (1:29)."}]},
+  {k:"actes",t:"Les Actes",n:"1 livre",sub:"La naissance de l'Église, du Jourdain aux extrémités de la terre.",
+   intro:"La suite de l'Évangile de Luc : comment le message part de Jérusalem et gagne le monde, porté par l'Esprit répandu à la Pentecôte. On y voit l'Église naître, les premières conversions, les voyages de Paul.",
+   books:[
+    {n:"Actes",d:"~62–80",w:"La Pentecôte, les premiers chrétiens, Pierre puis Paul, l'Évangile jusqu'à Rome.",c:"L'Esprit promis par Joël, répandu (2) : le « déjà » du Royaume à l'œuvre."}]},
+  {k:"paul",t:"Les lettres de Paul",n:"13 lettres",sub:"L'Évangile expliqué, église par église, question par question.",
+   intro:"Treize lettres de l'apôtre Paul à des communautés ou des personnes. Ce ne sont pas des traités mais des réponses vivantes à des situations concrètes — d'où leur puissance. Elles déploient le sens de la croix et de la résurrection. Romains et Galates sont au cœur de la Réforme ; le grand hymne de l'abaissement est en Philippiens 2.",
+   books:[
+    {n:"Romains",d:"~57",w:"L'exposé le plus complet de l'Évangile : péché, grâce, foi, Israël, vie nouvelle.",c:"« Il l'a livré pour nos offenses, ressuscité pour notre justification » (4:25)."},
+    {n:"1 Corinthiens",d:"~55",w:"Réponses à une église divisée : la croix, l'amour (ch. 13), la résurrection (ch. 15).",c:"Le credo daté des années 30 : « Christ est mort… ressuscité… selon les Écritures » (15:3-4)."},
+    {n:"2 Corinthiens",d:"~56",w:"La défense du ministère, la faiblesse comme lieu de la puissance de Dieu.",c:"« Dieu était en Christ, réconciliant le monde » (5:19)."},
+    {n:"Galates",d:"~50",w:"La liberté de l'Évangile contre le retour à la Loi : on est sauvé par la foi.",c:"« Le juste vivra par la foi » ; « Christ nous a rachetés » (3:13)."},
+    {n:"Éphésiens",d:"~62",w:"Le grand dessein de Dieu : tout réunir en Christ ; l'Église, son corps.",c:"« Récapituler toutes choses en Christ » (1:10)."},
+    {n:"Philippiens",d:"~62",w:"La joie en prison ; le grand hymne de l'abaissement et de l'exaltation.",c:"« Il s'est dépouillé lui-même, prenant la forme d'un serviteur » (2:6-8)."},
+    {n:"Colossiens",d:"~62",w:"La suprématie du Christ sur toute la création ; contre les fausses sagesses.",c:"« Tout a été créé par lui et pour lui… tout subsiste en lui » (1:16-17)."},
+    {n:"1 Thessaloniciens",d:"~51",w:"Encouragement à une jeune église ; l'espérance du retour du Christ.",c:"L'attente vive du retour : le « pas encore » du Royaume."},
+    {n:"2 Thessaloniciens",d:"~51",w:"Précisions sur le retour du Christ, contre la panique et l'oisiveté.",c:"La patience dans l'attente, sans fixer de date."},
+    {n:"1 Timothée",d:"~63",w:"Conseils à un jeune responsable d'église : doctrine saine, ordre, intégrité.",c:"« Un seul médiateur entre Dieu et les hommes » (2:5)."},
+    {n:"2 Timothée",d:"~66",w:"La dernière lettre de Paul, face à la mort : « j'ai gardé la foi ».",c:"« Toute Écriture est inspirée de Dieu » (3:16) : la Bible sur elle-même."},
+    {n:"Tite",d:"~63",w:"Organiser une église saine en Crète ; la grâce qui forme la vie.",c:"« L'apparition de la gloire de notre grand Dieu et Sauveur Jésus-Christ » (2:13)."},
+    {n:"Philémon",d:"~62",w:"Un billet personnel : un esclave fugitif accueilli comme un frère.",c:"L'Évangile qui transforme les relations : reçois-le « comme moi-même »."}]},
+  {k:"generales",t:"Les lettres générales",n:"8 lettres",sub:"Des lettres aux églises dispersées : tenir ferme dans l'épreuve.",
+   intro:"Huit lettres d'autres apôtres (Jacques, Pierre, Jean, Jude) et l'épître aux Hébreux. Elles s'adressent à des chrétiens éprouvés, tentés de renoncer. Hébreux est capitale pour notre site : elle montre le Christ comme le grand-prêtre et le sacrifice unique qui accomplit tout le culte de l'AT.",
+   books:[
+    {n:"Hébreux",d:"~65",w:"Le Christ, grand-prêtre parfait et sacrifice unique, supérieur à tout l'ancien culte.",c:"« Un seul sacrifice pour les péchés, puis il s'est assis » (10:12) : le cœur de l'Offrande."},
+    {n:"Jacques",d:"~50",w:"La foi qui agit : une foi sans œuvres est morte ; la maîtrise de la langue.",c:"La foi vivante, fruit du « déjà » de la nouvelle naissance."},
+    {n:"1 Pierre",d:"~63",w:"Tenir dans la souffrance ; l'Agneau sans défaut ; un sacerdoce nouveau.",c:"« Le sang précieux de Christ, comme d'un agneau sans défaut » (1:19)."},
+    {n:"2 Pierre",d:"~65",w:"Contre les faux docteurs ; le témoin oculaire de la Transfiguration.",c:"« Nous avons été témoins de sa majesté » sur la montagne (1:16-18)."},
+    {n:"1 Jean",d:"~90",w:"Aimer et demeurer : « Dieu est amour » ; l'assurance du salut.",c:"« Dieu est amour » (4:8) : le cœur qui exige la Trinité."},
+    {n:"2 Jean",d:"~90",w:"Un court billet : marcher dans la vérité et l'amour, se garder des séducteurs.",c:"La vérité et l'amour tenus ensemble en Christ."},
+    {n:"3 Jean",d:"~90",w:"Un court billet : l'hospitalité chrétienne, soutenir les vrais serviteurs.",c:"« Marcher dans la vérité » : la vie transformée."},
+    {n:"Jude",d:"~65",w:"Un appel bref à combattre pour la foi contre les infiltrés.",c:"« Gardés pour Jésus-Christ » : la persévérance assurée."}]},
+  {k:"apocalypse",t:"L'Apocalypse",n:"1 livre",sub:"Le dévoilement : l'Agneau au centre, la victoire finale.",
+   intro:"« Apocalypse » signifie « dévoilement ». Un livre de visions, écrit pour des chrétiens persécutés, qui dévoile le sens caché de l'histoire : malgré les apparences, l'Agneau immolé règne, et le mal sera vaincu. Il referme la Bible en répondant à la Genèse : l'arbre de vie revient, la malédiction est ôtée.",
+   books:[
+    {n:"Apocalypse",d:"~95",w:"Visions de l'Agneau, du combat, du jugement, de la Jérusalem nouvelle et des noces.",c:"« L'Agneau immolé, debout » (5:6) ; « le temple, c'est le Seigneur Dieu et l'Agneau » (21:22)."}]}
+ ],
+ feasts:{
+  head:"Rayon spécial · Les fêtes juives dans l'Évangile",
+  intro:"On ne comprend pas l'Évangile sans les fêtes d'Israël : Jésus les vit, les accomplit, et souvent choisit délibérément une fête pour agir ou parler. Chaque fête est une clé de lecture. En voici sept, avec ce que Jésus en fait.",
+  items:[
+   {n:"La Pâque (Pessah)",d:"printemps",w:"On immole l'agneau, on mange le pain sans levain : mémoire de la sortie d'Égypte.",c:"Jésus meurt à la Pâque, à l'heure où l'on immole les agneaux. Il EST l'Agneau (1 Corinthiens 5:7). La Cène est un repas de Pâque."},
+   {n:"Les Pains sans levain",d:"printemps",w:"Sept jours sans levain, symbole de pureté et de hâte.",c:"« Le levain » = le péché ; le Christ, pain sans levain, « purifiez-vous du vieux levain » (1 Corinthiens 5:7-8)."},
+   {n:"Les Prémices",d:"printemps",w:"On offre la première gerbe de la moisson, le lendemain du sabbat pascal.",c:"Jésus ressuscite ce jour-là : « les prémices de ceux qui sont morts » (1 Corinthiens 15:20)."},
+   {n:"La Pentecôte (Chavouot)",d:"+50 jours",w:"Fête de la moisson et du don de la Loi au Sinaï, cinquante jours après la Pâque.",c:"L'Esprit est répandu ce jour-là (Actes 2) : non plus la Loi sur la pierre, mais l'Esprit dans les cœurs."},
+   {n:"Les Trompettes / le Nouvel An",d:"automne",w:"Un jour de sonneries de cor (shofar), appel au rassemblement et au réveil.",c:"« Au son de la trompette de Dieu » : image du rassemblement final (1 Thessaloniciens 4:16)."},
+   {n:"Le Grand Pardon (Yom Kippour)",d:"automne",w:"Le seul jour où le grand-prêtre entre dans le Lieu très-saint, avec le sang, pour tout le peuple.",c:"Hébreux 9 : le Christ entre « une fois pour toutes » dans le vrai sanctuaire, avec son propre sang."},
+   {n:"Les Tentes (Souccot)",d:"automne",w:"On habite sept jours sous des cabanes : mémoire du désert, fête de l'eau et de la lumière.",c:"Jésus, à cette fête : « si quelqu'un a soif, qu'il vienne à moi » (Jean 7:37) ; « je suis la lumière du monde » (8:12)."}]},
+ canon:{
+  head:"Une note honnête sur le nombre de livres",
+  body:"Cette bibliothèque présente les 66 livres reconnus en commun par toutes les grandes traditions chrétiennes. Les Bibles catholiques et orthodoxes incluent en plus quelques livres dits « deutérocanoniques » (Tobie, Judith, Sagesse, Siracide, Baruch, 1-2 Maccabées et des compléments), présents dans la traduction grecque de l'Ancien Testament. Ce site, qui vise catholiques et évangéliques, part du socle commun sans trancher ce débat ancien : il le signale honnêtement plutôt que de le masquer."},
+ abrat:"Où aller ensuite",
+ abrap:"Cette salle dit de quoi la Bible est faite. Pour savoir pourquoi on peut lui faire confiance — manuscrits, prophéties, cohérence — passez la porte vers la salle « Une Bible digne de confiance ». Pour voir le fil qui relie ces 66 livres, ouvrez le Fil Rouge.",
+ next1:"Une Bible digne de confiance →",next2:"Le Fil Rouge →",
+ foot:"Textes : Segond 1910 · World English Bible · Van Dyck. Les dates sont des estimations d'historien, documentées dans le dossier de référence.<br>La bibliothèque — 66 livres, un seul fil."
+},
+en:{
+ dir:"ltr",brand:"ONE BOOK",
+ kicker:"The library · 66 books, one single thread",
+ title:"How the Bible is <span class='g'>composed</span>",
+ lede:"A library of 66 books, written over nearly fifteen centuries by some forty authors, on three continents, in three languages — and yet run through by a single thread. Touch a shelf to grasp its logic, or a book to learn what it is about.",
+ stat:"66 books · ≈ 40 authors · 3 languages · ~1,500 years · 3 continents · 1 thread",
+ twoLabel:["What is the Bible made of?","(this room) — to know whether it can be trusted, see the room “A trustworthy Bible”"],
+ atLabel:"Old Testament — 39 books",ntLabel:"New Testament — 27 books",
+ groupLbl:"books",
+ lecternHint:"— Touch a book to open it —",
+ col:{when:"When (estimate)",what:"What it is about",christ:"The thread to Christ"},
+ groups:[
+  {k:"loi",t:"The Law (Torah)",n:"5 books",sub:"The foundations: creation, the promises, the exodus, the Covenant.",
+   intro:"The first five books, the “Torah” (instruction), attributed to Moses. They lay everything: where the world comes from, where evil comes from, how God chooses a people and gives it a Covenant. All the rest of the Bible rests on them. Here are born the Passover lamb, sacrifice, priesthood — the figures Christ will fulfil.",
+   books:[
+    {n:"Genesis",d:"origins",w:"Creation, fall, Noah, Abraham, Isaac, Jacob, Joseph: beginnings and promises.",c:"The promise of an offspring who will crush the serpent (3:15); the son offered at Moriah (22)."},
+    {n:"Exodus",d:"the exodus",w:"Slavery in Egypt, Moses, the plagues, the Passover, the parted sea, Sinai, the tabernacle.",c:"The Passover lamb whose blood protects (12) — whom John will call “the Lamb of God”."},
+    {n:"Leviticus",d:"the worship",w:"Sacrifices, priesthood, purity, the Day of Atonement, the feasts.",c:"“The blood makes atonement” (17:11); the whole system Christ will fulfil once for all."},
+    {n:"Numbers",d:"the desert",w:"Forty years of wandering, the grumbling, the bronze serpent, the censuses.",c:"The lifted serpent that heals (21:9) — an image of the cross (John 3:14)."},
+    {n:"Deuteronomy",d:"the recall",w:"Moses' farewell speeches: the Law given again before entering the Promised Land.",c:"The promise of a prophet “like Moses” who must be heard (18:15)."}]},
+  {k:"histoire",t:"The historical books",n:"12 books",sub:"From entering the Promised Land to exile and return.",
+   intro:"Twelve books telling Israel's story: the conquest, the judges, the monarchy (Saul, David, Solomon), the divided kingdom, its fall, exile in Babylon, then return. It is the historical frame without which the prophets are unreadable. The thread: the promise of an eternal throne made to David.",
+   books:[
+    {n:"Joshua",d:"~1200 BC",w:"Entry into Canaan, crossing the Jordan, the fall of Jericho.",c:"Joshua (same name as “Jesus”) brings the people into the promised rest."},
+    {n:"Judges",d:"~1100 BC",w:"The cycle of falls and God-raised deliverers (Gideon, Samson…).",c:"Each partial “savior” makes us await the definitive Savior."},
+    {n:"Ruth",d:"~1100 BC",w:"A faithful foreigner, David's great-grandmother: grace enters the line.",c:"A Moabite in the Messiah's genealogy (Matthew 1:5): the nations already included."},
+    {n:"1 Samuel",d:"~1050 BC",w:"Samuel, Saul, David's rise; “God looks at the heart”.",c:"David, the king after God's heart, a type of the Messiah to come."},
+    {n:"2 Samuel",d:"~1000 BC",w:"David's reign, his glory, his sin, and the great promise.",c:"“Your throne will be established forever” (7:13): the Davidic promise."},
+    {n:"1 Kings",d:"~960 BC",w:"Solomon, the Temple built, then the kingdom divided; Elijah.",c:"The Temple — which Christ will call “the temple of his body”."},
+    {n:"2 Kings",d:"~850–587 BC",w:"The decline of both kingdoms to their two falls; Elisha.",c:"Elijah, whose return is awaited — fulfilled in John the Baptist."},
+    {n:"1 Chronicles",d:"~500 BC",w:"A priestly retelling: genealogies, David, preparations for the Temple.",c:"The stress on David's line and worship, pointing to the Messiah-priest."},
+    {n:"2 Chronicles",d:"~500 BC",w:"From Solomon to the exile, seen from the Temple and worship.",c:"The longing for perfect worship, fulfilled by the one Offering."},
+    {n:"Ezra",d:"~450 BC",w:"The return from exile, the rebuilding of the Temple.",c:"The second Temple, where the child Jesus will be presented."},
+    {n:"Nehemiah",d:"~430 BC",w:"Rebuilding Jerusalem's walls, reforming the people.",c:"The restored city, awaiting “the Jerusalem above”."},
+    {n:"Esther",d:"~470 BC",w:"A Jewish queen saves her people from genocide in Persia (feast of Purim).",c:"God, never named, works in secret to save — hidden providence."}]},
+  {k:"sagesse",t:"The poetic & wisdom books",n:"5 books",sub:"The human heart before God: prayer, suffering, love, the meaning of life.",
+   intro:"Five books that do not tell history but explore experience: the suffering of the innocent, prayer, practical wisdom, the emptiness of things, love. It is the Bible speaking to the heart. The Psalms are the book most quoted by Jesus and the apostles.",
+   books:[
+    {n:"Job",d:"ancient",w:"Why does the righteous suffer? A dizzying debate, with no easy answer.",c:"Job longs for a mediator between God and man (9:33): Christ will be that."},
+    {n:"Psalms",d:"~1000–500 BC",w:"150 prayers and songs: praise, lament, trust, kingship. Israel's prayer book.",c:"The book most quoted about Christ: Ps 22 (the cross), Ps 110 (the Lord), Ps 16 (the resurrection)."},
+    {n:"Proverbs",d:"~700 BC",w:"Practical daily wisdom; Wisdom personified, present at creation.",c:"Wisdom “beside God” before the world (8:30) — reread in Christ."},
+    {n:"Ecclesiastes",d:"~300 BC",w:"“Vanity of vanities”: the search for meaning under the sun, the honesty of emptiness.",c:"The confession of emptiness without God, preparing to receive life “in abundance”."},
+    {n:"Song of Songs",d:"~900 BC",w:"A nuptial love poem, a celebration of human love.",c:"Read by tradition as God's love for his people — the wedding of the Lamb."}]},
+  {k:"grands",t:"The major prophets",n:"5 books",sub:"The great voices of warning and hope, around the exile.",
+   intro:"They are called “major” because of the length of their books, not their importance. They speak before, during and after the catastrophe of exile (587). They denounce injustice, announce judgment — but also, always, a hope: a servant, a new covenant, a kingdom that never ends.",
+   books:[
+    {n:"Isaiah",d:"~700 BC",w:"The most quoted prophet: judgment and comfort, Immanuel, the suffering Servant.",c:"Isaiah 53, the chapter most quoted in the NT: “by his wounds we are healed”."},
+    {n:"Jeremiah",d:"~600 BC",w:"The prophet of tears, witness of Jerusalem's fall; the new covenant.",c:"“I will make a new covenant” (31:31) — fulfilled at the Last Supper."},
+    {n:"Lamentations",d:"~586 BC",w:"Five poems of grief over destroyed Jerusalem; “his mercies are new”.",c:"At the depth of grief, tenacious hope — a figure of Easter hope."},
+    {n:"Ezekiel",d:"~590 BC",w:"An exiled priest: striking visions, the new heart, the shepherd, the dry bones.",c:"“One shepherd, my servant David” (34:23) — “I am the good shepherd”."},
+    {n:"Daniel",d:"~550 BC",w:"At Babylon's court: faithfulness under pressure, visions of empires and the Son of Man.",c:"“One like a son of man” receiving an eternal reign (7:13) — a title Jesus claims."}]},
+  {k:"petits",t:"The minor prophets",n:"12 books",sub:"Twelve brief voices, from the 8th century to the return from exile.",
+   intro:"“Minor” only in size. Twelve prophets, over about three centuries, each with a cutting message: social justice, faithfulness, judgment, but always a door of hope. Several announce precise details about the Messiah — the place, the entry, the outpoured Spirit.",
+   books:[
+    {n:"Hosea",d:"~750 BC",w:"A broken marriage as an image of God's faithful love for an unfaithful people.",c:"“I called my son out of Egypt” (11:1) — reread from the child Jesus' return."},
+    {n:"Joel",d:"debated",w:"The “day of the LORD”, a locust invasion, the Spirit poured on all.",c:"“I will pour out my Spirit on all flesh” (2:28) — fulfilled at Pentecost."},
+    {n:"Amos",d:"~760 BC",w:"A shepherd who thunders against social injustice in God's name.",c:"“I will raise up the booth of David” (9:11) — the nations included (Acts 15)."},
+    {n:"Obadiah",d:"~586 BC",w:"The shortest: judgment on Edom, pride brought low.",c:"“The kingdom will be the LORD's”: the coming kingdom."},
+    {n:"Jonah",d:"~780 BC",w:"The fleeing prophet, swallowed by a fish, sent to pagan Nineveh.",c:"“Three days and three nights” (1:17): the sign of Jonah Jesus applies to himself."},
+    {n:"Micah",d:"~700 BC",w:"Justice, humility, and the village from which Israel's ruler will come.",c:"“From Bethlehem will come…” (5:2): the Messiah's birthplace."},
+    {n:"Nahum",d:"~650 BC",w:"The announced fall of Nineveh: God judges cruel empires.",c:"“On the mountains the feet of him who brings good news” (1:15)."},
+    {n:"Habakkuk",d:"~600 BC",w:"A prophet's dialogue questioning God about evil; “the righteous will live by faith”.",c:"“The righteous will live by his faith” (2:4): the heart of Romans."},
+    {n:"Zephaniah",d:"~630 BC",w:"The day of judgment, but a saved remnant; “God will rejoice over you”.",c:"The saved “remnant”, an image of the people redeemed by the Lamb."},
+    {n:"Haggai",d:"~520 BC",w:"A call to rebuild the Temple after exile: “the glory of this house”.",c:"“The latter glory of this house will be greater” (2:9): Christ in the Temple."},
+    {n:"Zechariah",d:"~520 BC",w:"Visions of the humble king, the struck shepherd, “the one they pierced”.",c:"“Your king comes, riding on a donkey” (9:9); “they will look on him whom they pierced” (12:10)."},
+    {n:"Malachi",d:"~430 BC",w:"The last voice of the OT: the messenger who prepares, the return of Elijah.",c:"“I will send my messenger” (3:1): John the Baptist, before four centuries of silence."}]}
+ ],
+ groupsNT:[
+  {k:"evangiles",t:"The Gospels",n:"4 books",sub:"Four portraits of Christ, one single face.",
+   intro:"Four accounts of the life, death and resurrection of Jesus — not four competing versions, but four complementary views, written for different audiences. Together they give a portrait in relief. It is the heart of the Bible: all the OT led here, all the NT flows from it.",
+   books:[
+    {n:"Matthew",d:"~AD 60–80",w:"Jesus, king and fulfilment of the Scriptures, written for Jewish readers.",c:"“This happened that what was said might be fulfilled”: the recurring formula."},
+    {n:"Mark",d:"~AD 55–70",w:"The shortest and liveliest: Jesus the Servant, in action, “immediately”.",c:"“The Son of Man came… to give his life as a ransom” (10:45)."},
+    {n:"Luke",d:"~AD 60–80",w:"The physician-historian: Jesus, savior of the excluded, the poor, the foreigner.",c:"The road to Emmaus (24): the Risen One explains all the Scriptures — the site's key."},
+    {n:"John",d:"~AD 85–95",w:"The most theological: Jesus the eternal Word made flesh, the seven “I am”.",c:"“In the beginning was the Word” (1:1); “Behold the Lamb of God” (1:29)."}]},
+  {k:"actes",t:"The Acts",n:"1 book",sub:"The birth of the Church, from the Jordan to the ends of the earth.",
+   intro:"The sequel to Luke's Gospel: how the message goes out from Jerusalem and reaches the world, carried by the Spirit poured out at Pentecost. We see the Church born, the first conversions, Paul's journeys.",
+   books:[
+    {n:"Acts",d:"~AD 62–80",w:"Pentecost, the first Christians, Peter then Paul, the Gospel as far as Rome.",c:"The Spirit promised by Joel, poured out (2): the “already” of the Kingdom at work."}]},
+  {k:"paul",t:"Paul's letters",n:"13 letters",sub:"The Gospel explained, church by church, question by question.",
+   intro:"Thirteen letters from the apostle Paul to communities or individuals. They are not treatises but living answers to concrete situations — hence their power. They unfold the meaning of the cross and resurrection. Romans and Galatians are at the heart of the Reformation; the great hymn of the lowering is in Philippians 2.",
+   books:[
+    {n:"Romans",d:"~AD 57",w:"The fullest exposition of the Gospel: sin, grace, faith, Israel, new life.",c:"“Delivered for our trespasses, raised for our justification” (4:25)."},
+    {n:"1 Corinthians",d:"~AD 55",w:"Answers to a divided church: the cross, love (ch. 13), the resurrection (ch. 15).",c:"The creed dated to the 30s: “Christ died… raised… according to the Scriptures” (15:3-4)."},
+    {n:"2 Corinthians",d:"~AD 56",w:"The defense of ministry, weakness as the place of God's power.",c:"“God was in Christ, reconciling the world” (5:19)."},
+    {n:"Galatians",d:"~AD 50",w:"The freedom of the Gospel against returning to the Law: saved by faith.",c:"“The righteous will live by faith”; “Christ redeemed us” (3:13)."},
+    {n:"Ephesians",d:"~AD 62",w:"God's great design: to unite all in Christ; the Church, his body.",c:"“To sum up all things in Christ” (1:10)."},
+    {n:"Philippians",d:"~AD 62",w:"Joy in prison; the great hymn of the lowering and exaltation.",c:"“He emptied himself, taking the form of a servant” (2:6-8)."},
+    {n:"Colossians",d:"~AD 62",w:"The supremacy of Christ over all creation; against false wisdoms.",c:"“All things were created through him and for him… in him all things hold together” (1:16-17)."},
+    {n:"1 Thessalonians",d:"~AD 51",w:"Encouragement to a young church; the hope of Christ's return.",c:"The lively expectation of the return: the Kingdom's “not yet”."},
+    {n:"2 Thessalonians",d:"~AD 51",w:"Clarifications on Christ's return, against panic and idleness.",c:"Patience in waiting, without fixing a date."},
+    {n:"1 Timothy",d:"~AD 63",w:"Advice to a young church leader: sound doctrine, order, integrity.",c:"“One mediator between God and men” (2:5)."},
+    {n:"2 Timothy",d:"~AD 66",w:"Paul's last letter, facing death: “I have kept the faith”.",c:"“All Scripture is God-breathed” (3:16): the Bible on itself."},
+    {n:"Titus",d:"~AD 63",w:"Organizing a healthy church in Crete; grace that shapes life.",c:"“The appearing of the glory of our great God and Savior Jesus Christ” (2:13)."},
+    {n:"Philemon",d:"~AD 62",w:"A personal note: a runaway slave received as a brother.",c:"The Gospel that transforms relationships: receive him “as myself”."}]},
+  {k:"generales",t:"The general letters",n:"8 letters",sub:"Letters to scattered churches: stand firm in trial.",
+   intro:"Eight letters from other apostles (James, Peter, John, Jude) and the epistle to the Hebrews. They address tried Christians, tempted to give up. Hebrews is key for our site: it shows Christ as the high priest and the one sacrifice that fulfils all the OT worship.",
+   books:[
+    {n:"Hebrews",d:"~AD 65",w:"Christ, perfect high priest and one sacrifice, superior to all the old worship.",c:"“One sacrifice for sins, then he sat down” (10:12): the heart of the Offering."},
+    {n:"James",d:"~AD 50",w:"Faith that acts: faith without works is dead; taming the tongue.",c:"Living faith, fruit of the “already” of the new birth."},
+    {n:"1 Peter",d:"~AD 63",w:"Standing in suffering; the Lamb without defect; a new priesthood.",c:"“The precious blood of Christ, as of a lamb without blemish” (1:19)."},
+    {n:"2 Peter",d:"~AD 65",w:"Against false teachers; the eyewitness of the Transfiguration.",c:"“We were eyewitnesses of his majesty” on the mountain (1:16-18)."},
+    {n:"1 John",d:"~AD 90",w:"To love and abide: “God is love”; the assurance of salvation.",c:"“God is love” (4:8): the heart that requires the Trinity."},
+    {n:"2 John",d:"~AD 90",w:"A short note: walking in truth and love, guarding against deceivers.",c:"Truth and love held together in Christ."},
+    {n:"3 John",d:"~AD 90",w:"A short note: Christian hospitality, supporting true servants.",c:"“Walking in the truth”: the transformed life."},
+    {n:"Jude",d:"~AD 65",w:"A brief call to contend for the faith against infiltrators.",c:"“Kept for Jesus Christ”: assured perseverance."}]},
+  {k:"apocalypse",t:"Revelation",n:"1 book",sub:"The unveiling: the Lamb at the center, the final victory.",
+   intro:"“Revelation” means “unveiling”. A book of visions, written for persecuted Christians, unveiling the hidden meaning of history: despite appearances, the slain Lamb reigns, and evil will be defeated. It closes the Bible by answering Genesis: the tree of life returns, the curse is lifted.",
+   books:[
+    {n:"Revelation",d:"~AD 95",w:"Visions of the Lamb, the battle, the judgment, the new Jerusalem and the wedding.",c:"“The slain Lamb, standing” (5:6); “the temple is the Lord God and the Lamb” (21:22)."}]}
+ ],
+ feasts:{
+  head:"Special shelf · The Jewish feasts in the Gospel",
+  intro:"You cannot understand the Gospel without Israel's feasts: Jesus lives them, fulfils them, and often deliberately chooses a feast to act or speak. Each feast is a reading key. Here are seven, with what Jesus does with them.",
+  items:[
+   {n:"Passover (Pesach)",d:"spring",w:"The lamb is slain, unleavened bread eaten: memory of the exodus from Egypt.",c:"Jesus dies at Passover, at the hour the lambs are slain. He IS the Lamb (1 Corinthians 5:7). The Last Supper is a Passover meal."},
+   {n:"Unleavened Bread",d:"spring",w:"Seven days without leaven, a symbol of purity and haste.",c:"“Leaven” = sin; Christ, unleavened bread, “cleanse out the old leaven” (1 Corinthians 5:7-8)."},
+   {n:"Firstfruits",d:"spring",w:"The first sheaf of harvest is offered, the day after the Passover sabbath.",c:"Jesus rises that day: “the firstfruits of those who have died” (1 Corinthians 15:20)."},
+   {n:"Pentecost (Shavuot)",d:"+50 days",w:"Feast of harvest and of the Law given at Sinai, fifty days after Passover.",c:"The Spirit is poured out that day (Acts 2): no longer the Law on stone, but the Spirit in hearts."},
+   {n:"Trumpets / New Year",d:"autumn",w:"A day of ram's-horn (shofar) blasts, a call to gather and awake.",c:"“At the trumpet of God”: an image of the final gathering (1 Thessalonians 4:16)."},
+   {n:"Atonement (Yom Kippur)",d:"autumn",w:"The one day the high priest enters the Most Holy Place, with blood, for all the people.",c:"Hebrews 9: Christ enters “once for all” into the true sanctuary, with his own blood."},
+   {n:"Tabernacles (Sukkot)",d:"autumn",w:"Seven days living in booths: memory of the desert, feast of water and light.",c:"Jesus, at this feast: “if anyone thirsts, let him come to me” (John 7:37); “I am the light of the world” (8:12)."}]},
+ canon:{
+  head:"An honest note on the number of books",
+  body:"This library presents the 66 books recognized in common by all the major Christian traditions. Catholic and Orthodox Bibles include some additional books called “deuterocanonical” (Tobit, Judith, Wisdom, Sirach, Baruch, 1-2 Maccabees and some supplements), present in the Greek translation of the Old Testament. This site, aimed at Catholics and Evangelicals, starts from the common ground without settling this ancient debate: it flags it honestly rather than hiding it."},
+ abrat:"Where to go next",
+ abrap:"This room tells what the Bible is made of. To learn why it can be trusted — manuscripts, prophecies, coherence — go through the door to the room “A trustworthy Bible”. To see the thread joining these 66 books, open the Scarlet Thread.",
+ next1:"A trustworthy Bible →",next2:"The Scarlet Thread →",
+ foot:"Texts: Segond 1910 · World English Bible · Van Dyck. Dates are historians' estimates, documented in the reference dossier.<br>The library — 66 books, one single thread."
+},
+ar:{
+ dir:"rtl",brand:"كتابٌ واحد",
+ kicker:"المكتبة · ٦٦ سفرًا، خيطٌ واحد",
+ title:"كيف <span class='g'>يتألف</span> الكتابُ المقدس",
+ lede:"مكتبةٌ من ٦٦ سفرًا، كُتبت على مدى نحو خمسة عشر قرنًا بأقلام نحو أربعين كاتبًا، في ثلاث قارات، وبثلاث لغات — ومع ذلك يخترقها خيطٌ واحد. المس رفًّا لتفهم منطقه، أو سفرًا لتعرف موضوعه.",
+ stat:"٦٦ سفرًا · نحو ٤٠ كاتبًا · ٣ لغات · نحو ١٥٠٠ سنة · ٣ قارات · خيطٌ واحد",
+ twoLabel:["مِمَّ يتألف الكتاب المقدس؟","(هذه القاعة) — ولمعرفة هل يمكن الوثوق به، انظر قاعة «كتابٌ جدير بالثقة»"],
+ atLabel:"العهد القديم — ٣٩ سفرًا",ntLabel:"العهد الجديد — ٢٧ سفرًا",
+ groupLbl:"أسفار",
+ lecternHint:"— المس سفرًا لفتحه —",
+ col:{when:"متى (تقدير)",what:"موضوعه",christ:"الخيط نحو المسيح"},
+ groups:[
+  {k:"loi",t:"الناموس (التوراة)",n:"٥ أسفار",sub:"الأسس: الخلق، والمواعيد، والخروج من مصر، والعهد.",
+   intro:"الأسفارُ الخمسة الأولى، «التوراة» (التعليم)، المنسوبة إلى موسى. تضع كلَّ شيء: من أين العالم، ومن أين الشر، وكيف يختار اللهُ شعبًا ويعطيه عهدًا. وعليها يستند سائرُ الكتاب. هنا يولد حملُ الفصح، والذبيحة، والكهنوت — الرموزُ التي سيتمّمها المسيح.",
+   books:[
+    {n:"التكوين",d:"البدايات",w:"الخلق، والسقوط، ونوح، وإبراهيم، وإسحاق، ويعقوب، ويوسف: البداياتُ والمواعيد.",c:"وعدُ نسلٍ يسحق الحية (٣: ١٥)؛ والابنُ المُقدَّم على المريّا (٢٢)."},
+    {n:"الخروج",d:"الخروج",w:"العبودية في مصر، وموسى، والضربات، والفصح، والبحر المشقوق، وسيناء، والمسكن.",c:"حملُ الفصح الذي يحمي دمُه (١٢) — الذي سيسمّيه يوحنا «حمل الله»."},
+    {n:"اللاويين",d:"العبادة",w:"الذبائح، والكهنوت، والطهارة، ويوم الكفارة، والأعياد.",c:"«الدمُ يكفّر» (١٧: ١١)؛ والنظامُ كلُّه الذي سيتمّمه المسيح مرةً واحدة."},
+    {n:"العدد",d:"البرية",w:"أربعون سنةً من التيه، والتذمر، والحية النحاسية، والإحصاءات.",c:"الحيةُ المرفوعة التي تشفي (٢١: ٩) — صورةُ الصليب (يوحنا ٣: ١٤)."},
+    {n:"التثنية",d:"التذكير",w:"خطبُ موسى الوداعية: الناموسُ يُعاد قبل دخول أرض الموعد.",c:"وعدُ نبيٍّ «مثل موسى» يجب أن يُسمَع له (١٨: ١٥)."}]},
+  {k:"histoire",t:"الأسفار التاريخية",n:"١٢ سفرًا",sub:"من دخول أرض الموعد إلى السبي والعودة.",
+   intro:"اثنا عشر سفرًا تروي تاريخ إسرائيل: الفتح، والقضاة، والملك (شاول، داود، سليمان)، وانقسام المملكة، وسقوطها، والسبي إلى بابل، ثم العودة. إنه الإطارُ التاريخي الذي بدونه يستحيل فهمُ الأنبياء. والخيط: وعدُ عرشٍ أبدي لداود.",
+   books:[
+    {n:"يشوع",d:"~١٢٠٠ ق.م",w:"دخولُ كنعان، وعبورُ الأردن، وسقوطُ أريحا.",c:"يشوع (الاسم نفسه لـ«يسوع») يُدخل الشعبَ إلى الراحة الموعودة."},
+    {n:"القضاة",d:"~١١٠٠ ق.م",w:"دورةُ السقطات والمخلّصين الذين يقيمهم الله (جدعون، شمشون…).",c:"كلُّ «مخلّص» جزئي يجعلنا ننتظر المخلّصَ النهائي."},
+    {n:"راعوث",d:"~١١٠٠ ق.م",w:"غريبةٌ أمينة، جدّةُ داود الكبرى: النعمةُ تدخل النسل.",c:"مؤابيةٌ في نسب المسيح (متى ١: ٥): الأممُ مشمولةٌ سلفًا."},
+    {n:"١ صموئيل",d:"~١٠٥٠ ق.م",w:"صموئيل، وشاول، وصعودُ داود؛ «اللهُ ينظر إلى القلب».",c:"داود، الملكُ حسب قلب الله، رمزُ المسيح الآتي."},
+    {n:"٢ صموئيل",d:"~١٠٠٠ ق.م",w:"مُلكُ داود، ومجدُه، وخطيتُه، والوعدُ العظيم.",c:"«يُثبَّت عرشُك إلى الأبد» (٧: ١٣): الوعدُ الداودي."},
+    {n:"١ ملوك",d:"~٩٦٠ ق.م",w:"سليمان، وبناءُ الهيكل، ثم انقسامُ المملكة؛ إيليا.",c:"الهيكل — الذي سيسمّيه المسيح «هيكل جسده»."},
+    {n:"٢ ملوك",d:"~٨٥٠–٥٨٧ ق.م",w:"انحطاطُ المملكتين حتى السقوطين؛ أليشع.",c:"إيليا، الذي يُنتظَر رجوعُه — المتمِّم في يوحنا المعمدان."},
+    {n:"١ أخبار",d:"~٥٠٠ ق.م",w:"إعادةُ سردٍ كهنوتية: الأنساب، وداود، وتجهيزاتُ الهيكل.",c:"التشديدُ على نسل داود والعبادة، ما يشير إلى المسيح الكاهن."},
+    {n:"٢ أخبار",d:"~٥٠٠ ق.م",w:"من سليمان إلى السبي، من زاوية الهيكل والعبادة.",c:"انتظارُ عبادةٍ كاملة، تتمّمها التقدمةُ الواحدة."},
+    {n:"عزرا",d:"~٤٥٠ ق.م",w:"العودةُ من السبي، وإعادةُ بناء الهيكل.",c:"الهيكلُ الثاني، حيث سيُقدَّم الطفلُ يسوع."},
+    {n:"نحميا",d:"~٤٣٠ ق.م",w:"إعادةُ بناء أسوار أورشليم، وإصلاحُ الشعب.",c:"المدينةُ المستعادة، في انتظار «أورشليم العليا»."},
+    {n:"أستير",d:"~٤٧٠ ق.م",w:"ملكةٌ يهودية تنقذ شعبها من إبادةٍ في فارس (عيد الفوريم).",c:"اللهُ، غيرُ المذكور أبدًا، يعمل سرًّا ليخلّص — العنايةُ الخفية."}]},
+  {k:"sagesse",t:"أسفار الشعر والحكمة",n:"٥ أسفار",sub:"القلبُ البشري أمام الله: صلاة، وألم، ومحبة، ومعنى الحياة.",
+   intro:"خمسةُ أسفار لا تروي التاريخ بل تستكشف التجربة: ألمَ البريء، والصلاة، والحكمةَ العملية، وفراغَ الأشياء، والمحبة. إنه الكتابُ يخاطب القلب. والمزاميرُ هي أكثرُ الأسفار اقتباسًا عند يسوع والرسل.",
+   books:[
+    {n:"أيوب",d:"قديم",w:"لماذا يتألم البارّ؟ نقاشٌ مذهل، بلا جوابٍ سهل.",c:"أيوب يطلب وسيطًا بين الله والإنسان (٩: ٣٣): المسيحُ سيكونه."},
+    {n:"المزامير",d:"~١٠٠٠–٥٠٠ ق.م",w:"١٥٠ صلاةً وترنيمة: تسبيح، وشكوى، وثقة، ومُلك. كتابُ صلاة إسرائيل.",c:"الكتابُ الأكثرُ اقتباسًا عن المسيح: مز ٢٢ (الصليب)، مز ١١٠ (الرب)، مز ١٦ (القيامة)."},
+    {n:"الأمثال",d:"~٧٠٠ ق.م",w:"حكمةُ الحياة اليومية العملية؛ والحكمةُ مشخَّصةً، حاضرةً في الخلق.",c:"الحكمةُ «عند الله» قبل العالم (٨: ٣٠) — تُقرأ في المسيح."},
+    {n:"الجامعة",d:"~٣٠٠ ق.م",w:"«باطلُ الأباطيل»: البحثُ عن المعنى تحت الشمس، وأمانةُ الفراغ.",c:"اعترافُ الفراغ بلا الله، الذي يهيّئ لقبول الحياة «بأفضل»."},
+    {n:"نشيد الأنشاد",d:"~٩٠٠ ق.م",w:"قصيدةُ حبٍّ عرسية، احتفاءٌ بالحب البشري.",c:"يقرأه التقليدُ محبةَ الله لشعبه — عرسُ الحمل."}]},
+  {k:"grands",t:"الأنبياء الكبار",n:"٥ أسفار",sub:"أصواتُ الإنذار والرجاء الكبرى، حول السبي.",
+   intro:"يُسمَّون «كبارًا» لطول أسفارهم، لا لأهميتهم. يتكلمون قبل كارثة السبي (٥٨٧) وأثناءها وبعدها. يندّدون بالظلم، ويعلنون الدينونة — لكن أيضًا، دائمًا، رجاءً: عبدًا، وعهدًا جديدًا، وملكوتًا لا ينتهي.",
+   books:[
+    {n:"إشعياء",d:"~٧٠٠ ق.م",w:"أكثرُ الأنبياء اقتباسًا: دينونةٌ وعزاء، وعمانوئيل، والعبدُ المتألم.",c:"إشعياء ٥٣، الأصحاحُ الأكثرُ اقتباسًا في العهد الجديد: «بحُبُره شُفينا»."},
+    {n:"إرميا",d:"~٦٠٠ ق.م",w:"نبيُّ الدموع، شاهدُ سقوط أورشليم؛ والعهدُ الجديد.",c:"«أقطع عهدًا جديدًا» (٣١: ٣١) — المتمِّم في العشاء الأخير."},
+    {n:"مراثي إرميا",d:"~٥٨٦ ق.م",w:"خمسُ قصائد رثاءٍ لأورشليم المدمَّرة؛ «مراحمُه تتجدد».",c:"في قاع الحزن، رجاءٌ عنيد — صورةُ الرجاء الفصحي."},
+    {n:"حزقيال",d:"~٥٩٠ ق.م",w:"كاهنٌ مسبيّ: رؤًى مذهلة، والقلبُ الجديد، والراعي، والعظامُ اليابسة.",c:"«راعٍ واحد، عبدي داود» (٣٤: ٢٣) — «أنا هو الراعي الصالح»."},
+    {n:"دانيال",d:"~٥٥٠ ق.م",w:"في بلاط بابل: أمانةٌ تحت الضغط، ورؤى الإمبراطوريات وابن الإنسان.",c:"«ابنُ إنسان» ينال ملكًا أبديًّا (٧: ١٣) — لقبٌ ينسبه يسوع لنفسه."}]},
+  {k:"petits",t:"الأنبياء الصغار",n:"١٢ سفرًا",sub:"اثنا عشر صوتًا موجزًا، من القرن الثامن إلى العودة من السبي.",
+   intro:"«صغار» بالحجم فقط. اثنا عشر نبيًّا، على نحو ثلاثة قرون، لكلٍّ رسالةٌ قاطعة: العدلُ الاجتماعي، والأمانة، والدينونة، لكن دائمًا بابَ رجاء. وعدةٌ منهم يعلنون تفاصيلَ دقيقة عن المسيح — المكان، والدخول، والروحَ المسكوب.",
+   books:[
+    {n:"هوشع",d:"~٧٥٠ ق.م",w:"زواجٌ مكسور صورةً لمحبة الله الأمينة لشعبٍ خائن.",c:"«من مصرَ دعوتُ ابني» (١١: ١) — يُقرأ من عودة الطفل يسوع."},
+    {n:"يوئيل",d:"مختلَف فيه",w:"«يومُ الرب»، وغزوُ الجراد، والروحُ المسكوب على الجميع.",c:"«أسكب روحي على كل بشر» (٢: ٢٨) — المتمِّم في الخمسين."},
+    {n:"عاموس",d:"~٧٦٠ ق.م",w:"راعٍ يرعد ضد الظلم الاجتماعي باسم الله.",c:"«أقيم مظلّة داود» (٩: ١١) — الأممُ مشمولة (أعمال ١٥)."},
+    {n:"عوبديا",d:"~٥٨٦ ق.م",w:"الأقصر: دينونةٌ على أدوم، وكبرياءٌ يُذَلّ.",c:"«ويكون المُلكُ للرب»: الملكوتُ الآتي."},
+    {n:"يونان",d:"~٧٨٠ ق.م",w:"النبيُّ الهارب، يبتلعه الحوت، ويُرسَل إلى نينوى الوثنية.",c:"«ثلاثةُ أيام وثلاثُ ليال» (٢: ١): علامةُ يونان التي ينسبها يسوع لنفسه."},
+    {n:"ميخا",d:"~٧٠٠ ق.م",w:"العدلُ والتواضع، والقريةُ التي منها يخرج متسلّطُ إسرائيل.",c:"«من بيت لحمَ يخرج…» (٥: ٢): مكانُ ميلاد المسيّا."},
+    {n:"ناحوم",d:"~٦٥٠ ق.م",w:"سقوطُ نينوى المُعلَن: اللهُ يدين الإمبراطوريات القاسية.",c:"«على الجبال قدما مبشِّرٍ بالخير» (١: ١٥)."},
+    {n:"حبقوق",d:"~٦٠٠ ق.م",w:"حوارُ نبيٍّ يسائل اللهَ عن الشر؛ «البارُّ بإيمانه يحيا».",c:"«البارُّ بإيمانه يحيا» (٢: ٤): قلبُ رسالة رومية."},
+    {n:"صفنيا",d:"~٦٣٠ ق.م",w:"يومُ الدينونة، لكن بقيةً تخلص؛ «اللهُ يبتهج بك».",c:"«البقيةُ» المخلَّصة، صورةُ الشعب المفديّ بالحمل."},
+    {n:"حجي",d:"~٥٢٠ ق.م",w:"دعوةٌ لإعادة بناء الهيكل بعد السبي: «مجدُ هذا البيت».",c:"«مجدُ هذا البيت الأخير يكون أعظم» (٢: ٩): المسيحُ في الهيكل."},
+    {n:"زكريا",d:"~٥٢٠ ق.م",w:"رؤى الملك الوديع، والراعي المضروب، و«الذي طعنوه».",c:"«ملكُك يأتي راكبًا على أتان» (٩: ٩)؛ «ينظرون إلى الذي طعنوه» (١٢: ١٠)."},
+    {n:"ملاخي",d:"~٤٣٠ ق.م",w:"آخرُ صوتٍ في العهد القديم: الرسولُ الذي يهيّئ، ورجوعُ إيليا.",c:"«أُرسل رسولي» (٣: ١): يوحنا المعمدان، قبل أربعة قرون من الصمت."}]}
+ ],
+ groupsNT:[
+  {k:"evangiles",t:"الأناجيل",n:"٤ أسفار",sub:"أربعُ صور للمسيح، ووجهٌ واحد.",
+   intro:"أربعُ روايات لحياة يسوع وموته وقيامته — لا أربع نسخٍ متنافسة، بل أربع نظراتٍ متكاملة، كُتبت لجماهيرَ مختلفة. ومعًا تعطي صورةً بارزة. إنه قلبُ الكتاب: إليه قاد العهدُ القديم كلُّه، ومنه يتفرّع العهدُ الجديد.",
+   books:[
+    {n:"متى",d:"~٦٠–٨٠ م",w:"يسوع، الملكُ ومتمِّمُ الكتب، مكتوبٌ لقرّاءٍ يهود.",c:"«كان هذا لكي يتمّ ما قيل»: الصيغةُ المتكررة."},
+    {n:"مرقس",d:"~٥٥–٧٠ م",w:"الأقصرُ والأحيَى: يسوع العبد، في الفعل، «للوقت».",c:"«ابنُ الإنسان جاء… ليبذل نفسه فدية» (١٠: ٤٥)."},
+    {n:"لوقا",d:"~٦٠–٨٠ م",w:"الطبيبُ المؤرّخ: يسوع مخلّصُ المنبوذين والفقراء والغرباء.",c:"طريقُ عمواس (٢٤): القائمُ يشرح الكتبَ كلَّها — مفتاحُ الموقع."},
+    {n:"يوحنا",d:"~٨٥–٩٥ م",w:"الأكثرُ لاهوتًا: يسوع الكلمةُ الأزلية المتجسّدة، و«الأنا هو» السبع.",c:"«في البدء كان الكلمة» (١: ١)؛ «هوذا حمل الله» (١: ٢٩)."}]},
+  {k:"actes",t:"الأعمال",n:"سفرٌ واحد",sub:"ميلادُ الكنيسة، من الأردن إلى أقاصي الأرض.",
+   intro:"تتمّةُ إنجيل لوقا: كيف تنطلق الرسالةُ من أورشليم وتبلغ العالم، محمولةً بالروح المسكوب في الخمسين. نرى فيها الكنيسةَ تولد، والاهتداءاتِ الأولى، ورحلاتِ بولس.",
+   books:[
+    {n:"أعمال الرسل",d:"~٦٢–٨٠ م",w:"الخمسين، والمسيحيون الأوائل، بطرس ثم بولس، والإنجيلُ حتى رومية.",c:"الروحُ الموعود به عند يوئيل، مسكوبًا (٢): «تمُّ» الملكوت في العمل."}]},
+  {k:"paul",t:"رسائل بولس",n:"١٣ رسالة",sub:"الإنجيلُ مشروحًا، كنيسةً كنيسة، سؤالًا سؤالًا.",
+   intro:"ثلاث عشرة رسالة من الرسول بولس إلى جماعاتٍ أو أفراد. ليست أطروحاتٍ بل أجوبةً حيّة لأوضاعٍ ملموسة — ومن هنا قوتُها. تبسط معنى الصليب والقيامة. ورومية وغلاطية في قلب الإصلاح؛ ونشيدُ الاتضاع العظيم في فيلبي ٢.",
+   books:[
+    {n:"رومية",d:"~٥٧ م",w:"أوفى عرضٍ للإنجيل: الخطية، والنعمة، والإيمان، وإسرائيل، والحياةُ الجديدة.",c:"«أُسلم لأجل خطايانا وأُقيم لأجل تبريرنا» (٤: ٢٥)."},
+    {n:"١ كورنثوس",d:"~٥٥ م",w:"أجوبةٌ لكنيسةٍ منقسمة: الصليب، والمحبة (ص ١٣)، والقيامة (ص ١٥).",c:"قانونُ الإيمان من الثلاثينيات: «المسيح مات… قام… حسب الكتب» (١٥: ٣-٤)."},
+    {n:"٢ كورنثوس",d:"~٥٦ م",w:"الدفاعُ عن الخدمة، والضعفُ موضعًا لقوة الله.",c:"«اللهُ كان في المسيح مصالحًا العالم» (٥: ١٩)."},
+    {n:"غلاطية",d:"~٥٠ م",w:"حريةُ الإنجيل ضد العودة إلى الناموس: نخلص بالإيمان.",c:"«البارُّ بالإيمان يحيا»؛ «المسيحُ افتدانا» (٣: ١٣)."},
+    {n:"أفسس",d:"~٦٢ م",w:"تدبيرُ الله العظيم: جمعُ كل شيء في المسيح؛ والكنيسةُ جسدُه.",c:"«جمعُ كل شيء في المسيح» (١: ١٠)."},
+    {n:"فيلبي",d:"~٦٢ م",w:"الفرحُ في السجن؛ ونشيدُ الاتضاع والتمجيد العظيم.",c:"«أخلى نفسه آخذًا صورة عبد» (٢: ٦-٨)."},
+    {n:"كولوسي",d:"~٦٢ م",w:"سموُّ المسيح على كل الخليقة؛ ضد الحكمة الباطلة.",c:"«الكلُّ به وله خُلق… وفيه يقوم الكل» (١: ١٦-١٧)."},
+    {n:"١ تسالونيكي",d:"~٥١ م",w:"تشجيعُ كنيسةٍ فتيّة؛ ورجاءُ رجوع المسيح.",c:"الانتظارُ الحيُّ للرجوع: «لم يتمّ» الملكوت."},
+    {n:"٢ تسالونيكي",d:"~٥١ م",w:"إيضاحاتٌ عن رجوع المسيح، ضد الذعر والبطالة.",c:"الصبرُ في الانتظار، بلا تحديد موعد."},
+    {n:"١ تيموثاوس",d:"~٦٣ م",w:"نصائحُ لمسؤولٍ شاب: تعليمٌ سليم، ونظام، ونزاهة.",c:"«وسيطٌ واحد بين الله والناس» (٢: ٥)."},
+    {n:"٢ تيموثاوس",d:"~٦٦ م",w:"رسالةُ بولس الأخيرة، أمام الموت: «حفظتُ الإيمان».",c:"«كلُّ الكتاب موحًى به من الله» (٣: ١٦): الكتابُ عن نفسه."},
+    {n:"تيطس",d:"~٦٣ م",w:"تنظيمُ كنيسةٍ سليمة في كريت؛ والنعمةُ التي تصوغ الحياة.",c:"«ظهورُ مجد إلهنا ومخلّصنا العظيم يسوع المسيح» (٢: ١٣)."},
+    {n:"فليمون",d:"~٦٢ م",w:"بطاقةٌ شخصية: عبدٌ هارب يُقبَل كأخ.",c:"الإنجيلُ الذي يحوّل العلاقات: اقبله «كنفسي»."}]},
+  {k:"generales",t:"الرسائل العامة",n:"٨ رسائل",sub:"رسائلُ لكنائسَ مشتتة: اثبتوا في الضيق.",
+   intro:"ثماني رسائل من رسلٍ آخرين (يعقوب، بطرس، يوحنا، يهوذا) والرسالةُ إلى العبرانيين. تخاطب مسيحيين مجرَّبين، تُغريهم التنحية. والعبرانيون محوريةٌ لموقعنا: تُري المسيح رئيسَ الكهنة والذبيحةَ الواحدة التي تُتمّم عبادةَ العهد القديم كلَّها.",
+   books:[
+    {n:"العبرانيون",d:"~٦٥ م",w:"المسيح، رئيسُ كهنةٍ كامل وذبيحةٌ واحدة، أسمى من العبادة القديمة كلِّها.",c:"«ذبيحةٌ واحدة عن الخطايا، ثم جلس» (١٠: ١٢): قلبُ التقدمة."},
+    {n:"يعقوب",d:"~٥٠ م",w:"الإيمانُ الذي يعمل: إيمانٌ بلا أعمال ميت؛ وضبطُ اللسان.",c:"الإيمانُ الحيّ، ثمرُ «تمّ» الولادة الجديدة."},
+    {n:"١ بطرس",d:"~٦٣ م",w:"الثباتُ في الألم؛ والحملُ بلا عيب؛ وكهنوتٌ جديد.",c:"«الدمُ الكريم، كما من حملٍ بلا عيب» (١: ١٩)."},
+    {n:"٢ بطرس",d:"~٦٥ م",w:"ضد المعلّمين الكذبة؛ وشاهدُ عيان التجلّي.",c:"«كنا معاينين عظمته» على الجبل (١: ١٦-١٨)."},
+    {n:"١ يوحنا",d:"~٩٠ م",w:"أن نحبّ ونثبت: «اللهُ محبة»؛ ويقينُ الخلاص.",c:"«اللهُ محبة» (٤: ٨): القلبُ الذي يستلزم الثالوث."},
+    {n:"٢ يوحنا",d:"~٩٠ م",w:"بطاقةٌ قصيرة: السلوكُ في الحق والمحبة، والحذرُ من المضلِّين.",c:"الحقُّ والمحبةُ معًا في المسيح."},
+    {n:"٣ يوحنا",d:"~٩٠ م",w:"بطاقةٌ قصيرة: الضيافةُ المسيحية، ودعمُ الخدام الحقيقيين.",c:"«السلوكُ في الحق»: الحياةُ المتحوّلة."},
+    {n:"يهوذا",d:"~٦٥ م",w:"دعوةٌ موجزة للمجاهدة لأجل الإيمان ضد المندسّين.",c:"«محفوظون ليسوع المسيح»: المثابرةُ المضمونة."}]},
+  {k:"apocalypse",t:"الرؤيا",n:"سفرٌ واحد",sub:"الكشف: الحملُ في المركز، والنصرُ النهائي.",
+   intro:"«الرؤيا» تعني «الكشف». سفرُ رؤًى، كُتب لمسيحيين مضطَهَدين، يكشف المعنى الخفيّ للتاريخ: رغم الظواهر، الحملُ المذبوح يملك، والشرُّ سيُغلَب. ويختم الكتابَ مجيبًا التكوين: تعود شجرةُ الحياة، وتُرفَع اللعنة.",
+   books:[
+    {n:"الرؤيا",d:"~٩٥ م",w:"رؤى الحمل، والحرب، والدينونة، وأورشليمَ الجديدة، والعرس.",c:"«الحملُ المذبوح، قائمًا» (٥: ٦)؛ «الربُّ الإلهُ والخروفُ هيكلُها» (٢١: ٢٢)."}]}
+ ],
+ feasts:{
+  head:"رفٌّ خاص · الأعياد اليهودية في الإنجيل",
+  intro:"لا يُفهَم الإنجيلُ بلا أعياد إسرائيل: يسوع يعيشها، ويتمّمها، وكثيرًا ما يختار عيدًا عمدًا ليعمل أو يتكلم. كلُّ عيدٍ مفتاحُ قراءة. وهذه سبعةٌ، مع ما يفعله بها يسوع.",
+  items:[
+   {n:"الفصح (بيساح)",d:"الربيع",w:"يُذبَح الحمل، ويُؤكَل الفطير: ذكرى الخروج من مصر.",c:"يموت يسوع في الفصح، في ساعة ذبح الحملان. وهو الحمل (١ كورنثوس ٥: ٧). والعشاءُ الأخير وجبةُ فصح."},
+   {n:"الفطير",d:"الربيع",w:"سبعةُ أيام بلا خمير، رمزُ الطهارة والعجلة.",c:"«الخمير» = الخطية؛ المسيح، خبزُ الفطير، «نقّوا منكم الخميرةَ العتيقة» (١ كورنثوس ٥: ٧-٨)."},
+   {n:"الباكورة",d:"الربيع",w:"تُقدَّم أولُ حزمةٍ من الحصاد، في غد سبت الفصح.",c:"يقوم يسوع في ذلك اليوم: «باكورةُ الراقدين» (١ كورنثوس ١٥: ٢٠)."},
+   {n:"الخمسين (شفوعوت)",d:"+٥٠ يومًا",w:"عيدُ الحصاد وإعطاء الناموس في سيناء، بعد الفصح بخمسين يومًا.",c:"يُسكَب الروحُ في ذلك اليوم (أعمال ٢): لا الناموسُ على الحجر بعدُ، بل الروحُ في القلوب."},
+   {n:"الأبواق / رأس السنة",d:"الخريف",w:"يومُ نفخٍ بالبوق (شوفار)، دعوةٌ للاجتماع واليقظة.",c:"«ببوق الله»: صورةُ الاجتماع النهائي (١ تسالونيكي ٤: ١٦)."},
+   {n:"الكفارة (يوم كيبور)",d:"الخريف",w:"اليومُ الوحيد الذي يدخل فيه رئيسُ الكهنة قدسَ الأقداس، بالدم، عن كل الشعب.",c:"عبرانيين ٩: المسيح يدخل «مرةً واحدة» إلى القدس الحقيقي، بدمه."},
+   {n:"المظالّ (سُكّوت)",d:"الخريف",w:"يُسكَن سبعةَ أيام في مظالّ: ذكرى البرية، عيدُ الماء والنور.",c:"يسوع في هذا العيد: «إن عطش أحدٌ فليأتِ إليّ» (يوحنا ٧: ٣٧)؛ «أنا نورُ العالم» (٨: ١٢)."}]},
+ canon:{
+  head:"ملاحظةٌ أمينة عن عدد الأسفار",
+  body:"تعرض هذه المكتبةُ الأسفارَ الـ٦٦ المعترَف بها بالإجماع لدى كل التقاليد المسيحية الكبرى. وتضيف الكتبُ الكاثوليكية والأرثوذكسية أسفارًا تُدعى «قانونيةً ثانية» (طوبيا، ويهوديت، والحكمة، ويشوع بن سيراخ، وباروخ، والمكابيّين، وملاحق)، موجودةً في الترجمة اليونانية للعهد القديم. وهذا الموقع، الموجَّه إلى الكاثوليك والإنجيليين، ينطلق من الأرض المشتركة دون أن يحسم هذا الجدل القديم: يشير إليه بأمانة بدل أن يخفيه."},
+ abrat:"إلى أين بعد ذلك",
+ abrap:"هذه القاعةُ تقول مِمَّ يتألف الكتاب. ولمعرفة لماذا يمكن الوثوق به — المخطوطات، والنبوءات، والتماسك — اعبر البابَ إلى قاعة «كتابٌ جدير بالثقة». ولرؤية الخيط الذي يربط هذه الأسفار الـ٦٦، افتح الخيطَ الأحمر.",
+ next1:"كتابٌ جدير بالثقة ←",next2:"الخيط الأحمر ←",
+ foot:"النصوص: سيجون ١٩١٠ · World English Bible · فانديك. التواريخُ تقديراتُ مؤرّخين، موثَّقة في ملف المراجع.<br>المكتبة — ٦٦ سفرًا، خيطٌ واحد."
+}};
+
+const COLORS={loi:"loi",histoire:"histoire",sagesse:"sagesse",grands:"grands",petits:"petits",
+  evangiles:"evangiles",actes:"actes",paul:"paul",generales:"generales",apocalypse:"apocalypse"};
+function shelfHTML(g,c){
+  let spines="";
+  g.books.forEach((b,i)=>{
+    spines+=`<button class="spine" data-g="${g.k}" data-i="${i}">${b.n}<span class="sd">${b.d}</span></button>`;
+  });
+  return `<div class="shelf" data-k="${g.k}" style="--sc:var(--${COLORS[g.k]})">
+    <div class="shelfhead" onclick="this.parentNode.classList.toggle('open')">
+      <h2>${g.t}</h2><span class="cnt">${g.n}</span><span class="sub">${g.sub}</span><span class="chev">›</span>
+    </div>
+    <div class="shelfbody">
+      <div class="intro">${g.intro}</div>
+      <div class="spines">${spines}</div>
+      <div class="lectern" data-lect="${g.k}" style="--sc:var(--${COLORS[g.k]})">
+        <div class="bn"></div><div class="bd"></div>
+        <div class="lbl lbl-what"></div><div class="what"></div>
+        <div class="lbl lbl-christ"></div><div class="christ"></div>
+      </div>
+    </div>
+  </div>`;
+}
+function render(l){
+  const c=LIB[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('kicker').textContent=c.kicker;
+  document.getElementById('title').innerHTML=c.title;
+  document.getElementById('lede').textContent=c.lede;
+  document.getElementById('stat').textContent=c.stat;
+  document.getElementById('crumb').innerHTML=`<a href="seuil-landing.html">${c.brand==='UN SEUL LIVRE'?'Le seuil':(c.brand==='ONE BOOK'?'The threshold':'العتبة')}</a><span class="sep">›</span>${c.title.replace(/<[^>]+>/g,'')}`;
+  document.getElementById('whichroom').innerHTML=`<b>${c.twoLabel[0]}</b> ${c.twoLabel[1]}`;
+  document.getElementById('atLabel').textContent=c.atLabel;
+  document.getElementById('ntLabel').textContent=c.ntLabel;
+  document.getElementById('atShelves').innerHTML=c.groups.map(g=>shelfHTML(g,l)).join('');
+  document.getElementById('ntShelves').innerHTML=c.groupsNT.map(g=>shelfHTML(g,l)).join('');
+  // feasts
+  document.getElementById('feastHead').textContent=c.feasts.head;
+  document.getElementById('feastIntro').textContent=c.feasts.intro;
+  document.getElementById('feastGrid').innerHTML=c.feasts.items.map(f=>
+    `<div class="fcard"><h3>${f.n}</h3><div class="fd">${f.d}</div><div class="fw">${f.w}</div><div class="fc">${f.c}</div></div>`).join('');
+  document.getElementById('canonHead').textContent=c.canon.head;
+  document.getElementById('canonBody').textContent=c.canon.body;
+  document.getElementById('nextBox').innerHTML=
+    `<a class="nextbtn" href="section-bible-fiable.html">${c.next1}</a><a class="nextbtn" href="prototype-fil-rouge-v3.html">${c.next2}</a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  // spine clicks
+  const all=[...c.groups,...c.groupsNT];
+  document.querySelectorAll('.spine').forEach(sp=>{
+    sp.addEventListener('click',()=>{
+      const g=all.find(x=>x.k===sp.dataset.g);const b=g.books[+sp.dataset.i];
+      const shelf=sp.closest('.shelf');
+      shelf.querySelectorAll('.spine').forEach(x=>x.classList.remove('active'));
+      sp.classList.add('active');
+      const lect=shelf.querySelector('.lectern');
+      lect.querySelector('.bn').textContent=b.n;
+      lect.querySelector('.bd').textContent=b.d;
+      lect.querySelector('.lbl-what').textContent=c.col.what;
+      lect.querySelector('.what').textContent=b.w;
+      lect.querySelector('.lbl-christ').textContent=c.col.christ;
+      lect.querySelector('.christ').textContent=b.c;
+      lect.classList.add('show');
+    });
+  });
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+// première étagère ouverte par défaut
+render('fr');
+document.querySelector('.shelf').classList.add('open');
+</script>
+</body>
+</html>

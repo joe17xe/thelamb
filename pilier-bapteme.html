@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Baptême — l'Agneau agréé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Pilier · Le Baptême — l'Agneau agréé",
+eyebrow:"Matthieu 3 · Marc 1 · Luc 3 · Jean 1 · le Jourdain, vers l'an 29 — la seule scène où le Père, le Fils et l'Esprit se manifestent ensemble",
+verse:"« Celui-ci est <span class='g'>mon Fils bien-aimé</span>, en qui j'ai mis toute mon affection. »",
+scene:"Avant que Jean-Baptiste dise « Voici l'Agneau », il y a le baptême. Et cette scène n'est pas un simple début de ministère : c'est la présentation de l'Agneau — vérifié, déclaré sans faute, et agréé par le ciel. Trois voix se lèvent sur le Jourdain.",
+stations:[
+{ctx:"Exode 12:5-6 · Lévitique 22:19-20 · la règle",t:"Un agneau doit être vérifié",img:"Avant l'autel, l'examen : un agneau n'est agréé que s'il est trouvé sans défaut.",
+p:"La loi est stricte : la victime doit être « sans défaut ». Pour la Pâque, l'agneau était gardé quatre jours, du 10 au 14 du mois (Exode 12:6) — le temps de l'inspecter. Rien de tâché, rien de brisé ne pouvait monter sur l'autel : « il ne sera point agréé » (Lévitique 22:20). L'offrande commence toujours par une vérification. Retenez ce principe : avant d'être offert, l'Agneau doit être examiné et déclaré pur.",
+o:["Lévitique 22:20","Vous n'offrirez rien qui ait un défaut, car il ne serait pas agréé."],
+n:["1 Pierre 1:19","…le sang précieux de Christ, comme d'un agneau sans défaut et sans tache."]},
+{ctx:"Matthieu 3:13-15 · l'examen public",t:"Vérifié — et trouvé sans faute",img:"Jésus n'a pas besoin d'être lavé : il descend dans l'eau pour être présenté.",
+p:"Le baptême de Jean était un baptême de repentance — pour des pécheurs. Alors pourquoi Jésus s'y présente-t-il ? Jean lui-même l'arrête : « c'est moi qui ai besoin d'être baptisé par toi » (3:14). Jésus n'entre pas dans l'eau pour être purifié, mais « pour accomplir tout ce qui est juste ». C'est l'examen public de l'Agneau : celui qui n'a pas de péché prend sa place au milieu des pécheurs, et en ressort déclaré pur par une voix venue du ciel.",
+o:["Ésaïe 53:9","Il n'avait point commis de violence, et il n'y avait point de fraude dans sa bouche."],
+n:["Matthieu 3:15","Laisse faire maintenant, car il est convenable que nous accomplissions ainsi tout ce qui est juste."]},
+{ctx:"Matthieu 3:16-17 · l'agrément",t:"Le ciel accepte l'offrande",img:"Trois voix sur le Jourdain : le Père parle, l'Esprit descend, le Fils se tient dans l'eau.",
+p:"À l'instant où Jésus remonte de l'eau, la scène s'ouvre en trois : les cieux se déchirent, l'Esprit descend comme une colombe, et le Père déclare : « Celui-ci est mon Fils bien-aimé ». Dans le culte d'Israël, une offrande agréée était parfois signalée par un feu venu du ciel (Lévitique 9:24 ; 1 Rois 18:38). Ici, ce n'est pas le feu mais la voix du Père et le repos de l'Esprit : le ciel authentifie l'Agneau avant qu'il ne soit offert. La victime est reconnue pure — par Dieu lui-même.",
+o:["Genèse 22:2","Prends ton fils, ton unique, celui que tu aimes."],
+n:["Matthieu 3:16-17","L'Esprit de Dieu descendit comme une colombe. Et une voix fit entendre : Celui-ci est mon Fils bien-aimé."]},
+{ctx:"1 Rois 19 · Malachie 4:5 · Matthieu 11:14 · l'homme du désert",t:"Élie revient — en Jean-Baptiste",img:"Un homme au manteau de poil, sorti du désert, une voix qui rappelle le peuple à Dieu.",
+p:"Pourquoi le baptiseur ressemble-t-il tant à un prophète d'autrefois ? Parce que c'en est un. Élie vivait au désert, vêtu de poil avec une ceinture de cuir (2 Rois 1:8) ; Jean paraît au désert, « un vêtement de poils de chameau et une ceinture de cuir » (Matthieu 3:4). Le dernier mot de l'Ancien Testament annonçait le retour d'Élie « avant le jour de l'Éternel » (Malachie 4:5) ; Jésus tranche : « c'est lui qui est l'Élie qui devait venir » (Matthieu 11:14). Élie avait affronté les faux dieux au Carmel pour ramener les cœurs ; Jean prépare le chemin du Seigneur. Le même Esprit, le même désert, la même mission : rétablir le contact entre Dieu et son peuple.",
+o:["Malachie 4:5-6","Voici, je vous enverrai Élie… il ramènera le cœur des pères à leurs enfants."],
+n:["Luc 1:17","Il marchera devant Dieu avec l'esprit et la puissance d'Élie, pour ramener les cœurs."]},
+{ctx:"Exode 40 · Nombres 9 · la nuée et la tente",t:"La nuée, la tente, la voix",img:"Dieu ne parle pas d'en haut, lointain : il descend, il dresse une tente, il accompagne la marche.",
+p:"Comment Dieu gardait-il le contact avec son peuple au désert ? Par une nuée. Elle descendait sur la tente de la Rencontre, la gloire la remplissait (Exode 40:34-35), et c'est de là que Dieu parlait à Moïse « face à face, comme un homme parle à son ami » (Exode 33:11). La nuée guidait la marche : quand elle s'élevait, on partait ; quand elle s'arrêtait, on campait (Nombres 9:17-22). Retenez ces trois mots — la nuée (la présence), la tente (la proximité), la voix (la parole) : c'est ainsi que Dieu reste avec les siens. Et Jean l'écrira du Christ : « la Parole a dressé sa tente parmi nous » (Jean 1:14). Ce que la nuée faisait de l'extérieur, le Fils le fait en personne.",
+o:["Exode 40:34","La nuée couvrit la tente d'assignation, et la gloire de l'Éternel remplit le tabernacle."],
+n:["Jean 1:14","La Parole a été faite chair, et elle a habité (litt. : dressé sa tente) parmi nous."]},
+{ctx:"Jean 1:29-34 · le témoin",t:"« J'ai vu, et j'ai rendu témoignage »",img:"Ce que Jean-Baptiste voit au baptême devient, le lendemain, sa proclamation.",
+p:"C'est ce baptême qui permet à Jean-Baptiste, le lendemain, de tendre le doigt : « Voici l'Agneau de Dieu ». Il le dit lui-même : « j'ai vu l'Esprit descendre… c'est moi qui l'ai vu, et j'ai rendu témoignage » (1:32-34). L'ordre est décisif : d'abord le ciel désigne le Fils, ensuite le témoin désigne l'Agneau. La proclamation de Jean 1:29 — le point de départ de tout notre parcours — repose sur ce que le Père et l'Esprit ont manifesté la veille.",
+o:["Ésaïe 42:1","Voici mon serviteur… j'ai mis mon Esprit sur lui."],
+n:["Jean 1:34","Et j'ai vu, et j'ai rendu témoignage qu'il est le Fils de Dieu."]}],
+vh:"La scène en un regard",
+vintro:"Le baptême rassemble, en un seul instant, tout ce que le reste du parcours déploiera :",
+verbs:["Le Père<small>« Celui-ci est mon Fils bien-aimé » — la voix qui agrée</small>","Le Fils<small>debout dans l'eau, à la place des pécheurs — l'Agneau présenté</small>","L'Esprit<small>descendant et demeurant — l'onction du Serviteur (Ésaïe 42:1)</small>","La voix d'Isaïe<small>« mon élu, en qui mon âme prend plaisir » — la scène annoncée</small>"],
+vp:"Chaque mot du Père est une citation. « Mon Fils » reprend le Psaume 2:7 (l'intronisation du Roi) ; « bien-aimé » évoque l'unique d'Abraham (Genèse 22:2) ; « en qui j'ai mis toute mon affection » traduit le premier chant du Serviteur (Ésaïe 42:1). En une phrase, le Père dit : voici le Roi, voici le Fils unique, voici le Serviteur qui portera le péché. Le Roi, le Fils et l'Agneau ne font qu'un — et le ciel l'atteste avant la croix.",
+ch:"Pourquoi cette scène est-elle décisive ?",
+c1:["Ce que confessent tous les chrétiens","Au baptême de Jésus, Dieu se manifeste comme Père, Fils et Esprit ; le Fils est déclaré sans péché et agréé ; son ministère public commence sous cette approbation. C'est l'une des scènes les plus unanimement reçues de tout l'Évangile."],
+c2:["Ce que disent les textes","« Celui-ci est mon Fils bien-aimé » (Matthieu 3:17) · « J'ai mis mon Esprit sur lui » (Ésaïe 42:1) · « Comme un agneau sans défaut et sans tache » (1 Pierre 1:19) · « Il n'a point connu le péché » (2 Corinthiens 5:21) · « J'ai vu, et j'ai rendu témoignage » (Jean 1:34). Nous les citons intégralement."],
+c3:["Ce que nous ne forçons pas","Le parallèle « examen de l'agneau / baptême » est une image pédagogique, non une équation rituelle : Jésus n'a pas été « inspecté » comme une bête d'autel. Ce que les textes affirment, c'est qu'il fut publiquement reconnu sans péché et agréé du ciel. Nous gardons l'image parce qu'elle éclaire — sans lui faire dire plus que l'Écriture."],
+dh:"Aller plus loin",
+deep:[
+["Trois baptêmes, un même Jourdain","Le fleuve où Jésus est baptisé est chargé de mémoire : Israël l'a traversé à sec pour entrer dans la Terre promise (Josué 3) ; Naaman le lépreux y a été purifié sept fois (2 Rois 5) ; Élie et Élisée l'ont partagé (2 Rois 2). Jésus descend dans ces eaux-là : il reprend l'histoire d'Israël — passage, purification, onction — pour la mener à son terme."],
+["La colombe : un signe qui vient de loin","Pourquoi une colombe ? L'Esprit « planait » sur les eaux à la création (Genèse 1:2, même verbe que l'oiseau qui couve) ; une colombe annonce à Noé la terre nouvelle après le jugement de l'eau (Genèse 8:11). Au Jourdain, la colombe dit une nouvelle création qui commence : sur l'Agneau repose l'Esprit qui planait au commencement. Le fil rejoint la page « le Fils éternel et la Parole »."],
+["« Mon Fils bien-aimé » : trois textes en une phrase","Les exégètes reconnaissent dans la parole du Père un tissage de trois Écritures : Psaume 2:7 (« tu es mon fils »), Genèse 22:2 (« ton fils, ton unique, ton bien-aimé », selon la Septante) et Ésaïe 42:1 (« mon élu, en qui mon âme prend plaisir »). Roi, fils offert, serviteur souffrant : le Père condense le programme entier de l'Évangile dans sa première parole publique sur le Fils."],
+["Baptisé « pour accomplir tout ce qui est juste »","Le mot de Jésus (Matthieu 3:15) éclaire toute la scène : il ne se fait pas baptiser parce qu'il aurait besoin de repentance, mais pour se ranger, dès le début, du côté de ceux qu'il vient sauver — « il a été mis au nombre des malfaiteurs » (Ésaïe 53:12) commence ici, dans l'eau, et s'achève entre deux brigands. La solidarité de l'Agneau avec les pécheurs encadre tout son ministère."],
+["La Trinité manifestée — et le lien avec notre fil","Le baptême est l'un des textes majeurs du fil « Un seul Dieu — Père, Fils, Esprit » : les trois sont distincts (l'un parle, l'un se tient dans l'eau, l'un descend) et pourtant un seul Dieu agit. Ce n'est pas une spéculation tardive : c'est une scène, racontée par les quatre évangiles. Le site présente les textes ; il laisse le lecteur contempler ce qu'ils montrent."]],
+nlbl:"Continuer",ntitle:"La Transfiguration — Moïse, Élie, et le Fils",
+ntext:"La voix du Jourdain revient sur une haute montagne — cette fois entre Moïse et Élie. La Loi et les Prophètes rencontrent le Fils.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pilier « Le Baptême » — l'Agneau vérifié, déclaré sans faute, agréé par le Père et l'Esprit."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Pillar · The Baptism — the Lamb approved",
+eyebrow:"Matthew 3 · Mark 1 · Luke 3 · John 1 · the Jordan, c. AD 29 — the one scene where Father, Son and Spirit appear together",
+verse:"“This is <span class='g'>my beloved Son</span>, in whom I am well pleased.”",
+scene:"Before John the Baptist says “Behold the Lamb”, there is the baptism. And this scene is not merely the start of a ministry: it is the presentation of the Lamb — inspected, declared without fault, and approved by heaven. Three voices rise over the Jordan.",
+stations:[
+{ctx:"Exodus 12:5-6 · Leviticus 22:19-20 · the rule",t:"A lamb must be inspected",img:"Before the altar, the examination: a lamb is accepted only if found without defect.",
+p:"The law is strict: the victim must be “without defect”. For the Passover, the lamb was kept four days, from the 10th to the 14th of the month (Exodus 12:6) — time to inspect it. Nothing blemished, nothing broken could go up on the altar: “it shall not be accepted” (Leviticus 22:20). The offering always begins with a verification. Hold on to this principle: before being offered, the Lamb must be examined and declared pure.",
+o:["Leviticus 22:20","Whatever has a defect, that you shall not offer, for it shall not be acceptable for you."],
+n:["1 Peter 1:19","…the precious blood of Christ, as of a lamb without blemish or spot."]},
+{ctx:"Matthew 3:13-15 · the public examination",t:"Inspected — and found without fault",img:"Jesus does not need washing: he steps into the water to be presented.",
+p:"John's baptism was a baptism of repentance — for sinners. So why does Jesus present himself for it? John himself tries to stop him: “I need to be baptized by you” (3:14). Jesus does not enter the water to be cleansed, but “to fulfill all righteousness”. This is the public examination of the Lamb: the one who has no sin takes his place among sinners, and comes up declared pure by a voice from heaven.",
+o:["Isaiah 53:9","He had done no violence, nor was any deceit in his mouth."],
+n:["Matthew 3:15","Allow it now, for this is the fitting way for us to fulfill all righteousness."]},
+{ctx:"Matthew 3:16-17 · the approval",t:"Heaven accepts the offering",img:"Three voices over the Jordan: the Father speaks, the Spirit descends, the Son stands in the water.",
+p:"The moment Jesus comes up from the water, the scene opens in three: the heavens are torn open, the Spirit descends like a dove, and the Father declares: “This is my beloved Son”. In Israel's worship, an accepted offering was sometimes signalled by fire from heaven (Leviticus 9:24; 1 Kings 18:38). Here it is not fire but the Father's voice and the Spirit's rest: heaven authenticates the Lamb before he is offered. The victim is recognized pure — by God himself.",
+o:["Genesis 22:2","Take your son, your only one, whom you love."],
+n:["Matthew 3:16-17","The Spirit of God descended like a dove. And a voice said: This is my beloved Son."]},
+{ctx:"1 Kings 19 · Malachi 4:5 · Matthew 11:14 · the man of the desert",t:"Elijah returns — as John the Baptist",img:"A man in a hair cloak, come out of the desert, a voice calling the people back to God.",
+p:"Why does the baptizer look so much like a prophet of old? Because he is one. Elijah lived in the wilderness, clothed in hair with a leather belt (2 Kings 1:8); John appears in the desert, “clothed in camel's hair with a leather belt” (Matthew 3:4). The last word of the Old Testament announced Elijah's return “before the day of the LORD” (Malachi 4:5); Jesus settles it: “this is Elijah who is to come” (Matthew 11:14). Elijah had confronted the false gods at Carmel to turn hearts back; John prepares the way of the Lord. The same Spirit, the same desert, the same mission: to restore the contact between God and his people.",
+o:["Malachi 4:5-6","Behold, I will send you Elijah… he will turn the hearts of the fathers to the children."],
+n:["Luke 1:17","He will go before him in the spirit and power of Elijah, to turn the hearts."]},
+{ctx:"Exodus 40 · Numbers 9 · the cloud and the tent",t:"The cloud, the tent, the voice",img:"God does not speak from far above: he comes down, he pitches a tent, he walks with the march.",
+p:"How did God keep contact with his people in the desert? By a cloud. It came down on the tent of meeting, the glory filled it (Exodus 40:34-35), and from there God spoke to Moses “face to face, as a man speaks to his friend” (Exodus 33:11). The cloud guided the march: when it rose, they set out; when it stopped, they camped (Numbers 9:17-22). Hold on to three words — the cloud (the presence), the tent (the nearness), the voice (the word): this is how God stays with his own. And John will write it of Christ: “the Word pitched its tent among us” (John 1:14). What the cloud did from outside, the Son does in person.",
+o:["Exodus 40:34","The cloud covered the tent of meeting, and the glory of the LORD filled the tabernacle."],
+n:["John 1:14","The Word became flesh, and lived (lit.: pitched his tent) among us."]},
+{ctx:"John 1:29-34 · the witness",t:"“I have seen, and have testified”",img:"What John the Baptist sees at the baptism becomes, the next day, his proclamation.",
+p:"It is this baptism that lets John the Baptist point, the next day: “Behold the Lamb of God”. He says so himself: “I have seen the Spirit descending… I have seen and have testified” (1:32-34). The order is decisive: first heaven names the Son, then the witness names the Lamb. The proclamation of John 1:29 — the starting point of our whole journey — rests on what the Father and the Spirit manifested the day before.",
+o:["Isaiah 42:1","Behold, my servant… I have put my Spirit on him."],
+n:["John 1:34","I have seen, and have testified that this is the Son of God."]}],
+vh:"The scene at a glance",
+vintro:"The baptism gathers, in a single instant, everything the rest of the journey will unfold:",
+verbs:["The Father<small>“This is my beloved Son” — the voice that approves</small>","The Son<small>standing in the water, in the place of sinners — the Lamb presented</small>","The Spirit<small>descending and remaining — the anointing of the Servant (Isaiah 42:1)</small>","Isaiah's voice<small>“my chosen, in whom my soul delights” — the scene foretold</small>"],
+vp:"Every word of the Father is a quotation. “My Son” takes up Psalm 2:7 (the enthronement of the King); “beloved” evokes Abraham's only son (Genesis 22:2); “in whom I am well pleased” renders the first Servant song (Isaiah 42:1). In one sentence, the Father says: here is the King, here is the only Son, here is the Servant who will bear sin. The King, the Son and the Lamb are one — and heaven attests it before the cross.",
+ch:"Why is this scene decisive?",
+c1:["What all Christians confess","At Jesus' baptism, God appears as Father, Son and Spirit; the Son is declared sinless and approved; his public ministry begins under this approval. It is one of the most unanimously received scenes in all the Gospels."],
+c2:["What the texts say","“This is my beloved Son” (Matthew 3:17) · “I have put my Spirit on him” (Isaiah 42:1) · “As a lamb without blemish or spot” (1 Peter 1:19) · “He knew no sin” (2 Corinthians 5:21) · “I have seen, and have testified” (John 1:34). We quote them in full."],
+c3:["What we do not force","The parallel “inspection of the lamb / baptism” is a teaching image, not a ritual equation: Jesus was not “inspected” like an altar animal. What the texts affirm is that he was publicly recognized sinless and approved by heaven. We keep the image because it illuminates — without making it say more than Scripture."],
+dh:"Go deeper",
+deep:[
+["Three baptisms, one same Jordan","The river where Jesus is baptized is heavy with memory: Israel crossed it dry to enter the Promised Land (Joshua 3); Naaman the leper was cleansed in it seven times (2 Kings 5); Elijah and Elisha parted it (2 Kings 2). Jesus goes down into those waters: he takes up Israel's story — crossing, cleansing, anointing — to bring it to its end."],
+["The dove: a sign from far back","Why a dove? The Spirit “hovered” over the waters at creation (Genesis 1:2, the same verb as a bird brooding); a dove announced to Noah the new earth after the judgment of water (Genesis 8:11). At the Jordan, the dove speaks of a new creation beginning: on the Lamb rests the Spirit who hovered at the beginning. The thread joins the page “the eternal Son and the Word”."],
+["“My beloved Son”: three texts in one sentence","Scholars recognize in the Father's word a weaving of three Scriptures: Psalm 2:7 (“you are my son”), Genesis 22:2 (“your son, your only one, your beloved”, in the Septuagint) and Isaiah 42:1 (“my chosen, in whom my soul delights”). King, offered son, suffering servant: the Father condenses the whole program of the Gospel into his first public word about the Son."],
+["Baptized “to fulfill all righteousness”","Jesus' word (Matthew 3:15) lights up the whole scene: he is not baptized because he needs repentance, but to place himself, from the start, on the side of those he comes to save — “he was numbered with the transgressors” (Isaiah 53:12) begins here, in the water, and ends between two criminals. The Lamb's solidarity with sinners frames his whole ministry."],
+["The Trinity manifested — and the link to our thread","The baptism is one of the major texts of the thread “One God — Father, Son, Spirit”: the three are distinct (one speaks, one stands in the water, one descends) and yet one God acts. This is no late speculation: it is a scene, told by all four Gospels. The site presents the texts; it lets the reader contemplate what they show."]],
+nlbl:"Continue",ntitle:"The Transfiguration — Moses, Elijah, and the Son",
+ntext:"The voice of the Jordan returns on a high mountain — this time between Moses and Elijah. The Law and the Prophets meet the Son.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pillar “The Baptism” — the Lamb inspected, declared without fault, approved by the Father and the Spirit."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"ركن · المعمودية — الحمل المقبول",
+eyebrow:"متى ٣ · مرقس ١ · لوقا ٣ · يوحنا ١ · الأردن، نحو سنة ٢٩ م — المشهد الوحيد الذي يتجلى فيه الآب والابن والروح معًا",
+verse:"«هذَا هُوَ <span class='g'>ابْنِي الْحَبِيبُ</span> الَّذِي بِهِ سُرِرْتُ.»",
+scene:"قبل أن يقول يوحنا المعمدان «هوذا الحمل»، هناك المعمودية. وهذا المشهد ليس مجرد بداية خدمة: إنه تقديمُ الحمل — مفحوصًا، ومُعلَنًا بلا عيب، ومقبولًا من السماء. ثلاثةُ أصوات ترتفع على الأردن.",
+stations:[
+{ctx:"خروج ١٢: ٥-٦ · لاويين ٢٢: ١٩-٢٠ · القاعدة",t:"الحمل يجب أن يُفحَص",img:"قبل المذبح، الفحص: لا يُقبَل الحمل إلا إن وُجد بلا عيب.",
+p:"الشريعة صارمة: يجب أن تكون الذبيحة «صحيحةً بلا عيب». وفي الفصح كان الحمل يُحفَظ أربعة أيام، من العاشر إلى الرابع عشر من الشهر (خروج ١٢: ٦) — وقتٌ لفحصه. ولا شيء فيه عيبٌ أو كسرٌ يصعد على المذبح: «لاَ يَكُونُ لِلرِّضَا» (لاويين ٢٢: ٢٠). التقدمةُ تبدأ دائمًا بالفحص. احفظ هذا المبدأ: قبل أن يُقدَّم، يجب أن يُفحَص الحملُ ويُعلَن طاهرًا.",
+o:["لاويين ٢٢: ٢٠","كُلُّ مَا كَانَ فِيهِ عَيْبٌ لاَ تُقَرِّبُوهُ لأَنَّهُ لاَ يَكُونُ لِلرِّضَا عَنْكُمْ."],
+n:["١ بطرس ١: ١٩","بَلْ بِدَمٍ كَرِيمٍ، كَمَا مِنْ حَمَل بِلاَ عَيْبٍ وَلاَ دَنَسٍ، دَمِ الْمَسِيحِ."]},
+{ctx:"متى ٣: ١٣-١٥ · الفحص العلني",t:"مفحوصًا — ووُجد بلا عيب",img:"يسوع لا يحتاج إلى غسل: ينزل في الماء ليُقدَّم.",
+p:"كانت معمودية يوحنا معموديةَ توبة — للخطاة. فلماذا يتقدّم إليها يسوع؟ يوحنا نفسُه يمنعه: «أَنَا مُحْتَاجٌ أَنْ أَعْتَمِدَ مِنْكَ» (٣: ١٤). لا يدخل يسوع الماءَ ليتطهّر، بل «لِنُكَمِّلَ كُلَّ بِرٍّ». إنه الفحصُ العلني للحمل: مَن لا خطية فيه يأخذ مكانه بين الخطاة، ويخرج معلَنًا طاهرًا بصوتٍ من السماء.",
+o:["إشعياء ٥٣: ٩","لَمْ يَعْمَلْ ظُلْمًا وَلَمْ يَكُنْ فِي فَمِهِ غِشٌّ."],
+n:["متى ٣: ١٥","اسْمَحِ الآنَ، لأَنَّهُ هكَذَا يَلِيقُ بِنَا أَنْ نُكَمِّلَ كُلَّ بِرٍّ."]},
+{ctx:"متى ٣: ١٦-١٧ · القبول",t:"السماء تقبل التقدمة",img:"ثلاثةُ أصوات على الأردن: الآب يتكلم، والروح ينزل، والابن قائمٌ في الماء.",
+p:"في اللحظة التي يصعد فيها يسوع من الماء، ينفتح المشهد ثلاثةً: تنشقّ السماوات، وينزل الروحُ مثل حمامة، ويعلن الآب: «هذَا هُوَ ابْنِي الْحَبِيبُ». في عبادة إسرائيل، كانت التقدمةُ المقبولة تُعلَن أحيانًا بنارٍ من السماء (لاويين ٩: ٢٤؛ ١ ملوك ١٨: ٣٨). وهنا ليست النار بل صوتُ الآب وحلولُ الروح: السماءُ تصادق على الحمل قبل أن يُقدَّم. الذبيحةُ يُعترَف بطهارتها — من الله نفسِه.",
+o:["تكوين ٢٢: ٢","خُذِ ابْنَكَ وَحِيدَكَ الَّذِي تُحِبُّهُ."],
+n:["متى ٣: ١٦-١٧","فَرَأَى رُوحَ اللهِ نَازِلاً مِثْلَ حَمَامَةٍ. وَصَوْتٌ قَائِلاً: هذَا هُوَ ابْنِي الْحَبِيبُ."]},
+{ctx:"١ ملوك ١٩ · ملاخي ٤: ٥ · متى ١١: ١٤ · رجلُ البرية",t:"إيليا يعود — في يوحنا المعمدان",img:"رجلٌ برداءٍ من شعر، خارجٌ من البرية، صوتٌ يردّ الشعبَ إلى الله.",
+p:"لماذا يشبه المعمِّدُ نبيًّا قديمًا إلى هذا الحد؟ لأنه كذلك. كان إيليا يسكن البرية، لابسًا شعرًا ومنطقةً من جلد (٢ ملوك ١: ٨)؛ ويظهر يوحنا في البرية، «لِبَاسُهُ مِنْ وَبَرِ الإِبِلِ، وَعَلَى حَقْوَيْهِ مِنْطَقَةٌ مِنْ جِلْدٍ» (متى ٣: ٤). وآخرُ كلمة في العهد القديم أنبأت بعودة إيليا «قَبْلَ يَوْمِ الرَّبِّ» (ملاخي ٤: ٥)؛ ويحسمها يسوع: «هُوَ إِيلِيَّا الْمُزْمِعُ أَنْ يَأْتِيَ» (متى ١١: ١٤). واجه إيليا الآلهةَ الباطلة في الكرمل ليردّ القلوب؛ ويهيّئ يوحنا طريقَ الرب. الروحُ نفسه، والبريةُ نفسها، والرسالةُ نفسها: إعادةُ الصلة بين الله وشعبه.",
+o:["ملاخي ٤: ٥-٦","هأَنَذَا أُرْسِلُ إِلَيْكُمْ إِيلِيَّا… فَيَرُدُّ قَلْبَ الآبَاءِ عَلَى الأَبْنَاءِ."],
+n:["لوقا ١: ١٧","وَيَتَقَدَّمُ أَمَامَهُ بِرُوحِ إِيلِيَّا وَقُوَّتِهِ، لِيَرُدَّ قُلُوبَ."]},
+{ctx:"خروج ٤٠ · عدد ٩ · السحابة والخيمة",t:"السحابة، والخيمة، والصوت",img:"لا يتكلم اللهُ من علٍ بعيدًا: بل ينزل، وينصب خيمة، ويرافق المسير.",
+p:"كيف كان اللهُ يحفظ الصلةَ بشعبه في البرية؟ بسحابة. كانت تنزل على خيمة الاجتماع، ويملؤها المجد (خروج ٤٠: ٣٤-٣٥)، ومن هناك كان اللهُ يكلّم موسى «وَجْهًا لِوَجْهٍ، كَمَا يُكَلِّمُ الرَّجُلُ صَاحِبَهُ» (خروج ٣٣: ١١). وكانت السحابةُ تقود المسير: إذا ارتفعت رحلوا، وإذا حلّت نزلوا (عدد ٩: ١٧-٢٢). احفظ هذه الكلمات الثلاث — السحابة (الحضور)، والخيمة (القرب)، والصوت (الكلمة): هكذا يبقى اللهُ مع خاصته. وسيكتبها يوحنا عن المسيح: «الْكَلِمَةُ… حَلَّ (حرفيًا: نصب خيمته) بَيْنَنَا» (يوحنا ١: ١٤). ما كانت السحابةُ تفعله من الخارج، يفعله الابنُ بشخصه.",
+o:["خروج ٤٠: ٣٤","فَغَطَّتِ السَّحَابَةُ خَيْمَةَ الاجْتِمَاعِ، وَمَلأَ بَهَاءُ الرَّبِّ الْمَسْكَنَ."],
+n:["يوحنا ١: ١٤","وَالْكَلِمَةُ صَارَ جَسَدًا وَحَلَّ (نصب خيمته) بَيْنَنَا."]},
+{ctx:"يوحنا ١: ٢٩-٣٤ · الشاهد",t:"«قَدْ رَأَيْتُ وَشَهِدْتُ»",img:"ما يراه يوحنا المعمدان في المعمودية يصير، في الغد، إعلانَه.",
+p:"هذه المعموديةُ هي التي تتيح ليوحنا المعمدان، في الغد، أن يشير بإصبعه: «هُوَذَا حَمَلُ اللهِ». يقولها هو نفسُه: «رَأَيْتُ الرُّوحَ نَازِلاً... وَأَنَا قَدْ رَأَيْتُ وَشَهِدْتُ» (١: ٣٢-٣٤). والترتيب حاسم: السماءُ أولًا تسمّي الابن، ثم الشاهدُ يسمّي الحمل. إعلانُ يوحنا ١: ٢٩ — نقطةُ انطلاق مسارنا كلِّه — يستند إلى ما أظهره الآبُ والروحُ في اليوم السابق.",
+o:["إشعياء ٤٢: ١","هُوَذَا عَبْدِي... وَضَعْتُ رُوحِي عَلَيْهِ."],
+n:["يوحنا ١: ٣٤","وَأَنَا قَدْ رَأَيْتُ وَشَهِدْتُ أَنَّ هذَا هُوَ ابْنُ اللهِ."]}],
+vh:"المشهد في نظرة",
+vintro:"تجمع المعموديةُ، في لحظةٍ واحدة، كلَّ ما سيبسطه بقيةُ المسار:",
+verbs:["الآب<small>«هذا هو ابني الحبيب» — الصوتُ الذي يقبل</small>","الابن<small>قائمًا في الماء، في مكان الخطاة — الحملُ المُقدَّم</small>","الروح<small>نازلًا ومستقرًّا — مسحةُ العبد (إشعياء ٤٢: ١)</small>","صوتُ إشعياء<small>«مختاري الذي سُرَّت به نفسي» — المشهدُ المُنبأ به</small>"],
+vp:"كلُّ كلمة من الآب اقتباس. «ابني» تستعيد المزمور ٢: ٧ (تنصيبُ الملك)؛ و«الحبيب» تستحضر وحيدَ إبراهيم (تكوين ٢٢: ٢)؛ و«الذي به سُررت» تترجم نشيد العبد الأول (إشعياء ٤٢: ١). في جملةٍ واحدة يقول الآب: هوذا الملك، هوذا الابن الوحيد، هوذا العبدُ الذي سيحمل الخطية. الملكُ والابنُ والحملُ واحد — والسماءُ تشهد بذلك قبل الصليب.",
+ch:"لماذا هذا المشهد حاسم؟",
+c1:["ما يعترف به المسيحيون جميعًا","في معمودية يسوع، يتجلى اللهُ آبًا وابنًا وروحًا؛ ويُعلَن الابنُ بلا خطية ومقبولًا؛ وتبدأ خدمتُه العلنية تحت هذا القبول. وهو من أكثر المشاهد إجماعًا في الأناجيل كلِّها."],
+c2:["ما تقوله النصوص","«هذَا هُوَ ابْنِي الْحَبِيبُ» (متى ٣: ١٧) · «وَضَعْتُ رُوحِي عَلَيْهِ» (إشعياء ٤٢: ١) · «كَحَمَل بِلاَ عَيْبٍ وَلاَ دَنَسٍ» (١ بطرس ١: ١٩) · «لَمْ يَعْرِفْ خَطِيَّةً» (٢ كورنثوس ٥: ٢١) · «قَدْ رَأَيْتُ وَشَهِدْتُ» (يوحنا ١: ٣٤). نقتبسها كاملةً."],
+c3:["ما لا نُكرهه على النص","التوازي «فحصُ الحمل / المعمودية» صورةٌ تعليمية لا معادلةٌ طقسية: لم «يُفحَص» يسوع كبهيمة مذبح. ما تؤكده النصوص أنه اعتُرف علنًا بأنه بلا خطية ومقبولٌ من السماء. نحتفظ بالصورة لأنها تُنير — من دون أن نجعلها تقول أكثر مما يقوله الكتاب."],
+dh:"للتعمّق",
+deep:[
+["ثلاثُ معموديات، ونهرُ الأردن نفسُه","النهرُ الذي اعتمد فيه يسوع مثقلٌ بالذاكرة: عبره إسرائيل على اليابسة ليدخل أرض الموعد (يشوع ٣)؛ وفيه تطهّر نعمانُ الأبرص سبعَ مرات (٢ ملوك ٥)؛ وشقّه إيليا وأليشع (٢ ملوك ٢). ينزل يسوع في تلك المياه: يستعيد قصةَ إسرائيل — عبورًا وتطهيرًا ومسحةً — ليبلغ بها غايتها."],
+["الحمامة: علامةٌ من بعيد","لماذا حمامة؟ كان الروحُ «يَرِفُّ» على المياه في الخلق (تكوين ١: ٢، الفعلُ نفسه للطائر الحاضن)؛ وحمامةٌ بشّرت نوحًا بالأرض الجديدة بعد دينونة الماء (تكوين ٨: ١١). على الأردن تقول الحمامةُ خليقةً جديدة تبدأ: على الحمل يستقرّ الروحُ الذي كان يرفّ في البدء. والخيطُ يلتقي بصفحة «الابن الأزلي والكلمة»."],
+["«ابني الحبيب»: ثلاثةُ نصوص في جملة","يتعرّف الدارسون في كلمة الآب على نسجٍ من ثلاث كتابات: المزمور ٢: ٧ («أنت ابني»)، وتكوين ٢٢: ٢ («ابنك وحيدك حبيبك»، في السبعينية)، وإشعياء ٤٢: ١ («مختاري الذي سُرَّت به نفسي»). الملكُ، والابنُ المُقدَّم، والعبدُ المتألم: يكثّف الآبُ برنامجَ الإنجيل كلَّه في أول كلمةٍ علنية عن الابن."],
+["اعتمد «لِيُكَمِّل كلَّ برّ»","كلمةُ يسوع (متى ٣: ١٥) تُنير المشهدَ كلَّه: لا يعتمد لأنه محتاجٌ إلى توبة، بل ليصطفّ منذ البدء إلى جانب الذين جاء ليخلّصهم — «أُحْصِيَ مَعَ أَثَمَةٍ» (إشعياء ٥٣: ١٢) يبدأ هنا، في الماء، وينتهي بين لصّين. تضامنُ الحمل مع الخطاة يؤطّر خدمتَه كلَّها."],
+["الثالوث متجلّيًا — والصلة بخيطنا","المعموديةُ من النصوص الكبرى لخيط «إلهٌ واحد — الآب والابن والروح»: الثلاثةُ متمايزون (واحدٌ يتكلم، وواحدٌ قائمٌ في الماء، وواحدٌ ينزل) ومع ذلك إلهٌ واحد يعمل. وليست هذه تخمينًا متأخرًا: بل مشهدٌ ترويه الأناجيلُ الأربعة. يعرض الموقعُ النصوص؛ ويترك للقارئ أن يتأمل ما تُظهره."]],
+nlbl:"تابع",ntitle:"التجلّي — موسى، وإيليا، والابن",
+ntext:"صوتُ الأردن يعود على جبلٍ عالٍ — هذه المرة بين موسى وإيليا. الناموسُ والأنبياءُ يلتقيان الابنَ.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>ركن «المعمودية» — الحملُ المفحوص، المُعلَن بلا عيب، المقبول من الآب والروح."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

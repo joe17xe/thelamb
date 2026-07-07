@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Fils éternel, la Parole, et l'Agneau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Pilier · Le Fils éternel, la Parole, et l'Agneau",
+eyebrow:"Jean 1:1-14 · Éphèse, vers l'an 90 — l'évangile qui commence, non à Bethléhem, mais « au commencement »",
+verse:"« Au commencement était <span class='g'>la Parole</span>… et la Parole a été faite chair. »",
+scene:"Le ciel a nommé le Fils au Jourdain. Mais depuis quand est-il le Fils ? Jean ne fait pas commencer son évangile à une naissance : il le fait commencer avant le monde. Voici le fil le plus vaste de tous — celui qui relie l'éternité à la crèche, et la crèche à la croix.",
+stations:[
+{ctx:"Jean 1:1-3 · avant le temps",t:"La Parole était Dieu",img:"Avant qu'il y ait un « quand », il y a la Parole — tournée vers Dieu, et qui est Dieu.",
+p:"Jean ouvre par un écho voulu de la Genèse : « au commencement ». Mais là où la Genèse dit « Dieu créa », Jean dit : « au commencement était la Parole ». Non pas « fut créée » — « était » : elle existe déjà quand tout commence. Elle est « auprès de Dieu » (distincte) et « était Dieu » (une seule divinité). Et rien n'a été fait sans elle. Le Fils n'a pas commencé à Bethléhem : Bethléhem est le jour où la Parole éternelle est entrée dans le temps.",
+o:["Genèse 1:1","Au commencement, Dieu créa les cieux et la terre."],
+n:["Jean 1:1-3","Au commencement était la Parole… et la Parole était Dieu. Toutes choses ont été faites par elle."]},
+{ctx:"Colossiens 1 · Hébreux 1 · le créateur",t:"Tout a été créé par lui et pour lui",img:"Celui qui sera l'Agneau est celui par qui les mondes furent faits.",
+p:"Ce que Jean dit en images, Paul et l'épître aux Hébreux le disent en toutes lettres : le Fils est « l'image du Dieu invisible », « avant toutes choses », celui par qui « tout subsiste » ; il « soutient toutes choses par sa parole puissante ». Vertige à tenir ensemble : les mains qui seront clouées sont les mains qui ont tendu les cieux. Celui qu'on mènera comme un agneau muet est celui dont la parole tient l'univers.",
+o:["Proverbes 8:30","J'étais à l'œuvre auprès de lui, faisant tous les jours ses délices.",],
+n:["Colossiens 1:16-17","Tout a été créé par lui et pour lui… et tout subsiste en lui."]},
+{ctx:"Jean 1:14 · le tournant",t:"La Parole a été faite chair",img:"L'infini se rend visible : la Parole dresse sa tente parmi nous.",
+p:"Voici la phrase où l'éternité entre dans le temps : « la Parole a été faite chair, et elle a habité parmi nous ». Le verbe grec signifie littéralement « dresser sa tente » — le mot du tabernacle du désert, là où la gloire de Dieu venait demeurer. Jean ajoute : « nous avons contemplé sa gloire ». Ce qui remplissait le sanctuaire habite désormais un corps. Et ce corps sera offert : la Parole s'est faite chair pour pouvoir se faire Agneau.",
+o:["Exode 25:8","Ils me feront un sanctuaire, et j'habiterai au milieu d'eux."],
+n:["Jean 1:14","La Parole a été faite chair, et elle a habité parmi nous, pleine de grâce et de vérité."]},
+{ctx:"Apocalypse 13:8 · le dessein",t:"L'Agneau dès la fondation du monde",img:"L'offrande n'est pas le plan B de Dieu : elle était dans son cœur avant le commencement.",
+p:"Le lien se noue jusqu'au vertige : le même livre qui montre l'Agneau au centre du trône parle de « l'Agneau immolé dès la fondation du monde » (Apocalypse 13:8). Avant les étoiles, avant la chute, le don était déjà décidé. Pierre le confirme : Christ était « désigné d'avance, avant la fondation du monde » (1 Pierre 1:20). Le Fils éternel, la Parole créatrice et l'Agneau immolé ne sont pas trois vérités séparées : ce sont trois regards sur une seule personne — et un seul amour, sans commencement.",
+o:["Michée 5:1","Celui dont l'origine remonte aux temps anciens, aux jours de l'éternité."],
+n:["Apocalypse 13:8","…l'Agneau qui a été immolé dès la fondation du monde."]}],
+vh:"Le fil, d'un bout à l'autre du temps",
+vintro:"Une seule personne, contemplée à cinq moments — de l'éternité à l'éternité :",
+verbs:["Avant<small>la Parole était Dieu (Jean 1:1)</small>","Par lui<small>tout a été créé (Colossiens 1:16)</small>","Parmi nous<small>la Parole faite chair (Jean 1:14)</small>","Pour nous<small>l'Agneau immolé (Apocalypse 5:6)</small>","Toujours<small>le premier et le dernier (Apocalypse 22:13)</small>"],
+vp:"Remarquez comme les extrémités se répondent. « Au commencement était la Parole » (Jean 1:1) et « je suis le commencement et la fin » (Apocalypse 22:13) encadrent toute l'histoire. Le titre que Dieu se réserve dans Ésaïe — « je suis le premier et je suis le dernier » (44:6) — l'Agneau le porte à la dernière page. Le cercle se referme : celui par qui tout a commencé est celui vers qui tout revient. Et entre les deux, une croix.",
+ch:"Comment lire ces textes vertigineux ?",
+c1:["Ce que confessent tous les chrétiens","Le Fils n'est pas une créature : il est de toute éternité avec Dieu et il est Dieu ; par lui tout a été fait ; il s'est vraiment fait homme sans cesser d'être Dieu. C'est le cœur de la foi commune, formulé dès les premiers symboles."],
+c2:["Ce que disent les textes","« La Parole était Dieu » (Jean 1:1) · « Avant qu'Abraham fût, je suis » (Jean 8:58) · « Tout subsiste en lui » (Colossiens 1:17) · « Image du Dieu invisible » (Colossiens 1:15) · « Le reflet de sa gloire » (Hébreux 1:3) · « Père, glorifie-moi de la gloire que j'avais auprès de toi avant que le monde fût » (Jean 17:5). Nous les citons intégralement."],
+c3:["Ce que nous n'essayons pas d'épuiser","Comment l'infini peut habiter un corps, comment l'éternel peut naître dans le temps : l'Écriture l'affirme, elle ne le dissèque pas, et nous non plus. Le site montre le fil que les textes tissent ; il invite à la contemplation plutôt qu'à la spéculation. Devant ce mystère, la bonne posture n'est pas d'expliquer, mais d'adorer."],
+dh:"Aller plus loin",
+deep:[
+["Parole, Sagesse, Souffle : l'arrière-plan","Avant Jean, la Bible parlait déjà d'une Parole qui crée (« il dit, et la chose arrive », Psaume 33:9), d'une Sagesse présente à la création et se réjouissant devant Dieu (Proverbes 8:22-31), d'un Souffle qui donne la vie (Genèse 2:7). Jean rassemble ces fils épars et leur donne un visage : la Parole n'est pas une force, c'est quelqu'un, et il s'appelle Jésus."],
+["« Je suis » : le Nom porté par le Fils","À sept reprises, Jean rapporte des « Je suis » de Jésus (le pain, la lumière, la porte, le bon berger, la résurrection, le chemin, la vigne). Et une fois, le « Je suis » absolu : « avant qu'Abraham fût, je suis » (8:58) — le Nom même du buisson ardent (Exode 3:14). Ses auditeurs comprennent : ils prennent des pierres. Ce fil rejoint « Un seul Dieu — Père, Fils, Esprit »."],
+["Le Fils éternel et le baptême","La page précédente s'achevait sur une question : depuis quand est-il le Fils ? Jean répond avant même qu'on la pose : « la gloire que j'avais auprès de toi avant que le monde fût » (17:5). La voix du Père au Jourdain ne fait pas le Fils : elle le révèle. Le baptême manifeste dans le temps une relation qui n'a pas de commencement."],
+["« Immolé dès la fondation du monde » : deux lectures","Apocalypse 13:8 se lit de deux façons selon la ponctuation grecque : « immolé dès la fondation du monde », ou « inscrits dès la fondation du monde » (les noms dans le livre de vie, comme en 17:8). Les deux lectures sont anciennes ; l'une comme l'autre enseigne que le salut n'est pas une improvisation : l'amour qui donne était là avant le premier matin."],
+["Pourquoi commencer si haut ?","Un lecteur non spécialiste pourrait croire que ces textes sont « pour les experts ». C'est l'inverse : sans eux, la croix n'est qu'un fait divers tragique. Avec eux, elle devient le geste par lequel le Créateur lui-même vient chercher sa création. Plus on monte haut dans l'origine du Fils, plus on mesure la profondeur de son abaissement — « lui qui existait en forme de Dieu… s'est dépouillé lui-même » (Philippiens 2:6-7)."]],
+nlbl:"Revenir au fil",ntitle:"Explorer le Fil Rouge — 153 correspondances",
+ntext:"De l'éternité à la croix, tout se tient. Touchez le fil complet, ou reprenez le parcours depuis « Voici l'Agneau ».",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pilier « Le Fils éternel, la Parole, et l'Agneau » — le fil qui relie l'éternité à l'offrande."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Pillar · The eternal Son, the Word, and the Lamb",
+eyebrow:"John 1:1-14 · Ephesus, c. AD 90 — the gospel that begins, not at Bethlehem, but “in the beginning”",
+verse:"“In the beginning was <span class='g'>the Word</span>… and the Word became flesh.”",
+scene:"Heaven named the Son at the Jordan. But since when is he the Son? John does not begin his gospel at a birth: he begins it before the world. This is the widest thread of all — the one joining eternity to the manger, and the manger to the cross.",
+stations:[
+{ctx:"John 1:1-3 · before time",t:"The Word was God",img:"Before there is a “when”, there is the Word — turned toward God, and being God.",
+p:"John opens with a deliberate echo of Genesis: “in the beginning”. But where Genesis says “God created”, John says: “in the beginning was the Word”. Not “was created” — “was”: it already exists when everything begins. It is “with God” (distinct) and “was God” (one divinity). And nothing was made without it. The Son did not begin at Bethlehem: Bethlehem is the day the eternal Word entered time.",
+o:["Genesis 1:1","In the beginning, God created the heavens and the earth."],
+n:["John 1:1-3","In the beginning was the Word… and the Word was God. All things were made through him."]},
+{ctx:"Colossians 1 · Hebrews 1 · the creator",t:"All things created through him and for him",img:"The one who will be the Lamb is the one through whom the worlds were made.",
+p:"What John says in images, Paul and Hebrews say plainly: the Son is “the image of the invisible God”, “before all things”, the one in whom “all things hold together”; he “upholds all things by the word of his power”. A vertigo to hold together: the hands that will be nailed are the hands that stretched out the heavens. The one led like a silent lamb is the one whose word holds the universe.",
+o:["Proverbs 8:30","Then I was the craftsman by his side… rejoicing always before him."],
+n:["Colossians 1:16-17","All things have been created through him and for him… and in him all things hold together."]},
+{ctx:"John 1:14 · the turning point",t:"The Word became flesh",img:"The infinite makes itself visible: the Word pitches its tent among us.",
+p:"Here is the sentence where eternity enters time: “the Word became flesh, and lived among us”. The Greek verb literally means “to pitch a tent” — the word of the desert tabernacle, where the glory of God came to dwell. John adds: “we saw his glory”. What filled the sanctuary now dwells in a body. And that body will be offered: the Word became flesh so that it could become the Lamb.",
+o:["Exodus 25:8","Let them make me a sanctuary, that I may dwell among them."],
+n:["John 1:14","The Word became flesh, and lived among us, full of grace and truth."]},
+{ctx:"Revelation 13:8 · the design",t:"The Lamb from the foundation of the world",img:"The offering is not God's plan B: it was in his heart before the beginning.",
+p:"The link tightens to the point of vertigo: the same book that shows the Lamb at the center of the throne speaks of “the Lamb slain from the foundation of the world” (Revelation 13:8). Before the stars, before the fall, the gift was already decided. Peter confirms it: Christ was “foreknown before the foundation of the world” (1 Peter 1:20). The eternal Son, the creating Word and the slain Lamb are not three separate truths: they are three glances at one single person — and one single love, without beginning.",
+o:["Micah 5:2","…whose goings forth are from of old, from ancient days."],
+n:["Revelation 13:8","…the Lamb who has been slain from the foundation of the world."]}],
+vh:"The thread, from one end of time to the other",
+vintro:"One single person, contemplated at five moments — from eternity to eternity:",
+verbs:["Before<small>the Word was God (John 1:1)</small>","Through him<small>all things created (Colossians 1:16)</small>","Among us<small>the Word made flesh (John 1:14)</small>","For us<small>the slain Lamb (Revelation 5:6)</small>","Always<small>the first and the last (Revelation 22:13)</small>"],
+vp:"Note how the ends answer each other. “In the beginning was the Word” (John 1:1) and “I am the beginning and the end” (Revelation 22:13) frame all of history. The title God reserves for himself in Isaiah — “I am the first and the last” (44:6) — the Lamb bears on the last page. The circle closes: the one through whom everything began is the one to whom everything returns. And between the two, a cross.",
+ch:"How to read these vertiginous texts?",
+c1:["What all Christians confess","The Son is not a creature: he is from all eternity with God and is God; through him all things were made; he truly became man without ceasing to be God. This is the heart of the common faith, formulated from the earliest creeds."],
+c2:["What the texts say","“The Word was God” (John 1:1) · “Before Abraham was, I am” (John 8:58) · “In him all things hold together” (Colossians 1:17) · “Image of the invisible God” (Colossians 1:15) · “The radiance of his glory” (Hebrews 1:3) · “Father, glorify me with the glory I had with you before the world existed” (John 17:5). We quote them in full."],
+c3:["What we do not try to exhaust","How the infinite can dwell in a body, how the eternal can be born in time: Scripture affirms it, it does not dissect it, and neither do we. The site shows the thread the texts weave; it invites contemplation rather than speculation. Before this mystery, the right posture is not to explain, but to adore."],
+dh:"Go deeper",
+deep:[
+["Word, Wisdom, Breath: the background","Before John, the Bible already spoke of a Word that creates (“he spoke, and it was done”, Psalm 33:9), of a Wisdom present at creation and rejoicing before God (Proverbs 8:22-31), of a Breath that gives life (Genesis 2:7). John gathers these scattered threads and gives them a face: the Word is not a force, it is someone, and his name is Jesus."],
+["“I am”: the Name borne by the Son","Seven times, John reports “I am” sayings of Jesus (the bread, the light, the door, the good shepherd, the resurrection, the way, the vine). And once, the absolute “I am”: “before Abraham was, I am” (8:58) — the very Name of the burning bush (Exodus 3:14). His hearers understand: they pick up stones. This thread joins “One God — Father, Son, Spirit”."],
+["The eternal Son and the baptism","The previous page ended on a question: since when is he the Son? John answers before it is even asked: “the glory I had with you before the world existed” (17:5). The Father's voice at the Jordan does not make the Son: it reveals him. The baptism manifests in time a relationship that has no beginning."],
+["“Slain from the foundation of the world”: two readings","Revelation 13:8 reads two ways depending on the Greek: “slain from the foundation of the world”, or “written from the foundation of the world” (the names in the book of life, as in 17:8). Both readings are ancient; each teaches that salvation is no improvisation: the love that gives was there before the first morning."],
+["Why begin so high?","A non-specialist reader might think these texts are “for experts”. It is the opposite: without them, the cross is only a tragic news item. With them, it becomes the act by which the Creator himself comes to seek his creation. The higher we climb into the origin of the Son, the more we measure the depth of his lowering — “who, existing in the form of God… emptied himself” (Philippians 2:6-7)."]],
+nlbl:"Back to the thread",ntitle:"Explore the Scarlet Thread — 153 correspondences",
+ntext:"From eternity to the cross, it all holds together. Touch the full thread, or take up the journey again from “Behold the Lamb”.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pillar “The eternal Son, the Word, and the Lamb” — the thread joining eternity to the offering."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"ركن · الابن الأزلي، والكلمة، والحمل",
+eyebrow:"يوحنا ١: ١-١٤ · أفسس، نحو سنة ٩٠ م — الإنجيل الذي يبدأ لا من بيت لحم، بل «في البدء»",
+verse:"«فِي الْبَدْءِ كَانَ <span class='g'>الْكَلِمَةُ</span>… وَالْكَلِمَةُ صَارَ جَسَدًا.»",
+scene:"سمّت السماءُ الابنَ عند الأردن. لكن منذ متى هو الابن؟ لا يبدأ يوحنا إنجيلَه من مولد: بل يبدأه قبل العالم. هذا هو أوسعُ الخيوط جميعًا — الذي يربط الأزلَ بالمذود، والمذودَ بالصليب.",
+stations:[
+{ctx:"يوحنا ١: ١-٣ · قبل الزمن",t:"الكلمةُ كان الله",img:"قبل أن يكون هناك «متى»، هناك الكلمة — نحو الله، وهو الله.",
+p:"يفتتح يوحنا بصدًى مقصود لسفر التكوين: «في البدء». لكن حيث يقول التكوين «خلق الله»، يقول يوحنا: «في البدء كان الكلمة». لا «خُلق» — بل «كان»: هو موجودٌ سلفًا حين يبدأ كلُّ شيء. وهو «عِنْدَ اللهِ» (متمايز) و«كَانَ اللهَ» (لاهوتٌ واحد). ولم يُصنَع شيءٌ بغيره. لم يبدأ الابنُ في بيت لحم: بيتُ لحم هو اليومُ الذي دخلت فيه الكلمةُ الأزلية في الزمن.",
+o:["تكوين ١: ١","فِي الْبَدْءِ خَلَقَ اللهُ السَّمَاوَاتِ وَالأَرْضَ."],
+n:["يوحنا ١: ١-٣","فِي الْبَدْءِ كَانَ الْكَلِمَةُ… وَكَانَ الْكَلِمَةُ اللهَ. كُلُّ شَيْءٍ بِهِ كَانَ."]},
+{ctx:"كولوسي ١ · عبرانيين ١ · الخالق",t:"به وله خُلق كلُّ شيء",img:"الذي سيكون الحمل هو الذي به صُنعت العوالم.",
+p:"ما يقوله يوحنا بالصور، يقوله بولس والعبرانيون صراحةً: الابنُ «صُورَةُ اللهِ غَيْرِ الْمَنْظُورِ»، «قَبْلَ كُلِّ شَيْءٍ»، الذي به «يَقُومُ الْكُلُّ»؛ وهو «حَامِلٌ كُلَّ الأَشْيَاءِ بِكَلِمَةِ قُدْرَتِهِ». دوارٌ يجب أن نحمله معًا: اليدان اللتان ستُسمَّران هما اليدان اللتان بسطتا السماوات. والذي يُساق كحملٍ صامت هو الذي كلمتُه تمسك الكون.",
+o:["أمثال ٨: ٣٠","كُنْتُ عِنْدَهُ صَانِعًا، وَكُنْتُ كُلَّ يَوْمٍ لَذَّتَهُ."],
+n:["كولوسي ١: ١٦-١٧","الْكُلُّ بِهِ وَلَهُ قَدْ خُلِقَ… وَفِيهِ يَقُومُ الْكُلُّ."]},
+{ctx:"يوحنا ١: ١٤ · المنعطف",t:"الكلمةُ صار جسدًا",img:"اللامتناهي يصير منظورًا: الكلمةُ ينصب خيمته بيننا.",
+p:"ها هي الجملةُ التي يدخل فيها الأزلُ إلى الزمن: «وَالْكَلِمَةُ صَارَ جَسَدًا وَحَلَّ بَيْنَنَا». والفعلُ اليوناني يعني حرفيًا «نصب خيمة» — كلمةُ مسكن البرية، حيث كان مجدُ الله يأتي ليحلّ. ويضيف يوحنا: «وَرَأَيْنَا مَجْدَهُ». ما كان يملأ القدسَ يسكن الآن جسدًا. وهذا الجسدُ سيُقدَّم: صار الكلمةُ جسدًا لكي يستطيع أن يصير حملًا.",
+o:["خروج ٢٥: ٨","فَيَصْنَعُونَ لِي مَقْدِسًا لأَسْكُنَ فِي وَسَطِهِمْ."],
+n:["يوحنا ١: ١٤","وَالْكَلِمَةُ صَارَ جَسَدًا وَحَلَّ بَيْنَنَا، مَمْلُوءًا نِعْمَةً وَحَقًّا."]},
+{ctx:"رؤيا ١٣: ٨ · التدبير",t:"الحملُ منذ تأسيس العالم",img:"التقدمةُ ليست خطةَ الله البديلة: كانت في قلبه قبل البدء.",
+p:"يشتدّ الرباطُ حتى الدوار: السفرُ نفسُه الذي يُري الحملَ في وسط العرش يتكلم عن «الْخَرُوفِ الْمَذْبُوحِ مُنْذُ تَأْسِيسِ الْعَالَمِ» (رؤيا ١٣: ٨). قبل النجوم، قبل السقوط، كانت العطيةُ مقرَّرة. ويؤكد بطرس: المسيحُ «مَعْرُوفًا سَابِقًا قَبْلَ تَأْسِيسِ الْعَالَمِ» (١ بطرس ١: ٢٠). الابنُ الأزلي، والكلمةُ الخالقة، والحملُ المذبوح ليست ثلاثَ حقائق منفصلة: إنها ثلاثُ نظراتٍ إلى شخصٍ واحد — ومحبةٍ واحدة بلا بداية.",
+o:["ميخا ٥: ٢","وَمَخَارِجُهُ مُنْذُ الْقَدِيمِ، مُنْذُ أَيَّامِ الأَزَلِ."],
+n:["رؤيا ١٣: ٨","…الْخَرُوفِ الَّذِي ذُبِحَ مُنْذُ تَأْسِيسِ الْعَالَمِ."]}],
+vh:"الخيط، من طرف الزمن إلى طرفه",
+vintro:"شخصٌ واحد، يُتأمَّل في خمس لحظات — من الأزل إلى الأزل:",
+verbs:["قبلُ<small>الكلمةُ كان الله (يوحنا ١: ١)</small>","به<small>خُلق كلُّ شيء (كولوسي ١: ١٦)</small>","بيننا<small>الكلمةُ صار جسدًا (يوحنا ١: ١٤)</small>","لأجلنا<small>الحملُ المذبوح (رؤيا ٥: ٦)</small>","دائمًا<small>الأول والآخر (رؤيا ٢٢: ١٣)</small>"],
+vp:"لاحظ كيف يتجاوب الطرفان. «فِي الْبَدْءِ كَانَ الْكَلِمَةُ» (يوحنا ١: ١) و«أَنَا الْبِدَايَةُ وَالنِّهَايَةُ» (رؤيا ٢٢: ١٣) يؤطّران التاريخَ كلَّه. واللقبُ الذي يحفظه اللهُ لنفسه في إشعياء — «أَنَا الأَوَّلُ وَأَنَا الآخِرُ» (٤٤: ٦) — يحمله الحملُ في الصفحة الأخيرة. تنغلق الدائرة: الذي به بدأ كلُّ شيء هو الذي إليه يعود كلُّ شيء. وبينهما صليب.",
+ch:"كيف نقرأ هذه النصوص المذهلة؟",
+c1:["ما يعترف به المسيحيون جميعًا","الابنُ ليس مخلوقًا: هو منذ الأزل مع الله وهو الله؛ به خُلق كلُّ شيء؛ وقد صار إنسانًا حقًّا من دون أن يكفّ عن كونه الله. هذا قلبُ الإيمان المشترك، مصوغًا منذ أقدم القوانين."],
+c2:["ما تقوله النصوص","«كَانَ الْكَلِمَةُ اللهَ» (يوحنا ١: ١) · «قَبْلَ أَنْ يَكُونَ إِبْرَاهِيمُ أَنَا كَائِنٌ» (يوحنا ٨: ٥٨) · «فِيهِ يَقُومُ الْكُلُّ» (كولوسي ١: ١٧) · «صُورَةُ اللهِ غَيْرِ الْمَنْظُورِ» (كولوسي ١: ١٥) · «بَهَاءُ مَجْدِهِ» (عبرانيين ١: ٣) · «مَجِّدْنِي أَنْتَ أَيُّهَا الآبُ بِالْمَجْدِ الَّذِي كَانَ لِي قَبْلَ كَوْنِ الْعَالَمِ» (يوحنا ١٧: ٥). نقتبسها كاملةً."],
+c3:["ما لا نحاول أن نستنفده","كيف يسكن اللامتناهي جسدًا، وكيف يولد الأزليُّ في الزمن: الكتابُ يؤكده ولا يُشرّحه، ونحن كذلك. يُظهر الموقعُ الخيطَ الذي تنسجه النصوص؛ ويدعو إلى التأمل لا إلى التخمين. أمام هذا السر، الموقفُ الصحيح ليس أن نفسّر، بل أن نسجد."],
+dh:"للتعمّق",
+deep:[
+["الكلمة، والحكمة، والنفخة: الخلفية","قبل يوحنا، كان الكتابُ يتكلم عن كلمةٍ تخلق («قَالَ فَكَانَ»، مزمور ٣٣: ٩)، وعن حكمةٍ حاضرة في الخلق تفرح أمام الله (أمثال ٨: ٢٢-٣١)، وعن نفخةٍ تهب الحياة (تكوين ٢: ٧). يجمع يوحنا هذه الخيوطَ المبعثرة ويعطيها وجهًا: الكلمةُ ليس قوةً، بل هو شخصٌ، واسمُه يسوع."],
+["«أنا كائن»: الاسمُ الذي يحمله الابن","سبعَ مرات يذكر يوحنا أقوالَ «أنا هو» ليسوع (الخبز، النور، الباب، الراعي الصالح، القيامة، الطريق، الكرمة). ومرةً «أنا كائن» المطلقة: «قَبْلَ أَنْ يَكُونَ إِبْرَاهِيمُ أَنَا كَائِنٌ» (٨: ٥٨) — الاسمُ عينُه في العليقة (خروج ٣: ١٤). يفهم سامعوه: يرفعون حجارة. وهذا الخيطُ يلتقي بـ«إلهٌ واحد — الآب والابن والروح»."],
+["الابن الأزلي والمعمودية","انتهت الصفحةُ السابقة بسؤال: منذ متى هو الابن؟ يجيب يوحنا قبل أن يُطرَح: «الْمَجْدُ الَّذِي كَانَ لِي عِنْدَكَ قَبْلَ كَوْنِ الْعَالَمِ» (١٧: ٥). صوتُ الآب عند الأردن لا يصنع الابنَ: بل يعلنه. المعموديةُ تُظهر في الزمن علاقةً لا بداية لها."],
+["«مذبوحٌ منذ تأسيس العالم»: قراءتان","تُقرأ رؤيا ١٣: ٨ بطريقتين بحسب اليونانية: «مذبوحٌ منذ تأسيس العالم»، أو «مكتوبةٌ منذ تأسيس العالم» (الأسماءُ في سفر الحياة، كما في ١٧: ٨). القراءتان قديمتان؛ وكلتاهما تعلّم أن الخلاص ليس ارتجالًا: فالمحبةُ الباذلة كانت هناك قبل الصباح الأول."],
+["لماذا نبدأ من هذا العلوّ؟","قد يظن قارئٌ غيرُ متخصص أن هذه النصوص «للخبراء». والعكسُ صحيح: من دونها يكون الصليبُ مجردَ خبرٍ مأساوي. ومعها يصير الفعلَ الذي به يأتي الخالقُ نفسُه ليطلب خليقتَه. وكلما صعدنا في أصل الابن، قِسنا أكثرَ عمقَ اتّضاعه — «الَّذِي إِذْ كَانَ فِي صُورَةِ اللهِ… أَخْلَى نَفْسَهُ» (فيلبي ٢: ٦-٧)."]],
+nlbl:"عودةٌ إلى الخيط",ntitle:"استكشف الخيط الأحمر — ١٥٣ مطابقة",
+ntext:"من الأزل إلى الصليب، كلُّ شيء متماسك. المس الخيطَ كاملًا، أو استأنف المسارَ من «هوذا الحمل».",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>ركن «الابن الأزلي، والكلمة، والحمل» — الخيطُ الذي يربط الأزل بالتقدمة."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

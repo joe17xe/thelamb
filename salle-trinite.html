@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Père, le Fils et l'Esprit — un seul Dieu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"UN SEUL DIEU",slabel:"Salle · Le Père, le Fils et l'Esprit",
+eyebrow:"Deutéronome 6:4 · Matthieu 28:19 — un seul Dieu, révélé en trois : ni trois dieux, ni un seul masque à trois visages",
+verse:"« Baptisez-les au nom du <span class='g'>Père, et du Fils, et du Saint-Esprit</span>. »",
+scene:"Le mot « Trinité » n'est pas dans la Bible — mais la réalité y est partout. Non comme une équation à résoudre, mais comme un visage qui se dévoile lentement, du Sinaï au Jourdain. Cette salle ne prétend pas expliquer le mystère : elle montre comment il s'est révélé, et pourquoi il change tout.",
+stations:[
+{ctx:"Deutéronome 6:4 · le socle",t:"D'abord : un seul Dieu",img:"Avant toute chose, la confession d'Israël : il n'y a qu'un seul Dieu. La Trinité ne la contredit jamais.",
+p:"Commençons par ce qui ne bouge pas. « Écoute, Israël : l'Éternel, notre Dieu, l'Éternel est un » (Deutéronome 6:4) — le Shema, la prière que tout Juif récite. Le christianisme ne l'abandonne pas : il le confesse. Il n'y a qu'un seul Dieu, un seul Être divin. Retenez-le d'emblée, car tout le reste s'y soumet : la foi chrétienne n'a jamais enseigné trois dieux. Ce serait trahir la première ligne de la Bible sur Dieu. Ce que le Nouveau Testament révèle, ce n'est pas un deuxième et un troisième dieu — c'est que l'unique Dieu est, en lui-même, Père, Fils et Esprit.",
+o:["Deutéronome 6:4","Écoute, Israël ! L'Éternel, notre Dieu, l'Éternel est un.",],
+n:["1 Corinthiens 8:6","Pour nous il n'y a qu'un seul Dieu, le Père… et un seul Seigneur, Jésus-Christ."]},
+{ctx:"Genèse → Ésaïe · les indices",t:"Un pluriel qui intrigue",img:"Dès l'Ancien Testament, des indices : Dieu parle de lui au pluriel, son Esprit agit, sa Parole crée.",
+p:"L'Ancien Testament ne dit pas « Trinité », mais il pose des indices que le Nouveau viendra éclairer. Dès la première page, Dieu dit : « faisons l'homme à notre image » (Genèse 1:26). Son Esprit plane sur les eaux (1:2). Sa Parole crée (« il dit, et la chose fut », Psaume 33:9). Chez Ésaïe, un mystérieux « Envoyé » parle : « le Seigneur, l'Éternel, m'a envoyé avec son Esprit » (48:16) — trois en une phrase. Ces indices ne prouvent rien à eux seuls ; mais rétrospectivement, ils préparaient le terrain. Le portrait était esquissé avant d'être révélé.",
+o:["Genèse 1:26","Faisons l'homme à notre image, selon notre ressemblance.",],
+n:["Jean 1:3","Toutes choses ont été faites par elle, et rien de ce qui a été fait n'a été fait sans elle."]},
+{ctx:"Le Jourdain · la révélation",t:"Le jour où les trois se montrent ensemble",img:"Au baptême de Jésus, pour la première fois, le Père parle, le Fils est là, l'Esprit descend — au même instant.",
+p:"C'est au baptême de Jésus que le voile se lève. En un seul instant : le Fils se tient dans l'eau, l'Esprit descend comme une colombe, et la voix du Père déclare « celui-ci est mon Fils bien-aimé » (Matthieu 3:16-17). Trois, distincts, présents ensemble — et pourtant un seul Dieu agit. Ce n'est pas une spéculation de théologiens : c'est une scène, racontée par les quatre évangiles. La Trinité n'a pas été inventée par un concile ; elle a été rencontrée, sur les bords d'un fleuve. (Notre salle voisine « Le Baptême » explore cette scène en détail.)",
+o:["Ésaïe 42:1","Voici mon serviteur… j'ai mis mon Esprit sur lui.",],
+n:["Matthieu 3:16-17","L'Esprit de Dieu descendit comme une colombe… et une voix dit : Celui-ci est mon Fils bien-aimé."]},
+{ctx:"Matthieu 28:19 · l'ordre donné",t:"Un seul nom, trois fois dit",img:"Jésus ne dit pas « aux noms » mais « au nom » — singulier — du Père, du Fils et de l'Esprit.",
+p:"À la fin de l'évangile, Jésus donne l'ordre décisif : baptiser « au nom du Père, et du Fils, et du Saint-Esprit » (Matthieu 28:19). Le détail est immense : « au nom » — singulier — suivi de trois. Non pas « aux noms » (trois dieux), non pas un seul nom sans distinction (un seul personnage) : un seul Nom, porté par trois. C'est la formule la plus condensée de toute la révélation. Les premiers chrétiens n'ont pas eu à théoriser : ils baptisaient déjà ainsi, dès le début. La foi trinitaire précède la formule savante — elle est née d'un commandement du Christ.",
+o:["Nombres 6:24-27","Que l'Éternel te bénisse… ainsi ils mettront mon nom sur les enfants d'Israël.",],
+n:["Matthieu 28:19","Faites de toutes les nations des disciples, les baptisant au nom du Père, et du Fils, et du Saint-Esprit."]}],
+vh:"Pourquoi « Fils » ? Pourquoi « Parole faite chair » ?",
+vintro:"Deux questions reviennent toujours. Les textes y répondent — voici les repères essentiels :",
+verbs:["« Fils »<small>non un enfant créé, mais l'éternel « engendré, non pas créé » (Jean 1:18)</small>","« Parole »<small>Dieu s'exprime : sa Parole était Dieu, et s'est faite chair (Jean 1:1,14)</small>","« Esprit »<small>Dieu présent et agissant, qu'on peut attrister — donc quelqu'un (Éphésiens 4:30)</small>","« Envoyé »<small>le Fils envoyé par le Père, l'Esprit envoyé par les deux (Jean 15:26)</small>"],
+vp:"<b>Pourquoi « Fils de Dieu » ?</b> Le mot ne dit pas que Dieu aurait eu un enfant à un moment : il dit une relation éternelle. Le Fils est « dans le sein du Père » de toute éternité (Jean 1:18), « avant que le monde fût » (Jean 17:5). « Engendré, non pas créé », diront les premiers chrétiens : comme la lumière naît du soleil sans lui être postérieure. <b>Pourquoi « la Parole faite chair » ?</b> Parce qu'une parole, c'est ce par quoi on se donne à connaître. Dieu invisible s'est dit lui-même dans une Parole ; et cette Parole « a été faite chair » (Jean 1:14) pour que l'invisible ait un visage. « Celui qui m'a vu a vu le Père » (Jean 14:9). La Trinité n'est pas un puzzle abstrait : c'est la façon dont Dieu s'est rendu connaissable, et proche.",
+ch:"Ni trois dieux, ni un seul masque : les deux erreurs à éviter",
+c1:["Ce que confessent tous les chrétiens","Un seul Dieu en trois personnes : le Père, le Fils et le Saint-Esprit, distincts mais non séparés, égaux en divinité, unis en un seul Être. Le Père n'est pas le Fils, le Fils n'est pas l'Esprit — et pourtant il n'y a qu'un seul Dieu. C'est le socle commun, formulé dès les premiers symboles (Nicée, 325), partagé par catholiques, orthodoxes et évangéliques."],
+c2:["Ce que disent les textes","Un seul Dieu : Deutéronome 6:4 ; Ésaïe 45:5 · Le Père est Dieu : Jean 6:27 · Le Fils est Dieu : Jean 1:1 ; 20:28 ; Tite 2:13 · L'Esprit est Dieu : Actes 5:3-4 · Les trois ensemble : Matthieu 28:19 ; 2 Corinthiens 13:13 (« la grâce du Seigneur Jésus, l'amour de Dieu, la communion du Saint-Esprit »)."],
+c3:["Les deux erreurs anciennes","L'Église a écarté très tôt deux impasses. Croire à trois dieux séparés (trithéisme) : cela nie le Shema, « l'Éternel est un ». Croire à un seul personnage qui changerait de rôle — tantôt Père, tantôt Fils (modalisme) : cela nie le Jourdain, où les trois se montrent ensemble. La foi tient les deux vérités sans les casser : vraiment un, vraiment trois. Le mystère n'est pas une contradiction — c'est une profondeur."],
+dh:"Aller plus loin",
+deep:[
+["« Trinité » : un mot d'homme pour une réalité de Dieu","Le terme (latin trinitas) est forgé par Tertullien vers l'an 200 pour nommer ce que les textes montraient déjà. C'est normal, et honnête à dire : la Bible donne la réalité (le Père, le Fils, l'Esprit, un seul Dieu), l'Église a forgé le vocabulaire pour la protéger des déformations. De même « incarnation » ou « personne » : des mots-outils au service du texte, non des ajouts au texte. Nous le disons clairement — c'est ce qui distingue une référence honnête."],
+["Comment la révélation a « grandi »","Dieu ne s'est pas livré d'un coup. Au Sinaï, l'accent est mis sur l'unicité (contre les idoles) : « tu n'auras pas d'autres dieux ». Les indices trinitaires restent discrets — le sol n'était pas prêt. Puis vient le Fils, et tout s'éclaire rétrospectivement. C'est le principe même de notre site : on comprend l'Ancien Testament à la lumière du Nouveau. La Trinité n'est pas absente de l'AT : elle y est voilée, comme une photo qui se révèle lentement dans le bain."],
+["Le Fils est-il « inférieur » au Père ?","Certains versets semblent le dire : « le Père est plus grand que moi » (Jean 14:28). Mais le même évangile dit « moi et le Père nous sommes un » (10:30) et « la Parole était Dieu » (1:1). La clé : le Fils, dans son incarnation, se soumet volontairement au Père (Philippiens 2:6-8) — c'est une question de rôle, non de nature. Égal en divinité, obéissant par amour. Comme un fils adulte, égal à son père en dignité, choisit de lui obéir. La distinction des personnes n'abolit pas l'égalité de nature."],
+["L'Esprit : une force, ou quelqu'un ?","On pourrait croire l'Esprit une simple énergie divine. Les textes disent l'inverse : il parle (Actes 13:2), il enseigne (Jean 14:26), on peut l'attrister (Éphésiens 4:30), lui mentir (Actes 5:3-4, où mentir à l'Esprit, c'est « mentir à Dieu »). On n'attriste pas une force ; on n'ment pas à une énergie. L'Esprit est traité, partout, comme une personne — le Dieu présent en nous. C'est pourquoi Ésaïe disait déjà : « ils ont attristé son Esprit saint » (63:10)."],
+["Pourquoi cela change tout : Dieu est amour",'Ceci n\'est pas une subtilité : c\'est le cœur. « Dieu est amour » (1 Jean 4:8). Or aimer suppose un autre. Si Dieu était une solitude absolue, il ne serait amour qu\'après avoir créé quelqu\'un à aimer. Mais s\'il est de toute éternité Père aimant le Fils dans l\'Esprit, alors l\'amour est ce qu\'il EST, avant même le monde. La Trinité n\'est pas une complication de la doctrine : c\'est la seule façon dont « Dieu est amour » peut être vrai de toute éternité. Voilà pourquoi elle est une bonne nouvelle, pas un casse-tête.'],
+["Le lien avec l'Agneau","Cette salle et la salle de l'Agneau se répondent. À la croix, ce n'est pas un Dieu lointain qui exige le sang d'un tiers : c'est le Fils qui se donne, le Père qui livre par amour, l'Esprit par lequel il s'offre (Hébreux 9:14). « Dieu était en Christ, réconciliant le monde » (2 Corinthiens 5:19). Sans la Trinité, la croix devient injuste (un innocent puni à la place des coupables) ; avec elle, elle devient l'amour même de Dieu se donnant lui-même. Les deux salles ne s'expliquent que l'une par l'autre."]],
+nlbl:"Explorer une salle voisine",ntitle:"Le Baptême, la Parole éternelle, l'Agneau",
+ntext:"La Trinité se rencontre au Jourdain, se comprend dans la Parole faite chair, et se donne à la croix. Trois salles la déploient — suivez le fil.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Salle « Le Père, le Fils et l'Esprit » — un seul Dieu, révélé en trois. Page pivot ; chaque aspect aura sa page détaillée."},
+en:{dir:"ltr",brand:"ONE GOD",slabel:"Room · The Father, the Son and the Spirit",
+eyebrow:"Deuteronomy 6:4 · Matthew 28:19 — one God, revealed as three: neither three gods, nor one mask with three faces",
+verse:"“Baptize them in the name of the <span class='g'>Father, and of the Son, and of the Holy Spirit</span>.”",
+scene:"The word “Trinity” is not in the Bible — but the reality is everywhere in it. Not as an equation to solve, but as a face unveiled slowly, from Sinai to the Jordan. This room does not claim to explain the mystery: it shows how it was revealed, and why it changes everything.",
+stations:[
+{ctx:"Deuteronomy 6:4 · the foundation",t:"First: one God only",img:"Before anything else, Israel's confession: there is only one God. The Trinity never contradicts it.",
+p:"Let us begin with what does not move. “Hear, O Israel: the LORD our God, the LORD is one” (Deuteronomy 6:4) — the Shema, the prayer every Jew recites. Christianity does not abandon it: it confesses it. There is only one God, one divine Being. Hold this from the start, for all the rest submits to it: the Christian faith has never taught three gods. That would betray the Bible's first line about God. What the New Testament reveals is not a second and a third god — it is that the one God is, in himself, Father, Son and Spirit.",
+o:["Deuteronomy 6:4","Hear, Israel: the LORD is our God; the LORD is one."],
+n:["1 Corinthians 8:6","To us there is one God, the Father… and one Lord, Jesus Christ."]},
+{ctx:"Genesis → Isaiah · the clues",t:"A plural that intrigues",img:"From the Old Testament, clues: God speaks of himself in the plural, his Spirit acts, his Word creates.",
+p:"The Old Testament does not say “Trinity”, but it lays clues the New will light up. From the first page, God says: “let us make man in our image” (Genesis 1:26). His Spirit hovers over the waters (1:2). His Word creates (“he spoke, and it was done”, Psalm 33:9). In Isaiah, a mysterious “Sent one” speaks: “the Lord GOD has sent me, and his Spirit” (48:16) — three in one sentence. These clues prove nothing on their own; but in hindsight, they prepared the ground. The portrait was sketched before it was revealed.",
+o:["Genesis 1:26","Let us make man in our image, after our likeness."],
+n:["John 1:3","All things were made through him. Without him, nothing was made that has been made."]},
+{ctx:"The Jordan · the revelation",t:"The day the three appear together",img:"At Jesus' baptism, for the first time, the Father speaks, the Son is there, the Spirit descends — at the same moment.",
+p:"It is at Jesus' baptism that the veil lifts. In a single moment: the Son stands in the water, the Spirit descends like a dove, and the Father's voice declares “this is my beloved Son” (Matthew 3:16-17). Three, distinct, present together — and yet one God acts. This is no theologians' speculation: it is a scene, told by all four Gospels. The Trinity was not invented by a council; it was encountered, on the banks of a river. (Our neighbouring room “The Baptism” explores this scene in detail.)",
+o:["Isaiah 42:1","Behold, my servant… I have put my Spirit on him."],
+n:["Matthew 3:16-17","The Spirit of God descended like a dove… and a voice said: This is my beloved Son."]},
+{ctx:"Matthew 28:19 · the command given",t:"One name, said three times",img:"Jesus does not say “in the names” but “in the name” — singular — of the Father, the Son and the Spirit.",
+p:"At the end of the gospel, Jesus gives the decisive command: to baptize “in the name of the Father, and of the Son, and of the Holy Spirit” (Matthew 28:19). The detail is immense: “in the name” — singular — followed by three. Not “in the names” (three gods), not one name without distinction (one character): one Name, borne by three. It is the most condensed formula of all revelation. The first Christians did not have to theorize: they were already baptizing this way, from the start. Trinitarian faith precedes the scholarly formula — it was born of a command of Christ.",
+o:["Numbers 6:24-27","The LORD bless you… so they will put my name on the children of Israel."],
+n:["Matthew 28:19","Make disciples of all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Spirit."]}],
+vh:"Why “Son”? Why “the Word made flesh”?",
+vintro:"Two questions always return. The texts answer them — here are the essential markers:",
+verbs:["“Son”<small>not a created child, but the eternal “begotten, not made” (John 1:18)</small>","“Word”<small>God expresses himself: his Word was God, and became flesh (John 1:1,14)</small>","“Spirit”<small>God present and acting, who can be grieved — therefore someone (Ephesians 4:30)</small>","“Sent one”<small>the Son sent by the Father, the Spirit sent by both (John 15:26)</small>"],
+vp:"<b>Why “Son of God”?</b> The word does not say God had a child at some point: it says an eternal relation. The Son is “in the bosom of the Father” from all eternity (John 1:18), “before the world existed” (John 17:5). “Begotten, not made”, the first Christians would say: as light is born of the sun without being later than it. <b>Why “the Word made flesh”?</b> Because a word is what one makes oneself known by. The invisible God spoke himself in a Word; and this Word “became flesh” (John 1:14) so the invisible might have a face. “He who has seen me has seen the Father” (John 14:9). The Trinity is not an abstract puzzle: it is how God made himself knowable, and near.",
+ch:"Neither three gods, nor one mask: the two errors to avoid",
+c1:["What all Christians confess","One God in three persons: the Father, the Son and the Holy Spirit, distinct but not separate, equal in divinity, united in one Being. The Father is not the Son, the Son is not the Spirit — and yet there is only one God. It is the common ground, formulated from the earliest creeds (Nicaea, 325), shared by Catholics, Orthodox and Evangelicals."],
+c2:["What the texts say","One God: Deuteronomy 6:4; Isaiah 45:5 · The Father is God: John 6:27 · The Son is God: John 1:1; 20:28; Titus 2:13 · The Spirit is God: Acts 5:3-4 · The three together: Matthew 28:19; 2 Corinthians 13:14 (“the grace of the Lord Jesus, the love of God, the fellowship of the Holy Spirit”)."],
+c3:["The two ancient errors","The Church rejected two dead ends very early. Believing in three separate gods (tritheism): this denies the Shema, “the LORD is one”. Believing in one character who changes roles — now Father, now Son (modalism): this denies the Jordan, where the three appear together. Faith holds both truths without breaking them: truly one, truly three. The mystery is not a contradiction — it is a depth."],
+dh:"Go deeper",
+deep:[
+["“Trinity”: a human word for a reality of God","The term (Latin trinitas) is coined by Tertullian around AD 200 to name what the texts already showed. This is normal, and honest to say: the Bible gives the reality (Father, Son, Spirit, one God), the Church forged the vocabulary to protect it from distortions. Likewise “incarnation” or “person”: tool-words in the service of the text, not additions to it. We say it clearly — it is what marks an honest reference."],
+["How the revelation “grew”","God did not deliver himself all at once. At Sinai, the stress is on oneness (against the idols): “you shall have no other gods”. The trinitarian clues stay discreet — the ground was not ready. Then comes the Son, and everything is lit up in hindsight. It is the very principle of our site: we understand the Old Testament in the light of the New. The Trinity is not absent from the OT: it is veiled there, like a photo revealed slowly in the bath."],
+["Is the Son “inferior” to the Father?","Some verses seem to say so: “the Father is greater than I” (John 14:28). But the same gospel says “I and the Father are one” (10:30) and “the Word was God” (1:1). The key: the Son, in his incarnation, willingly submits to the Father (Philippians 2:6-8) — a matter of role, not of nature. Equal in divinity, obedient out of love. As an adult son, equal to his father in dignity, chooses to obey him. The distinction of persons does not abolish the equality of nature."],
+["The Spirit: a force, or someone?","One might think the Spirit a mere divine energy. The texts say the opposite: he speaks (Acts 13:2), he teaches (John 14:26), he can be grieved (Ephesians 4:30), lied to (Acts 5:3-4, where lying to the Spirit is “lying to God”). You do not grieve a force; you do not lie to an energy. The Spirit is treated everywhere as a person — God present in us. That is why Isaiah already said: “they grieved his Holy Spirit” (63:10)."],
+["Why this changes everything: God is love",'This is no subtlety: it is the heart. “God is love” (1 John 4:8). But to love supposes another. If God were an absolute solitude, he would be love only after creating someone to love. But if he is from all eternity the Father loving the Son in the Spirit, then love is what he IS, before the world even exists. The Trinity is not a complication of doctrine: it is the only way “God is love” can be true from all eternity. That is why it is good news, not a riddle.'],
+["The link with the Lamb","This room and the room of the Lamb answer each other. At the cross, it is not a distant God demanding a third party's blood: it is the Son giving himself, the Father delivering out of love, the Spirit through whom he offers himself (Hebrews 9:14). “God was in Christ, reconciling the world” (2 Corinthians 5:19). Without the Trinity, the cross becomes unjust (an innocent punished for the guilty); with it, it becomes God's own love giving itself. The two rooms are explained only by each other."]],
+nlbl:"Explore a neighbouring room",ntitle:"The Baptism, the eternal Word, the Lamb",
+ntext:"The Trinity is met at the Jordan, understood in the Word made flesh, and given at the cross. Three rooms unfold it — follow the thread.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Room “The Father, the Son and the Spirit” — one God, revealed as three. Pivot page; each aspect will have its detailed page."},
+ar:{dir:"rtl",brand:"إلهٌ واحد",slabel:"قاعة · الآب والابن والروح",
+eyebrow:"تثنية ٦: ٤ · متى ٢٨: ١٩ — إلهٌ واحد، مُعلَنٌ ثلاثةً: لا ثلاثةَ آلهة، ولا قناعًا واحدًا بثلاثة وجوه",
+verse:"«وَعَمِّدُوهُمْ بِاسْمِ <span class='g'>الآبِ وَالابْنِ وَالرُّوحِ الْقُدُسِ</span>.»",
+scene:"كلمةُ «الثالوث» ليست في الكتاب — لكن الحقيقةَ فيه في كل مكان. لا كمعادلةٍ تُحَلّ، بل كوجهٍ يتكشّف ببطء، من سيناء إلى الأردن. هذه القاعةُ لا تدّعي شرحَ السر: بل تُري كيف أُعلن، ولماذا يغيّر كلَّ شيء.",
+stations:[
+{ctx:"تثنية ٦: ٤ · الأساس",t:"أولًا: إلهٌ واحد فقط",img:"قبل كل شيء، اعترافُ إسرائيل: لا إله إلا واحد. والثالوثُ لا يناقضه أبدًا.",
+p:"لنبدأ بما لا يتزحزح. «اِسْمَعْ يَا إِسْرَائِيلُ: الرَّبُّ إِلهُنَا رَبٌّ وَاحِدٌ» (تثنية ٦: ٤) — الشِّمَع، الصلاةُ التي يتلوها كلُّ يهودي. والمسيحيةُ لا تتخلى عنها: بل تعترف بها. لا إله إلا واحد، وكيانٌ إلهيٌّ واحد. احفظ هذا من البداية، فكلُّ الباقي يخضع له: الإيمانُ المسيحي لم يعلّم قط ثلاثةَ آلهة. لكان ذلك خيانةً لأول سطرٍ في الكتاب عن الله. ما يعلنه العهدُ الجديد ليس إلهًا ثانيًا وثالثًا — بل أن الإلهَ الواحد هو، في ذاته، آبٌ وابنٌ وروح.",
+o:["تثنية ٦: ٤","اِسْمَعْ يَا إِسْرَائِيلُ: الرَّبُّ إِلهُنَا رَبٌّ وَاحِدٌ."],
+n:["١ كورنثوس ٨: ٦","لَنَا إِلهٌ وَاحِدٌ: الآبُ… وَرَبٌّ وَاحِدٌ: يَسُوعُ الْمَسِيحُ."]},
+{ctx:"تكوين ← إشعياء · القرائن",t:"جمعٌ يُثير التساؤل",img:"منذ العهد القديم، قرائن: اللهُ يتكلم عن نفسه بالجمع، وروحُه يعمل، وكلمتُه تخلق.",
+p:"العهدُ القديم لا يقول «ثالوث»، لكنه يضع قرائنَ سيضيئها الجديد. منذ الصفحة الأولى يقول الله: «نَعْمَلُ الإِنْسَانَ عَلَى صُورَتِنَا» (تكوين ١: ٢٦). وروحُه يرفّ على المياه (١: ٢). وكلمتُه تخلق («قَالَ فَكَانَ»، مزمور ٣٣: ٩). وعند إشعياء يتكلم «مُرسَلٌ» غامض: «السَّيِّدُ الرَّبُّ أَرْسَلَنِي وَرُوحُهُ» (٤٨: ١٦) — ثلاثةٌ في جملة. هذه القرائنُ لا تبرهن شيئًا وحدها؛ لكنها بأثرٍ رجعي كانت تُهيّئ الأرض. رُسمت الملامحُ قبل أن تُعلَن.",
+o:["تكوين ١: ٢٦","نَعْمَلُ الإِنْسَانَ عَلَى صُورَتِنَا كَشَبَهِنَا."],
+n:["يوحنا ١: ٣","كُلُّ شَيْءٍ بِهِ كَانَ، وَبِغَيْرِهِ لَمْ يَكُنْ شَيْءٌ مِمَّا كَانَ."]},
+{ctx:"الأردن · الإعلان",t:"اليوم الذي ظهر فيه الثلاثةُ معًا",img:"عند معمودية يسوع، لأول مرة، يتكلم الآب، والابن حاضر، والروح ينزل — في اللحظة نفسها.",
+p:"عند معمودية يسوع يُرفَع الحجاب. في لحظةٍ واحدة: الابنُ قائمٌ في الماء، والروحُ ينزل مثل حمامة، وصوتُ الآب يعلن «هذَا هُوَ ابْنِي الْحَبِيبُ» (متى ٣: ١٦-١٧). ثلاثةٌ، متمايزون، حاضرون معًا — ومع ذلك إلهٌ واحد يعمل. ليست هذه تخمينَ لاهوتيين: بل مشهدٌ ترويه الأناجيلُ الأربعة. لم يخترع مجمعٌ الثالوثَ؛ بل قُوبِل، على ضفاف نهر. (قاعتُنا المجاورة «المعمودية» تستكشف هذا المشهد بالتفصيل.)",
+o:["إشعياء ٤٢: ١","هُوَذَا عَبْدِي… وَضَعْتُ رُوحِي عَلَيْهِ."],
+n:["متى ٣: ١٦-١٧","فَرَأَى رُوحَ اللهِ نَازِلاً مِثْلَ حَمَامَةٍ… وَصَوْتٌ قَالَ: هذَا هُوَ ابْنِي الْحَبِيبُ."]},
+{ctx:"متى ٢٨: ١٩ · الأمر المُعطى",t:"اسمٌ واحد، يُقال ثلاثًا",img:"لا يقول يسوع «بأسماء» بل «باسم» — بالمفرد — الآب والابن والروح.",
+p:"في ختام الإنجيل يعطي يسوع الأمرَ الحاسم: أن يُعمَّدوا «بِاسْمِ الآبِ وَالابْنِ وَالرُّوحِ الْقُدُسِ» (متى ٢٨: ١٩). والتفصيلُ هائل: «باسم» — بالمفرد — يتبعه ثلاثة. لا «بأسماء» (ثلاثةُ آلهة)، ولا اسمٌ واحد بلا تمييز (شخصٌ واحد): اسمٌ واحد، يحمله ثلاثة. إنها أكثفُ صيغةٍ في الإعلان كلِّه. لم يحتَج المسيحيون الأوائل إلى التنظير: كانوا يعمّدون هكذا سلفًا، منذ البداية. الإيمانُ الثالوثي يسبق الصيغةَ العلمية — وُلد من وصية المسيح.",
+o:["عدد ٦: ٢٤-٢٧","يُبَارِكُكَ الرَّبُّ… فَيَجْعَلُونَ اسْمِي عَلَى بَنِي إِسْرَائِيلَ."],
+n:["متى ٢٨: ١٩","تَلْمِذُوا جَمِيعَ الأُمَمِ وَعَمِّدُوهُمْ بِاسْمِ الآبِ وَالابْنِ وَالرُّوحِ الْقُدُسِ."]}],
+vh:"لماذا «الابن»؟ ولماذا «الكلمة صار جسدًا»؟",
+vintro:"سؤالان يعودان دائمًا. والنصوص تجيبهما — وهذه المعالمُ الأساسية:",
+verbs:["«الابن»<small>لا طفلٌ مخلوق، بل الأزليُّ «المولود غير المخلوق» (يوحنا ١: ١٨)</small>","«الكلمة»<small>اللهُ يعبّر عن ذاته: كلمتُه كانت اللهَ، وصارت جسدًا (يوحنا ١: ١، ١٤)</small>","«الروح»<small>اللهُ حاضرٌ وعامل، يمكن أن يُحزَن — إذًا شخص (أفسس ٤: ٣٠)</small>","«المُرسَل»<small>الابنُ مُرسَلٌ من الآب، والروحُ مُرسَلٌ منهما (يوحنا ١٥: ٢٦)</small>"],
+vp:"<b>لماذا «ابن الله»؟</b> الكلمةُ لا تقول إن الله أنجب ولدًا في لحظةٍ ما: بل تقول علاقةً أزلية. الابنُ «فِي حِضْنِ الآبِ» منذ الأزل (يوحنا ١: ١٨)، «قَبْلَ كَوْنِ الْعَالَمِ» (يوحنا ١٧: ٥). «مولودٌ غيرُ مخلوق»، سيقول المسيحيون الأوائل: كما يُولَد النورُ من الشمس دون أن يكون بعدها. <b>ولماذا «الكلمة صار جسدًا»؟</b> لأن الكلمةَ هي ما به يُعرَّف المرءُ عن نفسه. اللهُ غيرُ المنظور نطق بذاته في كلمة؛ وهذه الكلمةُ «صَارَ جَسَدًا» (يوحنا ١: ١٤) ليكون لغير المنظور وجه. «الَّذِي رَآنِي فَقَدْ رَأَى الآبَ» (يوحنا ١٤: ٩). الثالوثُ ليس أحجيةً مجردة: إنه الطريقةُ التي جعل بها اللهُ نفسَه معروفًا، وقريبًا.",
+ch:"لا ثلاثةَ آلهة، ولا قناعٌ واحد: الخطآن المطلوب تجنّبهما",
+c1:["ما يعترف به المسيحيون جميعًا","إلهٌ واحد في ثلاثة أقانيم: الآب والابن والروح القدس، متمايزون غيرُ منفصلين، متساوون في اللاهوت، متحدون في كيانٍ واحد. الآبُ ليس الابن، والابنُ ليس الروح — ومع ذلك لا إله إلا واحد. إنها الأرضُ المشتركة، مصوغةٌ منذ أقدم القوانين (نيقية، ٣٢٥)، يتشاركها الكاثوليك والأرثوذكس والإنجيليون."],
+c2:["ما تقوله النصوص","إلهٌ واحد: تثنية ٦: ٤؛ إشعياء ٤٥: ٥ · الآبُ إله: يوحنا ٦: ٢٧ · الابنُ إله: يوحنا ١: ١؛ ٢٠: ٢٨؛ تيطس ٢: ١٣ · الروحُ إله: أعمال ٥: ٣-٤ · الثلاثةُ معًا: متى ٢٨: ١٩؛ ٢ كورنثوس ١٣: ١٤ («نِعْمَةُ الرَّبِّ يَسُوعَ، وَمَحَبَّةُ اللهِ، وَشَرِكَةُ الرُّوحِ الْقُدُسِ»)."],
+c3:["الخطآن القديمان","رفضت الكنيسةُ مبكرًا طريقين مسدودين. الإيمانُ بثلاثة آلهة منفصلة (تعدد الآلهة): يُنكر الشِّمَع، «الرَّبُّ وَاحِدٌ». والإيمانُ بشخصٍ واحد يبدّل أدواره — تارةً آبًا وتارةً ابنًا (السابيلية): يُنكر الأردن، حيث يظهر الثلاثةُ معًا. الإيمانُ يمسك بالحقيقتين دون أن يكسرهما: واحدٌ حقًّا، وثلاثةٌ حقًّا. السرُّ ليس تناقضًا — بل عمقًا."],
+dh:"للتعمّق",
+deep:[
+["«الثالوث»: كلمةُ إنسانٍ لحقيقةِ الله","المصطلح (باللاتينية trinitas) صاغه ترتليان نحو سنة ٢٠٠ ليسمّي ما كانت النصوصُ تُظهره سلفًا. وهذا طبيعيٌّ وأمينٌ أن يُقال: الكتابُ يعطي الحقيقة (الآب والابن والروح، إلهٌ واحد)، والكنيسةُ صاغت المفرداتِ لحمايتها من التشويه. وكذلك «التجسّد» أو «الأقنوم»: كلماتٌ-أدوات في خدمة النص، لا إضافاتٌ إليه. نقولها بوضوح — وهذا ما يميّز المرجعَ الأمين."],
+["كيف «نمَا» الإعلان","لم يُسلِّم اللهُ ذاتَه دفعةً واحدة. في سيناء، التشديدُ على الوحدانية (ضد الأصنام): «لاَ يَكُنْ لَكَ آلِهَةٌ أُخْرَى». وتبقى القرائنُ الثالوثية خافتة — لم تكن الأرضُ مهيَّأة. ثم يأتي الابن، فيضيء كلُّ شيء بأثرٍ رجعي. إنه مبدأُ موقعنا نفسُه: نفهم العهدَ القديم على ضوء الجديد. الثالوثُ ليس غائبًا عن العهد القديم: بل محجوبٌ فيه، كصورةٍ تظهر ببطء في الحُمَّام."],
+["أهو الابنُ «أدنى» من الآب؟","تبدو بعضُ الآيات تقول ذلك: «الآبُ أَعْظَمُ مِنِّي» (يوحنا ١٤: ٢٨). لكن الإنجيلَ نفسه يقول «أَنَا وَالآبُ وَاحِدٌ» (١٠: ٣٠) و«كَانَ الْكَلِمَةُ اللهَ» (١: ١). المفتاح: الابنُ، في تجسّده، يخضع طوعًا للآب (فيلبي ٢: ٦-٨) — مسألةُ دور، لا طبيعة. مساوٍ في اللاهوت، مطيعٌ بمحبة. كما يختار ابنٌ راشد، مساوٍ لأبيه في الكرامة، أن يطيعه. تمايزُ الأقانيم لا يُلغي المساواةَ في الطبيعة."],
+["الروح: قوةٌ أم شخص؟","قد يُظنّ الروحُ مجردَ طاقةٍ إلهية. النصوص تقول العكس: يتكلم (أعمال ١٣: ٢)، ويعلّم (يوحنا ١٤: ٢٦)، ويمكن أن يُحزَن (أفسس ٤: ٣٠)، وأن يُكذَب عليه (أعمال ٥: ٣-٤، حيث الكذبُ على الروح هو «كذبٌ على الله»). لا يُحزَن أحدٌ قوةً؛ ولا يُكذَب على طاقة. الروحُ يُعامَل في كل مكان كشخص — اللهُ الحاضرُ فينا. لذلك قال إشعياء سلفًا: «أَحْزَنُوا رُوحَ قُدْسِهِ» (٦٣: ١٠)."],
+["لماذا يغيّر هذا كلَّ شيء: الله محبة",'ليست هذه دقيقةً هامشية: إنها القلب. «اللهُ مَحَبَّةٌ» (١ يوحنا ٤: ٨). والمحبةُ تفترض آخر. لو كان اللهُ وحدةً مطلقة، لَما كان محبةً إلا بعد أن يخلق مَن يحبّه. أما إن كان منذ الأزل آبًا يحبّ الابنَ في الروح، فالمحبةُ هي ما هو عليه، قبل وجود العالم. الثالوثُ ليس تعقيدًا للعقيدة: إنه الطريقةُ الوحيدة التي بها يصحّ «اللهُ محبة» منذ الأزل. ولهذا هو بشارةٌ، لا أحجية.'],
+["الصلة بالحمل","هذه القاعةُ وقاعةُ الحمل تتجاوبان. عند الصليب، ليس إلهًا بعيدًا يطلب دمَ طرفٍ ثالث: بل الابنُ يبذل نفسَه، والآبُ يُسلِّم بمحبة، والروحُ الذي به يقدّم نفسَه (عبرانيين ٩: ١٤). «اللهُ كَانَ فِي الْمَسِيحِ مُصَالِحًا الْعَالَمَ» (٢ كورنثوس ٥: ١٩). بلا الثالوث، يصير الصليبُ ظلمًا (بريءٌ يُعاقَب عن المذنبين)؛ ومعه يصير محبةَ الله نفسِه تبذل ذاتها. القاعتان لا تُفهَمان إلا إحداهما بالأخرى."]],
+nlbl:"استكشف قاعةً مجاورة",ntitle:"المعمودية، والكلمة الأزلية، والحمل",
+ntext:"الثالوثُ يُقابَل عند الأردن، ويُفهَم في الكلمة المتجسّدة، ويُبذَل عند الصليب. ثلاثُ قاعاتٍ تبسطه — اتبع الخيط.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>قاعة «الآب والابن والروح» — إلهٌ واحد، مُعلَنٌ ثلاثةً. صفحةٌ محورية؛ ولكلِّ جانبٍ صفحتُه المفصّلة."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

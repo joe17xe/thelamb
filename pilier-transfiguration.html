@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Transfiguration — Moïse, Élie et le Fils</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Pilier · La Transfiguration — Moïse, Élie et le Fils",
+eyebrow:"Matthieu 17 · Marc 9 · Luc 9 · une haute montagne, vers l'an 29 — la voix du Jourdain revient, et cette fois elle ajoute un mot",
+verse:"« Celui-ci est mon Fils bien-aimé… <span class='g'>écoutez-le !</span> »",
+scene:"Au baptême, la voix avait dit qui il était. Sur la montagne, elle dit quoi faire : écoutez-le. Et cette fois, deux hommes se tiennent à ses côtés — Moïse et Élie, la Loi et les Prophètes. Toute la Bible, en une scène, autour d'un seul visage.",
+stations:[
+{ctx:"Exode 24 · 34 · la montagne, la nuée, le visage",t:"Moïse : le visage qui reçoit la gloire",img:"Moïse monte dans la nuée, parle à Dieu, et redescend le visage rayonnant — d'une gloire empruntée.",
+p:"Moïse gravissait la montagne, entrait dans la nuée, et Dieu lui parlait ; il en redescendait le visage rayonnant, au point de devoir le voiler (Exode 34:29-35). Mais cette gloire n'était pas la sienne : c'était un reflet, qui s'effaçait. Sur la montagne de la Transfiguration, tout s'inverse : Jésus ne reçoit pas la gloire d'ailleurs, elle sort de lui — « son visage resplendit comme le soleil » (Matthieu 17:2). Moïse reflétait ; le Fils rayonne. La Loi conduisait à cette lumière ; elle ne la produisait pas.",
+o:["Exode 34:29","Moïse ne savait pas que la peau de son visage rayonnait, parce qu'il avait parlé avec l'Éternel."],
+n:["Matthieu 17:2","Il fut transfiguré devant eux ; son visage resplendit comme le soleil."]},
+{ctx:"1 Rois 19 · Malachie 4 · le prophète attendu",t:"Élie : le prophète qui devait revenir",img:"L'homme de l'Horeb, celui dont l'Ancien Testament attendait le retour, se tient là — puis s'efface.",
+p:"Élie aussi avait rencontré Dieu sur la montagne (l'Horeb), dans le murmure doux et léger (1 Rois 19:12). Il n'était pas mort mais enlevé au ciel (2 Rois 2:11), et le dernier verset de l'Ancien Testament attendait son retour. Le voici sur la montagne — avec Moïse, ils représentent la Loi et les Prophètes, tout ce qui annonçait le Christ. Ils parlent avec lui « de son départ » (Luc 9:31) — le mot grec est exodos : sa mort et sa résurrection, le nouvel Exode. Les deux plus grands témoins de l'Ancien Testament confirment la croix, puis disparaissent.",
+o:["Malachie 4:5","Voici, je vous enverrai Élie, avant que le jour de l'Éternel arrive."],
+n:["Luc 9:30-31","Deux hommes s'entretenaient avec lui : Moïse et Élie, qui parlaient de son départ."]},
+{ctx:"Exode 40 · Matthieu 17:5 · la nuée qui revient",t:"La nuée, encore — et la voix",img:"La même nuée qu'au désert descend sur la montagne : Dieu vient parler à son peuple.",
+p:"Alors « une nuée lumineuse les couvrit » (Matthieu 17:5). C'est la nuée du Sinaï, celle de la tente de la Rencontre, la présence qui descend pour parler — elle traverse toute la Bible et elle est là. Pierre, désorienté, propose de « dresser trois tentes » : il a la bonne intuition (la tente, le lieu de la présence) mais la mauvaise mesure (trois, comme s'ils étaient égaux). La voix le corrige : elle ne parle que du Fils. La nuée descend une dernière fois sur une montagne — non plus sur une tente, mais sur une personne.",
+o:["Exode 40:34","La nuée couvrit la tente d'assignation, et la gloire de l'Éternel remplit le tabernacle."],
+n:["Matthieu 17:5","Une nuée lumineuse les couvrit. Et une voix dit : Celui-ci est mon Fils bien-aimé… écoutez-le !"]},
+{ctx:"Luc 9:36 · le dénouement",t:"« Jésus seul »",img:"La nuée se dissipe : Moïse et Élie ont disparu. Il ne reste que lui.",
+p:"Quand les disciples relèvent les yeux, « ils ne virent plus personne que Jésus seul » (Matthieu 17:8). Tout le sens de la scène est là. Moïse et Élie — la Loi et les Prophètes — ont rendu témoignage, puis se sont effacés : ils conduisaient à lui, ils ne le remplacent pas. C'est exactement la lecture d'Emmaüs à l'envers : là, il expliquait les Écritures ; ici, les Écritures en personne s'inclinent devant lui. La voix n'a plus qu'un ordre : « écoutez-le ». Le dernier mot n'est plus la Loi, ni les Prophètes — c'est le Fils.",
+o:["Deutéronome 18:15","L'Éternel suscitera un prophète comme moi : vous l'écouterez."],
+n:["Matthieu 17:8","Levant les yeux, ils ne virent plus personne que Jésus seul."]}],
+vh:"Le fil « Quand Dieu parle »",
+vintro:"Trois fois dans l'histoire, Dieu descend dans une nuée et parle pour garder le contact avec son peuple. La Transfiguration les rassemble :",
+verbs:["Le Sinaï<small>montagne, nuée, feu — la Loi donnée à Moïse</small>","Le Baptême<small>désert, l'Esprit descend — « mon Fils bien-aimé »</small>","La Transfiguration<small>montagne, nuée lumineuse — « écoutez-le »</small>","Le voile<small>déchiré à la croix — désormais l'accès est ouvert</small>"],
+vp:"Remarquez la progression de la voix. Au Sinaï, Dieu donne sa Loi de loin, dans le tonnerre. Au Jourdain, il désigne son Fils : « celui-ci est mon Fils ». Sur la montagne, il ajoute le mot décisif : « <b>écoutez-le</b> » — l'écho exact de Deutéronome 18:15, la promesse d'un prophète « comme Moïse » qu'il faudrait écouter. De la Loi gravée dans la pierre à la Parole vivante qu'il faut écouter : Dieu s'est rapproché, jusqu'à parler en personne. Et à la croix, le voile qui séparait se déchire : la nuée n'a plus besoin de cacher.",
+ch:"Comment lire cette scène ?",
+c1:["Ce que confessent tous les chrétiens","Sur la montagne, la gloire divine de Jésus se manifeste ; la Loi (Moïse) et les Prophètes (Élie) lui rendent témoignage ; le Père le désigne comme le Fils qu'il faut écouter. La scène confirme, avant la Passion, qui souffrira sur la croix."],
+c2:["Ce que disent les textes","« Écoutez-le » (Matthieu 17:5) · « Ils parlaient de son départ » (Luc 9:31) · « Ils ne virent plus que Jésus seul » (Matthieu 17:8) · « Nous avons été témoins de sa majesté… cette voix, nous l'avons entendue » (2 Pierre 1:16-18). Pierre, présent ce jour-là, en fera l'un de ses derniers témoignages."],
+c3:["Ce que nous ne forçons pas","La scène est dense en symboles ; nous n'en tirons pas de spéculations sur l'au-delà ni sur l'identité précise des « corps » de Moïse et d'Élie. Ce que les textes affirment : la gloire du Fils, le témoignage des Écritures, l'ordre de l'écouter. Le reste appartient au silence respectueux."],
+dh:"Aller plus loin",
+deep:[
+["Les tentes de Pierre : une bonne intuition, mal mesurée","« Dressons trois tentes » (Matthieu 17:4). Pierre parle pendant la fête des Tentes (Souccot), où Israël commémore la marche au désert sous la nuée, en habitant des cabanes. Son réflexe est juste — la tente est le lieu de la présence, Dieu a « dressé sa tente » parmi nous (Jean 1:14) — mais son erreur est de mettre Moïse et Élie sur le même plan que Jésus. La voix corrige aussitôt : une seule tente compte désormais, le Fils lui-même."],
+["« Son départ » : le mot exodos","Luc 9:31 dit que Moïse et Élie parlaient de l'exodos que Jésus allait accomplir à Jérusalem. Le mot est chargé : c'est « l'Exode ». Sa mort et sa résurrection sont une nouvelle sortie d'Égypte — non plus d'un pays, mais de la mort elle-même. Moïse, qui avait conduit le premier Exode, s'entretient avec celui qui va conduire le second. Le fil de la Pâque (étape 5 du parcours) rejoint ici la montagne."],
+["Pourquoi Moïse ET Élie ?","La tradition juive résume tout l'Ancien Testament par deux mots : « la Loi et les Prophètes » (Matthieu 5:17 ; Luc 24:44). Moïse représente la Loi, Élie les Prophètes. Les voir ensemble aux côtés de Jésus, c'est voir tout l'Ancien Testament rendre témoignage à un seul homme — puis s'effacer pour le laisser seul. C'est la thèse du site, mise en scène par Dieu lui-même."],
+["Le sommeil des disciples, du Thabor à Gethsémané","Luc note que les disciples « étaient accablés de sommeil » (9:32) sur la montagne de gloire — comme ils dormiront au jardin de l'agonie (Luc 22:45). Les deux montagnes se répondent : sur l'une, la gloire ; sur l'autre, l'angoisse ; sur les deux, les mêmes trois disciples (Pierre, Jacques, Jean), et le même combat à rester éveillés devant le mystère. La gloire prépare à la croix."],
+["Le témoin oculaire, des années plus tard","« Nous avons été témoins oculaires de sa majesté… cette voix, nous l'avons entendue venir du ciel, lorsque nous étions avec lui sur la sainte montagne » (2 Pierre 1:16-18). Des décennies après, Pierre en parle encore comme d'un fait qu'il a vu et entendu, non d'un mythe. Pour la section « Bible fiable » : la Transfiguration est rapportée comme un témoignage daté, situé, assumé par un homme qui y était."]],
+nlbl:"Continuer",ntitle:"Le Fils éternel, la Parole, et l'Agneau",
+ntext:"La nuée s'est dissipée sur « Jésus seul ». Mais qui est ce Fils qu'il faut écouter ? Remontons avant le commencement.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pilier « La Transfiguration » — la Loi et les Prophètes rendent témoignage au Fils, puis s'effacent."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Pillar · The Transfiguration — Moses, Elijah and the Son",
+eyebrow:"Matthew 17 · Mark 9 · Luke 9 · a high mountain, c. AD 29 — the voice of the Jordan returns, and this time it adds one word",
+verse:"“This is my beloved Son… <span class='g'>listen to him!</span>”",
+scene:"At the baptism, the voice said who he was. On the mountain, it says what to do: listen to him. And this time, two men stand at his side — Moses and Elijah, the Law and the Prophets. The whole Bible, in one scene, around a single face.",
+stations:[
+{ctx:"Exodus 24 · 34 · the mountain, the cloud, the face",t:"Moses: the face that receives glory",img:"Moses climbs into the cloud, speaks with God, and comes down with a shining face — a borrowed glory.",
+p:"Moses would climb the mountain, enter the cloud, and God would speak to him; he came down with a shining face, so much that he had to veil it (Exodus 34:29-35). But that glory was not his own: it was a reflection, and it faded. On the mountain of the Transfiguration, everything reverses: Jesus does not receive glory from elsewhere, it comes out of him — “his face shone like the sun” (Matthew 17:2). Moses reflected; the Son radiates. The Law led to this light; it did not produce it.",
+o:["Exodus 34:29","Moses didn't know that the skin of his face shone by reason of his speaking with him."],
+n:["Matthew 17:2","He was transfigured before them. His face shone like the sun."]},
+{ctx:"1 Kings 19 · Malachi 4 · the awaited prophet",t:"Elijah: the prophet who was to return",img:"The man of Horeb, whose return the Old Testament awaited, stands there — then withdraws.",
+p:"Elijah too had met God on the mountain (Horeb), in the still small voice (1 Kings 19:12). He had not died but was taken up to heaven (2 Kings 2:11), and the last verse of the Old Testament awaited his return. Here he is on the mountain — with Moses, they represent the Law and the Prophets, all that announced the Christ. They speak with him “of his departure” (Luke 9:31) — the Greek word is exodos: his death and resurrection, the new Exodus. The two greatest witnesses of the Old Testament confirm the cross, then disappear.",
+o:["Malachi 4:5","Behold, I will send you Elijah, before the great and terrible day of the LORD comes."],
+n:["Luke 9:30-31","Two men were talking with him: Moses and Elijah, who spoke of his departure."]},
+{ctx:"Exodus 40 · Matthew 17:5 · the cloud returns",t:"The cloud, again — and the voice",img:"The same cloud as in the desert comes down on the mountain: God comes to speak to his people.",
+p:"Then “a bright cloud overshadowed them” (Matthew 17:5). It is the cloud of Sinai, of the tent of meeting, the presence that comes down to speak — it runs through the whole Bible and it is here. Peter, disoriented, offers to “make three tents”: he has the right intuition (the tent, the place of presence) but the wrong measure (three, as if they were equals). The voice corrects him: it speaks only of the Son. The cloud comes down one last time on a mountain — no longer on a tent, but on a person.",
+o:["Exodus 40:34","The cloud covered the tent of meeting, and the glory of the LORD filled the tabernacle."],
+n:["Matthew 17:5","A bright cloud overshadowed them. And a voice said: This is my beloved Son… listen to him!"]},
+{ctx:"Luke 9:36 · the resolution",t:"“Jesus only”",img:"The cloud clears: Moses and Elijah are gone. Only he remains.",
+p:"When the disciples look up, “they saw no one, except Jesus alone” (Matthew 17:8). The whole meaning of the scene is there. Moses and Elijah — the Law and the Prophets — bore witness, then withdrew: they led to him, they do not replace him. It is exactly the Emmaus reading in reverse: there, he explained the Scriptures; here, the Scriptures in person bow before him. The voice has only one command left: “listen to him”. The last word is no longer the Law, nor the Prophets — it is the Son.",
+o:["Deuteronomy 18:15","The LORD will raise up a prophet like me: you shall listen to him."],
+n:["Matthew 17:8","Lifting up their eyes, they saw no one, except Jesus alone."]}],
+vh:"The thread “When God speaks”",
+vintro:"Three times in history, God comes down in a cloud and speaks to keep contact with his people. The Transfiguration gathers them:",
+verbs:["Sinai<small>mountain, cloud, fire — the Law given to Moses</small>","The Baptism<small>desert, the Spirit descends — “my beloved Son”</small>","The Transfiguration<small>mountain, bright cloud — “listen to him”</small>","The veil<small>torn at the cross — now the way is open</small>"],
+vp:"Note the progression of the voice. At Sinai, God gives his Law from afar, in thunder. At the Jordan, he names his Son: “this is my Son”. On the mountain, he adds the decisive word: “<b>listen to him</b>” — the exact echo of Deuteronomy 18:15, the promise of a prophet “like Moses” who must be heard. From the Law carved in stone to the living Word who must be heard: God has come closer, until he speaks in person. And at the cross, the veil that separated is torn: the cloud no longer needs to hide.",
+ch:"How to read this scene?",
+c1:["What all Christians confess","On the mountain, the divine glory of Jesus is manifested; the Law (Moses) and the Prophets (Elijah) bear witness to him; the Father names him as the Son who must be heard. The scene confirms, before the Passion, who it is that will suffer on the cross."],
+c2:["What the texts say","“Listen to him” (Matthew 17:5) · “They spoke of his departure” (Luke 9:31) · “They saw no one but Jesus only” (Matthew 17:8) · “We were eyewitnesses of his majesty… this voice we heard” (2 Peter 1:16-18). Peter, present that day, made it one of his last testimonies."],
+c3:["What we do not force","The scene is dense with symbols; we draw from it no speculation about the afterlife or the precise nature of the “bodies” of Moses and Elijah. What the texts affirm: the glory of the Son, the witness of the Scriptures, the command to listen to him. The rest belongs to respectful silence."],
+dh:"Go deeper",
+deep:[
+["Peter's tents: a right intuition, wrongly measured","“Let us make three tents” (Matthew 17:4). Peter speaks during the Feast of Tabernacles (Sukkot), when Israel commemorates the desert march under the cloud by living in booths. His reflex is right — the tent is the place of presence, God “pitched his tent” among us (John 1:14) — but his error is to put Moses and Elijah on the same level as Jesus. The voice corrects at once: only one tent matters now, the Son himself."],
+["“His departure”: the word exodos","Luke 9:31 says Moses and Elijah spoke of the exodos Jesus was to accomplish at Jerusalem. The word is charged: it is “the Exodus”. His death and resurrection are a new departure from Egypt — no longer from a country, but from death itself. Moses, who led the first Exodus, converses with the one who will lead the second. The thread of the Passover (step 5 of the journey) here rejoins the mountain."],
+["Why Moses AND Elijah?","Jewish tradition sums up the whole Old Testament in two words: “the Law and the Prophets” (Matthew 5:17; Luke 24:44). Moses represents the Law, Elijah the Prophets. To see them together beside Jesus is to see the whole Old Testament bear witness to one man — then withdraw to leave him alone. It is the thesis of this site, staged by God himself."],
+["The sleep of the disciples, from Tabor to Gethsemane","Luke notes that the disciples “were heavy with sleep” (9:32) on the mountain of glory — as they will sleep in the garden of agony (Luke 22:45). The two mountains answer each other: on one, glory; on the other, anguish; on both, the same three disciples (Peter, James, John), and the same struggle to stay awake before the mystery. Glory prepares for the cross."],
+["The eyewitness, years later","“We were eyewitnesses of his majesty… this voice we heard come out of heaven, when we were with him on the holy mountain” (2 Peter 1:16-18). Decades later, Peter still speaks of it as something he saw and heard, not a myth. For the “A Bible worthy of trust” section: the Transfiguration is reported as a dated, located testimony, owned by a man who was there."]],
+nlbl:"Continue",ntitle:"The eternal Son, the Word, and the Lamb",
+ntext:"The cloud cleared on “Jesus only”. But who is this Son we must listen to? Let us go back before the beginning.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pillar “The Transfiguration” — the Law and the Prophets bear witness to the Son, then withdraw."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"ركن · التجلّي — موسى، وإيليا، والابن",
+eyebrow:"متى ١٧ · مرقس ٩ · لوقا ٩ · جبلٌ عالٍ، نحو سنة ٢٩ م — صوتُ الأردن يعود، وهذه المرة يضيف كلمة",
+verse:"«هذَا هُوَ ابْنِي الْحَبِيبُ… <span class='g'>لَهُ اسْمَعُوا!</span>»",
+scene:"عند المعمودية قال الصوتُ مَن هو. وعلى الجبل يقول ماذا نفعل: له اسمعوا. وهذه المرة يقف رجلان إلى جانبه — موسى وإيليا، الناموسُ والأنبياء. الكتابُ كلُّه، في مشهدٍ واحد، حول وجهٍ واحد.",
+stations:[
+{ctx:"خروج ٢٤ · ٣٤ · الجبل، والسحابة، والوجه",t:"موسى: الوجه الذي يتلقّى المجد",img:"يصعد موسى في السحابة، ويكلّم الله، وينزل ووجهُه يلمع — بمجدٍ مُستعار.",
+p:"كان موسى يصعد الجبل، ويدخل السحابة، فيكلّمه الله؛ وينزل ووجهُه يلمع حتى اضطُرّ إلى تغطيته (خروج ٣٤: ٢٩-٣٥). لكن ذلك المجدَ لم يكن مجدَه: كان انعكاسًا يزول. وعلى جبل التجلّي ينقلب كلُّ شيء: لا يتلقّى يسوع مجدًا من خارج، بل يخرج المجدُ منه — «فَأَضَاءَ وَجْهُهُ كَالشَّمْسِ» (متى ١٧: ٢). موسى كان يعكس؛ والابنُ يشعّ. الناموسُ كان يقود إلى هذا النور؛ لكنه لم يكن يصنعه.",
+o:["خروج ٣٤: ٢٩","لَمْ يَعْلَمْ مُوسَى أَنَّ جِلْدَ وَجْهِهِ صَارَ يَلْمَعُ فِي كَلاَمِهِ مَعَهُ."],
+n:["متى ١٧: ٢","وَتَغَيَّرَتْ هَيْئَتُهُ قُدَّامَهُمْ، وَأَضَاءَ وَجْهُهُ كَالشَّمْسِ."]},
+{ctx:"١ ملوك ١٩ · ملاخي ٤ · النبي المنتظَر",t:"إيليا: النبي الذي كان يجب أن يعود",img:"رجلُ حوريب، الذي انتظر العهدُ القديم عودتَه، يقف هناك — ثم ينسحب.",
+p:"إيليا أيضًا التقى اللهَ على الجبل (حوريب)، في صوتٍ منخفضٍ خفيف (١ ملوك ١٩: ١٢). لم يمُت بل رُفع إلى السماء (٢ ملوك ٢: ١١)، وآخرُ آية في العهد القديم انتظرت عودتَه. ها هو على الجبل — مع موسى، يمثّلان الناموسَ والأنبياء، وكلَّ ما أنبأ بالمسيح. يتكلمان معه «عَنْ خُرُوجِهِ» (لوقا ٩: ٣١) — والكلمة اليونانية إكسودوس: موتُه وقيامتُه، الخروجُ الجديد. أعظمُ شاهدَين في العهد القديم يؤكدان الصليب، ثم يختفيان.",
+o:["ملاخي ٤: ٥","هأَنَذَا أُرْسِلُ إِلَيْكُمْ إِيلِيَّا النَّبِيَّ قَبْلَ مَجِيءِ يَوْمِ الرَّبِّ."],
+n:["لوقا ٩: ٣٠-٣١","وَإِذَا رَجُلاَنِ يَتَكَلَّمَانِ مَعَهُ، وَهُمَا مُوسَى وَإِيلِيَّا، يَتَكَلَّمَانِ عَنْ خُرُوجِهِ."]},
+{ctx:"خروج ٤٠ · متى ١٧: ٥ · السحابة تعود",t:"السحابة، مرةً أخرى — والصوت",img:"السحابةُ نفسُها التي في البرية تنزل على الجبل: اللهُ يأتي ليكلّم شعبه.",
+p:"حينئذ «ظَلَّلَتْهُمْ سَحَابَةٌ نَيِّرَةٌ» (متى ١٧: ٥). إنها سحابةُ سيناء، وسحابةُ خيمة الاجتماع، الحضورُ الذي ينزل ليتكلم — تعبر الكتابَ كلَّه وها هي هنا. بطرس، حائرًا، يقترح أن «نصنع ثلاث مظالّ»: عنده الحدسُ الصحيح (الخيمة، موضعُ الحضور) لكن بالمقياس الخطأ (ثلاثًا، كأنهم متساوون). فيصحّحه الصوت: لا يتكلم إلا عن الابن. تنزل السحابةُ مرةً أخيرة على جبل — لا على خيمة بعدُ، بل على شخص.",
+o:["خروج ٤٠: ٣٤","فَغَطَّتِ السَّحَابَةُ خَيْمَةَ الاجْتِمَاعِ، وَمَلأَ بَهَاءُ الرَّبِّ الْمَسْكَنَ."],
+n:["متى ١٧: ٥","ظَلَّلَتْهُمْ سَحَابَةٌ نَيِّرَةٌ، وَصَوْتٌ قَالَ: هذَا هُوَ ابْنِي الْحَبِيبُ… لَهُ اسْمَعُوا!"]},
+{ctx:"لوقا ٩: ٣٦ · الخاتمة",t:"«يَسُوعُ وَحْدَهُ»",img:"تنقشع السحابة: موسى وإيليا اختفيا. لم يبقَ إلا هو.",
+p:"حين يرفع التلاميذ أعينهم «لَمْ يَرَوْا أَحَدًا إِلاَّ يَسُوعَ وَحْدَهُ» (متى ١٧: ٨). ومعنى المشهد كلُّه هناك. موسى وإيليا — الناموسُ والأنبياء — شهدا ثم انسحبا: كانا يقودان إليه، لا يحلاّن محلَّه. إنها قراءةُ عمواس معكوسة: هناك كان يشرح الكتب؛ وهنا الكتبُ بشخصها تنحني أمامه. لم يبقَ للصوت إلا أمرٌ واحد: «له اسمعوا». الكلمةُ الأخيرة لم تعد الناموسَ ولا الأنبياء — بل الابن.",
+o:["تثنية ١٨: ١٥","يُقِيمُ لَكَ الرَّبُّ نَبِيًّا مِنْ وَسَطِكَ مِثْلِي، لَهُ تَسْمَعُونَ."],
+n:["متى ١٧: ٨","فَرَفَعُوا أَعْيُنَهُمْ وَلَمْ يَرَوْا أَحَدًا إِلاَّ يَسُوعَ وَحْدَهُ."]}],
+vh:"خيط «حين يتكلم الله»",
+vintro:"ثلاثَ مرات في التاريخ، ينزل اللهُ في سحابةٍ ويتكلم ليحفظ الصلةَ بشعبه. والتجلّي يجمعها:",
+verbs:["سيناء<small>جبل، سحابة، نار — الناموسُ يُعطى لموسى</small>","المعمودية<small>برية، والروحُ ينزل — «ابني الحبيب»</small>","التجلّي<small>جبل، سحابةٌ نيّرة — «له اسمعوا»</small>","الحجاب<small>مشقوقًا عند الصليب — الآن انفتح الطريق</small>"],
+vp:"لاحظ تدرّجَ الصوت. في سيناء يعطي اللهُ ناموسَه من بعيد، في الرعد. وعند الأردن يسمّي ابنه: «هذا هو ابني». وعلى الجبل يضيف الكلمةَ الحاسمة: «<b>له اسمعوا</b>» — الصدى الحرفي لتثنية ١٨: ١٥، وعدُ نبيٍّ «مثل موسى» يجب أن يُسمَع له. من الناموس المحفور في الحجر إلى الكلمة الحية التي يجب أن تُسمَع: اقترب اللهُ حتى تكلّم بشخصه. وعند الصليب ينشقّ الحجابُ الفاصل: لم تعد السحابةُ محتاجةً أن تُخفي.",
+ch:"كيف نقرأ هذا المشهد؟",
+c1:["ما يعترف به المسيحيون جميعًا","على الجبل يتجلى مجدُ يسوع الإلهي؛ ويشهد له الناموسُ (موسى) والأنبياءُ (إيليا)؛ ويسمّيه الآبُ الابنَ الذي يجب أن يُسمَع له. ويؤكد المشهدُ، قبل الآلام، مَن هو الذي سيتألم على الصليب."],
+c2:["ما تقوله النصوص","«لَهُ اسْمَعُوا» (متى ١٧: ٥) · «يَتَكَلَّمَانِ عَنْ خُرُوجِهِ» (لوقا ٩: ٣١) · «لَمْ يَرَوْا أَحَدًا إِلاَّ يَسُوعَ وَحْدَهُ» (متى ١٧: ٨) · «كُنَّا مُعَايِنِينَ عَظَمَتَهُ… هذَا الصَّوْتُ سَمِعْنَاهُ» (٢ بطرس ١: ١٦-١٨). بطرس، الحاضرُ ذلك اليوم، جعله من آخر شهاداته."],
+c3:["ما لا نُكرهه على النص","المشهدُ مكتنزٌ بالرموز؛ ولا نستخرج منه تخميناتٍ عن الآخرة ولا عن طبيعة «جسدَي» موسى وإيليا. ما تؤكده النصوص: مجدُ الابن، وشهادةُ الكتب، والأمرُ بأن نسمع له. والباقي للصمت الموقّر."],
+dh:"للتعمّق",
+deep:[
+["مظالّ بطرس: حدسٌ صحيح بمقياسٍ خاطئ","«لِنَصْنَعْ ثَلاَثَ مَظَالَّ» (متى ١٧: ٤). يتكلم بطرس في عيد المظالّ (سُكّوت)، حين يحيي إسرائيلُ ذكرى المسير في البرية تحت السحابة بالسكن في مظالّ. حدسُه صحيح — المظلّةُ موضعُ الحضور، وقد «نصب اللهُ خيمته» بيننا (يوحنا ١: ١٤) — لكن خطأه أن يجعل موسى وإيليا في مستوى يسوع. فيصحّح الصوتُ فورًا: مظلّةٌ واحدة تهمّ الآن، الابنُ نفسُه."],
+["«خروجه»: كلمة إكسودوس","يقول لوقا ٩: ٣١ إن موسى وإيليا تكلّما عن الإكسودوس الذي كان يسوع مزمعًا أن يكمّله في أورشليم. والكلمةُ مثقلة: إنها «الخروج». موتُه وقيامتُه خروجٌ جديد من مصر — لا من بلدٍ بعدُ، بل من الموت نفسه. موسى، الذي قاد الخروجَ الأول، يتحدّث مع الذي سيقود الثاني. وخيطُ الفصح (الخطوة ٥ من المسار) يلتقي هنا بالجبل."],
+["لماذا موسى وإيليا معًا؟","يلخّص التقليدُ اليهودي العهدَ القديم كلَّه بكلمتين: «الناموس والأنبياء» (متى ٥: ١٧؛ لوقا ٢٤: ٤٤). موسى يمثّل الناموس، وإيليا الأنبياء. ورؤيتُهما معًا إلى جانب يسوع هي رؤيةُ العهد القديم كلِّه يشهد لرجلٍ واحد — ثم ينسحب ليتركه وحده. إنها أطروحةُ الموقع، أخرجها اللهُ نفسُه مشهدًا."],
+["نومُ التلاميذ، من تابور إلى جثسيماني","يلاحظ لوقا أن التلاميذ «كَانُوا قَدْ تَثَقَّلُوا بِالنَّوْمِ» (٩: ٣٢) على جبل المجد — كما سينامون في بستان النزاع (لوقا ٢٢: ٤٥). الجبلان يتجاوبان: على أحدهما المجد، وعلى الآخر الكرب؛ وعلى كليهما التلاميذُ الثلاثة أنفسُهم (بطرس ويعقوب ويوحنا)، والجهادُ نفسُه للبقاء مستيقظين أمام السر. المجدُ يهيّئ للصليب."],
+["الشاهد العيان، بعد سنين","«لأَنَّنَا... كُنَّا مُعَايِنِينَ عَظَمَتَهُ… وَهذَا الصَّوْتُ سَمِعْنَاهُ مُقْبِلاً مِنَ السَّمَاءِ، إِذْ كُنَّا مَعَهُ فِي الْجَبَلِ الْمُقَدَّسِ» (٢ بطرس ١: ١٦-١٨). بعد عقود، ما زال بطرس يتكلم عنه كأمرٍ رآه وسمعه، لا كأسطورة. لقسم «كتاب جدير بالثقة»: التجلّي مرويٌّ شهادةً مؤرَّخةً محدَّدةَ المكان، يتبنّاها رجلٌ كان هناك."]],
+nlbl:"تابع",ntitle:"الابن الأزلي، والكلمة، والحمل",
+ntext:"انقشعت السحابةُ على «يسوع وحده». لكن مَن هو هذا الابنُ الذي يجب أن نسمع له؟ لنعُد إلى ما قبل البدء.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>ركن «التجلّي» — الناموسُ والأنبياءُ يشهدان للابن، ثم ينسحبان."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

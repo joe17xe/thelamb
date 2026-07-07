@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Sang de l'Agneau — pourquoi l'offrande</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Pilier · Le Sang de l'Agneau",
+eyebrow:"Lévitique 17:11 · Sinaï — la phrase qui explique tous les sacrifices, et la croix",
+verse:"« C'est par <span class='g'>l'âme</span> que le sang fait l'expiation. »",
+scene:"Pourquoi du sang ? La question met mal à l'aise le lecteur d'aujourd'hui — et c'est la bonne question. Un seul verset du Lévitique donne la clé de tout le système sacrificiel, et la clé de la croix : le sang n'est pas la mort qu'on exhibe, c'est la vie qu'on donne.",
+stations:[
+{ctx:"Lévitique 17:11 · le principe",t:"La vie est dans le sang",img:"Le sang n'est pas la mort exhibée : c'est la vie donnée.",
+p:"Pour la Bible, le sang EST la vie (l'âme, nefesh). C'est pourquoi Israël n'en mange jamais : on ne consomme pas la vie, on la respecte. Et c'est pourquoi le sang expie : verser le sang sur l'autel, ce n'est pas offrir une mort à Dieu — c'est remettre une vie entre ses mains. Tout le Lévitique tient dans ce renversement : le sacrifice n'est pas de la violence sacrée, c'est de la vie donnée.",
+o:["Lévitique 17:11","L'âme de la chair est dans le sang. Je vous l'ai donné sur l'autel, afin qu'il servît d'expiation pour vos âmes."],
+n:["Hébreux 9:22","Et presque tout, d'après la loi, est purifié avec du sang ; et sans effusion de sang il n'y a pas de pardon."]},
+{ctx:"Genèse 2:17 · le diagnostic",t:"Le péché, c'est être mort",img:"Le péché n'est pas une amende impayée : c'est une vie coupée de la Vie.",
+p:"Le péché, dans la Bible, n'est pas d'abord une liste d'infractions : c'est une rupture avec la Source de la vie. Or être coupé de la Vie, c'est mourir — « le jour où tu en mangeras, tu mourras ». Voilà pourquoi la dette du péché ne se règle pas avec une amende, une bonne action ou un regret : ce qui a été perdu, c'est une vie. Et seule une vie peut répondre d'une vie.",
+o:["Genèse 2:17","Le jour où tu en mangeras, tu mourras certainement."],
+n:["Éphésiens 2:1","Vous étiez morts par vos offenses et par vos péchés."]},
+{ctx:"Exode 34:6-7 · l'énigme",t:"Juste ET miséricordieux",img:"Un seul souffle de Dieu pose l'énigme ; un verset de Paul donne la réponse.",
+p:"Quand Dieu proclame son nom à Moïse, il dit les deux dans la même phrase : « riche en bonté, qui pardonne l'iniquité » ET « qui ne tient point le coupable pour innocent ». Un juge qui acquitte le coupable est une abomination (Proverbes 17:15) ; un Dieu qui n'aurait que la sentence ne serait pas celui du Sinaï. Comment tenir les deux ? C'est la question la plus profonde de la Bible — et la croix est sa réponse : Dieu y est « juste, tout en justifiant ».",
+o:["Exode 34:6-7","L'Éternel, Dieu miséricordieux… qui pardonne l'iniquité — mais qui ne tient point le coupable pour innocent."],
+n:["Romains 3:26","…afin d'être juste tout en justifiant celui qui a la foi en Jésus."]},
+{ctx:"Marc 10:45 · l'échange",t:"Âme contre âme",img:"L'Agneau : une âme donnée pour une âme — la justice satisfaite par l'amour, non contournée.",
+p:"La loi disait « vie pour vie » (Exode 21:23) : la valeur d'une vie ne s'évalue qu'en vie. Sur la victime, l'offrant posait la main : geste de transfert (Lévitique 1:4). Isaïe annonce le jour où quelqu'un « livrera son âme en sacrifice pour le péché » — volontairement. Et Jésus reprend exactement cette grammaire : donner sa vie « en rançon à la place de beaucoup » — la préposition grecque (anti) dit l'échange. L'Agneau est une âme contre nos âmes, pour la justice de Dieu.",
+o:["Ésaïe 53:10","Après avoir livré sa vie en sacrifice pour le péché, il verra une postérité."],
+n:["Marc 10:45","Le Fils de l'homme est venu, non pour être servi, mais pour servir et donner sa vie comme la rançon de plusieurs."]},
+{ctx:"Jean 3:16 · le donateur",t:"« Il a tant aimé qu'il a donné »",img:"Le sacrifice n'est pas Dieu réclamant le sang d'un autre : c'est Dieu se donnant lui-même.",
+p:"Jean 3:16 est un verset sacrificiel : « il a donné son Fils unique » — le verbe de l'offrande, et l'écho exact de Morija (« ton fils, ton unique, que tu aimes », Genèse 22:2). Mais avec ce renversement décisif : ce que Dieu n'a pas exigé d'Abraham, il l'a accompli lui-même. Le Père et le Fils ne sont pas l'un contre l'autre à la croix : « Dieu était en Christ, réconciliant le monde avec lui-même » (2 Corinthiens 5:19). Celui qui exige la justice est celui qui la paie.",
+o:["Genèse 22:8","Mon fils, Dieu se pourvoira lui-même de l'agneau pour l'holocauste."],
+n:["Jean 3:16","Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu'il ait la vie éternelle."]}],
+vh:"La Cène : un rituel juif — les quatre coupes",
+vintro:"Le dernier repas de Jésus n'est pas un dîner improvisé : c'est la Pâque, avec sa liturgie familiale. Quatre coupes de vin en scandent le déroulement, adossées aux quatre promesses d'Exode 6:6-7 :",
+verbs:["Ⅰ · Sanctification<small>« Je vous affranchirai » — le Qiddush ouvre le repas</small>","Ⅱ · Délivrance<small>« Je vous délivrerai » — le récit de l'Exode, les azymes, les herbes amères</small>","Ⅲ · Bénédiction<small>« Je vous sauverai » — la coupe « après le repas »</small>","Ⅳ · Louange<small>« Je vous prendrai pour mon peuple » — le Hallel, Psaumes 113–118</small>"],
+vp:"Les Évangiles s'ancrent précisément dans ce déroulé. « De même il prit la coupe, <b>après le souper</b> » (Luc 22:20) : la troisième — celle que la tradition nomme <b>la coupe de bénédiction</b>, le terme exact que Paul emploie (1 Corinthiens 10:16). « Après avoir chanté les cantiques, ils partirent » (Matthieu 26:30) : le <b>Hallel</b> — Jésus a marché vers Gethsémané en chantant le Psaume 118 : « la pierre qu'ont rejetée les bâtisseurs… », « béni soit celui qui vient au nom de l'Éternel ». Et un détail immense par son silence : les récits ne rapportent <b>aucune parole sur l'agneau</b> du repas. Sur le pain : « ceci est mon corps ». Sur la coupe : « mon sang, le sang de l'alliance ». Sur l'agneau : rien — parce que l'Agneau, ce soir-là, est à table.",
+ch:"La question difficile : « Dieu ne pouvait-il pas simplement pardonner ? »",
+c1:["Ce que le pardon coûte — toujours","Pardonner une dette réelle, ce n'est jamais l'effacer d'un mot : c'est l'absorber soi-même. Celui qui pardonne renonce à son dû — il paie à la place de l'autre, en silence. La croix n'invente pas cette logique : elle la rend visible à l'échelle de Dieu. Le pardon divin n'est pas l'indulgence qui ferme les yeux ; c'est la justice assumée par le Juge lui-même."],
+c2:["Ce que les textes disent","« Celui qui absout le coupable… est en abomination à l'Éternel » (Proverbes 17:15) · « …qui ne tient point le coupable pour innocent » (Exode 34:7) · « …afin d'être juste tout en justifiant » (Romains 3:26) · « Celui qui n'a point connu le péché, il l'a fait devenir péché pour nous » (2 Corinthiens 5:21) · « Christ a souffert une fois pour les péchés, lui juste pour des injustes » (1 Pierre 3:18)."],
+c3:["Ce que nous écartons","La caricature d'un Père en colère s'acharnant sur un Fils réticent. Les textes disent l'inverse : « Personne ne me l'ôte, je la donne de moi-même » (Jean 10:18) ; « moi et le Père nous sommes un » (10:30) ; « Dieu était en Christ » (2 Corinthiens 5:19). À la croix, Dieu n'exige pas le sang d'un tiers : il se donne. Toute présentation qui oppose le Père au Fils sort du cadre biblique — et de ce site."],
+dh:"Aller plus loin",
+deep:[
+["Kippour : « couvrir » — et le mot que Paul ose","La racine hébraïque kaphar signifie couvrir, effacer. Le couvercle d'or de l'arche, aspergé de sang au grand jour des Expiations, s'appelle le kapporet — le « propitiatoire », lieu de la rencontre entre la faute du peuple et la miséricorde de Dieu. Or Romains 3:25 applique au Christ le mot grec exact de ce couvercle (hilastèrion) : Paul dit que Jésus est en personne le lieu où la faute et la miséricorde se rencontrent — non plus caché derrière le voile, mais exposé publiquement."],
+["« Vie pour vie » : la grammaire de la substitution","Exode 21:23 pose l'étalon : nefesh tachat nefesh, « vie pour vie ». Lévitique 1:4 en donne le geste : la main posée sur la tête de la victime. Marc 10:45 en donne l'accomplissement : « rançon à la place de beaucoup » (lytron anti pollôn — la préposition anti dit l'échange), et 1 Timothée 2:6 forge même le mot antilytron, « contre-rançon ». La substitution n'est pas une théorie médiévale plaquée sur la Bible : c'est sa grammaire, de l'Exode aux épîtres."],
+["Le fil du sang, d'un bout à l'autre","Les habits de peau (Genèse 3:21), l'offrande d'Abel, le bélier de Morija, le sang sur les portes (Exode 12), l'aspersion du peuple au Sinaï (« voici le sang de l'alliance », Exode 24:8), le grand jour des Expiations (Lévitique 16), « mon sang, le sang de l'alliance » (Matthieu 26:28), « le sang de l'aspersion qui parle mieux que celui d'Abel » (Hébreux 12:24), « ils l'ont vaincu à cause du sang de l'Agneau » (Apocalypse 12:11). Une frise dédiée est au programme — chaque station est déjà un arc du Fil Rouge."],
+["La Cène pas à pas — l'état honnête des sources","Le déroulé détaillé du seder est codifié dans la Mishna (traité Pesahim, rédigé après l'an 70). Ce qui est attesté pour le Ier siècle : l'agneau, les azymes, les herbes amères (Exode 12:8), les coupes de vin, le récit de la sortie d'Égypte, le chant du Hallel — et les Évangiles eux-mêmes : le plat commun (Marc 14:20), la coupe « après le souper » (Luc 22:20), les cantiques (Matthieu 26:30). Des éléments comme l'afikoman appartiennent à des couches plus tardives : nous les signalons sans bâtir dessus. Règle du site : affirmer ce qui est daté, signaler le reste."],
+["La quatrième coupe laissée en suspens","« Je ne boirai plus désormais de ce fruit de la vigne, jusqu'au jour où j'en boirai du nouveau avec vous dans le royaume de mon Père » (Matthieu 26:29). Beaucoup de lecteurs y entendent la quatrième coupe — celle de « je vous prendrai pour mon peuple » — volontairement différée : le rituel reste ouvert, tendu vers les noces de l'Agneau (Apocalypse 19:9). Lecture suggestive, non démontrable ; elle dit en tout cas ce que dit Paul : « vous annoncez la mort du Seigneur, jusqu'à ce qu'il vienne » (1 Corinthiens 11:26)."],
+["Pourquoi le lecteur moderne bute — et pourquoi c'est normal","Nous n'avons plus de culture sacrificielle, et le mot « sang » nous heurte. Mais nous comprenons parfaitement la dette réelle, le don d'organe, celui qui se jette à l'eau pour un autre. Le langage du sang est le langage du don total : « il n'y a pas de plus grand amour que de donner sa vie pour ses amis » (Jean 15:13). Sans le Lévitique, la croix devient un slogan ; avec lui, elle devient lisible."]],
+nlbl:"Continuer",ntitle:"L'Offrande — de la Pâque à la table du Seigneur",
+ntext:"Le sang compris, la table s'ouvre : cinq stations, du pain et du vin de Melchisédek aux noces de l'Agneau.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pilier « Le Sang de l'Agneau » — répond à : pourquoi fallait-il une offrande ?"},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Pillar · The Blood of the Lamb",
+eyebrow:"Leviticus 17:11 · Sinai — the sentence that explains every sacrifice, and the cross",
+verse:"“It is the blood that makes atonement, <span class='g'>by reason of the life</span>.”",
+scene:"Why blood? The question unsettles today's reader — and it is the right question. A single verse of Leviticus gives the key to the whole sacrificial system, and the key to the cross: blood is not death put on display, it is life given up.",
+stations:[
+{ctx:"Leviticus 17:11 · the principle",t:"The life is in the blood",img:"Blood is not death displayed: it is life given.",
+p:"In the Bible, blood IS life (the soul, nefesh). That is why Israel never eats it: life is not consumed, it is honoured. And that is why blood atones: to pour blood on the altar is not to offer God a death — it is to place a life back into his hands. All of Leviticus rests on this reversal: sacrifice is not sacred violence, it is life given.",
+o:["Leviticus 17:11","The life of the flesh is in the blood. I have given it to you on the altar to make atonement for your souls."],
+n:["Hebrews 9:22","According to the law, nearly everything is cleansed with blood, and apart from shedding of blood there is no remission."]},
+{ctx:"Genesis 2:17 · the diagnosis",t:"Sin is being dead",img:"Sin is not an unpaid fine: it is a life cut off from Life.",
+p:"Sin, in the Bible, is not first a list of infractions: it is a rupture with the Source of life. And to be cut off from Life is to die — “in the day that you eat of it, you will surely die”. That is why the debt of sin cannot be settled with a fine, a good deed or a regret: what was lost is a life. And only a life can answer for a life.",
+o:["Genesis 2:17","In the day that you eat of it, you will surely die."],
+n:["Ephesians 2:1","You were dead in transgressions and sins."]},
+{ctx:"Exodus 34:6-7 · the riddle",t:"Just AND merciful",img:"One breath of God states the riddle; one verse of Paul gives the answer.",
+p:"When God proclaims his name to Moses, he says both in the same sentence: “abundant in loving kindness, forgiving iniquity” AND “who will by no means clear the guilty”. A judge who acquits the guilty is an abomination (Proverbs 17:15); a God who had only the sentence would not be the God of Sinai. How can both hold? It is the deepest question in the Bible — and the cross is its answer: there God is “just, and the justifier”.",
+o:["Exodus 34:6-7","The LORD, a merciful God… forgiving iniquity — yet who will by no means clear the guilty."],
+n:["Romans 3:26","…that he might himself be just and the justifier of him who has faith in Jesus."]},
+{ctx:"Mark 10:45 · the exchange",t:"Soul for soul",img:"The Lamb: one soul given for souls — justice satisfied by love, not sidestepped.",
+p:"The law said “life for life” (Exodus 21:23): the worth of a life can only be measured in life. On the victim, the offerer laid his hand: the gesture of transfer (Leviticus 1:4). Isaiah announces the day when someone will “make his soul an offering for sin” — willingly. And Jesus takes up exactly this grammar: to give his life “as a ransom in the place of many” — the Greek preposition (anti) says the exchange. The Lamb is one soul for our souls, for the justice of God.",
+o:["Isaiah 53:10","When you make his soul an offering for sin, he will see his offspring."],
+n:["Mark 10:45","The Son of Man came not to be served, but to serve, and to give his life as a ransom for many."]},
+{ctx:"John 3:16 · the giver",t:"“He so loved that he gave”",img:"Sacrifice is not God demanding another's blood: it is God giving himself.",
+p:"John 3:16 is a sacrificial verse: “he gave his one and only Son” — the verb of offering, and the exact echo of Moriah (“your son, your only one, whom you love”, Genesis 22:2). But with the decisive reversal: what God did not require of Abraham, he accomplished himself. Father and Son are not on opposite sides at the cross: “God was in Christ, reconciling the world to himself” (2 Corinthians 5:19). The one who requires justice is the one who pays it.",
+o:["Genesis 22:8","God will provide himself the lamb for a burnt offering, my son."],
+n:["John 3:16","For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life."]}],
+vh:"The Supper: a Jewish rite — the four cups",
+vintro:"Jesus' last meal is no improvised dinner: it is the Passover, with its family liturgy. Four cups of wine mark its course, resting on the four promises of Exodus 6:6-7:",
+verbs:["Ⅰ · Sanctification<small>“I will bring you out” — the Qiddush opens the meal</small>","Ⅱ · Deliverance<small>“I will rid you of bondage” — the Exodus retold, unleavened bread, bitter herbs</small>","Ⅲ · Blessing<small>“I will redeem you” — the cup “after supper”</small>","Ⅳ · Praise<small>“I will take you as my people” — the Hallel, Psalms 113–118</small>"],
+vp:"The Gospels anchor themselves precisely in this course. “Likewise he took the cup <b>after supper</b>” (Luke 22:20): the third — the one tradition names <b>the cup of blessing</b>, the exact term Paul uses (1 Corinthians 10:16). “When they had sung a hymn, they went out” (Matthew 26:30): the <b>Hallel</b> — Jesus walked to Gethsemane singing Psalm 118: “the stone which the builders rejected…”, “blessed is he who comes in the name of the LORD”. And one immense detail by its silence: the accounts record <b>no word about the lamb</b> of the meal. Over the bread: “this is my body”. Over the cup: “my blood of the covenant”. Over the lamb: nothing — because the Lamb, that night, is at the table.",
+ch:"The hard question: “Couldn't God simply forgive?”",
+c1:["What forgiveness always costs","To forgive a real debt is never to erase it with a word: it is to absorb it oneself. The one who forgives renounces what is owed — he pays in the other's place, silently. The cross does not invent this logic: it makes it visible at God's own scale. Divine forgiveness is not indulgence that looks away; it is justice borne by the Judge himself."],
+c2:["What the texts say","“He who justifies the wicked… is an abomination to the LORD” (Proverbs 17:15) · “…who will by no means clear the guilty” (Exodus 34:7) · “…just, and the justifier” (Romans 3:26) · “Him who knew no sin he made to be sin on our behalf” (2 Corinthians 5:21) · “Christ suffered for sins once, the righteous for the unrighteous” (1 Peter 3:18)."],
+c3:["What we set aside","The caricature of an angry Father venting on a reluctant Son. The texts say the opposite: “No one takes it from me; I lay it down by myself” (John 10:18); “I and the Father are one” (10:30); “God was in Christ” (2 Corinthians 5:19). At the cross God does not demand a third party's blood: he gives himself. Any presentation that sets the Father against the Son steps outside the biblical frame — and outside this site."],
+dh:"Go deeper",
+deep:[
+["Kippur: “to cover” — and the word Paul dares","The Hebrew root kaphar means to cover, to wipe away. The golden lid of the ark, sprinkled with blood on the Day of Atonement, is called the kapporet — the “mercy seat”, the meeting place of the people's guilt and God's mercy. Now Romans 3:25 applies to Christ the exact Greek word for that lid (hilastērion): Paul says Jesus is in person the place where guilt and mercy meet — no longer hidden behind the veil, but set forth publicly."],
+["“Life for life”: the grammar of substitution","Exodus 21:23 sets the standard: nefesh tachat nefesh, “life for life”. Leviticus 1:4 gives the gesture: the hand laid on the victim's head. Mark 10:45 gives the fulfilment: “a ransom in the place of many” (lytron anti pollōn — the preposition anti states the exchange), and 1 Timothy 2:6 even coins the word antilytron. Substitution is not a medieval theory pasted onto the Bible: it is its grammar, from Exodus to the epistles."],
+["The thread of blood, end to end","The garments of skin (Genesis 3:21), Abel's offering, the ram of Moriah, the blood on the doorposts (Exodus 12), the sprinkling of the people at Sinai (“behold the blood of the covenant”, Exodus 24:8), the Day of Atonement (Leviticus 16), “my blood of the covenant” (Matthew 26:28), “the blood of sprinkling that speaks better than that of Abel” (Hebrews 12:24), “they overcame him because of the Lamb's blood” (Revelation 12:11). A dedicated frieze is planned — each station is already an arc of the Scarlet Thread."],
+["The Supper step by step — the honest state of the sources","The detailed order of the seder is codified in the Mishnah (tractate Pesahim, written after AD 70). What is attested for the first century: the lamb, unleavened bread, bitter herbs (Exodus 12:8), cups of wine, the retelling of the Exodus, the singing of the Hallel — and the Gospels themselves: the common dish (Mark 14:20), the cup “after supper” (Luke 22:20), the hymns (Matthew 26:30). Elements like the afikoman belong to later layers: we flag them without building on them. The site's rule: affirm what is dated, flag the rest."],
+["The fourth cup left in suspense","“I will not drink of this fruit of the vine from now on, until that day when I drink it anew with you in my Father's Kingdom” (Matthew 26:29). Many readers hear here the fourth cup — that of “I will take you as my people” — deliberately deferred: the rite stays open, stretched toward the wedding of the Lamb (Revelation 19:9). A suggestive reading, not demonstrable; it says, in any case, what Paul says: “you proclaim the Lord's death until he comes” (1 Corinthians 11:26)."],
+["Why the modern reader stumbles — and why that is normal","We no longer live in a sacrificial culture, and the word “blood” jars us. But we understand perfectly a real debt, an organ donation, the one who dives in for another. The language of blood is the language of total gift: “greater love has no one than this, that someone lay down his life for his friends” (John 15:13). Without Leviticus, the cross becomes a slogan; with it, it becomes readable."]],
+nlbl:"Continue",ntitle:"The Offering — from the Passover to the Lord's table",
+ntext:"With the blood understood, the table opens: five stations, from Melchizedek's bread and wine to the wedding of the Lamb.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pillar “The Blood of the Lamb” — answers: why was an offering necessary?"},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"ركن · دم الحمل",
+eyebrow:"لاويين ١٧: ١١ · سيناء — الجملة التي تفسّر كلَّ الذبائح، والصليب",
+verse:"«لأَنَّ الدَّمَ يُكَفِّرُ <span class='g'>عَنِ النَّفْسِ</span>.»",
+scene:"لماذا الدم؟ سؤالٌ يُربك قارئَ اليوم — وهو السؤال الصحيح. آيةٌ واحدة من سفر اللاويين تعطي مفتاحَ نظام الذبائح كلِّه، ومفتاحَ الصليب: الدم ليس موتًا يُعرَض، بل حياةٌ تُبذَل.",
+stations:[
+{ctx:"لاويين ١٧: ١١ · المبدأ",t:"النفسُ في الدم",img:"الدم ليس موتًا معروضًا: إنه حياةٌ مبذولة.",
+p:"في الكتاب المقدس، الدمُ هو الحياة (النفس). لذلك لا يأكله إسرائيل أبدًا: الحياةُ لا تُستهلَك بل تُكرَّم. ولذلك يكفّر الدم: سكبُ الدم على المذبح ليس تقديمَ موتٍ لله — بل ردُّ حياةٍ بين يديه. اللاويون كلُّه قائم على هذا الانقلاب: الذبيحة ليست عنفًا مقدسًا، بل حياةٌ مبذولة.",
+o:["لاويين ١٧: ١١","لأَنَّ نَفْسَ الْجَسَدِ هِيَ فِي الدَّمِ، فَأَنَا أَعْطَيْتُكُمْ إِيَّاهُ عَلَى الْمَذْبَحِ لِلتَّكْفِيرِ عَنْ نُفُوسِكُمْ."],
+n:["عبرانيين ٩: ٢٢","وَكُلُّ شَيْءٍ تَقْرِيبًا يَتَطَهَّرُ حَسَبَ النَّامُوسِ بِالدَّمِ، وَبِدُونِ سَفْكِ دَمٍ لاَ تَحْصُلُ مَغْفِرَةٌ."]},
+{ctx:"تكوين ٢: ١٧ · التشخيص",t:"الخطيةُ أن تكون ميتًا",img:"الخطية ليست غرامةً غيرَ مدفوعة: إنها حياةٌ انقطعت عن الحياة.",
+p:"الخطية في الكتاب ليست أولًا قائمةَ مخالفات: إنها انقطاعٌ عن مصدر الحياة. ومَن انقطع عن الحياة فقد مات — «يَوْمَ تَأْكُلُ مِنْهَا مَوْتًا تَمُوتُ». لهذا لا يُسدَّد دَينُ الخطية بغرامةٍ ولا بعملٍ صالح ولا بندم: فالذي ضاع هو حياة. ولا يجيب عن حياةٍ إلا حياة.",
+o:["تكوين ٢: ١٧","يَوْمَ تَأْكُلُ مِنْهَا مَوْتًا تَمُوتُ."],
+n:["أفسس ٢: ١","وَأَنْتُمْ إِذْ كُنْتُمْ أَمْوَاتًا بِالذُّنُوبِ وَالْخَطَايَا."]},
+{ctx:"خروج ٣٤: ٦-٧ · اللغز",t:"عادلٌ ورحيم",img:"نَفَسٌ إلهيّ واحد يطرح اللغز؛ وآيةٌ لبولس تعطي الجواب.",
+p:"حين يعلن اللهُ اسمَه لموسى يقول الأمرين في جملة واحدة: «كَثِيرُ الإِحْسَانِ... غَافِرُ الإِثْمِ» و«لكِنَّهُ لَنْ يُبْرِئَ إِبْرَاءً». القاضي الذي يبرّئ المذنبَ رجسٌ (أمثال ١٧: ١٥)؛ والإلهُ الذي لا يملك إلا الحكمَ ليس إلهَ سيناء. فكيف يجتمعان؟ إنه أعمقُ سؤال في الكتاب — والصليبُ جوابُه: هناك يكون الله «بَارًّا وَيُبَرِّرُ».",
+o:["خروج ٣٤: ٦-٧","الرَّبُّ إِلهٌ رَحِيمٌ... غَافِرُ الإِثْمِ — وَلكِنَّهُ لَنْ يُبْرِئَ إِبْرَاءً."],
+n:["رومية ٣: ٢٦","لِيَكُونَ بَارًّا وَيُبَرِّرَ مَنْ هُوَ مِنَ الإِيمَانِ بِيَسُوعَ."]},
+{ctx:"مرقس ١٠: ٤٥ · المبادلة",t:"نفسٌ عن نفس",img:"الحمل: نفسٌ تُبذَل عن النفوس — العدلُ يوفى بالمحبة، لا يُلتَفّ عليه.",
+p:"قالت الشريعة «نَفْسًا بِنَفْسٍ» (خروج ٢١: ٢٣): قيمةُ الحياة لا تُقدَّر إلا بحياة. وكان المقدِّم يضع يده على رأس الذبيحة: إيماءةُ النقل (لاويين ١: ٤). ويعلن إشعياء اليومَ الذي «يجعل فيه أحدُهم نفسَه ذبيحةَ إثم» — طوعًا. ويسوع يتبنّى هذا النحوَ بعينه: أن يبذل نفسه «فِدْيَةً عَنْ كَثِيرِينَ» — وحرفُ الجرّ اليوناني (أنتي) يقول المبادلة. الحملُ نفسٌ عن نفوسنا، لعدل الله.",
+o:["إشعياء ٥٣: ١٠","إِذَا جَعَلَ نَفْسَهُ ذَبِيحَةَ إِثْمٍ يَرَى نَسْلاً."],
+n:["مرقس ١٠: ٤٥","لأَنَّ ابْنَ الإِنْسَانِ أَيْضًا لَمْ يَأْتِ لِيُخْدَمَ بَلْ لِيَخْدِمَ وَلِيَبْذِلَ نَفْسَهُ فِدْيَةً عَنْ كَثِيرِينَ."]},
+{ctx:"يوحنا ٣: ١٦ · الواهب",t:"«أَحَبَّ حَتَّى بَذَلَ»",img:"الذبيحة ليست إلهًا يطلب دمَ غيره: إنها اللهُ يبذل نفسَه.",
+p:"يوحنا ٣: ١٦ آيةٌ ذبائحية: «بَذَلَ ابْنَهُ الْوَحِيدَ» — فعلُ التقدمة، والصدى الحرفي للمريّا («ابْنَكَ وَحِيدَكَ الَّذِي تُحِبُّهُ»، تكوين ٢٢: ٢). لكن مع الانقلاب الحاسم: ما لم يطلبه اللهُ من إبراهيم في النهاية، أتمّه هو بنفسه. الآبُ والابن ليسا متقابلَين عند الصليب: «اللهَ كَانَ فِي الْمَسِيحِ مُصَالِحًا الْعَالَمَ لِنَفْسِهِ» (٢ كورنثوس ٥: ١٩). الذي يطلب العدلَ هو نفسُه الذي يدفعه.",
+o:["تكوين ٢٢: ٨","اَللهُ يَرَى لَهُ الْخَرُوفَ لِلْمُحْرَقَةِ يَا ابْنِي."],
+n:["يوحنا ٣: ١٦","لأَنَّهُ هكَذَا أَحَبَّ اللهُ الْعَالَمَ حَتَّى بَذَلَ ابْنَهُ الْوَحِيدَ، لِكَيْ لاَ يَهْلِكَ كُلُّ مَنْ يُؤْمِنُ بِهِ، بَلْ تَكُونُ لَهُ الْحَيَاةُ الأَبَدِيَّةُ."]}],
+vh:"العشاء: طقسٌ يهودي — الكؤوس الأربع",
+vintro:"عشاءُ يسوع الأخير ليس وليمةً مرتجلة: إنه الفصح بليتورجيّته العائلية. أربعُ كؤوس من الخمر تُوقّع مجراه، مستندةً إلى وعود خروج ٦: ٦-٧ الأربعة:",
+verbs:["الأولى · التقديس<small>«أُخْرِجُكُمْ» — القِدّوش يفتتح الوليمة</small>","الثانية · النجاة<small>«أُنْقِذُكُمْ» — روايةُ الخروج، والفطير، والأعشاب المرّة</small>","الثالثة · البركة<small>«أُخَلِّصُكُمْ» — الكأس «بعد العشاء»</small>","الرابعة · التسبيح<small>«أَتَّخِذُكُمْ لِي شَعْبًا» — الهَلّيل، مزامير ١١٣–١١٨</small>"],
+vp:"وترسو الأناجيل بدقةٍ في هذا المجرى. «وَكَذلِكَ الْكَأْسَ <b>بَعْدَ الْعَشَاءِ</b>» (لوقا ٢٢: ٢٠): إنها الثالثة — التي يسمّيها التقليد <b>كأسَ البركة</b>، وهو التعبير الحرفي الذي يستعمله بولس (١ كورنثوس ١٠: ١٦). «ثُمَّ سَبَّحُوا وَخَرَجُوا» (متى ٢٦: ٣٠): إنه <b>الهَلّيل</b> — مشى يسوع إلى جثسيماني وهو يرنّم المزمور ١١٨: «الْحَجَرُ الَّذِي رَفَضَهُ الْبَنَّاؤُونَ...»، «مُبَارَكٌ الآتِي بِاسْمِ الرَّبِّ». وتفصيلٌ هائل بصمته: لا تذكر الرواياتُ <b>كلمةً واحدة عن حمل</b> الوليمة. على الخبز: «هذَا هُوَ جَسَدِي». وعلى الكأس: «دَمِي، دَمُ الْعَهْدِ». وعن الحمل: لا شيء — لأن الحمل، في تلك الليلة، جالسٌ إلى المائدة.",
+ch:"السؤال الصعب: «أما كان يمكن لله أن يغفر ببساطة؟»",
+c1:["ما يكلّفه الغفران — دائمًا","غفرانُ دَينٍ حقيقي ليس محوَه بكلمة: إنه امتصاصُه في النفس. مَن يغفر يتنازل عن حقّه — يدفع مكانَ الآخر، في صمت. الصليبُ لا يخترع هذا المنطق: بل يجعله مرئيًا على مقياس الله. الغفرانُ الإلهي ليس تساهلًا يُغمض العينين؛ إنه العدلُ يحمله القاضي نفسُه."],
+c2:["ما تقوله النصوص","«مُبَرِّئُ الْمُذْنِبِ... كِلاَهُمَا مَكْرَهَةُ الرَّبِّ» (أمثال ١٧: ١٥) · «لَنْ يُبْرِئَ إِبْرَاءً» (خروج ٣٤: ٧) · «بَارًّا وَيُبَرِّرَ» (رومية ٣: ٢٦) · «جَعَلَ الَّذِي لَمْ يَعْرِفْ خَطِيَّةً، خَطِيَّةً لأَجْلِنَا» (٢ كورنثوس ٥: ٢١) · «الْمَسِيحَ تَأَلَّمَ مَرَّةً وَاحِدَةً مِنْ أَجْلِ الْخَطَايَا، الْبَارُّ مِنْ أَجْلِ الأَثَمَةِ» (١ بطرس ٣: ١٨)."],
+c3:["ما نستبعده","صورةُ آبٍ غاضب ينتقم من ابنٍ مُكرَه. النصوص تقول العكس: «لَيْسَ أَحَدٌ يَأْخُذُهَا مِنِّي، بَلْ أَضَعُهَا أَنَا مِنْ ذَاتِي» (يوحنا ١٠: ١٨)؛ «أَنَا وَالآبُ وَاحِدٌ» (١٠: ٣٠)؛ «اللهُ كَانَ فِي الْمَسِيحِ» (٢ كورنثوس ٥: ١٩). عند الصليب لا يطلب اللهُ دمَ طرفٍ ثالث: بل يبذل نفسَه. وكلُّ عرضٍ يجعل الآبَ ضدَّ الابن يخرج من الإطار الكتابي — ومن هذا الموقع."],
+dh:"للتعمّق",
+deep:[
+["كِبّور: «التغطية» — والكلمة التي تجرّأ عليها بولس","الجذر العبري كافَر يعني غطّى ومحا. وغطاءُ التابوت الذهبي، المرشوشُ بالدم في يوم الكفارة، اسمه الكَبّورِت — «الغطاء/كرسي الرحمة»، موضعُ لقاء ذنبِ الشعب برحمة الله. ورومية ٣: ٢٥ تطلق على المسيح الكلمةَ اليونانية الحرفية لذلك الغطاء (هيلاستيريون): يقول بولس إن يسوع هو بشخصه الموضعُ الذي يلتقي فيه الذنبُ والرحمة — لا مخفيًّا وراء الحجاب بعدُ، بل معروضًا علنًا."],
+["«نفسًا بنفس»: نحوُ البدل","خروج ٢١: ٢٣ يضع المعيار: نفسًا بنفس. ولاويين ١: ٤ يعطي الإيماءة: اليدُ الموضوعة على رأس الذبيحة. ومرقس ١٠: ٤٥ يعطي التمام: «فِدْيَةً عَنْ كَثِيرِينَ» (والحرف اليوناني أنتي يقول المبادلة)، بل ويصوغ ١ تيموثاوس ٢: ٦ كلمةَ أنتيليترون: «الفديةَ المقابِلة». البدلُ ليس نظريةً وسيطية أُلصقت بالكتاب: إنه نحوُه، من الخروج إلى الرسائل."],
+["خيط الدم من الطرف إلى الطرف","أقمصة الجلد (تكوين ٣: ٢١)، وتقدمة هابيل، وكبش المريّا، والدم على الأبواب (خروج ١٢)، ورشُّ الشعب في سيناء («هُوَذَا دَمُ الْعَهْدِ»، خروج ٢٤: ٨)، ويوم الكفارة (لاويين ١٦)، و«دَمِي، دَمُ الْعَهْدِ» (متى ٢٦: ٢٨)، و«دَمِ رَشٍّ يَتَكَلَّمُ أَفْضَلَ مِنْ هَابِيلَ» (عبرانيين ١٢: ٢٤)، و«غَلَبُوهُ بِدَمِ الْخَرُوفِ» (رؤيا ١٢: ١١). شريطٌ مخصَّص قيد الإعداد — وكلُّ محطةٍ منها قوسٌ في «الخيط الأحمر»."],
+["العشاء خطوةً خطوة — حال المصادر بأمانة","المجرى المفصَّل للسيدر مدوَّن في المشناة (رسالة بِساحيم، بعد سنة ٧٠). أما الموثَّق للقرن الأول: الحمل، والفطير، والأعشاب المرّة (خروج ١٢: ٨)، وكؤوس الخمر، وروايةُ الخروج، وترنيمُ الهَلّيل — والأناجيلُ نفسها: الصحفةُ المشتركة (مرقس ١٤: ٢٠)، والكأس «بعد العشاء» (لوقا ٢٢: ٢٠)، والتسبيح (متى ٢٦: ٣٠). وعناصرُ كالأفيقومان من طبقاتٍ لاحقة: نشير إليها ولا نبني عليها. قاعدةُ الموقع: نجزم بما هو مؤرَّخ، ونشير إلى الباقي."],
+["الكأس الرابعة المعلَّقة","«لاَ أَشْرَبُ مِنَ الآنَ مِنْ نِتَاجِ الْكَرْمَةِ هذَا إِلَى ذلِكَ الْيَوْمِ حِينَمَا أَشْرَبُهُ مَعَكُمْ جَدِيدًا فِي مَلَكُوتِ أَبِي» (متى ٢٦: ٢٩). يسمع قرّاء كثيرون هنا الكأسَ الرابعة — كأسَ «أَتَّخِذُكُمْ لِي شَعْبًا» — مؤجَّلةً عمدًا: الطقسُ يبقى مفتوحًا، مشدودًا نحو عرس الخروف (رؤيا ١٩: ٩). قراءةٌ موحية لا برهانية؛ وهي على كل حال تقول ما يقوله بولس: «تُخْبِرُونَ بِمَوْتِ الرَّبِّ إِلَى أَنْ يَجِيءَ» (١ كورنثوس ١١: ٢٦)."],
+["لماذا يتعثر قارئُ اليوم — ولماذا هذا طبيعي","لم نعد نعيش في ثقافةٍ ذبائحية، وكلمةُ «الدم» تصدمنا. لكننا نفهم تمامًا الدَّينَ الحقيقي، والتبرعَ بعضوٍ، ومَن يرمي بنفسه في الماء لإنقاذ آخر. لغةُ الدم هي لغةُ البذل الكامل: «لَيْسَ لأَحَدٍ حُبٌّ أَعْظَمُ مِنْ هذَا: أَنْ يَضَعَ أَحَدٌ نَفْسَهُ لأَجْلِ أَحِبَّائِهِ» (يوحنا ١٥: ١٣). من دون اللاويين يصير الصليبُ شعارًا؛ ومعه يصير مقروءًا."]],
+nlbl:"تابع",ntitle:"التقدمة — من الفصح إلى مائدة الرب",
+ntext:"إذا فُهم الدم، انفتحت المائدة: خمسُ محطات، من خبز ملكي صادق وخمره إلى عرس الخروف.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>ركن «دم الحمل» — يجيب: لماذا كان لا بدّ من تقدمة؟"}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

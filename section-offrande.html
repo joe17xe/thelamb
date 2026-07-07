@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Offrande — De la Pâque à la table du Seigneur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Section · L'Offrande",
+eyebrow:"1 Corinthiens 5:7-8 · Éphèse, vers l'an 55 — le plus ancien commentaire pascal chrétien",
+verse:"« Christ, <span class='g'>notre Pâque</span>, a été immolé. Célébrons donc la fête… »",
+scene:"Cette section lit la table du Seigneur avec les Écritures seules — le terrain où catholiques et évangéliques se tiennent côte à côte. Un repas traverse toute la Bible : cinq stations le suivent, du roi de Salem aux noces de l'Agneau.",
+stations:[
+{ctx:"Genèse 14:18 · Salem, âge des patriarches",t:"Le pain et le vin de Melchisédek",img:"Un roi-prêtre sort à la rencontre d'Abraham — avec du pain et du vin.",
+p:"Quatorze chapitres après le début de la Bible, un personnage sans généalogie, « roi de justice » et roi de Salem — la paix —, sacrificateur du Dieu Très-Haut, apporte du pain et du vin et bénit Abraham. Le Psaume 110 fera de lui le modèle du Messie-prêtre ; l'épître aux Hébreux, le portrait anticipé du Fils.",
+o:["Genèse 14:18","Melchisédek, roi de Salem, fit apporter du pain et du vin : il était sacrificateur du Dieu Très-Haut."],
+n:["Hébreux 7:3","Rendu semblable au Fils de Dieu, il demeure sacrificateur à perpétuité."]},
+{ctx:"Exode 12 · Égypte, la nuit de la sortie",t:"La nuit où le sang sauva",img:"Un agneau immolé, un repas pris en hâte — la délivrance se mange.",
+p:"La Pâque n'est pas seulement un sacrifice : c'est un repas commandé. L'agneau dont le sang protège est aussi l'agneau que l'on mange, en famille, prêts à partir. Paul tirera la conclusion en quatre mots — « Christ, notre Pâque, a été immolé » — et ajoutera aussitôt : « célébrons donc la fête ».",
+o:["Exode 12:8","Ils mangeront la chair cette nuit-là ; ils la mangeront rôtie au feu, avec des pains sans levain."],
+n:["1 Corinthiens 5:7-8","Christ, notre Pâque, a été immolé. Célébrons donc la fête."]},
+{ctx:"Jean 6 · Capharnaüm, vers l'an 29 — au lendemain de la multiplication des pains",t:"Le pain du ciel",img:"La foule réclame de la manne ; Jésus se donne lui-même.",
+p:"Toute la discussion de Jean 6 est un commentaire de la manne (Exode 16, Psaume 78). La foule demande un signe « comme la manne » ; Jésus répond en trois temps : le vrai pain est celui que le Père donne ; « je suis le pain de vie » ; « le pain que je donnerai, c'est ma chair, pour la vie du monde ». Le don du désert annonçait un don plus grand.",
+o:["Psaume 78:24","Il fit pleuvoir sur eux la manne, il leur donna le blé du ciel."],
+n:["Jean 6:51","Je suis le pain vivant descendu du ciel. Si quelqu'un mange de ce pain, il vivra éternellement."]},
+{ctx:"Luc 22 · 1 Corinthiens 11 · Jérusalem, nuit du 14 nisan, an 30 — récit mis par écrit dès ~55",t:"« Ceci est mon corps »",img:"Au milieu du repas pascal, Jésus prend la place de l'agneau.",
+p:"Pendant la Pâque, Jésus prend le pain et la coupe et prononce sur eux les mots de l'alliance du Sinaï — « le sang de l'alliance » (Exode 24:8) — et de la promesse de Jérémie : « la nouvelle alliance ». Puis il institue le mémorial : « faites ceci en mémoire de moi ». Fait décisif : le plus ancien récit écrit de ce repas n'est pas dans un évangile — c'est 1 Corinthiens 11, vers l'an 55, où Paul emploie les verbes techniques de la tradition reçue : « j'ai reçu… je vous ai transmis ».",
+o:["Exode 24:8","Voici le sang de l'alliance que l'Éternel a faite avec vous."],
+n:["Luc 22:19-20","Ceci est mon corps, qui est donné pour vous… Cette coupe est la nouvelle alliance en mon sang."]},
+{ctx:"Apocalypse 19 · Patmos, vers l'an 95",t:"Les noces de l'Agneau",img:"Le repas vers lequel tous les repas convergent.",
+p:"La Bible s'achève sur une invitation à table : « Heureux ceux qui sont appelés au festin des noces de l'Agneau ! » Le mémorial que l'Église célèbre « jusqu'à ce qu'il vienne » (1 Corinthiens 11:26) est tendu vers ce repas-là. Isaïe l'avait annoncé : un festin « pour tous les peuples ». De la Pâque d'une nation aux noces de toutes les nations.",
+o:["Ésaïe 25:6","L'Éternel des armées prépare pour tous les peuples un festin de mets succulents."],
+n:["Apocalypse 19:9","Heureux ceux qui sont appelés au festin des noces de l'Agneau !"]}],
+vh:"Les quatre verbes",vintro:"Une signature traverse le Nouveau Testament — quatre gestes, toujours les mêmes :",
+verbs:["Il prit","Il rendit grâces","Il rompit","Il donna"],
+vp:"À la multiplication des pains (Matthieu 14:19), à la Cène (Matthieu 26:26 ; Luc 22:19), puis à Emmaüs le soir de Pâques (Luc 24:30) — où les deux disciples le reconnaissent précisément « à la fraction du pain ». Quatre verbes suffisent aux évangélistes pour dire : même geste, même main, même don. Et « il rendit grâces » se dit en grec <i>eucharistèsas</i> — le mot « eucharistie » signifie simplement <b>action de grâces</b>.",
+ch:"Un point sensible : la règle des trois cercles",
+c1:["Ce que tous les chrétiens confessent","Le Seigneur a commandé ce repas ; il est présent au milieu des siens ; on y annonce sa mort jusqu'à ce qu'il vienne ; on s'y approche avec foi, et après s'être examiné soi-même."],
+c2:["Ce que les Écritures disent","« Ceci est mon corps » (Luc 22:19) · « La coupe de bénédiction n'est-elle pas la communion au sang de Christ ? » (1 Corinthiens 10:16) · « Ma chair est vraiment une nourriture » (Jean 6:55) · « Que chacun s'éprouve soi-même » (1 Corinthiens 11:28). Nous les citons intégralement, sans en retrancher."],
+c3:["Ce que les traditions interprètent","Sur le mode de la présence du Christ dans le pain et le vin, catholiques (présence réelle, transsubstantiation) et évangéliques (mémorial, présence spirituelle) lisent ces mêmes textes différemment. Le site expose les deux lectures côte à côte et n'arbitre pas : c'est le rôle de votre église, pas le nôtre."],
+dh:"Aller plus loin",
+deep:[
+["Le plus ancien texte : 1 Corinthiens 11","Rédigée vers l'an 55, la première lettre aux Corinthiens transmet le récit de la Cène avec les verbes techniques de la transmission rabbinique — « j'ai reçu… je vous ai transmis » (11:23). La formule remonte donc aux années 30, à Jérusalem. Pour la section « Bible fiable » : le cœur du rite chrétien est documenté à moins d'une génération de l'événement, par un texte daté et incontesté."],
+["Jean 6 : deux lectures, un seul don","« Manger ma chair, boire mon sang » : lecture sacramentelle (le discours annonce l'eucharistie) ou lecture de la foi (« mes paroles sont esprit et vie », 6:63 ; « celui qui croit en moi n'aura jamais soif », 6:35) ? Chaque famille chrétienne a ses versets d'appui dans le même chapitre — signe que Jean tient les deux bouts : le don est réel, et il se reçoit par la foi. Le dossier complet paraîtra en strate 3 de la future page Jean 6."],
+["La Didachè : la table des premières générations","Ce manuel de communautés chrétiennes (fin du Ier siècle) contient les plus anciennes prières de table hors du Nouveau Testament : action de grâces sur la coupe et sur le pain rompu, avec une image restée célèbre — comme le pain, autrefois grain dispersé sur les collines, a été rassemblé en un seul, que l'Église soit rassemblée des extrémités de la terre dans le Royaume. Témoin précieux : dès la première génération, le repas est au centre, et il est action de grâces."],
+["La question de la date","Les synoptiques présentent la Cène comme repas pascal ; Jean place la mort de Jésus à l'heure de l'immolation des agneaux. Le dossier des solutions (calendriers concurrents, repas anticipé, intention johannique) est exposé à l'étape 3 du parcours et dans le dossier de référence. Les deux traditions disent la même chose par deux chemins : Jésus est la Pâque."],
+["Du premier repas au dernier","La Bible s'ouvre sur une nourriture prise contre Dieu (Genèse 3:6) et se ferme sur un festin offert par Dieu (Apocalypse 19:9). Entre les deux : la table de Melchisédek, la Pâque, la manne, la Cène. Le mal est entré par une bouche ; la communion revient par une table. C'est peut-être l'inclusion la plus vaste de toute l'Écriture."]],
+nlbl:"Section suivante",ntitle:"Une Bible digne de confiance",
+ntext:"Le socle : manuscrits datés, prophéties vérifiables, cohérence d'un seul fil — et les réponses aux objections.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Section « L'Offrande » — page pivot ; chaque station recevra sa page détaillée."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Section · The Offering",
+eyebrow:"1 Corinthians 5:7-8 · Ephesus, c. AD 55 — the oldest Christian paschal commentary",
+verse:"“Christ, <span class='g'>our Passover</span>, has been sacrificed. Therefore let us keep the feast…”",
+scene:"This section reads the Lord's table with the Scriptures alone — the ground where Catholics and Evangelicals stand side by side. One meal runs through the whole Bible: five stations follow it, from the king of Salem to the wedding of the Lamb.",
+stations:[
+{ctx:"Genesis 14:18 · Salem, age of the patriarchs",t:"The bread and wine of Melchizedek",img:"A priest-king comes out to meet Abraham — with bread and wine.",
+p:"Fourteen chapters into the Bible, a figure without genealogy, “king of righteousness” and king of Salem — peace —, priest of God Most High, brings out bread and wine and blesses Abraham. Psalm 110 will make him the model of the priest-Messiah; the letter to the Hebrews, the anticipated portrait of the Son.",
+o:["Genesis 14:18","Melchizedek king of Salem brought out bread and wine: he was priest of God Most High."],
+n:["Hebrews 7:3","Made like the Son of God, he remains a priest continually."]},
+{ctx:"Exodus 12 · Egypt, the night of the exodus",t:"The night the blood saved",img:"A slaughtered lamb, a meal eaten in haste — deliverance is eaten.",
+p:"The Passover is not only a sacrifice: it is a commanded meal. The lamb whose blood protects is also the lamb that is eaten, as a family, ready to leave. Paul will draw the conclusion in a few words — “Christ, our Passover, has been sacrificed” — and immediately add: “therefore let us keep the feast”.",
+o:["Exodus 12:8","They shall eat the meat in that night, roasted with fire, with unleavened bread."],
+n:["1 Corinthians 5:7-8","Christ, our Passover, has been sacrificed. Therefore let us keep the feast."]},
+{ctx:"John 6 · Capernaum, c. AD 29 — the day after the multiplication of the loaves",t:"The bread from heaven",img:"The crowd demands manna; Jesus gives himself.",
+p:"The whole discussion of John 6 is a commentary on the manna (Exodus 16, Psalm 78). The crowd asks for a sign “like the manna”; Jesus answers in three steps: the true bread is the one the Father gives; “I am the bread of life”; “the bread which I will give is my flesh, for the life of the world”. The gift of the desert announced a greater gift.",
+o:["Psalm 78:24","He rained down manna on them to eat, and gave them the grain of heaven."],
+n:["John 6:51","I am the living bread which came down out of heaven. If anyone eats of this bread, he will live forever."]},
+{ctx:"Luke 22 · 1 Corinthians 11 · Jerusalem, night of 14 Nisan, AD 30 — put in writing by c. 55",t:"“This is my body”",img:"In the middle of the Passover meal, Jesus takes the place of the lamb.",
+p:"During the Passover, Jesus takes the bread and the cup and speaks over them the words of the Sinai covenant — “the blood of the covenant” (Exodus 24:8) — and of Jeremiah's promise: “the new covenant”. Then he institutes the memorial: “do this in memory of me”. A decisive fact: the oldest written account of this meal is not in a Gospel — it is 1 Corinthians 11, around AD 55, where Paul uses the technical verbs of received tradition: “I received… I delivered to you”.",
+o:["Exodus 24:8","Look, this is the blood of the covenant, which the LORD has made with you."],
+n:["Luke 22:19-20","This is my body which is given for you… This cup is the new covenant in my blood."]},
+{ctx:"Revelation 19 · Patmos, c. AD 95",t:"The wedding of the Lamb",img:"The meal toward which every meal converges.",
+p:"The Bible ends with an invitation to table: “Blessed are those who are invited to the wedding supper of the Lamb!” The memorial the Church celebrates “until he comes” (1 Corinthians 11:26) is stretched toward that meal. Isaiah had announced it: a feast “for all peoples”. From the Passover of one nation to the wedding of all nations.",
+o:["Isaiah 25:6","The LORD of Hosts will make for all peoples a feast of rich food."],
+n:["Revelation 19:9","Blessed are those who are invited to the wedding supper of the Lamb!"]}],
+vh:"The four verbs",vintro:"One signature runs through the New Testament — four gestures, always the same:",
+verbs:["He took","He gave thanks","He broke","He gave"],
+vp:"At the multiplication of the loaves (Matthew 14:19), at the Supper (Matthew 26:26; Luke 22:19), then at Emmaus on Easter evening (Luke 24:30) — where the two disciples recognize him precisely “in the breaking of the bread”. Four verbs are enough for the evangelists to say: same gesture, same hand, same gift. And “he gave thanks” is in Greek <i>eucharistēsas</i> — the word “Eucharist” simply means <b>thanksgiving</b>.",
+ch:"A sensitive point: the rule of the three circles",
+c1:["What all Christians confess","The Lord commanded this meal; he is present among his own; in it his death is proclaimed until he comes; one approaches it with faith, and after examining oneself."],
+c2:["What the Scriptures say","“This is my body” (Luke 22:19) · “The cup of blessing — isn't it a sharing of the blood of Christ?” (1 Corinthians 10:16) · “My flesh is food indeed” (John 6:55) · “Let a man examine himself” (1 Corinthians 11:28). We quote them in full, subtracting nothing."],
+c3:["What the traditions interpret","On the mode of Christ's presence in the bread and wine, Catholics (real presence, transubstantiation) and Evangelicals (memorial, spiritual presence) read these same texts differently. The site sets out both readings side by side and does not arbitrate: that is the role of your church, not ours."],
+dh:"Go deeper",
+deep:[
+["The oldest text: 1 Corinthians 11","Written around AD 55, the first letter to the Corinthians hands on the account of the Supper with the technical verbs of rabbinic transmission — “I received… I delivered to you” (11:23). The formula therefore reaches back to the 30s, in Jerusalem. For the “A Bible worthy of trust” section: the heart of the Christian rite is documented within a generation of the event, by a dated and uncontested text."],
+["John 6: two readings, one gift","“Eat my flesh, drink my blood”: a sacramental reading (the discourse announces the Eucharist) or a reading of faith (“my words are spirit and life”, 6:63; “he who believes in me will never be thirsty”, 6:35)? Each Christian family has its supporting verses within the same chapter — a sign that John holds both ends: the gift is real, and it is received by faith. The full dossier will appear in layer 3 of the coming John 6 page."],
+["The Didache: the table of the first generations","This manual of Christian communities (late 1st century) contains the oldest table prayers outside the New Testament: thanksgiving over the cup and over the broken bread, with an image that became famous — as the bread, once grain scattered upon the hills, was gathered into one, so may the Church be gathered from the ends of the earth into the Kingdom. A precious witness: from the first generation, the meal is central, and it is thanksgiving."],
+["The question of the date","The Synoptics present the Supper as a Passover meal; John places the death of Jesus at the hour of the slaughter of the lambs. The dossier of solutions (competing calendars, anticipated meal, Johannine intention) is set out at step 3 of the journey and in the reference dossier. Both traditions say the same thing by two roads: Jesus is the Passover."],
+["From the first meal to the last","The Bible opens with food taken against God (Genesis 3:6) and closes with a feast offered by God (Revelation 19:9). In between: Melchizedek's table, the Passover, the manna, the Supper. Evil entered through a mouth; communion returns through a table. It may be the widest inclusio in all of Scripture."]],
+nlbl:"Next section",ntitle:"A Bible worthy of trust",
+ntext:"The foundation: dated manuscripts, verifiable prophecies, the coherence of a single thread — and answers to the objections.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Section “The Offering” — pivot page; each station will receive its detailed page."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"قسم · التقدمة",
+eyebrow:"١ كورنثوس ٥: ٧-٨ · أفسس، نحو سنة ٥٥ م — أقدم تعليق فصحي مسيحي",
+verse:"«<span class='g'>فِصْحُنَا</span> الْمَسِيحُ قَدْ ذُبِحَ لأَجْلِنَا. إِذًا لِنُعَيِّدْ…»",
+scene:"يقرأ هذا القسم مائدةَ الرب بالكتاب المقدس وحده — الأرض التي يقف عليها الكاثوليك والإنجيليون جنبًا إلى جنب. وليمةٌ واحدة تعبر الكتابَ كلَّه: خمسُ محطات تتبعها، من ملك شاليم إلى عرس الخروف.",
+stations:[
+{ctx:"تكوين ١٤: ١٨ · شاليم، عصر الآباء",t:"خبزُ ملكي صادق وخمرُه",img:"ملكٌ كاهن يخرج للقاء إبراهيم — ومعه خبزٌ وخمر.",
+p:"بعد أربعة عشر أصحاحًا من بداية الكتاب، شخصٌ بلا نسبٍ مذكور، «ملكُ البرّ» وملكُ شاليم — السلام —، كاهنُ الله العليّ، يُخرج خبزًا وخمرًا ويبارك إبراهيم. سيجعله المزمور ١١٠ نموذجَ المسيّا-الكاهن؛ وستجعله الرسالة إلى العبرانيين الصورةَ السابقة للابن.",
+o:["تكوين ١٤: ١٨","وَمَلْكِي صَادِقُ، مَلِكُ شَالِيمَ، أَخْرَجَ خُبْزًا وَخَمْرًا. وَكَانَ كَاهِنًا لِلهِ الْعَلِيِّ."],
+n:["عبرانيين ٧: ٣","مُشَبَّهًا بِابْنِ اللهِ، يَبْقَى كَاهِنًا إِلَى الأَبَدِ."]},
+{ctx:"خروج ١٢ · مصر، ليلة الخروج",t:"الليلة التي خلّص فيها الدم",img:"حملٌ مذبوح، ووليمةٌ على عجلة — النجاةُ تُؤكَل.",
+p:"الفصح ليس ذبيحةً فحسب: إنه وليمةٌ مأمورٌ بها. الحملُ الذي يحمي دمُه هو نفسُه الحملُ الذي يُؤكَل، في العائلة، والجميعُ متأهبون للرحيل. وسيستخلص بولس العبرةَ في كلماتٍ قليلة — «فِصْحُنَا الْمَسِيحُ قَدْ ذُبِحَ» — ويضيف فورًا: «إِذًا لِنُعَيِّدْ».",
+o:["خروج ١٢: ٨","وَيَأْكُلُونَ اللَّحْمَ فِي تِلْكَ اللَّيْلَةِ مَشْوِيًّا بِالنَّارِ مَعَ فَطِيرٍ."],
+n:["١ كورنثوس ٥: ٧-٨","فِصْحُنَا الْمَسِيحُ قَدْ ذُبِحَ لأَجْلِنَا. إِذًا لِنُعَيِّدْ."]},
+{ctx:"يوحنا ٦ · كفرناحوم، نحو سنة ٢٩ م — غداةَ تكثير الأرغفة",t:"الخبز النازل من السماء",img:"الجموع تطلب منًّا؛ ويسوع يبذل نفسَه.",
+p:"حوارُ يوحنا ٦ كلُّه تعليقٌ على المنّ (خروج ١٦، مزمور ٧٨). تطلب الجموعُ آيةً «كالمنّ»؛ فيجيب يسوع في ثلاث خطوات: الخبزُ الحقيقي هو الذي يعطيه الآب؛ «أَنَا هُوَ خُبْزُ الْحَيَاةِ»؛ «وَالْخُبْزُ الَّذِي أَنَا أُعْطِي هُوَ جَسَدِي الَّذِي أَبْذِلُهُ مِنْ أَجْلِ حَيَاةِ الْعَالَمِ». عطيةُ البرية كانت تُنبئ بعطيةٍ أعظم.",
+o:["مزمور ٧٨: ٢٤","أَمْطَرَ عَلَيْهِمْ مَنًّا لِلأَكْلِ، وَبُرَّ السَّمَاءِ أَعْطَاهُمْ."],
+n:["يوحنا ٦: ٥١","أَنَا هُوَ الْخُبْزُ الْحَيُّ الَّذِي نَزَلَ مِنَ السَّمَاءِ. إِنْ أَكَلَ أَحَدٌ مِنْ هذَا الْخُبْزِ يَحْيَا إِلَى الأَبَدِ."]},
+{ctx:"لوقا ٢٢ · ١ كورنثوس ١١ · أورشليم، ليلة ١٤ نيسان سنة ٣٠ — دُوِّن نحو سنة ٥٥",t:"«هذَا هُوَ جَسَدِي»",img:"في قلب وليمة الفصح، يأخذ يسوع مكانَ الحمل.",
+p:"في أثناء الفصح يأخذ يسوع الخبزَ والكأس وينطق عليهما بكلمات عهدِ سيناء — «دَمُ الْعَهْدِ» (خروج ٢٤: ٨) — وبوعدِ إرميا: «الْعَهْدُ الْجَدِيدُ». ثم يؤسّس التذكار: «اصْنَعُوا هذَا لِذِكْرِي». واقعةٌ حاسمة: أقدمُ روايةٍ مدوَّنة لهذه الوليمة ليست في إنجيل — بل في ١ كورنثوس ١١، نحو سنة ٥٥، حيث يستعمل بولس فعلَي التسليم التقنيَّين في التقليد: «تَسَلَّمْتُ... وَسَلَّمْتُكُمْ».",
+o:["خروج ٢٤: ٨","هُوَذَا دَمُ الْعَهْدِ الَّذِي قَطَعَهُ الرَّبُّ مَعَكُمْ."],
+n:["لوقا ٢٢: ١٩-٢٠","هذَا هُوَ جَسَدِي الَّذِي يُبْذَلُ عَنْكُمْ... هذِهِ الْكَأْسُ هِيَ الْعَهْدُ الْجَدِيدُ بِدَمِي."]},
+{ctx:"رؤيا ١٩ · بطمس، نحو سنة ٩٥ م",t:"عرس الخروف",img:"الوليمة التي تتجه إليها كلُّ الولائم.",
+p:"يُختَم الكتابُ بدعوةٍ إلى مائدة: «طُوبَى لِلْمَدْعُوِّينَ إِلَى عَشَاءِ عُرْسِ الْخَرُوفِ!» والتذكارُ الذي تحييه الكنيسة «إِلَى أَنْ يَجِيءَ» (١ كورنثوس ١١: ٢٦) مشدودٌ نحو تلك الوليمة. وقد سبق إشعياء فأعلنها: وليمةٌ «لِجَمِيعِ الشُّعُوبِ». من فصحِ أمّةٍ واحدة إلى عرسِ كلِّ الأمم.",
+o:["إشعياء ٢٥: ٦","وَيَصْنَعُ رَبُّ الْجُنُودِ لِجَمِيعِ الشُّعُوبِ وَلِيمَةَ سَمَائِنَ."],
+n:["رؤيا ١٩: ٩","طُوبَى لِلْمَدْعُوِّينَ إِلَى عَشَاءِ عُرْسِ الْخَرُوفِ!"]}],
+vh:"الأفعال الأربعة",vintro:"توقيعٌ واحد يعبر العهدَ الجديد — أربع حركات، هي هي دائمًا:",
+verbs:["أَخَذَ","شَكَرَ","كَسَّرَ","أَعْطَى"],
+vp:"عند تكثير الأرغفة (متى ١٤: ١٩)، وفي العشاء (متى ٢٦: ٢٦؛ لوقا ٢٢: ١٩)، ثم في عمواس مساءَ القيامة (لوقا ٢٤: ٣٠) — حيث عرفه التلميذان تحديدًا «عِنْدَ كَسْرِ الْخُبْزِ». أربعةُ أفعال تكفي الإنجيليين ليقولوا: الحركةُ نفسها، واليدُ نفسها، والعطيةُ نفسها. و«شَكَرَ» باليونانية <i>إفخارستيساس</i> — فكلمة «الإفخارستيا» تعني ببساطة <b>الشكر</b>.",
+ch:"نقطة حساسة: قاعدة الدوائر الثلاث",
+c1:["ما يعترف به المسيحيون جميعًا","الربُّ أمر بهذه الوليمة؛ وهو حاضرٌ في وسط خاصته؛ وفيها يُخبَر بموته إلى أن يجيء؛ ويُقترَب منها بإيمان، وبعد امتحان النفس."],
+c2:["ما تقوله الكتب","«هذَا هُوَ جَسَدِي» (لوقا ٢٢: ١٩) · «كَأْسُ الْبَرَكَةِ... أَلَيْسَتْ هِيَ شَرِكَةَ دَمِ الْمَسِيحِ؟» (١ كورنثوس ١٠: ١٦) · «جَسَدِي مَأْكَلٌ حَقٌّ» (يوحنا ٦: ٥٥) · «لِيَمْتَحِنِ الإِنْسَانُ نَفْسَهُ» (١ كورنثوس ١١: ٢٨). نقتبسها كاملةً من دون أن نُنقص منها شيئًا."],
+c3:["ما تفسّره التقاليد","في كيفية حضور المسيح في الخبز والخمر، يقرأ الكاثوليك (الحضور الحقيقي، الاستحالة) والإنجيليون (التذكار، الحضور الروحي) النصوصَ نفسها قراءتين مختلفتين. يعرض الموقعُ القراءتين جنبًا إلى جنب ولا يحكم بينهما: فذلك دورُ كنيستك، لا دورُنا."],
+dh:"للتعمّق",
+deep:[
+["أقدم النصوص: ١ كورنثوس ١١","كُتبت الرسالة الأولى إلى كورنثوس نحو سنة ٥٥ م، وهي تنقل روايةَ العشاء بفعلَي التسليم التقنيَّين في التقليد اليهودي — «تَسَلَّمْتُ... وَسَلَّمْتُكُمْ» (١١: ٢٣). فالصيغة إذًا تعود إلى ثلاثينيات القرن الأول، في أورشليم. لقسم «كتاب جدير بالثقة»: قلبُ الشعيرة المسيحية موثَّق في أقل من جيلٍ واحد بعد الحدث، بنصٍّ مؤرَّخٍ لا نزاع فيه."],
+["يوحنا ٦: قراءتان وعطيةٌ واحدة","«أكلُ جسدي وشربُ دمي»: قراءةٌ أسرارية (الخطاب يُنبئ بالإفخارستيا) أم قراءةُ الإيمان («اَلْكَلاَمُ الَّذِي أُكَلِّمُكُمْ بِهِ هُوَ رُوحٌ وَحَيَاةٌ»، ٦: ٦٣؛ «مَنْ يُؤْمِنْ بِي فَلاَ يَعْطَشَ أَبَدًا»، ٦: ٣٥)؟ لكلِّ عائلةٍ مسيحية آياتُها الداعمة في الأصحاح نفسِه — علامةُ أن يوحنا ممسكٌ بالطرفين: العطيةُ حقيقية، وهي تُنال بالإيمان. الملفُّ الكامل سيَرِد في الطبقة الثالثة من صفحة يوحنا ٦ المقبلة."],
+["الديداخي: مائدة الأجيال الأولى","هذا الدليلُ لجماعاتٍ مسيحية (أواخر القرن الأول) يحوي أقدمَ صلوات المائدة خارج العهد الجديد: شكرٌ على الكأس وعلى الخبز المكسور، مع صورةٍ صارت شهيرة — كما كان هذا الخبزُ حَبًّا مبعثرًا على التلال فجُمع واحدًا، هكذا فلتُجمَع الكنيسةُ من أقاصي الأرض إلى الملكوت. شاهدٌ ثمين: منذ الجيل الأول، الوليمةُ في المركز، وهي شكرٌ."],
+["مسألة التاريخ","تقدّم الأناجيلُ الإزائية العشاءَ وليمةَ فصح؛ ويضع يوحنا موتَ يسوع في ساعة ذبح الحملان. ملفُّ الحلول (تقاويمُ متزامنة، وليمةٌ مقدَّمة، قصدٌ يوحنّاوي) معروضٌ في الخطوة ٣ من المسار وفي ملف المراجع. والتقليدان يقولان الشيءَ نفسَه من طريقين: يسوع هو الفصح."],
+["من الوليمة الأولى إلى الأخيرة","يُفتَح الكتابُ بطعامٍ أُخذ ضدَّ الله (تكوين ٣: ٦) ويُختَم بوليمةٍ يقدّمها الله (رؤيا ١٩: ٩). وبينهما: مائدةُ ملكي صادق، والفصحُ، والمنُّ، والعشاء. دخل الشرُّ من فمٍ؛ وتعود الشركةُ من مائدة. لعلّها أوسعُ مقابلةٍ في الكتاب كلِّه."]],
+nlbl:"القسم التالي",ntitle:"كتابٌ جدير بالثقة",
+ntext:"الأساس: مخطوطاتٌ مؤرَّخة، ونبوءاتٌ يمكن التحقق منها، وتماسكُ خيطٍ واحد — وأجوبةُ الاعتراضات.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>قسم «التقدمة» — صفحة محورية؛ ولكلِّ محطةٍ صفحتُها المفصّلة لاحقًا."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

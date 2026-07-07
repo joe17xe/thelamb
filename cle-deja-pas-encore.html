@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Déjà / Pas encore — la clé de lecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Clé de lecture · Déjà / Pas encore",
+eyebrow:"Luc 17:21 · Hébreux 2:8 — la clé qui empêche de mal lire toute la Bible",
+verse:"« Le royaume de Dieu est <span class='g'>au milieu de vous</span>… »<br>« …mais nous ne voyons pas encore que tout lui soit soumis. »",
+scene:"Une question hante le lecteur : si le Christ a vaincu, pourquoi le mal continue-t-il ? La réponse tient en deux mots que tout le Nouveau Testament tient ensemble : déjà, et pas encore. C'est la clé de lecture la plus utile de toute la Bible — sans elle, on se trompe partout.",
+stations:[
+{ctx:"L'image mère · l'aube",t:"Le soleil s'est levé — il ne fait pas encore plein jour",img:"Pensez à l'aube. La nuit est finie, la lumière est là — mais midi n'est pas encore venu.",
+p:"Voici l'image à garder pour tout comprendre. À l'aube, deux choses sont vraies en même temps : le soleil s'est levé (c'est décidé, irréversible) et le plein jour n'est pas encore là (la lumière grandit encore). Personne ne dit « il fait nuit » ; personne ne dit « il est midi ». Le Nouveau Testament vit exactement dans cette lumière d'aube : « la nuit est avancée, le jour approche » (Romains 13:12). Le Christ est le soleil levé (Malachie 4:2 l'appelait « le soleil de justice ») ; son retour sera le plein midi. Entre les deux, nous marchons dans la lumière du matin.",
+o:["Malachie 4:2","Pour vous qui craignez mon nom se lèvera le soleil de la justice.",],
+n:["Romains 13:12","La nuit est avancée, le jour approche. Dépouillons-nous des œuvres des ténèbres."]},
+{ctx:"Le DÉJÀ · ce qui est accompli",t:"La victoire est remportée",img:"À la croix et au matin de Pâques, l'essentiel est fait — c'est décidé, pour toujours.",
+p:"Le « déjà » est massif. Le Christ a vaincu : « tout est accompli » (Jean 19:30). Le règne a commencé : « le royaume de Dieu est au milieu de vous » (Luc 17:21). Le croyant est déjà transféré « dans le royaume du Fils » (Colossiens 1:13), déjà « ressuscité avec lui » (Colossiens 2:12), déjà pardonné, déjà enfant de Dieu (1 Jean 3:2). Rien de tout cela n'est « en attente » : c'est acquis. La résurrection l'a scellé (voir notre page dédiée). Le soleil est levé — ce fait ne se défera plus.",
+o:["Ésaïe 9:5","Un enfant nous est né… la domination reposera sur son épaule.",],
+n:["Colossiens 1:13","Il nous a délivrés de la puissance des ténèbres et transportés dans le royaume de son Fils."]},
+{ctx:"Le PAS ENCORE · ce qui reste attendu",t:"La plénitude n'est pas venue",img:"On voit encore la mort, les larmes, le mal. Le plein jour n'est pas là.",
+p:"Et pourtant. Nous mourons encore, nous pleurons encore, le mal continue. L'épître aux Hébreux le dit sans détour : tout lui est soumis en droit, « mais maintenant nous ne voyons pas encore que tout lui soit soumis » (2:8). La création « soupire » et attend (Romains 8:22). La mort, « le dernier ennemi », n'est pas encore détruite (1 Corinthiens 15:26). Le Royaume est là comme une semence, pas encore comme la moisson ; comme des arrhes, pas encore comme l'héritage entier (Éphésiens 1:14). Le plein midi est promis, il n'est pas arrivé.",
+o:["Psaume 110:1","Assieds-toi à ma droite, jusqu'à ce que je fasse de tes ennemis ton marchepied.",],
+n:["Hébreux 2:8","Tu as mis toutes choses sous ses pieds… mais nous ne voyons pas encore que tout lui soit soumis."]},
+{ctx:"La tension féconde · comment vivre entre les deux",t:"Ni triomphalisme, ni découragement",img:"Deux erreurs symétriques ; entre elles, l'espérance qui tient debout.",
+p:"Cette clé corrige deux erreurs opposées. Trop de « déjà » (triomphalisme) : croire que tout devrait déjà être parfait — d'où la déception amère quand la maladie ou le mal frappent. Trop de « pas encore » (défaitisme) : croire que rien n'a vraiment changé, et vivre sans joie ni puissance. La foi biblique tient les deux mains ouvertes : la victoire est certaine (donc l'espérance est solide), la plénitude est à venir (donc la patience est nécessaire). C'est pourquoi le chrétien prie « que ton règne vienne » (Matthieu 6:10) : il est venu, il vient, il viendra.",
+o:["Habacuc 2:3","La vision s'accomplira au temps fixé… si elle tarde, attends-la.",],
+n:["Romains 8:24-25","Nous avons été sauvés en espérance… nous l'attendons avec persévérance."]}],
+vh:"Un mot, trois temps",
+vintro:"La plupart des réalités du salut se conjuguent à trois temps — passé accompli, présent en cours, futur assuré :",
+verbs:["Le Royaume<small>inauguré (Lc 17:21) · en croissance · consommé (Ap 11:15)</small>","Le salut<small>vous avez été sauvés (Ép 2:8) · vous êtes sauvés · vous serez sauvés (Rm 5:9)</small>","La résurrection<small>ressuscités avec lui (Col 2:12) · vie nouvelle · corps ressuscité (1 Co 15)</small>","La victoire<small>le prince de ce monde jugé (Jn 16:11) · combat · Satan écrasé (Rm 16:20)</small>"],
+vp:"Regardez le salut se conjuguer : « vous avez été sauvés » (Éphésiens 2:8, accompli), « vous êtes sauvés » (1 Corinthiens 1:18, en cours), « nous serons sauvés » (Romains 5:9, à venir). Ce n'est pas une contradiction, c'est une profondeur : le même salut est un fait acquis, un chemin présent et une promesse certaine. Apprendre à repérer ces trois temps, c'est cesser de buter sur des versets qui semblent se contredire — et découvrir qu'ils s'emboîtent. C'est la grammaire cachée du Nouveau Testament.",
+ch:"Pourquoi cette clé change tout",
+c1:["Ce que confessent tous les chrétiens","Le Royaume de Dieu est réellement inauguré en Christ et pas encore pleinement manifesté ; le croyant vit dans cet « entre-deux » ; le retour du Christ apportera la plénitude. Catholiques et évangéliques partagent ce cadre, même s'ils en accentuent différemment les aspects."],
+c2:["Ce que disent les textes","« Le royaume est au milieu de vous » (Luc 17:21) · « Nous ne voyons pas encore » (Hébreux 2:8) · « Déjà, et pas encore » est le rythme de : Romains 8:23-24 ; 1 Jean 3:2 (« dès à présent nous sommes enfants… ce que nous serons n'a pas encore été manifesté ») ; Philippiens 3:12 (« non que j'aie déjà atteint… je cours »)."],
+c3:["Ce que nous n'imposons pas","Les traditions chrétiennes situent différemment le curseur — sur la place de l'Église, des sacrements, du millénium, de la fin des temps. Le site expose le cadre commun (déjà/pas encore) sans trancher ces débats-là : ils relèvent de votre confession. Notre but est de donner la clé, pas de fermer toutes les portes qu'elle ouvre."],
+dh:"Aller plus loin",
+deep:[
+["D'où vient cette clé ? De Jésus lui-même","Les paraboles du Royaume sont déjà « déjà / pas encore » : le grain semé qui pousse en secret (Marc 4:26-29), le levain caché qui travaille toute la pâte (Matthieu 13:33), le filet qui ramasse tout mais qu'on ne triera qu'à la fin (13:47-50). Le Royaume est présent et agissant (déjà) mais discret et inachevé (pas encore). Jésus n'a pas enseigné un Royaume seulement futur ni seulement présent : les deux, toujours."],
+["« Les prémices » et « les arrhes » : deux images de banquier et de paysan","Le Nouveau Testament a deux mots techniques pour dire le « déjà qui garantit le pas encore ». Les prémices (aparchè) : la première gerbe qui prouve que la moisson vient (Romains 8:23). Les arrhes (arrabôn) : l'acompte qui engage à payer le tout — l'Esprit est « les arrhes de notre héritage » (Éphésiens 1:14). Dieu a versé un acompte réel ; le solde est certain. Le présent n'est pas un vide d'attente : c'est une avance déjà touchée."],
+["Le Psaume 110 : le « jusqu'à ce que »","Le verset le plus cité de l'Ancien Testament par le Nouveau (« assieds-toi à ma droite, JUSQU'À CE QUE… », Ps 110:1) est en lui-même un « déjà / pas encore ». Le Christ est déjà intronisé à la droite de Dieu (déjà) ; ses ennemis ne sont pas encore tous soumis (pas encore) — c'est le sens du « jusqu'à ce que ». 1 Corinthiens 15:25 le commente : « il faut qu'il règne jusqu'à ce qu'il ait mis tous ses ennemis sous ses pieds ». Le règne présent et la victoire finale tiennent dans un seul verset."],
+["La bonne réponse à la souffrance","Cette clé n'est pas une abstraction : c'est une consolation. Elle interdit deux mensonges. « Si tu avais assez de foi, tu ne souffrirais pas » (le mensonge du tout-déjà). « Rien ne change vraiment, Dieu est absent » (le mensonge du tout-pas-encore). La vérité : la victoire est réelle ET le combat continue ; les larmes sont légitimes ET elles seront essuyées (Apocalypse 21:4). L'espérance chrétienne n'est pas un optimisme naïf, c'est une certitude patiente."],
+["Le risque que cette clé écarte : le concordisme naïf","Sans « déjà / pas encore », on tord les textes : soit on prétend que toutes les promesses sont déjà réalisées à la lettre (et l'on force le réel), soit on renvoie tout à un futur lointain (et l'on vide le présent). La clé permet de dire juste : telle prophétie a un premier accomplissement en Christ (déjà) et un accomplissement plénier à son retour (pas encore) — sans forcer, sans esquiver. C'est l'outil qui rend nos lectures du Fil Rouge à la fois audacieuses et honnêtes."]],
+nlbl:"Revenir au fil",ntitle:"Explorer le Fil Rouge — 154 correspondances",
+ntext:"Muni de cette clé, relisez les correspondances : chacune a son « déjà » accompli et, parfois, son « pas encore » à venir.",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Clé de lecture « Déjà / Pas encore » — la grammaire cachée du Nouveau Testament."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Reading key · Already / Not yet",
+eyebrow:"Luke 17:21 · Hebrews 2:8 — the key that keeps you from misreading the whole Bible",
+verse:"“The kingdom of God is <span class='g'>among you</span>…”<br>“…but we don't yet see all things subjected to him.”",
+scene:"A question haunts the reader: if Christ has won, why does evil go on? The answer holds in two words the whole New Testament keeps together: already, and not yet. It is the most useful reading key in all the Bible — without it, you go wrong everywhere.",
+stations:[
+{ctx:"The mother image · the dawn",t:"The sun has risen — it is not yet full day",img:"Think of dawn. The night is over, the light is here — but noon has not yet come.",
+p:"Here is the image to keep for understanding everything. At dawn, two things are true at once: the sun has risen (it is settled, irreversible) and full day is not yet here (the light is still growing). No one says “it is night”; no one says “it is noon”. The New Testament lives in exactly this dawn light: “the night is far gone, the day is near” (Romans 13:12). Christ is the risen sun (Malachi 4:2 called him “the sun of righteousness”); his return will be full noon. Between the two, we walk in the light of morning.",
+o:["Malachi 4:2","To you who fear my name the sun of righteousness will rise."],
+n:["Romans 13:12","The night is far gone, and the day is near. Let's throw off the works of darkness."]},
+{ctx:"The ALREADY · what is accomplished",t:"The victory is won",img:"At the cross and on Easter morning, the essential is done — settled, forever.",
+p:"The “already” is massive. Christ has won: “it is finished” (John 19:30). The reign has begun: “the kingdom of God is among you” (Luke 17:21). The believer is already transferred “into the kingdom of the Son” (Colossians 1:13), already “raised with him” (Colossians 2:12), already forgiven, already a child of God (1 John 3:2). None of this is “pending”: it is acquired. The resurrection sealed it (see our dedicated page). The sun has risen — this fact will not be undone.",
+o:["Isaiah 9:6","For to us a child is born… the government will be on his shoulders."],
+n:["Colossians 1:13","He delivered us from the power of darkness and transferred us into the kingdom of his Son."]},
+{ctx:"The NOT YET · what is still awaited",t:"The fullness has not come",img:"We still see death, tears, evil. Full day is not here.",
+p:"And yet. We still die, we still weep, evil continues. The letter to the Hebrews says it plainly: all is subjected to him by right, “but now we don't yet see all things subjected to him” (2:8). Creation “groans” and waits (Romans 8:22). Death, “the last enemy”, is not yet destroyed (1 Corinthians 15:26). The Kingdom is here as a seed, not yet as the harvest; as a deposit, not yet as the whole inheritance (Ephesians 1:14). Full noon is promised, it has not arrived.",
+o:["Psalm 110:1","Sit at my right hand, until I make your enemies your footstool."],
+n:["Hebrews 2:8","You put all things in subjection under his feet… but we don't yet see all things subjected to him."]},
+{ctx:"The fruitful tension · how to live between the two",t:"Neither triumphalism nor discouragement",img:"Two symmetrical errors; between them, the hope that stands.",
+p:"This key corrects two opposite errors. Too much “already” (triumphalism): believing all should already be perfect — hence bitter disappointment when illness or evil strike. Too much “not yet” (defeatism): believing nothing has really changed, and living without joy or power. Biblical faith holds both hands open: the victory is certain (so hope is solid), the fullness is to come (so patience is needed). That is why the Christian prays “your kingdom come” (Matthew 6:10): it has come, it is coming, it will come.",
+o:["Habakkuk 2:3","The vision is yet for the appointed time… though it delays, wait for it."],
+n:["Romans 8:24-25","We were saved in hope… we wait for it with patience."]}],
+vh:"One word, three tenses",
+vintro:"Most realities of salvation are conjugated in three tenses — accomplished past, ongoing present, assured future:",
+verbs:["The Kingdom<small>inaugurated (Lk 17:21) · growing · consummated (Rev 11:15)</small>","Salvation<small>you were saved (Eph 2:8) · you are being saved · you will be saved (Rom 5:9)</small>","Resurrection<small>raised with him (Col 2:12) · new life · risen body (1 Cor 15)</small>","Victory<small>the prince of this world judged (Jn 16:11) · battle · Satan crushed (Rom 16:20)</small>"],
+vp:"Watch salvation conjugate: “you have been saved” (Ephesians 2:8, accomplished), “you are being saved” (1 Corinthians 1:18, ongoing), “we will be saved” (Romans 5:9, to come). This is no contradiction, it is a depth: the same salvation is an acquired fact, a present road, and a certain promise. Learning to spot these three tenses is to stop stumbling over verses that seem to contradict — and to find they interlock. It is the hidden grammar of the New Testament.",
+ch:"Why this key changes everything",
+c1:["What all Christians confess","The Kingdom of God is truly inaugurated in Christ and not yet fully manifested; the believer lives in this “in-between”; the return of Christ will bring fullness. Catholics and Evangelicals share this frame, even if they stress its aspects differently."],
+c2:["What the texts say","“The kingdom is among you” (Luke 17:21) · “We don't yet see” (Hebrews 2:8) · “Already, and not yet” is the rhythm of: Romans 8:23-24; 1 John 3:2 (“now we are children… what we will be has not yet appeared”); Philippians 3:12 (“not that I have already obtained… I press on”)."],
+c3:["What we do not impose","Christian traditions place the cursor differently — on the role of the Church, the sacraments, the millennium, the end times. The site sets out the common frame (already/not yet) without settling those debates: they belong to your confession. Our aim is to give the key, not to close all the doors it opens."],
+dh:"Go deeper",
+deep:[
+["Where does this key come from? From Jesus himself","The Kingdom parables are already “already / not yet”: the seed sown that grows in secret (Mark 4:26-29), the hidden leaven working through the dough (Matthew 13:33), the net gathering everything but sorted only at the end (13:47-50). The Kingdom is present and active (already) but hidden and unfinished (not yet). Jesus taught neither a merely future nor a merely present Kingdom: both, always."],
+["“Firstfruits” and “deposit”: a farmer's and a banker's image","The New Testament has two technical words for the “already that guarantees the not yet”. Firstfruits (aparchē): the first sheaf proving the harvest is coming (Romans 8:23). Deposit (arrabōn): the down-payment binding one to pay the whole — the Spirit is “the deposit of our inheritance” (Ephesians 1:14). God has paid a real installment; the balance is certain. The present is not an empty wait: it is an advance already received."],
+["Psalm 110: the “until”","The verse most quoted by the New Testament (“sit at my right hand, UNTIL…”, Ps 110:1) is itself an “already / not yet”. Christ is already enthroned at God's right hand (already); his enemies are not yet all subdued (not yet) — that is the sense of “until”. 1 Corinthians 15:25 comments: “he must reign until he has put all his enemies under his feet”. Present reign and final victory hold in a single verse."],
+["The right answer to suffering","This key is no abstraction: it is a consolation. It forbids two lies. “If you had enough faith, you would not suffer” (the all-already lie). “Nothing really changes, God is absent” (the all-not-yet lie). The truth: the victory is real AND the battle goes on; tears are legitimate AND they will be wiped away (Revelation 21:4). Christian hope is not naive optimism, it is patient certainty."],
+["The risk this key removes: naive concordism","Without “already / not yet”, one twists the texts: either claiming all promises are already literally realized (forcing reality), or deferring everything to a distant future (emptying the present). The key lets us say it rightly: a given prophecy has a first fulfilment in Christ (already) and a full fulfilment at his return (not yet) — without forcing, without dodging. It is the tool that makes our Scarlet Thread readings both bold and honest."]],
+nlbl:"Back to the thread",ntitle:"Explore the Scarlet Thread — 154 correspondences",
+ntext:"With this key in hand, reread the correspondences: each has its accomplished “already” and, sometimes, its “not yet” to come.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Reading key “Already / Not yet” — the hidden grammar of the New Testament."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"مفتاح قراءة · تمّ / لم يتمّ بعد",
+eyebrow:"لوقا ١٧: ٢١ · عبرانيين ٢: ٨ — المفتاحُ الذي يمنعك من إساءة قراءة الكتاب كلِّه",
+verse:"«مَلَكُوتُ اللهِ <span class='g'>دَاخِلَكُمْ</span>…»<br>«…وَلكِنَّنَا الآنَ لَسْنَا نَرَى الْكُلَّ بَعْدُ مُخْضَعًا لَهُ.»",
+scene:"سؤالٌ يلاحق القارئ: إن كان المسيحُ قد انتصر، فلماذا يستمرّ الشرّ؟ الجوابُ في كلمتين يمسكهما العهدُ الجديد معًا: تمّ، ولم يتمّ بعد. إنه أنفعُ مفتاح قراءةٍ في الكتاب كلِّه — بدونه تُخطئ في كل مكان.",
+stations:[
+{ctx:"الصورة الأم · الفجر",t:"أشرقت الشمس — ولم يصر نهارًا كاملًا بعد",img:"فكّر في الفجر. انتهى الليل، والنورُ حاضر — لكن الظهيرةَ لم تأتِ بعد.",
+p:"هذه هي الصورةُ التي نحفظها لنفهم كلَّ شيء. عند الفجر يصدق أمران معًا: أشرقت الشمسُ (أمرٌ مقرَّر لا رجعةَ فيه)، والنهارُ الكامل لم يأتِ بعد (النورُ ما زال ينمو). لا أحدَ يقول «إنه ليل»؛ ولا أحدَ يقول «إنها ظهيرة». والعهدُ الجديد يعيش في ضوء الفجر هذا بالضبط: «قَدْ تَنَاهَى اللَّيْلُ وَتَقَارَبَ النَّهَارُ» (رومية ١٣: ١٢). المسيحُ هو الشمسُ المشرقة (سمّاه ملاخي ٤: ٢ «شمسَ البرّ»)؛ ورجوعُه سيكون الظهيرةَ الكاملة. وبينهما نسير في نور الصباح.",
+o:["ملاخي ٤: ٢","تُشْرِقُ لَكُمْ أَيُّهَا الْمُتَّقُونَ اسْمِي شَمْسُ الْبِرِّ."],
+n:["رومية ١٣: ١٢","قَدْ تَنَاهَى اللَّيْلُ وَتَقَارَبَ النَّهَارُ، فَلْنَخْلَعْ أَعْمَالَ الظُّلْمَةِ."]},
+{ctx:"«تمّ» · ما قد أُكمل",t:"النصرُ محرَز",img:"عند الصليب وصباح الفصح، أُنجز الجوهري — مقرَّرًا، إلى الأبد.",
+p:"«التمّ» هائل. المسيحُ انتصر: «قَدْ أُكْمِلَ» (يوحنا ١٩: ٣٠). والملكُ ابتدأ: «مَلَكُوتُ اللهِ دَاخِلَكُمْ» (لوقا ١٧: ٢١). والمؤمنُ منقولٌ سلفًا «إِلَى مَلَكُوتِ ابْنِهِ» (كولوسي ١: ١٣)، «مُقَامٌ معه» سلفًا (كولوسي ٢: ١٢)، مغفورٌ له سلفًا، وابنٌ لله سلفًا (١ يوحنا ٣: ٢). لا شيءَ من هذا «قيد الانتظار»: بل هو مُقتنًى. والقيامةُ ختمته (انظر صفحتنا المخصصة). أشرقت الشمس — وهذه الحقيقةُ لن تنتقض.",
+o:["إشعياء ٩: ٦","لأَنَّهُ يُولَدُ لَنَا وَلَدٌ… وَتَكُونُ الرِّيَاسَةُ عَلَى كَتِفِهِ."],
+n:["كولوسي ١: ١٣","الَّذِي أَنْقَذَنَا مِنْ سُلْطَانِ الظُّلْمَةِ وَنَقَلَنَا إِلَى مَلَكُوتِ ابْنِ مَحَبَّتِهِ."]},
+{ctx:"«لم يتمّ بعد» · ما زال منتظَرًا",t:"لم يأتِ الملءُ بعد",img:"ما زلنا نرى الموتَ والدموعَ والشرّ. النهارُ الكامل لم يحضر.",
+p:"ومع ذلك. ما زلنا نموت، وما زلنا نبكي، والشرُّ مستمر. تقولها الرسالةُ إلى العبرانيين بلا مواربة: كلُّ شيءٍ مُخضَعٌ له بالحق، «وَلكِنَّنَا الآنَ لَسْنَا نَرَى الْكُلَّ بَعْدُ مُخْضَعًا لَهُ» (٢: ٨). والخليقةُ «تَئِنُّ» وتنتظر (رومية ٨: ٢٢). والموتُ، «العدوُّ الأخير»، لم يُبطَل بعد (١ كورنثوس ١٥: ٢٦). الملكوتُ حاضرٌ كبذرة، لا كحصادٍ بعد؛ كعربونٍ، لا كميراثٍ كامل بعد (أفسس ١: ١٤). الظهيرةُ الكاملة موعودة، لم تصل.",
+o:["مزمور ١١٠: ١","اجْلِسْ عَنْ يَمِينِي حَتَّى أَضَعَ أَعْدَاءَكَ مَوْطِئًا لِقَدَمَيْكَ."],
+n:["عبرانيين ٢: ٨","أَخْضَعْتَ كُلَّ شَيْءٍ تَحْتَ قَدَمَيْهِ… وَلكِنَّنَا الآنَ لَسْنَا نَرَى الْكُلَّ بَعْدُ مُخْضَعًا لَهُ."]},
+{ctx:"التوتر المثمر · كيف نعيش بين الاثنين",t:"لا تباهٍ، ولا يأس",img:"خطآن متناظران؛ وبينهما الرجاءُ الذي يقف.",
+p:"هذا المفتاحُ يصحّح خطأين متقابلين. إفراطٌ في «التمّ» (التباهي): ظنُّ أن كلَّ شيءٍ ينبغي أن يكون كاملًا الآن — فتأتي الخيبةُ المرّة حين يضرب المرضُ أو الشرّ. وإفراطٌ في «لم يتمّ» (الانهزام): ظنُّ أن لا شيءَ تغيّر حقًّا، فيُعاش بلا فرحٍ ولا قوة. والإيمانُ الكتابي يمسك باليدين مفتوحتين: النصرُ أكيد (فالرجاءُ صلب)، والملءُ آتٍ (فالصبرُ لازم). لهذا يصلّي المسيحي «لِيَأْتِ مَلَكُوتُكَ» (متى ٦: ١٠): قد أتى، وهو آتٍ، وسيأتي.",
+o:["حبقوق ٢: ٣","الرُّؤْيَا بَعْدُ إِلَى الْمِيعَادِ… إِنْ تَوَانَتْ فَانْتَظِرْهَا."],
+n:["رومية ٨: ٢٤-٢٥","بِالرَّجَاءِ خَلَصْنَا… فَإِنَّنَا نَتَوَقَّعُهُ بِالصَّبْرِ."]}],
+vh:"كلمةٌ، وثلاثةُ أزمنة",
+vintro:"أكثرُ حقائق الخلاص تُصرَّف في ثلاثة أزمنة — ماضٍ مُكمَل، وحاضرٌ جارٍ، ومستقبلٌ مضمون:",
+verbs:["الملكوت<small>مُفتَتَح (لو ١٧: ٢١) · نامٍ · مُكمَّل (رؤ ١١: ١٥)</small>","الخلاص<small>خَلَصْتم (أف ٢: ٨) · تَخلُصون · ستَخلُصون (رو ٥: ٩)</small>","القيامة<small>أُقمتم معه (كو ٢: ١٢) · حياة جديدة · جسدٌ مُقام (١كو ١٥)</small>","النصر<small>رئيسُ العالم قد دِين (يو ١٦: ١١) · جهاد · يُسحق الشيطان (رو ١٦: ٢٠)</small>"],
+vp:"انظر الخلاصَ يُصرَّف: «قَدْ خَلَصْتُمْ» (أفسس ٢: ٨، مُكمَل)، «الَّذِينَ يَخْلُصُونَ» (١ كورنثوس ١: ١٨، جارٍ)، «سَنَخْلُصُ» (رومية ٥: ٩، آتٍ). ليس هذا تناقضًا بل عمقًا: الخلاصُ نفسُه واقعةٌ مُقتناة، وطريقٌ حاضر، ووعدٌ أكيد. وتعلُّمُ رصدِ هذه الأزمنة الثلاثة هو أن تكفّ عن التعثّر بآياتٍ تبدو متناقضة — وتكتشف أنها متشابكة. إنها النحوُ الخفيّ للعهد الجديد.",
+ch:"لماذا يغيّر هذا المفتاحُ كلَّ شيء",
+c1:["ما يعترف به المسيحيون جميعًا","ملكوتُ الله مُفتَتَحٌ حقًّا في المسيح ولم يتجلَّ بملئه بعد؛ والمؤمنُ يعيش في هذا «البَين-بَين»؛ ورجوعُ المسيح سيأتي بالملء. والكاثوليك والإنجيليون يتشاركون هذا الإطار، وإن شدّدوا على جوانبه تشديدًا مختلفًا."],
+c2:["ما تقوله النصوص","«الْمَلَكُوتُ دَاخِلَكُمْ» (لوقا ١٧: ٢١) · «لَسْنَا نَرَى بَعْدُ» (عبرانيين ٢: ٨) · و«تمّ ولم يتمّ» هو إيقاعُ: رومية ٨: ٢٣-٢٤؛ ١ يوحنا ٣: ٢ («الآنَ نَحْنُ أَوْلاَدُ اللهِ… وَلَمْ يُظْهَرْ بَعْدُ مَاذَا سَنَكُونُ»)؛ فيلبي ٣: ١٢ («لَيْسَ أَنِّي قَدْ نِلْتُ… وَلكِنِّي أَسْعَى»)."],
+c3:["ما لا نفرضه","التقاليدُ المسيحية تضع المؤشّرَ في مواضع مختلفة — في دور الكنيسة، والأسرار، والألف سنة، وآخر الزمان. يعرض الموقعُ الإطارَ المشترك (تمّ/لم يتمّ) من دون أن يحسم تلك الجدالات: فهي من شأن كنيستك. مقصدُنا أن نعطي المفتاح، لا أن نغلق كلَّ الأبواب التي يفتحها."],
+dh:"للتعمّق",
+deep:[
+["من أين هذا المفتاح؟ من يسوع نفسه","أمثالُ الملكوت هي أصلًا «تمّ / لم يتمّ»: الزرعُ المبذورُ ينمو سرًّا (مرقس ٤: ٢٦-٢٩)، والخميرةُ المخفيّة تعمل في العجين كلِّه (متى ١٣: ٣٣)، والشبكةُ تجمع كلَّ شيء لكن لا تُفرَز إلا في النهاية (١٣: ٤٧-٥٠). الملكوتُ حاضرٌ وفاعل (تمّ) لكنه خفيٌّ وغيرُ مكتمل (لم يتمّ). لم يعلّم يسوع ملكوتًا مستقبليًّا فقط ولا حاضرًا فقط: بل الاثنين، دائمًا."],
+["«الباكورة» و«العربون»: صورةُ فلاحٍ وصورةُ صيرفي","للعهد الجديد كلمتان تقنيتان لـ«التمّ الذي يضمن ما لم يتمّ». الباكورة: أولُ حزمةٍ تُثبت أن الحصادَ آتٍ (رومية ٨: ٢٣). والعربون: الدفعةُ التي تُلزم بدفع الكل — الروحُ هو «عَرْبُونُ مِيرَاثِنَا» (أفسس ١: ١٤). دفع اللهُ دفعةً حقيقية؛ والباقي أكيد. الحاضرُ ليس فراغَ انتظار: بل سُلفةٌ قُبضت سلفًا."],
+["المزمور ١١٠: كلمة «حتى»","أكثرُ آيةٍ يقتبسها العهدُ الجديد («اجْلِسْ عَنْ يَمِينِي حَتَّى…»، مز ١١٠: ١) هي بذاتها «تمّ / لم يتمّ». المسيحُ متوَّجٌ سلفًا عن يمين الله (تمّ)؛ وأعداؤه لم يُخضَعوا كلُّهم بعد (لم يتمّ) — وهذا معنى «حتى». ويعلّق ١ كورنثوس ١٥: ٢٥: «يَجِبُ أَنْ يَمْلِكَ حَتَّى يَضَعَ جَمِيعَ الأَعْدَاءِ تَحْتَ قَدَمَيْهِ». المُلكُ الحاضر والنصرُ النهائي في آيةٍ واحدة."],
+["الجوابُ الصحيح على الألم","هذا المفتاحُ ليس تجريدًا: بل تعزية. يمنع كذبتين. «لو كان لك إيمانٌ كافٍ لَما تألمت» (كذبةُ التمّ-الكامل). «لا شيءَ يتغيّر حقًّا، اللهُ غائب» (كذبةُ اللا-يتمّ-الكامل). والحقيقة: النصرُ حقيقيّ والجهادُ مستمر؛ والدموعُ مشروعة وستُمسَح (رؤيا ٢١: ٤). الرجاءُ المسيحي ليس تفاؤلًا ساذجًا، بل يقينًا صبورًا."],
+["الخطرُ الذي يُبعده هذا المفتاح: التوفيق الساذج","بلا «تمّ / لم يتمّ»، تُلوى النصوص: إما ادّعاءُ أن كلَّ الوعود قد تحققت حرفيًّا (فيُقسَر الواقع)، وإما إرجاءُ كلِّ شيءٍ إلى مستقبلٍ بعيد (فيُفرَّغ الحاضر). المفتاحُ يتيح القولَ الصحيح: لهذه النبوءة إتمامٌ أول في المسيح (تمّ) وإتمامٌ كامل عند رجوعه (لم يتمّ) — بلا قسرٍ ولا تهرّب. إنها الأداةُ التي تجعل قراءاتِنا لـ«الخيط الأحمر» جريئةً وأمينةً معًا."]],
+nlbl:"عودةٌ إلى الخيط",ntitle:"استكشف الخيط الأحمر — ١٥٤ مطابقة",
+ntext:"وبهذا المفتاح في يدك، أعد قراءةَ المطابقات: لكلٍّ منها «تمُّها» المُنجَز، وأحيانًا «ما لم يتمّ» الآتي.",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مفتاح القراءة «تمّ / لم يتمّ» — النحوُ الخفيّ للعهد الجديد."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="prototype-fil-rouge-v3.html"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

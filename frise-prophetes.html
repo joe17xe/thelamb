@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les veilleurs — mille ans d'annonces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33;
+    --loi:#c98a5e;--royaume:#d3a94f;--exil:#6b9bd8;--retour:#7cb47c;--attente:#a583d6;--christ:#d05c5c}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,serif;line-height:1.6}
+  html[dir="rtl"] body{font-family:'Amiri',serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .ui{font-family:system-ui,sans-serif}
+  .top{max-width:1160px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:48px 22px 20px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(30px,5.5vw,50px);line-height:1.12}
+  html[dir="rtl"] h1{font-family:'Amiri',serif;font-weight:700}
+  h1 em{font-style:italic;color:var(--gold)}
+  .lede{max-width:640px;margin:16px auto 0;color:var(--muted);font-size:16px}
+  /* Les 6 grandes phases — "l'AT expliqué" */
+  .phases{max-width:1160px;margin:24px auto 0;padding:0 16px}
+  .ptitle{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:16px}
+  html[dir="rtl"] .ptitle{letter-spacing:.05em}
+  .pflow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  @media(max-width:860px){.pflow{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.pflow{grid-template-columns:1fr}}
+  .phase{background:var(--bg2);border:1px solid var(--line);border-top:3px solid var(--pc,var(--gold));border-radius:8px;padding:14px 14px}
+  .phase .pnum{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.2em;color:var(--pc,var(--gold))}
+  .phase h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;margin:4px 0 2px}
+  html[dir="rtl"] .phase h3{font-family:'Amiri',serif}
+  .phase .pdate{font-family:system-ui,sans-serif;font-size:11px;color:var(--muted);margin-bottom:6px}
+  .phase p{font-size:13px;color:#c6c0b2}
+  .phase .pwho{font-style:italic;color:var(--gold);font-size:12.5px;margin-top:6px;display:block}
+  html[dir="rtl"] .phase .pwho{font-style:normal}
+  /* Frise des prophètes */
+  .filter{max-width:1160px;margin:34px auto 6px;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .fchip{font-family:system-ui,sans-serif;font-size:12px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px;cursor:pointer;display:flex;align-items:center;gap:6px}
+  .fchip .d{width:8px;height:8px;border-radius:50%;background:var(--c,#888)}
+  .fchip[aria-pressed="true"]{color:var(--ink);border-color:var(--c,var(--gold));background:color-mix(in srgb,var(--c,#888) 12%,transparent)}
+  .timeline{max-width:1160px;margin:14px auto 0;padding:0 16px}
+  .tlwrap{position:relative;overflow-x:auto;padding:20px 0 8px}
+  .axis{position:relative;height:2px;background:linear-gradient(90deg,var(--loi),var(--royaume),var(--exil),var(--retour),var(--attente),var(--christ));min-width:900px;margin:0 10px}
+  html[dir="rtl"] .axis{background:linear-gradient(270deg,var(--loi),var(--royaume),var(--exil),var(--retour),var(--attente),var(--christ))}
+  .tick{position:absolute;top:-6px;width:1px;height:14px;background:var(--line)}
+  .tlabel{position:absolute;top:14px;font-family:system-ui,sans-serif;font-size:10px;color:#6b6f85;transform:translateX(-50%);white-space:nowrap}
+  .prow{position:relative;min-width:900px;margin:26px 10px 0;height:auto}
+  .pnode{position:absolute;transform:translateX(-50%);width:96px;text-align:center;cursor:pointer}
+  html[dir="rtl"] .pnode{transform:translateX(50%)}
+  .pnode .dot{width:13px;height:13px;border-radius:50%;background:var(--c,var(--gold));margin:0 auto 5px;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--c,var(--gold));transition:transform .15s}
+  .pnode:hover .dot{transform:scale(1.35)}
+  .pnode .pn{font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.1}
+  html[dir="rtl"] .pnode .pn{font-family:'Amiri',serif}
+  .pnode .pd{font-family:system-ui,sans-serif;font-size:9.5px;color:var(--muted)}
+  .pnode.dim{opacity:.2}
+  .rows{position:relative}
+  /* Panneau détail */
+  .panel{max-width:820px;margin:30px auto 0;padding:0 18px;min-height:80px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:26px 28px;position:relative;overflow:hidden;opacity:0;transform:translateY(8px);transition:.4s}
+  .card.show{opacity:1;transform:none}
+  .card::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:var(--pc,var(--gold))}
+  .card .badge{display:inline-block;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--pc,var(--gold));border:1px solid color-mix(in srgb,var(--pc,var(--gold)) 45%,transparent);border-radius:999px;padding:4px 12px;margin-bottom:12px}
+  html[dir="rtl"] .card .badge{letter-spacing:.04em}
+  .card h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(24px,4vw,32px);margin-bottom:2px}
+  html[dir="rtl"] .card h2{font-family:'Amiri',serif;font-weight:700}
+  .card .when{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .card .when{letter-spacing:.03em}
+  .card .lbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}
+  html[dir="rtl"] .card .lbl{letter-spacing:.03em}
+  .card .ctx{font-size:15px;color:#cfc9bb}
+  .card .msg{font-size:16.5px}
+  .card .link{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+  .card .link .ref{color:var(--gold);font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.08em}
+  .card .link p{font-style:italic;font-size:15px;margin-top:3px}
+  html[dir="rtl"] .card .link p{font-style:normal}
+  .placeholder{text-align:center;color:#5c6077;font-family:system-ui,sans-serif;font-size:13px;padding:24px 0}
+  footer{max-width:820px;margin:34px auto 46px;padding:22px 22px 0;border-top:1px solid var(--line);color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <h1 class="display" id="title"></h1>
+  <p class="lede" id="lede"></p>
+</div>
+
+<div class="phases">
+  <div class="ptitle" id="phtitle"></div>
+  <div class="pflow" id="pflow"></div>
+</div>
+
+<div class="filter" id="filter"></div>
+<div class="timeline">
+  <div class="tlwrap">
+    <div class="axis" id="axis"></div>
+    <div class="prow"><div class="rows" id="rows"></div></div>
+  </div>
+</div>
+
+<div class="panel" id="panel"><div class="placeholder" id="ph"></div></div>
+
+<footer id="foot"></footer>
+
+<script>
+// Phases = "l'Ancien Testament expliqué" en 6 grandes étapes
+const PHASES={
+ loi:{c:"var(--loi)"},royaume:{c:"var(--royaume)"},exil:{c:"var(--exil)"},
+ retour:{c:"var(--retour)"},attente:{c:"var(--attente)"},christ:{c:"var(--christ)"}
+};
+// Prophètes : x = position sur l'axe (0=−1500, 100=+30). date affichée, phase, contexte, message, lien Christ.
+const AXIS_MIN=-1500, AXIS_MAX=50;
+function px(year){return ((year-AXIS_MIN)/(AXIS_MAX-AXIS_MIN))*100;}
+
+const T={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
+ eyebrow:"L'Ancien Testament expliqué · la frise des veilleurs",
+ title:"Pendant mille ans, des veilleurs ont décrit <em>un homme qu'ils ne verraient jamais</em>",
+ lede:"Comprendre l'Ancien Testament, c'est d'abord comprendre son fil. Six grandes phases, une poignée de prophètes — et une seule direction : le Christ. Touchez une phase, puis un prophète.",
+ phtitle:"Les six âges de l'Ancien Testament — en un coup d'œil",
+ phases:[
+  ["loi","Phase 1","La Loi","~1500–1200 av. J.-C.","Dieu fait sortir un peuple d'Égypte, lui donne la Loi et l'Alliance au Sinaï. Naissance d'Israël.","Moïse, Josué"],
+  ["royaume","Phase 2","Le Royaume","~1000–930 av. J.-C.","David unifie le royaume, Salomon bâtit le Temple. L'apogée — et la promesse d'un trône éternel.","David, Salomon, Nathan"],
+  ["exil","Phase 3","La division & l'exil","~930–587 av. J.-C.","Le royaume se divise, s'effondre. Les prophètes avertissent, puis Babylone détruit le Temple (587).","Ésaïe, Jérémie, les grands prophètes"],
+  ["retour","Phase 4","Le retour","~538–430 av. J.-C.","La Perse renvoie les exilés. Le Temple est rebâti, plus modeste. On attend « quelque chose de plus ».","Aggée, Zacharie, Malachie"],
+  ["attente","Phase 5","Le silence","~430–5 av. J.-C.","Quatre siècles sans prophète. Empires grec puis romain. L'attente du Messie monte.","(les 400 ans de silence)"],
+  ["christ","Phase 6","L'accomplissement","~5 av.–30 apr. J.-C.","Jean-Baptiste rompt le silence : « Voici l'Agneau ». Tout ce qui était annoncé prend un visage.","Jean-Baptiste, le Christ"]],
+ filterAll:"Toutes les phases",
+ placeholder:"— Touchez un prophète sur la frise pour lire son message —",
+ axislabels:[["-1500","−1500"],["-1000","−1000"],["-587","−587 (exil)"],["-500","−500"],["0","An 0"]],
+ prophets:[
+  {k:"moise",n:"Moïse",d:"~1300 av. J.-C.",phase:"loi",x:px(-1300),
+   ctx:"À la sortie d'Égypte, le fondateur du peuple, celui qui reçoit la Loi et bâtit le premier culte sacrificiel.",
+   msg:"Un prophète « comme moi » viendra, que Dieu suscitera du milieu du peuple : c'est lui qu'il faudra écouter.",
+   ref:"Deutéronome 18:15",v:"L'Éternel suscitera un prophète comme moi : vous l'écouterez.",
+   christ:"À la Transfiguration, la voix reprend ces mots exacts : « écoutez-le »."},
+  {k:"nathan",n:"Nathan / David",d:"~1000 av. J.-C.",phase:"royaume",x:px(-1000),
+   ctx:"Au sommet du royaume, le prophète Nathan porte à David une promesse qui dépasse toute dynastie humaine.",
+   msg:"Ton trône sera affermi pour toujours : un descendant de David régnera sans fin.",
+   ref:"2 Samuel 7:13",v:"J'affermirai pour toujours le trône de son royaume.",
+   christ:"L'ange à Marie : « le Seigneur lui donnera le trône de David… son règne n'aura point de fin » (Luc 1:32-33)."},
+  {k:"joel",n:"Joël",d:"~830 av. J.-C. (débattu)",phase:"exil",x:px(-830),
+   ctx:"Prophète de Juda, difficile à dater ; il annonce un jour où l'Esprit de Dieu ne sera plus réservé à quelques-uns.",
+   msg:"Dieu répandra son Esprit sur toute chair — fils, filles, serviteurs : tous prophétiseront.",
+   ref:"Joël 3:1",v:"Je répandrai mon Esprit sur toute chair.",
+   christ:"Pierre, au matin de la Pentecôte : « c'est ici ce qui a été dit par le prophète Joël » (Actes 2:16-17)."},
+  {k:"amos",n:"Amos",d:"~760 av. J.-C.",phase:"exil",x:px(-760),
+   ctx:"Un berger de Juda envoyé au riche royaume du Nord, qui dénonce l'injustice sociale au nom de Dieu.",
+   msg:"Dieu rejette le culte sans justice ; mais il relèvera un jour « la hutte tombée de David ».",
+   ref:"Amos 9:11",v:"En ce jour, je relèverai de sa chute la maison de David.",
+   christ:"Cité au concile de Jérusalem pour dire que les nations sont incluses dans le royaume relevé (Actes 15:16)."},
+  {k:"osee",n:"Osée",d:"~750 av. J.-C.",phase:"exil",x:px(-750),
+   ctx:"Prophète du royaume du Nord, dont le mariage douloureux devient l'image de l'amour fidèle de Dieu pour un peuple infidèle.",
+   msg:"Malgré la trahison, Dieu rappellera son fils, et fera de « pas-mon-peuple » son peuple.",
+   ref:"Osée 11:1",v:"Quand Israël était jeune, je l'aimais, et j'appelai mon fils hors d'Égypte.",
+   christ:"Matthieu y lit le retour d'Égypte de l'enfant Jésus (Matthieu 2:15)."},
+  {k:"esaie",n:"Ésaïe",d:"~700 av. J.-C.",phase:"exil",x:px(-700),
+   ctx:"Le plus cité des prophètes, actif à Jérusalem sous la menace assyrienne. Vision d'un Messie, d'un Serviteur souffrant, d'un salut pour toutes les nations.",
+   msg:"Une vierge enfantera l'Emmanuel ; un serviteur portera, en silence, le péché de beaucoup.",
+   ref:"Ésaïe 53:5",v:"Il était blessé pour nos péchés… par ses meurtrissures nous sommes guéris.",
+   christ:"Le chapitre le plus cité par le Nouveau Testament ; copie complète retrouvée à Qumrân, avant J.-C."},
+  {k:"michee",n:"Michée",d:"~700 av. J.-C.",phase:"exil",x:px(-701),
+   ctx:"Contemporain d'Ésaïe, prophète des campagnes, qui nomme le village d'où sortira le dominateur d'Israël.",
+   msg:"De Bethléhem, petite entre les villes, sortira celui dont l'origine remonte aux temps anciens.",
+   ref:"Michée 5:1",v:"Et toi, Bethléhem… de toi sortira celui qui dominera sur Israël.",
+   christ:"Les scribes citent ce verset à Hérode pour indiquer le lieu de naissance du Messie (Matthieu 2:6)."},
+  {k:"jeremie",n:"Jérémie",d:"~600 av. J.-C.",phase:"exil",x:px(-600),
+   ctx:"Le prophète de l'effondrement : il voit Jérusalem tomber et le Temple brûler (587). Au cœur du désastre, il annonce l'inouï.",
+   msg:"Dieu fera une alliance nouvelle : il écrira sa loi dans les cœurs, non sur des tables de pierre.",
+   ref:"Jérémie 31:31",v:"Je ferai une alliance nouvelle avec la maison d'Israël.",
+   christ:"Jésus, la coupe en main : « cette coupe est la nouvelle alliance en mon sang » (Luc 22:20)."},
+  {k:"ezechiel",n:"Ézéchiel",d:"~590 av. J.-C.",phase:"exil",x:px(-590),
+   ctx:"Prêtre déporté à Babylone, il console les exilés loin du Temple détruit par des visions de restauration.",
+   msg:"Dieu ôtera le cœur de pierre, donnera un cœur nouveau, et sera lui-même le berger de son troupeau.",
+   ref:"Ézéchiel 34:23",v:"J'établirai sur elles un seul pasteur… mon serviteur David.",
+   christ:"« Je suis le bon berger ; le bon berger donne sa vie pour ses brebis » (Jean 10:11)."},
+  {k:"daniel",n:"Daniel",d:"~550 av. J.-C.",phase:"exil",x:px(-550),
+   ctx:"Haut fonctionnaire à la cour de Babylone puis de Perse ; ses visions embrassent la succession des empires jusqu'à un royaume éternel.",
+   msg:"Un « Fils de l'homme » vient sur les nuées et reçoit une domination qui ne passera pas.",
+   ref:"Daniel 7:13-14",v:"Sur les nuées arriva quelqu'un de semblable à un fils de l'homme.",
+   christ:"Devant le grand prêtre, Jésus s'attribue cette vision — et c'est elle qui décide de sa condamnation (Matthieu 26:64)."},
+  {k:"aggee",n:"Aggée",d:"~520 av. J.-C.",phase:"retour",x:px(-520),
+   ctx:"Après le retour d'exil, il presse le peuple découragé de rebâtir le Temple, plus modeste que celui de Salomon.",
+   msg:"La gloire de cette seconde maison sera plus grande que celle de la première.",
+   ref:"Aggée 2:9",v:"La gloire de cette dernière maison sera plus grande que celle de la première.",
+   christ:"Le second Temple n'eut pas l'arche — mais l'enfant Jésus y fut présenté (Luc 2:27-32)."},
+  {k:"zacharie",n:"Zacharie",d:"~520 av. J.-C.",phase:"retour",x:px(-519),
+   ctx:"Contemporain d'Aggée, il encourage la reconstruction par des visions riches sur le roi à venir.",
+   msg:"Ton roi vient, humble, monté sur un âne ; on regardera vers « celui qu'ils ont percé ».",
+   ref:"Zacharie 9:9",v:"Voici ton roi… humble et monté sur un âne.",
+   christ:"L'entrée à Jérusalem, les Rameaux (Matthieu 21:5) ; le côté transpercé (Jean 19:37)."},
+  {k:"malachie",n:"Malachie",d:"~430 av. J.-C.",phase:"retour",x:px(-430),
+   ctx:"La dernière voix prophétique de l'Ancien Testament. Après lui, quatre siècles de silence.",
+   msg:"Dieu enverra son messager pour préparer le chemin, et Élie reviendra avant le grand jour.",
+   ref:"Malachie 3:1",v:"Voici, j'enverrai mon messager ; il préparera le chemin devant moi.",
+   christ:"Jean-Baptiste est ce messager (Matthieu 11:10) et « l'Élie qui devait venir » (Matthieu 11:14)."},
+  {k:"jean",n:"Jean-Baptiste",d:"~28 apr. J.-C.",phase:"christ",x:px(28),
+   ctx:"Après quatre siècles de silence, un homme surgit au désert, vêtu comme Élie. Il ne montre pas du doigt un livre, mais une personne.",
+   msg:"Le voici. Celui que tous les prophètes annonçaient est devant vous.",
+   ref:"Jean 1:29",v:"Voici l'Agneau de Dieu, qui ôte le péché du monde.",
+   christ:"Le fil des veilleurs s'achève ici : l'annonce devient présence. C'est le début du parcours de l'Agneau."}],
+ footTitle:"Où va la frise",
+ foot:"Chaque date est une estimation d'historien, pas un dogme : les fourchettes sont documentées dans le dossier de référence. Le but n'est pas la précision au siècle près, mais de rendre visible une chose simple — les annonces sont antérieures, et elles convergent.",
+ label:{ctx:"Le contexte",msg:"Le message clé",link:"Le lien avec le Christ"}},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",
+ eyebrow:"The Old Testament explained · the timeline of the watchmen",
+ title:"For a thousand years, watchmen described <em>a man they would never see</em>",
+ lede:"To understand the Old Testament is first to understand its thread. Six great phases, a handful of prophets — and one single direction: Christ. Touch a phase, then a prophet.",
+ phtitle:"The six ages of the Old Testament — at a glance",
+ phases:[
+  ["loi","Phase 1","The Law","~1500–1200 BC","God brings a people out of Egypt, gives the Law and the Covenant at Sinai. Israel is born.","Moses, Joshua"],
+  ["royaume","Phase 2","The Kingdom","~1000–930 BC","David unites the kingdom, Solomon builds the Temple. The peak — and the promise of an eternal throne.","David, Solomon, Nathan"],
+  ["exil","Phase 3","Division & exile","~930–587 BC","The kingdom splits and collapses. The prophets warn, then Babylon destroys the Temple (587).","Isaiah, Jeremiah, the great prophets"],
+  ["retour","Phase 4","The return","~538–430 BC","Persia sends the exiles home. The Temple is rebuilt, more modest. They await “something more”.","Haggai, Zechariah, Malachi"],
+  ["attente","Phase 5","The silence","~430–5 BC","Four centuries with no prophet. Greek then Roman empires. Expectation of the Messiah rises.","(the 400 silent years)"],
+  ["christ","Phase 6","The fulfilment","~5 BC–AD 30","John the Baptist breaks the silence: “Behold the Lamb”. All that was announced takes a face.","John the Baptist, the Christ"]],
+ filterAll:"All phases",
+ placeholder:"— Touch a prophet on the timeline to read his message —",
+ axislabels:[["-1500","−1500"],["-1000","−1000"],["-587","−587 (exile)"],["-500","−500"],["0","Year 0"]],
+ prophets:[
+  {k:"moise",n:"Moses",d:"~1300 BC",phase:"loi",x:px(-1300),
+   ctx:"At the exodus, the founder of the people, who receives the Law and builds the first sacrificial worship.",
+   msg:"A prophet “like me” will come, whom God will raise up from among the people: him you shall hear.",
+   ref:"Deuteronomy 18:15",v:"The LORD will raise up a prophet like me: you shall listen to him.",
+   christ:"At the Transfiguration, the voice repeats these exact words: “listen to him”."},
+  {k:"nathan",n:"Nathan / David",d:"~1000 BC",phase:"royaume",x:px(-1000),
+   ctx:"At the kingdom's peak, the prophet Nathan brings David a promise that surpasses any human dynasty.",
+   msg:"Your throne will be established forever: a descendant of David will reign without end.",
+   ref:"2 Samuel 7:13",v:"I will establish the throne of his kingdom forever.",
+   christ:"The angel to Mary: “the Lord will give him the throne of David… his reign will have no end” (Luke 1:32-33)."},
+  {k:"joel",n:"Joel",d:"~830 BC (debated)",phase:"exil",x:px(-830),
+   ctx:"A prophet of Judah, hard to date; he announces a day when God's Spirit will no longer be reserved for a few.",
+   msg:"God will pour out his Spirit on all flesh — sons, daughters, servants: all will prophesy.",
+   ref:"Joel 2:28",v:"I will pour out my Spirit on all flesh.",
+   christ:"Peter, on the morning of Pentecost: “this is what was spoken through the prophet Joel” (Acts 2:16-17)."},
+  {k:"amos",n:"Amos",d:"~760 BC",phase:"exil",x:px(-760),
+   ctx:"A shepherd of Judah sent to the wealthy northern kingdom, denouncing social injustice in God's name.",
+   msg:"God rejects worship without justice; but one day he will raise up “the fallen booth of David”.",
+   ref:"Amos 9:11",v:"In that day I will raise up the tent of David that is fallen.",
+   christ:"Cited at the Council of Jerusalem to show the nations are included in the raised kingdom (Acts 15:16)."},
+  {k:"osee",n:"Hosea",d:"~750 BC",phase:"exil",x:px(-750),
+   ctx:"A prophet of the northern kingdom, whose painful marriage becomes the image of God's faithful love for an unfaithful people.",
+   msg:"Despite betrayal, God will call back his son, and make “not-my-people” his people.",
+   ref:"Hosea 11:1",v:"When Israel was a child, I loved him, and called my son out of Egypt.",
+   christ:"Matthew reads in it the return of the child Jesus from Egypt (Matthew 2:15)."},
+  {k:"esaie",n:"Isaiah",d:"~700 BC",phase:"exil",x:px(-700),
+   ctx:"The most quoted of the prophets, active in Jerusalem under the Assyrian threat. Vision of a Messiah, a suffering Servant, salvation for all nations.",
+   msg:"A virgin will bear Immanuel; a servant will bear, in silence, the sin of many.",
+   ref:"Isaiah 53:5",v:"He was wounded for our transgressions… by his wounds we are healed.",
+   christ:"The chapter most quoted by the New Testament; a complete copy found at Qumran, before Christ."},
+  {k:"michee",n:"Micah",d:"~700 BC",phase:"exil",x:px(-701),
+   ctx:"A contemporary of Isaiah, a prophet of the countryside, who names the village from which the ruler of Israel will come.",
+   msg:"From Bethlehem, little among the towns, will come one whose origin is from ancient days.",
+   ref:"Micah 5:2",v:"You, Bethlehem… out of you will come forth one who will rule Israel.",
+   christ:"The scribes quote this verse to Herod to point out the Messiah's birthplace (Matthew 2:6)."},
+  {k:"jeremie",n:"Jeremiah",d:"~600 BC",phase:"exil",x:px(-600),
+   ctx:"The prophet of collapse: he sees Jerusalem fall and the Temple burn (587). At the heart of disaster, he announces the unheard-of.",
+   msg:"God will make a new covenant: he will write his law on hearts, not on tablets of stone.",
+   ref:"Jeremiah 31:31",v:"I will make a new covenant with the house of Israel.",
+   christ:"Jesus, cup in hand: “this cup is the new covenant in my blood” (Luke 22:20)."},
+  {k:"ezechiel",n:"Ezekiel",d:"~590 BC",phase:"exil",x:px(-590),
+   ctx:"A priest deported to Babylon, he comforts the exiles far from the destroyed Temple with visions of restoration.",
+   msg:"God will remove the heart of stone, give a new heart, and himself be the shepherd of his flock.",
+   ref:"Ezekiel 34:23",v:"I will set up one shepherd over them… my servant David.",
+   christ:"“I am the good shepherd; the good shepherd lays down his life for the sheep” (John 10:11)."},
+  {k:"daniel",n:"Daniel",d:"~550 BC",phase:"exil",x:px(-550),
+   ctx:"A high official at the court of Babylon then Persia; his visions span the succession of empires up to an eternal kingdom.",
+   msg:"A “Son of Man” comes on the clouds and receives a dominion that will not pass away.",
+   ref:"Daniel 7:13-14",v:"On the clouds came one like a son of man.",
+   christ:"Before the high priest, Jesus claims this vision — and it decides his condemnation (Matthew 26:64)."},
+  {k:"aggee",n:"Haggai",d:"~520 BC",phase:"retour",x:px(-520),
+   ctx:"After the return from exile, he urges the discouraged people to rebuild the Temple, more modest than Solomon's.",
+   msg:"The glory of this second house will be greater than that of the first.",
+   ref:"Haggai 2:9",v:"The latter glory of this house will be greater than the former.",
+   christ:"The second Temple had no ark — but the child Jesus was presented there (Luke 2:27-32)."},
+  {k:"zacharie",n:"Zechariah",d:"~520 BC",phase:"retour",x:px(-519),
+   ctx:"A contemporary of Haggai, he encourages the rebuilding with rich visions of the coming king.",
+   msg:"Your king comes, humble, riding on a donkey; they will look on “the one they pierced”.",
+   ref:"Zechariah 9:9",v:"Behold, your king comes… humble, riding on a donkey.",
+   christ:"The entry into Jerusalem, Palm Sunday (Matthew 21:5); the pierced side (John 19:37)."},
+  {k:"malachie",n:"Malachi",d:"~430 BC",phase:"retour",x:px(-430),
+   ctx:"The last prophetic voice of the Old Testament. After him, four centuries of silence.",
+   msg:"God will send his messenger to prepare the way, and Elijah will return before the great day.",
+   ref:"Malachi 3:1",v:"Behold, I send my messenger; he will prepare the way before me.",
+   christ:"John the Baptist is this messenger (Matthew 11:10) and “the Elijah who was to come” (Matthew 11:14)."},
+  {k:"jean",n:"John the Baptist",d:"~AD 28",phase:"christ",x:px(28),
+   ctx:"After four centuries of silence, a man appears in the desert, dressed like Elijah. He points not to a book, but to a person.",
+   msg:"Here he is. The one all the prophets announced stands before you.",
+   ref:"John 1:29",v:"Behold, the Lamb of God, who takes away the sin of the world.",
+   christ:"The thread of the watchmen ends here: announcement becomes presence. This is where the journey of the Lamb begins."}],
+ footTitle:"Where the timeline goes",
+ foot:"Each date is a historian's estimate, not a dogma: the ranges are documented in the reference dossier. The point is not precision to the century, but to make one simple thing visible — the announcements come first, and they converge.",
+ label:{ctx:"The context",msg:"The key message",link:"The link with Christ"}},
+ar:{dir:"rtl",brand:"حَمَلُ الله",
+ eyebrow:"العهد القديم مشروحًا · الخط الزمني للحرّاس",
+ title:"ألفَ سنة، وصف الحرّاسُ <em>رجلًا لن يروه أبدًا</em>",
+ lede:"أن تفهم العهدَ القديم يعني أولًا أن تفهم خيطَه. ست مراحل كبرى، وحفنةٌ من الأنبياء — واتجاهٌ واحد: المسيح. المس مرحلةً، ثم نبيًّا.",
+ phtitle:"العصور الستة للعهد القديم — في نظرة",
+ phases:[
+  ["loi","المرحلة ١","الناموس","نحو ١٥٠٠–١٢٠٠ ق.م","يُخرج اللهُ شعبًا من مصر، ويعطيه الناموسَ والعهدَ في سيناء. ميلادُ إسرائيل.","موسى، يشوع"],
+  ["royaume","المرحلة ٢","المملكة","نحو ١٠٠٠–٩٣٠ ق.م","داود يوحّد المملكة، وسليمان يبني الهيكل. الذروة — ووعدُ عرشٍ أبدي.","داود، سليمان، ناثان"],
+  ["exil","المرحلة ٣","الانقسام والسبي","نحو ٩٣٠–٥٨٧ ق.م","تنقسم المملكةُ وتنهار. ينذر الأنبياء، ثم تدمّر بابلُ الهيكلَ (٥٨٧).","إشعياء، إرميا، كبار الأنبياء"],
+  ["retour","المرحلة ٤","العودة","نحو ٥٣٨–٤٣٠ ق.م","تُعيد فارسُ المسبيّين. يُبنى الهيكلُ ثانيةً، أكثرَ تواضعًا. ويُنتظَر «شيءٌ أعظم».","حجي، زكريا، ملاخي"],
+  ["attente","المرحلة ٥","الصمت","نحو ٤٣٠–٥ ق.م","أربعةُ قرون بلا نبي. إمبراطوريتان يونانية ثم رومانية. ويتصاعد انتظارُ المسيّا.","(٤٠٠ سنة من الصمت)"],
+  ["christ","المرحلة ٦","الإتمام","نحو ٥ ق.م–٣٠ م","يوحنا المعمدان يكسر الصمت: «هوذا الحمل». وكلُّ ما أُعلن يأخذ وجهًا.","يوحنا المعمدان، المسيح"]],
+ filterAll:"كل المراحل",
+ placeholder:"— المس نبيًّا على الخط الزمني لتقرأ رسالته —",
+ axislabels:[["-1500","−١٥٠٠"],["-1000","−١٠٠٠"],["-587","−٥٨٧ (السبي)"],["-500","−٥٠٠"],["0","سنة ٠"]],
+ prophets:[
+  {k:"moise",n:"موسى",d:"نحو ١٣٠٠ ق.م",phase:"loi",x:px(-1300),
+   ctx:"عند الخروج من مصر، مؤسّسُ الشعب، الذي يتلقى الناموسَ ويقيم أولَ عبادةٍ ذبائحية.",
+   msg:"سيأتي نبيٌّ «مثلي» يقيمه اللهُ من وسط الشعب: له تسمعون.",
+   ref:"تثنية ١٨: ١٥",v:"يُقيمُ لكَ الربُّ نبيًّا مثلي، له تسمعون.",
+   christ:"في التجلّي، يعيد الصوتُ هذه الكلماتِ عينَها: «له اسمعوا»."},
+  {k:"nathan",n:"ناثان / داود",d:"نحو ١٠٠٠ ق.م",phase:"royaume",x:px(-1000),
+   ctx:"في ذروة المملكة، يحمل النبيُّ ناثان إلى داود وعدًا يتجاوز كلَّ سلالة بشرية.",
+   msg:"سيُثبَّت عرشُك إلى الأبد: نسلٌ لداود يملك بلا نهاية.",
+   ref:"٢ صموئيل ٧: ١٣",v:"وأُثبِّتُ كرسيَّ مملكته إلى الأبد.",
+   christ:"الملاكُ لمريم: «يعطيه الربُّ كرسيَّ داود… ولا يكون لملكه نهاية» (لوقا ١: ٣٢-٣٣)."},
+  {k:"joel",n:"يوئيل",d:"نحو ٨٣٠ ق.م (مختلَف فيه)",phase:"exil",x:px(-830),
+   ctx:"نبيٌّ ليهوذا، يصعب تأريخه؛ يعلن يومًا لا يعود فيه روحُ الله محصورًا في القلّة.",
+   msg:"سيسكب اللهُ روحه على كل بشر — بنين وبنات وعبيد: الكلُّ يتنبأون.",
+   ref:"يوئيل ٢: ٢٨",v:"أسكبُ روحي على كل بشر.",
+   christ:"بطرس صباح الخمسين: «هذا ما قيل بالنبي يوئيل» (أعمال ٢: ١٦-١٧)."},
+  {k:"amos",n:"عاموس",d:"نحو ٧٦٠ ق.م",phase:"exil",x:px(-760),
+   ctx:"راعٍ من يهوذا مُرسَلٌ إلى مملكة الشمال الغنية، يندّد بالظلم الاجتماعي باسم الله.",
+   msg:"يرفض اللهُ عبادةً بلا عدل؛ لكنه سيقيم يومًا «مظلّةَ داود الساقطة».",
+   ref:"عاموس ٩: ١١",v:"في ذلك اليوم أقيم مظلّةَ داود الساقطة.",
+   christ:"يُقتبَس في مجمع أورشليم ليقول إن الأمم مشمولةٌ في المملكة المُقامة (أعمال ١٥: ١٦)."},
+  {k:"osee",n:"هوشع",d:"نحو ٧٥٠ ق.م",phase:"exil",x:px(-750),
+   ctx:"نبيُّ مملكة الشمال، يصير زواجُه الأليم صورةَ محبةِ الله الأمينة لشعبٍ خائن.",
+   msg:"رغم الخيانة، سيدعو اللهُ ابنه، ويجعل «ليس-شعبي» شعبَه.",
+   ref:"هوشع ١١: ١",v:"لما كان إسرائيلُ غلامًا أحببتُه، ومن مصرَ دعوتُ ابني.",
+   christ:"يقرأ فيه متى عودةَ الطفل يسوع من مصر (متى ٢: ١٥)."},
+  {k:"esaie",n:"إشعياء",d:"نحو ٧٠٠ ق.م",phase:"exil",x:px(-700),
+   ctx:"أكثرُ الأنبياء اقتباسًا، عملَ في أورشليم تحت التهديد الأشوري. رؤيا مسيّا، وعبدٍ متألم، وخلاصٍ لكل الأمم.",
+   msg:"عذراءُ تلد عمانوئيل؛ وعبدٌ يحمل، في صمت، خطيةَ كثيرين.",
+   ref:"إشعياء ٥٣: ٥",v:"وهو مجروحٌ لأجل معاصينا… وبحُبُره شُفينا.",
+   christ:"الأصحاحُ الأكثرُ اقتباسًا في العهد الجديد؛ نسخةٌ كاملة وُجدت في قمران، قبل الميلاد."},
+  {k:"michee",n:"ميخا",d:"نحو ٧٠٠ ق.م",phase:"exil",x:px(-701),
+   ctx:"معاصرُ إشعياء، نبيُّ الأرياف، يسمّي القريةَ التي منها يخرج متسلّطُ إسرائيل.",
+   msg:"من بيت لحم، الصغيرة بين المدن، يخرج مَن مخارجُه منذ القديم.",
+   ref:"ميخا ٥: ٢",v:"وأنتِ يا بيتَ لحمَ… منكِ يخرج لي مَن يكون متسلطًا على إسرائيل.",
+   christ:"يقتبس الكتبةُ هذه الآيةَ لهيرودس ليدلّوا على مكان ميلاد المسيّا (متى ٢: ٦)."},
+  {k:"jeremie",n:"إرميا",d:"نحو ٦٠٠ ق.م",phase:"exil",x:px(-600),
+   ctx:"نبيُّ الانهيار: يرى أورشليمَ تسقط والهيكلَ يحترق (٥٨٧). وفي قلب الكارثة يعلن ما لم يُسمَع.",
+   msg:"سيقطع اللهُ عهدًا جديدًا: يكتب شريعتَه في القلوب، لا على ألواح حجر.",
+   ref:"إرميا ٣١: ٣١",v:"أقطعُ مع بيت إسرائيلَ عهدًا جديدًا.",
+   christ:"يسوع والكأسُ في يده: «هذه الكأسُ هي العهدُ الجديد بدمي» (لوقا ٢٢: ٢٠)."},
+  {k:"ezechiel",n:"حزقيال",d:"نحو ٥٩٠ ق.م",phase:"exil",x:px(-590),
+   ctx:"كاهنٌ مسبيٌّ إلى بابل، يعزّي المسبيّين بعيدًا عن الهيكل المدمَّر برؤى الاستعادة.",
+   msg:"ينزع اللهُ قلبَ الحجر، ويعطي قلبًا جديدًا، ويكون هو نفسُه راعيَ قطيعه.",
+   ref:"حزقيال ٣٤: ٢٣",v:"وأقيم عليها راعيًا واحدًا… عبدي داود.",
+   christ:"«أنا هو الراعي الصالح؛ الراعي الصالح يبذل نفسه عن الخراف» (يوحنا ١٠: ١١)."},
+  {k:"daniel",n:"دانيال",d:"نحو ٥٥٠ ق.م",phase:"exil",x:px(-550),
+   ctx:"موظفٌ رفيع في بلاط بابل ثم فارس؛ رؤاه تشمل تعاقبَ الإمبراطوريات حتى ملكوتٍ أبدي.",
+   msg:"«ابنُ إنسان» يأتي على السحاب ويُعطى سلطانًا لا يزول.",
+   ref:"دانيال ٧: ١٣-١٤",v:"على سحاب السماء أتى مثلُ ابن إنسان.",
+   christ:"أمام رئيس الكهنة، ينسب يسوع هذه الرؤيا إلى نفسه — وهي التي تحسم إدانته (متى ٢٦: ٦٤)."},
+  {k:"aggee",n:"حجي",d:"نحو ٥٢٠ ق.م",phase:"retour",x:px(-520),
+   ctx:"بعد العودة من السبي، يحثّ الشعبَ المُثبَّط على إعادة بناء الهيكل، الأكثر تواضعًا من هيكل سليمان.",
+   msg:"مجدُ هذا البيت الأخير يكون أعظمَ من مجد الأول.",
+   ref:"حجي ٢: ٩",v:"مجدُ هذا البيت الأخير يكون أعظمَ من الأول.",
+   christ:"الهيكلُ الثاني لم يكن فيه التابوت — لكن الطفل يسوع قُدِّم فيه (لوقا ٢: ٢٧-٣٢)."},
+  {k:"zacharie",n:"زكريا",d:"نحو ٥٢٠ ق.م",phase:"retour",x:px(-519),
+   ctx:"معاصرُ حجي، يشجّع على البناء برؤى غنية عن الملك الآتي.",
+   msg:"ملكُك يأتي، وديعًا، راكبًا على أتان؛ وينظرون إلى «الذي طعنوه».",
+   ref:"زكريا ٩: ٩",v:"هوذا ملكُك يأتي… وديعًا وراكبًا على أتان.",
+   christ:"الدخولُ إلى أورشليم، أحدُ الشعانين (متى ٢١: ٥)؛ والجنبُ المطعون (يوحنا ١٩: ٣٧)."},
+  {k:"malachie",n:"ملاخي",d:"نحو ٤٣٠ ق.م",phase:"retour",x:px(-430),
+   ctx:"آخرُ صوتٍ نبوي في العهد القديم. وبعده أربعةُ قرون من الصمت.",
+   msg:"يُرسل اللهُ رسولَه ليهيّئ الطريق، ويعود إيليا قبل اليوم العظيم.",
+   ref:"ملاخي ٣: ١",v:"هأنذا أُرسل رسولي فيهيّئ الطريقَ أمامي.",
+   christ:"يوحنا المعمدان هو هذا الرسول (متى ١١: ١٠) و«إيليا المزمع أن يأتي» (متى ١١: ١٤)."},
+  {k:"jean",n:"يوحنا المعمدان",d:"نحو ٢٨ م",phase:"christ",x:px(28),
+   ctx:"بعد أربعة قرون من الصمت، يظهر رجلٌ في البرية، بزيّ إيليا. لا يشير إلى كتاب، بل إلى شخص.",
+   msg:"ها هو. الذي أنبأ به كلُّ الأنبياء واقفٌ أمامكم.",
+   ref:"يوحنا ١: ٢٩",v:"هوذا حملُ الله الذي يرفع خطيةَ العالم.",
+   christ:"خيطُ الحرّاس ينتهي هنا: يصير الإعلانُ حضورًا. وهنا يبدأ مسارُ الحمل."}],
+ footTitle:"إلى أين يمضي الخط الزمني",
+ foot:"كلُّ تاريخ تقديرٌ لمؤرّخ، لا عقيدة: والمجالاتُ موثَّقة في ملف المراجع. المقصدُ ليس الدقةَ إلى القرن، بل إظهارُ أمرٍ بسيط — الإعلاناتُ سابقة، وهي تتقارب.",
+ label:{ctx:"السياق",msg:"الرسالة الأساسية",link:"الصلة بالمسيح"}}};
+
+function render(l){
+  const c=T[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('title').innerHTML=c.title;
+  document.getElementById('lede').textContent=c.lede;
+  document.getElementById('phtitle').textContent=c.phtitle;
+  // phases
+  const pf=document.getElementById('pflow');pf.innerHTML="";
+  c.phases.forEach(p=>{
+    const d=document.createElement('div');d.className='phase';d.style.setProperty('--pc',PHASES[p[0]].c);
+    d.innerHTML=`<div class="pnum">${p[1]}</div><h3>${p[2]}</h3><div class="pdate">${p[3]}</div><p>${p[4]}</p><span class="pwho">${p[5]}</span>`;
+    d.addEventListener('click',()=>{setFilter(p[0]);});
+    pf.appendChild(d);
+  });
+  // filtres
+  const fl=document.getElementById('filter');fl.innerHTML="";
+  const all=document.createElement('button');all.className='fchip';all.dataset.k="__all";all.setAttribute('aria-pressed','true');
+  all.innerHTML=`${c.filterAll}`;all.addEventListener('click',()=>setFilter("__all"));fl.appendChild(all);
+  c.phases.forEach(p=>{
+    const b=document.createElement('button');b.className='fchip';b.dataset.k=p[0];b.setAttribute('aria-pressed','false');
+    b.style.setProperty('--c',PHASES[p[0]].c);
+    b.innerHTML=`<span class="d"></span>${p[2]}`;
+    b.addEventListener('click',()=>setFilter(p[0]));fl.appendChild(b);
+  });
+  // axe : graduations
+  const ax=document.getElementById('axis');ax.querySelectorAll('.tick,.tlabel').forEach(e=>e.remove());
+  c.axislabels.forEach(([y,lab])=>{
+    const x=px(+y);
+    const t=document.createElement('div');t.className='tick';t.style.left=x+"%";ax.appendChild(t);
+    const tl=document.createElement('div');tl.className='tlabel';tl.style.left=x+"%";tl.textContent=lab;ax.appendChild(tl);
+  });
+  // prophètes : disposer sur plusieurs "voies" pour éviter le chevauchement
+  const rows=document.getElementById('rows');rows.innerHTML="";
+  const lanes=[]; const NODE_W=10; // % largeur approx
+  const sorted=[...c.prophets].sort((a,b)=>a.x-b.x);
+  const laneOf={};
+  sorted.forEach(p=>{
+    let lane=0;
+    while(lanes[lane]!==undefined && p.x-lanes[lane]<NODE_W) lane++;
+    lanes[lane]=p.x; laneOf[p.k]=lane;
+  });
+  const laneH=64; const maxLane=Math.max(...Object.values(laneOf));
+  rows.style.height=((maxLane+1)*laneH)+"px";
+  c.prophets.forEach(p=>{
+    const node=document.createElement('div');node.className='pnode';node.dataset.k=p.k;node.dataset.phase=p.phase;
+    node.style.left=p.x+"%";node.style.top=(laneOf[p.k]*laneH)+"px";
+    node.style.setProperty('--c',PHASES[p.phase].c);
+    node.innerHTML=`<div class="dot"></div><div class="pn">${p.n}</div><div class="pd">${p.d}</div>`;
+    node.addEventListener('click',()=>select(p,l));
+    rows.appendChild(node);
+  });
+  document.getElementById('ph').textContent=c.placeholder;
+  document.getElementById('panel').innerHTML='<div class="placeholder" id="ph">'+c.placeholder+'</div>';
+  document.getElementById('foot').innerHTML=`<strong>${c.footTitle}.</strong> ${c.foot}<br>Segond 1910 · WEB · Van Dyck.`;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+  window.__lang=l;
+}
+function setFilter(k){
+  const chips=document.querySelectorAll('.fchip');
+  chips.forEach(c=>c.setAttribute('aria-pressed', (c.dataset.k===k)?'true':'false'));
+  document.querySelectorAll('.pnode').forEach(n=>{
+    n.classList.toggle('dim', k!=="__all" && n.dataset.phase!==k);
+  });
+}
+function select(p,l){
+  const c=T[l];
+  document.querySelectorAll('.pnode .dot').forEach(d=>d.style.transform="");
+  const panel=document.getElementById('panel');
+  const col=PHASES[p.phase].c;
+  panel.innerHTML=`<div class="card show" style="--pc:${col}">
+    <span class="badge">${c.phases.find(ph=>ph[0]===p.phase)[2]}</span>
+    <h2>${p.n}</h2>
+    <div class="when">${p.d}</div>
+    <div class="lbl">${c.label.ctx}</div><div class="ctx">${p.ctx}</div>
+    <div class="lbl">${c.label.msg}</div><div class="msg">${p.msg}</div>
+    <div class="link"><div class="ref">${p.ref}</div><p>« ${p.v} »</p>
+      <div class="lbl" style="margin-top:12px">${c.label.link}</div><div class="ctx">${p.christ}</div>
+    </div>
+  </div>`;
+  if(window.innerWidth<900) panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Fil Rouge — Les Écritures se répondent</title>
+<title>Le Fil Rouge v3 — Les Écritures se répondent</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -20,6 +20,8 @@
     --paque:#d05c5c;
     --figures:#a583d6;
     --temple:#57b3ab;
+    --filshomme:#c98a5e;
+    --trinite:#ededed;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
@@ -47,6 +49,8 @@
     max-width:640px;margin:14px auto 0;color:var(--muted);
     font-size:15.5px;
   }
+  .bstats{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:16px}
+  .bstats b{color:var(--gold);font-weight:600}
   /* chips */
   .chips{
     display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
@@ -140,6 +144,59 @@
     color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;
     text-align:center;line-height:1.7;
   }
+  /* contribution & modération */
+  .contrib{max-width:760px;margin:34px auto 0;padding:0 18px}
+  .contrib summary{
+    cursor:pointer;list-style:none;text-align:center;
+    font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);
+    border:1px solid var(--line);border-radius:999px;padding:11px 20px;
+    transition:border-color .2s;
+  }
+  .contrib summary:hover{border-color:var(--gold)}
+  .contrib summary::-webkit-details-marker{display:none}
+  .form{
+    background:var(--bg2);border:1px solid var(--line);border-radius:12px;
+    padding:26px;margin-top:14px;
+  }
+  .form h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:24px;margin-bottom:4px}
+  .form .hint{color:var(--muted);font-size:13px;font-family:system-ui,sans-serif;margin-bottom:18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  .fld{margin-bottom:12px}
+  .fld label{
+    display:block;font-family:system-ui,sans-serif;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;
+  }
+  .fld input,.fld select,.fld textarea{
+    width:100%;background:#0a0c14;border:1px solid var(--line);border-radius:7px;
+    color:var(--ink);font-family:Georgia,serif;font-size:15px;padding:9px 11px;
+  }
+  .fld textarea{min-height:64px;resize:vertical}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--gold)}
+  .btn{
+    font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.1em;
+    background:var(--gold);color:#141018;border:none;border-radius:8px;
+    padding:11px 22px;cursor:pointer;font-weight:600;
+  }
+  .btn:hover{filter:brightness(1.1)}
+  .btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+  .btn.ok{background:#4d8a54;color:#eaf3ea}
+  .btn.no{background:transparent;color:#c97a7a;border:1px solid #5a3232}
+  .msg{font-family:system-ui,sans-serif;font-size:13.5px;margin-top:12px;color:#8fbe8f}
+  .msg.err{color:#d08080}
+  .pending{
+    border:1px dashed var(--line);border-radius:10px;padding:16px;margin-top:12px;
+  }
+  .pending .refs{color:var(--gold);font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.1em}
+  .pending p{font-size:14px;color:var(--muted);margin:6px 0}
+  .pending .row{display:flex;gap:10px;margin-top:10px}
+  .arc.comm{stroke-dasharray:5 4}
+  .comm-badge{
+    display:inline-block;font-family:system-ui,sans-serif;font-size:10px;
+    letter-spacing:.18em;color:#8fbe8f;border:1px solid #2e4a31;border-radius:999px;
+    padding:3px 10px;margin-left:8px;vertical-align:middle;
+  }
   @media (prefers-reduced-motion:no-preference){
     .arc.draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 1.6s ease forwards}
     @keyframes draw{to{stroke-dashoffset:0}}
@@ -153,10 +210,11 @@
 <body>
 
 <header>
-  <div class="eyebrow">Prototype · Le fil rouge</div>
+  <div class="eyebrow">Prototype v3 · Le fil rouge · contributif</div>
   <h1>Les Écritures <em>se répondent</em></h1>
   <p class="lede">Chaque arc relie une parole de l'Ancien Testament à son accomplissement dans le Nouveau.
   Touchez un arc pour lire les deux versets face à face.</p>
+<div class="bstats">66 livres · ≈ 40 auteurs · 3 langues · ~1 500 ans · 3 continents · <b>1 fil</b></div>
 </header>
 
 <div class="chips" id="chips" role="group" aria-label="Filtrer par thème"></div>
@@ -169,6 +227,55 @@
 <div class="panel" id="panel">
   <div class="placeholder" id="ph">— Sélectionnez un arc pour ouvrir les textes —</div>
 </div>
+
+<details class="contrib" id="contrib">
+  <summary>＋ Proposer une correspondance</summary>
+  <div class="form">
+    <h3 class="display">Vous avez vu un fil que nous n'avons pas tracé ?</h3>
+    <p class="hint">Proposez-le : un passage de l'Ancien Testament, son écho dans le Nouveau. Chaque proposition est relue avant publication. Les propositions envoyées sont visibles par l'équipe de ce prototype.</p>
+    <div class="grid2">
+      <div class="fld"><label>Thème</label><select id="f-theme"></select></div>
+      <div class="fld"><label>Titre de la correspondance</label><input id="f-title" placeholder="Ex. Le puits de Jacob"></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <div class="grid2">
+          <div class="fld"><label>Livre (Ancien T.)</label><select id="f-ob"></select></div>
+          <div class="fld"><label>Chapitre</label><input id="f-oc" type="number" min="1" value="1"></div>
+        </div>
+        <div class="fld"><label>Référence complète AT</label><input id="f-oref" placeholder="Ex. Genèse 24:13"></div>
+        <div class="fld"><label>Texte AT (court)</label><textarea id="f-otext"></textarea></div>
+      </div>
+      <div>
+        <div class="grid2">
+          <div class="fld"><label>Livre (Nouveau T.)</label><select id="f-nb"></select></div>
+          <div class="fld"><label>Chapitre</label><input id="f-nc" type="number" min="1" value="1"></div>
+        </div>
+        <div class="fld"><label>Référence complète NT</label><input id="f-nref" placeholder="Ex. Jean 4:7"></div>
+        <div class="fld"><label>Texte NT (court)</label><textarea id="f-ntext"></textarea></div>
+      </div>
+    </div>
+    <div class="fld"><label>Note pédagogique (facultatif)</label><textarea id="f-note"></textarea></div>
+    <div class="fld"><label>Votre prénom (facultatif)</label><input id="f-name"></div>
+    <button class="btn" id="f-send">Envoyer la proposition</button>
+    <div class="msg" id="f-msg"></div>
+  </div>
+</details>
+
+<details class="contrib" id="modzone">
+  <summary>Espace modération</summary>
+  <div class="form">
+    <div id="mod-lock">
+      <p class="hint">Réservé à l'équipe. Entrez le code d'accès (démonstration).</p>
+      <div class="grid2">
+        <div class="fld"><input id="mod-code" type="password" placeholder="Code d'accès"></div>
+        <div><button class="btn ghost" id="mod-open">Ouvrir</button></div>
+      </div>
+      <div class="msg err" id="mod-msg"></div>
+    </div>
+    <div id="mod-list" style="display:none"></div>
+  </div>
+</details>
 
 <footer>
   Prototype : <span id="count"></span> correspondances choisies parmi les centaines de citations directes de l'Ancien Testament dans le Nouveau.
@@ -200,7 +307,9 @@ const THEMES={
   alliance:{label:"Alliances",color:"var(--alliance)",hex:"#7cb47c"},
   paque:{label:"Pâque & offrande",color:"var(--paque)",hex:"#d05c5c"},
   figures:{label:"Figures",color:"var(--figures)",hex:"#a583d6"},
-  temple:{label:"Temple",color:"var(--temple)",hex:"#57b3ab"}
+  temple:{label:"Temple",color:"var(--temple)",hex:"#57b3ab"},
+  filshomme:{label:"Fils de l'homme",color:"var(--filshomme)",hex:"#c98a5e"},
+  trinite:{label:"Un seul Dieu — Père, Fils, Esprit",color:"var(--trinite)",hex:"#ededed"}
 };
 
 /* ---------- Données : [livreAT, chap, réf AT, livreNT, chap, réf NT, thème, titre, texte AT, texte NT, note] ---------- */
@@ -360,7 +469,7 @@ const D=[
 ["Ps",69,"Psaume 69:22","Jn",19,"Jean 19:29","prophetie","Le vinaigre",
 "Ils me donnent du vinaigre à boire, pour apaiser ma soif.",
 "Ils remplirent de vinaigre une éponge et l'approchèrent de sa bouche.",""],
-["Dan",7,"Daniel 7:13","Mt",26,"Matthieu 26:64","prophetie","Le Fils de l'homme sur les nuées",
+["Dan",7,"Daniel 7:13","Mt",26,"Matthieu 26:64","filshomme","Le Fils de l'homme sur les nuées",
 "Sur les nuées des cieux arriva quelqu'un de semblable à un fils de l'homme.",
 "Vous verrez le Fils de l'homme assis à la droite de la puissance, et venant sur les nuées du ciel.",
 "Devant le grand prêtre, Jésus répond par Daniel 7 — et c'est cette citation qui décide de sa condamnation."],
@@ -529,7 +638,274 @@ const D=[
 "Détruisez ce temple, et en trois jours je le relèverai.",""],
 ["És",66,"Ésaïe 66:1","Ac",7,"Actes 7:49","temple","Le ciel est mon trône",
 "Ainsi parle l'Éternel : Le ciel est mon trône, et la terre mon marchepied. Quelle maison pourriez-vous me bâtir ?",
-"Le Très-Haut n'habite pas dans ce qui est fait de main d'homme, comme dit le prophète.",""]
+"Le Très-Haut n'habite pas dans ce qui est fait de main d'homme, comme dit le prophète.",""],
+
+/* — FILS DE L'HOMME — */
+["Dan",7,"Daniel 7:14","Mt",28,"Matthieu 28:18","filshomme","Une domination éternelle",
+"On lui donna la domination, la gloire et le règne ; et tous les peuples, les nations, les hommes de toutes langues le servirent.",
+"Tout pouvoir m'a été donné dans le ciel et sur la terre.",
+"La dernière scène de Matthieu, sur la montagne, est l'intronisation du Fils de l'homme annoncée par Daniel."],
+["Ps",8,"Psaume 8:5-7","Héb",2,"Hébreux 2:8-9","filshomme","« Qu'est-ce que le fils de l'homme ? »",
+"Qu'est-ce que l'homme, pour que tu te souviennes de lui, et le fils de l'homme, pour que tu prennes garde à lui ? Tu as tout mis sous ses pieds.",
+"Nous voyons Jésus, couronné de gloire et d'honneur à cause de la mort qu'il a soufferte.",
+"Le psaume qui s'émerveille de l'homme en général devient, en Hébreux, le portrait de l'Homme par excellence."],
+["Éz",2,"Ézéchiel 2:1","Mc",2,"Marc 2:10","filshomme","Le titre préféré de Jésus",
+"Fils de l'homme, tiens-toi sur tes pieds, et je te parlerai.",
+"Le Fils de l'homme a sur la terre le pouvoir de pardonner les péchés.",
+"« Fils de l'homme » : 93 fois adressé à Ézéchiel — l'homme fragile devant Dieu — et une fois au personnage céleste de Daniel 7. En choisissant ce titre, Jésus assume les deux : l'abaissement et la gloire."],
+["Dan",7,"Daniel 7:13","Ap",1,"Apocalypse 1:13","filshomme","Au milieu des chandeliers",
+"…et voici, sur les nuées des cieux arriva quelqu'un de semblable à un fils de l'homme.",
+"Je vis quelqu'un qui ressemblait à un fils d'homme, vêtu d'une longue robe, et ayant une ceinture d'or.",
+"Jean, à Patmos, reconnaît dans le Ressuscité la figure exacte de la vision de Daniel."],
+["Dan",7,"Daniel 7:13","Ap",14,"Apocalypse 14:14","filshomme","La moisson du Fils de l'homme",
+"…sur les nuées des cieux arriva quelqu'un de semblable à un fils de l'homme.",
+"Sur la nuée était assis quelqu'un qui ressemblait à un fils d'homme, une couronne d'or sur la tête, une faucille tranchante dans la main.",""],
+["Ps",80,"Psaume 80:18","Lc",22,"Luc 22:69","filshomme","L'homme de ta droite",
+"Que ta main soit sur l'homme de ta droite, sur le fils de l'homme que tu t'es choisi !",
+"Désormais le Fils de l'homme sera assis à la droite de la puissance de Dieu.",
+"Le psaume unissait déjà les deux images que Jésus joint devant ses juges : le fils de l'homme et la droite de Dieu."],
+["Ps",8,"Psaume 8:7","1Co",15,"1 Corinthiens 15:27","filshomme","Tout sous ses pieds",
+"Tu lui as donné la domination sur les œuvres de tes mains, tu as tout mis sous ses pieds.",
+"Dieu a tout mis sous ses pieds.",""],
+
+/* — UN SEUL DIEU : PÈRE, FILS, ESPRIT — */
+["Gen",1,"Genèse 1:26","Col",1,"Colossiens 1:16","trinite","« Faisons l'homme »",
+"Dieu dit : Faisons l'homme à notre image, selon notre ressemblance.",
+"En lui tout a été créé dans les cieux et sur la terre… Tout a été créé par lui et pour lui.",
+"Dès la première page, Dieu délibère à un pluriel mystérieux. Le Nouveau Testament nomme la Parole et l'Esprit présents à la création."],
+["Gen",1,"Genèse 1:2","Lc",1,"Luc 1:35","trinite","L'Esprit qui couvre",
+"L'Esprit de Dieu se mouvait au-dessus des eaux.",
+"Le Saint-Esprit viendra sur toi, et la puissance du Très-Haut te couvrira de son ombre.",
+"L'Esprit qui planait sur la première création couvre Marie au commencement de la nouvelle."],
+["Ps",33,"Psaume 33:6","Jn",1,"Jean 1:3","trinite","Par sa Parole et son Souffle",
+"Les cieux ont été faits par la parole de l'Éternel, et toute leur armée par le souffle de sa bouche.",
+"Toutes choses ont été faites par elle, et rien de ce qui a été fait n'a été fait sans elle.",
+"Parole et Souffle à l'œuvre dans la création : ce que le psaume chante, Jean le nomme."],
+["Ex",3,"Exode 3:14","Jn",8,"Jean 8:58","trinite","« JE SUIS »",
+"Dieu dit à Moïse : Je suis celui qui suis. Tu diras aux enfants d'Israël : Celui qui s'appelle JE SUIS m'a envoyé vers vous.",
+"En vérité, en vérité, je vous le dis, avant qu'Abraham fût, je suis.",
+"Les auditeurs comprennent parfaitement : ils ramassent des pierres. Jésus vient de prononcer sur lui-même le Nom du buisson ardent."],
+["Deut",6,"Deutéronome 6:4","1Co",8,"1 Corinthiens 8:6","trinite","Le Shema élargi",
+"Écoute, Israël ! l'Éternel, notre Dieu, est le seul Éternel.",
+"Il n'y a qu'un seul Dieu, le Père, de qui viennent toutes choses… et un seul Seigneur, Jésus-Christ, par qui sont toutes choses.",
+"Paul, juif fervent, réécrit la confession de foi d'Israël en y plaçant Jésus — sans cesser une seconde de confesser un seul Dieu."],
+["És",6,"Ésaïe 6:3","Jn",12,"Jean 12:41","trinite","La gloire qu'Ésaïe a vue",
+"Saint, saint, saint est l'Éternel des armées ! Toute la terre est pleine de sa gloire !",
+"Ésaïe dit ces choses, lorsqu'il vit sa gloire, et qu'il parla de lui.",
+"Jean l'affirme : la gloire que le prophète a contemplée dans le temple, c'était celle du Christ."],
+["Ps",45,"Psaume 45:7-8","Héb",1,"Hébreux 1:8-9","trinite","« Ton trône, ô Dieu »",
+"Ton trône, ô Dieu, est à toujours… C'est pourquoi, ô Dieu, ton Dieu t'a oint d'une huile de joie.",
+"Mais il a dit au Fils : Ton trône, ô Dieu, est éternel.",
+"Le psaume appelle « Dieu » celui que « son Dieu » oint : deux personnes, une seule divinité. Hébreux l'applique au Fils."],
+["Ps",102,"Psaume 102:26-28","Héb",1,"Hébreux 1:10-12","trinite","Le Fils créateur",
+"Tu as anciennement fondé la terre, et les cieux sont l'ouvrage de tes mains… Tu restes le même, et tes années ne finiront point.",
+"Et encore : Toi, Seigneur, tu as au commencement fondé la terre, et les cieux sont l'ouvrage de tes mains.",
+"Un psaume adressé à l'Éternel est cité, dans Hébreux, comme adressé au Fils — sans une ligne de justification : cela allait de soi."],
+["Joël",3,"Joël 3:5","Rm",10,"Romains 10:13","trinite","Invoquer le Nom",
+"Alors quiconque invoquera le nom de l'Éternel sera sauvé.",
+"Quiconque invoquera le nom du Seigneur sera sauvé.",
+"Chez Joël, le Nom invoqué est celui de l'Éternel ; chez Paul, le Seigneur confessé trois versets plus haut est Jésus."],
+["És",44,"Ésaïe 44:6","Ap",22,"Apocalypse 22:13","trinite","Le premier et le dernier",
+"Ainsi parle l'Éternel : Je suis le premier et je suis le dernier, et hors moi il n'y a point de Dieu.",
+"Je suis l'alpha et l'oméga, le premier et le dernier, le commencement et la fin.",
+"Le titre que Dieu se réserve exclusivement dans Ésaïe, le Christ le porte à la dernière page de la Bible."],
+["És",42,"Ésaïe 42:1","Mt",3,"Matthieu 3:16-17","trinite","La scène du Jourdain",
+"Voici mon serviteur… mon élu, en qui mon âme prend plaisir. J'ai mis mon Esprit sur lui.",
+"L'Esprit de Dieu descendit comme une colombe. Et voici, une voix fit entendre : Celui-ci est mon Fils bien-aimé, en qui j'ai mis toute mon affection.",
+"Au baptême de Jésus : le Père parle du ciel, le Fils se tient dans l'eau, l'Esprit descend. La scène qu'Ésaïe annonçait, trois présences, un seul Dieu."],
+/* ===== ENRICHISSEMENT v3 — 52 correspondances ===== */
+/* — prophéties — */
+["Ps",69,"Psaume 69:10","Jn",2,"Jean 2:17","prophetie","Le zèle de ta maison",
+"Le zèle de ta maison me dévore.",
+"Ses disciples se souvinrent qu'il est écrit : Le zèle de ta maison me dévore.",
+"Cité au premier geste public de Jésus dans le Temple."],
+["Ps",69,"Psaume 69:5","Jn",15,"Jean 15:25","prophetie","Haï sans cause",
+"Ils sont plus nombreux que les cheveux de ma tête, ceux qui me haïssent sans cause.",
+"Afin que s'accomplît la parole écrite dans leur loi : Ils m'ont haï sans cause.",""],
+["És",8,"Ésaïe 8:14","Rm",9,"Romains 9:33","prophetie","Pierre d'achoppement",
+"Il sera un sanctuaire, mais aussi une pierre d'achoppement, un rocher de scandale.",
+"Voici, je mets en Sion une pierre d'achoppement… et celui qui croit en lui ne sera point confus.",
+"La même pierre : fondation pour les uns, obstacle pour les autres."],
+["És",11,"Ésaïe 11:10","Rm",15,"Romains 15:12","prophetie","La racine d'Isaï",
+"Le rejeton d'Isaï sera comme une bannière pour les peuples ; les nations se tourneront vers lui.",
+"Ésaïe dit aussi : Il sortira d'Isaï un rejeton… les nations espéreront en lui.",""],
+["És",49,"Ésaïe 49:6","Ac",13,"Actes 13:47","prophetie","Lumière des nations",
+"Je t'établis pour être la lumière des nations, pour porter mon salut jusqu'aux extrémités de la terre.",
+"Ainsi nous l'a ordonné le Seigneur : Je t'ai établi pour être la lumière des nations.",
+"Paul et Barnabas lisent leur propre mission dans le chant du Serviteur."],
+["És",50,"Ésaïe 50:6","Mt",26,"Matthieu 26:67","prophetie","Le dos livré",
+"J'ai livré mon dos à ceux qui me frappaient, et mes joues à ceux qui m'arrachaient la barbe.",
+"Là-dessus, ils lui crachèrent au visage et le frappèrent à coups de poing.",""],
+["Am",8,"Amos 8:9","Mt",27,"Matthieu 27:45","prophetie","Le soleil couché à midi",
+"Je ferai coucher le soleil à midi, et j'obscurcirai la terre en plein jour.",
+"Depuis la sixième heure jusqu'à la neuvième, il y eut des ténèbres sur toute la terre.",""],
+["Ps",31,"Psaume 31:6","Lc",23,"Luc 23:46","prophetie","Entre tes mains",
+"Je remets mon esprit entre tes mains ; tu me délivreras, Éternel, Dieu de vérité.",
+"Jésus s'écria d'une voix forte : Père, je remets mon esprit entre tes mains.",
+"La dernière parole de la croix est un verset de psaume — la prière du soir des enfants d'Israël."],
+["És",35,"Ésaïe 35:5-6","Mt",11,"Matthieu 11:5","prophetie","Les signes du Messie",
+"Alors s'ouvriront les yeux des aveugles… alors le boiteux sautera comme un cerf.",
+"Les aveugles voient, les boiteux marchent… et la bonne nouvelle est annoncée aux pauvres.",
+"La réponse de Jésus aux envoyés de Jean-Baptiste est une mosaïque d'Ésaïe."],
+["Mal",4,"Malachie 4:5","Mt",17,"Matthieu 17:11-13","prophetie","Élie doit venir",
+"Voici, je vous enverrai Élie, le prophète, avant que le jour de l'Éternel arrive.",
+"Élie est déjà venu… Les disciples comprirent alors qu'il leur parlait de Jean-Baptiste.",""],
+["Os",6,"Osée 6:2","1Co",15,"1 Corinthiens 15:4","prophetie","Le troisième jour",
+"Il nous rendra la vie dans deux jours ; le troisième jour il nous relèvera.",
+"Il est ressuscité le troisième jour, selon les Écritures.",
+"Paul dit « selon les Écritures » sans citer ; Osée est l'un des textes que la tradition entend derrière la formule."],
+["Ps",68,"Psaume 68:19","Ép",4,"Éphésiens 4:8","prophetie","Monté en haut",
+"Tu es monté dans les hauteurs, tu as emmené des captifs.",
+"C'est pourquoi il est dit : Étant monté en haut, il a emmené des captifs.",""],
+["Nb",24,"Nombres 24:17","Mt",2,"Matthieu 2:2","prophetie","L'étoile de Jacob",
+"Un astre sort de Jacob, un sceptre s'élève d'Israël.",
+"Où est le roi des Juifs qui vient de naître ? Car nous avons vu son étoile en Orient.",
+"L'oracle de Balaam, lu comme messianique bien avant la venue des mages."],
+["És",60,"Ésaïe 60:6","Mt",2,"Matthieu 2:11","prophetie","L'or et l'encens",
+"Tous viendront de Séba ; ils porteront de l'or et de l'encens, et publieront les louanges de l'Éternel.",
+"Ils lui offrirent en présents de l'or, de l'encens et de la myrrhe.",""],
+["Ps",22,"Psaume 22:9","Mt",27,"Matthieu 27:43","prophetie","« Qu'il le délivre ! »",
+"Recommande-toi à l'Éternel ! L'Éternel le sauvera, il le délivrera, puisqu'il l'aime !",
+"Il s'est confié en Dieu ; que Dieu le délivre maintenant, s'il l'aime !",
+"Au pied de la croix, les moqueurs citent le Psaume 22 sans le savoir."],
+["És",52,"Ésaïe 52:15","Rm",15,"Romains 15:21","prophetie","Ceux qui n'avaient pas entendu",
+"Ceux à qui il n'avait point été annoncé verront, et ceux qui n'en avaient point entendu parler comprendront.",
+"Selon qu'il est écrit : Ceux à qui il n'avait point été annoncé verront.",
+"Paul fait du dernier verset d'introduction du chant du Serviteur sa feuille de route missionnaire."],
+["Ps",118,"Psaume 118:26","Mt",21,"Matthieu 21:9","prophetie","Béni soit celui qui vient",
+"Béni soit celui qui vient au nom de l'Éternel !",
+"Hosanna au Fils de David ! Béni soit celui qui vient au nom du Seigneur !",""],
+/* — agneau — */
+["Lév",1,"Lévitique 1:4","2Co",5,"2 Corinthiens 5:21","agneau","La main posée sur la tête",
+"Il posera sa main sur la tête de l'holocauste, qui sera agréé de l'Éternel, pour lui servir d'expiation.",
+"Celui qui n'a point connu le péché, il l'a fait devenir péché pour nous.",
+"Le geste du transfert : la faute passe de l'offrant à la victime."],
+["Deut",21,"Deutéronome 21:23","Ga",3,"Galates 3:13","agneau","La malédiction du bois",
+"Celui qui est pendu est un objet de malédiction auprès de Dieu.",
+"Christ nous a rachetés de la malédiction de la loi, étant devenu malédiction pour nous : Maudit est quiconque est pendu au bois.",""],
+["És",53,"Ésaïe 53:4","Mt",8,"Matthieu 8:17","agneau","Nos maladies portées",
+"Ce sont nos souffrances qu'il a portées, c'est de nos douleurs qu'il s'est chargé.",
+"Afin que s'accomplît la parole d'Ésaïe : Il a pris nos infirmités, et il s'est chargé de nos maladies.",
+"Matthieu applique Ésaïe 53 déjà aux guérisons : le portement commence avant la croix."],
+["És",53,"Ésaïe 53:9","1Pi",2,"1 Pierre 2:22","agneau","Ni violence ni fraude",
+"Il n'avait point commis de violence, et il n'y avait point eu de fraude dans sa bouche.",
+"Lui qui n'a point commis de péché, et dans la bouche duquel il ne s'est point trouvé de fraude.",""],
+["Ps",34,"Psaume 34:21","Jn",19,"Jean 19:36","agneau","Il garde tous ses os",
+"Il garde tous ses os, aucun d'eux n'est brisé.",
+"Ces choses sont arrivées afin que l'Écriture fût accomplie : Aucun de ses os ne sera brisé.",
+"Derrière Jean 19:36, deux textes se superposent : la règle de l'agneau pascal et la promesse faite au juste."],
+["Lév",16,"Lévitique 16:27","Héb",13,"Hébreux 13:12","agneau","Hors du camp",
+"Le taureau et le bouc expiatoires seront brûlés hors du camp.",
+"C'est pour cela que Jésus aussi, afin de sanctifier le peuple par son propre sang, a souffert hors de la porte.",""],
+["Nb",19,"Nombres 19:9","Héb",9,"Hébreux 9:13-14","agneau","La cendre qui purifie",
+"On recueillera la cendre de la vache : c'est une eau expiatoire.",
+"Si la cendre d'une vache sanctifie ceux qui sont souillés… combien plus le sang de Christ purifiera-t-il votre conscience !",""],
+/* — pâque & offrande — */
+["Ps",40,"Psaume 40:7-9","Héb",10,"Hébreux 10:5-7","paque","« Me voici »",
+"Tu ne désires ni sacrifice ni offrande… Alors je dis : Voici, je viens.",
+"Christ, entrant dans le monde, dit : Tu n'as voulu ni sacrifice ni offrande, mais tu m'as formé un corps… Voici, je viens pour faire ta volonté.",
+"Le psaume devient, en Hébreux, la prière du Fils entrant dans le monde."],
+["Ex",16,"Exode 16:18","2Co",8,"2 Corinthiens 8:15","paque","Ni trop, ni trop peu",
+"Celui qui avait ramassé beaucoup n'avait rien de trop, et celui qui avait ramassé peu n'en manquait pas.",
+"Selon qu'il est écrit : Celui qui avait ramassé beaucoup n'avait rien de trop.",
+"La règle de la manne devient la règle du partage chrétien."],
+["Deut",8,"Deutéronome 8:3","Mt",4,"Matthieu 4:4","paque","Pas de pain seulement",
+"L'homme ne vit pas de pain seulement, mais de toute parole qui sort de la bouche de l'Éternel.",
+"Il est écrit : L'homme ne vivra pas de pain seulement, mais de toute parole qui sort de la bouche de Dieu.",
+"Au désert, Jésus répond à la tentation par la leçon même de la manne."],
+["Ps",116,"Psaume 116:13","1Co",10,"1 Corinthiens 10:16","paque","La coupe du salut",
+"J'élèverai la coupe des délivrances, et j'invoquerai le nom de l'Éternel.",
+"La coupe de bénédiction que nous bénissons n'est-elle pas la communion au sang de Christ ?",
+"« Coupe de bénédiction » : un terme du repas pascal, repris tel quel par Paul."],
+["Ex",24,"Exode 24:11","Ap",3,"Apocalypse 3:20","paque","Ils virent Dieu, et ils mangèrent",
+"Ils virent Dieu, et ils mangèrent et burent.",
+"Si quelqu'un entend ma voix et ouvre la porte, j'entrerai chez lui, je souperai avec lui, et lui avec moi.",
+"L'alliance se scelle à table — du Sinaï jusqu'à la porte de Laodicée."],
+["Gen",3,"Genèse 3:6","Ap",19,"Apocalypse 19:9","paque","Du fruit pris au festin offert",
+"Elle prit de son fruit, et en mangea.",
+"Heureux ceux qui sont appelés au festin des noces de l'Agneau !",
+"Le mal est entré par une bouche ; la communion revient par une table. Première et dernière page : un repas."],
+["És",25,"Ésaïe 25:6","Ap",19,"Apocalypse 19:9","paque","Le festin pour tous les peuples",
+"L'Éternel des armées prépare pour tous les peuples un festin de mets succulents.",
+"Heureux ceux qui sont appelés au festin des noces de l'Agneau !",""],
+["Ex",12,"Exode 12:22","Jn",19,"Jean 19:29","paque","L'hysope",
+"Vous prendrez un bouquet d'hysope, vous le tremperez dans le sang.",
+"Ils fixèrent à une branche d'hysope une éponge imbibée de vinaigre, et l'approchèrent de sa bouche.",
+"L'instrument du sang pascal reparaît à l'instant précis où meurt l'Agneau."],
+/* — alliances — */
+["Gen",22,"Genèse 22:16-17","Héb",6,"Hébreux 6:13-14","alliance","Le serment de Morija",
+"Je le jure par moi-même… je te bénirai et je multiplierai ta postérité.",
+"Dieu, ne pouvant jurer par un plus grand que lui, jura par lui-même : Certainement je te bénirai.",""],
+["2S",7,"2 Samuel 7:14","Héb",1,"Hébreux 1:5","alliance","« Je serai pour lui un père »",
+"Je serai pour lui un père, et il sera pour moi un fils.",
+"Et encore : Je serai pour lui un père, et il sera pour moi un fils.",""],
+["És",54,"Ésaïe 54:13","Jn",6,"Jean 6:45","alliance","Tous enseignés de Dieu",
+"Tous tes fils seront disciples de l'Éternel.",
+"Il est écrit dans les prophètes : Ils seront tous enseignés de Dieu.",""],
+["Jér",32,"Jérémie 32:40","Héb",13,"Hébreux 13:20","alliance","Une alliance éternelle",
+"Je traiterai avec eux une alliance éternelle : je ne me détournerai plus d'eux.",
+"…par le sang d'une alliance éternelle.",""],
+["Éz",34,"Ézéchiel 34:23","Jn",10,"Jean 10:11","alliance","Un seul berger",
+"J'établirai sur elles un seul pasteur, qui les fera paître, mon serviteur David.",
+"Je suis le bon berger. Le bon berger donne sa vie pour ses brebis.",
+"Chez Ézéchiel, Dieu dit « moi-même je paîtrai mes brebis », puis annonce « un seul berger » : Jean 10 tient les deux bouts."],
+["Deut",30,"Deutéronome 30:14","Rm",10,"Romains 10:8","alliance","La parole tout près",
+"La parole est tout près de toi, dans ta bouche et dans ton cœur.",
+"Que dit-elle donc ? La parole est près de toi… c'est la parole de la foi, que nous prêchons.",""],
+["Lév",26,"Lévitique 26:12","2Co",6,"2 Corinthiens 6:16","alliance","« Je marcherai au milieu de vous »",
+"Je marcherai au milieu de vous, je serai votre Dieu, et vous serez mon peuple.",
+"Comme Dieu l'a dit : J'habiterai et je marcherai au milieu d'eux ; je serai leur Dieu, et ils seront mon peuple.",""],
+["És",59,"Ésaïe 59:20","Rm",11,"Romains 11:26","alliance","Le libérateur de Sion",
+"Un rédempteur viendra pour Sion.",
+"Selon qu'il est écrit : Le libérateur viendra de Sion.",""],
+/* — figures — */
+["Ruth",4,"Ruth 4:14","Lc",1,"Luc 1:68","figures","Le proche rédempteur",
+"Béni soit l'Éternel, qui ne t'a point laissé manquer aujourd'hui d'un rédempteur !",
+"Béni soit le Seigneur, le Dieu d'Israël, de ce qu'il a visité et racheté son peuple.",
+"Boaz, le goël — le parent qui a le droit et le cœur de racheter — dessine de loin le Rédempteur né de sa lignée (Matthieu 1:5)."],
+["1R",17,"1 Rois 17:22","Lc",7,"Luc 7:14-15","figures","Le fils rendu à sa mère",
+"L'Éternel écouta la voix d'Élie, et l'âme de l'enfant revint en lui.",
+"Jeune homme, je te le dis, lève-toi !… Et Jésus le rendit à sa mère.",
+"À Naïn, la foule s'écrie « un grand prophète » : elle a reconnu la scène d'Élie à Sarepta. Mais Élie priait ; Jésus commande."],
+["Jos",2,"Josué 2:18","Mt",1,"Matthieu 1:5","figures","Le cordon écarlate",
+"Tu attacheras ce cordon de fil cramoisi à la fenêtre.",
+"Salmon engendra Boaz de Rahab.",
+"La femme au fil écarlate entre dans la généalogie du Messie ; la tradition ancienne a vu dans son cordon le fil du salut à la fenêtre."],
+["2S",17,"2 Samuel 17:23","Mt",27,"Matthieu 27:5","figures","Le conseiller qui se pend",
+"Achitophel… mit ordre à sa maison, et se pendit.",
+"Judas jeta les pièces d'argent dans le temple, se retira, et alla se pendre.",
+"L'ami de David qui trahit puis se pend : l'ombre portée de Judas (voir Psaume 41:10)."],
+/* — temple — */
+["Ex",29,"Exode 29:38-39","Héb",10,"Hébreux 10:11-12","temple","Chaque jour — une seule fois",
+"Voici ce que tu offriras sur l'autel : deux agneaux chaque jour, à perpétuité.",
+"Tout sacrificateur se tient chaque jour debout… lui, après avoir offert un seul sacrifice, s'est assis pour toujours à la droite de Dieu.",
+"Le tamid s'arrête là où l'offrande unique commence — et le prêtre toujours debout s'assied enfin."],
+["Ex",34,"Exode 34:34","2Co",3,"2 Corinthiens 3:16","temple","Le voile ôté",
+"Lorsque Moïse entrait devant l'Éternel, il ôtait le voile.",
+"Quand les cœurs se convertissent au Seigneur, le voile est ôté.",""],
+["Ag",2,"Aggée 2:9","Lc",2,"Luc 2:27-32","temple","La gloire de la seconde maison",
+"La gloire de cette dernière maison sera plus grande que celle de la première.",
+"Siméon reçut l'enfant dans le temple : Mes yeux ont vu ton salut… lumière pour éclairer les nations.",
+"Le second Temple n'eut ni arche ni nuée — mais un enfant de quarante jours y fut porté."],
+["Mal",3,"Malachie 3:1","Mt",21,"Matthieu 21:12","temple","Le Seigneur entre dans son temple",
+"Et soudain entrera dans son temple le Seigneur que vous cherchez.",
+"Jésus entra dans le temple de Dieu, et il chassa tous ceux qui vendaient et qui achetaient.",""],
+["És",56,"Ésaïe 56:7","Mc",11,"Marc 11:17","temple","Maison de prière pour tous",
+"Ma maison sera appelée une maison de prière pour tous les peuples.",
+"N'est-il pas écrit : Ma maison sera appelée une maison de prière pour toutes les nations ?",""],
+/* — un seul Dieu : Père, Fils, Esprit — */
+["És",48,"Ésaïe 48:16","Jn",20,"Jean 20:21-22","trinite","Trois dans un verset",
+"Et maintenant, le Seigneur, l'Éternel, m'a envoyé avec son esprit.",
+"Comme le Père m'a envoyé, moi aussi je vous envoie. Puis il souffla sur eux : Recevez le Saint-Esprit.",
+"Chez Ésaïe déjà : un Envoyé parle, un Envoyeur envoie, un Esprit accompagne."],
+["Pr",30,"Proverbes 30:4","Jn",3,"Jean 3:13","trinite","« Quel est le nom de son fils ? »",
+"Qui est monté aux cieux, et qui en est descendu ?… Quel est son nom, et quel est le nom de son fils ? Le sais-tu ?",
+"Personne n'est monté au ciel, si ce n'est celui qui est descendu du ciel, le Fils de l'homme.",
+"La question laissée ouverte par les Proverbes ; Jésus répond à Nicodème dans les mêmes termes."],
+["És",63,"Ésaïe 63:10","Ép",4,"Éphésiens 4:30","trinite","L'Esprit que l'on peut attrister",
+"Ils ont été rebelles, ils ont attristé son Esprit Saint.",
+"N'attristez pas le Saint-Esprit de Dieu.",
+"Un Esprit qui peut être « attristé » n'est pas une force : c'est quelqu'un — déjà chez Ésaïe."]
 ];
 
 /* ---------- Géométrie ---------- */
@@ -562,16 +938,18 @@ const t2=el('text',{x:W-MR-2,y:H-8,class:'tlabel','text-anchor':'end'});t2.textC
   el('text',{x:x,y:BASE+82,class:'blabel','text-anchor':'middle'}).textContent=a;
 });
 
-/* arcs */
+/* arcs — rendu dynamique (base + contributions validées) */
 const tt=document.getElementById('tt');
 const arcs=[];
-D.forEach((d,i)=>{
+let ALL=[];
+function makeArc(d,i,comm){
   const x1=X(d[0],d[1]),x2=X(d[3],d[4]);
+  if(!(x1<x2))return;
   const rx=(x2-x1)/2, ry=Math.min(rx*0.72,MAXH);
-  const p=el('path',{d:`M ${x1} ${BASE} A ${rx} ${ry} 0 0 1 ${x2} ${BASE}`,class:'arc draw',stroke:THEMES[d[6]].hex});
-  p.style.animationDelay=(i*14)+"ms";
+  const p=el('path',{d:`M ${x1} ${BASE} A ${rx} ${ry} 0 0 1 ${x2} ${BASE}`,class:'arc draw'+(comm?' comm':''),stroke:THEMES[d[6]].hex});
+  p.style.animationDelay=(Math.min(i,90)*14)+"ms";
   p.style.color=THEMES[d[6]].hex;
-  p.dataset.i=i;p.dataset.t=d[6];
+  p.dataset.i=i;p.dataset.t=d[6];p.dataset.comm=comm?"1":"";
   p.addEventListener('mousemove',ev=>{
     tt.style.display='block';
     tt.innerHTML=`<div>${d[7]}</div><div class="tt-refs">${d[2]} → ${d[5]}</div>`;
@@ -582,7 +960,15 @@ D.forEach((d,i)=>{
   p.addEventListener('mouseleave',()=>tt.style.display='none');
   p.addEventListener('click',()=>select(i));
   arcs.push(p);
-});
+}
+function renderAll(){
+  arcs.forEach(p=>p.remove());arcs.length=0;
+  ALL=D.concat(store.approved.map(x=>x.d));
+  ALL.forEach((d,i)=>makeArc(d,i,i>=D.length));
+  applyFilter();
+  const c=document.getElementById('count');
+  c.textContent=D.length+(store.approved.length?` (+ ${store.approved.length} contribution${store.approved.length>1?'s':''} validée${store.approved.length>1?'s':''})`:"");
+}
 
 /* ---------- Filtres ---------- */
 const active=new Set(Object.keys(THEMES));
@@ -620,27 +1006,104 @@ const panel=document.getElementById('panel');
 let selIdx=-1;
 function select(i){
   selIdx=i;
-  arcs.forEach((p,j)=>p.classList.toggle('sel',j===i));
-  const d=D[i],th=THEMES[d[6]];
+  arcs.forEach(p=>p.classList.toggle('sel',+p.dataset.i===i));
+  const d=ALL[i],th=THEMES[d[6]],comm=i>=D.length;
   panel.innerHTML=`
     <div class="card">
-      <span class="badge" style="--tc:${th.hex}">${th.label}</span>
-      <h2 class="display">${d[7]}</h2>
+      <span class="badge" style="--tc:${th.hex}">${th.label}</span>${comm?'<span class="comm-badge">CONTRIBUTION VALIDÉE</span>':''}
+      <h2 class="display">${esc(d[7])}</h2>
       <div class="verse">
-        <div class="ref">${d[2]}</div>
-        <p>« ${d[8]} »</p>
+        <div class="ref">${esc(d[2])}</div>
+        <p>« ${esc(d[8])} »</p>
       </div>
       <div class="thread"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
       <div class="verse">
-        <div class="ref">${d[5]}</div>
-        <p>« ${d[9]} »</p>
+        <div class="ref">${esc(d[5])}</div>
+        <p>« ${esc(d[9])} »</p>
       </div>
-      ${d[10]?`<div class="note">${d[10]}</div>`:""}
+      ${d[10]?`<div class="note">${esc(d[10])}</div>`:""}
     </div>`;
   panel.classList.add('show');
   if(window.innerWidth<900) panel.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-document.getElementById('count').textContent=D.length;
+/* ---------- Stockage partagé (prototype) ---------- */
+const KEY="filrouge:data";
+let store={pending:[],approved:[]};
+const hasStorage=typeof window.storage!=="undefined";
+async function loadStore(){
+  if(!hasStorage)return;
+  try{const r=await window.storage.get(KEY,true);if(r&&r.value)store=JSON.parse(r.value);}
+  catch(e){/* clé absente : premier lancement */}
+}
+async function saveStore(){
+  if(!hasStorage)return false;
+  try{const r=await window.storage.set(KEY,JSON.stringify(store),true);return !!r;}
+  catch(e){return false;}
+}
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+
+/* ---------- Formulaire de proposition ---------- */
+const $=id=>document.getElementById(id);
+function fillSelects(){
+  const th=$('f-theme');
+  Object.entries(THEMES).forEach(([k,v])=>{const o=document.createElement('option');o.value=k;o.textContent=v.label;th.appendChild(o);});
+  const ob=$('f-ob'),nb=$('f-nb');
+  BOOKS.forEach((b,i)=>{
+    const o=document.createElement('option');o.value=b[0];o.textContent=b[1];
+    (i<39?ob:nb).appendChild(o);
+  });
+}
+fillSelects();
+function formMsg(t,err){const m=$('f-msg');m.textContent=t;m.className='msg'+(err?' err':'');}
+$('f-send').addEventListener('click',async()=>{
+  const ob=$('f-ob').value,nb=$('f-nb').value;
+  const oc=+$('f-oc').value,nc=+$('f-nc').value;
+  const obk=BOOKS.find(b=>b[0]===ob),nbk=BOOKS.find(b=>b[0]===nb);
+  const oref=$('f-oref').value.trim(),nref=$('f-nref').value.trim();
+  const ot=$('f-otext').value.trim(),nt=$('f-ntext').value.trim();
+  const title=$('f-title').value.trim(),note=$('f-note').value.trim(),name=$('f-name').value.trim();
+  if(!title||!oref||!nref||!ot||!nt){formMsg("Merci de remplir le titre, les deux références et les deux textes.",true);return;}
+  if(oc<1||oc>obk[2]){formMsg(`${obk[1]} compte ${obk[2]} chapitres.`,true);return;}
+  if(nc<1||nc>nbk[2]){formMsg(`${nbk[1]} compte ${nbk[2]} chapitres.`,true);return;}
+  const d=[ob,oc,oref,nb,nc,nref,$('f-theme').value,title,ot,nt,note+(name?` — proposé par ${name}`:"")];
+  store.pending.push({id:Date.now(),d:d});
+  const ok=await saveStore();
+  if(ok){formMsg("Merci ! Votre proposition est en file de relecture. Elle apparaîtra sur le diagramme après validation.");}
+  else{formMsg("Proposition enregistrée pour cette session (stockage partagé indisponible dans cet environnement).");}
+  ['f-title','f-oref','f-nref','f-otext','f-ntext','f-note','f-name'].forEach(i=>$(i).value="");
+});
+
+/* ---------- Modération (code de démonstration : AGNEAU-53) ---------- */
+const ADMIN_CODE="AGNEAU-53";
+$('mod-open').addEventListener('click',()=>{
+  if($('mod-code').value!==ADMIN_CODE){$('mod-msg').textContent="Code incorrect.";return;}
+  $('mod-lock').style.display='none';$('mod-list').style.display='block';renderMod();
+});
+function renderMod(){
+  const box=$('mod-list');
+  if(!store.pending.length){box.innerHTML='<p class="hint">Aucune proposition en attente.</p>';return;}
+  box.innerHTML='<p class="hint">'+store.pending.length+' proposition(s) en attente de relecture :</p>';
+  store.pending.forEach(item=>{
+    const d=item.d,div=document.createElement('div');div.className='pending';
+    div.innerHTML=`<div class="refs">${esc(d[2])} → ${esc(d[5])} · ${THEMES[d[6]]?THEMES[d[6]].label:d[6]}</div>
+      <strong>${esc(d[7])}</strong>
+      <p>« ${esc(d[8])} »</p><p>« ${esc(d[9])} »</p>${d[10]?`<p>${esc(d[10])}</p>`:""}
+      <div class="row"><button class="btn ok">Valider</button><button class="btn no">Refuser</button></div>`;
+    div.querySelector('.ok').addEventListener('click',async()=>{
+      store.pending=store.pending.filter(x=>x.id!==item.id);
+      store.approved.push(item);
+      await saveStore();renderAll();renderMod();
+    });
+    div.querySelector('.no').addEventListener('click',async()=>{
+      store.pending=store.pending.filter(x=>x.id!==item.id);
+      await saveStore();renderMod();
+    });
+    box.appendChild(div);
+  });
+}
+
+/* ---------- Initialisation ---------- */
+loadStore().then(renderAll);
 </script>
 </body>
 </html>

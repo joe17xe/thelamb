@@ -1,0 +1,17 @@
+# Fichiers téléchargés sans extension
+download (1)
+download (2)
+
+# Anciens prototypes / fichiers archivés
+etape-*.html
+fil-rouge-interactif.html
+fil-rouge-v1-archive.html
+prototype-fil-rouge.html
+prototype-fil-rouge-v2.html
+
+# Dossier Next.js (projet séparé)
+thelamb-next/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Temple détruit — pourquoi ?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Pilier · Le Temple détruit — pourquoi ?",
+eyebrow:"Matthieu 24 · Jérusalem, an 70 — l'événement qui a mis fin à l'ère des sacrifices, raconté par un témoin, Flavius Josèphe",
+verse:"« Il ne restera pas <span class='g'>pierre sur pierre</span> qui ne soit renversée. »",
+scene:"L'Agneau vivant est le vrai Temple. Quarante ans après la croix, le Temple de pierre est rasé par les légions romaines — et depuis, aucun sacrifice n'y a plus jamais été offert. Fait historique brut, chargé de sens. Que faut-il en comprendre, avec prudence et sans triomphalisme ?",
+stations:[
+{ctx:"Matthieu 24:1-2 · l'annonce",t:"Une prophétie datable",img:"Devant le Temple le plus splendide du monde, Jésus annonce sa ruine totale.",
+p:"Les disciples admirent les pierres colossales du Temple d'Hérode — certaines pesaient des dizaines de tonnes. Jésus répond par une phrase stupéfiante : « il ne restera pas pierre sur pierre ». Nous sommes vers l'an 30. En l'an 70, les légions de Titus incendient et démantèlent le sanctuaire, pierre après pierre. L'intérêt pour notre propos : voici une prophétie précise, publique, faite avant l'événement, et dont l'accomplissement est documenté par un historien juif contemporain, Flavius Josèphe, témoin oculaire du siège.",
+o:["Daniel 9:26","Le peuple d'un chef qui viendra détruira la ville et le sanctuaire."],
+n:["Matthieu 24:2","Il ne restera pas pierre sur pierre qui ne soit renversée."]},
+{ctx:"Matthieu 27:51 · le signe déjà donné",t:"Le voile déchiré, quarante ans avant",img:"À la mort de Jésus, le voile du Temple se déchire de haut en bas : l'accès est ouvert.",
+p:"Le vrai tournant n'a pas eu lieu en 70, mais le jour de la croix. À l'instant où Jésus meurt, « le voile du temple se déchira en deux, depuis le haut jusqu'en bas » (Matthieu 27:51). Ce voile séparait le Lieu très-saint, là où reposait la présence : le déchirer, c'est ouvrir l'accès à Dieu. Et le sens du geste est capital : il se déchire du haut vers le bas — de la main de Dieu, non de l'homme. La fonction du Temple s'achève là. La ruine de 70 ne fera que rendre visible, dans la pierre, ce qui s'était accompli dans le voile : le chemin vers Dieu ne passe plus par ce sanctuaire.",
+o:["Exode 26:33","Le voile vous servira de séparation entre le lieu saint et le lieu très-saint."],
+n:["Hébreux 10:19-20","Nous avons un libre accès… par le chemin nouveau qu'il a inauguré à travers le voile, c'est-à-dire sa chair."]},
+{ctx:"Hébreux 10 · le sens profond",t:"Un seul sacrifice, une fois pour toutes",img:"Le sacrifice quotidien s'arrête, parce que le vrai a eu lieu.",
+p:"L'épître aux Hébreux, écrite sans doute peu avant 70, tire la conclusion théologique avant même la chute des murs : les sacrifices d'animaux « qu'on offre continuellement chaque année » ne pouvaient jamais ôter les péchés (10:1-4) — ils étaient une ombre, répétée parce qu'incomplète. Mais le Christ « a offert un seul sacrifice pour les péchés, et s'est assis pour toujours » (10:12). Un prêtre s'asseoit quand l'œuvre est finie. Dès lors, le culte quotidien du Temple n'a plus d'objet : non parce qu'il aurait été mauvais, mais parce qu'il a atteint son but. L'ombre s'efface quand vient le corps qui la projetait.",
+o:["Psaume 40:7","Tu ne désires ni sacrifice ni offrande… Voici, je viens.",],
+n:["Hébreux 10:12","Christ, après avoir offert un seul sacrifice pour les péchés, s'est assis pour toujours à la droite de Dieu."]},
+{ctx:"Jean 4:21-23 · ce qui remplace le Temple",t:"Non plus un lieu, mais une personne",img:"« Détruisez ce temple » — il parlait de son corps. Le nouveau sanctuaire, c'est lui.",
+p:"À la Samaritaine qui l'interroge sur le bon lieu du culte, Jésus répond : « l'heure vient où ce ne sera ni sur cette montagne, ni à Jérusalem que vous adorerez le Père… les vrais adorateurs l'adoreront en esprit et en vérité » (Jean 4:21-23). Le culte ne se localise plus dans un bâtiment : il se rattache à une personne. « Détruisez ce temple, et en trois jours je le relèverai » — « il parlait du temple de son corps » (Jean 2:21). Et l'Église devient à son tour « le temple du Saint-Esprit » (1 Corinthiens 3:16). De la pierre à la chair, du lieu à la personne : c'est le mouvement de toute la Bible, achevé.",
+o:["Ézéchiel 37:27","Ma demeure sera près d'eux ; je serai leur Dieu, et ils seront mon peuple."],
+n:["Jean 2:21","Mais il parlait du temple de son corps."]}],
+vh:"Ce que 70 rend visible",
+vintro:"La destruction n'invente rien : elle manifeste dans l'histoire ce qui était déjà accompli. Quatre déplacements :",
+verbs:["Le lieu → la personne<small>le sanctuaire, c'est son corps (Jean 2:21)</small>","L'ombre → le corps<small>les sacrifices annonçaient le vrai (Hébreux 10:1)</small>","Le voile → l'accès<small>déchiré : le chemin est ouvert (Hébreux 10:20)</small>","La pierre → l'Esprit<small>l'Église, temple vivant (1 Corinthiens 3:16)</small>"],
+vp:"Un fait mérite d'être posé avec sobriété : depuis l'an 70, le judaïsme lui-même n'offre plus de sacrifices — non par choix théologique, mais parce que la Loi (Deutéronome 12) réserve le sacrifice au seul Temple de Jérusalem, qui n'existe plus. Le judaïsme rabbinique s'est alors réorganisé magnifiquement autour de la Torah, de la prière et de l'étude. Le chrétien lit cette césure comme un signe : le système des ombres s'est arrêté au moment où la réalité était venue. Nous exposons cette lecture ; nous la présentons avec respect, sans en faire une arme.",
+ch:"Une lecture qui exige de la prudence",
+c1:["Ce que confessent tous les chrétiens","Le sacrifice du Christ accomplit et achève le système sacrificiel de l'Ancienne Alliance ; l'accès à Dieu ne dépend plus d'un Temple de pierre ; l'Église, corps du Christ, est le nouveau lieu de la présence. C'est le socle commun, catholique et évangélique."],
+c2:["Ce que disent les textes","« Il parlait du temple de son corps » (Jean 2:21) · « Ni sur cette montagne ni à Jérusalem » (Jean 4:21) · « Un seul sacrifice… il s'est assis » (Hébreux 10:12) · « Le voile se déchira » (Matthieu 27:51) · « Vous êtes le temple de Dieu » (1 Corinthiens 3:16). Nous les citons intégralement."],
+c3:["Ce que nous refusons absolument","La destruction du Temple n'est JAMAIS un prétexte au mépris du peuple juif, ni une « punition » à brandir. L'Écriture elle-même dit l'inverse : Paul, en Romains 9–11, parle de son peuple avec une immense affection et affirme que « les dons de Dieu sont sans repentance ». Toute lecture qui tournerait à l'hostilité trahit l'Évangile — et sort de ce site. Nous lisons 70 comme l'accomplissement d'une offrande, non comme un verdict contre quiconque."],
+dh:"Aller plus loin",
+deep:[
+["Flavius Josèphe : l'histoire hors de la Bible","La chute de Jérusalem est l'un des événements antiques les mieux documentés, notamment par Flavius Josèphe, historien juif témoin du siège, dans « La Guerre des Juifs ». Il décrit la famine, l'incendie du sanctuaire, le démantèlement. Pour la section « Bible fiable » : la prophétie de Matthieu 24 n'est pas vérifiée par un texte chrétien complaisant, mais par un historien extérieur — un point d'appui précieux."],
+["« Avant cette génération » : une prophétie à échéance","Jésus précise : « cette génération ne passera point que tout cela n'arrive » (Matthieu 24:34). Une génération biblique, c'est environ quarante ans. De l'an 30 à l'an 70 : quarante ans, exactement. Le détail est frappant et souvent relevé ; nous le présentons comme tel, sans en faire un système de calcul, fidèles à notre règle sur les prophéties datées."],
+["Les quarante ans : un sursis, pas seulement un délai","La tradition juive et chrétienne a médité ce chiffre : quarante ans d'errance au désert (Nombres 14:34), quarante ans entre la croix et la ruine. Beaucoup y lisent un temps de patience offert — l'Évangile prêché d'abord à Jérusalem (Actes 1–7), le temps laissé pour répondre. La ruine n'est pas un couperet immédiat mais l'échéance d'un long appel. Lecture spirituelle, présentée comme telle."],
+["Pourquoi ce n'est pas un plan B","On pourrait croire que le christianisme « récupère » la fin du Temple après coup. Les textes disent l'inverse : l'annonce est antérieure (Matthieu 24, vers 30), la logique est posée avant la chute (Hébreux, avant 70), et le sens était donné dès la croix (le voile, an 30). L'Église n'a pas improvisé une explication : elle a reconnu ce qu'elle attendait. La cohérence du fil est justement notre thèse."],
+["Le troisième Temple des prophètes : déjà là ?","Ézéchiel 40–48 décrit un Temple futur immense ; certains l'attendent de pierre. Le Nouveau Testament propose une autre clé : le sanctuaire définitif n'est pas un bâtiment mais une personne et un peuple — « le temple, c'est le Seigneur Dieu tout-puissant et l'Agneau » (Apocalypse 21:22). Dans la Jérusalem finale, Jean cherche le Temple et n'en trouve pas : Dieu et l'Agneau y sont eux-mêmes le sanctuaire. La pierre a fait son temps ; la présence demeure."]],
+nlbl:"Revenir au fil",ntitle:"Explorer le Fil Rouge — 153 correspondances",
+ntext:"L'ombre s'est effacée devant le corps. Reprenez le fil complet, ou revenez au parcours depuis « Voici l'Agneau ».",
+foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pilier « Le Temple détruit » — l'ère des sacrifices s'achève là où l'offrande unique a eu lieu."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",slabel:"Pillar · The Temple destroyed — why?",
+eyebrow:"Matthew 24 · Jerusalem, AD 70 — the event that ended the age of sacrifices, told by an eyewitness, Flavius Josephus",
+verse:"“There will not be left here <span class='g'>one stone upon another</span> that will not be thrown down.”",
+scene:"The living Lamb is the true Temple. Forty years after the cross, the Temple of stone is razed by the Roman legions — and since then, no sacrifice has ever been offered there again. A raw historical fact, heavy with meaning. What should we understand from it, with care and without triumphalism?",
+stations:[
+{ctx:"Matthew 24:1-2 · the announcement",t:"A datable prophecy",img:"Before the most splendid Temple in the world, Jesus announces its total ruin.",
+p:"The disciples admire the colossal stones of Herod's Temple — some weighed dozens of tons. Jesus answers with a stunning sentence: “not one stone will be left upon another”. This is around AD 30. In AD 70, the legions of Titus burn and dismantle the sanctuary, stone by stone. What matters for our purpose: here is a precise, public prophecy, made before the event, whose fulfilment is documented by a contemporary Jewish historian, Flavius Josephus, eyewitness of the siege.",
+o:["Daniel 9:26","The people of a prince who will come will destroy the city and the sanctuary."],
+n:["Matthew 24:2","There will not be left here one stone upon another that will not be thrown down."]},
+{ctx:"Matthew 27:51 · the sign already given",t:"The veil torn, forty years earlier",img:"At Jesus' death, the Temple veil tears from top to bottom: the way is open.",
+p:"The true turning point did not happen in 70, but on the day of the cross. At the moment Jesus dies, “the veil of the temple was torn in two from the top to the bottom” (Matthew 27:51). That veil separated the Most Holy Place, where the presence rested: to tear it is to open access to God. And the meaning of the gesture is crucial: it tears from top to bottom — by God's hand, not man's. The Temple's function ends there. The ruin of 70 will only make visible, in stone, what had been accomplished in the veil: the way to God no longer passes through this sanctuary.",
+o:["Exodus 26:33","The veil shall separate for you the holy place from the most holy."],
+n:["Hebrews 10:19-20","We have boldness to enter… by the new and living way which he opened through the veil, that is, his flesh."]},
+{ctx:"Hebrews 10 · the deeper meaning",t:"One sacrifice, once for all",img:"The daily sacrifice stops, because the true one has taken place.",
+p:"The letter to the Hebrews, written probably shortly before 70, draws the theological conclusion before the walls even fall: animal sacrifices “offered continually year by year” could never take away sins (10:1-4) — they were a shadow, repeated because incomplete. But Christ “offered one sacrifice for sins forever, and sat down” (10:12). A priest sits down when the work is finished. From then on, the Temple's daily worship has no object: not because it was evil, but because it reached its goal. The shadow fades when the body that cast it arrives.",
+o:["Psalm 40:6","Sacrifice and offering you didn't desire… Behold, I have come."],
+n:["Hebrews 10:12","He, having offered one sacrifice for sins forever, sat down at the right hand of God."]},
+{ctx:"John 4:21-23 · what replaces the Temple",t:"No longer a place, but a person",img:"“Destroy this temple” — he spoke of his body. The new sanctuary is himself.",
+p:"To the Samaritan woman who asks him about the right place of worship, Jesus answers: “the hour comes when neither on this mountain nor in Jerusalem will you worship the Father… the true worshippers will worship in spirit and truth” (John 4:21-23). Worship is no longer located in a building: it is bound to a person. “Destroy this temple, and in three days I will raise it up” — “he spoke of the temple of his body” (John 2:21). And the Church becomes in turn “the temple of the Holy Spirit” (1 Corinthians 3:16). From stone to flesh, from place to person: it is the movement of the whole Bible, completed.",
+o:["Ezekiel 37:27","My dwelling will be with them; I will be their God, and they will be my people."],
+n:["John 2:21","But he spoke of the temple of his body."]}],
+vh:"What 70 makes visible",
+vintro:"The destruction invents nothing: it manifests in history what was already accomplished. Four shifts:",
+verbs:["Place → person<small>the sanctuary is his body (John 2:21)</small>","Shadow → body<small>the sacrifices announced the true one (Hebrews 10:1)</small>","Veil → access<small>torn: the way is open (Hebrews 10:20)</small>","Stone → Spirit<small>the Church, living temple (1 Corinthians 3:16)</small>"],
+vp:"One fact deserves to be stated soberly: since AD 70, Judaism itself no longer offers sacrifices — not by theological choice, but because the Law (Deuteronomy 12) reserves sacrifice to the one Temple of Jerusalem, which no longer exists. Rabbinic Judaism then reorganized magnificently around the Torah, prayer and study. The Christian reads this break as a sign: the system of shadows stopped at the moment the reality had come. We set out this reading; we present it with respect, never as a weapon.",
+ch:"A reading that demands care",
+c1:["What all Christians confess","Christ's sacrifice fulfills and completes the sacrificial system of the Old Covenant; access to God no longer depends on a Temple of stone; the Church, the body of Christ, is the new place of the presence. It is the common ground, Catholic and Evangelical."],
+c2:["What the texts say","“He spoke of the temple of his body” (John 2:21) · “Neither on this mountain nor in Jerusalem” (John 4:21) · “One sacrifice… he sat down” (Hebrews 10:12) · “The veil was torn” (Matthew 27:51) · “You are the temple of God” (1 Corinthians 3:16). We quote them in full."],
+c3:["What we absolutely refuse","The destruction of the Temple is NEVER a pretext for contempt of the Jewish people, nor a “punishment” to brandish. Scripture itself says the opposite: Paul, in Romans 9–11, speaks of his people with immense affection and affirms that “God's gifts are irrevocable”. Any reading that turns to hostility betrays the Gospel — and leaves this site. We read 70 as the fulfilment of an offering, not as a verdict against anyone."],
+dh:"Go deeper",
+deep:[
+["Flavius Josephus: history outside the Bible","The fall of Jerusalem is one of the best-documented ancient events, notably by Flavius Josephus, a Jewish historian and eyewitness of the siege, in “The Jewish War”. He describes the famine, the burning of the sanctuary, the dismantling. For the “A Bible worthy of trust” section: the prophecy of Matthew 24 is verified not by a complacent Christian text, but by an outside historian — a precious support."],
+["“Before this generation”: a prophecy with a deadline","Jesus specifies: “this generation will not pass away until all these things happen” (Matthew 24:34). A biblical generation is about forty years. From AD 30 to AD 70: forty years, exactly. The detail is striking and often noted; we present it as such, without turning it into a calculation system, faithful to our rule on dated prophecies."],
+["The forty years: a reprieve, not just a delay","Jewish and Christian tradition has meditated on this number: forty years of wandering in the desert (Numbers 14:34), forty years between the cross and the ruin. Many read in it a time of patience offered — the Gospel preached first in Jerusalem (Acts 1–7), the time left to respond. The ruin is not an immediate blow but the deadline of a long call. A spiritual reading, presented as such."],
+["Why this is not a plan B","One might think Christianity “recovers” the end of the Temple after the fact. The texts say the opposite: the announcement is earlier (Matthew 24, c. 30), the logic is set before the fall (Hebrews, before 70), and the meaning was given at the cross (the veil, AD 30). The Church did not improvise an explanation: it recognized what it was expecting. The coherence of the thread is precisely our thesis."],
+["The prophets' third Temple: already here?","Ezekiel 40–48 describes an immense future Temple; some await one of stone. The New Testament offers another key: the definitive sanctuary is not a building but a person and a people — “the temple is the Lord God Almighty and the Lamb” (Revelation 21:22). In the final Jerusalem, John looks for the Temple and finds none: God and the Lamb are themselves the sanctuary. Stone has had its time; the presence remains."]],
+nlbl:"Back to the thread",ntitle:"Explore the Scarlet Thread — 153 correspondences",
+ntext:"The shadow has faded before the body. Take up the full thread again, or return to the journey from “Behold the Lamb”.",
+foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Pillar “The Temple destroyed” — the age of sacrifices ends where the one offering took place."},
+ar:{dir:"rtl",brand:"حَمَلُ الله",slabel:"ركن · الهيكل المدمَّر — لماذا؟",
+eyebrow:"متى ٢٤ · أورشليم، سنة ٧٠ م — الحدثُ الذي أنهى عصرَ الذبائح، يرويه شاهدُ عيان، فلافيوس يوسيفوس",
+verse:"«لاَ يُتْرَكُ هُنَا <span class='g'>حَجَرٌ عَلَى حَجَرٍ</span> لاَ يُنْقَضُ.»",
+scene:"الحملُ الحيّ هو الهيكلُ الحقيقي. وبعد أربعين سنة من الصليب، تهدم الفيالقُ الرومانية هيكلَ الحجر — ومنذ ذلك الحين لم تُقدَّم فيه ذبيحةٌ قط. واقعةٌ تاريخية خام، مثقلةٌ بالمعنى. فماذا نفهم منها، بحذرٍ وبلا تباهٍ؟",
+stations:[
+{ctx:"متى ٢٤: ١-٢ · الإعلان",t:"نبوءةٌ قابلة للتأريخ",img:"أمام أبهى هيكلٍ في العالم، يعلن يسوع خرابَه التام.",
+p:"يُعجَب التلاميذ بحجارة هيكل هيرودس الضخمة — بعضُها يزن عشراتِ الأطنان. فيجيب يسوع بجملةٍ مذهلة: «لاَ يُتْرَكُ حَجَرٌ عَلَى حَجَرٍ». نحن نحو سنة ٣٠. وفي سنة ٧٠، تُحرق فيالقُ تيطس القدسَ وتفكّكه حجرًا حجرًا. وما يهمّنا: ها هي نبوءةٌ دقيقة، علنية، قِيلت قبل الحدث، وإتمامُها موثَّقٌ من مؤرّخٍ يهودي معاصر، فلافيوس يوسيفوس، شاهدِ عيانٍ للحصار.",
+o:["دانيال ٩: ٢٦","وَشَعْبُ رَئِيسٍ آتٍ يُخْرِبُ الْمَدِينَةَ وَالْقُدْسَ."],
+n:["متى ٢٤: ٢","لاَ يُتْرَكُ هُنَا حَجَرٌ عَلَى حَجَرٍ لاَ يُنْقَضُ."]},
+{ctx:"متى ٢٧: ٥١ · العلامة المُعطاة سلفًا",t:"الحجاب مشقوقًا، قبل أربعين سنة",img:"عند موت يسوع، ينشقّ حجابُ الهيكل من فوق إلى أسفل: انفتح الطريق.",
+p:"لم يقع المنعطفُ الحقيقي سنة ٧٠، بل يومَ الصليب. في لحظة موت يسوع، «انْشَقَّ حِجَابُ الْهَيْكَلِ إِلَى اثْنَيْنِ، مِنْ فَوْقُ إِلَى أَسْفَلُ» (متى ٢٧: ٥١). كان هذا الحجابُ يفصل قدسَ الأقداس، حيث يستقرّ الحضور: وشقُّه هو فتحُ الطريق إلى الله. ومعنى الإيماءة حاسم: ينشقّ من فوق إلى أسفل — بيد الله، لا بيد الإنسان. وظيفةُ الهيكل تنتهي هناك. وخرابُ سنة ٧٠ لن يفعل إلا أن يُظهر، في الحجر، ما تمّ في الحجاب: الطريقُ إلى الله لم يعد يمرّ بهذا القدس.",
+o:["خروج ٢٦: ٣٣","وَيَفْصِلُ لَكُمُ الْحِجَابُ بَيْنَ الْقُدْسِ وَقُدْسِ الأَقْدَاسِ."],
+n:["عبرانيين ١٠: ١٩-٢٠","لَنَا ثِقَةٌ بِالدُّخُولِ… طَرِيقًا كَرَّسَهُ لَنَا حَدِيثًا حَيًّا، بِالْحِجَابِ، أَيْ جَسَدِهِ."]},
+{ctx:"عبرانيين ١٠ · المعنى العميق",t:"ذبيحةٌ واحدة، مرةً واحدة إلى الأبد",img:"تتوقف الذبيحةُ اليومية، لأن الحقيقيةَ قد تمّت.",
+p:"الرسالةُ إلى العبرانيين، المكتوبةُ غالبًا قبيل سنة ٧٠، تستخلص النتيجةَ اللاهوتية قبل سقوط الأسوار: ذبائحُ الحيوانات «الَّتِي يُقَدِّمُونَهَا كُلَّ سَنَةٍ» لم تكن تقدر أن تنزع الخطايا (١٠: ١-٤) — كانت ظلًّا يتكرّر لأنه ناقص. أما المسيح فـ«قَدَّمَ عَنِ الْخَطَايَا ذَبِيحَةً وَاحِدَةً، ثُمَّ جَلَسَ» (١٠: ١٢). والكاهنُ يجلس حين يكمل العمل. ومن ثَمّ لم يعد للعبادة اليومية في الهيكل موضوع: لا لأنها كانت شرًّا، بل لأنها بلغت غايتها. الظلُّ يزول حين يأتي الجسدُ الذي كان يلقيه.",
+o:["مزمور ٤٠: ٦","بِذَبِيحَةٍ وَتَقْدِمَةٍ لَمْ تُسَرَّ… هَئَنَذَا جِئْتُ."],
+n:["عبرانيين ١٠: ١٢","فَهذَا، بَعْدَمَا قَدَّمَ عَنِ الْخَطَايَا ذَبِيحَةً وَاحِدَةً، جَلَسَ إِلَى الأَبَدِ عَنْ يَمِينِ اللهِ."]},
+{ctx:"يوحنا ٤: ٢١-٢٣ · ما يحلّ محلَّ الهيكل",t:"لا مكانٌ بعدُ، بل شخص",img:"«انقضوا هذا الهيكل» — كان يتكلم عن جسده. القدسُ الجديد هو هو.",
+p:"للمرأة السامرية التي تسأله عن مكان العبادة الصحيح، يجيب يسوع: «تَأْتِي سَاعَةٌ لاَ فِي هذَا الْجَبَلِ وَلاَ فِي أُورُشَلِيمَ تَسْجُدُونَ لِلآبِ… السَّاجِدُونَ الْحَقِيقِيُّونَ يَسْجُدُونَ بِالرُّوحِ وَالْحَقِّ» (يوحنا ٤: ٢١-٢٣). لم تعد العبادةُ محصورةً في مبنى: بل ترتبط بشخص. «انْقُضُوا هذَا الْهَيْكَلَ وَفِي ثَلاَثَةِ أَيَّامٍ أُقِيمُهُ» — «كَانَ يَقُولُ عَنْ هَيْكَلِ جَسَدِهِ» (يوحنا ٢: ٢١). وتصير الكنيسةُ بدورها «هَيْكَلَ الرُّوحِ الْقُدُسِ» (١ كورنثوس ٣: ١٦). من الحجر إلى الجسد، ومن المكان إلى الشخص: إنها حركةُ الكتاب كلِّه، مكتملةً.",
+o:["حزقيال ٣٧: ٢٧","وَيَكُونُ مَسْكَنِي فَوْقَهُمْ، وَأَكُونُ لَهُمْ إِلهًا وَهُمْ يَكُونُونَ لِي شَعْبًا."],
+n:["يوحنا ٢: ٢١","وَأَمَّا هُوَ فَكَانَ يَقُولُ عَنْ هَيْكَلِ جَسَدِهِ."]}],
+vh:"ما تُظهره سنة ٧٠",
+vintro:"الخرابُ لا يخترع شيئًا: بل يُظهر في التاريخ ما كان قد تمّ سلفًا. أربعةُ انتقالات:",
+verbs:["المكان ← الشخص<small>القدسُ هو جسده (يوحنا ٢: ٢١)</small>","الظلّ ← الجسد<small>الذبائحُ أنبأت بالحقيقية (عبرانيين ١٠: ١)</small>","الحجاب ← الطريق<small>مشقوقًا: انفتح الطريق (عبرانيين ١٠: ٢٠)</small>","الحجر ← الروح<small>الكنيسة، هيكلٌ حيّ (١ كورنثوس ٣: ١٦)</small>"],
+vp:"واقعةٌ تستحق أن تُذكر برصانة: منذ سنة ٧٠، لم تعد اليهوديةُ نفسُها تقدّم ذبائح — لا باختيارٍ لاهوتي، بل لأن الشريعة (تثنية ١٢) تحصر الذبيحةَ في هيكل أورشليم الوحيد، الذي لم يعد موجودًا. وقد أعادت اليهوديةُ الربّانية تنظيمَ نفسها ببراعةٍ حول التوراة والصلاة والدرس. ويقرأ المسيحيُّ هذا الانقطاعَ علامةً: نظامُ الظلال توقّف في اللحظة التي جاءت فيها الحقيقة. نعرض هذه القراءة؛ ونقدّمها باحترام، لا سلاحًا أبدًا.",
+ch:"قراءةٌ تتطلب حذرًا",
+c1:["ما يعترف به المسيحيون جميعًا","ذبيحةُ المسيح تُتمّم وتُكمّل نظامَ ذبائح العهد القديم؛ والدخولُ إلى الله لم يعد يتوقف على هيكلٍ من حجر؛ والكنيسة، جسدُ المسيح، هي موضعُ الحضور الجديد. إنها الأرضُ المشتركة، الكاثوليكية والإنجيلية."],
+c2:["ما تقوله النصوص","«كَانَ يَقُولُ عَنْ هَيْكَلِ جَسَدِهِ» (يوحنا ٢: ٢١) · «لاَ فِي هذَا الْجَبَلِ وَلاَ فِي أُورُشَلِيمَ» (يوحنا ٤: ٢١) · «ذَبِيحَةً وَاحِدَةً… جَلَسَ» (عبرانيين ١٠: ١٢) · «انْشَقَّ الْحِجَابُ» (متى ٢٧: ٥١) · «أَنْتُمْ هَيْكَلُ اللهِ» (١ كورنثوس ٣: ١٦). نقتبسها كاملةً."],
+c3:["ما نرفضه رفضًا قاطعًا","خرابُ الهيكل ليس أبدًا ذريعةً لاحتقار الشعب اليهودي، ولا «عقابًا» يُلوَّح به. الكتابُ نفسُه يقول العكس: بولس، في رومية ٩–١١، يتكلم عن شعبه بمحبةٍ هائلة ويؤكد أن «هِبَاتِ اللهِ… بِلاَ نَدَامَةٍ». وكلُّ قراءةٍ تنقلب عداءً تخون الإنجيلَ — وتخرج من هذا الموقع. نقرأ سنة ٧٠ إتمامًا لتقدمة، لا حكمًا على أحد."],
+dh:"للتعمّق",
+deep:[
+["فلافيوس يوسيفوس: التاريخ خارج الكتاب","سقوطُ أورشليم من أكثر أحداث العصور القديمة توثيقًا، لا سيما عند فلافيوس يوسيفوس، المؤرّخ اليهودي شاهدِ الحصار، في «الحرب اليهودية». يصف المجاعةَ، وحريقَ القدس، والتفكيك. لقسم «كتاب جدير بالثقة»: نبوءةُ متى ٢٤ لا يتحقق منها نصٌّ مسيحيٌّ متحيّز، بل مؤرّخٌ خارجي — سندٌ ثمين."],
+["«قبل هذا الجيل»: نبوءةٌ بأجل","يوضّح يسوع: «لاَ يَمْضِي هذَا الْجِيلُ حَتَّى يَكُونَ هذَا كُلُّهُ» (متى ٢٤: ٣٤). والجيلُ الكتابي نحو أربعين سنة. من سنة ٣٠ إلى سنة ٧٠: أربعون سنة، بالضبط. التفصيلُ لافتٌ وكثيرًا ما يُلاحَظ؛ نعرضه كذلك، من دون أن نجعله نظامَ حساب، أمانةً لقاعدتنا في النبوءات المؤرَّخة."],
+["الأربعون سنة: إمهالٌ لا مجرد تأخير","تأمّل التقليدُ اليهودي والمسيحي هذا الرقم: أربعون سنةً تيهًا في البرية (عدد ١٤: ٣٤)، وأربعون سنةً بين الصليب والخراب. ويقرأ كثيرون فيها زمنَ أناةٍ مُعطى — الإنجيلُ يُكرَز به أولًا في أورشليم (أعمال ١–٧)، والوقتُ متروكٌ للجواب. الخرابُ ليس مقصلةً فورية بل أجلَ نداءٍ طويل. قراءةٌ روحية، تُعرَض كذلك."],
+["لماذا هذه ليست خطةً بديلة","قد يُظنّ أن المسيحيةَ «تستغلّ» نهايةَ الهيكل بعد وقوعها. النصوص تقول العكس: الإعلانُ سابق (متى ٢٤، نحو ٣٠)، والمنطقُ موضوعٌ قبل السقوط (عبرانيين، قبل ٧٠)، والمعنى مُعطى منذ الصليب (الحجاب، سنة ٣٠). لم ترتجل الكنيسةُ تفسيرًا: بل عرفت ما كانت تنتظره. وتماسكُ الخيط هو أطروحتُنا بالذات."],
+["هيكلُ الأنبياء الثالث: أهو حاضرٌ سلفًا؟","حزقيال ٤٠–٤٨ يصف هيكلًا مستقبليًّا هائلًا؛ ينتظره بعضُهم من حجر. ويقدّم العهدُ الجديد مفتاحًا آخر: القدسُ النهائي ليس مبنًى بل شخصًا وشعبًا — «الرَّبُّ اللهُ الْقَادِرُ عَلَى كُلِّ شَيْءٍ هُوَ وَالْخَرُوفُ هَيْكَلُهَا» (رؤيا ٢١: ٢٢). في أورشليمَ الأخيرة، يبحث يوحنا عن الهيكل فلا يجده: اللهُ والخروفُ هما القدسُ نفسُه. الحجرُ أدّى دورَه؛ والحضورُ يبقى."]],
+nlbl:"عودةٌ إلى الخيط",ntitle:"استكشف الخيط الأحمر — ١٥٣ مطابقة",
+ntext:"زال الظلُّ أمام الجسد. استأنف الخيطَ كاملًا، أو عُد إلى المسار من «هوذا الحمل».",
+foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>ركن «الهيكل المدمَّر» — عصرُ الذبائح ينتهي حيث تمّت التقدمةُ الواحدة."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>
