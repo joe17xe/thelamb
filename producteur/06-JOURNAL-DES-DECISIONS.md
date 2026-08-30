@@ -68,6 +68,17 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-010 — Claude fusionne les pull requests dont la CI est verte
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** chaque livraison demandait un aller-retour — Claude ouvre la PR,
+attend, le porteur clique. Deux fois de suite, du travail terminé et vérifié est resté
+invisible plusieurs heures faute de ce clic, et a été signalé comme un défaut du site.
+**Ce qui a été décidé :** Claude fusionne lui-même une PR qu'il a ouverte, une fois la
+CI verte et sans conflit. Le porteur garde le retour arrière : le déploiement est
+réversible par `git revert`, et le site revient en une minute.
+**Ce qu'on abandonne :** la relecture systématique avant publication. En contrepartie,
+la CI doit rester digne de cette confiance — c'est elle, désormais, qui tient la porte.
+
 ### D-007 — La frise est la carte, pas le chemin
 **Date :** 30 août 2026 — **Statut :** tranchée
 **La question :** le cadre narratif de référence (périodisation de l'histoire du salut)

@@ -100,10 +100,19 @@ def verifier(chemin):
     return erreurs, avis, notes
 
 
+# Une réserve n'est pas une fiche : c'est de la matière gardée pour plus tard,
+# qui n'a pas à porter les trois strates tant qu'elle n'est pas rédigée.
+HORS_FICHE = {"réserve", "note"}
+
+
 def main(chemins):
     lignes, bloquant = [], False
     for chemin in chemins:
         if chemin.endswith(("MODELE.md", "README.md")):
+            continue
+        meta = entete(open(chemin, encoding="utf-8").read()) or {}
+        if meta.get("statut") in HORS_FICHE:
+            lignes.append("### `%s` — ⏸️ réserve, non soumise au gabarit\n" % chemin)
             continue
         erreurs, avis, notes = verifier(chemin)
         etat = "❌ à reprendre" if erreurs else ("⚠️ relire" if avis else "✅ conforme")

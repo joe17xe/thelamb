@@ -24,6 +24,12 @@ Copiez [`MODELE.md`](MODELE.md), renommez, remplissez. Le modèle porte en tête
 un bloc de métadonnées entre `---` : il est lu par la vérification automatique,
 n'en changez pas les noms de champs.
 
+## Les réserves
+
+Un fichier dont l'en-tête porte `statut: réserve` n'est pas une fiche : c'est de la
+matière transmise, gardée pour plus tard, qui n'a pas encore trouvé sa page. La
+vérification de forme la laisse passer sans rien exiger. Voir `emmaus-reserve.md`.
+
 ## Ce qui se passe ensuite
 
 À l'ouverture de la PR, une vérification automatique lit la fiche et commente :
