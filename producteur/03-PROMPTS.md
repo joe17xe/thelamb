@@ -113,3 +113,62 @@ Les limites de messages se rechargent au fil de la journée. Pour ne pas les gas
   la qualité baisse et les messages partent vite.
 - **demandez la fiche entière en une fois**, pas strate par strate.
 - **relisez avant de relancer.** Un aller-retour bien formulé vaut cinq corrections.
+
+---
+
+## 7. Proposer un chapitre nouveau
+
+```
+Je pense qu'il manque au site un chapitre sur [SUJET].
+
+Aide-moi à le défendre ou à l'abandonner. Rends-moi :
+1. le manque exact qu'il comble — ce qu'un visiteur ne peut pas comprendre sans lui
+2. un plan de 4 à 7 pages, une ligne chacune, avec le verset socle envisagé
+3. l'image mentale du chapitre entier, en un objet
+4. ce à quoi il se rattache : quelles pages existantes y mènent, vers quoi il renvoie
+5. l'argument le plus solide *contre* ce chapitre
+
+Le point 5 n'est pas une politesse : si tu ne trouves pas d'objection sérieuse,
+c'est que tu n'as pas cherché.
+```
+
+---
+
+## 8. Proposer une variante visuelle
+
+```
+Voici le squelette d'une page du site : vraies couleurs, vraies polices,
+vraie structure, contenu remplacé par des repères.
+
+Propose une variante où [CE QUE VOUS VOULEZ CHANGER].
+
+Contraintes :
+- garde la palette (nuit profonde, parchemin, or) et les polices
+- la page doit tenir en arabe, écriture de droite à gauche
+- la page doit tenir sur téléphone
+- rends une page complète et affichable, pas une description
+
+[COLLER LE CONTENU DE gabarit-visuel.html]
+```
+
+Claude produit un artéfact affichable. Partagez son lien dans le formulaire
+*Proposition visuelle*.
+
+---
+
+## 9. Proposer une restructuration
+
+```
+Voici l'état du site. Je veux proposer : [LE CHANGEMENT].
+
+Rends-moi :
+1. l'état actuel en schéma — quelles pages mènent à quelles pages
+2. l'état proposé, sous la même forme
+3. ce que le visiteur y gagne, concrètement
+4. ce que ça casse : liens rompus, pages à réécrire, contenu qui perd sa place
+5. une version plus modeste du même changement, qui casserait moins
+
+Ne me dis pas que c'est une bonne idée. Dis-moi ce que ça coûte.
+
+[COLLER LE CONTENU DE 04-ETAT-DU-SITE.md]
+```

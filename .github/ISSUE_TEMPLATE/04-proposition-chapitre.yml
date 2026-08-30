@@ -1,0 +1,90 @@
+name: "Proposition de chapitre"
+description: "Proposer une création : un chapitre, une rubrique, une section qui n'existe pas encore."
+title: "[Chapitre] "
+labels: ["contenu", "structure"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **On valide l'intention avant d'écrire le contenu.**
+        Ce ticket porte l'argument, pas la page rédigée — inutile de produire 3 000 mots
+        avant de savoir si le chapitre a sa place. La rédaction viendra ensuite,
+        par une *fiche de contenu*.
+
+  - type: input
+    id: titre
+    attributes:
+      label: Titre du chapitre proposé
+      placeholder: "Les cinq alliances — de Noé à la Cène"
+    validations:
+      required: true
+
+  - type: textarea
+    id: manque
+    attributes:
+      label: Quel manque il comble
+      description: "Qu'est-ce qu'un visiteur ne peut pas comprendre aujourd'hui, faute de ce chapitre ?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: plan
+    attributes:
+      label: Le plan
+      description: "Les pages ou stations du chapitre, une ligne chacune, avec le verset socle envisagé."
+      placeholder: |
+        1. Noé — l'arc dans la nuée (Genèse 9:13)
+        2. Abraham — la promesse et le passage entre les pièces (Genèse 15:17)
+        3. …
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: image
+    attributes:
+      label: L'image mentale du chapitre
+      description: "Ce que le lecteur retient du chapitre entier, en un objet."
+      placeholder: "la frise des cinq alliances"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: place
+    attributes:
+      label: Où il se place
+      options:
+        - Nouvelle section de premier niveau
+        - Dans « D'un testament à l'autre »
+        - Dans « L'Offrande »
+        - Dans « Une Bible digne de confiance »
+        - Dans les parcours guidés
+        - Ailleurs — précisé ci-dessous
+    validations:
+      required: true
+
+  - type: textarea
+    id: rattachement
+    attributes:
+      label: Ce à quoi il se rattache
+      description: "Quelles pages existantes y mènent, et vers quoi il renvoie. Le site souffre déjà de 14 pages isolées : une création qui ne se rattache à rien en ferait une quinzième."
+    validations:
+      required: true
+
+  - type: textarea
+    id: cout
+    attributes:
+      label: Ce que ça coûte
+      description: "Nombre de pages, ampleur de la recherche, ce qu'il faut déplacer ou réécrire ailleurs."
+
+  - type: dropdown
+    id: portee
+    attributes:
+      label: Portée
+      options:
+        - Une rubrique — s'ajoute sans rien déplacer
+        - Un chapitre — change la navigation d'une section
+        - Structurante — change la logique du site entier
+      default: 0
+    validations:
+      required: true
