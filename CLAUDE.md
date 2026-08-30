@@ -33,9 +33,24 @@ pas l'adjectif. Jamais de polémique contre une autre religion : sur les objecti
 Toujours la référence exacte. **N'invente jamais un verset ni une référence.**
 En cas de doute, écrire `[À VÉRIFIER]` plutôt qu'approximer.
 
-La marque est **visible du lecteur** et se traduit (décision D-012) : `[À VÉRIFIER]` ·
-`[TO VERIFY]` · `[للتحقّق]`. Montrer où l'on doute vaut mieux que de lisser — sur un site
-qui plaide la fiabilité des Écritures, c'est ce qui rend le reste croyable.
+`[À VÉRIFIER]` est un **jeton d'atelier**, pas du contenu : il marque une citation qu'on
+n'a pas encore confrontée au texte, et il se lève avant publication (décision D-013). Ne
+l'affiche jamais au lecteur — il fait passer pour une erreur possible ce qui est souvent
+un lien solide.
+
+**Ce que le lecteur voit, c'est la nature du lien**, jamais un doute brut. Nomenclature
+stable, employée dans les trois langues :
+
+| français | anglais | arabe | usage |
+|---|---|---|---|
+| Citation explicite | Explicit quotation | اقتباس صريح | le texte nomme ou cite l'autre texte |
+| Allusion largement reconnue | Widely recognised allusion | تلميح معترَف به على نطاق واسع | correspondances précises, sans formule de citation |
+| Écho thématique | Thematic echo | صدى موضوعي | motif partagé, lien plausible mais moins serré |
+| Lecture chrétienne | Christian reading | قراءة مسيحية | lecture typologique reçue dans une tradition |
+| Débat interprétatif | Interpretive debate | جدل تفسيري | plusieurs lectures sérieuses restent possibles |
+
+Un lien de la deuxième catégorie ou au-delà s'accompagne d'une **nuance dépliable** qui
+dit pourquoi il n'est pas de la première.
 
 **Édition arabe.** « Une Bible digne de confiance » et le « chemin du chercheur »
 remontent en tête de navigation. Le *taḥrīf* se traite par la datation des manuscrits
