@@ -89,10 +89,19 @@ se modifie dans l'objet `C`, langue par langue.
 Polices : Cormorant Garamond (titres) · Georgia (corps) · system-ui (interface) ·
 Amiri (arabe, avec `html[dir="rtl"]` pour chaque règle typographique).
 
-**Déploiement.** `.github/workflows/deploy.yml` — à chaque poussée sur `main`,
-rsync des `*.html` **de la racine uniquement** vers le VPS. Les sous-dossiers
-(`producteur/`, `contenus/`, `communication/`) ne sont pas publiés : ce sont des
-dossiers de travail.
+**Déploiement.** `.github/workflows/deploy.yml` — à chaque poussée sur `main` :
+les contrôles, puis rsync des `*.html` **de la racine uniquement** vers le VPS,
+puis vérification que le site sert bien ce qui vient d'être publié. Les
+sous-dossiers (`producteur/`, `contenus/`, `communication/`, `outils/`) ne sont
+pas publiés : ce sont des dossiers de travail.
+
+Le déploiement reprend sur panne réseau, refuse de publier un lot qui viderait
+le site, et ouvre un ticket « Déploiement bloqué » s'il échoue — qu'il referme
+au premier succès (décision D-014). Une fusion verte qui n'atteint pas le site
+ne doit jamais passer inaperçue.
+
+**Avant de pousser : `bash outils/tout-verifier.sh`.** C'est le script que la CI
+exécute, ni plus ni moins.
 
 ---
 
@@ -134,7 +143,7 @@ Le squelette nu, prêt à coller dans une conversation, est dans
 
 ## Ce que contient le dépôt
 
-- **Racine, `*.html`** — les 24 pages publiées.
+- **Racine, `*.html`** — les 23 pages publiées.
 - **`producteur/`** — kit de contribution éditoriale : charte à coller dans un Claude
   gratuit, gabarits, prompts, circuit des propositions, journal des décisions.
 - **`contenus/`** — les fiches soumises, en Markdown, avant transposition en page.

@@ -5,6 +5,21 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+
+# Deux fusions rapprochées ne doivent pas se croiser dans le même rsync.
+concurrency:
+  group: deploiement
+  cancel-in-progress: false
+
+env:
+  HOTE: 72.61.199.160
+  PORT: 2222
+  CIBLE: /var/www/laporte.joefr.cloud/
+  SITE: https://laporte.joefr.cloud
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -13,17 +28,145 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup SSH
+      # Ce qui est en ligne a passé les contrôles, même si la page est arrivée
+      # par une poussée directe sur main plutôt que par une PR vérifiée.
+      - name: Les contrôles du dépôt
+        run: bash outils/tout-verifier.sh
+
+      - name: Ouvrir la porte du VPS
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p 2222 -H 72.61.199.160 >> ~/.ssh/known_hosts
+          # ssh-keyscan sort en erreur quand il ne récolte aucune clé. Un VPS
+          # qui ne répond pas une seconde suffisait à faire échouer tout le
+          # déploiement : on réessaie avant de conclure que la porte est close.
+          for essai in 1 2 3 4; do
+            if ssh-keyscan -T 10 -p "$PORT" -H "$HOTE" >> ~/.ssh/known_hosts 2>/dev/null \
+               && [ -s ~/.ssh/known_hosts ]; then
+              echo "clé d'hôte récoltée à l'essai $essai"
+              exit 0
+            fi
+            echo "essai $essai sans réponse de $HOTE:$PORT"
+            sleep $((essai * 5))
+          done
+          echo "::error::$HOTE:$PORT ne répond pas après quatre essais."
+          exit 1
 
-      - name: Deploy HTML files via rsync
+      # Même garde-fou que dans outils/poser-situation.py : un outil ne doit
+      # jamais vider ce qu'il entretient. `rsync --delete` obéit sans discuter,
+      # donc c'est ici qu'on refuse — pas après.
+      - name: Le lot à publier est plausible
         run: |
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p 2222" \
-            --include="*.html" \
-            --exclude="*" \
-            ./ deploy@72.61.199.160:/var/www/laporte.joefr.cloud/
+          ici=$(ls -1 ./*.html 2>/dev/null | wc -l)
+          echo "$ici page(s) à la racine du dépôt"
+          if [ "$ici" -eq 0 ]; then
+            echo "::error::Aucune page à publier — déploiement refusé."
+            exit 1
+          fi
+          la_bas=$(ssh -i ~/.ssh/deploy_key -p "$PORT" -o BatchMode=yes \
+                     "deploy@$HOTE" "ls -1 $CIBLE*.html 2>/dev/null | wc -l" || echo 0)
+          la_bas=$(printf '%s' "$la_bas" | tr -dc '0-9')
+          la_bas=${la_bas:-0}
+          echo "$la_bas page(s) actuellement en ligne"
+          if [ "$la_bas" -gt 0 ] && [ "$ici" -lt $(( la_bas / 2 )) ]; then
+            echo "::error::$ici pages contre $la_bas en ligne — écart trop grand, déploiement refusé."
+            exit 1
+          fi
+
+      - name: Publier les pages
+        run: |
+          for essai in 1 2 3 4; do
+            if rsync -avz --delete \
+                 -e "ssh -i ~/.ssh/deploy_key -p $PORT -o BatchMode=yes" \
+                 --include="*.html" --exclude="*" \
+                 ./ "deploy@$HOTE:$CIBLE"; then
+              exit 0
+            fi
+            echo "rsync a échoué à l'essai $essai"
+            sleep $((essai * 5))
+          done
+          echo "::error::rsync a échoué quatre fois de suite."
+          exit 1
+
+      # Fusionné ne veut rien dire tant que ce n'est pas servi. On compare les
+      # empreintes des fichiers, puis on demande la page au serveur web.
+      - name: Le site sert bien ce qui vient d'être publié
+        run: |
+          md5sum ./*.html | sed 's|\./||' | sort > /tmp/ici.txt
+          ssh -i ~/.ssh/deploy_key -p "$PORT" -o BatchMode=yes "deploy@$HOTE" \
+            "cd $CIBLE && md5sum *.html" | sort > /tmp/la-bas.txt
+          if ! diff -u /tmp/ici.txt /tmp/la-bas.txt; then
+            echo "::error::Les fichiers en ligne ne correspondent pas au dépôt."
+            exit 1
+          fi
+          echo "$(wc -l < /tmp/ici.txt) page(s) identiques au bit près."
+          # Pas de chaîne magique : on cherche le titre que porte index.html.
+          attendu=$(grep -o '<title>[^<]*</title>' index.html | head -1)
+          if [ -z "$attendu" ]; then
+            echo "::error::index.html n'a pas de <title> — rien à vérifier côté serveur."
+            exit 1
+          fi
+          if curl -fsS --retry 3 --retry-delay 5 "$SITE/" | grep -qF "$attendu"; then
+            echo "Le serveur sert bien « $attendu »."
+          else
+            echo "::error::$SITE ne sert pas la page attendue."
+            exit 1
+          fi
+
+      # Une fusion verte qui n'atteint pas le site en silence, c'est le trou
+      # que ce ticket ferme : si le déploiement casse, on le lit dans le dépôt.
+      - name: Signaler l'échec dans un ticket
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const titre = "Déploiement bloqué";
+            const corps = [
+              `Le déploiement de \`${context.sha.slice(0, 7)}\` a échoué.`,
+              ``,
+              `[Voir le journal](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
+              ``,
+              `Le dépôt et le site sont donc désynchronisés : ce qui est sur \`main\``,
+              `n'est pas ce que lit un visiteur.`,
+              ``,
+              `Le journal dit lequel des trois moments a lâché — les contrôles du`,
+              `dépôt, la porte du VPS, ou le transfert. Une fois la cause levée,`,
+              `relancer le workflow « Deploy to VPS » suffit ; ce ticket se ferme`,
+              `de lui-même au premier déploiement réussi.`,
+            ].join("\n");
+            const ouverts = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: "open",
+            });
+            const deja = ouverts.data.find(i => i.title === titre && !i.pull_request);
+            if (deja) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: deja.number, body: corps,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: titre, body: corps,
+              });
+            }
+
+      - name: Refermer le ticket d'échec si le site est à jour
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const titre = "Déploiement bloqué";
+            const ouverts = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: "open",
+            });
+            for (const i of ouverts.data.filter(i => i.title === titre && !i.pull_request)) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: i.number,
+                body: `Déploiement réussi sur \`${context.sha.slice(0, 7)}\` — le site sert à nouveau ce que porte \`main\`.`,
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: i.number, state: "closed", state_reason: "completed",
+              });
+            }

@@ -68,6 +68,26 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-014 — Un déploiement doit prouver qu'il a eu lieu
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** la PR #8 a été fusionnée sur une CI verte, et son déploiement a
+échoué — `ssh-keyscan` n'a pas obtenu de réponse du VPS. Le site est resté en arrière
+sans que rien ne le signale. La règle D-010 dit « fusion auto dès que la CI est verte » ;
+elle supposait sans le dire que fusionné vaut publié.
+**Ce qui a été décidé :** le déploiement se prouve, en trois temps. Il **reprend** sur
+panne réseau (quatre essais espacés, sur `ssh-keyscan` comme sur `rsync`), plutôt que de
+conclure d'un silence d'une seconde que la porte est close. Il **refuse** un lot qui
+ferait fondre le site de plus de moitié — même garde-fou que dans `poser-situation.py`,
+parce que `rsync --delete` obéit sans discuter. Il **vérifie** : empreintes comparées
+fichier par fichier, puis le titre d'`index.html` redemandé au serveur web.
+**Ce que cela implique :** un échec ne peut plus être silencieux. Il ouvre un ticket
+« Déploiement bloqué » que le premier déploiement réussi referme. Un signal qui ne
+s'éteint jamais cesse d'être un signal.
+**Effet de bord utile :** les contrôles tournent aussi avant de publier, donc ce qui est
+en ligne les a passés même si la page est arrivée par une poussée directe sur `main`.
+**Ce qu'on abandonne :** rien. Un déploiement qui échoue bruyamment vaut mieux qu'un
+déploiement qui réussit à moitié.
+
 ### D-013 — On ne montre pas un doute, on nomme la nature du lien
 **Date :** 30 août 2026 — **Statut :** tranchée — **Remplace :** D-012
 **La question :** D-012 avait rendu `[À VÉRIFIER]` visible du lecteur, au nom de la
