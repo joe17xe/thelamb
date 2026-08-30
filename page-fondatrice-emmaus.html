@@ -124,6 +124,17 @@
     .hero,.strate,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+
+  /* liens secondaires — vers ce que la page ouvre sans y conduire */
+  .aussi{margin-top:38px;border-top:1px solid var(--line);padding-top:20px}
+  .aussi .albl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  html[dir="rtl"] .aussi .albl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .aussi a{display:block;color:var(--ink);text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;padding:10px 0;border-bottom:1px solid var(--line)}
+  html[dir="rtl"] .aussi a{font-family:'Amiri',serif}
+  .aussi a:last-child{border-bottom:none}
+  .aussi a:hover{color:var(--gold)}
+  .aussi a::after{content:"\2192";color:var(--gold);margin-inline-start:9px;font-size:15px}
+  html[dir="rtl"] .aussi a::after{content:"\2190"}
 </style>
 </head>
 <body>
@@ -155,7 +166,7 @@
 <script>
 const C={
 fr:{
-  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  dir:"ltr",albl:"Commencer le parcours",liens:["Voici l'Agneau — le fil en sept étapes"],brand:"L'AGNEAU DE DIEU",
   steplbl:"Page fondatrice · la méthode du site",
   steps:["Jérusalem, le matin","La route","La question","« Moïse et tous les prophètes »","L'auberge","Le pain rompu","Le retour en courant"],
   eyebrow:"Luc 24:13-35 · Route d'Emmaüs, le soir de Pâques, an 30",
@@ -190,7 +201,7 @@ fr:{
   foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Page fondatrice — la charte de méthode du site."
 },
 en:{
-  dir:"ltr",brand:"THE LAMB OF GOD",
+  dir:"ltr",albl:"Begin the journey",liens:["Behold the Lamb — the thread in seven steps"],brand:"THE LAMB OF GOD",
   steplbl:"Founding page · the method of this site",
   steps:["Jerusalem, morning","The road","The question","“Moses and all the prophets”","The inn","The bread broken","The run back"],
   eyebrow:"Luke 24:13-35 · Road to Emmaus, Easter evening, AD 30",
@@ -225,7 +236,7 @@ en:{
   foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Founding page — the site's charter of method."
 },
 ar:{
-  dir:"rtl",brand:"حَمَلُ الله",
+  dir:"rtl",albl:"ابدأ المسار",liens:["هوذا الحمل — الخيط في سبع خطوات"],brand:"حَمَلُ الله",
   steplbl:"الصفحة المؤسِّسة · منهج الموقع",
   steps:["أورشليم، صباحًا","الطريق","السؤال","«موسى وجميع الأنبياء»","المنزل","كسر الخبز","العودة ركضًا"],
   eyebrow:"لوقا ٢٤: ١٣-٣٥ · طريق عمواس، مساء أحد القيامة، سنة ٣٠ م",
@@ -260,6 +271,7 @@ ar:{
   foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>الصفحة المؤسِّسة — ميثاقُ منهج الموقع."
 }};
 
+const LIENS=["page-etalon-voici-agneau.html"];
 function render(l){
   const c=C[l];
   document.documentElement.lang=l;
@@ -298,6 +310,7 @@ function render(l){
     <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
     ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
   </section>
+  ${c.liens&&c.liens.length?`<div class="aussi"><div class="albl">${c.albl}</div>${c.liens.map((t,i)=>`<a href="${LIENS[i]}">${t}</a>`).join("")}</div>`:""}
   <a class="next" href="section-bible-fiable.html">
     <div class="nlbl">${c.nlbl}</div>
     <h3>${c.ntitle}</h3>

@@ -14,10 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Syntaxe des scripts de page
+        # Un script cassé rend une page vide : le HTML est là, rien ne le remplit.
+        run: node outils/verifier-script.mjs ./*.html
+
       - name: Intégrité trilingue de l'objet C
         # Le contenu des pages vit dans `const C = { fr, en, ar }`. Une édition
         # qui oublie une langue ne se voit pas à l'œil : elle se voit ici.
         run: node outils/verifier-langues.mjs ./*.html
+
+      - name: Rendu effectif des trois langues
+        run: node outils/essai-rendu.mjs ./*.html
+
+      - name: Maillage — ni orpheline, ni cul-de-sac
+        run: python3 outils/verifier-liens.py
 
       - name: Validité des références bibliques
         run: python3 outils/verifier-references.py ./*.html contenus/*.md

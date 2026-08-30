@@ -12,8 +12,9 @@ Le fichier navigation.yml est la source de vérité. Une page qui n'y figure pas
 n'est pas « tolérée » : elle est signalée, parce que c'est ainsi qu'on se
 retrouve avec quatorze pages inaccessibles.
 """
+import json
 import os
-import re
+import subprocess
 import sys
 
 import yaml
@@ -27,16 +28,16 @@ def declarees(noeud, acc=None):
     if isinstance(noeud, dict):
         if "fichier" in noeud:
             f = noeud["fichier"]
-            fiche = acc.setdefault(f, {"entree": None, "sorties": set(), "role": noeud.get("role")})
-            if noeud.get("entree"):
-                fiche["entree"] = noeud["entree"]
+            fiche = acc.setdefault(f, {"racine": False, "sorties": set(), "role": noeud.get("role")})
+            if noeud.get("racine"):
+                fiche["racine"] = True
             for cle in ("suite", "approfondit"):
                 if noeud.get(cle):
                     fiche["sorties"].add(noeud[cle])
             for a in noeud.get("annexes") or []:
                 fiche["sorties"].add(a)
         for cle, valeur in noeud.items():
-            if cle in ("fichier", "role", "raison"):
+            if cle in ("fichier", "role", "raison", "racine", "entree"):
                 continue
             declarees(valeur, acc)
         # `suite` posé au niveau d'un groupe s'applique à sa dernière page.
@@ -46,11 +47,19 @@ def declarees(noeud, acc=None):
     return acc
 
 
-def liens_reels(fichier):
-    if not os.path.exists(fichier):
-        return None
-    texte = open(fichier, encoding="utf-8").read()
-    return {m for m in re.findall(r'href="([^"#?]+\.html)"', texte)}
+def liens_rendus(fichiers):
+    """Relève les liens que chaque page produit réellement, dans les trois langues.
+
+    Chercher `href=` dans la source ne suffit pas : ces pages construisent leur
+    DOM en JavaScript, et une adresse peut vivre dans un tableau de constantes.
+    Seul le rendu dit la vérité — c'est donc lui qu'on interroge.
+    """
+    sortie = subprocess.run(
+        ["node", os.path.join(os.path.dirname(__file__), "essai-rendu.mjs"), "--json", *fichiers],
+        capture_output=True, text=True)
+    if not sortie.stdout.strip():
+        raise SystemExit("essai-rendu.mjs n'a rien renvoyé :\n" + sortie.stderr)
+    return {f: set(liens) for f, liens in json.loads(sortie.stdout).items()}
 
 
 def main():
@@ -66,7 +75,7 @@ def main():
     non_declarees = sorted(sur_disque - set(plan) - obsoletes)
     fantomes = sorted(set(plan) - sur_disque)
 
-    reels = {f: liens_reels(f) for f in sorted(set(plan) & sur_disque)}
+    reels = liens_rendus(sorted(set(plan) & sur_disque))
     cibles = set()
     for liens in reels.values():
         cibles |= liens
@@ -75,7 +84,7 @@ def main():
     for f, fiche in sorted(plan.items()):
         if f not in sur_disque:
             continue
-        if f not in cibles and fiche["entree"] is not None:
+        if f not in cibles and not fiche["racine"]:
             orphelines.append(f)
         if not reels[f]:
             culs_de_sac.append(f)

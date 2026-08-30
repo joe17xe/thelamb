@@ -124,6 +124,17 @@
     .hero,.strate,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+
+  /* liens secondaires — vers ce que la page ouvre sans y conduire */
+  .aussi{margin-top:38px;border-top:1px solid var(--line);padding-top:20px}
+  .aussi .albl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  html[dir="rtl"] .aussi .albl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .aussi a{display:block;color:var(--ink);text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;padding:10px 0;border-bottom:1px solid var(--line)}
+  html[dir="rtl"] .aussi a{font-family:'Amiri',serif}
+  .aussi a:last-child{border-bottom:none}
+  .aussi a:hover{color:var(--gold)}
+  .aussi a::after{content:"\2192";color:var(--gold);margin-inline-start:9px;font-size:15px}
+  html[dir="rtl"] .aussi a::after{content:"\2190"}
 </style>
 </head>
 <body>
@@ -155,7 +166,7 @@
 <script>
 const C={
 fr:{
-  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  dir:"ltr",albl:"Approfondir",liens:["La Résurrection — l'Agneau vivant","Déjà / Pas encore — la clé de lecture"],brand:"L'AGNEAU DE DIEU",
   steplbl:"Le fil de l'Agneau · étape 2 sur 7",
   steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
   eyebrow:"Apocalypse 5:6 · Patmos, vers l'an 95",
@@ -191,7 +202,7 @@ fr:{
   foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Parcours « Le fil de l'Agneau » — étape 2 sur 7."
 },
 en:{
-  dir:"ltr",brand:"THE LAMB OF GOD",
+  dir:"ltr",albl:"Go deeper",liens:["The Resurrection — the living Lamb","Already / Not yet — the reading key"],brand:"THE LAMB OF GOD",
   steplbl:"The thread of the Lamb · step 2 of 7",
   steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
   eyebrow:"Revelation 5:6 · Patmos, c. AD 95",
@@ -227,7 +238,7 @@ en:{
   foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>“The thread of the Lamb” — step 2 of 7."
 },
 ar:{
-  dir:"rtl",brand:"حَمَلُ الله",
+  dir:"rtl",albl:"تعمَّق أكثر",liens:["القيامة — الحمل الحيّ","الآن / وليس بعد — مفتاح القراءة"],brand:"حَمَلُ الله",
   steplbl:"خيط الحمل · الخطوة ٢ من ٧",
   steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
   eyebrow:"رؤيا ٥: ٦ · بَطْمُس، نحو سنة ٩٥ م",
@@ -263,6 +274,7 @@ ar:{
   foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٢ من ٧."
 }};
 
+const LIENS=["pilier-resurrection.html","cle-deja-pas-encore.html"];
 function render(l){
   const c=C[l];
   document.documentElement.lang=l;
@@ -301,6 +313,7 @@ function render(l){
     <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
     ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
   </section>
+  ${c.liens&&c.liens.length?`<div class="aussi"><div class="albl">${c.albl}</div>${c.liens.map((t,i)=>`<a href="${LIENS[i]}">${t}</a>`).join("")}</div>`:""}
   <a class="next" href="page-etape3-la-croix.html">
     <div class="nlbl">${c.nlbl}</div>
     <h3>${c.ntitle}</h3>

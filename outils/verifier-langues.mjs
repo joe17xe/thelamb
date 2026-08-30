@@ -9,30 +9,9 @@
 // Ce contrôle compare les trois structures clé par clé.
 
 import { readFileSync } from 'node:fs';
-import { runInNewContext } from 'node:vm';
+import { lireC } from './lire-C.mjs';
 
 const LANGUES = ['fr', 'en', 'ar'];
-
-/** Isole le littéral de l'objet C en suivant l'imbrication, chaînes comprises. */
-function extraireC(source) {
-  const debut = source.search(/\bconst\s+C\s*=\s*\{/);
-  if (debut === -1) return null;
-  const ouvrante = source.indexOf('{', debut);
-  let profondeur = 0, chaine = null, echappe = false;
-  for (let i = ouvrante; i < source.length; i++) {
-    const c = source[i];
-    if (chaine) {
-      if (echappe) echappe = false;
-      else if (c === '\\') echappe = true;
-      else if (c === chaine) chaine = null;
-      continue;
-    }
-    if (c === '"' || c === "'" || c === '`') { chaine = c; continue; }
-    if (c === '{') profondeur++;
-    else if (c === '}' && --profondeur === 0) return source.slice(ouvrante, i + 1);
-  }
-  return null;
-}
 
 /** Décrit la forme d'une valeur, sans son contenu : c'est la forme qu'on compare. */
 function forme(valeur) {
@@ -49,25 +28,24 @@ function memeForme(a, b) {
 }
 
 function verifier(chemin) {
-  const source = readFileSync(chemin, 'utf8');
-  const litteral = extraireC(source);
-  if (!litteral) return { chemin, ignore: 'pas d\'objet C — page hors gabarit' };
-
-  let C;
-  try {
-    C = runInNewContext('(' + litteral + ')', Object.create(null), { timeout: 2000 });
-  } catch (e) {
-    return { chemin, erreurs: ['objet C illisible : ' + e.message] };
-  }
+  const C = lireC(chemin);
+  if (!C) return { chemin, ignore: 'aucun objet de langue — page hors gabarit' };
 
   const erreurs = [], avis = [];
   const presentes = LANGUES.filter((l) => C[l]);
   for (const l of LANGUES) if (!C[l]) erreurs.push(`langue \`${l}\` absente de l'objet C`);
   if (presentes.length < 2) return { chemin, erreurs };
 
-  if (C.ar && C.ar.dir !== 'rtl') erreurs.push('`ar.dir` devrait valoir "rtl"');
+  // Toutes les pages ne déclarent pas `dir` dans l'objet : certaines l'appliquent
+  // directement dans leur rendu. On ne contrôle la valeur que si la clé existe.
+  if (C.ar && C.ar.dir !== undefined && C.ar.dir !== 'rtl') {
+    erreurs.push('`ar.dir` vaut "' + C.ar.dir + '" au lieu de "rtl"');
+  }
   for (const l of ['fr', 'en']) {
-    if (C[l] && C[l].dir && C[l].dir !== 'ltr') avis.push(`\`${l}.dir\` vaut "${C[l].dir}"`);
+    if (C[l] && C[l].dir !== undefined && C[l].dir !== 'ltr') avis.push(`\`${l}.dir\` vaut "${C[l].dir}"`);
+  }
+  if (C.ar && C.ar.dir === undefined && !/documentElement\.dir\s*=/.test(readFileSync(chemin, 'utf8'))) {
+    erreurs.push('aucune bascule droite-à-gauche : ni `ar.dir`, ni `documentElement.dir` dans le rendu');
   }
 
   // La langue de référence est le français : c'est elle qu'on édite en premier.
