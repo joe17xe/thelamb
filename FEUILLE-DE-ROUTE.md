@@ -105,6 +105,16 @@ boucle à l'exécution suivante. Le supprimer la relance.
   pour rien. La nomenclature sert là où un lecteur averti pourrait objecter.
 - première application: 2 Maccabées et Hébreux 11:35, sur l'étagère deutérocanonique
 
+## R-014 Rendre le déploiement démontrable
+- zone: verte
+- statut: fait
+- pourquoi: la fusion de la PR #8 est passée alors que son déploiement échouait — le site est resté en arrière sans que rien ne le dise, ce qui vide de sens la règle « fusion auto dès que la CI est verte »
+- fait quand: un déploiement reprend sur panne réseau, refuse un lot qui viderait le site, prouve que ce qui est servi correspond au dépôt, et ouvre un ticket s'il échoue
+- résultat: contrôles avant publication, quatre reprises sur ssh-keyscan et sur rsync,
+  garde-fou de moitié sur le nombre de pages, comparaison d'empreintes puis
+  requête au serveur web, ticket « Déploiement bloqué » ouvert puis refermé
+  automatiquement (D-014)
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

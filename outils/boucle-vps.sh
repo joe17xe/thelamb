@@ -65,14 +65,19 @@ Règles absolues :
 - ne touche à aucune autre entrée, à aucun autre sujet
 - ne modifie jamais le HTML rendu à la main : le contenu vit dans l'objet C
   trilingue, et toute modification doit être portée dans fr, en ET ar
-- n'invente jamais un verset ni une référence ; en cas de doute écris [À VÉRIFIER]
+- n'invente jamais un verset ni une référence
+- n'écris jamais [À VÉRIFIER] dans une page publiée : c'est un jeton d'atelier,
+  la CI le refuse (D-013). Dans une page, ce qui se dit au lecteur c'est la
+  nature du lien — citation explicite, allusion largement reconnue, écho
+  thématique, lecture chrétienne, débat interprétatif — avec une nuance
+  dépliable dès la deuxième catégorie. Si tu n'es pas sûr de la référence
+  elle-même, ne l'écris pas : ouvre un BLOCAGE.md
 - ne tranche aucune des questions de producteur/06-JOURNAL-DES-DECISIONS.md
 - ne modifie ni .github/workflows/ ni outils/ ni FEUILLE-DE-ROUTE.md
 
 Quand tu as fini, lance les contrôles :
-  node outils/verifier-langues.mjs *.html
-  python3 outils/verifier-references.py *.html contenus/*.md
-et corrige ce qu'ils signalent.
+  bash outils/tout-verifier.sh
+et corrige tout ce qu'ils signalent.
 
 Si la tâche dépasse ce que tu peux faire sûrement, ne produis AUCUNE modification :
 écris seulement un fichier BLOCAGE.md expliquant ce qui manque pour décider.
@@ -99,8 +104,8 @@ fi
 git diff --quiet && abandon "aucune modification produite pour $id"
 
 # — les contrôles tournent ici aussi : une branche poussée rouge fait perdre un cycle —
-node outils/verifier-langues.mjs ./*.html || abandon "intégrité trilingue rompue — rien n'est poussé" 1
-python3 outils/verifier-references.py ./*.html contenus/*.md || abandon "référence invalide — rien n'est poussé" 1
+bash outils/tout-verifier.sh >>"$JOURNAL" 2>&1 \
+  || abandon "les contrôles du dépôt échouent — rien n'est poussé (voir $JOURNAL)" 1
 
 git add -A
 git commit --quiet -m "$id — $titre" -m "Traité par la boucle autonome. Zone : $zone."
@@ -108,7 +113,7 @@ git push --quiet -u origin "$branche"
 
 gh pr create --base "$BRANCHE_BASE" --head "$branche" \
    --title "[$id] $titre" \
-   --body "$(printf 'Entrée **%s** de la feuille de route, zone **%s**.\n\nContrôles passés localement avant poussée : intégrité trilingue, références bibliques.\n\n---\n_Ouvert par la boucle autonome du VPS._' "$id" "$zone")" \
+   --body "$(printf 'Entrée **%s** de la feuille de route, zone **%s**.\n\nContrôles du dépôt passés localement avant poussée (outils/tout-verifier.sh).\n\n---\n_Ouvert par la boucle autonome du VPS._' "$id" "$zone")" \
    >>"$JOURNAL"
 
 dire "$id — PR ouverte depuis $branche"

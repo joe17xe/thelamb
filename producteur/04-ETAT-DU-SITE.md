@@ -1,11 +1,11 @@
 # État du site — relevé au 30 août 2026
 
 Document de travail pour la revue de structure. Chiffres relevés automatiquement
-sur les 24 pages HTML du dépôt, pas à l'estime.
+sur les 23 pages HTML du dépôt, pas à l'estime.
 
 ## Vue d'ensemble
 
-- **24 pages** publiées, ~112 000 mots
+- **23 pages** publiées, ~112 000 mots
 - **14 pages sur 24 sont orphelines** : aucune autre page du site n'y mène.
   Elles ne sont accessibles qu'en connaissant leur adresse.
 - **10 liens internes en tout** sur l'ensemble du site.
