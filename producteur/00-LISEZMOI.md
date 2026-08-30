@@ -49,6 +49,11 @@ changement : leur mode d'emploi — qui tranche quoi, en combien de temps, et po
 on valide l'intention avant d'écrire — est dans
 [`05-CIRCUIT-DES-PROPOSITIONS.md`](05-CIRCUIT-DES-PROPOSITIONS.md).
 
+**Pour une fiche déjà rédigée, mieux vaut une pull request qu'un ticket :** on discute
+alors sur le texte lui-même, ligne par ligne, et une vérification automatique commente
+la forme en une minute. Tout se fait dans le navigateur —
+voir [`07-CONTRIBUER-PAR-PR.md`](07-CONTRIBUER-PAR-PR.md).
+
 ## Proposer, et pas seulement produire
 
 Le producteur n'est pas un fournisseur de texte. Les propositions de création, de
