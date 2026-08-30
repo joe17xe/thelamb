@@ -82,7 +82,7 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-012 Montrer les livres deutérocanoniques, pas seulement les nommer
 - zone: rouge
-- statut: à faire
+- statut: fait
 - pourquoi: la décision D-008 dit qu'on les présente et qu'on ne les écarte pas. La salle
   de la bibliothèque les nomme déjà dans une note honnête, en trois langues — mais le site
   affirme « 66 livres » 27 fois, et ses données n'en connaissent que 66. Ils sont
