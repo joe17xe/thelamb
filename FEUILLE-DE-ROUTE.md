@@ -67,14 +67,18 @@ boucle à l'exécution suivante. Le supprimer la relance.
 - attention: pas automatisable. Une passe mécanique par « dernier livre cité » produit des
   faux — « (6:16) » devient Zacharie alors que le contexte est l'Apocalypse. Se fait à la
   main, page par page, dans les trois langues à la fois.
-- ordre suggéré: emmaüs (48) puis salle-bibliotheque (123), les deux plus lourdes
+- ordre suggéré: emmaüs (48) — fait — puis salle-bibliotheque (123), la plus lourde
+- reste: 327 références nues sur 18 pages
 
 ## R-011 Enrichir la page d'Emmaüs — les sept seuils
 - zone: orange
-- statut: à faire
+- statut: fait
 - pourquoi: les points du fil ne mènent à rien ; la matière existe pour en faire les sept
   seuils du récit, de la déception au témoignage
 - fait quand: chaque point ouvre son seuil, avec son texte et sa référence complète
+- résultat: les sept points sont devenus des boutons ; les 48 références nues de la page
+  sont complétées ; trois courts fragments de Luc sont nouveaux et restent à vérifier
+  contre le texte de référence quand R-004 sera fait
 
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
