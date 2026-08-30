@@ -33,6 +33,10 @@ pas l'adjectif. Jamais de polémique contre une autre religion : sur les objecti
 Toujours la référence exacte. **N'invente jamais un verset ni une référence.**
 En cas de doute, écrire `[À VÉRIFIER]` plutôt qu'approximer.
 
+La marque est **visible du lecteur** et se traduit (décision D-012) : `[À VÉRIFIER]` ·
+`[TO VERIFY]` · `[للتحقّق]`. Montrer où l'on doute vaut mieux que de lisser — sur un site
+qui plaide la fiabilité des Écritures, c'est ce qui rend le reste croyable.
+
 **Édition arabe.** « Une Bible digne de confiance » et le « chemin du chercheur »
 remontent en tête de navigation. Le *taḥrīf* se traite par la datation des manuscrits
 antérieurs à l'islam, sans triomphalisme. Privilégier le symbole aux représentations

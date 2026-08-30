@@ -68,6 +68,25 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-012 — La marque de vérification est visible du lecteur, et dans sa langue
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** le renvoi d'Hébreux 11:35 à 2 Maccabées 7 est une lecture largement
+reçue, mais pas une citation explicite. Fallait-il l'afficher marquée, la reformuler pour
+noyer l'incertitude, ou retirer le renvoi ?
+**Ce qui a été décidé :** garder la marque, et la rendre publique. Sur un site dont
+l'argument central est la fiabilité des Écritures, montrer où l'on n'est pas certain vaut
+mieux que de lisser. Un lecteur qui voit une marque de doute sur un point mineur croit
+davantage le reste.
+**Ce que cela implique :** la marque n'est plus un jeton d'atelier, c'est du contenu. Elle
+se traduit donc — `[À VÉRIFIER]` en français, `[TO VERIFY]` en anglais, `[للتحقّق]` en
+arabe. La laisser en français devant un lecteur arabophone aurait été un défaut, pas une
+convention.
+**Ce qu'on abandonne :** l'apparence d'une page entièrement assurée. C'est le but.
+
+**Portée :** cette règle vaut pour toute référence dont l'attribution est discutée. Elle
+ne dispense de rien : une référence marquée reste une dette, que l'entrée R-004 lèvera
+mécaniquement quand les textes de référence seront dans le dépôt.
+
 ### D-011 — Les deutérocanoniques ont leur étagère, et les chiffres les nomment
 **Date :** 30 août 2026 — **Statut :** tranchée
 **La question :** D-008 disait de les présenter sans les écarter. La salle de la
