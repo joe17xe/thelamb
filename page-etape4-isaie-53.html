@@ -124,6 +124,15 @@
     .hero,.strate,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+
+  /* navigation : la marque ramène à l'accueil, le fil est cliquable */
+  a.brand{text-decoration:none}
+  a.brand:hover{color:var(--ink)}
+  a.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  a.dot{text-decoration:none;color:inherit}
+  a.dot[href]:hover .nm{color:var(--gold)}
+  a.dot[href]:hover .pt{border-color:var(--gold)}
+  a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
 /* ——— bandeau de situation (généré : outils/poser-situation.py) ——— */
   .situation{max-width:1060px;margin:24px auto 0;padding:0 20px}
   .situation a{display:block;text-decoration:none;color:inherit}
@@ -144,7 +153,7 @@
 <body>
 
 <div class="top">
-  <div class="brand" id="brand"></div>
+  <a class="brand" id="brand" href="index.html"></a>
   <div class="langs" role="group" aria-label="Langue">
     <button data-l="fr" aria-pressed="true">FR</button>
     <button data-l="en" aria-pressed="false">EN</button>
@@ -277,6 +286,7 @@ ar:{
   foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٤ من ٧."
 }};
 
+const ETAPES=["page-etalon-voici-agneau.html", "page-etape2-agneau-regne.html", "page-etape3-la-croix.html", "page-etape4-isaie-53.html", "page-etape5-la-paque.html", "page-etape6-morija.html", "page-etape7-commencement.html"];
 function render(l){
   const c=C[l];
   document.documentElement.lang=l;
@@ -286,7 +296,7 @@ function render(l){
   const dots=document.getElementById('dots');dots.innerHTML="";
   c.steps.forEach((s,i)=>{
     if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
-    const d=document.createElement('div');d.className='dot'+(i===3?' on':'');
+    const d=document.createElement(i===3?'div':'a');if(i!==3)d.href=ETAPES[i];d.className='dot'+(i===3?' on':'');if(i===3)d.setAttribute('aria-current','step');
     d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
   });
   document.getElementById('eyebrow').textContent=c.eyebrow;

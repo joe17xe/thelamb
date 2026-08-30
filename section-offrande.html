@@ -91,6 +91,15 @@
     .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+
+  /* navigation : la marque ramène à l'accueil, le fil est cliquable */
+  a.brand{text-decoration:none}
+  a.brand:hover{color:var(--ink)}
+  a.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  a.dot{text-decoration:none;color:inherit}
+  a.dot[href]:hover .nm{color:var(--gold)}
+  a.dot[href]:hover .pt{border-color:var(--gold)}
+  a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
 /* ——— bandeau de situation (généré : outils/poser-situation.py) ——— */
   .situation{max-width:1060px;margin:24px auto 0;padding:0 20px}
   .situation a{display:block;text-decoration:none;color:inherit}
@@ -110,7 +119,7 @@
 </head>
 <body>
 <div class="top">
-  <div class="brand" id="brand"></div>
+  <a class="brand" id="brand" href="index.html"></a>
   <div class="langs" role="group" aria-label="Langue">
     <button data-l="fr" aria-pressed="true">FR</button>
     <button data-l="en" aria-pressed="false">EN</button>
