@@ -68,6 +68,35 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-011 — Les deutérocanoniques ont leur étagère, et les chiffres les nomment
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** D-008 disait de les présenter sans les écarter. La salle de la
+bibliothèque les nommait déjà dans une note honnête, mais le site affirmait « 66 livres »
+vingt-sept fois et ses étagères n'en montraient que 66. Mentionnés, pas montrés.
+**Ce qui a été décidé :** une sixième étagère à l'Ancien Testament, tracée en pointillé,
+portant la mention « reçus diversement selon les traditions » et un avertissement en
+tête : *cette étagère ne dit pas que ces livres sont canoniques pour tous*. Les sept
+livres y sont montrés comme les autres — Tobie, Judith, Sagesse, Siracide, Baruch, 1 et
+2 Maccabées. Les chiffres affichés deviennent « 66 en commun · 73 avec les
+deutérocanoniques », et la note sur le canon renvoie à l'étagère en rappelant que les
+Églises orthodoxes en reçoivent davantage encore.
+**Ce qu'on n'a pas fait :** le Fil Rouge garde son axe sur les 66 livres communs. Son jeu
+de données ne contient aucune correspondance touchant ces livres ; déplacer l'axe
+déplacerait les 153 arcs sans rien ajouter. C'est écrit en commentaire dans le fichier.
+**Ce qu'on abandonne :** la simplicité d'un chiffre unique. Le site dira désormais deux
+nombres et ce qui les sépare — c'est plus long à lire, et c'est plus vrai.
+
+### D-010 — Claude fusionne les pull requests dont la CI est verte
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** chaque livraison demandait un aller-retour — Claude ouvre la PR,
+attend, le porteur clique. Deux fois de suite, du travail terminé et vérifié est resté
+invisible plusieurs heures faute de ce clic, et a été signalé comme un défaut du site.
+**Ce qui a été décidé :** Claude fusionne lui-même une PR qu'il a ouverte, une fois la
+CI verte et sans conflit. Le porteur garde le retour arrière : le déploiement est
+réversible par `git revert`, et le site revient en une minute.
+**Ce qu'on abandonne :** la relecture systématique avant publication. En contrepartie,
+la CI doit rester digne de cette confiance — c'est elle, désormais, qui tient la porte.
+
 ### D-007 — La frise est la carte, pas le chemin
 **Date :** 30 août 2026 — **Statut :** tranchée
 **La question :** le cadre narratif de référence (périodisation de l'histoire du salut)

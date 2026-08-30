@@ -80,6 +80,20 @@ boucle à l'exécution suivante. Le supprimer la relance.
   sont complétées ; trois courts fragments de Luc sont nouveaux et restent à vérifier
   contre le texte de référence quand R-004 sera fait
 
+## R-012 Montrer les livres deutérocanoniques, pas seulement les nommer
+- zone: rouge
+- statut: fait
+- pourquoi: la décision D-008 dit qu'on les présente et qu'on ne les écarte pas. La salle
+  de la bibliothèque les nomme déjà dans une note honnête, en trois langues — mais le site
+  affirme « 66 livres » 27 fois, et ses données n'en connaissent que 66. Ils sont
+  mentionnés, pas montrés.
+- fait quand: le lecteur peut voir ces livres et leur place, sans que le site décrète pour
+  autant qu'ils sont canoniques pour tous
+- attention: c'est une décision éditoriale avant d'être une tâche. Trois voies possibles :
+  laisser la note seule (le site ne change pas), ajouter une étagère distincte marquée
+  comme reçue diversement, ou ouvrir une page dédiée à la question du canon. La deuxième
+  respecte le mieux les trois cercles, mais elle touche le décompte affiché partout.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
