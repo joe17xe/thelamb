@@ -94,6 +94,17 @@ boucle à l'exécution suivante. Le supprimer la relance.
   comme reçue diversement, ou ouvrir une page dédiée à la question du canon. La deuxième
   respecte le mieux les trois cercles, mais elle touche le décompte affiché partout.
 
+## R-013 Étendre la nomenclature des liens aux pages qui en ont besoin
+- zone: orange
+- statut: à faire
+- pourquoi: le site montre environ mille renvois sans jamais dire de quelle nature ils
+  sont. Une citation explicite, une allusion reconnue et une lecture typologique n'ont pas
+  la même force, et le lecteur ne peut pas les distinguer.
+- fait quand: les liens dont la nature se discute portent leur badge et leur nuance
+- attention: ne pas badger ce qui n'en a pas besoin. Un renvoi évident alourdirait la page
+  pour rien. La nomenclature sert là où un lecteur averti pourrait objecter.
+- première application: 2 Maccabées et Hébreux 11:35, sur l'étagère deutérocanonique
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

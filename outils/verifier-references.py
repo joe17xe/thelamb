@@ -12,6 +12,7 @@ Là où les éditions diffèrent (Joël, Malachie), on retient le compte le plus
 large : ce contrôle doit se taire sur les cas discutables et ne parler que
 sur les erreurs franches.
 """
+import os
 import re
 import sys
 import unicodedata
@@ -105,6 +106,20 @@ NUE = re.compile(r"[^(a-zA-Z\u0600-\u06ff](\(\s*[\d\u0660-\u0669]{1,3}\s*:\s*"
 PSAUME_NU = re.compile(r"\((\d{1,3})\)")
 
 
+# Jetons d'atelier : légitimes dans `contenus/`, jamais dans une page publiée.
+# On ne cherche pas le mot seul — « s'expose à la vérification » (للتحقّق) est de la
+# prose — mais le crochet ouvrant qui en fait une marque (décision D-013).
+JETON = re.compile(r"\[\s*(?:À VÉRIFIER|A VERIFIER|TO VERIFY|TO BE VERIFIED|\u0644\u0644\u062a\u062d\u0642\u0651\u0642|\u0644\u0644\u062a\u062d\u0642\u0642)",
+                   re.IGNORECASE)
+
+
+def jetons(chemin):
+    """Les marques d'atelier restées dans une page publiée."""
+    src = open(chemin, encoding="utf-8").read()
+    return [src[max(0, m.start()):m.start() + 90].replace("\n", " ")
+            for m in JETON.finditer(src)]
+
+
 def nues(chemin):
     src = open(chemin, encoding="utf-8").read()
     n = len(NUE.findall(src))
@@ -122,6 +137,11 @@ def main(chemins):
     for chemin in chemins:
         vues, erreurs = verifier(chemin)
         total += vues
+        # Une page à la racine est publiée : un jeton d'atelier y est une faute.
+        # Le glob du shell préfixe `./` — normaliser avant de juger de la racine.
+        if chemin.endswith(".html") and os.path.dirname(os.path.normpath(chemin)) == "":
+            for extrait in jetons(chemin):
+                erreurs.append("marque d'atelier laissée au lecteur : `%s…`" % extrait)
         if erreurs:
             bloquant = True
             lignes.append("\n### `%s`\n" % chemin)
@@ -133,7 +153,7 @@ def main(chemins):
     if lignes:
         print("\n".join(lignes))
     else:
-        print("\nAucun chapitre inexistant. "
+        print("\nAucun chapitre inexistant, aucune marque d'atelier publiée. "
               "_Le texte des citations n'est pas vérifié ici — voir `textes/README.md`._")
 
     compte = {c: nues(c) for c in chemins if nues(c)}

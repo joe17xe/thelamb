@@ -68,8 +68,35 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-013 — On ne montre pas un doute, on nomme la nature du lien
+**Date :** 30 août 2026 — **Statut :** tranchée — **Remplace :** D-012
+**La question :** D-012 avait rendu `[À VÉRIFIER]` visible du lecteur, au nom de la
+transparence. À la relecture, le raisonnement était faux sur ce cas précis : l'incertitude
+ne portait pas sur la solidité du renvoi d'Hébreux 11:35 aux martyrs de 2 Maccabées 6–7 —
+une allusion largement reconnue en exégèse — mais sur sa **nature** : allusion et non
+citation. Afficher « à vérifier » faisait passer pour une erreur possible ce qui est un
+lien bien établi.
+**Ce qui a été décidé :** `[À VÉRIFIER]` redevient un jeton d'atelier, qui se lève avant
+publication. Ce que le lecteur voit, c'est un **badge nommant le type de lien**, adossé à
+une nuance dépliable qui explique le classement. Cinq catégories, stables et trilingues :
+citation explicite · allusion largement reconnue · écho thématique · lecture chrétienne ·
+débat interprétatif.
+**Pourquoi c'est meilleur :** le doute brut infantilise et se lit comme un aveu de
+faiblesse. Nommer la nature du lien est plus exact, plus utile au lecteur, et
+intellectuellement plus fort — on ne cache rien, on classe. Le principe de D-012 survit :
+on ne lisse pas. Seul le moyen change.
+**Bénéfice œcuménique :** la question du lien littéraire entre Hébreux et 2 Maccabées est
+distincte de celle du canon. La nuance le dit explicitement, ce qui permet à un lecteur
+protestant d'examiner l'allusion sans avoir à trancher le canon d'abord.
+**Ce qu'on abandonne :** rien de solide. D-012 aura duré une heure, et aura servi à
+trouver la bonne formulation.
+**Comment la règle tient :** `verifier-references.py` refuse désormais toute page publiée
+qui contient un jeton d'atelier, et se tait sur `contenus/` où le jeton est à sa place.
+Le contrôle cherche le crochet ouvrant, pas le mot seul : la croix dit d'un évangile qu'il
+« s'expose à la vérification » (للتحقّق), et c'est de la prose, pas une marque.
+
 ### D-012 — La marque de vérification est visible du lecteur, et dans sa langue
-**Date :** 30 août 2026 — **Statut :** tranchée
+**Date :** 30 août 2026 — **Statut :** remplacée par D-013 le jour même
 **La question :** le renvoi d'Hébreux 11:35 à 2 Maccabées 7 est une lecture largement
 reçue, mais pas une citation explicite. Fallait-il l'afficher marquée, la reformuler pour
 noyer l'incertitude, ou retirer le renvoi ?
