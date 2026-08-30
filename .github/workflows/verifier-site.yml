@@ -1,0 +1,34 @@
+name: Vérifier le site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Intégrité trilingue de l'objet C
+        # Le contenu des pages vit dans `const C = { fr, en, ar }`. Une édition
+        # qui oublie une langue ne se voit pas à l'œil : elle se voit ici.
+        run: node outils/verifier-langues.mjs ./*.html
+
+      - name: Validité des références bibliques
+        run: python3 outils/verifier-references.py ./*.html contenus/*.md
+
+      - name: Texte des citations
+        # Échoue fermé : pas de textes de référence, pas de vérification possible.
+        # Tant que textes/ est vide, on le signale sans bloquer — le jour où les
+        # traductions sont importées (R-004), ce contrôle devient bloquant.
+        run: |
+          if ls textes/*.json >/dev/null 2>&1; then
+            echo "Textes présents — vérification au mot près à brancher (R-005)."
+          else
+            echo "::warning::textes/ est vide — les citations ne sont pas vérifiées au mot près. Voir textes/README.md et l'entrée R-004."
+          fi

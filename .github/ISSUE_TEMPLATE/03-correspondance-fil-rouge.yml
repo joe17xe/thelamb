@@ -1,0 +1,76 @@
+name: "Correspondance Fil Rouge"
+description: "Proposer un arc Ancien → Nouveau Testament pour le diagramme d'accueil."
+title: "[Fil Rouge] "
+labels: ["fil-rouge", "à vérifier"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Le Fil Rouge n'accueille pas les rapprochements poétiques.
+        Un arc tient par un mot, un geste, une date ou une structure — pas par une image.
+
+  - type: input
+    id: titre
+    attributes:
+      label: Titre de la correspondance
+      description: "Cinq mots maximum."
+      placeholder: "Aucun os ne sera brisé"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Thème
+      options: ["agneau", "prophétie", "alliance", "pâque", "figures", "temple", "fils de l'homme", "trinité"]
+    validations:
+      required: true
+
+  - type: input
+    id: ref_at
+    attributes:
+      label: Référence Ancien Testament
+      placeholder: "Exode 12:46"
+    validations:
+      required: true
+
+  - type: textarea
+    id: texte_at
+    attributes:
+      label: Texte AT (Segond 1910, intégral)
+    validations:
+      required: true
+
+  - type: input
+    id: ref_nt
+    attributes:
+      label: Référence Nouveau Testament
+      placeholder: "Jean 19:36"
+    validations:
+      required: true
+
+  - type: textarea
+    id: texte_nt
+    attributes:
+      label: Texte NT (Segond 1910, intégral)
+    validations:
+      required: true
+
+  - type: textarea
+    id: jonction
+    attributes:
+      label: Le point de jonction
+      description: "En une phrase : le mot, le geste, la date ou la structure qui relie les deux textes."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: certitude
+    attributes:
+      label: Degré de certitude sur les deux références
+      options:
+        - Certain — vérifié dans le texte
+        - À vérifier — de mémoire ou de seconde main
+      default: 1
+    validations:
+      required: true

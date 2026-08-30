@@ -1,0 +1,60 @@
+name: Vérifier les fiches
+
+on:
+  pull_request:
+    paths:
+      - 'contenus/**.md'
+      - 'outils/verifier-fiche.py'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Repérer les fiches modifiées
+        id: fiches
+        run: |
+          git fetch --no-tags origin "${{ github.base_ref }}"
+          liste=$(git diff --name-only --diff-filter=ACM \
+                  "origin/${{ github.base_ref }}...HEAD" -- 'contenus/*.md' \
+                  | grep -v -E '(MODELE|README)\.md$' || true)
+          echo "liste<<FIN" >> "$GITHUB_OUTPUT"
+          echo "$liste" >> "$GITHUB_OUTPUT"
+          echo "FIN" >> "$GITHUB_OUTPUT"
+          if [ -z "$liste" ]; then echo "aucune fiche modifiée"; fi
+
+      - name: Vérifier la forme
+        id: verif
+        if: steps.fiches.outputs.liste != ''
+        run: |
+          set +e
+          python3 outils/verifier-fiche.py ${{ steps.fiches.outputs.liste }} > rapport.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat rapport.md >> "$GITHUB_STEP_SUMMARY"
+          cat rapport.md
+
+      - name: Publier le rapport sur la PR
+        if: steps.fiches.outputs.liste != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        # Les PR venant d'une bifurcation ont un jeton en lecture seule :
+        # le rapport reste alors dans le résumé du job, sans faire échouer l'étape.
+        run: |
+          gh pr comment "$PR" --body-file rapport.md --edit-last \
+            || gh pr comment "$PR" --body-file rapport.md \
+            || echo "commentaire impossible (jeton en lecture seule) — rapport dans le résumé du job"
+
+      - name: Bloquer si la forme n'y est pas
+        if: steps.verif.outputs.code == '1'
+        run: |
+          echo "::error::Une fiche au moins a une erreur de structure. Voir le rapport sur la PR."
+          exit 1

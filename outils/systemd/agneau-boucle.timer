@@ -1,0 +1,11 @@
+[Unit]
+Description=Déclenche la boucle autonome du site
+
+[Timer]
+# Une fois par nuit. Monter en fréquence seulement après plusieurs semaines sans incident.
+OnCalendar=*-*-* 03:30:00
+RandomizedDelaySec=900
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,27 @@
+[Unit]
+Description=Boucle autonome — site L'Agneau de Dieu
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=agneau
+WorkingDirectory=/srv/agneau
+Environment=DEPOT=/srv/agneau
+Environment=BRANCHE_BASE=main
+# Ne laisser au robot que la zone verte tant que la boucle n'a pas fait ses preuves.
+# Retirer la ligne pour lui ouvrir la zone orange (il ouvrira des PR sans les fusionner).
+Environment=ZONES=verte
+EnvironmentFile=/etc/agneau/boucle.env
+ExecStart=/srv/agneau/outils/boucle-vps.sh
+TimeoutStartSec=1800
+
+# Le robot n'a besoin d'écrire que dans son dépôt et son journal.
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+NoNewPrivileges=true
+ReadWritePaths=/srv/agneau /var/log
+
+[Install]
+WantedBy=multi-user.target

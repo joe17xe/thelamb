@@ -1,0 +1,75 @@
+name: "Proposition de restructuration"
+description: "Proposer de déplacer, fusionner, scinder ou supprimer des pages — changer la logique du site."
+title: "[Restructuration] "
+labels: ["structure"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pour *signaler* un problème d'organisation sans proposer de solution,
+        utilisez plutôt « Revue de structure ». Ce formulaire-ci sert à proposer
+        un changement précis : un avant, un après.
+
+  - type: input
+    id: resume
+    attributes:
+      label: Le changement en une phrase
+      placeholder: "Rattacher les six piliers au parcours en 7 étapes plutôt que d'en faire une section muette."
+    validations:
+      required: true
+
+  - type: textarea
+    id: avant
+    attributes:
+      label: Aujourd'hui
+      description: "L'organisation actuelle. Nommez les fichiers."
+      placeholder: |
+        index.html → seuil-landing.html → (rien)
+        Les six pilier-*.html ne reçoivent aucun lien et n'en émettent aucun.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: apres
+    attributes:
+      label: Après le changement
+      description: "L'organisation proposée, sous la même forme."
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: pourquoi
+    attributes:
+      label: Pourquoi
+      description: "Ce que le visiteur gagne. Pas ce que l'arborescence gagne — ce que le visiteur gagne."
+    validations:
+      required: true
+
+  - type: textarea
+    id: casse
+    attributes:
+      label: Ce que ça casse
+      description: "Liens rompus, pages à réécrire, adresses qui changent, contenu qui perd sa place. Une proposition qui ne casse rien est rare ; dire ce qu'elle casse est un gage de sérieux."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: portee
+    attributes:
+      label: Portée
+      options:
+        - Local — quelques pages
+        - Une section entière
+        - Structurante — engage le site entier
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: trace
+    attributes:
+      label: Si c'est structurant
+      options:
+        - label: "J'ai lu le journal des décisions et cette question n'y est pas déjà tranchée"

@@ -1,0 +1,78 @@
+name: "Proposition visuelle"
+description: "Proposer un changement de mise en page, de typographie, de couleur ou de composant."
+title: "[Visuel] "
+labels: ["visuel"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Une maquette vaut mieux qu'une description.** « Plus aéré » veut dire trois
+        choses différentes pour trois personnes.
+
+        Prenez [`gabarit-visuel.html`](https://github.com/joe17xe/thelamb/blob/main/producteur/gabarit-visuel.html)
+        — le squelette d'une page du site, 11 Ko, fait pour être collé dans une conversation.
+        Demandez à Claude la variante que vous avez en tête : il produit un artéfact
+        affichable, dont vous partagez le lien ici.
+
+        Ne collez pas une vraie page du site : elles font 30 000 à 190 000 caractères.
+
+  - type: input
+    id: quoi
+    attributes:
+      label: Ce que vous voulez changer
+      description: "En une phrase."
+      placeholder: "Le verset socle est trop bas : on scrolle avant de le lire sur téléphone."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: portee
+    attributes:
+      label: Ce que ça touche
+      options:
+        - Un composant précis (une carte, l'encadré, la frise…)
+        - La mise en page d'un type de page
+        - Toutes les pages du site
+        - La charte — couleurs, polices
+    validations:
+      required: true
+
+  - type: input
+    id: maquette
+    attributes:
+      label: Lien de la maquette
+      description: "L'artéfact produit par votre Claude. C'est la pièce maîtresse du ticket."
+      placeholder: "https://claude.ai/public/artifacts/…"
+
+  - type: textarea
+    id: constat
+    attributes:
+      label: Le constat
+      description: "Ce qui ne va pas aujourd'hui, et sur quel appareil vous l'avez vu."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Ce que vous proposez
+      description: "Décrivez le changement même si la maquette le montre : le texte survit au lien."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contraintes
+    attributes:
+      label: Contraintes respectées
+      description: "La proposition tient-elle debout dans les trois langues et sur téléphone ?"
+      options:
+        - label: "Fonctionne en arabe, écriture de droite à gauche"
+        - label: "Fonctionne sur téléphone"
+        - label: "Garde la palette du site — nuit, parchemin, or"
+        - label: "Je ne sais pas — à examiner ensemble"
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Ce que vous avez écarté
+      description: "Les pistes essayées avant celle-ci, et pourquoi elles ne marchaient pas. Facultatif, mais ça évite qu'on les repropose."
