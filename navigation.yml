@@ -73,6 +73,7 @@ piliers:
       suite: pilier-transfiguration.html
     - fichier: pilier-transfiguration.html
       suite: pilier-parole-eternelle.html
+      annexes: [page-fondatrice-emmaus.html]  # la montagne annonce, la route interprète
     - fichier: pilier-parole-eternelle.html
       suite: index.html
     # chaîne ouverte par l'étape 2, sur l'Agneau vivant
