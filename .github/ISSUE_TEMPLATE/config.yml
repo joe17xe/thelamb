@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Kit du producteur — mode d'emploi
+    url: https://github.com/joe17xe/thelamb/blob/main/producteur/00-LISEZMOI.md
+    about: Comment contribuer sans code, avec un compte Claude gratuit.
+  - name: Brief à coller dans Claude
+    url: https://github.com/joe17xe/thelamb/blob/main/producteur/01-BRIEF-CLAUDE.md
+    about: La charte du site en une page. À coller au début de chaque conversation.
+  - name: État du site
+    url: https://github.com/joe17xe/thelamb/blob/main/producteur/04-ETAT-DU-SITE.md
+    about: Ce qui existe, ce qui manque, ce qui est isolé.

@@ -1,0 +1,95 @@
+name: "Fiche de contenu"
+description: "Proposer une page rédigée (nouvelle page ou réécriture)."
+title: "[Fiche] "
+labels: ["contenu", "à relire"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Collez ici une fiche produite au format du
+        [gabarit](https://github.com/joe17xe/thelamb/blob/main/producteur/02-GABARIT-FICHE.md).
+        Une fiche hors format demande une reprise complète — le format n'est pas une formalité.
+
+  - type: input
+    id: titre
+    attributes:
+      label: Titre de la page
+      placeholder: "Le pain du ciel — Jean 6"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options:
+        - Parcours de l'Agneau (7 étapes)
+        - Pilier
+        - Salle
+        - L'Offrande
+        - Une Bible digne de confiance
+        - Les cinq alliances
+        - Galerie des figures
+        - Parcours guidé
+        - À propos / Ressources
+        - Transversale (frise, clé de lecture, méthode)
+    validations:
+      required: true
+
+  - type: input
+    id: verset
+    attributes:
+      label: Verset socle
+      description: "Un seul verset porte la page."
+      placeholder: "Jean 6:51"
+    validations:
+      required: true
+
+  - type: input
+    id: image
+    attributes:
+      label: Image mentale
+      description: "Un mot, un objet. Ce que le lecteur doit pouvoir redessiner de mémoire."
+      placeholder: "le pain"
+    validations:
+      required: true
+
+  - type: textarea
+    id: fiche
+    attributes:
+      label: La fiche complète
+      description: "Collez la fiche entière, des trois strates aux sources."
+      render: markdown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: langue
+    attributes:
+      label: Langue de rédaction
+      options: ["Français", "English", "العربية"]
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: controles
+    attributes:
+      label: Avant d'envoyer
+      options:
+        - label: "Chaque référence biblique est vérifiée, ou marquée [À VÉRIFIER]"
+          required: true
+        - label: "Les citations sont intégrales, pas tronquées"
+          required: true
+        - label: "Les trois strates sont présentes et dans les longueurs demandées"
+          required: true
+        - label: "Aucun débat confessionnel n'est tranché (règle des trois cercles)"
+          required: true
+        - label: "La fiche indique au moins un lien vers une autre page du site"
+          required: true
+
+  - type: textarea
+    id: incertitudes
+    attributes:
+      label: Points sur lesquels vous voulez un avis
+      description: "Ce dont vous n'êtes pas sûr. Mieux vaut le dire que le masquer."

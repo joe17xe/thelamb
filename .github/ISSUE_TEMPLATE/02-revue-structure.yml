@@ -1,0 +1,60 @@
+name: "Revue de structure"
+description: "Une remarque sur l'organisation du site : navigation, doublons, manques, parcours."
+title: "[Structure] "
+labels: ["structure"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Une remarque = un ticket. C'est plus facile à trancher et à suivre qu'une liste.
+        L'[état du site](https://github.com/joe17xe/thelamb/blob/main/producteur/04-ETAT-DU-SITE.md)
+        recense déjà les pages isolées et les manques connus.
+
+  - type: dropdown
+    id: nature
+    attributes:
+      label: Nature de la remarque
+      options:
+        - Une page est inaccessible ou mal reliée
+        - Deux pages font doublon
+        - Il manque une page
+        - Le parcours du visiteur se perd
+        - Le format (trois strates) n'est pas respecté
+        - Problème de ton ou de cadre œcuménique
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: pages
+    attributes:
+      label: Page(s) concernée(s)
+      placeholder: "pilier-le-sang.html, section-offrande.html"
+
+  - type: textarea
+    id: constat
+    attributes:
+      label: Le constat
+      description: "Ce que vous voyez, factuellement."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Votre proposition
+      description: "Ce que vous feriez. Même une intuition partielle est utile."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgence
+    attributes:
+      label: À quel point ça bloque
+      options:
+        - Bloquant — un visiteur se perd aujourd'hui
+        - Important — à traiter avant la prochaine mise en ligne
+        - À noter — quand on aura le temps
+      default: 1
+    validations:
+      required: true
