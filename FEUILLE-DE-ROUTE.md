@@ -35,17 +35,27 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-002 Écrire navigation.yml — la structure décidée, en donnée
 - zone: rouge
-- statut: bloqué
+- statut: fait
 - pourquoi: transforme l'accord en contrainte tenue ; c'est le fichier dont dépend tout le reste
 - fait quand: chaque page du site y figure avec sa section, son entrée et sa suite
-- bloqué par: R-001
+- résultat: carte écrite à partir de l'intention déjà inscrite dans les pages, pas inventée
 
 ## R-003 Réparer le maillage d'après navigation.yml
 - zone: verte
-- statut: bloqué
+- statut: fait
 - pourquoi: 14 pages sur 24 sont inaccessibles ; c'est le plus gros défaut du site
 - fait quand: aucune page n'a zéro lien entrant, et verifier-liens ne signale plus d'écart
-- bloqué par: R-002
+- résultat: zéro orpheline, zéro cul-de-sac, zéro écart — les neuf blocs « page suivante »
+  qui pointaient sur href="#" ont reçu leur adresse, et cinq liens secondaires ont ouvert
+  les chaînes qui restaient sans entrée
+
+## R-009 Poser la carte du temps sur les pages
+- zone: verte
+- statut: fait
+- pourquoi: le lecteur remonte le temps ; il doit savoir en permanence où il se trouve
+- fait quand: chaque page historiquement située porte son bandeau, dérivé d'une source unique
+- résultat: periodes.yml (huit périodes trilingues) + outils/poser-situation.py, posé sur
+  14 pages ; la frise alignée sur D-008 pour la période intertestamentaire
 
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
@@ -75,6 +85,8 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-008 Nettoyer le dépôt
 - zone: verte
-- statut: à faire
+- statut: fait
 - pourquoi: README.md contient le HTML de Morija ; deux .md sont des doublons exacts sous des noms trompeurs ; un fichier est vide
 - fait quand: README.md présente le projet, les doublons sont supprimés, arborescence-site-agneau.md est la seule arborescence
+- résultat: README réécrit, deux doublons exacts et un fichier vide supprimés après
+  vérification d'empreinte, prototype-fil-rouge-v3.html retiré

@@ -84,11 +84,31 @@
   html[dir="rtl"] .card .link p{font-style:normal}
   .placeholder{text-align:center;color:#5c6077;font-family:system-ui,sans-serif;font-size:13px;padding:24px 0}
   footer{max-width:820px;margin:34px auto 46px;padding:22px 22px 0;border-top:1px solid var(--line);color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8}
+
+  /* liens secondaires — vers ce que la frise ouvre sans y conduire */
+  .aussi{max-width:1060px;margin:44px auto 0;padding:20px 20px 0;border-top:1px solid var(--line)}
+  .aussi .albl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  html[dir="rtl"] .aussi .albl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .aussi a{display:block;color:var(--ink);text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;padding:10px 0;border-bottom:1px solid var(--line)}
+  html[dir="rtl"] .aussi a{font-family:'Amiri',serif}
+  .aussi a:last-child{border-bottom:none}
+  .aussi a:hover{color:var(--gold)}
+  .aussi a::after{content:"\2192";color:var(--gold);margin-inline-start:9px;font-size:15px}
+  html[dir="rtl"] .aussi a::after{content:"\2190"}
+
+  /* navigation : la marque ramène à l'accueil, le fil est cliquable */
+  a.brand{text-decoration:none}
+  a.brand:hover{color:var(--ink)}
+  a.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  a.dot{text-decoration:none;color:inherit}
+  a.dot[href]:hover .nm{color:var(--gold)}
+  a.dot[href]:hover .pt{border-color:var(--gold)}
+  a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
 </style>
 </head>
 <body>
 <div class="top">
-  <div class="brand" id="brand"></div>
+  <a class="brand" id="brand" href="index.html"></a>
   <div class="langs" role="group" aria-label="Langue">
     <button data-l="fr" aria-pressed="true">FR</button>
     <button data-l="en" aria-pressed="false">EN</button>
@@ -116,6 +136,8 @@
 
 <div class="panel" id="panel"><div class="placeholder" id="ph"></div></div>
 
+<div class="aussi" id="aussi"></div>
+
 <footer id="foot"></footer>
 
 <script>
@@ -129,7 +151,7 @@ const AXIS_MIN=-1500, AXIS_MAX=50;
 function px(year){return ((year-AXIS_MIN)/(AXIS_MAX-AXIS_MIN))*100;}
 
 const T={
-fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
+fr:{dir:"ltr",albl:"Approfondir",liens:["Isaïe 53 — écrit sept siècles avant","La Transfiguration — Moïse, Élie, et le Fils"],brand:"L'AGNEAU DE DIEU",
  eyebrow:"L'Ancien Testament expliqué · la frise des veilleurs",
  title:"Pendant mille ans, des veilleurs ont décrit <em>un homme qu'ils ne verraient jamais</em>",
  lede:"Comprendre l'Ancien Testament, c'est d'abord comprendre son fil. Six grandes phases, une poignée de prophètes — et une seule direction : le Christ. Touchez une phase, puis un prophète.",
@@ -139,7 +161,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
   ["royaume","Phase 2","Le Royaume","~1000–930 av. J.-C.","David unifie le royaume, Salomon bâtit le Temple. L'apogée — et la promesse d'un trône éternel.","David, Salomon, Nathan"],
   ["exil","Phase 3","La division & l'exil","~930–587 av. J.-C.","Le royaume se divise, s'effondre. Les prophètes avertissent, puis Babylone détruit le Temple (587).","Ésaïe, Jérémie, les grands prophètes"],
   ["retour","Phase 4","Le retour","~538–430 av. J.-C.","La Perse renvoie les exilés. Le Temple est rebâti, plus modeste. On attend « quelque chose de plus ».","Aggée, Zacharie, Malachie"],
-  ["attente","Phase 5","Le silence","~430–5 av. J.-C.","Quatre siècles sans prophète. Empires grec puis romain. L'attente du Messie monte.","(les 400 ans de silence)"],
+  ["attente","Phase 5","L'attente","~430–5 av. J.-C.","Quatre siècles sans prophète reconnu par toutes les traditions — mais non sans écrits : Maccabées, Siracide, Sagesse, reçus diversement selon les Églises. Empires grec puis romain. L'attente du Messie monte.","les Maccabées, les sages"],
   ["christ","Phase 6","L'accomplissement","~5 av.–30 apr. J.-C.","Jean-Baptiste rompt le silence : « Voici l'Agneau ». Tout ce qui était annoncé prend un visage.","Jean-Baptiste, le Christ"]],
  filterAll:"Toutes les phases",
  placeholder:"— Touchez un prophète sur la frise pour lire son message —",
@@ -218,7 +240,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  footTitle:"Où va la frise",
  foot:"Chaque date est une estimation d'historien, pas un dogme : les fourchettes sont documentées dans le dossier de référence. Le but n'est pas la précision au siècle près, mais de rendre visible une chose simple — les annonces sont antérieures, et elles convergent.",
  label:{ctx:"Le contexte",msg:"Le message clé",link:"Le lien avec le Christ"}},
-en:{dir:"ltr",brand:"THE LAMB OF GOD",
+en:{dir:"ltr",albl:"Go deeper",liens:["Isaiah 53 — written seven centuries before","The Transfiguration — Moses, Elijah, and the Son"],brand:"THE LAMB OF GOD",
  eyebrow:"The Old Testament explained · the timeline of the watchmen",
  title:"For a thousand years, watchmen described <em>a man they would never see</em>",
  lede:"To understand the Old Testament is first to understand its thread. Six great phases, a handful of prophets — and one single direction: Christ. Touch a phase, then a prophet.",
@@ -228,7 +250,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
   ["royaume","Phase 2","The Kingdom","~1000–930 BC","David unites the kingdom, Solomon builds the Temple. The peak — and the promise of an eternal throne.","David, Solomon, Nathan"],
   ["exil","Phase 3","Division & exile","~930–587 BC","The kingdom splits and collapses. The prophets warn, then Babylon destroys the Temple (587).","Isaiah, Jeremiah, the great prophets"],
   ["retour","Phase 4","The return","~538–430 BC","Persia sends the exiles home. The Temple is rebuilt, more modest. They await “something more”.","Haggai, Zechariah, Malachi"],
-  ["attente","Phase 5","The silence","~430–5 BC","Four centuries with no prophet. Greek then Roman empires. Expectation of the Messiah rises.","(the 400 silent years)"],
+  ["attente","Phase 5","The waiting","~430–5 BC","Four centuries with no prophet recognised by every tradition — but not without writings: Maccabees, Sirach, Wisdom, received differently across the Churches. Greek then Roman empires. Expectation of the Messiah rises.","the Maccabees, the sages"],
   ["christ","Phase 6","The fulfilment","~5 BC–AD 30","John the Baptist breaks the silence: “Behold the Lamb”. All that was announced takes a face.","John the Baptist, the Christ"]],
  filterAll:"All phases",
  placeholder:"— Touch a prophet on the timeline to read his message —",
@@ -307,7 +329,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  footTitle:"Where the timeline goes",
  foot:"Each date is a historian's estimate, not a dogma: the ranges are documented in the reference dossier. The point is not precision to the century, but to make one simple thing visible — the announcements come first, and they converge.",
  label:{ctx:"The context",msg:"The key message",link:"The link with Christ"}},
-ar:{dir:"rtl",brand:"حَمَلُ الله",
+ar:{dir:"rtl",albl:"تعمَّق أكثر",liens:["إشعياء ٥٣ — كُتب قبل سبعة قرون","التجلّي — موسى، وإيليا، والابن"],brand:"حَمَلُ الله",
  eyebrow:"العهد القديم مشروحًا · الخط الزمني للحرّاس",
  title:"ألفَ سنة، وصف الحرّاسُ <em>رجلًا لن يروه أبدًا</em>",
  lede:"أن تفهم العهدَ القديم يعني أولًا أن تفهم خيطَه. ست مراحل كبرى، وحفنةٌ من الأنبياء — واتجاهٌ واحد: المسيح. المس مرحلةً، ثم نبيًّا.",
@@ -317,7 +339,7 @@ ar:{dir:"rtl",brand:"حَمَلُ الله",
   ["royaume","المرحلة ٢","المملكة","نحو ١٠٠٠–٩٣٠ ق.م","داود يوحّد المملكة، وسليمان يبني الهيكل. الذروة — ووعدُ عرشٍ أبدي.","داود، سليمان، ناثان"],
   ["exil","المرحلة ٣","الانقسام والسبي","نحو ٩٣٠–٥٨٧ ق.م","تنقسم المملكةُ وتنهار. ينذر الأنبياء، ثم تدمّر بابلُ الهيكلَ (٥٨٧).","إشعياء، إرميا، كبار الأنبياء"],
   ["retour","المرحلة ٤","العودة","نحو ٥٣٨–٤٣٠ ق.م","تُعيد فارسُ المسبيّين. يُبنى الهيكلُ ثانيةً، أكثرَ تواضعًا. ويُنتظَر «شيءٌ أعظم».","حجي، زكريا، ملاخي"],
-  ["attente","المرحلة ٥","الصمت","نحو ٤٣٠–٥ ق.م","أربعةُ قرون بلا نبي. إمبراطوريتان يونانية ثم رومانية. ويتصاعد انتظارُ المسيّا.","(٤٠٠ سنة من الصمت)"],
+  ["attente","المرحلة ٥","الانتظار","نحو ٤٣٠–٥ ق.م","أربعةُ قرون بلا نبيٍّ تعترف به كلُّ التقاليد — لكن ليست بلا كتابات: المكابيّون، وابن سيراخ، والحكمة، تتلقّاها الكنائسُ على نحوٍ مختلف. إمبراطوريتان يونانية ثم رومانية. ويتصاعد انتظارُ المسيّا.","المكابيّون، الحكماء"],
   ["christ","المرحلة ٦","الإتمام","نحو ٥ ق.م–٣٠ م","يوحنا المعمدان يكسر الصمت: «هوذا الحمل». وكلُّ ما أُعلن يأخذ وجهًا.","يوحنا المعمدان، المسيح"]],
  filterAll:"كل المراحل",
  placeholder:"— المس نبيًّا على الخط الزمني لتقرأ رسالته —",
@@ -397,6 +419,7 @@ ar:{dir:"rtl",brand:"حَمَلُ الله",
  foot:"كلُّ تاريخ تقديرٌ لمؤرّخ، لا عقيدة: والمجالاتُ موثَّقة في ملف المراجع. المقصدُ ليس الدقةَ إلى القرن، بل إظهارُ أمرٍ بسيط — الإعلاناتُ سابقة، وهي تتقارب.",
  label:{ctx:"السياق",msg:"الرسالة الأساسية",link:"الصلة بالمسيح"}}};
 
+const LIENS=["page-etape4-isaie-53.html","pilier-transfiguration.html"];
 function render(l){
   const c=T[l];
   document.documentElement.lang=l;document.documentElement.dir=c.dir;
@@ -452,6 +475,7 @@ function render(l){
   });
   document.getElementById('ph').textContent=c.placeholder;
   document.getElementById('panel').innerHTML='<div class="placeholder" id="ph">'+c.placeholder+'</div>';
+  document.getElementById('aussi').innerHTML=`<div class="albl">${c.albl}</div>`+c.liens.map((x,i)=>`<a href="${LIENS[i]}">${x}</a>`).join("");
   document.getElementById('foot').innerHTML=`<strong>${c.footTitle}.</strong> ${c.foot}<br>Segond 1910 · WEB · Van Dyck.`;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
   window.__lang=l;

@@ -93,11 +93,31 @@
     .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+
+  /* liens secondaires — vers ce que la page ouvre sans y conduire */
+  .aussi{margin-top:38px;border-top:1px solid var(--line);padding-top:20px}
+  .aussi .albl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  html[dir="rtl"] .aussi .albl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .aussi a{display:block;color:var(--ink);text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;padding:10px 0;border-bottom:1px solid var(--line)}
+  html[dir="rtl"] .aussi a{font-family:'Amiri',serif}
+  .aussi a:last-child{border-bottom:none}
+  .aussi a:hover{color:var(--gold)}
+  .aussi a::after{content:"\2192";color:var(--gold);margin-inline-start:9px;font-size:15px}
+  html[dir="rtl"] .aussi a::after{content:"\2190"}
+
+  /* navigation : la marque ramène à l'accueil, le fil est cliquable */
+  a.brand{text-decoration:none}
+  a.brand:hover{color:var(--ink)}
+  a.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  a.dot{text-decoration:none;color:inherit}
+  a.dot[href]:hover .nm{color:var(--gold)}
+  a.dot[href]:hover .pt{border-color:var(--gold)}
+  a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
 </style>
 </head>
 <body>
 <div class="top">
-  <div class="brand" id="brand"></div>
+  <a class="brand" id="brand" href="index.html"></a>
   <div class="langs" role="group" aria-label="Langue">
     <button data-l="fr" aria-pressed="true">FR</button>
     <button data-l="en" aria-pressed="false">EN</button>
@@ -114,7 +134,7 @@
 <footer id="foot"></footer>
 <script>
 const C={
-fr:{dir:"ltr",brand:"UN SEUL DIEU",slabel:"Salle · Le Père, le Fils et l'Esprit",
+fr:{dir:"ltr",albl:"Aller plus loin dans cette salle",liens:["La grande salle — Père, Fils, Esprit : les bibliothèques"],brand:"UN SEUL DIEU",slabel:"Salle · Le Père, le Fils et l'Esprit",
 eyebrow:"Deutéronome 6:4 · Matthieu 28:19 — un seul Dieu, révélé en trois : ni trois dieux, ni un seul masque à trois visages",
 verse:"« Baptisez-les au nom du <span class='g'>Père, et du Fils, et du Saint-Esprit</span>. »",
 scene:"Le mot « Trinité » n'est pas dans la Bible — mais la réalité y est partout. Non comme une équation à résoudre, mais comme un visage qui se dévoile lentement, du Sinaï au Jourdain. Cette salle ne prétend pas expliquer le mystère : elle montre comment il s'est révélé, et pourquoi il change tout.",
@@ -154,7 +174,7 @@ deep:[
 nlbl:"Explorer une salle voisine",ntitle:"Le Baptême, la Parole éternelle, l'Agneau",
 ntext:"La Trinité se rencontre au Jourdain, se comprend dans la Parole faite chair, et se donne à la croix. Trois salles la déploient — suivez le fil.",
 foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Salle « Le Père, le Fils et l'Esprit » — un seul Dieu, révélé en trois. Page pivot ; chaque aspect aura sa page détaillée."},
-en:{dir:"ltr",brand:"ONE GOD",slabel:"Room · The Father, the Son and the Spirit",
+en:{dir:"ltr",albl:"Further into this room",liens:["The great hall — Father, Son, Spirit: the libraries"],brand:"ONE GOD",slabel:"Room · The Father, the Son and the Spirit",
 eyebrow:"Deuteronomy 6:4 · Matthew 28:19 — one God, revealed as three: neither three gods, nor one mask with three faces",
 verse:"“Baptize them in the name of the <span class='g'>Father, and of the Son, and of the Holy Spirit</span>.”",
 scene:"The word “Trinity” is not in the Bible — but the reality is everywhere in it. Not as an equation to solve, but as a face unveiled slowly, from Sinai to the Jordan. This room does not claim to explain the mystery: it shows how it was revealed, and why it changes everything.",
@@ -194,7 +214,7 @@ deep:[
 nlbl:"Explore a neighbouring room",ntitle:"The Baptism, the eternal Word, the Lamb",
 ntext:"The Trinity is met at the Jordan, understood in the Word made flesh, and given at the cross. Three rooms unfold it — follow the thread.",
 foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Room “The Father, the Son and the Spirit” — one God, revealed as three. Pivot page; each aspect will have its detailed page."},
-ar:{dir:"rtl",brand:"إلهٌ واحد",slabel:"قاعة · الآب والابن والروح",
+ar:{dir:"rtl",albl:"أعمق في هذه القاعة",liens:["القاعة الكبرى — الآب والابن والروح: المكتبات"],brand:"إلهٌ واحد",slabel:"قاعة · الآب والابن والروح",
 eyebrow:"تثنية ٦: ٤ · متى ٢٨: ١٩ — إلهٌ واحد، مُعلَنٌ ثلاثةً: لا ثلاثةَ آلهة، ولا قناعًا واحدًا بثلاثة وجوه",
 verse:"«وَعَمِّدُوهُمْ بِاسْمِ <span class='g'>الآبِ وَالابْنِ وَالرُّوحِ الْقُدُسِ</span>.»",
 scene:"كلمةُ «الثالوث» ليست في الكتاب — لكن الحقيقةَ فيه في كل مكان. لا كمعادلةٍ تُحَلّ، بل كوجهٍ يتكشّف ببطء، من سيناء إلى الأردن. هذه القاعةُ لا تدّعي شرحَ السر: بل تُري كيف أُعلن، ولماذا يغيّر كلَّ شيء.",
@@ -235,6 +255,7 @@ nlbl:"استكشف قاعةً مجاورة",ntitle:"المعمودية، وال�
 ntext:"الثالوثُ يُقابَل عند الأردن، ويُفهَم في الكلمة المتجسّدة، ويُبذَل عند الصليب. ثلاثُ قاعاتٍ تبسطه — اتبع الخيط.",
 foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>قاعة «الآب والابن والروح» — إلهٌ واحد، مُعلَنٌ ثلاثةً. صفحةٌ محورية؛ ولكلِّ جانبٍ صفحتُه المفصّلة."}};
 
+const LIENS=["salle-trinite-bibliotheques.html"];
 function render(l){
   const c=C[l];
   document.documentElement.lang=l;document.documentElement.dir=c.dir;
@@ -275,7 +296,8 @@ function render(l){
     <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
     ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
   </section>
-  <a class="next" href="#"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  ${c.liens&&c.liens.length?`<div class="aussi"><div class="albl">${c.albl}</div>${c.liens.map((t,i)=>`<a href="${LIENS[i]}">${t}</a>`).join("")}</div>`:""}
+  <a class="next" href="pilier-bapteme.html"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
   document.getElementById('foot').innerHTML=c.foot;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
 }

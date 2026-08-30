@@ -124,12 +124,47 @@
     .hero,.strate,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+
+  /* liens secondaires — vers ce que la page ouvre sans y conduire */
+  .aussi{margin-top:38px;border-top:1px solid var(--line);padding-top:20px}
+  .aussi .albl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  html[dir="rtl"] .aussi .albl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .aussi a{display:block;color:var(--ink);text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;padding:10px 0;border-bottom:1px solid var(--line)}
+  html[dir="rtl"] .aussi a{font-family:'Amiri',serif}
+  .aussi a:last-child{border-bottom:none}
+  .aussi a:hover{color:var(--gold)}
+  .aussi a::after{content:"\2192";color:var(--gold);margin-inline-start:9px;font-size:15px}
+  html[dir="rtl"] .aussi a::after{content:"\2190"}
+
+  /* navigation : la marque ramène à l'accueil, le fil est cliquable */
+  a.brand{text-decoration:none}
+  a.brand:hover{color:var(--ink)}
+  a.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  a.dot{text-decoration:none;color:inherit}
+  a.dot[href]:hover .nm{color:var(--gold)}
+  a.dot[href]:hover .pt{border-color:var(--gold)}
+  a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+/* ——— bandeau de situation (généré : outils/poser-situation.py) ——— */
+  .situation{max-width:1060px;margin:24px auto 0;padding:0 20px}
+  .situation a{display:block;text-decoration:none;color:inherit}
+  .situation a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
+  .sitlbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:9px}
+  html[dir="rtl"] .sitlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:12.5px}
+  .sitbar{display:flex;gap:3px}
+  .sitseg{flex:1;height:5px;border-radius:2px;background:var(--sc);opacity:.2;transition:opacity .25s}
+  .sitseg.on{opacity:1;box-shadow:0 0 10px var(--sc)}
+  .situation a:hover .sitseg{opacity:.42}
+  .situation a:hover .sitseg.on{opacity:1}
+  .sitnow{margin-top:10px;text-align:center;font-family:system-ui,sans-serif;font-size:11.5px;color:var(--muted)}
+  html[dir="rtl"] .sitnow{font-family:'Amiri',sans-serif;font-size:14px}
+  .sitnow b{font-weight:600}
+/* ——— fin du bandeau de situation ——— */
 </style>
 </head>
 <body>
 
 <div class="top">
-  <div class="brand" id="brand"></div>
+  <a class="brand" id="brand" href="index.html"></a>
   <div class="langs" role="group" aria-label="Langue">
     <button data-l="fr" aria-pressed="true">FR</button>
     <button data-l="en" aria-pressed="false">EN</button>
@@ -141,6 +176,8 @@
   <div class="lbl" id="steplbl"></div>
   <div class="dots" id="dots"></div>
 </div>
+
+<div class="situation" id="situation"></div>
 
 <div class="hero">
   <div class="eyebrow" id="eyebrow"></div>
@@ -155,7 +192,7 @@
 <script>
 const C={
 fr:{
-  dir:"ltr",brand:"L'AGNEAU DE DIEU",
+  dir:"ltr",albl:"Approfondir",liens:["La Résurrection — l'Agneau vivant","Déjà / Pas encore — la clé de lecture"],brand:"L'AGNEAU DE DIEU",
   steplbl:"Le fil de l'Agneau · étape 2 sur 7",
   steps:["Voici l'Agneau","L'Agneau règne","La croix","Isaïe 53","La Pâque","Morija","Le commencement"],
   eyebrow:"Apocalypse 5:6 · Patmos, vers l'an 95",
@@ -191,7 +228,7 @@ fr:{
   foot:"Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Parcours « Le fil de l'Agneau » — étape 2 sur 7."
 },
 en:{
-  dir:"ltr",brand:"THE LAMB OF GOD",
+  dir:"ltr",albl:"Go deeper",liens:["The Resurrection — the living Lamb","Already / Not yet — the reading key"],brand:"THE LAMB OF GOD",
   steplbl:"The thread of the Lamb · step 2 of 7",
   steps:["Behold the Lamb","The Lamb Reigns","The Cross","Isaiah 53","The Passover","Moriah","The Beginning"],
   eyebrow:"Revelation 5:6 · Patmos, c. AD 95",
@@ -227,7 +264,7 @@ en:{
   foot:"Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>“The thread of the Lamb” — step 2 of 7."
 },
 ar:{
-  dir:"rtl",brand:"حَمَلُ الله",
+  dir:"rtl",albl:"تعمَّق أكثر",liens:["القيامة — الحمل الحيّ","الآن / وليس بعد — مفتاح القراءة"],brand:"حَمَلُ الله",
   steplbl:"خيط الحمل · الخطوة ٢ من ٧",
   steps:["هوذا الحمل","الحمل يملك","الصليب","إشعياء ٥٣","الفصح","المريّا","البداية"],
   eyebrow:"رؤيا ٥: ٦ · بَطْمُس، نحو سنة ٩٥ م",
@@ -263,6 +300,8 @@ ar:{
   foot:"النصوص الكتابية: لويس سيجون ١٩١٠ (فرنسي) · World English Bible (إنجليزي) · فانديك (عربي).<br>مسار «خيط الحمل» — الخطوة ٢ من ٧."
 }};
 
+const LIENS=["pilier-resurrection.html","cle-deja-pas-encore.html"];
+const ETAPES=["page-etalon-voici-agneau.html", "page-etape2-agneau-regne.html", "page-etape3-la-croix.html", "page-etape4-isaie-53.html", "page-etape5-la-paque.html", "page-etape6-morija.html", "page-etape7-commencement.html"];
 function render(l){
   const c=C[l];
   document.documentElement.lang=l;
@@ -272,7 +311,7 @@ function render(l){
   const dots=document.getElementById('dots');dots.innerHTML="";
   c.steps.forEach((s,i)=>{
     if(i>0){const seg=document.createElement('div');seg.className='seg';dots.appendChild(seg);}
-    const d=document.createElement('div');d.className='dot'+(i===1?' on':'');
+    const d=document.createElement(i===1?'div':'a');if(i!==1)d.href=ETAPES[i];d.className='dot'+(i===1?' on':'');if(i===1)d.setAttribute('aria-current','step');
     d.innerHTML=`<div class="pt"></div><div class="nm">${s}</div>`;dots.appendChild(d);
   });
   document.getElementById('eyebrow').textContent=c.eyebrow;
@@ -301,6 +340,7 @@ function render(l){
     <div class="shead"><div class="snum display">Ⅲ</div><h2>${c.s3}</h2><div class="l"></div></div>
     ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
   </section>
+  ${c.liens&&c.liens.length?`<div class="aussi"><div class="albl">${c.albl}</div>${c.liens.map((t,i)=>`<a href="${LIENS[i]}">${t}</a>`).join("")}</div>`:""}
   <a class="next" href="page-etape3-la-croix.html">
     <div class="nlbl">${c.nlbl}</div>
     <h3>${c.ntitle}</h3>
@@ -309,6 +349,27 @@ function render(l){
   document.getElementById('foot').innerHTML=c.foot;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
 }
+/* situation — généré */
+const PERIODES={"fr": [["origines", "Les origines", "avant l'histoire datée", "#6f7a94"], ["peres", "Les pères", "~2000–1500 av. J.-C.", "#a8763c"], ["loi", "La Loi", "~1500–1200 av. J.-C.", "#c98a5e"], ["royaume", "Le Royaume", "~1000–930 av. J.-C.", "#d3a94f"], ["exil", "La division & l'exil", "~930–587 av. J.-C.", "#6b9bd8"], ["retour", "Le retour", "~538–430 av. J.-C.", "#7cb47c"], ["attente", "L'attente", "~430–5 av. J.-C.", "#a583d6"], ["christ", "L'accomplissement", "~5 av.–30 apr. J.-C.", "#d05c5c"]], "en": [["origines", "The origins", "before dated history", "#6f7a94"], ["peres", "The fathers", "~2000–1500 BC", "#a8763c"], ["loi", "The Law", "~1500–1200 BC", "#c98a5e"], ["royaume", "The Kingdom", "~1000–930 BC", "#d3a94f"], ["exil", "Division & exile", "~930–587 BC", "#6b9bd8"], ["retour", "The return", "~538–430 BC", "#7cb47c"], ["attente", "The waiting", "~430–5 BC", "#a583d6"], ["christ", "The fulfilment", "~5 BC–AD 30", "#d05c5c"]], "ar": [["origines", "البدايات", "قبل التاريخ المؤرَّخ", "#6f7a94"], ["peres", "الآباء", "نحو ٢٠٠٠–١٥٠٠ ق.م", "#a8763c"], ["loi", "الناموس", "نحو ١٥٠٠–١٢٠٠ ق.م", "#c98a5e"], ["royaume", "المملكة", "نحو ١٠٠٠–٩٣٠ ق.م", "#d3a94f"], ["exil", "الانقسام والسبي", "نحو ٩٣٠–٥٨٧ ق.م", "#6b9bd8"], ["retour", "العودة", "نحو ٥٣٨–٤٣٠ ق.م", "#7cb47c"], ["attente", "الانتظار", "نحو ٤٣٠–٥ ق.م", "#a583d6"], ["christ", "الإتمام", "نحو ٥ ق.م–٣٠ م", "#d05c5c"]]};
+const PERIODE_ICI="christ";
+const PERIODE_LBL={"fr": "Où nous sommes dans l'histoire", "en": "Where we are in the story", "ar": "أين نحن من التاريخ"};
+function posSituation(l){
+  const zone=document.getElementById('situation');
+  if(!zone) return;
+  const liste=PERIODES[l]||PERIODES.fr;
+  const i=liste.findIndex(p=>p[0]===PERIODE_ICI);
+  const ici=liste[i];
+  zone.innerHTML='<a href="frise-prophetes.html">'
+    +'<div class="sitlbl">'+PERIODE_LBL[l]+'</div>'
+    +'<div class="sitbar">'+liste.map((p,k)=>
+        '<span class="sitseg'+(k===i?' on':'')+'" style="--sc:'+p[3]+'"></span>').join('')
+    +'</div>'
+    +'<div class="sitnow"><b style="color:'+ici[3]+'">'+ici[1]+'</b> · '+ici[2]+'</div>'
+    +'</a>';
+}
+const _renduSansSituation=render;
+render=function(l){_renduSansSituation(l);posSituation(l);};
+/* fin situation */
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
 render('fr');
 </script>

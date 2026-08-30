@@ -77,6 +77,27 @@ dossiers de travail.
 
 ---
 
+## La carte du temps
+
+`periodes.yml` déclare huit périodes — les origines, les pères, la Loi, le Royaume,
+la division et l'exil, le retour, l'attente, l'accomplissement — avec leurs dates,
+leurs couleurs et leur description dans les trois langues, plus la période où chaque
+page se situe.
+
+`outils/poser-situation.py` en dérive le bandeau « où nous sommes dans l'histoire »
+posé sur les 14 pages ancrées. Le générateur est **idempotent** : on ne modifie pas
+le bandeau à la main, on modifie `periodes.yml` et on relance. La CI refuse toute
+page qui aurait divergé.
+
+**La frise est une carte, pas un chemin** (décision D-007). Le parcours descend
+toujours du Christ vers la Genèse ; le bandeau dit seulement *quand*, pour que le
+lecteur qui remonte sache toujours où il se trouve.
+
+La période « l'attente » (~430–5 av. J.-C.) est formulée pour ne pas trancher la
+question du canon (décision D-008) : on y décrit une période sans prophète reconnu
+par toutes les traditions, mais non sans écrits — Maccabées, Siracide, Sagesse —
+reçus diversement selon les Églises.
+
 ## Structure d'une page
 
 | Strate | Nom | Contenu | Longueur |
@@ -101,28 +122,32 @@ Le squelette nu, prêt à coller dans une conversation, est dans
 - **`communication/`** — stratégie, calendrier, visuels.
 - **`.github/ISSUE_TEMPLATE/`** — les six formulaires de soumission.
 
-## État connu — à ne pas aggraver
+## État du maillage
 
-Relevé sur les 24 pages : **14 sont orphelines** (aucune page n'y mène), il y a
-**10 liens internes en tout**, et les trois strates ne sont tenues que sur 9 pages.
-Les six `pilier-*.html` (~21 000 mots) ne sont reliés à rien. Rien ne mène à
-`page-etalon-voici-agneau.html`, première étape du parcours principal.
+La structure du site est déclarée dans `navigation.yml` : c'est la source de vérité.
+`outils/verifier-liens.py` compare le site réel à cette carte en **mesurant les liens
+sur le rendu**, pas sur le texte source — ces pages construisent leur DOM en
+JavaScript, et une adresse peut vivre dans un tableau de constantes.
 
-**Toute page nouvelle doit déclarer ce qui y mène et vers quoi elle renvoie.**
-Sinon elle devient la quinzième orpheline.
+État au 30 août 2026 : **aucune orpheline, aucun cul-de-sac, aucun écart**.
+Les six piliers sont reliés en deux chaînes ouvertes depuis le parcours et la salle
+de la Trinité. Il a suffi de donner leur adresse aux blocs « page suivante » : ils
+étaient rédigés et traduits dans les trois langues, mais pointaient tous sur `href="#"`.
 
-Les six questions structurantes encore ouvertes sont dans
+**Toute page nouvelle doit se déclarer dans `navigation.yml`** avec ce qui y mène et
+ce vers quoi elle repart. Sinon la CI la refuse.
+
+Les questions structurantes encore ouvertes sont dans
 `producteur/06-JOURNAL-DES-DECISIONS.md`. Ne les tranche pas à la place du porteur
 du projet : signale-les.
 
 ## Pièges du dépôt
 
-- `README.md` contient le HTML de la page Morija, pas une présentation.
-- `03-architecture-technique-vps.md` est vide.
-- `01-arborescence-du-site.md` duplique `architecture-technique-vps.md` — et ne contient
-  pas l'arborescence. La vraie arborescence est dans `arborescence-site-agneau.md`.
-- `04-installation-vps.md` duplique `dossier-reference-agneau.md`.
-- `prototype-fil-rouge-v3.html` est une coquille de 21 mots.
+- `salle-bibliotheque.html` nomme son objet de contenu `LIB`, la frise et le seuil
+  l'appellent `T`, les autres `C`. Les outils découvrent le nom tout seuls.
+- `index.html` n'a pas de clé `dir` : il applique la direction dans son rendu
+  (`documentElement.dir=(l==='ar')?'rtl':'ltr'`). C'est correct, ne pas « corriger ».
+- La vraie arborescence de cadrage est dans `arborescence-site-agneau.md`.
 
 ## Langue
 

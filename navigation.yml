@@ -1,121 +1,115 @@
 # navigation.yml — la structure du site, en donnée
 #
-# PROPOSITION — à valider avant exécution. Ce fichier est la source de vérité du
-# maillage : `outils/verifier-liens.py` compare le site réel à ce qui est déclaré ici.
-# Toute page nouvelle doit s'y déclarer, sinon elle devient orpheline.
+# Source de vérité du maillage. `outils/verifier-liens.py` compare le site réel à
+# ce fichier : toute page nouvelle doit s'y déclarer avec ce qui y mène et ce vers
+# quoi elle repart, sinon elle devient orpheline.
 #
-# entree      : la page depuis laquelle on arrive (obligatoire, sauf pour l'accueil)
-# suite       : la page vers laquelle on repart (obligatoire — pas de cul-de-sac)
-# annexes     : liens secondaires légitimes, non obligatoires
+# Cette carte n'a pas été inventée : elle reprend l'intention déjà inscrite dans
+# les pages. Chacune portait son bloc « page suivante », rédigé et traduit dans
+# les trois langues, mais avec `href="#"` — le chemin était écrit, jamais relié.
+#
+#   racine  : seule page dont on n'attend aucun lien entrant
+#   suite   : la page vers laquelle on repart (pas de cul-de-sac)
+#   annexes : liens secondaires légitimes
 
 accueil:
   fichier: index.html
   role: Le Fil Rouge — les Écritures se répondent
-  entree: ~                      # racine du site
-  suite: page-etalon-voici-agneau.html
+  racine: true
+  suite: page-fondatrice-emmaus.html
   annexes:
     - seuil-landing.html
+    - salle-bibliotheque.html
     - section-bible-fiable.html
-    - page-fondatrice-emmaus.html   # comment lire ce site
-    - cle-deja-pas-encore.html
+    - frise-prophetes.html
+    - salle-trinite.html
+    - section-offrande.html
 
 seuil:
   fichier: seuil-landing.html
   role: Le seuil — une porte, des salles
-  entree: index.html
-  suite: page-etalon-voici-agneau.html
-  annexes: [salle-bibliotheque.html, salle-trinite.html, section-offrande.html]
+  suite: index.html
+  annexes:
+    - page-fondatrice-emmaus.html
+    - salle-trinite.html
+    - section-offrande.html
+    - section-bible-fiable.html
+    - salle-bibliotheque.html
+    - frise-prophetes.html
 
 methode:
   fichier: page-fondatrice-emmaus.html
-  role: La route d'Emmaüs — la méthode du site
-  entree: index.html
-  suite: page-etalon-voici-agneau.html
-  annexes: [section-bible-fiable.html]
+  role: La route d'Emmaüs — la méthode du site, et la porte du parcours
+  suite: section-bible-fiable.html
+  annexes: [page-etalon-voici-agneau.html]
 
 # ————— Le parcours de l'Agneau : la colonne vertébrale, en remontée —————
 parcours:
   role: Le fil de l'Agneau — sept étapes, du Christ vers la Genèse
-  entree: index.html
   chaine:
     - fichier: page-etalon-voici-agneau.html
-      approfondit: pilier-bapteme.html        # Jean 1:29 est dit au Jourdain
-    - fichier: page-etape2-agneau-regne.html
-      approfondit: pilier-resurrection.html   # l'Agneau debout, comme immolé
-    - fichier: page-etape3-la-croix.html
-      approfondit: pilier-le-sang.html
-    - fichier: page-etape4-isaie-53.html
-      approfondit: frise-prophetes.html       # mille ans d'annonces
-    - fichier: page-etape5-la-paque.html
-      approfondit: section-offrande.html
-    - fichier: page-etape6-morija.html
-      approfondit: pilier-temple-detruit.html # Morija devient la colline du Temple
-    - fichier: page-etape7-commencement.html
-      approfondit: pilier-parole-eternelle.html
-  suite: index.html
-
-# ————— Les piliers : approfondissements, atteints depuis une étape —————
-piliers:
-  role: Six approfondissements rattachés au parcours
-  pages:
-    - fichier: pilier-bapteme.html
-      entree: page-etalon-voici-agneau.html
-      suite: page-etalon-voici-agneau.html
-    - fichier: pilier-resurrection.html
-      entree: page-etape2-agneau-regne.html
       suite: page-etape2-agneau-regne.html
-    - fichier: pilier-le-sang.html
-      entree: page-etape3-la-croix.html
-      suite: section-offrande.html
-    - fichier: pilier-temple-detruit.html
-      entree: page-etape6-morija.html
-      suite: page-etape6-morija.html
-    - fichier: pilier-parole-eternelle.html
-      entree: page-etape7-commencement.html
-      suite: salle-trinite.html
-    - fichier: pilier-transfiguration.html
-      entree: frise-prophetes.html            # Moïse et Élie : la Loi et les Prophètes
+    - fichier: page-etape2-agneau-regne.html
+      suite: page-etape3-la-croix.html
+      annexes: [pilier-resurrection.html, cle-deja-pas-encore.html]
+    - fichier: page-etape3-la-croix.html
       suite: page-etape4-isaie-53.html
+      annexes: [pilier-le-sang.html]
+    - fichier: page-etape4-isaie-53.html
+      suite: page-etape5-la-paque.html
+    - fichier: page-etape5-la-paque.html
+      suite: page-etape6-morija.html
+    - fichier: page-etape6-morija.html
+      suite: page-etape7-commencement.html
+    - fichier: page-etape7-commencement.html
+      suite: index.html
 
-# ————— Les sections —————
+# ————— Les piliers : deux fils d'approfondissement, ouverts depuis le parcours —————
+piliers:
+  role: Six approfondissements, en deux chaînes
+  pages:
+    # chaîne ouverte par la salle de la Trinité
+    - fichier: pilier-bapteme.html
+      suite: pilier-transfiguration.html
+    - fichier: pilier-transfiguration.html
+      suite: pilier-parole-eternelle.html
+    - fichier: pilier-parole-eternelle.html
+      suite: index.html
+    # chaîne ouverte par l'étape 2, sur l'Agneau vivant
+    - fichier: pilier-resurrection.html
+      suite: pilier-temple-detruit.html
+    - fichier: pilier-temple-detruit.html
+      suite: index.html
+    # ouvert par l'étape 3, sur la croix
+    - fichier: pilier-le-sang.html
+      suite: section-offrande.html
+
 sections:
-  - fichier: section-bible-fiable.html
-    role: Une Bible digne de confiance
-    entree: index.html
-    suite: salle-bibliotheque.html
   - fichier: section-offrande.html
     role: L'Offrande — de la Pâque à la table du Seigneur
-    entree: page-etape5-la-paque.html
-    suite: page-etape5-la-paque.html
-
-# ————— Les salles —————
-salles:
-  - fichier: salle-bibliotheque.html
-    role: Comment la Bible est composée
-    entree: section-bible-fiable.html
     suite: section-bible-fiable.html
+  - fichier: section-bible-fiable.html
+    role: Une Bible digne de confiance
+    suite: page-fondatrice-emmaus.html
+
+salles:
   - fichier: salle-trinite.html
     role: Le Père, le Fils et l'Esprit
-    entree: pilier-parole-eternelle.html
-    suite: salle-trinite-bibliotheques.html
+    suite: pilier-bapteme.html
+    annexes: [salle-trinite-bibliotheques.html]
   - fichier: salle-trinite-bibliotheques.html
-    role: Les bibliothèques de la Trinité
-    entree: salle-trinite.html
+    role: La grande salle — les bibliothèques de la Trinité
     suite: salle-trinite.html
+  - fichier: salle-bibliotheque.html
+    role: Comment la Bible est composée
+    suite: index.html
+    annexes: [section-bible-fiable.html, seuil-landing.html]
 
-# ————— Les transversales —————
 transversales:
   - fichier: frise-prophetes.html
     role: Les veilleurs — mille ans d'annonces
-    entree: page-etape4-isaie-53.html
     suite: page-etape4-isaie-53.html
     annexes: [pilier-transfiguration.html]
   - fichier: cle-deja-pas-encore.html
     role: Déjà / Pas encore — la clé de lecture
-    entree: index.html
-    suite: page-etape2-agneau-regne.html
-
-# ————— À retirer —————
-obsoletes:
-  - fichier: prototype-fil-rouge-v3.html
-    raison: coquille de 21 mots, remplacée par index.html
+    suite: index.html

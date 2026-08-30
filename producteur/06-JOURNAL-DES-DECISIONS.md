@@ -68,4 +68,36 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
-*(vide — les premières décisions viendront de la séance de travail)*
+### D-007 — La frise est la carte, pas le chemin
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** le cadre narratif de référence (périodisation de l'histoire du salut)
+est chronologique et ascendant, de la Création à l'Église. Le premier principe du site
+est descendant : on part du Christ révélé et on remonte. Fallait-il changer de sens ?
+**Ce qui a été décidé :** garder le parcours descendant, et faire de la frise un repère
+de situation. Le lecteur voyage à rebours, mais sait toujours où il se trouve dans
+l'histoire. La frise répond à *quand*, le parcours répond à *pourquoi*.
+**Ce qu'on abandonne :** l'ordre de lecture chronologique, qui aurait été plus familier
+aux lecteurs venant d'un plan de lecture annuel.
+
+### D-008 — Les livres deutérocanoniques sont présentés, pas écartés
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** le cadre de référence est catholique et compte 1 Maccabées parmi ses
+livres narratifs, Tobie, Judith, Sagesse, Siracide et Baruch parmi les autres. La règle
+des trois cercles interdit d'arbitrer entre traditions. Que faire de ces livres ?
+**Ce qui a été décidé :** les présenter. Ce sont des livres qui ont le mérite d'exister
+et les écarter fermerait une porte. On reste ouvert.
+**Ce que cela implique concrètement :** on les situe et on les cite, sans les décréter
+canoniques pour tous. La différence de canon devient elle-même un sujet traité en trois
+cercles — sur la page de la bibliothèque, qui explique déjà la composition de la Bible.
+Présenter n'est pas trancher : la formulation doit rester descriptive.
+
+### D-009 — La périodisation est ré-exprimée, pas reprise
+**Date :** 30 août 2026 — **Statut :** tranchée
+**La question :** le document de référence est une œuvre déposée — marques enregistrées,
+copyright sur la charte, sur le choix des couleurs, sur la sélection des livres narratifs.
+**Ce qui a été décidé :** périodiser l'histoire du salut est une idée ancienne que
+personne ne possède, et les faits racontés sont des faits. On garde donc la démarche et
+on écrit la nôtre : nos noms de périodes, notre palette, nos formulations. La source
+d'influence est citée en bibliographie.
+**Ce qu'on abandonne :** la commodité de reprendre un système déjà fait et déjà connu
+de certains lecteurs.
