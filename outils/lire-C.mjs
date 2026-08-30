@@ -18,8 +18,20 @@ export function domFactice() {
   // `createElement` + `appendChild`, sans jamais écrire de HTML. Sans ce
   // registre, ces liens-là seraient invisibles au contrôle.
   const crees = [];
+  // `textContent` et `innerHTML` doivent se répondre : plusieurs pages
+  // échappent leur texte par `d.textContent=s; return d.innerHTML;`. Un stub
+  // qui ne relie pas les deux renvoie une chaîne vide et fait croire à un bug.
+  const echapper = (s) => String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const faire = () => enregistrer({
-    innerHTML: '', textContent: '', className: '', value: '',
+    _html: '', _text: undefined,
+    get innerHTML() { return this._html; },
+    set innerHTML(v) { this._html = String(v); this._text = undefined; },
+    get textContent() {
+      return this._text !== undefined ? this._text : this._html.replace(/<[^>]*>/g, '');
+    },
+    set textContent(v) { this._text = String(v); this._html = echapper(v); },
+    className: '', value: '',
     style: { setProperty() {} }, dataset: {}, children: [], classList: { add() {}, remove() {}, toggle() {} },
     appendChild(e) { this.children.push(e); return e; },
     removeChild() {}, insertBefore(e) { this.children.push(e); return e; },
@@ -43,20 +55,35 @@ export function domFactice() {
   return document;
 }
 
+/** Bac à sable partagé : ce qu'une page attend d'un navigateur, au minimum.
+ *  Un seul endroit, pour que le lecteur et l'essai de rendu ne divergent pas. */
+export function bacASable(document) {
+  const bac = {
+    document,
+    console: { log() {}, warn() {}, error() {}, info() {} },
+    setTimeout: () => 0, clearTimeout() {}, setInterval: () => 0, clearInterval() {},
+    requestAnimationFrame: () => 0, cancelAnimationFrame() {},
+    addEventListener() {}, removeEventListener() {}, dispatchEvent() { return true; },
+    matchMedia: () => ({ matches: false, addEventListener() {}, removeEventListener() {} }),
+    location: { hash: '', search: '', href: '' },
+    navigator: { language: 'fr', userAgent: 'essai' },
+    localStorage: { getItem: () => null, setItem() {}, removeItem() {} },
+    sessionStorage: { getItem: () => null, setItem() {} },
+    fetch: () => Promise.resolve({ ok: true, json: () => Promise.resolve({}), text: () => Promise.resolve('') }),
+    innerWidth: 390, innerHeight: 844, scrollTo() {}, getComputedStyle: () => ({}),
+  };
+  bac.window = bac;
+  bac.globalThis = bac;
+  return bac;
+}
+
 export function lireC(chemin) {
   const src = readFileSync(chemin, 'utf8');
   const bloc = src.match(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/);
   if (!bloc) return null;
 
   const document = domFactice();
-  const bac = {
-    document, console: { log() {}, warn() {}, error() {} },
-    setTimeout: () => 0, clearTimeout() {}, setInterval: () => 0, clearInterval() {},
-    requestAnimationFrame: () => 0, matchMedia: () => ({ matches: false, addEventListener() {} }),
-    location: { hash: '', search: '' }, navigator: { language: 'fr' },
-    localStorage: { getItem: () => null, setItem() {}, removeItem() {} },
-  };
-  bac.window = bac; bac.globalThis = bac;
+  const bac = bacASable(document);
 
   // Les `const` de haut niveau ne remontent pas au global d'un contexte vm, et
   // les pages ne nomment pas leur objet pareil (C, T, LIB…). On relève donc les

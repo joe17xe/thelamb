@@ -9,12 +9,12 @@
 
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { domFactice } from './lire-C.mjs';
+import { domFactice, bacASable } from './lire-C.mjs';
 
 /** Somme le contenu rendu dans tous les points d'ancrage de la page. */
 function rendu(document) {
   let html = '';
-  for (const n of document._ancres.values()) html += (n.innerHTML || '') + (n.textContent || '');
+  for (const n of document._ancres.values()) html += n.innerHTML || '';
   return html;
 }
 
@@ -25,6 +25,7 @@ function liensCrees(document) {
 
 // --json : émet le graphe des liens réellement rendus, pour verifier-liens.py
 const enJSON = process.argv.includes('--json');
+const dire = (...a) => (enJSON ? console.error(...a) : console.log(...a));
 const graphe = {};
 let global = false;
 for (const f of process.argv.slice(2)) {
@@ -34,29 +35,22 @@ for (const f of process.argv.slice(2)) {
   if (!bloc) {
     // page sans script : ses liens sont des attributs HTML ordinaires
     graphe[f] = [...new Set([...src.matchAll(/href="([^"#?]+\.html)"/g)].map((m) => m[1]))].sort();
-    if (!enJSON) console.log('  —  %s : pas de script en ligne', f);
+    if (!enJSON) dire('  —  %s : pas de script en ligne', f);
     continue;
   }
 
   const document = domFactice();
-  const bac = {
-    document, console: { log() {}, warn() {}, error() {} },
-    setTimeout: () => 0, clearTimeout() {}, setInterval: () => 0, clearInterval() {},
-    requestAnimationFrame: () => 0, matchMedia: () => ({ matches: false, addEventListener() {} }),
-    location: { hash: '', search: '' }, navigator: { language: 'fr' },
-    localStorage: { getItem: () => null, setItem() {} },
-  };
-  bac.window = bac; bac.globalThis = bac;
+  const bac = bacASable(document);
 
   try {
     vm.runInNewContext(bloc[1], bac, { timeout: 8000, filename: f });
   } catch (e) {
-    console.log("  ❌ %s — le script échoue à l'exécution : %s", f, e.message);
+    dire("  ❌ %s — le script échoue à l'exécution : %s", f, e.message);
     global = true; continue;
   }
 
   const rendre = bac.render;
-  if (typeof rendre !== 'function') { console.log('  —  %s : pas de fonction render', f); continue; }
+  if (typeof rendre !== 'function') { dire('  —  %s : pas de fonction render', f); continue; }
 
   // Un lien est réel s'il est écrit en dur dans la page OU produit au rendu.
   const bilan = [], cibles = new Set(

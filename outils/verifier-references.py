@@ -96,6 +96,27 @@ def verifier(chemin):
     return vues, sorted(set(erreurs))
 
 
+# Une référence « nue » : un chapitre:verset entre parenthèses sans nom de livre.
+# La convention savante veut qu'on hérite du livre cité juste avant. À l'écran,
+# sur un téléphone, le lecteur ne l'hérite pas — et le vérificateur non plus :
+# ces références-là ne sont contrôlées par personne.
+NUE = re.compile(r"[^(a-zA-Z\u0600-\u06ff](\(\s*[\d\u0660-\u0669]{1,3}\s*:\s*"
+                 r"[\d\u0660-\u0669]{1,3}(?:-[\d\u0660-\u0669]{1,3})?\s*\))")
+PSAUME_NU = re.compile(r"\((\d{1,3})\)")
+
+
+def nues(chemin):
+    src = open(chemin, encoding="utf-8").read()
+    n = len(NUE.findall(src))
+    for m in PSAUME_NU.finditer(src):
+        avant = src[max(0, m.start() - 200):m.start()]
+        proche = src[max(0, m.start() - 40):m.end() + 10]
+        if re.search(r"(Psaume|Psalm|\u0645\u0632\u0645\u0648\u0631)\s*[\d\u0660-\u0669]", avant) \
+           and not re.search(r"px\(|,x:|\d\s*(av|BC)", proche):
+            n += 1
+    return n
+
+
 def main(chemins):
     lignes, bloquant, total = [], False, 0
     for chemin in chemins:
@@ -114,6 +135,16 @@ def main(chemins):
     else:
         print("\nAucun chapitre inexistant. "
               "_Le texte des citations n'est pas vérifié ici — voir `textes/README.md`._")
+
+    compte = {c: nues(c) for c in chemins if nues(c)}
+    if compte:
+        print("\n### Références sans nom de livre — %d\n" % sum(compte.values()))
+        print("Écrites `(12:10)` plutôt que `(Zacharie 12:10)`. Le lecteur doit "
+              "deviner le livre depuis la phrase précédente, et ce contrôle ne peut "
+              "pas les vérifier. Ne bloque pas : c'est une dette à résorber page à page.\n")
+        for c, n in sorted(compte.items(), key=lambda x: -x[1]):
+            print("- ⚠️ `%s` — %d" % (c, n))
+
     return 1 if bloquant else 0
 
 

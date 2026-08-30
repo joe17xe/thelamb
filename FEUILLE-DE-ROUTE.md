@@ -57,6 +57,25 @@ boucle à l'exécution suivante. Le supprimer la relance.
 - résultat: periodes.yml (huit périodes trilingues) + outils/poser-situation.py, posé sur
   14 pages ; la frise alignée sur D-008 pour la période intertestamentaire
 
+## R-010 Écrire les références au complet, page par page
+- zone: orange
+- statut: à faire
+- pourquoi: 375 références sont écrites « (12:10) » sans nom de livre. Le lecteur doit
+  deviner le livre depuis la phrase précédente — sur téléphone, dans une carte, il ne le
+  peut pas. Et le vérificateur ne les contrôle pas : elles sont hors de portée du filet.
+- fait quand: verifier-references ne signale plus de référence sans livre
+- attention: pas automatisable. Une passe mécanique par « dernier livre cité » produit des
+  faux — « (6:16) » devient Zacharie alors que le contexte est l'Apocalypse. Se fait à la
+  main, page par page, dans les trois langues à la fois.
+- ordre suggéré: emmaüs (48) puis salle-bibliotheque (123), les deux plus lourdes
+
+## R-011 Enrichir la page d'Emmaüs — les sept seuils
+- zone: orange
+- statut: à faire
+- pourquoi: les points du fil ne mènent à rien ; la matière existe pour en faire les sept
+  seuils du récit, de la déception au témoignage
+- fait quand: chaque point ouvre son seuil, avec son texte et sa référence complète
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
