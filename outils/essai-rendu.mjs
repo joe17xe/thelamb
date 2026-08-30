@@ -23,6 +23,19 @@ function liensCrees(document) {
   return document._crees.map((n) => n.href).filter((h) => typeof h === 'string');
 }
 
+/** Liens qui ne mènent nulle part : `#`, vide, ou `javascript:`.
+ *  Un bouton mort ressemble à un lien, se touche comme un lien, et ne fait
+ *  rien. C'est ce que le lecteur signale en premier, et ce qu'un relevé des
+ *  seules adresses `.html` ne voit jamais. */
+function liensMorts(document, html, depuis) {
+  const morts = [];
+  for (const m of html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/g)) morts.push(m[1]);
+  for (const n of document._crees.slice(depuis)) {
+    if (typeof n.href === 'string') morts.push(n.href);
+  }
+  return morts.filter((h) => h === '#' || h.trim() === '' || /^javascript:/i.test(h)).length;
+}
+
 // --json : émet le graphe des liens réellement rendus, pour verifier-liens.py
 const enJSON = process.argv.includes('--json');
 const dire = (...a) => (enJSON ? console.error(...a) : console.log(...a));
@@ -34,7 +47,10 @@ for (const f of process.argv.slice(2)) {
   const bloc = src.match(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/);
   if (!bloc) {
     // page sans script : ses liens sont des attributs HTML ordinaires
-    graphe[f] = [...new Set([...src.matchAll(/href="([^"#?]+\.html)"/g)].map((m) => m[1]))].sort();
+    graphe[f] = {
+      liens: [...new Set([...src.matchAll(/href="([^"#?]+\.html)"/g)].map((m) => m[1]))].sort(),
+      morts: (src.match(/<a\b[^>]*\bhref="(?:#|\s*)"/g) || []).length,
+    };
     if (!enJSON) dire('  —  %s : pas de script en ligne', f);
     continue;
   }
@@ -53,14 +69,17 @@ for (const f of process.argv.slice(2)) {
   if (typeof rendre !== 'function') { dire('  —  %s : pas de fonction render', f); continue; }
 
   // Un lien est réel s'il est écrit en dur dans la page OU produit au rendu.
+  let morts = 0;
   const bilan = [], cibles = new Set(
     [...src.matchAll(/<a\b[^>]*\bhref="([^"#?]+\.html)"/g)].map((m) => m[1]));
   let dur = false;
   for (const l of ['fr', 'en', 'ar']) {
     try {
+      const avant = document._crees.length;
       rendre(l);
       const html = rendu(document);
       for (const m of html.matchAll(/href="([^"#?]+\.html)"/g)) cibles.add(m[1]);
+      morts = Math.max(morts, liensMorts(document, html, avant));
       for (const h of liensCrees(document)) {
         const p = h.split(/[#?]/)[0];
         if (p.endsWith('.html')) cibles.add(p);
@@ -72,10 +91,12 @@ for (const f of process.argv.slice(2)) {
     }
   }
   global ||= dur;
-  graphe[f] = [...cibles].sort();
+  graphe[f] = { liens: [...cibles].sort(), morts };
   if (!enJSON) {
-    console.log('  %s %s — %s\n      liens : %s',
-      dur ? '❌' : '✅', f, bilan.join(' · '), [...cibles].join(', ') || 'aucun');
+    console.log('  %s %s — %s%s\n      liens : %s',
+      dur ? '❌' : '✅', f, bilan.join(' · '),
+      morts ? ` · ${morts} lien(s) mort(s)` : '',
+      [...cibles].join(', ') || 'aucun');
   }
 }
 if (enJSON) console.log(JSON.stringify(graphe));

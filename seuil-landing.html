@@ -58,7 +58,7 @@
   html[dir="rtl"] .room .arw{transform:scaleX(-1)}
   .room:hover .arw{transform:translateX(4px)}
   html[dir="rtl"] .room:hover .arw{transform:scaleX(-1) translateX(4px)}
-  .room.soon{opacity:.62;pointer-events:none;background:linear-gradient(160deg,#0d0f18,#0b0d14)}
+  .room.soon{cursor:default;opacity:.62;pointer-events:none;background:linear-gradient(160deg,#0d0f18,#0b0d14)}
   .room.soon .rtag,.room.soon .enter{color:var(--muted)}
   .room.soon::before{background:linear-gradient(160deg,color-mix(in srgb,var(--soon) 60%,transparent),transparent 55%)}
   .badge-soon{position:absolute;top:16px;inset-inline-end:16px;font-family:system-ui,sans-serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 9px}
@@ -193,10 +193,13 @@ function render(l){
   document.getElementById('rlabel').textContent=c.rlabel;
   const box=document.getElementById('rooms');box.innerHTML="";
   c.rooms.forEach(r=>{
-    const meta=ROOMS[r.k]||{c:"var(--soon)",href:"#"};
-    const a=document.createElement('a');
+    const meta=ROOMS[r.k]||{c:"var(--soon)"};
+    // Une salle « à venir » n'est pas un lien : elle ne mène nulle part et ne
+    // doit donc ni se toucher, ni prendre le focus. Un lien mort est ce qu'un
+    // lecteur signale en premier — mieux vaut un panneau franchement inerte.
+    const a=document.createElement(r.soon||!meta.href?'div':'a');
     a.className='room'+(r.soon?' soon':'');
-    a.href=r.soon?'#':meta.href;
+    if(!r.soon&&meta.href) a.href=meta.href;
     a.style.setProperty('--rc',meta.c);
     a.innerHTML=`${r.soon?`<span class="badge-soon">${c.soonBadge}</span>`:''}
       <div class="rtag"><span class="dot"></span>${r.tag}</div>
