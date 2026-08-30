@@ -29,6 +29,14 @@ jobs:
       - name: Maillage — ni orpheline, ni cul-de-sac
         run: python3 outils/verifier-liens.py
 
+      - name: Le bandeau de situation reflète periodes.yml
+        # Le générateur est idempotent : s'il produit une différence, c'est
+        # qu'une page a été modifiée à la main et diverge de la source.
+        run: |
+          python3 outils/poser-situation.py
+          git diff --exit-code -- ./*.html \
+            || { echo "::error::Des pages divergent de periodes.yml. Relancez outils/poser-situation.py et committez."; exit 1; }
+
       - name: Validité des références bibliques
         run: python3 outils/verifier-references.py ./*.html contenus/*.md
 

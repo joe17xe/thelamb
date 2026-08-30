@@ -1,0 +1,135 @@
+# periodes.yml — la carte du temps, en donnée
+#
+# Huit périodes qui situent une page dans l'histoire. Ce n'est pas l'ordre de
+# lecture du site : le parcours descend du Christ vers la Genèse (décision D-007).
+# La frise répond à « quand », le parcours répond à « pourquoi ».
+#
+# Les six premières viennent de `frise-prophetes.html`, où l'auteur les avait déjà
+# nommées, datées et colorées dans les trois langues. Elles sont reprises mot pour
+# mot. Les deux premières — les origines et les pères — sont ajoutées ici : le
+# parcours remonte plus haut que la frise ne descendait.
+#
+# Les dates sont des repères, pas des positions arrêtées : les spécialistes ne
+# s'accordent pas sur les plus anciennes.
+
+periodes:
+
+  - cle: origines
+    couleur: "#6f7a94"
+    fr: {nom: "Les origines", dates: "avant l'histoire datée",
+         texte: "La création, la chute, et la promesse faite le jour même de la faute. La première offrande agréée vient du troupeau.",
+         figures: "Adam, Abel, Noé"}
+    en: {nom: "The origins", dates: "before dated history",
+         texte: "Creation, the fall, and the promise made on the very day of the fault. The first accepted offering comes from the flock.",
+         figures: "Adam, Abel, Noah"}
+    ar: {nom: "البدايات", dates: "قبل التاريخ المؤرَّخ",
+         texte: "الخلقُ، والسقوط، والوعدُ المُعطى في يوم الخطيئة نفسه. وأولُ تقدمةٍ مقبولةٍ تأتي من الغنم.",
+         figures: "آدم، هابيل، نوح"}
+
+  - cle: peres
+    couleur: "#a8763c"
+    fr: {nom: "Les pères", dates: "~2000–1500 av. J.-C.",
+         texte: "Dieu choisit une famille : Abraham, Isaac, Jacob, Joseph. Sur le mont Morija, la question de l'agneau est posée pour la première fois.",
+         figures: "Abraham, Isaac, Jacob, Joseph"}
+    en: {nom: "The fathers", dates: "~2000–1500 BC",
+         texte: "God chooses a family: Abraham, Isaac, Jacob, Joseph. On Mount Moriah, the question of the lamb is asked for the first time.",
+         figures: "Abraham, Isaac, Jacob, Joseph"}
+    ar: {nom: "الآباء", dates: "نحو ٢٠٠٠–١٥٠٠ ق.م",
+         texte: "يختار اللهُ عائلة: إبراهيم، وإسحاق، ويعقوب، ويوسف. وعلى جبل المريّا يُطرح سؤالُ الحمل لأولِ مرة.",
+         figures: "إبراهيم، إسحاق، يعقوب، يوسف"}
+
+  - cle: loi
+    couleur: "#c98a5e"
+    fr: {nom: "La Loi", dates: "~1500–1200 av. J.-C.",
+         texte: "Dieu fait sortir un peuple d'Égypte, lui donne la Loi et l'Alliance au Sinaï. Naissance d'Israël.",
+         figures: "Moïse, Josué"}
+    en: {nom: "The Law", dates: "~1500–1200 BC",
+         texte: "God brings a people out of Egypt, gives the Law and the Covenant at Sinai. Israel is born.",
+         figures: "Moses, Joshua"}
+    ar: {nom: "الناموس", dates: "نحو ١٥٠٠–١٢٠٠ ق.م",
+         texte: "يُخرج اللهُ شعبًا من مصر، ويعطيه الناموسَ والعهدَ في سيناء. ميلادُ إسرائيل.",
+         figures: "موسى، يشوع"}
+
+  - cle: royaume
+    couleur: "#d3a94f"
+    fr: {nom: "Le Royaume", dates: "~1000–930 av. J.-C.",
+         texte: "David unifie le royaume, Salomon bâtit le Temple. L'apogée — et la promesse d'un trône éternel.",
+         figures: "David, Salomon, Nathan"}
+    en: {nom: "The Kingdom", dates: "~1000–930 BC",
+         texte: "David unites the kingdom, Solomon builds the Temple. The peak — and the promise of an eternal throne.",
+         figures: "David, Solomon, Nathan"}
+    ar: {nom: "المملكة", dates: "نحو ١٠٠٠–٩٣٠ ق.م",
+         texte: "داود يوحّد المملكة، وسليمان يبني الهيكل. الذروة — ووعدُ عرشٍ أبدي.",
+         figures: "داود، سليمان، ناثان"}
+
+  - cle: exil
+    couleur: "#6b9bd8"
+    fr: {nom: "La division & l'exil", dates: "~930–587 av. J.-C.",
+         texte: "Le royaume se divise, s'effondre. Les prophètes avertissent, puis Babylone détruit le Temple (587).",
+         figures: "Ésaïe, Jérémie, les grands prophètes"}
+    en: {nom: "Division & exile", dates: "~930–587 BC",
+         texte: "The kingdom splits and collapses. The prophets warn, then Babylon destroys the Temple (587).",
+         figures: "Isaiah, Jeremiah, the great prophets"}
+    ar: {nom: "الانقسام والسبي", dates: "نحو ٩٣٠–٥٨٧ ق.م",
+         texte: "تنقسم المملكةُ وتنهار. ينذر الأنبياء، ثم تدمّر بابلُ الهيكلَ (٥٨٧).",
+         figures: "إشعياء، إرميا، كبار الأنبياء"}
+
+  - cle: retour
+    couleur: "#7cb47c"
+    fr: {nom: "Le retour", dates: "~538–430 av. J.-C.",
+         texte: "La Perse renvoie les exilés. Le Temple est rebâti, plus modeste. On attend « quelque chose de plus ».",
+         figures: "Aggée, Zacharie, Malachie"}
+    en: {nom: "The return", dates: "~538–430 BC",
+         texte: "Persia sends the exiles home. The Temple is rebuilt, more modest. They await “something more”.",
+         figures: "Haggai, Zechariah, Malachi"}
+    ar: {nom: "العودة", dates: "نحو ٥٣٨–٤٣٠ ق.م",
+         texte: "تُعيد فارسُ المسبيّين. يُبنى الهيكلُ ثانيةً، أكثرَ تواضعًا. ويُنتظَر «شيءٌ أعظم».",
+         figures: "حجي، زكريا، ملاخي"}
+
+  # Décision D-008 : cette période est celle des livres que les traditions ne
+  # reçoivent pas de la même façon. La nommer « le silence » et parler de
+  # « quatre siècles sans prophète » tranche la question du canon en une ligne.
+  # On décrit donc ce qui est attesté : plus de prophète reconnu par toutes les
+  # traditions, et une littérature abondante dont le statut diffère selon elles.
+  - cle: attente
+    couleur: "#a583d6"
+    fr: {nom: "L'attente", dates: "~430–5 av. J.-C.",
+         texte: "Quatre siècles sans prophète reconnu par toutes les traditions — mais non sans écrits : Maccabées, Siracide, Sagesse, reçus diversement selon les Églises. Empires grec puis romain. L'attente du Messie monte.",
+         figures: "les Maccabées, les sages"}
+    en: {nom: "The waiting", dates: "~430–5 BC",
+         texte: "Four centuries with no prophet recognised by every tradition — but not without writings: Maccabees, Sirach, Wisdom, received differently across the Churches. Greek then Roman empires. Expectation of the Messiah rises.",
+         figures: "the Maccabees, the sages"}
+    ar: {nom: "الانتظار", dates: "نحو ٤٣٠–٥ ق.م",
+         texte: "أربعةُ قرون بلا نبيٍّ تعترف به كلُّ التقاليد — لكن ليست بلا كتابات: المكابيّون، وابن سيراخ، والحكمة، تتلقّاها الكنائسُ على نحوٍ مختلف. إمبراطوريتان يونانية ثم رومانية. ويتصاعد انتظارُ المسيّا.",
+         figures: "المكابيّون، الحكماء"}
+
+  - cle: christ
+    couleur: "#d05c5c"
+    fr: {nom: "L'accomplissement", dates: "~5 av.–30 apr. J.-C.",
+         texte: "Jean-Baptiste rompt le silence : « Voici l'Agneau ». Tout ce qui était annoncé prend un visage.",
+         figures: "Jean-Baptiste, le Christ"}
+    en: {nom: "The fulfilment", dates: "~5 BC–AD 30",
+         texte: "John the Baptist breaks the silence: “Behold the Lamb”. All that was announced takes a face.",
+         figures: "John the Baptist, the Christ"}
+    ar: {nom: "الإتمام", dates: "نحو ٥ ق.م–٣٠ م",
+         texte: "يوحنا المعمدان يكسر الصمت: «هوذا الحمل». وكلُّ ما أُعلن يأخذ وجهًا.",
+         figures: "يوحنا المعمدان، المسيح"}
+
+# ————— Où chaque page se situe —————
+# Une page sans ancrage historique (une salle thématique) n'en a pas : le bandeau
+# ne s'affiche que là où il dit quelque chose de vrai.
+ancrages:
+  page-etalon-voici-agneau.html:  christ
+  page-etape2-agneau-regne.html:  christ
+  page-etape3-la-croix.html:      christ
+  page-etape4-isaie-53.html:      exil
+  page-etape5-la-paque.html:      loi
+  page-etape6-morija.html:        peres
+  page-etape7-commencement.html:  origines
+  pilier-le-sang.html:            loi
+  pilier-bapteme.html:            christ
+  pilier-resurrection.html:       christ
+  pilier-transfiguration.html:    christ
+  pilier-temple-detruit.html:     christ
+  section-offrande.html:          christ
+  page-fondatrice-emmaus.html:    christ

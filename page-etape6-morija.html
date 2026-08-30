@@ -124,6 +124,21 @@
     .hero,.strate,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
+/* ——— bandeau de situation (généré : outils/poser-situation.py) ——— */
+  .situation{max-width:1060px;margin:24px auto 0;padding:0 20px}
+  .situation a{display:block;text-decoration:none;color:inherit}
+  .situation a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
+  .sitlbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:9px}
+  html[dir="rtl"] .sitlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:12.5px}
+  .sitbar{display:flex;gap:3px}
+  .sitseg{flex:1;height:5px;border-radius:2px;background:var(--sc);opacity:.2;transition:opacity .25s}
+  .sitseg.on{opacity:1;box-shadow:0 0 10px var(--sc)}
+  .situation a:hover .sitseg{opacity:.42}
+  .situation a:hover .sitseg.on{opacity:1}
+  .sitnow{margin-top:10px;text-align:center;font-family:system-ui,sans-serif;font-size:11.5px;color:var(--muted)}
+  html[dir="rtl"] .sitnow{font-family:'Amiri',sans-serif;font-size:14px}
+  .sitnow b{font-weight:600}
+/* ——— fin du bandeau de situation ——— */
 </style>
 </head>
 <body>
@@ -141,6 +156,8 @@
   <div class="lbl" id="steplbl"></div>
   <div class="dots" id="dots"></div>
 </div>
+
+<div class="situation" id="situation"></div>
 
 <div class="hero">
   <div class="eyebrow" id="eyebrow"></div>
@@ -306,6 +323,27 @@ function render(l){
   document.getElementById('foot').innerHTML=c.foot;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
 }
+/* situation — généré */
+const PERIODES={"fr": [["origines", "Les origines", "avant l'histoire datée", "#6f7a94"], ["peres", "Les pères", "~2000–1500 av. J.-C.", "#a8763c"], ["loi", "La Loi", "~1500–1200 av. J.-C.", "#c98a5e"], ["royaume", "Le Royaume", "~1000–930 av. J.-C.", "#d3a94f"], ["exil", "La division & l'exil", "~930–587 av. J.-C.", "#6b9bd8"], ["retour", "Le retour", "~538–430 av. J.-C.", "#7cb47c"], ["attente", "L'attente", "~430–5 av. J.-C.", "#a583d6"], ["christ", "L'accomplissement", "~5 av.–30 apr. J.-C.", "#d05c5c"]], "en": [["origines", "The origins", "before dated history", "#6f7a94"], ["peres", "The fathers", "~2000–1500 BC", "#a8763c"], ["loi", "The Law", "~1500–1200 BC", "#c98a5e"], ["royaume", "The Kingdom", "~1000–930 BC", "#d3a94f"], ["exil", "Division & exile", "~930–587 BC", "#6b9bd8"], ["retour", "The return", "~538–430 BC", "#7cb47c"], ["attente", "The waiting", "~430–5 BC", "#a583d6"], ["christ", "The fulfilment", "~5 BC–AD 30", "#d05c5c"]], "ar": [["origines", "البدايات", "قبل التاريخ المؤرَّخ", "#6f7a94"], ["peres", "الآباء", "نحو ٢٠٠٠–١٥٠٠ ق.م", "#a8763c"], ["loi", "الناموس", "نحو ١٥٠٠–١٢٠٠ ق.م", "#c98a5e"], ["royaume", "المملكة", "نحو ١٠٠٠–٩٣٠ ق.م", "#d3a94f"], ["exil", "الانقسام والسبي", "نحو ٩٣٠–٥٨٧ ق.م", "#6b9bd8"], ["retour", "العودة", "نحو ٥٣٨–٤٣٠ ق.م", "#7cb47c"], ["attente", "الانتظار", "نحو ٤٣٠–٥ ق.م", "#a583d6"], ["christ", "الإتمام", "نحو ٥ ق.م–٣٠ م", "#d05c5c"]]};
+const PERIODE_ICI="peres";
+const PERIODE_LBL={"fr": "Où nous sommes dans l'histoire", "en": "Where we are in the story", "ar": "أين نحن من التاريخ"};
+function posSituation(l){
+  const zone=document.getElementById('situation');
+  if(!zone) return;
+  const liste=PERIODES[l]||PERIODES.fr;
+  const i=liste.findIndex(p=>p[0]===PERIODE_ICI);
+  const ici=liste[i];
+  zone.innerHTML='<a href="frise-prophetes.html">'
+    +'<div class="sitlbl">'+PERIODE_LBL[l]+'</div>'
+    +'<div class="sitbar">'+liste.map((p,k)=>
+        '<span class="sitseg'+(k===i?' on':'')+'" style="--sc:'+p[3]+'"></span>').join('')
+    +'</div>'
+    +'<div class="sitnow"><b style="color:'+ici[3]+'">'+ici[1]+'</b> · '+ici[2]+'</div>'
+    +'</a>';
+}
+const _renduSansSituation=render;
+render=function(l){_renduSansSituation(l);posSituation(l);};
+/* fin situation */
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
 render('fr');
 </script>

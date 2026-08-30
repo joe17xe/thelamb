@@ -49,6 +49,14 @@ boucle à l'exécution suivante. Le supprimer la relance.
   qui pointaient sur href="#" ont reçu leur adresse, et cinq liens secondaires ont ouvert
   les chaînes qui restaient sans entrée
 
+## R-009 Poser la carte du temps sur les pages
+- zone: verte
+- statut: fait
+- pourquoi: le lecteur remonte le temps ; il doit savoir en permanence où il se trouve
+- fait quand: chaque page historiquement située porte son bandeau, dérivé d'une source unique
+- résultat: periodes.yml (huit périodes trilingues) + outils/poser-situation.py, posé sur
+  14 pages ; la frise alignée sur D-008 pour la période intertestamentaire
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

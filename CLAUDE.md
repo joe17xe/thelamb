@@ -77,6 +77,27 @@ dossiers de travail.
 
 ---
 
+## La carte du temps
+
+`periodes.yml` déclare huit périodes — les origines, les pères, la Loi, le Royaume,
+la division et l'exil, le retour, l'attente, l'accomplissement — avec leurs dates,
+leurs couleurs et leur description dans les trois langues, plus la période où chaque
+page se situe.
+
+`outils/poser-situation.py` en dérive le bandeau « où nous sommes dans l'histoire »
+posé sur les 14 pages ancrées. Le générateur est **idempotent** : on ne modifie pas
+le bandeau à la main, on modifie `periodes.yml` et on relance. La CI refuse toute
+page qui aurait divergé.
+
+**La frise est une carte, pas un chemin** (décision D-007). Le parcours descend
+toujours du Christ vers la Genèse ; le bandeau dit seulement *quand*, pour que le
+lecteur qui remonte sache toujours où il se trouve.
+
+La période « l'attente » (~430–5 av. J.-C.) est formulée pour ne pas trancher la
+question du canon (décision D-008) : on y décrit une période sans prophète reconnu
+par toutes les traditions, mais non sans écrits — Maccabées, Siracide, Sagesse —
+reçus diversement selon les Églises.
+
 ## Structure d'une page
 
 | Strate | Nom | Contenu | Longueur |
