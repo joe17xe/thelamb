@@ -129,6 +129,67 @@
   a.dot[href]:hover .nm{color:var(--gold)}
   a.dot[href]:hover .pt{border-color:var(--gold)}
   a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+
+  /* ——— curseur de parcours : sur téléphone, les arcs font un pixel et
+         il n'y a pas de survol. Un rail glissant remplace le pointage. ——— */
+  .scrub{display:none}
+  @media(max-width:900px){
+    .scrub{
+      display:block;position:fixed;inset-inline-end:0;top:26vh;bottom:22vh;
+      width:52px;z-index:40;touch-action:none;
+      -webkit-tap-highlight-color:transparent;
+      opacity:1;transition:opacity .25s ease;
+    }
+    /* hors de la zone du diagramme et de la carte, il n'a plus rien à commander */
+    .scrub[data-loin="1"]{opacity:0;pointer-events:none;
+    }
+    .scrub .rail{
+      position:absolute;inset-inline-end:21px;top:0;bottom:0;width:2px;
+      background:linear-gradient(180deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
+      border-radius:2px;
+    }
+    .scrub .fill{
+      position:absolute;inset-inline-end:21px;top:0;width:2px;border-radius:2px;
+      background:linear-gradient(180deg,var(--gold),var(--crimson));opacity:.75;
+    }
+    .scrub .grip{
+      position:absolute;inset-inline-end:10px;width:24px;height:24px;margin-top:-12px;
+      border-radius:50%;background:var(--bg2);border:1.5px solid var(--gold);
+      box-shadow:0 0 0 5px rgba(12,14,24,.85),0 0 14px rgba(211,169,79,.45);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .scrub .grip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    .scrub[data-actif="1"] .grip{transform:scale(1.15);border-color:var(--ink)}
+    .scrub .bulle{
+      position:absolute;inset-inline-end:44px;margin-top:-19px;
+      background:var(--bg2);border:1px solid var(--line);border-radius:9px;
+      padding:8px 12px;min-width:172px;max-width:64vw;
+      opacity:0;transform:translateX(6px);pointer-events:none;
+      transition:opacity .16s ease,transform .16s ease;
+    }
+    html[dir="rtl"] .scrub .bulle{transform:translateX(-6px)}
+    .scrub[data-actif="1"] .bulle{opacity:1;transform:none}
+    .scrub .bulle .bt{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;color:var(--ink);line-height:1.25}
+    html[dir="rtl"] .scrub .bulle .bt{font-family:'Amiri',serif}
+    .scrub .bulle .br{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.06em;color:var(--gold);margin-top:5px}
+    .scrub .rang{
+      position:absolute;inset-inline-end:8px;bottom:-24px;
+      font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.14em;
+      color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;
+    }
+    .scrub .aide{
+      position:absolute;inset-inline-end:46px;top:50%;margin-top:-9px;
+      font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.2em;
+      text-transform:uppercase;color:var(--muted);white-space:nowrap;
+      writing-mode:vertical-rl;transition:opacity .3s ease;
+    }
+    html[dir="rtl"] .scrub .aide{writing-mode:vertical-lr}
+    .scrub[data-vu="1"] .aide{opacity:0}
+    .arc.sel{stroke-width:2.4px !important;opacity:1 !important}
+  }
+  @media(max-width:900px) and (prefers-reduced-motion:reduce){
+    .scrub .bulle,.scrub .grip{transition:none}
+  }
 </style>
 </head>
 <body>
@@ -158,6 +219,15 @@
 <div class="stage">
   <svg id="viz" viewBox="0 0 1200 585" role="img" aria-label="Ancien Testament → Nouveau Testament"></svg>
   <div class="tooltip" id="tt"></div>
+</div>
+
+<div class="scrub" id="scrub" role="slider" tabindex="0"
+     aria-label="Parcourir les correspondances" aria-valuemin="1" aria-valuenow="1" aria-valuemax="1">
+  <div class="rail"></div><div class="fill" id="scrub-fill"></div>
+  <div class="aide" id="scrub-aide"></div>
+  <div class="grip" id="scrub-grip"></div>
+  <div class="bulle" id="scrub-bulle"></div>
+  <div class="rang" id="scrub-rang"></div>
 </div>
 
 <div class="panel" id="panel">
@@ -335,6 +405,7 @@ function buildChips(){
 }
 function applyFilter(){
   arcs.forEach(p=>p.classList.toggle('dim',!active.has(p.dataset.t)));
+  if(typeof scrubVisibles==='function') scrubVisibles();
 }
 
 /* ---------- Sélection & panneau ---------- */
@@ -491,6 +562,93 @@ function render(l){
   else{panel.innerHTML=`<div class="placeholder" id="ph">${esc(c.ph)}</div>`;}
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
 }
+
+/* ---------- Curseur de parcours (téléphone) ---------- */
+/* Les arcs mesurent un pixel : ni survol ni cible tactile sur un écran de
+   téléphone. Ce rail parcourt les correspondances visibles dans l'ordre
+   canonique — glisser vers le bas, c'est avancer dans les Écritures. */
+const SCRUB_LBL={fr:"Glisser pour parcourir",en:"Drag to browse",ar:"اسحب للتصفّح"};
+const SCRUB={el:$('scrub'),grip:$('scrub-grip'),bulle:$('scrub-bulle'),
+             fill:$('scrub-fill'),rang:$('scrub-rang'),aide:$('scrub-aide'),
+             visibles:[],pos:0};
+
+function scrubVisibles(){
+  SCRUB.visibles=ALL.map((d,i)=>i).filter(i=>active.has(ALL[i][6]));
+  SCRUB.el.setAttribute('aria-valuemax',Math.max(SCRUB.visibles.length,1));
+  if(SCRUB.pos>=SCRUB.visibles.length) SCRUB.pos=Math.max(SCRUB.visibles.length-1,0);
+  scrubPeindre();
+}
+function scrubPeindre(){
+  const n=SCRUB.visibles.length; if(!n) return;
+  const r=SCRUB.el.getBoundingClientRect();
+  const y=n>1?(SCRUB.pos/(n-1))*r.height:0;
+  SCRUB.grip.style.top=y+'px';
+  SCRUB.fill.style.height=y+'px';
+  const i=SCRUB.visibles[SCRUB.pos],L=loc(i),c=T[LANG];
+  SCRUB.bulle.innerHTML='<div class="bt">'+esc(L.t)+'</div>'
+    +'<div class="br">'+esc(L.ra)+'  →  '+esc(L.rn)+'</div>';
+  SCRUB.rang.textContent=(SCRUB.pos+1)+' / '+n;
+  SCRUB.aide.textContent=SCRUB_LBL[LANG]||SCRUB_LBL.fr;
+  SCRUB.el.setAttribute('aria-valuenow',SCRUB.pos+1);
+  SCRUB.el.setAttribute('aria-valuetext',L.t+' — '+L.ra+' → '+L.rn);
+}
+function scrubAller(pos,montrer){
+  const n=SCRUB.visibles.length; if(!n) return;
+  SCRUB.pos=Math.max(0,Math.min(n-1,pos));
+  scrubPeindre();
+  select(SCRUB.visibles[SCRUB.pos],true);
+  if(montrer) SCRUB.el.setAttribute('data-vu','1');
+}
+function scrubDepuisY(clientY){
+  const r=SCRUB.el.getBoundingClientRect(),n=SCRUB.visibles.length;
+  const f=Math.max(0,Math.min(1,(clientY-r.top)/r.height));
+  scrubAller(Math.round(f*(n-1)),true);
+}
+let scrubActif=false;
+SCRUB.el.addEventListener('pointerdown',e=>{
+  scrubActif=true;SCRUB.el.setPointerCapture(e.pointerId);
+  SCRUB.el.setAttribute('data-actif','1');scrubDepuisY(e.clientY);e.preventDefault();
+});
+SCRUB.el.addEventListener('pointermove',e=>{if(scrubActif){scrubDepuisY(e.clientY);e.preventDefault();}});
+['pointerup','pointercancel'].forEach(ev=>SCRUB.el.addEventListener(ev,()=>{
+  scrubActif=false;SCRUB.el.removeAttribute('data-actif');
+  if(typeof scrubRamener==='function') scrubRamener();
+}));
+SCRUB.el.addEventListener('keydown',e=>{
+  const p={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];
+  if(p){scrubAller(SCRUB.pos+p,true);SCRUB.el.setAttribute('data-actif','1');e.preventDefault();}
+  else if(e.key==='Home'){scrubAller(0,true);e.preventDefault();}
+  else if(e.key==='End'){scrubAller(SCRUB.visibles.length-1,true);e.preventDefault();}
+});
+SCRUB.el.addEventListener('blur',()=>SCRUB.el.removeAttribute('data-actif'));
+window.addEventListener('resize',()=>scrubPeindre());
+
+/* Le rail ne s'affiche que tant que le diagramme ou la carte sont à l'écran :
+   plus bas, sur le formulaire de contribution, il ne commande plus rien. */
+if(typeof IntersectionObserver!=='undefined'){
+  const zone=document.querySelector('.stage'), carte=$('panel');
+  let vues=new Map();
+  const oeil=new IntersectionObserver(es=>{
+    es.forEach(e=>vues.set(e.target,e.isIntersecting));
+    SCRUB.el.setAttribute('data-loin',[...vues.values()].some(Boolean)?'0':'1');
+  },{rootMargin:'80px'});
+  [zone,carte].forEach(n=>n&&oeil.observe(n));
+}
+
+/* Au relâchement, si la carte est sortie de l'écran, on la ramène :
+   pendant le glissement la bulle suffit, après il faut pouvoir lire. */
+function scrubRamener(){
+  const r=$('panel').getBoundingClientRect();
+  if(r.bottom<80||r.top>window.innerHeight-80)
+    $('panel').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+scrubVisibles();
+
+/* la bulle du rail suit la langue même si l'on n'y touche pas */
+const _renduSansRail=render;
+render=function(l){_renduSansRail(l);if(SCRUB.visibles.length)scrubPeindre();};
+
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
 
 /* ---------- Initialisation ---------- */

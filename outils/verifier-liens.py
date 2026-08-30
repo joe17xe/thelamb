@@ -59,7 +59,9 @@ def liens_rendus(fichiers):
         capture_output=True, text=True)
     if not sortie.stdout.strip():
         raise SystemExit("essai-rendu.mjs n'a rien renvoyé :\n" + sortie.stderr)
-    return {f: set(liens) for f, liens in json.loads(sortie.stdout).items()}
+    brut = json.loads(sortie.stdout)
+    return ({f: set(v["liens"]) for f, v in brut.items()},
+            {f: v["morts"] for f, v in brut.items() if v["morts"]})
 
 
 def main():
@@ -75,7 +77,7 @@ def main():
     non_declarees = sorted(sur_disque - set(plan) - obsoletes)
     fantomes = sorted(set(plan) - sur_disque)
 
-    reels = liens_rendus(sorted(set(plan) & sur_disque))
+    reels, morts = liens_rendus(sorted(set(plan) & sur_disque))
     cibles = set()
     for liens in reels.values():
         cibles |= liens
@@ -110,6 +112,8 @@ def main():
     dur |= bloc("Culs-de-sac (elles ne mènent nulle part)", culs_de_sac, lambda f: "- ❌ `%s`" % f)
     dur |= bloc("Écarts avec navigation.yml", ecarts,
                 lambda e: "- ❌ `%s` devrait mener à : %s" % (e[0], ", ".join("`%s`" % m for m in e[1])))
+    dur |= bloc("Liens morts (href=\"#\" ou vide)", sorted(morts.items()),
+                lambda e: "- ❌ `%s` — %d bouton(s) qui ne mènent nulle part" % e)
     bloc("Pages non déclarées dans navigation.yml", non_declarees, lambda f: "- ⚠️ `%s`" % f)
     bloc("Déclarées mais absentes du disque", fantomes, lambda f: "- ⚠️ `%s`" % f)
 
