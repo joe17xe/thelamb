@@ -115,6 +115,12 @@ boucle à l'exécution suivante. Le supprimer la relance.
   requête au serveur web, ticket « Déploiement bloqué » ouvert puis refermé
   automatiquement (D-014)
 
+## R-015 Monter les actions GitHub d'une version majeure
+- zone: verte
+- statut: à faire
+- pourquoi: actions/checkout@v4 et actions/github-script@v7 visent Node 20, que les runners forcent déjà sur Node 24 — ça marche aujourd'hui, ça cassera un jour sans prévenir
+- fait quand: checkout@v5 et github-script@v8, un déploiement vert derrière, plus aucun avertissement de dépréciation dans le journal
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

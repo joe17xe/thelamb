@@ -107,10 +107,17 @@ jobs:
             echo "::error::index.html n'a pas de <title> — rien à vérifier côté serveur."
             exit 1
           fi
-          if curl -fsS --retry 3 --retry-delay 5 "$SITE/" | grep -qF "$attendu"; then
+          # On écrit la réponse avant de la lire : `curl | grep -q` fait mourir
+          # curl sur un tuyau fermé, ce qui affiche une erreur qui n'en est pas
+          # une — et deviendrait un faux échec sous `pipefail`.
+          if ! curl -fsS --retry 3 --retry-delay 5 -o /tmp/servi.html "$SITE/"; then
+            echo "::error::$SITE ne répond pas."
+            exit 1
+          fi
+          if grep -qF "$attendu" /tmp/servi.html; then
             echo "Le serveur sert bien « $attendu »."
           else
-            echo "::error::$SITE ne sert pas la page attendue."
+            echo "::error::$SITE répond, mais ne sert pas la page attendue."
             exit 1
           fi
 
