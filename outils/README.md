@@ -20,7 +20,7 @@ qui cloche en une fois.
 | `verifier-references.py` | chaque référence citée désigne un livre et un chapitre qui existent, et aucune page publiée ne porte de jeton d'atelier | oui |
 | `verifier-fiche.py` | la forme d'une fiche : strates, longueurs, métadonnées, rattachement | oui sur la structure |
 | `choisir-entree.py` | renvoie la première entrée « à faire » de la feuille de route | — |
-| `boucle-vps.sh` | orchestre une exécution autonome : une entrée, une branche, une PR | — |
+| `boucle-vps.sh` | orchestre une exécution autonome : une entrée, une branche, une PR — installation dans [`producteur/09-CLAUDE-SUR-LE-VPS.md`](../producteur/09-CLAUDE-SUR-LE-VPS.md) | — |
 
 ```bash
 bash outils/tout-verifier.sh                    # tout, comme la CI

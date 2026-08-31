@@ -26,6 +26,13 @@ flock -n 9 || abandon "une exécution est déjà en cours"
 
 cd "$DEPOT"
 
+# — les deux outils dont tout dépend, vérifiés avant de commencer —
+for outil in claude gh git python3 node; do
+  command -v "$outil" >/dev/null || abandon "$outil est introuvable dans le PATH du service" 1
+done
+gh auth status >/dev/null 2>&1 \
+  || abandon "gh n'est pas authentifié (gh auth login, ou GH_TOKEN dans /etc/agneau/boucle.env)" 1
+
 # — coupe-circuit : créer un fichier PAUSE à la racine depuis GitHub suffit à tout arrêter —
 git fetch --quiet --no-tags origin "$BRANCHE_BASE"
 git checkout --quiet "$BRANCHE_BASE"
