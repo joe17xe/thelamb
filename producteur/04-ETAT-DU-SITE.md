@@ -1,4 +1,9 @@
-# État du site — relevé au 30 août 2026
+# État du site — relevé au 30 août 2026, **avant réparation**
+
+> **Ce relevé décrit le site tel qu'il était avant la réparation du maillage.**
+> Il est conservé parce qu'il explique pourquoi les décisions ont été prises,
+> pas parce qu'il décrit le site d'aujourd'hui. Les chiffres ci-dessous sont
+> périmés ; ceux d'aujourd'hui sont en fin de document.
 
 Document de travail pour la revue de structure. Chiffres relevés automatiquement
 sur les 23 pages HTML du dépôt, pas à l'estime.
@@ -101,3 +106,25 @@ les plus longues (3 000 à 6 500 mots chacune).
 5. **L'anglais.** Déclaré partout, présent nulle part. On assume deux langues
    (FR/AR) ou on produit l'anglais ?
 6. **Priorité de production.** Six chantiers de contenu sont ouverts. Lequel d'abord ?
+
+---
+
+## Où en est-on aujourd'hui — relevé au 31 août 2026
+
+Mesuré par `outils/verifier-liens.py`, sur le rendu des pages et non sur leur
+source : ces pages construisent leur DOM en JavaScript, et une adresse peut
+vivre dans un tableau de constantes.
+
+- **23 pages** publiées, **104 liens internes** (contre 10 au relevé précédent)
+- **aucune orpheline, aucun cul-de-sac, aucun écart** avec `navigation.yml`
+- **aucun lien mort** : plus un seul `href="#"`
+
+Les culs-de-sac cités plus haut sont tous levés. Le maillage n'a pas été
+inventé : chaque page portait déjà son bloc « page suivante », rédigé et traduit
+dans les trois langues — il pointait sur `href="#"`. Il a suffi de leur donner
+leur adresse.
+
+**L'entrée a été tranchée** (D-015, qui referme D-001). Le site a un seul hall :
+`index.html`, qui ouvre les six salles dans l'ordre de la charte — l'Agneau
+d'abord. `seuil-landing.html` redevient ce que son nom dit : une entrée depuis
+l'extérieur, avec une seule porte. Aucune page du site n'y mène, et c'est voulu.

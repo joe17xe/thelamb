@@ -29,9 +29,11 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-001 Trancher les six questions structurantes
 - zone: rouge
-- statut: à faire
+- statut: en cours — 1 sur 6 tranchée
 - pourquoi: rien ne s'automatise correctement tant que la structure cible est inconnue
 - fait quand: les six entrées de producteur/06-JOURNAL-DES-DECISIONS.md sont tranchées et écrites
+- avancement: D-001 (par où entre-t-on) tranchée le 31 août par D-015. Restent D-002
+  (les six piliers), D-003 (les trois strates), D-004 (l'anglais), D-005, D-006.
 
 ## R-002 Écrire navigation.yml — la structure décidée, en donnée
 - zone: rouge
@@ -120,6 +122,16 @@ boucle à l'exécution suivante. Le supprimer la relance.
 - statut: à faire
 - pourquoi: actions/checkout@v4 et actions/github-script@v7 visent Node 20, que les runners forcent déjà sur Node 24 — ça marche aujourd'hui, ça cassera un jour sans prévenir
 - fait quand: checkout@v5 et github-script@v8, un déploiement vert derrière, plus aucun avertissement de dépréciation dans le journal
+
+## R-016 Un seul hall — dégrouper l'accueil et le seuil
+- zone: rouge
+- statut: fait
+- pourquoi: l'accueil et le seuil listaient les six mêmes salles, dans deux ordres et sous deux vocabulaires — le lecteur croyait en découvrir de nouvelles, puis comprenait que non
+- fait quand: une seule page liste les salles, les noms sont uniformes, l'ordre suit la charte, et le seuil n'offre qu'une porte
+- résultat: l'accueil devient le hall unique, portes réordonnées l'Agneau d'abord,
+  noms alignés sur ceux du seuil, badges d'état supprimés ; le seuil réduit à une
+  porte vers Emmaüs et déclaré `racine` ; fil d'Ariane de la bibliothèque redirigé
+  vers le hall ; carte « À venir » retirée (D-015, referme D-001)
 
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge

@@ -18,7 +18,6 @@ accueil:
   racine: true
   suite: page-fondatrice-emmaus.html
   annexes:
-    - seuil-landing.html
     - salle-bibliotheque.html
     - section-bible-fiable.html
     - frise-prophetes.html
@@ -27,15 +26,13 @@ accueil:
 
 seuil:
   fichier: seuil-landing.html
-  role: Le seuil — une porte, des salles
-  suite: index.html
+  role: Le seuil — une porte, vers Emmaüs
+  # Entrée depuis l'extérieur : aucune page du site n'y mène, et c'est voulu.
+  # Un lecteur déjà entré n'a pas à repasser par la porte (décision D-015).
+  racine: true
+  suite: page-fondatrice-emmaus.html
   annexes:
-    - page-fondatrice-emmaus.html
-    - salle-trinite.html
-    - section-offrande.html
-    - section-bible-fiable.html
-    - salle-bibliotheque.html
-    - frise-prophetes.html
+    - index.html
 
 methode:
   fichier: page-fondatrice-emmaus.html
@@ -104,7 +101,7 @@ salles:
   - fichier: salle-bibliotheque.html
     role: Comment la Bible est composée
     suite: index.html
-    annexes: [section-bible-fiable.html, seuil-landing.html]
+    annexes: [section-bible-fiable.html]
 
 transversales:
   - fichier: frise-prophetes.html

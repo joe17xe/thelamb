@@ -24,12 +24,14 @@ Six questions ouvertes, relevées sur l'état du site. Elles ne sont pas des tic
 elles se tranchent de vive voix, puis s'écrivent ici.
 
 ### D-001 — Par où entre-t-on dans le site ?
-**Statut :** à trancher
+**Statut :** tranchée le 31 août 2026 — **voir D-015**
 **La question :** l'accueil est le Fil Rouge, un diagramme. `seuil-landing.html`
 (« une porte, des salles ») joue aussi ce rôle et reçoit le seul lien de l'accueil.
 Deux pages se disputent la porte d'entrée, et le seuil ne mène nulle part.
 **Options :** le diagramme d'abord, saisissant mais abstrait · le seuil d'abord, plus
 guidant mais moins singulier · fondre les deux.
+**Réponse :** ni l'un ni l'autre en concurrence — un seul hall (le Fil Rouge), et le
+seuil réduit à ce qu'il annonce, une porte. Le détail est en D-015.
 
 ### D-002 — Que fait-on des six piliers ?
 **Statut :** à trancher
@@ -67,6 +69,29 @@ relie, c'est une quinzième page orpheline.
 ---
 
 ## Tranchées
+
+### D-015 — Un seul hall, et un seuil qui n'offre qu'une porte
+**Date :** 31 août 2026 — **Statut :** tranchée — **Referme :** D-001
+**La question :** l'accueil et le seuil listaient **les six mêmes destinations**, dans
+deux ordres différents et sous deux vocabulaires différents. Le lecteur croyait
+découvrir de nouvelles salles, puis comprenait que non. Deux salles portaient même deux
+noms : « La bibliothèque » ici, « Qu'est-ce que la Bible ? » là. Et le seuil, dont le
+sur-titre annonce « une seule porte », en offrait huit — la page se contredisait.
+**Ce qui a été décidé :** un seul hall, l'accueil. Il garde la liste des six salles,
+avec le vocabulaire qui dit au lecteur ce qu'il va trouver — *le fil en personne, celui
+qui parle, la table, la source, vérifier, les dates* — et non l'état de production de
+la salle. Les étiquettes « Ouverte » et « Nouvelle salle » disparaissent : elles
+renseignaient sur le calendrier éditorial, et « nouvelle » est périssable.
+**L'ordre suit la charte.** L'Agneau vient en premier, puis ce qui l'entoure — Celui qui
+parle, La table — puis ce qui le vérifie — La source, Vérifier, Les dates. On descend
+du Christ ; on ne remonte pas vers lui depuis la documentation.
+**Le seuil redevient un seuil.** Une entrée depuis l'extérieur, pour un lien partagé :
+une phrase, une porte — la route d'Emmaüs — et un renvoi discret vers le fil rouge.
+Aucune page du site n'y mène, et c'est voulu : un lecteur déjà entré n'a pas à repasser
+par la porte. `navigation.yml` le déclare `racine`, comme l'accueil.
+**Ce qu'on abandonne :** la carte « À venir · D'autres salles », qui promettait ce qui
+n'existe pas et ne menait nulle part. Le site dira ses nouvelles salles quand elles
+existeront.
 
 ### D-014 — Un déploiement doit prouver qu'il a eu lieu
 **Date :** 30 août 2026 — **Statut :** tranchée
