@@ -157,7 +157,7 @@
 // Trilingue via clé de langue. Statuts de datation = estimations d'historien (affiché sur la page).
 const LIB={
 fr:{
- dir:"ltr",brand:"UN SEUL LIVRE",
+ dir:"ltr",brand:"UN SEUL LIVRE",crumbUp:"Le fil rouge",
  kicker:"La bibliothèque · 66 livres en commun, un seul fil",
  title:"Comment la Bible est <span class='g'>composée</span>",
  lede:"Une bibliothèque de 66 livres reconnus par toutes les traditions chrétiennes — 73 pour qui reçoit les sept deutérocanoniques —, écrits sur près de quinze siècles par une quarantaine d'auteurs, sur trois continents, en trois langues — et pourtant traversés d'un seul fil. Touchez une étagère pour comprendre sa logique, ou un livre pour savoir de quoi il parle.",
@@ -287,7 +287,7 @@ fr:{
  foot:"Textes : Segond 1910 · World English Bible · Van Dyck. Les dates sont des estimations d'historien, documentées dans le dossier de référence.<br>La bibliothèque — 66 livres en commun, un seul fil."
 },
 en:{
- dir:"ltr",brand:"ONE BOOK",
+ dir:"ltr",brand:"ONE BOOK",crumbUp:"The red thread",
  kicker:"The library · 66 books in common, one single thread",
  title:"How the Bible is <span class='g'>composed</span>",
  lede:"A library of 66 books recognised by every Christian tradition — 73 for those who receive the seven deuterocanonicals — written over nearly fifteen centuries by some forty authors, on three continents, in three languages — and yet run through by a single thread. Touch a shelf to grasp its logic, or a book to learn what it is about.",
@@ -417,7 +417,7 @@ en:{
  foot:"Texts: Segond 1910 · World English Bible · Van Dyck. Dates are historians' estimates, documented in the reference dossier.<br>The library — 66 books in common, one single thread."
 },
 ar:{
- dir:"rtl",brand:"كتابٌ واحد",
+ dir:"rtl",brand:"كتابٌ واحد",crumbUp:"الخيط الأحمر",
  kicker:"المكتبة · ٦٦ سفرًا مشتركًا، خيطٌ واحد",
  title:"كيف <span class='g'>يتألف</span> الكتابُ المقدس",
  lede:"مكتبةٌ من ٦٦ سفرًا تعترف بها كلُّ التقاليد المسيحية — و٧٣ لمن يتلقّى الأسفارَ القانونية الثانية السبعة — كُتبت على مدى نحو خمسة عشر قرنًا بأقلام نحو أربعين كاتبًا، في ثلاث قارات، وبثلاث لغات — ومع ذلك يخترقها خيطٌ واحد. المس رفًّا لتفهم منطقه، أو سفرًا لتعرف موضوعه.",
@@ -580,7 +580,7 @@ function render(l){
   document.getElementById('title').innerHTML=c.title;
   document.getElementById('lede').textContent=c.lede;
   document.getElementById('stat').textContent=c.stat;
-  document.getElementById('crumb').innerHTML=`<a href="seuil-landing.html">${c.brand==='UN SEUL LIVRE'?'Le seuil':(c.brand==='ONE BOOK'?'The threshold':'العتبة')}</a><span class="sep">›</span>${c.title.replace(/<[^>]+>/g,'')}`;
+  document.getElementById('crumb').innerHTML=`<a href="index.html">${c.crumbUp}</a><span class="sep">›</span>${c.title.replace(/<[^>]+>/g,'')}`;
   document.getElementById('whichroom').innerHTML=`<b>${c.twoLabel[0]}</b> ${c.twoLabel[1]}`;
   document.getElementById('atLabel').textContent=c.atLabel;
   document.getElementById('ntLabel').textContent=c.ntLabel;

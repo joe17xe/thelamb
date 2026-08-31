@@ -21,12 +21,21 @@ controle() {
 
 # Le générateur du bandeau est idempotent : s'il produit une différence, c'est
 # qu'une page a été modifiée à la main et diverge de periodes.yml. On laisse la
-# correction appliquée — l'auteur n'a plus qu'à relire le diff et le committer.
+# correction appliquée — l'auteur n'a plus qu'à la relire et la committer.
+#
+# On compare les pages à elles-mêmes avant/après, jamais à `git diff` : sur un
+# poste où l'auteur a du travail en cours, `git diff` est non vide de toute
+# façon, et le contrôle échouerait pour rien.
 situation() {
+  local avant apres
+  avant=$(md5sum ./*.html | sort)
   python3 outils/poser-situation.py >/dev/null || return 1
-  git diff --exit-code -- ./*.html && return 0
+  apres=$(md5sum ./*.html | sort)
+  [ "$avant" = "$apres" ] && return 0
   echo "Ces pages divergeaient de periodes.yml. Le générateur vient de les"
-  echo "remettre d'aplomb : relisez le diff ci-dessus et committez-le."
+  echo "remettre d'aplomb : relisez la modification et committez-la."
+  diff <(printf '%s\n' "$avant") <(printf '%s\n' "$apres") \
+    | awk '/^>/ {print "  · "$3}'
   return 1
 }
 
