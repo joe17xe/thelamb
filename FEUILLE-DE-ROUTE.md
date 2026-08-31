@@ -118,10 +118,13 @@ boucle à l'exécution suivante. Le supprimer la relance.
   automatiquement (D-014)
 
 ## R-015 Monter les actions GitHub d'une version majeure
-- zone: verte
+- zone: rouge
 - statut: à faire
 - pourquoi: actions/checkout@v4 et actions/github-script@v7 visent Node 20, que les runners forcent déjà sur Node 24 — ça marche aujourd'hui, ça cassera un jour sans prévenir
 - fait quand: checkout@v5 et github-script@v8, un déploiement vert derrière, plus aucun avertissement de dépréciation dans le journal
+- pourquoi rouge: l'entrée touche `.github/workflows/`, que la consigne de la boucle
+  interdit au robot. Verte, elle l'aurait fait choisir une tâche qu'il n'a pas le
+  droit de faire — son premier tour autonome aurait échoué à coup sûr.
 
 ## R-016 Un seul hall — dégrouper l'accueil et le seuil
 - zone: rouge

@@ -12,16 +12,23 @@ Environment=BRANCHE_BASE=main
 # Ne laisser au robot que la zone verte tant que la boucle n'a pas fait ses preuves.
 # Retirer la ligne pour lui ouvrir la zone orange (il ouvrira des PR sans les fusionner).
 Environment=ZONES=verte
-EnvironmentFile=/etc/agneau/boucle.env
+# `claude` et `gh` lisent leurs identifiants dans $HOME. ProtectHome=true rend
+# /home inaccessible : le foyer du robot doit donc vivre ailleurs, sinon les
+# deux outils échouent sans dire pourquoi. Créez l'utilisateur avec ce foyer :
+#   useradd --system --home-dir /var/lib/agneau --create-home --shell /bin/bash agneau
+Environment=HOME=/var/lib/agneau
+# Le tiret rend le fichier facultatif : sans lui, une unité qui démarre avant
+# que le fichier existe échoue avec un message que rien n'explique.
+EnvironmentFile=-/etc/agneau/boucle.env
 ExecStart=/srv/agneau/outils/boucle-vps.sh
 TimeoutStartSec=1800
 
-# Le robot n'a besoin d'écrire que dans son dépôt et son journal.
+# Le robot n'a besoin d'écrire que dans son dépôt, son foyer et son journal.
 PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=true
 NoNewPrivileges=true
-ReadWritePaths=/srv/agneau /var/log
+ReadWritePaths=/srv/agneau /var/lib/agneau /var/log
 
 [Install]
 WantedBy=multi-user.target

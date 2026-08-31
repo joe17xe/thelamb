@@ -146,6 +146,8 @@ Le squelette nu, prêt à coller dans une conversation, est dans
 - **Racine, `*.html`** — les 23 pages publiées.
 - **`producteur/`** — kit de contribution éditoriale : charte à coller dans un Claude
   gratuit, gabarits, prompts, circuit des propositions, journal des décisions.
+  `09-CLAUDE-SUR-LE-VPS.md` y tient à part : c'est le mode d'emploi de la boucle
+  autonome, adressé au porteur du projet et non au producteur.
 - **`contenus/`** — les fiches soumises, en Markdown, avant transposition en page.
 - **`communication/`** — stratégie, calendrier, visuels.
 - **`.github/ISSUE_TEMPLATE/`** — les six formulaires de soumission.
