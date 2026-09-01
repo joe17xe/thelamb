@@ -1,0 +1,1415 @@
+# connaissances.yml — le miroir déclaré de ce que les pages portent
+#
+# NE PAS ÉDITER À LA MAIN : ce fichier se régénère par
+#     python3 outils/verifier-connaissances.py --ecrire
+# La connaissance se corrige DANS les pages (objets C, constantes),
+# puis se régénère ici ; la CI refuse tout écart entre les deux.
+# Dossier d'architecture : 15-dossier-ciel-connaissances.md (phase 0).
+correspondances:
+- at: Genèse 4:4
+  nt: Hébreux 11:4
+  theme: agneau
+  titre: 'Abel : le premier agneau offert'
+- at: Genèse 22:8
+  nt: Jean 1:29
+  theme: agneau
+  titre: « Dieu se pourvoira de l'agneau »
+- at: Genèse 22:6
+  nt: Jean 19:17
+  theme: agneau
+  titre: Le fils porte le bois
+- at: Genèse 22:13
+  nt: Romains 8:32
+  theme: agneau
+  titre: Le substitut
+- at: Exode 12:5
+  nt: 1 Pierre 1:19
+  theme: agneau
+  titre: Sans défaut et sans tache
+- at: Exode 12:13
+  nt: Romains 5:9
+  theme: agneau
+  titre: Le sang qui protège
+- at: Exode 12:46
+  nt: Jean 19:36
+  theme: agneau
+  titre: Aucun os brisé
+- at: Lévitique 16:22
+  nt: Hébreux 9:28
+  theme: agneau
+  titre: Celui qui porte les péchés
+- at: Lévitique 17:11
+  nt: Hébreux 9:22
+  theme: agneau
+  titre: La vie est dans le sang
+- at: Nombres 21:9
+  nt: Jean 3:14
+  theme: agneau
+  titre: Élevé pour que l'on vive
+- at: Ésaïe 53:5
+  nt: 1 Pierre 2:24
+  theme: agneau
+  titre: Blessé pour nos péchés
+- at: Ésaïe 53:7
+  nt: Actes 8:32-35
+  theme: agneau
+  titre: L'agneau muet
+- at: Ésaïe 53:6
+  nt: 1 Pierre 2:25
+  theme: agneau
+  titre: Les brebis errantes
+- at: Ésaïe 53:12
+  nt: Luc 22:37
+  theme: agneau
+  titre: Compté parmi les malfaiteurs
+- at: Psaume 22:2
+  nt: Matthieu 27:46
+  theme: agneau
+  titre: Le cri
+- at: Psaume 22:19
+  nt: Jean 19:24
+  theme: agneau
+  titre: La tunique tirée au sort
+- at: Psaume 22:17
+  nt: Jean 20:25
+  theme: agneau
+  titre: Mains et pieds percés
+- at: Zacharie 12:10
+  nt: Jean 19:37
+  theme: agneau
+  titre: Celui qu'ils ont percé
+- at: Zacharie 13:7
+  nt: Matthieu 26:31
+  theme: agneau
+  titre: Le berger frappé
+- at: Ésaïe 53:7
+  nt: Apocalypse 5:6
+  theme: agneau
+  titre: L'Agneau immolé règne
+- at: Genèse 3:15
+  nt: Galates 4:4
+  theme: prophetie
+  titre: Le premier évangile
+- at: Genèse 12:3
+  nt: Galates 3:8
+  theme: prophetie
+  titre: Toutes les nations bénies
+- at: Genèse 49:10
+  nt: Apocalypse 5:5
+  theme: prophetie
+  titre: Le lion de la tribu de Juda
+- at: Deutéronome 18:15
+  nt: Actes 3:22
+  theme: prophetie
+  titre: Le Prophète à venir
+- at: 2 Samuel 7:13
+  nt: Luc 1:32-33
+  theme: prophetie
+  titre: Le trône de David
+- at: Psaume 2:7
+  nt: Actes 13:33
+  theme: prophetie
+  titre: « Tu es mon Fils »
+- at: Psaume 16:10
+  nt: Actes 2:31
+  theme: prophetie
+  titre: Il ne verra pas la corruption
+- at: Psaume 110:1
+  nt: Matthieu 22:44
+  theme: prophetie
+  titre: Le Seigneur de David
+- at: Ésaïe 7:14
+  nt: Matthieu 1:23
+  theme: prophetie
+  titre: La vierge enfantera
+- at: Ésaïe 9:5
+  nt: Luc 2:11
+  theme: prophetie
+  titre: Un enfant nous est né
+- at: Ésaïe 40:3
+  nt: Marc 1:3
+  theme: prophetie
+  titre: La voix dans le désert
+- at: Ésaïe 61:1
+  nt: Luc 4:21
+  theme: prophetie
+  titre: « Aujourd'hui, cette parole est accomplie »
+- at: Michée 5:1
+  nt: Matthieu 2:6
+  theme: prophetie
+  titre: Bethléhem
+- at: Osée 11:1
+  nt: Matthieu 2:15
+  theme: prophetie
+  titre: Hors d'Égypte
+- at: Zacharie 9:9
+  nt: Matthieu 21:5
+  theme: prophetie
+  titre: Le roi humble, sur un âne
+- at: Zacharie 11:12-13
+  nt: Matthieu 27:9
+  theme: prophetie
+  titre: Trente pièces d'argent
+- at: Malachie 3:1
+  nt: Matthieu 11:10
+  theme: prophetie
+  titre: Le messager qui prépare
+- at: Psaume 118:22
+  nt: Actes 4:11
+  theme: prophetie
+  titre: La pierre rejetée
+- at: Psaume 41:10
+  nt: Jean 13:18
+  theme: prophetie
+  titre: L'ami qui trahit
+- at: Psaume 69:22
+  nt: Jean 19:29
+  theme: prophetie
+  titre: Le vinaigre
+- at: Daniel 7:13
+  nt: Matthieu 26:64
+  theme: filshomme
+  titre: Le Fils de l'homme sur les nuées
+- at: Ésaïe 25:8
+  nt: 1 Corinthiens 15:54
+  theme: prophetie
+  titre: La mort engloutie
+- at: Ésaïe 28:16
+  nt: 1 Pierre 2:6
+  theme: prophetie
+  titre: La pierre angulaire posée en Sion
+- at: Joël 3:1
+  nt: Actes 2:17
+  theme: prophetie
+  titre: L'Esprit répandu sur toute chair
+- at: Psaume 8:3
+  nt: Matthieu 21:16
+  theme: prophetie
+  titre: La louange des enfants
+- at: Genèse 9:13
+  nt: Apocalypse 4:3
+  theme: alliance
+  titre: L'arc au-dessus du trône
+- at: Genèse 15:6
+  nt: Romains 4:3
+  theme: alliance
+  titre: La foi comptée comme justice
+- at: Deutéronome 30:6
+  nt: Romains 2:29
+  theme: alliance
+  titre: La circoncision du cœur
+- at: Exode 19:6
+  nt: 1 Pierre 2:9
+  theme: alliance
+  titre: Un royaume de prêtres
+- at: Exode 24:8
+  nt: Matthieu 26:28
+  theme: alliance
+  titre: Le sang de l'alliance
+- at: Jérémie 31:31
+  nt: Luc 22:20
+  theme: alliance
+  titre: La nouvelle alliance
+- at: Jérémie 31:33
+  nt: Hébreux 8:10
+  theme: alliance
+  titre: La loi écrite dans les cœurs
+- at: Ézéchiel 36:26
+  nt: 2 Corinthiens 3:3
+  theme: alliance
+  titre: Un cœur de chair
+- at: Osée 2:25
+  nt: Romains 9:25
+  theme: alliance
+  titre: « Pas-mon-peuple » devient mon peuple
+- at: Genèse 2:24
+  nt: Éphésiens 5:31-32
+  theme: alliance
+  titre: L'alliance nuptiale
+- at: Exode 12:6
+  nt: 1 Corinthiens 5:7
+  theme: paque
+  titre: Christ, notre Pâque
+- at: Exode 12:14
+  nt: Luc 22:15
+  theme: paque
+  titre: La Pâque désirée
+- at: Exode 16:4
+  nt: Jean 6:32-35
+  theme: paque
+  titre: Le vrai pain du ciel
+- at: Psaume 78:24
+  nt: Jean 6:31
+  theme: paque
+  titre: Le blé des cieux
+- at: Exode 17:6
+  nt: 1 Corinthiens 10:4
+  theme: paque
+  titre: Le rocher frappé
+- at: Genèse 14:18
+  nt: Hébreux 7:1-3
+  theme: paque
+  titre: Le pain et le vin de Melchisédek
+- at: Proverbes 9:5
+  nt: Jean 6:51
+  theme: paque
+  titre: « Venez, mangez de mon pain »
+- at: Lévitique 23:10
+  nt: 1 Corinthiens 15:20
+  theme: paque
+  titre: Les prémices
+- at: Ésaïe 55:1
+  nt: Apocalypse 22:17
+  theme: paque
+  titre: Venez, sans argent
+- at: Genèse 2:7
+  nt: 1 Corinthiens 15:45
+  theme: figures
+  titre: Le premier et le dernier Adam
+- at: Genèse 3:6
+  nt: Romains 5:19
+  theme: figures
+  titre: Par un seul homme
+- at: Genèse 6:14
+  nt: 1 Pierre 3:20-21
+  theme: figures
+  titre: L'arche et le baptême
+- at: Genèse 28:12
+  nt: Jean 1:51
+  theme: figures
+  titre: L'échelle de Jacob
+- at: Genèse 37:28
+  nt: Matthieu 26:15
+  theme: figures
+  titre: Vendu par les siens
+- at: Exode 2:14
+  nt: Actes 7:35
+  theme: figures
+  titre: Le libérateur d'abord rejeté
+- at: Josué 1:2
+  nt: Hébreux 4:8
+  theme: figures
+  titre: Un repos plus grand que Josué
+- at: Jonas 2:1
+  nt: Matthieu 12:40
+  theme: figures
+  titre: Le signe de Jonas
+- at: 2 Rois 4:43-44
+  nt: Jean 6:11-13
+  theme: figures
+  titre: Les pains multipliés
+- at: Exode 25:8
+  nt: Jean 1:14
+  theme: temple
+  titre: Dieu habite parmi nous
+- at: Exode 26:33
+  nt: Matthieu 27:51
+  theme: temple
+  titre: Le voile déchiré
+- at: Exode 26:33
+  nt: Hébreux 10:20
+  theme: temple
+  titre: Un chemin au travers du voile
+- at: Lévitique 16:15
+  nt: Hébreux 9:12
+  theme: temple
+  titre: Le grand prêtre entre une fois
+- at: Psaume 110:4
+  nt: Hébreux 7:17
+  theme: temple
+  titre: Prêtre pour toujours
+- at: 1 Rois 8:11
+  nt: Jean 2:19-21
+  theme: temple
+  titre: Le temple de son corps
+- at: Ézéchiel 47:1
+  nt: Jean 7:38
+  theme: temple
+  titre: Le fleuve qui sort du temple
+- at: Ézéchiel 47:1
+  nt: Apocalypse 22:1
+  theme: temple
+  titre: Le fleuve de la vie
+- at: Zacharie 6:12
+  nt: Jean 2:19
+  theme: temple
+  titre: Le Germe bâtira le temple
+- at: Ésaïe 66:1
+  nt: Actes 7:49
+  theme: temple
+  titre: Le ciel est mon trône
+- at: Daniel 7:14
+  nt: Matthieu 28:18
+  theme: filshomme
+  titre: Une domination éternelle
+- at: Psaume 8:5-7
+  nt: Hébreux 2:8-9
+  theme: filshomme
+  titre: « Qu'est-ce que le fils de l'homme ? »
+- at: Ézéchiel 2:1
+  nt: Marc 2:10
+  theme: filshomme
+  titre: Le titre préféré de Jésus
+- at: Daniel 7:13
+  nt: Apocalypse 1:13
+  theme: filshomme
+  titre: Au milieu des chandeliers
+- at: Daniel 7:13
+  nt: Apocalypse 14:14
+  theme: filshomme
+  titre: La moisson du Fils de l'homme
+- at: Psaume 80:18
+  nt: Luc 22:69
+  theme: filshomme
+  titre: L'homme de ta droite
+- at: Psaume 8:7
+  nt: 1 Corinthiens 15:27
+  theme: filshomme
+  titre: Tout sous ses pieds
+- at: Genèse 1:26
+  nt: Colossiens 1:16
+  theme: trinite
+  titre: « Faisons l'homme »
+- at: Genèse 1:2
+  nt: Luc 1:35
+  theme: trinite
+  titre: L'Esprit qui couvre
+- at: Psaume 33:6
+  nt: Jean 1:3
+  theme: trinite
+  titre: Par sa Parole et son Souffle
+- at: Exode 3:14
+  nt: Jean 8:58
+  theme: trinite
+  titre: « JE SUIS »
+- at: Deutéronome 6:4
+  nt: 1 Corinthiens 8:6
+  theme: trinite
+  titre: Le Shema élargi
+- at: Ésaïe 6:3
+  nt: Jean 12:41
+  theme: trinite
+  titre: La gloire qu'Ésaïe a vue
+- at: Psaume 45:7-8
+  nt: Hébreux 1:8-9
+  theme: trinite
+  titre: « Ton trône, ô Dieu »
+- at: Psaume 102:26-28
+  nt: Hébreux 1:10-12
+  theme: trinite
+  titre: Le Fils créateur
+- at: Joël 3:5
+  nt: Romains 10:13
+  theme: trinite
+  titre: Invoquer le Nom
+- at: Ésaïe 44:6
+  nt: Apocalypse 22:13
+  theme: trinite
+  titre: Le premier et le dernier
+- at: Ésaïe 42:1
+  nt: Matthieu 3:16-17
+  theme: trinite
+  titre: La scène du Jourdain
+- at: Psaume 69:10
+  nt: Jean 2:17
+  theme: prophetie
+  titre: Le zèle de ta maison
+- at: Psaume 69:5
+  nt: Jean 15:25
+  theme: prophetie
+  titre: Haï sans cause
+- at: Ésaïe 8:14
+  nt: Romains 9:33
+  theme: prophetie
+  titre: Pierre d'achoppement
+- at: Ésaïe 11:10
+  nt: Romains 15:12
+  theme: prophetie
+  titre: La racine d'Isaï
+- at: Ésaïe 49:6
+  nt: Actes 13:47
+  theme: prophetie
+  titre: Lumière des nations
+- at: Ésaïe 50:6
+  nt: Matthieu 26:67
+  theme: prophetie
+  titre: Le dos livré
+- at: Amos 8:9
+  nt: Matthieu 27:45
+  theme: prophetie
+  titre: Le soleil couché à midi
+- at: Psaume 31:6
+  nt: Luc 23:46
+  theme: prophetie
+  titre: Entre tes mains
+- at: Ésaïe 35:5-6
+  nt: Matthieu 11:5
+  theme: prophetie
+  titre: Les signes du Messie
+- at: Malachie 4:5
+  nt: Matthieu 17:11-13
+  theme: prophetie
+  titre: Élie doit venir
+- at: Osée 6:2
+  nt: 1 Corinthiens 15:4
+  theme: prophetie
+  titre: Le troisième jour
+- at: Psaume 68:19
+  nt: Éphésiens 4:8
+  theme: prophetie
+  titre: Monté en haut
+- at: Nombres 24:17
+  nt: Matthieu 2:2
+  theme: prophetie
+  titre: L'étoile de Jacob
+- at: Ésaïe 60:6
+  nt: Matthieu 2:11
+  theme: prophetie
+  titre: L'or et l'encens
+- at: Psaume 22:9
+  nt: Matthieu 27:43
+  theme: prophetie
+  titre: « Qu'il le délivre ! »
+- at: Ésaïe 52:15
+  nt: Romains 15:21
+  theme: prophetie
+  titre: Ceux qui n'avaient pas entendu
+- at: Psaume 118:26
+  nt: Matthieu 21:9
+  theme: prophetie
+  titre: Béni soit celui qui vient
+- at: Lévitique 1:4
+  nt: 2 Corinthiens 5:21
+  theme: agneau
+  titre: La main posée sur la tête
+- at: Deutéronome 21:23
+  nt: Galates 3:13
+  theme: agneau
+  titre: La malédiction du bois
+- at: Ésaïe 53:4
+  nt: Matthieu 8:17
+  theme: agneau
+  titre: Nos maladies portées
+- at: Ésaïe 53:9
+  nt: 1 Pierre 2:22
+  theme: agneau
+  titre: Ni violence ni fraude
+- at: Psaume 34:21
+  nt: Jean 19:36
+  theme: agneau
+  titre: Il garde tous ses os
+- at: Lévitique 16:27
+  nt: Hébreux 13:12
+  theme: agneau
+  titre: Hors du camp
+- at: Nombres 19:9
+  nt: Hébreux 9:13-14
+  theme: agneau
+  titre: La cendre qui purifie
+- at: Psaume 40:7-9
+  nt: Hébreux 10:5-7
+  theme: paque
+  titre: « Me voici »
+- at: Exode 16:18
+  nt: 2 Corinthiens 8:15
+  theme: paque
+  titre: Ni trop, ni trop peu
+- at: Deutéronome 8:3
+  nt: Matthieu 4:4
+  theme: paque
+  titre: Pas de pain seulement
+- at: Psaume 116:13
+  nt: 1 Corinthiens 10:16
+  theme: paque
+  titre: La coupe du salut
+- at: Exode 24:11
+  nt: Apocalypse 3:20
+  theme: paque
+  titre: Ils virent Dieu, et ils mangèrent
+- at: Genèse 3:6
+  nt: Apocalypse 19:9
+  theme: paque
+  titre: Du fruit pris au festin offert
+- at: Ésaïe 25:6
+  nt: Apocalypse 19:9
+  theme: paque
+  titre: Le festin pour tous les peuples
+- at: Exode 12:22
+  nt: Jean 19:29
+  theme: paque
+  titre: L'hysope
+- at: Genèse 22:16-17
+  nt: Hébreux 6:13-14
+  theme: alliance
+  titre: Le serment de Morija
+- at: 2 Samuel 7:14
+  nt: Hébreux 1:5
+  theme: alliance
+  titre: « Je serai pour lui un père »
+- at: Ésaïe 54:13
+  nt: Jean 6:45
+  theme: alliance
+  titre: Tous enseignés de Dieu
+- at: Jérémie 32:40
+  nt: Hébreux 13:20
+  theme: alliance
+  titre: Une alliance éternelle
+- at: Ézéchiel 34:23
+  nt: Jean 10:11
+  theme: alliance
+  titre: Un seul berger
+- at: Deutéronome 30:14
+  nt: Romains 10:8
+  theme: alliance
+  titre: La parole tout près
+- at: Lévitique 26:12
+  nt: 2 Corinthiens 6:16
+  theme: alliance
+  titre: « Je marcherai au milieu de vous »
+- at: Ésaïe 59:20
+  nt: Romains 11:26
+  theme: alliance
+  titre: Le libérateur de Sion
+- at: Ruth 4:14
+  nt: Luc 1:68
+  theme: figures
+  titre: Le proche rédempteur
+- at: 1 Rois 17:22
+  nt: Luc 7:14-15
+  theme: figures
+  titre: Le fils rendu à sa mère
+- at: Josué 2:18
+  nt: Matthieu 1:5
+  theme: figures
+  titre: Le cordon écarlate
+- at: 2 Samuel 17:23
+  nt: Matthieu 27:5
+  theme: figures
+  titre: Le conseiller qui se pend
+- at: Exode 29:38-39
+  nt: Hébreux 10:11-12
+  theme: temple
+  titre: Chaque jour — une seule fois
+- at: Exode 34:34
+  nt: 2 Corinthiens 3:16
+  theme: temple
+  titre: Le voile ôté
+- at: Aggée 2:9
+  nt: Luc 2:27-32
+  theme: temple
+  titre: La gloire de la seconde maison
+- at: Malachie 3:1
+  nt: Matthieu 21:12
+  theme: temple
+  titre: Le Seigneur entre dans son temple
+- at: Ésaïe 56:7
+  nt: Marc 11:17
+  theme: temple
+  titre: Maison de prière pour tous
+- at: Ésaïe 48:16
+  nt: Jean 20:21-22
+  theme: trinite
+  titre: Trois dans un verset
+- at: Proverbes 30:4
+  nt: Jean 3:13
+  theme: trinite
+  titre: « Quel est le nom de son fils ? »
+- at: Ésaïe 63:10
+  nt: Éphésiens 4:30
+  theme: trinite
+  titre: L'Esprit que l'on peut attrister
+generations:
+- nom:
+    ar: يسوع
+    en: Jesus
+    fr: Jésus
+  periode: christ
+- fourche: true
+  nom:
+    ar: من يسوع إلى داود طريقان — انظر الفارق
+    en: from Jesus to David, two paths — see the nuance
+    fr: de Jésus à David, deux chemins — voir la nuance
+  periode: null
+- nom:
+    ar: داود
+    en: David
+    fr: David
+  periode: royaume
+- nom:
+    ar: يسّى
+    en: Jesse
+    fr: Jessé
+  periode: loi
+- nom:
+    ar: عوبيد
+    en: Obed
+    fr: Obed
+  periode: loi
+- nom:
+    ar: بوعز
+    en: Boaz
+    fr: Boaz
+  periode: loi
+- nom:
+    ar: سلمون
+    en: Salmon
+    fr: Salmon
+  periode: loi
+- nom:
+    ar: نحشون
+    en: Nahshon
+    fr: Nahshon
+  periode: loi
+- nom:
+    ar: عميناداب
+    en: Amminadab
+    fr: Amminadab
+  periode: loi
+- nom:
+    ar: رام
+    en: Ram
+    fr: Ram
+  periode: peres
+- nom:
+    ar: حصرون
+    en: Hezron
+    fr: Hetsron
+  periode: peres
+- nom:
+    ar: فارص
+    en: Perez
+    fr: Pérets
+  periode: peres
+- nom:
+    ar: يهوذا
+    en: Judah
+    fr: Juda
+  periode: peres
+- nom:
+    ar: يعقوب
+    en: Jacob
+    fr: Jacob
+  periode: peres
+- nom:
+    ar: إسحاق
+    en: Isaac
+    fr: Isaac
+  periode: peres
+- nom:
+    ar: إبراهيم
+    en: Abraham
+    fr: Abraham
+  periode: peres
+- nom:
+    ar: سام
+    en: Shem
+    fr: Sem
+  periode: origines
+- nom:
+    ar: نوح
+    en: Noah
+    fr: Noé
+  periode: origines
+- nom:
+    ar: شيت
+    en: Seth
+    fr: Seth
+  periode: origines
+- nom:
+    ar: آدم
+    en: Adam
+    fr: Adam
+  periode: origines
+livres:
+- etagere: loi
+  id: genese
+  nom:
+    ar: التكوين
+    en: Genesis
+    fr: Genèse
+  periodes:
+  - origines
+  - peres
+- etagere: loi
+  id: exode
+  nom:
+    ar: الخروج
+    en: Exodus
+    fr: Exode
+  periodes:
+  - loi
+- etagere: loi
+  id: levitique
+  nom:
+    ar: اللاويين
+    en: Leviticus
+    fr: Lévitique
+  periodes:
+  - loi
+- etagere: loi
+  id: nombres
+  nom:
+    ar: العدد
+    en: Numbers
+    fr: Nombres
+  periodes:
+  - loi
+- etagere: loi
+  id: deuteronome
+  nom:
+    ar: التثنية
+    en: Deuteronomy
+    fr: Deutéronome
+  periodes:
+  - loi
+- etagere: histoire
+  id: josue
+  nom:
+    ar: يشوع
+    en: Joshua
+    fr: Josué
+  periodes:
+  - loi
+- etagere: histoire
+  id: juges
+  nom:
+    ar: القضاة
+    en: Judges
+    fr: Juges
+  periodes:
+  - loi
+- etagere: histoire
+  id: ruth
+  nom:
+    ar: راعوث
+    en: Ruth
+    fr: Ruth
+  periodes:
+  - loi
+- etagere: histoire
+  id: 1-samuel
+  nom:
+    ar: ١ صموئيل
+    en: 1 Samuel
+    fr: 1 Samuel
+  periodes:
+  - royaume
+- etagere: histoire
+  id: 2-samuel
+  nom:
+    ar: ٢ صموئيل
+    en: 2 Samuel
+    fr: 2 Samuel
+  periodes:
+  - royaume
+- etagere: histoire
+  id: 1-rois
+  nom:
+    ar: ١ ملوك
+    en: 1 Kings
+    fr: 1 Rois
+  periodes:
+  - royaume
+  - exil
+- etagere: histoire
+  id: 2-rois
+  nom:
+    ar: ٢ ملوك
+    en: 2 Kings
+    fr: 2 Rois
+  periodes:
+  - exil
+- etagere: histoire
+  id: 1-chroniques
+  nom:
+    ar: ١ أخبار
+    en: 1 Chronicles
+    fr: 1 Chroniques
+  periodes:
+  - royaume
+- etagere: histoire
+  id: 2-chroniques
+  nom:
+    ar: ٢ أخبار
+    en: 2 Chronicles
+    fr: 2 Chroniques
+  periodes:
+  - royaume
+  - exil
+- etagere: histoire
+  id: esdras
+  nom:
+    ar: عزرا
+    en: Ezra
+    fr: Esdras
+  periodes:
+  - retour
+- etagere: histoire
+  id: nehemie
+  nom:
+    ar: نحميا
+    en: Nehemiah
+    fr: Néhémie
+  periodes:
+  - retour
+- etagere: histoire
+  id: esther
+  nom:
+    ar: أستير
+    en: Esther
+    fr: Esther
+  periodes:
+  - retour
+- etagere: sagesse
+  id: job
+  nom:
+    ar: أيوب
+    en: Job
+    fr: Job
+  periodes:
+  - peres
+- etagere: sagesse
+  id: psaumes
+  nom:
+    ar: المزامير
+    en: Psalms
+    fr: Psaumes
+  periodes:
+  - royaume
+- etagere: sagesse
+  id: proverbes
+  nom:
+    ar: الأمثال
+    en: Proverbs
+    fr: Proverbes
+  periodes:
+  - royaume
+- etagere: sagesse
+  id: ecclesiaste
+  nom:
+    ar: الجامعة
+    en: Ecclesiastes
+    fr: Ecclésiaste
+  periodes:
+  - royaume
+- etagere: sagesse
+  id: cantique
+  nom:
+    ar: نشيد الأنشاد
+    en: Song of Songs
+    fr: Cantique
+  periodes:
+  - royaume
+- etagere: grands
+  id: esaie
+  nom:
+    ar: إشعياء
+    en: Isaiah
+    fr: Ésaïe
+  periodes:
+  - exil
+- etagere: grands
+  id: jeremie
+  nom:
+    ar: إرميا
+    en: Jeremiah
+    fr: Jérémie
+  periodes:
+  - exil
+- etagere: grands
+  id: lamentations
+  nom:
+    ar: مراثي إرميا
+    en: Lamentations
+    fr: Lamentations
+  periodes:
+  - exil
+- etagere: grands
+  id: ezechiel
+  nom:
+    ar: حزقيال
+    en: Ezekiel
+    fr: Ézéchiel
+  periodes:
+  - exil
+- etagere: grands
+  id: daniel
+  nom:
+    ar: دانيال
+    en: Daniel
+    fr: Daniel
+  periodes:
+  - exil
+- etagere: petits
+  id: osee
+  nom:
+    ar: هوشع
+    en: Hosea
+    fr: Osée
+  periodes:
+  - exil
+- etagere: petits
+  id: joel
+  nom:
+    ar: يوئيل
+    en: Joel
+    fr: Joël
+  periodes: null
+- etagere: petits
+  id: amos
+  nom:
+    ar: عاموس
+    en: Amos
+    fr: Amos
+  periodes:
+  - exil
+- etagere: petits
+  id: abdias
+  nom:
+    ar: عوبديا
+    en: Obadiah
+    fr: Abdias
+  periodes:
+  - exil
+- etagere: petits
+  id: jonas
+  nom:
+    ar: يونان
+    en: Jonah
+    fr: Jonas
+  periodes:
+  - exil
+- etagere: petits
+  id: michee
+  nom:
+    ar: ميخا
+    en: Micah
+    fr: Michée
+  periodes:
+  - exil
+- etagere: petits
+  id: nahum
+  nom:
+    ar: ناحوم
+    en: Nahum
+    fr: Nahum
+  periodes:
+  - exil
+- etagere: petits
+  id: habacuc
+  nom:
+    ar: حبقوق
+    en: Habakkuk
+    fr: Habacuc
+  periodes:
+  - exil
+- etagere: petits
+  id: sophonie
+  nom:
+    ar: صفنيا
+    en: Zephaniah
+    fr: Sophonie
+  periodes:
+  - exil
+- etagere: petits
+  id: aggee
+  nom:
+    ar: حجي
+    en: Haggai
+    fr: Aggée
+  periodes:
+  - retour
+- etagere: petits
+  id: zacharie
+  nom:
+    ar: زكريا
+    en: Zechariah
+    fr: Zacharie
+  periodes:
+  - retour
+- etagere: petits
+  id: malachie
+  nom:
+    ar: ملاخي
+    en: Malachi
+    fr: Malachie
+  periodes:
+  - retour
+- etagere: deutero
+  id: tobie
+  nom:
+    ar: طوبيا
+    en: Tobit
+    fr: Tobie
+  periodes:
+  - exil
+- etagere: deutero
+  id: judith
+  nom:
+    ar: يهوديت
+    en: Judith
+    fr: Judith
+  periodes:
+  - retour
+- etagere: deutero
+  id: sagesse
+  nom:
+    ar: الحكمة
+    en: Wisdom
+    fr: Sagesse
+  periodes:
+  - attente
+- etagere: deutero
+  id: siracide
+  nom:
+    ar: يشوع بن سيراخ
+    en: Sirach
+    fr: Siracide
+  periodes:
+  - attente
+- etagere: deutero
+  id: baruch
+  nom:
+    ar: باروخ
+    en: Baruch
+    fr: Baruch
+  periodes:
+  - exil
+- etagere: deutero
+  id: 1-maccabees
+  nom:
+    ar: المكابيّين الأول
+    en: 1 Maccabees
+    fr: 1 Maccabées
+  periodes:
+  - attente
+- etagere: deutero
+  id: 2-maccabees
+  lien: Allusion largement reconnue
+  nom:
+    ar: المكابيّين الثاني
+    en: 2 Maccabees
+    fr: 2 Maccabées
+  periodes:
+  - attente
+- etagere: evangiles
+  id: matthieu
+  nom:
+    ar: متى
+    en: Matthew
+    fr: Matthieu
+  periodes:
+  - christ
+- etagere: evangiles
+  id: marc
+  nom:
+    ar: مرقس
+    en: Mark
+    fr: Marc
+  periodes:
+  - christ
+- etagere: evangiles
+  id: luc
+  nom:
+    ar: لوقا
+    en: Luke
+    fr: Luc
+  periodes:
+  - christ
+- etagere: evangiles
+  id: jean
+  nom:
+    ar: يوحنا
+    en: John
+    fr: Jean
+  periodes:
+  - christ
+- etagere: actes
+  id: actes
+  nom:
+    ar: أعمال الرسل
+    en: Acts
+    fr: Actes
+  periodes: null
+- etagere: paul
+  id: romains
+  nom:
+    ar: رومية
+    en: Romans
+    fr: Romains
+  periodes: null
+- etagere: paul
+  id: 1-corinthiens
+  nom:
+    ar: ١ كورنثوس
+    en: 1 Corinthians
+    fr: 1 Corinthiens
+  periodes: null
+- etagere: paul
+  id: 2-corinthiens
+  nom:
+    ar: ٢ كورنثوس
+    en: 2 Corinthians
+    fr: 2 Corinthiens
+  periodes: null
+- etagere: paul
+  id: galates
+  nom:
+    ar: غلاطية
+    en: Galatians
+    fr: Galates
+  periodes: null
+- etagere: paul
+  id: ephesiens
+  nom:
+    ar: أفسس
+    en: Ephesians
+    fr: Éphésiens
+  periodes: null
+- etagere: paul
+  id: philippiens
+  nom:
+    ar: فيلبي
+    en: Philippians
+    fr: Philippiens
+  periodes: null
+- etagere: paul
+  id: colossiens
+  nom:
+    ar: كولوسي
+    en: Colossians
+    fr: Colossiens
+  periodes: null
+- etagere: paul
+  id: 1-thessaloniciens
+  nom:
+    ar: ١ تسالونيكي
+    en: 1 Thessalonians
+    fr: 1 Thessaloniciens
+  periodes: null
+- etagere: paul
+  id: 2-thessaloniciens
+  nom:
+    ar: ٢ تسالونيكي
+    en: 2 Thessalonians
+    fr: 2 Thessaloniciens
+  periodes: null
+- etagere: paul
+  id: 1-timothee
+  nom:
+    ar: ١ تيموثاوس
+    en: 1 Timothy
+    fr: 1 Timothée
+  periodes: null
+- etagere: paul
+  id: 2-timothee
+  nom:
+    ar: ٢ تيموثاوس
+    en: 2 Timothy
+    fr: 2 Timothée
+  periodes: null
+- etagere: paul
+  id: tite
+  nom:
+    ar: تيطس
+    en: Titus
+    fr: Tite
+  periodes: null
+- etagere: paul
+  id: philemon
+  nom:
+    ar: فليمون
+    en: Philemon
+    fr: Philémon
+  periodes: null
+- etagere: generales
+  id: hebreux
+  nom:
+    ar: العبرانيون
+    en: Hebrews
+    fr: Hébreux
+  periodes: null
+- etagere: generales
+  id: jacques
+  nom:
+    ar: يعقوب
+    en: James
+    fr: Jacques
+  periodes: null
+- etagere: generales
+  id: 1-pierre
+  nom:
+    ar: ١ بطرس
+    en: 1 Peter
+    fr: 1 Pierre
+  periodes: null
+- etagere: generales
+  id: 2-pierre
+  nom:
+    ar: ٢ بطرس
+    en: 2 Peter
+    fr: 2 Pierre
+  periodes: null
+- etagere: generales
+  id: 1-jean
+  nom:
+    ar: ١ يوحنا
+    en: 1 John
+    fr: 1 Jean
+  periodes: null
+- etagere: generales
+  id: 2-jean
+  nom:
+    ar: ٢ يوحنا
+    en: 2 John
+    fr: 2 Jean
+  periodes: null
+- etagere: generales
+  id: 3-jean
+  nom:
+    ar: ٣ يوحنا
+    en: 3 John
+    fr: 3 Jean
+  periodes: null
+- etagere: generales
+  id: jude
+  nom:
+    ar: يهوذا
+    en: Jude
+    fr: Jude
+  periodes: null
+- etagere: apocalypse
+  id: apocalypse
+  nom:
+    ar: الرؤيا
+    en: Revelation
+    fr: Apocalypse
+  periodes: null
+pages:
+- carte-du-ciel.html
+- cle-deja-pas-encore.html
+- frise-prophetes.html
+- index.html
+- page-etalon-voici-agneau.html
+- page-etape2-agneau-regne.html
+- page-etape3-la-croix.html
+- page-etape4-isaie-53.html
+- page-etape5-la-paque.html
+- page-etape6-morija.html
+- page-etape7-commencement.html
+- page-fondatrice-emmaus.html
+- pilier-bapteme.html
+- pilier-le-sang.html
+- pilier-parole-eternelle.html
+- pilier-resurrection.html
+- pilier-temple-detruit.html
+- pilier-transfiguration.html
+- salle-bibliotheque.html
+- salle-trinite-bibliotheques.html
+- salle-trinite.html
+- section-bible-fiable.html
+- section-offrande.html
+- seuil-landing.html
+periodes:
+- origines
+- peres
+- loi
+- royaume
+- exil
+- retour
+- attente
+- christ
+prophetes:
+- id: moise
+  nom:
+    ar: موسى
+    en: Moses
+    fr: Moïse
+  phase: loi
+- id: nathan
+  nom:
+    ar: ناثان / داود
+    en: Nathan / David
+    fr: Nathan / David
+  phase: royaume
+- id: joel
+  nom:
+    ar: يوئيل
+    en: Joel
+    fr: Joël
+  phase: exil
+- id: amos
+  nom:
+    ar: عاموس
+    en: Amos
+    fr: Amos
+  phase: exil
+- id: osee
+  nom:
+    ar: هوشع
+    en: Hosea
+    fr: Osée
+  phase: exil
+- id: esaie
+  nom:
+    ar: إشعياء
+    en: Isaiah
+    fr: Ésaïe
+  phase: exil
+- id: michee
+  nom:
+    ar: ميخا
+    en: Micah
+    fr: Michée
+  phase: exil
+- id: jeremie
+  nom:
+    ar: إرميا
+    en: Jeremiah
+    fr: Jérémie
+  phase: exil
+- id: ezechiel
+  nom:
+    ar: حزقيال
+    en: Ezekiel
+    fr: Ézéchiel
+  phase: exil
+- id: daniel
+  nom:
+    ar: دانيال
+    en: Daniel
+    fr: Daniel
+  phase: exil
+- id: aggee
+  nom:
+    ar: حجي
+    en: Haggai
+    fr: Aggée
+  phase: retour
+- id: zacharie
+  nom:
+    ar: زكريا
+    en: Zechariah
+    fr: Zacharie
+  phase: retour
+- id: malachie
+  nom:
+    ar: ملاخي
+    en: Malachi
+    fr: Malachie
+  phase: retour
+- id: jean
+  nom:
+    ar: يوحنا المعمدان
+    en: John the Baptist
+    fr: Jean-Baptiste
+  phase: christ
+themes:
+  agneau: 27
+  alliance: 18
+  figures: 13
+  filshomme: 8
+  paque: 17
+  prophetie: 41
+  temple: 15
+  trinite: 14

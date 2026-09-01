@@ -18,6 +18,8 @@ qui cloche en une fois.
 | `verifier-liens.py` | le maillage réel correspond à `navigation.yml` : ni orpheline, ni cul-de-sac | oui |
 | `poser-situation.py` | le bandeau des 14 pages ancrées reflète `periodes.yml` | oui |
 | `verifier-references.py` | chaque référence citée désigne un livre et un chapitre qui existent, et aucune page publiée ne porte de jeton d'atelier | oui |
+| `extraire-connaissances.mjs` | mesure la connaissance que les pages portent — livres, correspondances, prophètes, générations | — |
+| `verifier-connaissances.py` | `connaissances.yml` reflète les pages, dans les deux sens (`--ecrire` régénère) | oui |
 | `verifier-fiche.py` | la forme d'une fiche : strates, longueurs, métadonnées, rattachement | oui sur la structure |
 | `choisir-entree.py` | renvoie la première entrée « à faire » de la feuille de route | — |
 | `boucle-vps.sh` | orchestre une exécution autonome : une entrée, une branche, une PR — installation dans [`producteur/09-CLAUDE-SUR-LE-VPS.md`](../producteur/09-CLAUDE-SUR-LE-VPS.md) | — |
