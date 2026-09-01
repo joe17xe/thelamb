@@ -242,9 +242,16 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-025 Ciel des connaissances, phase 4 — le fil d'Ariane du ciel
 - zone: orange
-- statut: à faire
+- statut: fait
 - pourquoi: remonter doit être aussi simple que descendre — l'Agneau · le ciel · la constellation · l'étoile
 - fait quand: depuis n'importe quel niveau, l'Agneau est à deux gestes ; transitions communes aux trois niveaux
+- résultat: la barre « ← Le ciel » cède la place au fil d'Ariane complet, toujours
+  visible : « ✦ L'Agneau › Le ciel › la constellation ». Chaque cran remonte —
+  « ✦ L'Agneau » mène à l'accueil (la carte n'avait pas de chemin vers la maison :
+  elle l'a), « Le ciel » remonte d'une constellation, le cran courant est à
+  l'encre et inerte. Séparateur retourné en arabe (‹). Les scènes basculent en
+  fondu commun (230 ms), immédiat quand le lecteur préfère un mouvement réduit.
+  Un seul geste suffit désormais vers l'Agneau — mieux que les deux promis.
 
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge

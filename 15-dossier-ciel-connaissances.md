@@ -134,3 +134,15 @@ second, la correspondance s'ouvre au bon arc du diagramme de l'accueil, qui
 comprend désormais l'adresse `#c=N` (1..153). Entrée par l'étoile « Le fil
 rouge » du ciel ; `#correspondances` partageable ; même bloc CONSTEL mesuré,
 zéro copie.
+
+**Phase 4 : faite** (R-025). Le fil d'Ariane complet, toujours visible :
+« ✦ L'Agneau › Le ciel › la constellation ». Chaque cran remonte — l'Agneau
+vers l'accueil, le ciel vers la carte des pages, le cran courant à l'encre.
+Séparateur retourné en arabe. Les trois niveaux partagent la même transition
+en fondu, immédiate quand le lecteur préfère un mouvement réduit. L'Agneau
+est à un geste depuis n'importe où.
+
+**Le plan de construction est achevé** : les quatre phases tranchées le
+1ᵉʳ septembre sont sur le site. Prochaine descente possible, quand le
+porteur le voudra : les 70 événements en constellation du temps, depuis
+`contenus/frise-cavins-releve.md`.
