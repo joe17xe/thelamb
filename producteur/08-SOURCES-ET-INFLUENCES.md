@@ -65,3 +65,13 @@ mots, de choisir nos propres couleurs, et de citer l'influence.
 
 Quand un document reçu porte un copyright ou une marque, on le note ici avec ce qu'on
 en a fait. C'est ce qui permet de répondre sans hésiter le jour où la question se pose.
+
+---
+
+**Relevé complet du dépliant.** Le porteur a transmis le 30 août 2026 un scan du
+*Bible Timeline Chart* lui-même (sept pages). Les faits qu'il contient — dates,
+événements, place des livres, lignée, jalons d'histoire mondiale — sont relevés
+période par période dans [`contenus/frise-cavins-releve.md`](../contenus/frise-cavins-releve.md),
+avec la correspondance entre ses 12 périodes et nos 8. Un volet du dépliant
+(l'Exil et le Retour, 722 → 167 av. J.-C.) manque au scan et reste à relever.
+
