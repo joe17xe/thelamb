@@ -23,6 +23,7 @@ accueil:
     - frise-prophetes.html
     - salle-trinite.html
     - section-offrande.html
+    - carte-du-ciel.html
 
 seuil:
   fichier: seuil-landing.html
@@ -33,6 +34,36 @@ seuil:
   suite: page-fondatrice-emmaus.html
   annexes:
     - index.html
+
+carte:
+  fichier: carte-du-ciel.html
+  role: La carte du ciel — toutes les pages, l'Agneau au centre
+  # La carte relie tout : chaque nœud est un lien. Ses arêtes suivent ce fichier,
+  # dédoublonnées — la carte est mesurée, pas dessinée.
+  suite: page-fondatrice-emmaus.html
+  annexes:
+    - index.html
+    - seuil-landing.html
+    - page-etalon-voici-agneau.html
+    - page-etape2-agneau-regne.html
+    - page-etape3-la-croix.html
+    - page-etape4-isaie-53.html
+    - page-etape5-la-paque.html
+    - page-etape6-morija.html
+    - page-etape7-commencement.html
+    - salle-trinite.html
+    - salle-trinite-bibliotheques.html
+    - salle-bibliotheque.html
+    - section-offrande.html
+    - section-bible-fiable.html
+    - frise-prophetes.html
+    - cle-deja-pas-encore.html
+    - pilier-le-sang.html
+    - pilier-bapteme.html
+    - pilier-parole-eternelle.html
+    - pilier-resurrection.html
+    - pilier-temple-detruit.html
+    - pilier-transfiguration.html
 
 methode:
   fichier: page-fondatrice-emmaus.html

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La carte du ciel — L'Agneau de Dieu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33;
+        --fil:#b98b2a;--salle:#4f93dc;--pilier:#d15050}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,serif;-webkit-font-smoothing:antialiased}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  html[dir="rtl"] .display{font-family:'Amiri',serif}
+
+  .top{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
+  .top .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.28em;color:var(--gold)}
+  html[dir="rtl"] .top .brand{letter-spacing:.06em}
+  .langs{display:flex;gap:6px}
+  .langs button{background:none;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-family:system-ui,sans-serif;font-size:11px;padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+
+  .hero{max-width:860px;margin:0 auto;padding:38px 22px 6px;text-align:center}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  html[dir="rtl"] .eyebrow{letter-spacing:.05em}
+  h1{font-size:clamp(30px,6vw,52px);font-weight:600;margin:10px 0 14px;font-style:italic}
+  html[dir="rtl"] h1{font-style:normal}
+  .verse{font-size:17px;color:#cfc9bb;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .vref{font-family:system-ui,sans-serif;font-size:11.5px;color:var(--gold);letter-spacing:.1em;margin-top:6px}
+  .lede{color:var(--muted);font-size:15px;max-width:640px;margin:16px auto 0}
+  .hint{font-family:system-ui,sans-serif;font-size:12.5px;color:var(--gold);margin-top:12px}
+
+  .legende{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:18px;font-family:system-ui,sans-serif;font-size:12px;color:var(--muted)}
+  .legende span{display:inline-flex;align-items:center;gap:7px}
+  .legende i{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .legende i.vide{background:none;border:1.5px solid var(--muted)}
+
+  .cielbox{max-width:900px;margin:6px auto 0;padding:0 8px}
+  svg{width:100%;height:auto;display:block}
+  .etoile-fond{fill:#e9e3d3}
+  .arete{stroke:rgba(233,227,211,.07);stroke-width:1;transition:stroke .25s}
+  .arete.fil{stroke:rgba(211,169,79,.22);stroke-width:1.4}
+  .arete.on{stroke-width:1.8}
+  .noeud{cursor:pointer}
+  .noeud circle.c{transition:r .2s}
+  .noeud text{font-family:system-ui,sans-serif;font-size:14px;fill:var(--ink);opacity:.85;text-anchor:middle;transition:opacity .25s}
+  html[dir="rtl"] .noeud text{font-family:'Amiri',sans-serif;font-size:16px}
+  .noeud.dim circle.c{opacity:.25}
+  .noeud.dim text{opacity:.18}
+  .noeud.sel circle.c,.noeud.lie circle.c{opacity:1}
+  .noeud.sel text,.noeud.lie text{opacity:1}
+  .noeud.sel circle.halo{opacity:.5}
+  circle.halo{opacity:0;transition:opacity .25s}
+  .centre text{font-family:'Cormorant Garamond',serif;font-size:22px;fill:var(--gold);text-anchor:middle}
+  html[dir="rtl"] .centre text{font-family:'Amiri',serif}
+
+  .fiche{position:fixed;inset-inline:0;bottom:0;background:var(--bg2);border-top:1px solid var(--line);padding:14px 18px calc(14px + env(safe-area-inset-bottom));display:none;z-index:9}
+  .fiche.show{display:flex;align-items:center;gap:14px}
+  .fiche .fdot{width:11px;height:11px;border-radius:50%;flex:none}
+  .fiche .fnom{font-family:'Cormorant Garamond',serif;font-size:21px;flex:1;min-width:0}
+  html[dir="rtl"] .fiche .fnom{font-family:'Amiri',serif}
+  .fiche .ffam{display:block;font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  html[dir="rtl"] .fiche .ffam{letter-spacing:.03em}
+  .fiche a.fgo{font-family:system-ui,sans-serif;font-size:13px;color:var(--gold);text-decoration:none;border:1px solid color-mix(in srgb,var(--gold) 55%,transparent);border-radius:999px;padding:9px 16px;white-space:nowrap}
+  .fiche button.fx{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px 8px}
+
+  footer{max-width:820px;margin:34px auto 120px;padding:22px 22px 0;border-top:1px solid var(--line);text-align:center;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;line-height:1.8}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand" id="brand"></div>
+  <div class="langs">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow" id="eyebrow"></div>
+  <h1 class="display" id="h1"></h1>
+  <div class="verse" id="verse"></div>
+  <div class="vref" id="vref"></div>
+  <p class="lede" id="lede"></p>
+  <div class="hint" id="hint"></div>
+  <div class="legende" id="legende"></div>
+</div>
+
+<div class="cielbox"><svg id="ciel" viewBox="0 0 720 790" role="img"></svg></div>
+
+<div class="fiche" id="fiche">
+  <span class="fdot" id="fdot"></span>
+  <span class="fnom"><span class="ffam" id="ffam"></span><span id="fnom"></span></span>
+  <a class="fgo" id="fgo" href="#"></a>
+  <button class="fx" id="fx" aria-label="Fermer">×</button>
+</div>
+
+<footer id="foot"></footer>
+
+<script>
+// ── La carte est mesurée, pas dessinée : les nœuds sont les 23 pages de
+//    navigation.yml, les arêtes sont ses vrais passages (suite + annexes),
+//    dédoublonnés. Palette des familles validée (CVD, contraste) sur ce fond.
+const FAM={fil:"#b98b2a",salle:"#4f93dc",pilier:"#d15050",entree:"#9a94a8"};
+const CX=360, CY=352;
+function pos(r,deg){const a=(deg-90)*Math.PI/180;return [CX+r*Math.cos(a),CY+r*Math.sin(a)];}
+const NOEUDS=[
+ {k:"emmaus",href:"page-fondatrice-emmaus.html",fam:"fil",p:pos(135,0)},
+ {k:"voici",href:"page-etalon-voici-agneau.html",fam:"fil",p:pos(135,45)},
+ {k:"regne",href:"page-etape2-agneau-regne.html",fam:"fil",p:pos(135,90)},
+ {k:"croix",href:"page-etape3-la-croix.html",fam:"fil",p:pos(135,135)},
+ {k:"isaie",href:"page-etape4-isaie-53.html",fam:"fil",p:pos(135,180)},
+ {k:"paque",href:"page-etape5-la-paque.html",fam:"fil",p:pos(135,225)},
+ {k:"morija",href:"page-etape6-morija.html",fam:"fil",p:pos(135,270)},
+ {k:"commencement",href:"page-etape7-commencement.html",fam:"fil",p:pos(135,315)},
+ {k:"trinite",href:"salle-trinite.html",fam:"salle",p:pos(228,26)},
+ {k:"grandesalle",href:"salle-trinite-bibliotheques.html",fam:"salle",p:pos(228,77)},
+ {k:"offrande",href:"section-offrande.html",fam:"salle",p:pos(228,129)},
+ {k:"bibliotheque",href:"salle-bibliotheque.html",fam:"salle",p:pos(228,180)},
+ {k:"fiable",href:"section-bible-fiable.html",fam:"salle",p:pos(228,231)},
+ {k:"veilleurs",href:"frise-prophetes.html",fam:"salle",p:pos(228,283)},
+ {k:"cle",href:"cle-deja-pas-encore.html",fam:"salle",p:pos(228,334)},
+ {k:"sang",href:"pilier-le-sang.html",fam:"pilier",p:pos(305,150)},
+ {k:"bapteme",href:"pilier-bapteme.html",fam:"pilier",p:pos(305,30)},
+ {k:"parole",href:"pilier-parole-eternelle.html",fam:"pilier",p:pos(305,90)},
+ {k:"resurrection",href:"pilier-resurrection.html",fam:"pilier",p:pos(305,210)},
+ {k:"temple",href:"pilier-temple-detruit.html",fam:"pilier",p:pos(305,270)},
+ {k:"transfiguration",href:"pilier-transfiguration.html",fam:"pilier",p:pos(305,330)},
+ {k:"accueil",href:"index.html",fam:"entree",p:[96,742]},
+ {k:"seuil",href:"seuil-landing.html",fam:"entree",p:[624,742]},
+];
+const ARETES=[["accueil","bibliotheque"],["accueil","cle"],["accueil","commencement"],["accueil","emmaus"],
+["accueil","fiable"],["accueil","offrande"],["accueil","parole"],["accueil","seuil"],["accueil","temple"],
+["accueil","trinite"],["accueil","veilleurs"],["bapteme","transfiguration"],["bapteme","trinite"],
+["bibliotheque","fiable"],["cle","regne"],["commencement","morija"],["croix","isaie"],["croix","regne"],
+["croix","sang"],["emmaus","fiable"],["emmaus","seuil"],["emmaus","transfiguration"],["emmaus","voici"],
+["fiable","offrande"],["grandesalle","trinite"],["isaie","paque"],["isaie","veilleurs"],["morija","paque"],
+["offrande","sang"],["parole","transfiguration"],["regne","resurrection"],["regne","voici"],
+["resurrection","temple"],["transfiguration","veilleurs"]];
+const CHAINE=new Set(["emmaus|voici","regne|voici","croix|regne","croix|isaie","isaie|paque","morija|paque","commencement|morija"]);
+
+const C={
+fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
+ eyebrow:"La maison vue du ciel · toutes les pages",
+ h1:"La carte du ciel",
+ verse:"« Il est avant toutes choses, et toutes choses subsistent en lui. »",
+ vref:"Colossiens 1:17",
+ lede:"Chaque page du site est une étoile ; l'Agneau tient le centre. Les lignes ne sont pas un décor : ce sont les vrais passages d'une page à l'autre, mesurés sur le site.",
+ hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez.",
+ centre:"L'Agneau", centreSub:"toutes choses subsistent en lui",
+ fams:{fil:"Le parcours de l'Agneau",salle:"Les salles",pilier:"Les piliers",entree:"Les entrées"},
+ go:"Entrer →",
+ noms:{emmaus:"Emmaüs",voici:"Voici l'agneau",regne:"L'agneau règne",croix:"La croix",isaie:"Isaïe 53",
+  paque:"La Pâque",morija:"Morija",commencement:"Au commencement",trinite:"La Trinité",
+  grandesalle:"La grande salle",offrande:"L'Offrande",bibliotheque:"La bibliothèque",fiable:"Bible fiable",
+  veilleurs:"Les veilleurs",cle:"Déjà · pas encore",sang:"Le sang",bapteme:"Le baptême",parole:"La Parole",
+  resurrection:"La Résurrection",temple:"Le Temple",transfiguration:"La Transfiguration",
+  accueil:"Le fil rouge",seuil:"Le seuil"},
+ pleins:{emmaus:"La route d'Emmaüs",voici:"Voici l'agneau de Dieu",regne:"L'agneau qui règne",
+  croix:"La croix — Jean 19",isaie:"Isaïe 53 — écrit sept siècles avant",paque:"La Pâque — Exode 12",
+  morija:"Morija — le fils offert",commencement:"Au commencement — Genèse",trinite:"Le Père, le Fils, l'Esprit",
+  grandesalle:"Les bibliothèques de la Trinité",offrande:"L'Offrande — la table du Seigneur",
+  bibliotheque:"Comment la Bible est composée",fiable:"Une Bible digne de confiance",
+  veilleurs:"Les veilleurs — mille ans d'annonces",cle:"Déjà / pas encore — la clé de lecture",
+  sang:"Le sang de l'agneau",bapteme:"Le baptême",parole:"La Parole éternelle",
+  resurrection:"La Résurrection",temple:"Le Temple détruit et relevé",transfiguration:"La Transfiguration",
+  accueil:"Le fil rouge — l'accueil",seuil:"Le seuil — la porte du dehors"},
+ foot:"Les nœuds et les lignes suivent navigation.yml : la carte est mesurée, pas dessinée.<br>Segond 1910 · World English Bible · Van Dyck."},
+en:{dir:"ltr",brand:"THE LAMB OF GOD",
+ eyebrow:"The house seen from the sky · every page",
+ h1:"The map of the sky",
+ verse:"“He is before all things, and in him all things are held together.”",
+ vref:"Colossians 1:17",
+ lede:"Every page of the site is a star; the Lamb holds the centre. The lines are not decoration: they are the real passages from one page to another, measured on the site.",
+ hint:"Touch a star: its links light up. Touch it again: you enter.",
+ centre:"The Lamb", centreSub:"in him all things hold together",
+ fams:{fil:"The Lamb's path",salle:"The rooms",pilier:"The pillars",entree:"The entrances"},
+ go:"Enter →",
+ noms:{emmaus:"Emmaus",voici:"Behold the lamb",regne:"The lamb reigns",croix:"The cross",isaie:"Isaiah 53",
+  paque:"The Passover",morija:"Moriah",commencement:"In the beginning",trinite:"The Trinity",
+  grandesalle:"The great hall",offrande:"The Offering",bibliotheque:"The library",fiable:"Trustworthy Bible",
+  veilleurs:"The watchmen",cle:"Already · not yet",sang:"The blood",bapteme:"Baptism",parole:"The Word",
+  resurrection:"The Resurrection",temple:"The Temple",transfiguration:"The Transfiguration",
+  accueil:"The red thread",seuil:"The threshold"},
+ pleins:{emmaus:"The road to Emmaus",voici:"Behold the Lamb of God",regne:"The lamb who reigns",
+  croix:"The cross — John 19",isaie:"Isaiah 53 — written seven centuries before",paque:"The Passover — Exodus 12",
+  morija:"Moriah — the son offered",commencement:"In the beginning — Genesis",trinite:"The Father, the Son, the Spirit",
+  grandesalle:"The libraries of the Trinity",offrande:"The Offering — the Lord's table",
+  bibliotheque:"How the Bible is composed",fiable:"A Bible worthy of trust",
+  veilleurs:"The watchmen — a thousand years of announcements",cle:"Already / not yet — the reading key",
+  sang:"The blood of the lamb",bapteme:"Baptism",parole:"The eternal Word",
+  resurrection:"The Resurrection",temple:"The Temple destroyed and raised",transfiguration:"The Transfiguration",
+  accueil:"The red thread — home",seuil:"The threshold — the door from outside"},
+ foot:"Nodes and lines follow navigation.yml: the map is measured, not drawn.<br>Segond 1910 · World English Bible · Van Dyck."},
+ar:{dir:"rtl",brand:"حمل الله",
+ eyebrow:"البيت من السماء · كل الصفحات",
+ h1:"خريطة السماء",
+ verse:"«الَّذِي هُوَ قَبْلَ كُلِّ شَيْءٍ، وَفِيهِ يَقُومُ الْكُلُّ.»",
+ vref:"كولوسي ١: ١٧",
+ lede:"كل صفحة في الموقع نجمة؛ والحمل يمسك المركز. الخطوط ليست زينة: إنها المعابر الحقيقية من صفحة إلى أخرى، مقيسةً على الموقع.",
+ hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل.",
+ centre:"الحمل", centreSub:"فيه يقوم الكل",
+ fams:{fil:"مسيرة الحمل",salle:"القاعات",pilier:"الأعمدة",entree:"المداخل"},
+ go:"ادخل ←",
+ noms:{emmaus:"عمواس",voici:"هوذا الحمل",regne:"الحمل يملك",croix:"الصليب",isaie:"إشعياء ٥٣",
+  paque:"الفصح",morija:"المريّا",commencement:"في البدء",trinite:"الثالوث",
+  grandesalle:"القاعة الكبرى",offrande:"التقدمة",bibliotheque:"المكتبة",fiable:"كتاب موثوق",
+  veilleurs:"الحرّاس",cle:"الآن · وليس بعد",sang:"الدم",bapteme:"المعمودية",parole:"الكلمة",
+  resurrection:"القيامة",temple:"الهيكل",transfiguration:"التجلي",
+  accueil:"الخيط الأحمر",seuil:"العتبة"},
+ pleins:{emmaus:"طريق عمواس",voici:"هوذا حمل الله",regne:"الحمل المالك",
+  croix:"الصليب — يوحنا ١٩",isaie:"إشعياء ٥٣ — كُتب قبل سبعة قرون",paque:"الفصح — خروج ١٢",
+  morija:"المريّا — الابن المقدَّم",commencement:"في البدء — التكوين",trinite:"الآب والابن والروح",
+  grandesalle:"مكتبات الثالوث",offrande:"التقدمة — مائدة الرب",
+  bibliotheque:"كيف يتألف الكتاب المقدس",fiable:"كتاب جدير بالثقة",
+  veilleurs:"الحرّاس — ألف سنة من الإعلانات",cle:"الآن / وليس بعد — مفتاح القراءة",
+  sang:"دم الحمل",bapteme:"المعمودية",parole:"الكلمة الأزلية",
+  resurrection:"القيامة",temple:"الهيكل المهدوم والمُقام",transfiguration:"التجلي",
+  accueil:"الخيط الأحمر — الاستقبال",seuil:"العتبة — باب الخارج"},
+ foot:"العقد والخطوط تتبع navigation.yml: الخريطة مقيسة لا مرسومة.<br>سيجون ١٩١٠ · World English Bible · فانديك."}};
+
+let LANG="fr", SEL=null;
+const S=(t)=>document.createElementNS("http://www.w3.org/2000/svg",t);
+// petites étoiles de fond, déterministes
+function alea(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
+
+function bati(){
+  const svg=document.getElementById('ciel');svg.innerHTML='';
+  const r=alea(1517);
+  for(let i=0;i<110;i++){const e=S('circle');e.setAttribute('class','etoile-fond');
+    e.setAttribute('cx',(r()*720).toFixed(1));e.setAttribute('cy',(r()*790).toFixed(1));
+    e.setAttribute('r',(r()*1.1+0.3).toFixed(2));e.setAttribute('opacity',(r()*.25+.06).toFixed(2));
+    svg.appendChild(e);}
+  const par={};NOEUDS.forEach(nd=>par[nd.k]=nd);
+  ARETES.forEach(([a,b])=>{
+    const l=S('line');const A=par[a].p,B=par[b].p;
+    l.setAttribute('x1',A[0]);l.setAttribute('y1',A[1]);l.setAttribute('x2',B[0]);l.setAttribute('y2',B[1]);
+    l.setAttribute('class','arete'+(CHAINE.has([a,b].sort().join('|'))?' fil':''));
+    l.dataset.a=a;l.dataset.b=b;svg.appendChild(l);});
+  // le centre
+  const g=S('g');g.setAttribute('class','centre');
+  const halo=S('circle');halo.setAttribute('cx',CX);halo.setAttribute('cy',CY);halo.setAttribute('r',74);
+  halo.setAttribute('fill','rgba(211,169,79,.06)');g.appendChild(halo);
+  const cc=S('circle');cc.setAttribute('cx',CX);cc.setAttribute('cy',CY);cc.setAttribute('r',47);
+  cc.setAttribute('fill','#171320');cc.setAttribute('stroke','var(--gold)');cc.setAttribute('stroke-width','1.5');g.appendChild(cc);
+  const ct=S('text');ct.setAttribute('x',CX);ct.setAttribute('y',CY+8);ct.id='centreTxt';g.appendChild(ct);
+  const cs=S('text');cs.setAttribute('x',CX);cs.setAttribute('y',CY+70);cs.id='centreSub';
+  cs.setAttribute('style','font-family:system-ui;font-size:11px;fill:var(--muted);text-anchor:middle');g.appendChild(cs);
+  svg.appendChild(g);
+  // les nœuds
+  NOEUDS.forEach(nd=>{
+    const a=document.createElementNS("http://www.w3.org/2000/svg","a");
+    a.setAttribute('href',nd.href);a.setAttribute('class','noeud');a.dataset.k=nd.k;
+    const [x,y]=nd.p, col=FAM[nd.fam], rr=nd.fam==='fil'?11:nd.fam==='salle'?10:nd.fam==='pilier'?8.5:9;
+    const hl=S('circle');hl.setAttribute('class','halo');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
+    hl.setAttribute('r',rr+9);hl.setAttribute('fill',col);a.appendChild(hl);
+    const c=S('circle');c.setAttribute('class','c');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',rr);
+    if(nd.fam==='entree'){c.setAttribute('fill','none');c.setAttribute('stroke',col);c.setAttribute('stroke-width','1.6');}
+    else c.setAttribute('fill',col);
+    a.appendChild(c);
+    const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r',26);
+    cible.setAttribute('fill','transparent');a.appendChild(cible);
+    const t=S('text');t.setAttribute('x',x);t.setAttribute('y',y+rr+17);a.appendChild(t);
+    a.addEventListener('click',ev=>{ if(SEL!==nd.k){ev.preventDefault();choisir(nd.k);} });
+    svg.appendChild(a);});
+  render();
+}
+function choisir(k){
+  SEL=k;const c=C[LANG];const nd=NOEUDS.find(n=>n.k===k);
+  document.querySelectorAll('.noeud').forEach(n=>{
+    const lie=n.dataset.k===k||ARETES.some(([a,b])=>(a===k&&b===n.dataset.k)||(b===k&&a===n.dataset.k));
+    n.classList.toggle('sel',n.dataset.k===k);
+    n.classList.toggle('lie',lie&&n.dataset.k!==k);
+    n.classList.toggle('dim',!lie);});
+  document.querySelectorAll('.arete').forEach(l=>{
+    const on=l.dataset.a===k||l.dataset.b===k;
+    l.classList.toggle('on',on);
+    l.style.stroke=on?FAM[nd.fam]:'';l.style.opacity=on?'':'0.35';});
+  document.getElementById('fdot').style.background=FAM[nd.fam];
+  document.getElementById('ffam').textContent=c.fams[nd.fam];
+  document.getElementById('fnom').textContent=c.pleins[k];
+  const go=document.getElementById('fgo');go.textContent=c.go;go.href=nd.href;
+  document.getElementById('fiche').classList.add('show');
+}
+function fermer(){
+  SEL=null;
+  document.querySelectorAll('.noeud').forEach(n=>n.classList.remove('sel','lie','dim'));
+  document.querySelectorAll('.arete').forEach(l=>{l.classList.remove('on');l.style.stroke='';l.style.opacity='';});
+  document.getElementById('fiche').classList.remove('show');
+}
+function render(l){
+  if(l)LANG=l;
+  const c=C[LANG];
+  document.documentElement.lang=LANG;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('h1').textContent=c.h1;
+  document.getElementById('verse').textContent=c.verse;
+  document.getElementById('vref').textContent=c.vref;
+  document.getElementById('lede').textContent=c.lede;
+  document.getElementById('hint').textContent=c.hint;
+  document.getElementById('legende').innerHTML=
+    `<span><i style="background:${FAM.fil}"></i>${c.fams.fil}</span>`+
+    `<span><i style="background:${FAM.salle}"></i>${c.fams.salle}</span>`+
+    `<span><i style="background:${FAM.pilier}"></i>${c.fams.pilier}</span>`+
+    `<span><i class="vide"></i>${c.fams.entree}</span>`;
+  const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
+  const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
+  document.querySelectorAll('.noeud').forEach(n=>{
+    const t=n.querySelector('text');if(t)t.textContent=c.noms[n.dataset.k];
+    n.setAttribute('aria-label',c.pleins[n.dataset.k]);});
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===LANG?'true':'false'));
+  if(SEL)choisir(SEL);
+}
+document.getElementById('fx').addEventListener('click',fermer);
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+bati();
+</script>
+</body>
+</html>

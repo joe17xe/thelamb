@@ -167,6 +167,18 @@ boucle à l'exécution suivante. Le supprimer la relance.
   Matthieu/Luc entre Jésus et David traitée en « Débat interprétatif » selon la
   nomenclature D-013 — lectures présentées côte à côte, sans arbitrer.
 
+## R-020 La carte du ciel — tout le site d'un seul regard, l'Agneau au centre
+- zone: rouge
+- statut: fait
+- pourquoi: demandé par le porteur — une carte mentale de tout le site, façon univers, le Christ au centre, les connexions visibles
+- fait quand: une page montre les 23 pages en étoiles autour de l'Agneau, avec les liens réels du site, dans les trois langues
+- résultat: carte-du-ciel.html — trois orbites (le fil, les salles, les piliers), deux
+  entrées au bord, 34 arêtes tirées de navigation.yml (la carte est mesurée, pas
+  dessinée) ; palette des familles validée par calcul (daltonisme, contraste) sur le
+  fond du site ; toucher une étoile allume ses liens, la retoucher fait entrer ;
+  vérifiée par captures réelles en mobile, bureau et arabe. Verset socle :
+  Colossiens 1:17.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
