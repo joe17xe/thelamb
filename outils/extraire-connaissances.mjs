@@ -19,16 +19,20 @@ const PERIODE_LIVRE = eval('(' + srcBib
   .replace('const PERIODE_LIVRE=', '').replace(/;$/, '') + ')');
 
 const livres = [];
+const etageres = {};
 for (const [gi, g] of [...bib.fr.groups, ...bib.fr.groupsNT].entries()) {
   const gEn = [...bib.en.groups, ...bib.en.groupsNT][gi];
   const gAr = [...bib.ar.groups, ...bib.ar.groupsNT][gi];
+  etageres[g.k] = { fr: g.t, en: gEn.t, ar: gAr.t };
   g.books.forEach((b, i) => {
     const entree = {
       id: slug(b.n), etagere: g.k,
       nom: { fr: b.n, en: gEn.books[i].n, ar: gAr.books[i].n },
+      w: { fr: b.w, en: gEn.books[i].w, ar: gAr.books[i].w },
       periodes: (PERIODE_LIVRE[g.k] || [])[i] || null,
     };
-    if (b.lien) entree.lien = b.lien;   // badge D-013 déjà posé sur le pupitre
+    if (b.lien)   // badge D-013 déjà posé sur le pupitre, dans les trois langues
+      entree.lien = { fr: b.lien, en: gEn.books[i].lien, ar: gAr.books[i].lien };
     livres.push(entree);
   });
 }
@@ -36,9 +40,21 @@ for (const [gi, g] of [...bib.fr.groups, ...bib.fr.groupsNT].entries()) {
 // ── les 153 correspondances du Fil Rouge ───────────────────────────────────
 const srcIndex = readFileSync('index.html', 'utf8');
 const D = eval(srcIndex.match(/const D=(\[[\s\S]*?\]);/)[1]);
-const correspondances = D.map(d => ({ at: d[2], nt: d[5], theme: d[6], titre: d[7] }));
+const TR = eval('(' + srcIndex.match(/const TR=(\{[\s\S]*?\});\n/)[1] + ')');
+const THEMES = eval('(' + srcIndex.match(/const THEMES=(\{[\s\S]*?\});/)[1] + ')');
+const correspondances = D.map((d, i) => ({
+  theme: d[6],
+  at: { fr: d[2], en: TR.en[i][1], ar: TR.ar[i][1] },
+  nt: { fr: d[5], en: TR.en[i][3], ar: TR.ar[i][3] },
+  titre: { fr: d[7], en: TR.en[i][0], ar: TR.ar[i][0] },
+}));
 const themes = {};
-correspondances.forEach(c => themes[c.theme] = (themes[c.theme] || 0) + 1);
+correspondances.forEach(c => {
+  const t = THEMES[c.theme];
+  themes[c.theme] = themes[c.theme] ||
+    { compte: 0, hex: t.hex, nom: { fr: t.fr, en: t.en, ar: t.ar } };
+  themes[c.theme].compte += 1;
+});
 
 // ── les 14 veilleurs et les 20 générations de la frise ─────────────────────
 const fr = lireC('frise-prophetes.html');
@@ -55,4 +71,4 @@ const generations = fr.fr.gen.map((g, i) => ({
 }));
 
 process.stdout.write(JSON.stringify(
-  { livres, correspondances, themes, prophetes, generations }, null, 1));
+  { livres, etageres, correspondances, themes, prophetes, generations }, null, 1));

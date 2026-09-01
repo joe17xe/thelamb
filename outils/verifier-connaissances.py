@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """La base de connaissances reflète les pages — ou la CI s'arrête.
 
+Deux miroirs sont tenus : connaissances.yml (la déclaration lisible) et le
+bloc CONSTEL de carte-du-ciel.html (la projection que les constellations du
+ciel affichent). Les deux se régénèrent depuis la même mesure ; la CI refuse
+tout écart de l'un comme de l'autre.
+
     python3 outils/verifier-connaissances.py            compare, échoue sur écart
     python3 outils/verifier-connaissances.py --ecrire   régénère connaissances.yml
 
@@ -62,7 +67,7 @@ def coherence(d):
         if g.get("periode") and g["periode"] not in pers:
             fautes.append("génération %s : période inconnue %r"
                           % (g["nom"]["fr"], g["periode"]))
-    if sum(d["themes"].values()) != len(d["correspondances"]):
+    if sum(t["compte"] for t in d["themes"].values()) != len(d["correspondances"]):
         fautes.append("les thèmes ne comptent pas les correspondances")
     return fautes
 
@@ -83,6 +88,46 @@ def compare(a, b, chemin=""):
             yield from compare(x, y, "%s[%d]" % (chemin, i))
     elif a != b:
         yield "%s : mesuré %r ≠ déclaré %r" % (chemin, a, b)
+
+
+MARQUE_A = "/*<CONSTEL>*/"
+MARQUE_B = "/*</CONSTEL>*/"
+CARTE = os.path.join(RACINE, "carte-du-ciel.html")
+
+
+def bloc_constel(d):
+    """La projection de la mesure que les constellations affichent."""
+    pers = yaml.safe_load(open(os.path.join(RACINE, "periodes.yml"),
+                               encoding="utf-8"))["periodes"]
+    constel = {
+        "etageres": d["etageres"],
+        "periodes": {p["cle"]: {"c": p["couleur"],
+                                "fr": p["fr"]["nom"], "en": p["en"]["nom"],
+                                "ar": p["ar"]["nom"]} for p in pers},
+        "livres": [[l["id"], l["etagere"], l["periodes"],
+                    [l["nom"]["fr"], l["nom"]["en"], l["nom"]["ar"]],
+                    [l["w"]["fr"], l["w"]["en"], l["w"]["ar"]]]
+                   + ([[l["lien"]["fr"], l["lien"]["en"], l["lien"]["ar"]]]
+                      if "lien" in l else [])
+                   for l in d["livres"]],
+        "themes": d["themes"],
+        "corr": [[c["theme"],
+                  [c["titre"]["fr"], c["at"]["fr"], c["nt"]["fr"]],
+                  [c["titre"]["en"], c["at"]["en"], c["nt"]["en"]],
+                  [c["titre"]["ar"], c["at"]["ar"], c["nt"]["ar"]]]
+                 for c in d["correspondances"]],
+    }
+    return (MARQUE_A + "const CONSTEL="
+            + json.dumps(constel, ensure_ascii=False, separators=(",", ":"))
+            + ";" + MARQUE_B)
+
+
+def lire_bloc():
+    src = open(CARTE, encoding="utf-8").read()
+    a, b = src.find(MARQUE_A), src.find(MARQUE_B)
+    if a < 0 or b < 0:
+        return src, None
+    return src, src[a:b + len(MARQUE_B)]
 
 
 def main(argv):
@@ -107,6 +152,16 @@ def main(argv):
                                      default_flow_style=False, width=100)
         ancien = open(FICHIER, encoding="utf-8").read() if os.path.exists(FICHIER) else ""
         open(FICHIER, "w", encoding="utf-8").write(contenu)
+        src, bloc = lire_bloc()
+        if bloc is None:
+            print("carte-du-ciel.html : pas de marqueurs CONSTEL — bloc non posé")
+        else:
+            neuf = bloc_constel(d)
+            if neuf != bloc:
+                open(CARTE, "w", encoding="utf-8").write(src.replace(bloc, neuf, 1))
+                print("carte-du-ciel.html : bloc CONSTEL régénéré (%d octets)" % len(neuf))
+            else:
+                print("carte-du-ciel.html : bloc CONSTEL inchangé")
         print("connaissances.yml : %d livres · %d correspondances · %d prophètes · "
               "%d générations · %d pages%s"
               % (len(d["livres"]), len(d["correspondances"]), len(d["prophetes"]),
@@ -121,6 +176,10 @@ def main(argv):
         return 1
     declare = yaml.safe_load(open(FICHIER, encoding="utf-8"))
     ecarts = list(compare(d, declare))
+    _, bloc = lire_bloc()
+    if bloc is not None and bloc != bloc_constel(d):
+        ecarts.append("carte-du-ciel.html : le bloc CONSTEL a divergé de la mesure"
+                      " — régénérer avec --ecrire")
     print("## Base de connaissances\n")
     print("%d livres · %d correspondances · %d prophètes · %d générations · "
           "%d périodes · %d pages" %

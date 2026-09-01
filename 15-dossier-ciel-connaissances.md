@@ -112,3 +112,17 @@ correspondances, 8 thèmes, 14 prophètes, 20 générations, 8 périodes, 24 pag
 `outils/verifier-connaissances.py` refuse tout écart dans les deux sens
 (`--ecrire` régénère), et entre au banc `tout-verifier.sh` — huitième
 contrôle. Le fichier n'est pas déployé : seul `*.html` part sur le site.
+
+**Phase 1 : faite** (R-022). Le panneau du ciel dit le rôle de l'étoile en une
+phrase, nomme ses passages réels (un toucher déplace la sélection), et les deux
+accès depuis l'accueil sont posés — l'étoile « ✦ La carte » dans la barre du
+haut et la bande de ciel sous les portes.
+
+**Phase 2 : faite** (R-023). La constellation de la Bibliothèque : 73
+étoiles-livres en onze amas d'étagère autour de l'Agneau, aux couleurs de leur
+période, le lien D-013 du pupitre tirant un fil d'or vers le centre. La donnée
+vit dans le bloc `CONSTEL` de la carte, généré et vérifié par
+`verifier-connaissances.py` depuis la même mesure que `connaissances.yml` —
+zéro copie éditée à la main. Fiche au premier toucher, pupitre au second,
+« ✦ Ouvrir la constellation » sur l'étoile Bibliothèque, « ← Le ciel » pour
+remonter, `#bibliotheque` partageable. Trois langues vérifiées au rendu réel.
