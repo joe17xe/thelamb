@@ -57,11 +57,16 @@
   .noeud.sel circle.c{stroke:#fff;stroke-width:1.4}
   .centre text{font-family:'Cormorant Garamond',serif;font-size:22px;fill:var(--gold);text-anchor:middle}
   html[dir="rtl"] .centre text{font-family:'Amiri',serif}
+  .centre{cursor:pointer;outline:none}
+  .centre circle.souffle{pointer-events:none}
+  .centre:focus-visible circle:not(.souffle){stroke-width:2.5}
   @media (prefers-reduced-motion:no-preference){
     .souffle{transform-box:fill-box;transform-origin:center;animation:souffle 7s ease-in-out infinite}
     @keyframes souffle{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.12);opacity:1}}
     .scin{animation:scintille 4.5s ease-in-out infinite}
     @keyframes scintille{0%,100%{opacity:.08}50%{opacity:.45}}
+    #ciel.lueur{animation:cielLueur 1.1s ease}
+    @keyframes cielLueur{35%{filter:brightness(1.4)}}
   }
 
   .fiche{position:fixed;inset-inline:0;bottom:0;background:var(--bg2);border-top:1px solid var(--line);padding:14px 18px calc(14px + env(safe-area-inset-bottom));display:none;z-index:9;max-height:46vh;overflow-y:auto}
@@ -197,7 +202,8 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  verse:"« Il est avant toutes choses, et toutes choses subsistent en lui. »",
  vref:"Colossiens 1:17",
  lede:"Chaque page du site est une étoile ; l'Agneau tient le centre. Les lignes ne sont pas un décor : ce sont les vrais passages d'une page à l'autre, mesurés sur le site.",
- hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez.",
+ hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez. Touchez l'Agneau : tout se rallume.",
+ centreA11y:"L'Agneau — rallumer tout le ciel",
  hintBiblio:"Touchez un livre : sa fiche s'ouvre. Touchez-le encore : vous ouvrez son pupitre.",
  hintCorr:"Touchez une correspondance : sa fiche s'ouvre. Touchez-la encore : vous l'ouvrez dans le fil rouge.",
  constOuvrir:"✦ Ouvrir la constellation", pupitre:"Ouvrir le pupitre →",
@@ -254,7 +260,8 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  verse:"“He is before all things, and in him all things are held together.”",
  vref:"Colossians 1:17",
  lede:"Every page of the site is a star; the Lamb holds the centre. The lines are not decoration: they are the real passages from one page to another, measured on the site.",
- hint:"Touch a star: its links light up. Touch it again: you enter.",
+ hint:"Touch a star: its links light up. Touch it again: you enter. Touch the Lamb: everything lights up again.",
+ centreA11y:"The Lamb — relight the whole sky",
  hintBiblio:"Touch a book: its card opens. Touch it again: you open its lectern.",
  hintCorr:"Touch a correspondence: its card opens. Touch it again: you open it in the red thread.",
  constOuvrir:"✦ Open the constellation", pupitre:"Open the lectern →",
@@ -311,7 +318,8 @@ ar:{dir:"rtl",brand:"حمل الله",
  verse:"«الَّذِي هُوَ قَبْلَ كُلِّ شَيْءٍ، وَفِيهِ يَقُومُ الْكُلُّ.»",
  vref:"كولوسي ١: ١٧",
  lede:"كل صفحة في الموقع نجمة؛ والحمل يمسك المركز. الخطوط ليست زينة: إنها المعابر الحقيقية من صفحة إلى أخرى، مقيسةً على الموقع.",
- hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل.",
+ hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل. المس الحمل: يضيء الكل من جديد.",
+ centreA11y:"الحمل — أضئ السماء كلها",
  hintBiblio:"المس سفرًا: تنفتح بطاقته. المسه ثانيةً: تفتح منبره.",
  hintCorr:"المس تناظرًا: تنفتح بطاقته. المسه ثانيةً: تفتحه في الخيط الأحمر.",
  constOuvrir:"✦ افتح الكوكبة", pupitre:"افتح المنبر ←",
@@ -490,6 +498,9 @@ function bati(){
 }
 function poserCentre(svg){
   const g=S('g');g.setAttribute('class','centre');
+  g.setAttribute('role','button');g.setAttribute('tabindex','0');
+  g.addEventListener('click',illuminer);
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();illuminer();}});
   const halo=S('circle');halo.setAttribute('class','souffle');
   halo.setAttribute('cx',CX);halo.setAttribute('cy',CY);halo.setAttribute('r',105);
   halo.setAttribute('fill','url(#g-agneau)');halo.setAttribute('opacity','.35');g.appendChild(halo);
@@ -608,6 +619,16 @@ function choisir(k){
   if(sc){fc.textContent=c.constOuvrir;fc.onclick=()=>allerScene(sc);}
   document.getElementById('fiche').classList.add('show');
 }
+// Toucher l'Agneau rallume tout : la sélection s'éteint, la fiche se ferme,
+// tous les points redeviennent visibles — et le ciel entier s'éclaire un
+// instant, sauf si le lecteur préfère un mouvement réduit.
+function illuminer(){
+  fermer();
+  if(!matchMedia('(prefers-reduced-motion: no-preference)').matches)return;
+  const svg=document.getElementById('ciel');
+  svg.classList.remove('lueur');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>svg.classList.add('lueur')));
+}
 function fermer(){
   SEL=null;SELL=null;SELC=null;
   document.querySelectorAll('.noeud').forEach(n=>n.classList.remove('sel','lie','dim'));
@@ -653,6 +674,7 @@ function render(l){
   if(!enCiel)cr.textContent=(SCENE==='bibliotheque')?c.noms.bibliotheque:c.corrNom;
   const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
+  const gc=document.querySelector('.centre');if(gc)gc.setAttribute('aria-label',c.centreA11y);
   document.querySelectorAll('.etq').forEach(t=>{
     t.textContent=t.dataset.t?CONSTEL.themes[t.dataset.t].nom[LANG]:CONSTEL.etageres[t.dataset.k][LANG];
     t.setAttribute('x',t.dataset.x);
@@ -674,6 +696,8 @@ function render(l){
 }
 document.getElementById('fx').addEventListener('click',fermer);
 document.getElementById('arCiel').addEventListener('click',()=>allerScene('ciel'));
+document.getElementById('ciel').addEventListener('animationend',e=>{
+  if(e.animationName==='cielLueur')document.getElementById('ciel').classList.remove('lueur');});
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
 bati();
 </script>
