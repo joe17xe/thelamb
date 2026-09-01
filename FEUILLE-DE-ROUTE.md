@@ -182,6 +182,41 @@ boucle à l'exécution suivante. Le supprimer la relance.
   nombre de liens, positions relâchées par simulation hors ligne puis figées,
   respiration lente du centre — toujours sans bibliothèque.
 
+## R-021 Ciel des connaissances, phase 0 — le miroir déclaré
+- zone: verte
+- statut: fait
+- pourquoi: la connaissance vivait éparpillée dans les objets des pages ; sans source déclarée ni contrôle, les vues du ciel divergeraient à la première retouche (dossier 15)
+- fait quand: connaissances.yml déclare livres, correspondances, prophètes, générations, périodes et pages, et la CI refuse tout écart avec les pages
+- résultat: 73 livres · 153 correspondances · 8 thèmes · 14 prophètes · 20 générations ·
+  8 périodes · 24 pages ; extraire-connaissances.mjs mesure, verifier-connaissances.py
+  compare dans les deux sens et régénère (--ecrire), huitième contrôle du banc.
+  Le contrôle a attrapé son premier bug à sa première exécution (une clé de période
+  tronquée à sa première lettre) — il mord.
+
+## R-022 Ciel des connaissances, phase 1 — le panneau enrichi
+- zone: orange
+- statut: à faire
+- pourquoi: le panneau du ciel ne dit que le nom ; le porteur veut un descriptif en bas de page de ce qui attend dans l'étoile ou la constellation choisie, et des liens nommés navigables
+- fait quand: rôle en une phrase, liens réels nommés (toucher un nom déplace la sélection), choix « ouvrir la constellation / entrer dans la page », descriptif en bas — trois phrases maximum, trilingue, sans dupliquer les strates
+
+## R-023 Ciel des connaissances, phase 2 — la constellation de la Bibliothèque
+- zone: orange
+- statut: à faire
+- pourquoi: première descente — 73 étoiles-livres aux couleurs de leur période, arêtes tirées des liens vers le Christ déjà écrits, badges D-013
+- fait quand: la scène lit la même donnée que le pupitre (zéro copie), captures mobiles validées, trois langues
+
+## R-024 Ciel des connaissances, phase 3 — la constellation des correspondances
+- zone: orange
+- statut: à faire
+- pourquoi: choisie par le porteur avant les 70 événements — les 153 correspondances AT↔NT en ciel thématique, les 8 thèmes en amas
+- fait quand: même donnée que le diagramme du Fil Rouge (zéro copie), captures validées, trois langues
+
+## R-025 Ciel des connaissances, phase 4 — le fil d'Ariane du ciel
+- zone: orange
+- statut: à faire
+- pourquoi: remonter doit être aussi simple que descendre — l'Agneau · le ciel · la constellation · l'étoile
+- fait quand: depuis n'importe quel niveau, l'Agneau est à deux gestes ; transitions communes aux trois niveaux
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

@@ -70,6 +70,25 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-016 — Le ciel des connaissances est lancé, sous trois garde-fous
+**Date :** 1ᵉʳ septembre 2026 — **Statut :** tranchée — **Dossier :** `15-dossier-ciel-connaissances.md`
+**La question :** le porteur veut explorer le site comme un graphe de connaissances —
+plonger dans une constellation, remonter jusqu'à l'Agneau, tirer le détail dans un
+panneau. Vision forte, et dangereuse : elle peut recréer une deuxième maison, creuser
+une profondeur infinie, et faire diverger les vues de la donnée.
+**Ce qui a été décidé :** on construit, sous trois garde-fous. Le ciel montre la
+structure, la page porte l'enseignement — le panneau tient en trois phrases, jamais le
+contenu des strates. Trois niveaux nommés, pas un de plus : le ciel, la constellation,
+l'étoile et son panneau. Et la donnée d'abord : `connaissances.yml`, miroir déclaré de
+ce que les pages portent, contrôlé en CI dans les deux sens.
+**Les choix du porteur :** le niveau 1 reste la carte des pages, avec un descriptif en
+bas de page de ce qui attend dans l'étoile choisie ; la première constellation ouverte
+sera la Bibliothèque, la deuxième les 153 correspondances — les 70 événements du relevé
+Cavins viendront ensuite, en constellation du temps.
+**Pourquoi c'est dans l'esprit du site :** la nomenclature D-013 est exactement le
+typage d'arêtes d'un graphe de connaissances. Le ciel des connaissances, c'est D-013
+rendu visible.
+
 ### D-015 — Un seul hall, et un seuil qui n'offre qu'une porte
 **Date :** 31 août 2026 — **Statut :** tranchée — **Referme :** D-001
 **La question :** l'accueil et le seuil listaient **les six mêmes destinations**, dans

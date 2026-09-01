@@ -1,6 +1,6 @@
 # Le ciel des connaissances — dossier d'architecture
 
-**Document évolutif · v1 — proposition, à trancher par le porteur.**
+**Document évolutif · v2 — tranché par le porteur le 1ᵉʳ septembre 2026.**
 Réponse à la vision exprimée le 1ᵉʳ septembre : faire du ciel un explorateur de
 connaissances — plonger d'un niveau quand on touche une constellation, remonter
 jusqu'à l'Agneau, tirer le détail dans un panneau.
@@ -87,21 +87,28 @@ periodes.yml, geste toucher → panneau, fil d'Ariane commun).
 | Phase | Livrable | Critère « fait » | Zone |
 |---|---|---|---|
 | 0 | `connaissances.yml` + `verifier-connaissances.py`, remplis depuis l'existant | le contrôle passe en CI ; livres, correspondances, prophètes, maillons, périodes déclarés | verte |
-| 1 | Panneau du ciel enrichi (rôle, liens nommés, choix constellation/page) | naviguer le ciel sans le quitter ; aucune donnée dupliquée | orange |
+| 1 | Panneau du ciel enrichi (rôle, liens nommés, choix constellation/page) **+ un descriptif en bas de page de ce qui attend dans l'étoile ou la constellation choisie** (demande du porteur ; il faudra des descriptions trilingues, à poser dans l'objet C de la carte) | naviguer le ciel sans le quitter ; aucune donnée dupliquée | orange |
 | 2 | Constellation de la Bibliothèque (73 étoiles-livres) | même donnée que le pupitre — zéro copie ; captures mobiles validées | orange |
-| 3 | Deuxième constellation, **au choix du porteur** : les 153 correspondances en ciel thématique, ou les 70 événements sur le temps | idem phase 2 | orange |
+| 3 | **Les 153 correspondances en ciel thématique** — choisi par le porteur. Les 70 événements viendront après, en constellation du temps ; d'ici là ils vivent au relevé (`contenus/frise-cavins-releve.md`) | idem phase 2 | orange |
 | 4 | Fil d'Ariane et transitions communs aux trois niveaux | remonter à l'Agneau depuis n'importe où en deux gestes | orange |
 
 Chaque phase est une PR, fusion sur CI verte, captures réelles à l'appui.
 Aucune phase n'ouvre la suivante sans l'accord du porteur.
 
-## Les questions au porteur
+## Les questions — tranchées le 1ᵉʳ septembre
 
-1. **Phase 3 :** les correspondances (le cœur théologique — 153 arcs déjà
-   thématisés) ou les événements (le temps — le relevé Cavins entre au site) ?
-2. **Le niveau 1 actuel reste-t-il la carte des pages ?** Proposition : oui —
-   c'est le plan honnête de la maison ; la connaissance s'ouvre *dans* les
-   constellations. L'alternative (des étoiles-concepts dès le niveau 1) rend la
-   carte plus abstraite et casse « la carte est mesurée ».
-3. **Le panneau : trois phrases maximum, jamais le contenu des strates** — la
-   règle anti-deuxième-maison. Confirmée ?
+1. **Phase 3 : les 153 correspondances d'abord.** Les 70 événements viendront
+   ensuite, en constellation du temps ; d'ici là ils restent au relevé.
+2. **Le niveau 1 reste la carte des pages** — avec, demande du porteur, **un
+   descriptif affiché en bas de la page** disant ce qui attend dans l'étoile ou
+   la constellation choisie. Le descriptif obéit à la règle des trois phrases.
+3. **La règle des trois phrases au panneau : confirmée.**
+
+## État
+
+**Phase 0 : faite.** `connaissances.yml` déclare 73 livres, 153
+correspondances, 8 thèmes, 14 prophètes, 20 générations, 8 périodes, 24 pages.
+`outils/extraire-connaissances.mjs` mesure ce que les pages portent ;
+`outils/verifier-connaissances.py` refuse tout écart dans les deux sens
+(`--ecrire` régénère), et entre au banc `tout-verifier.sh` — huitième
+contrôle. Le fichier n'est pas déployé : seul `*.html` part sur le site.

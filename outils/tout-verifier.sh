@@ -61,6 +61,8 @@ controle "Maillage — ni orpheline, ni cul-de-sac" \
 controle "Le bandeau de situation reflète periodes.yml" situation
 controle "Références bibliques et jetons d'atelier" \
   python3 outils/verifier-references.py ./*.html contenus/*.md
+controle "La base de connaissances reflète les pages" \
+  python3 outils/verifier-connaissances.py
 controle "Texte des citations" citations
 
 echo
