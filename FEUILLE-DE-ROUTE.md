@@ -146,6 +146,17 @@ boucle à l'exécution suivante. Le supprimer la relance.
   « dans le monde » en face à face, nuance sur les marges de datation (l'Exode
   notamment). Choisi par le porteur le 1ᵉʳ septembre (« A puis B puis C »).
 
+## R-018 Chaque livre reçoit son moment — les pastilles de période au pupitre
+- zone: rouge
+- statut: fait
+- pourquoi: les étagères disent ce que contient la bibliothèque, pas quand se situe le récit de chaque livre — c'était le deuxième apport du dépliant de Cavins
+- fait quand: chaque pupitre affiche la ou les périodes du récit, aux couleurs et aux noms de periodes.yml, dans les trois langues
+- résultat: 49 livres pastillés, 24 sans pastille à dessein — les Actes, les lettres
+  et l'Apocalypse sont au-delà de notre carte, et Joël est débattu (le site le dit
+  déjà pour sa date). Au passage, la période de l'exil courait jusqu'en 587 alors
+  que le retour commence en 538 : les quarante-neuf ans de captivité n'étaient
+  dans aucune période — l'exil court maintenant jusqu'à l'édit de Cyrus (538).
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
