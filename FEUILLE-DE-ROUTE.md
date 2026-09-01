@@ -157,6 +157,16 @@ boucle à l'exécution suivante. Le supprimer la relance.
   que le retour commence en 538 : les quarante-neuf ans de captivité n'étaient
   dans aucune période — l'exil court maintenant jusqu'à l'édit de Cyrus (538).
 
+## R-019 La généalogie remontante — de Jésus à Adam sur la frise
+- zone: rouge
+- statut: fait
+- pourquoi: le dépliant de Cavins trace Adam → Jésus en descendant ; Luc 3:23-38 fait l'inverse — l'Écriture fait elle-même notre mouvement éditorial, il suffisait de le montrer
+- fait quand: la frise des veilleurs porte la chaîne des générations remontée depuis Jésus, aux couleurs de periodes.yml, avec la nuance sur les deux généalogies, dans les trois langues
+- résultat: vingt maillons de Jésus à Adam, chacun à la couleur de sa période ; les
+  femmes que Matthieu nomme (Tamar, Rahab, Ruth) portées aux maillons ; la fourche
+  Matthieu/Luc entre Jésus et David traitée en « Débat interprétatif » selon la
+  nomenclature D-013 — lectures présentées côte à côte, sans arbitrer.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

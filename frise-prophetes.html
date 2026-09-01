@@ -86,6 +86,30 @@
   footer{max-width:820px;margin:34px auto 46px;padding:22px 22px 0;border-top:1px solid var(--line);color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8}
 
   /* liens secondaires — vers ce que la frise ouvre sans y conduire */
+  /* la remontée des générations */
+  .gens{max-width:1160px;margin:46px auto 0;padding:0 22px}
+  .gens .gh{font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:8px}
+  html[dir="rtl"] .gens .gh{font-family:'Amiri',serif}
+  .gens .gp{color:var(--muted);font-size:15px;max-width:760px;margin-bottom:18px}
+  .chaine{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .maillon{border:1px solid color-mix(in srgb,var(--pc,var(--gold)) 55%,transparent);border-radius:999px;padding:6px 13px;display:inline-flex;align-items:baseline;gap:7px;background:var(--bg2)}
+  .maillon::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pc,var(--gold));align-self:center}
+  .maillon .mn{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ink)}
+  html[dir="rtl"] .maillon .mn{font-family:'Amiri',serif}
+  .maillon .mq{font-family:system-ui,sans-serif;font-size:10.5px;color:var(--muted)}
+  .maillon.fourche{border-style:dashed;border-color:var(--line);border-radius:12px;max-width:340px}
+  .maillon.fourche::before{display:none}
+  .maillon.fourche .mn{font-family:system-ui,sans-serif;font-size:12px;color:var(--muted);font-style:italic}
+  html[dir="rtl"] .maillon.fourche .mn{font-style:normal}
+  .fleche{color:var(--muted);opacity:.7}
+  html[dir="rtl"] .fleche{transform:scaleX(-1);display:inline-block}
+  .gens details.gnuance{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-top:16px;max-width:760px}
+  .gens details.gnuance summary{cursor:pointer;list-style:none;padding:12px 16px;font-family:system-ui,sans-serif;font-size:13px;color:var(--gold);display:flex;align-items:center;gap:10px}
+  .gens details.gnuance summary::-webkit-details-marker{display:none}
+  .gens .gbadge{font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);border-radius:999px;padding:3px 9px;color:var(--gold)}
+  html[dir="rtl"] .gens .gbadge{letter-spacing:.03em}
+  .gens details.gnuance p{padding:0 16px 14px;color:#c6c0b2;font-size:14.5px}
+
   .aussi{max-width:1060px;margin:44px auto 0;padding:20px 20px 0;border-top:1px solid var(--line)}
   .aussi .albl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
   html[dir="rtl"] .aussi .albl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
@@ -135,6 +159,8 @@
 </div>
 
 <div class="panel" id="panel"><div class="placeholder" id="ph"></div></div>
+
+<section class="gens" id="gens"></section>
 
 <div class="aussi" id="aussi"></div>
 
@@ -239,6 +265,12 @@ fr:{dir:"ltr",albl:"Approfondir",liens:["Isaïe 53 — écrit sept siècles avan
    christ:"Le fil des veilleurs s'achève ici : l'annonce devient présence. C'est le début du parcours de l'Agneau."}],
  footTitle:"Où va la frise",
  foot:"Chaque date est une estimation d'historien, pas un dogme : les fourchettes sont documentées dans le dossier de référence. Le but n'est pas la précision au siècle près, mais de rendre visible une chose simple — les annonces sont antérieures, et elles convergent.",
+ genTitle:"Le fil des générations — remonter de Jésus à Adam",
+ genIntro:"Matthieu ouvre son évangile en descendant, d'Abraham vers Jésus (Matthieu 1:1-17). Luc fait l'inverse : à partir de Jésus, il remonte de père en père jusqu'à « fils d'Adam, fils de Dieu » (Luc 3:23-38). Remonter le fil n'est donc pas notre invention — c'est un geste de l'Écriture elle-même. Le voici, maillon par maillon, aux couleurs de la carte du temps.",
+ gen:[["Jésus","né de Marie"],["de Jésus à David, deux chemins — voir la nuance"],["David",""],["Jessé",""],["Obed","par Ruth"],["Boaz","par Rahab"],["Salmon",""],["Nahshon",""],["Amminadab",""],["Ram",""],["Hetsron",""],["Pérets","par Tamar"],["Juda",""],["Jacob",""],["Isaac",""],["Abraham",""],["Sem",""],["Noé",""],["Seth",""],["Adam","Luc 3:38"]],
+ genBadge:"Débat interprétatif",
+ genWhy:"Pourquoi deux généalogies ?",
+ genNuance:"Matthieu descend d'Abraham à Jésus par la lignée royale — David, Salomon, les rois de Juda. Luc remonte de Jésus à Adam par une autre branche — David, Nathan. Les lectures anciennes et modernes proposent : une généalogie légale par Joseph chez Matthieu et une généalogie par Marie chez Luc ; ou deux lignées de Joseph lui-même (adoption, lévirat — l'explication de Julius Africanus, au IIIᵉ siècle). Aucune ne s'impose absolument : plusieurs lectures sérieuses restent possibles. Sur l'essentiel, les deux textes s'accordent : de David à Abraham, puis d'Abraham à Adam chez Luc, la chaîne est une — et les quatre femmes que Matthieu nomme (Tamar, Rahab, Ruth, la femme d'Urie) sont toutes dans la lignée du Messie.",
  label:{ctx:"Le contexte",msg:"Le message clé",link:"Le lien avec le Christ"}},
 en:{dir:"ltr",albl:"Go deeper",liens:["Isaiah 53 — written seven centuries before","The Transfiguration — Moses, Elijah, and the Son"],brand:"THE LAMB OF GOD",
  eyebrow:"The Old Testament explained · the timeline of the watchmen",
@@ -328,6 +360,12 @@ en:{dir:"ltr",albl:"Go deeper",liens:["Isaiah 53 — written seven centuries bef
    christ:"The thread of the watchmen ends here: announcement becomes presence. This is where the journey of the Lamb begins."}],
  footTitle:"Where the timeline goes",
  foot:"Each date is a historian's estimate, not a dogma: the ranges are documented in the reference dossier. The point is not precision to the century, but to make one simple thing visible — the announcements come first, and they converge.",
+ genTitle:"The thread of generations — from Jesus back to Adam",
+ genIntro:"Matthew opens his gospel going down, from Abraham to Jesus (Matthew 1:1-17). Luke does the opposite: starting from Jesus, he goes back father by father up to “the son of Adam, the son of God” (Luke 3:23-38). Going back up the thread is not our invention — it is a gesture of Scripture itself. Here it is, link by link, in the colours of the map of time.",
+ gen:[["Jesus","born of Mary"],["from Jesus to David, two paths — see the nuance"],["David",""],["Jesse",""],["Obed","by Ruth"],["Boaz","by Rahab"],["Salmon",""],["Nahshon",""],["Amminadab",""],["Ram",""],["Hezron",""],["Perez","by Tamar"],["Judah",""],["Jacob",""],["Isaac",""],["Abraham",""],["Shem",""],["Noah",""],["Seth",""],["Adam","Luke 3:38"]],
+ genBadge:"Interpretive debate",
+ genWhy:"Why two genealogies?",
+ genNuance:"Matthew goes down from Abraham to Jesus through the royal line — David, Solomon, the kings of Judah. Luke goes up from Jesus to Adam through another branch — David, Nathan. Ancient and modern readings propose: a legal genealogy through Joseph in Matthew and a genealogy through Mary in Luke; or two lines of Joseph himself (adoption, levirate — the explanation of Julius Africanus, in the 3rd century). None imposes itself absolutely: several serious readings remain possible. On the essential the two texts agree: from David to Abraham, then from Abraham to Adam in Luke, the chain is one — and the four women Matthew names (Tamar, Rahab, Ruth, the wife of Uriah) all stand in the line of the Messiah.",
  label:{ctx:"The context",msg:"The key message",link:"The link with Christ"}},
 ar:{dir:"rtl",albl:"تعمَّق أكثر",liens:["إشعياء ٥٣ — كُتب قبل سبعة قرون","التجلّي — موسى، وإيليا، والابن"],brand:"حَمَلُ الله",
  eyebrow:"العهد القديم مشروحًا · الخط الزمني للحرّاس",
@@ -417,9 +455,20 @@ ar:{dir:"rtl",albl:"تعمَّق أكثر",liens:["إشعياء ٥٣ — كُت�
    christ:"خيطُ الحرّاس ينتهي هنا: يصير الإعلانُ حضورًا. وهنا يبدأ مسارُ الحمل."}],
  footTitle:"إلى أين يمضي الخط الزمني",
  foot:"كلُّ تاريخ تقديرٌ لمؤرّخ، لا عقيدة: والمجالاتُ موثَّقة في ملف المراجع. المقصدُ ليس الدقةَ إلى القرن، بل إظهارُ أمرٍ بسيط — الإعلاناتُ سابقة، وهي تتقارب.",
+ genTitle:"خيط الأجيال — من يسوع صعودًا إلى آدم",
+ genIntro:"يفتتح متى إنجيله نازلًا، من إبراهيم إلى يسوع (متى ١: ١-١٧). أما لوقا فيصنع العكس: ينطلق من يسوع ويصعد أبًا فأبًا حتى آدمَ ابنِ الله (لوقا ٣: ٢٣-٣٨). فالصعود على الخيط ليس اختراعنا — إنه حركة الكتاب نفسه. ها هو، حلقةً حلقة، بألوان خريطة الزمن.",
+ gen:[["يسوع","المولود من مريم"],["من يسوع إلى داود طريقان — انظر الفارق"],["داود",""],["يسّى",""],["عوبيد","من راعوث"],["بوعز","من راحاب"],["سلمون",""],["نحشون",""],["عميناداب",""],["رام",""],["حصرون",""],["فارص","من ثامار"],["يهوذا",""],["يعقوب",""],["إسحاق",""],["إبراهيم",""],["سام",""],["نوح",""],["شيت",""],["آدم","لوقا ٣: ٣٨"]],
+ genBadge:"جدل تفسيري",
+ genWhy:"لماذا نسبتان؟",
+ genNuance:"متى ينزل من إبراهيم إلى يسوع عبر الخط الملكي — داود فسليمان فملوك يهوذا. ولوقا يصعد من يسوع إلى آدم عبر فرعٍ آخر — داود فناثان. وقد اقتُرح قديمًا وحديثًا: نسبٌ شرعي بيوسف عند متى ونسبٌ بمريم عند لوقا؛ أو خطّان ليوسف نفسه (تبنٍّ أو زواج سلف — تفسير يوليوس الأفريقي في القرن الثالث). لا قراءة تفرض نفسها فرضًا: تبقى قراءاتٌ جادّة عدة ممكنة. وعلى الجوهر يتفق النصان: من داود إلى إبراهيم، ثم من إبراهيم إلى آدم عند لوقا، السلسلة واحدة — والنساء الأربع اللواتي يسمّيهن متى (ثامار وراحاب وراعوث وامرأة أوريا) كلهن في نسب المسيح.",
  label:{ctx:"السياق",msg:"الرسالة الأساسية",link:"الصلة بالمسيح"}}};
 
 const LIENS=["page-etape4-isaie-53.html","pilier-transfiguration.html"];
+// La remontée : une clé de periodes.yml par maillon, "fourche" pour l'embranchement
+// Matthieu/Luc entre Jésus et David. Alignée par position sur c.gen (les noms,
+// traduits). Mêmes teintes que partout : une seule carte du temps (D-015).
+const GENCOULEURS={origines:"#6f7a94",peres:"#a8763c",loi:"#c98a5e",royaume:"#d3a94f",exil:"#6b9bd8",retour:"#7cb47c",attente:"#a583d6",christ:"#d05c5c"};
+const GENCLES=["christ","fourche","royaume","loi","loi","loi","loi","loi","loi","peres","peres","peres","peres","peres","peres","peres","origines","origines","origines","origines"];
 function render(l){
   const c=T[l];
   document.documentElement.lang=l;document.documentElement.dir=c.dir;
@@ -475,6 +524,16 @@ function render(l){
   });
   document.getElementById('ph').textContent=c.placeholder;
   document.getElementById('panel').innerHTML='<div class="placeholder" id="ph">'+c.placeholder+'</div>';
+  const gz=document.getElementById('gens');
+  gz.innerHTML=`<h2 class="gh">${c.genTitle}</h2><p class="gp">${c.genIntro}</p>
+    <div class="chaine">${c.gen.map((g,i)=>{
+      const cle=GENCLES[i];
+      const chip=cle==="fourche"
+        ? `<span class="maillon fourche"><span class="mn">${g[0]}</span></span>`
+        : `<span class="maillon" style="--pc:${GENCOULEURS[cle]}"><span class="mn">${g[0]}</span>${g[1]?`<span class="mq">${g[1]}</span>`:""}</span>`;
+      return chip+(i<c.gen.length-1?`<span class="fleche">→</span>`:"");
+    }).join("")}</div>
+    <details class="gnuance"><summary><span class="gbadge">${c.genBadge}</span>${c.genWhy}</summary><p>${c.genNuance}</p></details>`;
   document.getElementById('aussi').innerHTML=`<div class="albl">${c.albl}</div>`+c.liens.map((x,i)=>`<a href="${LIENS[i]}">${x}</a>`).join("");
   document.getElementById('foot').innerHTML=`<strong>${c.footTitle}.</strong> ${c.foot}<br>Segond 1910 · WEB · Van Dyck.`;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
