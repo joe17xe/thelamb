@@ -227,9 +227,18 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-024 Ciel des connaissances, phase 3 — la constellation des correspondances
 - zone: orange
-- statut: à faire
+- statut: fait
 - pourquoi: choisie par le porteur avant les 70 événements — les 153 correspondances AT↔NT en ciel thématique, les 8 thèmes en amas
 - fait quand: même donnée que le diagramme du Fil Rouge (zéro copie), captures validées, trois langues
+- résultat: troisième scène de la carte — les 153 correspondances en huit amas de
+  thème autour de l'Agneau, chacune à la couleur de son thème du fil rouge, mêmes
+  teintes que le diagramme de l'accueil. L'étoile « Le fil rouge » du ciel gagne
+  « ✦ Ouvrir la constellation ». Une correspondance touchée ouvre sa fiche —
+  thème, titre, références AT → NT ; touchée encore, elle s'ouvre **au bon arc**
+  du diagramme : l'accueil comprend désormais l'adresse `#c=N` (1..153), qui
+  sélectionne la correspondance et centre le panneau. La donnée vient du même
+  bloc CONSTEL mesuré ; adresse `#correspondances` partageable ; trois langues
+  vérifiées au rendu réel, geste des deux touchers jusqu'au diagramme compris.
 
 ## R-025 Ciel des connaissances, phase 4 — le fil d'Ariane du ciel
 - zone: orange
