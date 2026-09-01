@@ -70,6 +70,27 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-017 — La salle de la composition s'appelle « Le livre »
+**Date :** 1ᵉʳ septembre 2026 — **Statut :** tranchée
+**La question :** la salle qui explique la composition de la Bible s'appelait
+« La bibliothèque » — sur sa porte à l'accueil, dans son bandeau, sur son étoile
+de la carte du ciel. Or la thèse du site entier est l'unité : un seul fil, un
+seul récit. Nommer la salle par le pluriel de sa composition contredisait ce
+qu'elle enseigne.
+**Ce qui a été décidé :** la salle s'appelle **« Le livre »** (The book ·
+الكتاب), partout où c'est son nom — porte de l'accueil, bandeau, pied, étoile et
+constellation du ciel, adresse `#livre` (l'ancienne `#bibliotheque` reste
+comprise). La vérité de la composition ne disparaît pas : elle passe dans la
+phrase — « Un seul livre, fait de 66 livres… », « 66 en commun, 7 reçus
+diversement ». Le fichier `salle-bibliotheque.html` garde son nom (les adresses
+ne cassent pas), et l'image intérieure de la salle — étagères, pupitres — reste :
+on ne renomme que ce qui nomme.
+**Ce qu'on ne touche pas :** « les bibliothèques de la Trinité » (autre salle,
+autre image), la bibliothèque de Qumrân (un fait), la métaphore des étagères
+dans Emmaüs (une image de passage, pas un nom).
+**Pourquoi :** « La Bible, c'est un seul livre » — le nom de la salle doit dire
+la thèse, et la nuance canonique vit mieux dans la description que dans le titre.
+
 ### D-016 — Le ciel des connaissances est lancé, sous trois garde-fous
 **Date :** 1ᵉʳ septembre 2026 — **Statut :** tranchée — **Dossier :** `15-dossier-ciel-connaissances.md`
 **La question :** le porteur veut explorer le site comme un graphe de connaissances —

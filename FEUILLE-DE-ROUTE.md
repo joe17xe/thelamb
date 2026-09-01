@@ -266,6 +266,18 @@ boucle à l'exécution suivante. Le supprimer la relance.
   langues ; l'indice du ciel gagne sa troisième phrase — « Touchez l'Agneau :
   tout se rallume. »
 
+## R-027 La salle de la composition s'appelle « Le livre » (D-017)
+- zone: verte
+- statut: fait
+- pourquoi: directive du porteur — « la Bible c'est un seul livre » ; le nom « La bibliothèque » contredisait la thèse d'unité que la salle enseigne
+- fait quand: le nom change partout où c'est le nom, et nulle part ailleurs ; les trois langues ; aucun lien cassé
+- résultat: « Le livre » (The book · الكتاب) sur la porte de l'accueil, le bandeau,
+  le pied de la salle, l'étoile et la constellation du ciel ; adresse `#livre`,
+  l'ancienne `#bibliotheque` toujours comprise. La composition passe dans la
+  phrase (« Un seul livre, fait de 66 livres… », « 66 en commun, 7 reçus
+  diversement ») sans trancher le canon. Intacts : les bibliothèques de la
+  Trinité, la bibliothèque de Qumrân, la métaphore d'Emmaüs, le nom du fichier.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

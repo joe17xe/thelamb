@@ -84,8 +84,8 @@ plutôt que d'approximer.
   Dès le commencement (Gn 3–4).
 - **Six piliers** : le Sang, le Baptême, la Parole éternelle, la Résurrection,
   le Temple détruit, la Transfiguration.
-- **Trois salles** : la Trinité, les bibliothèques de la Trinité, la bibliothèque
-  (composition de la Bible).
+- **Trois salles** : la Trinité, les bibliothèques de la Trinité, le livre
+  (la composition de la Bible — un seul livre, D-017).
 - **Deux sections** : l'Offrande (de la Pâque à la table du Seigneur), Une Bible
   digne de confiance.
 - **Trois transversales** : le Fil Rouge (page d'accueil), la frise des prophètes,
