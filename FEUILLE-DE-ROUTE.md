@@ -136,6 +136,16 @@ boucle à l'exécution suivante. Le supprimer la relance.
   porte vers Emmaüs et déclaré `racine` ; fil d'Ariane de la bibliothèque redirigé
   vers le hall ; carte « À venir » retirée (D-015, referme D-001)
 
+## R-017 La Bible en temps réel — l'histoire biblique face au monde datable
+- zone: rouge
+- statut: fait
+- pourquoi: la section « Une Bible fiable » argumentait par les manuscrits et les prophéties, mais ne montrait pas que le récit traverse une histoire datable — c'était l'apport principal du dépliant de Cavins (voir contenus/frise-cavins-releve.md)
+- fait quand: chaque période de periodes.yml se lit face à des jalons du monde vérifiables indépendamment, dans les trois langues
+- résultat: section « La Bible en temps réel » posée entre les repères chiffrés et le
+  cadre d'honnêteté — huit périodes aux couleurs de periodes.yml, « dans la Bible » /
+  « dans le monde » en face à face, nuance sur les marges de datation (l'Exode
+  notamment). Choisi par le porteur le 1ᵉʳ septembre (« A puis B puis C »).
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
