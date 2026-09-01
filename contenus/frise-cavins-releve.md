@@ -29,11 +29,9 @@ l'Église : c'est un chemin de lecture. Chez nous la frise est une carte, pas un
 chemin (D-007), et le mouvement descend du Christ. On prélève la matière ; on ne
 transplante pas le geste.
 
-⚠️ **Un volet manque au scan** : entre la fin du royaume divisé (722 av. J.-C.)
-et la révolte des Maccabées (167 av. J.-C.), le dépliant porte deux périodes —
-l'Exil et le Retour — absentes des sept pages transmises (un pli non scanné).
-Les événements ~45 à 52, les livres et les jalons de ce volet sont donc **à
-relever sur un nouveau scan**. Rien ici n'est reconstitué de mémoire.
+Le volet de l'Exil et du Retour, absent du premier scan, a été transmis le
+1ᵉʳ septembre : le relevé est **complet**, les 70 événements et les 14 livres
+récit sont tous en place.
 
 ---
 
@@ -48,8 +46,8 @@ relever sur un nouveau scan**. Rien ici n'est reconstitué de mémoire.
 | Conquest & Judges | 1406 → 1050 av. | `loi` → `royaume` |
 | Royal Kingdom | 1050 → 930 av. | `royaume` |
 | Divided Kingdom | 930 → 722 av. | `exil` (division & exil) |
-| Exile *(volet manquant)* | 722 → ~540 av. | `exil` |
-| Return *(volet manquant)* | 538 → 167 av. | `retour`, puis `attente` |
+| Exile | 722 → 538 av. | `exil` |
+| Return | 538 → 167 av. | `retour`, puis `attente` |
 | Maccabean Revolt | 167 av. → an 1 | `attente` |
 | Messianic Fulfillment | an 1 → 33 | `christ` |
 | The Church | 33 → | hors de notre carte (le site s'arrête à l'accomplissement) |
@@ -145,12 +143,43 @@ dominante, et des jalons d'histoire mondiale.
   olympiques, 776 av. ; fondation de Rome, 753 av. ; Homère (coupé au bord du
   scan).
 
-### 7–8. Exil, puis retour — 722 → 167 av. (`exil`, `retour`, `attente`)
-**Volet absent du scan.** À relever : événements ~45–52, livres récit (le
-dépliant en annonce 14 en tout — ceux vus ici en donnent 11 ; Esdras et Néhémie
-s'y trouvent vraisemblablement, à confirmer sur pièce), livres logés
-(prophètes de l'exil et du retour), puissances (Assyrie → Babylone → Perse →
-Grèce), jalons du monde. **Ne rien reconstituer de mémoire : rescanner le pli.**
+### 7. Exil — 722 → 538 av. (`exil`)
+- **Récit :** 2 Rois 17–25. **Logés :** Nahum, Sophonie, Jérémie, Lamentations,
+  Habacuc, Baruch, Abdias, Daniel, Ézéchiel.
+- **Événements 45–48 :** occupation étrangère de la Samarie · la statue des
+  cinq royaumes (Daniel) · Juda tombe devant Babylone (587 av.) · destruction
+  du premier Temple (587 av.).
+- **Juda part en exil** en trois déportations : 605 av., 597 av., 587 av. —
+  la « captivité babylonienne », soixante-dix ans d'exil.
+- **Prophètes situés :** Nahum vers l'Assyrie · Abdias vers Édom · Sophonie,
+  Jérémie, Habacuc à Jérusalem · Baruch, Ézéchiel, Daniel à Babylone.
+- **Derniers rois de Juda :** Manassé, Amon, Josias, Joachaz, Jojakim,
+  Jojakin, Sédécias.
+- **Puissance :** Babylone succède à l'Assyrie ; la Perse prend le relais en
+  538 av. **Monde :** Iliade et Odyssée d'Homère ~750–700 av. ; Cyrus le
+  Grand 559–530 av.
+
+### 8. Retour — 538 → 167 av. (`retour`, puis `attente`)
+- **Récit :** Esdras, Néhémie. **Logés :** Aggée, Zacharie, Esther, Malachie,
+  Judith.
+- **Événements 49–52 :** Zorobabel rebâtit le Temple (chantier repris 537 av.) ·
+  Esdras revient et enseigne (458 av.) · Esther sauve son peuple · Néhémie
+  revient et relève les murailles de Jérusalem (444 av.).
+- **Trois retours** d'exil : le premier en 538 av. (Zorobabel), le deuxième
+  daté « 525–457 av. » par le dépliant (Esdras — la fourchette est la sienne),
+  le troisième en 444 av. (Néhémie).
+- **Prophètes situés :** Aggée et Zacharie au chantier du Temple · Malachie
+  après Esdras.
+- **Lignée :** Zorobabel — la lignée davidique traverse l'exil.
+- **Puissance :** Perse, puis la Grèce après Alexandre ; les Ptolémées
+  apparaissent au bord du volet. **Monde :** Bouddha 563–483 av. ; Confucius
+  551–479 av. ; Socrate 470–399 av. ; Platon 427–347 av. ; Aristote 384–322
+  av. ; Alexandre le Grand 336–323 av. ; la Septante commencée ~283 av. ; la
+  Grande Muraille de Chine entreprise.
+
+Avec ce volet, les 14 livres « récit » du dépliant sont confirmés : Genèse,
+Exode, Nombres, Josué, Juges, 1 et 2 Samuel, 1 et 2 Rois, Esdras, Néhémie,
+1 Maccabées, Luc, Actes.
 
 ### 9. Révolte des Maccabées — 167 av. → an 1 (`attente`)
 - **Récit :** 1 Maccabées. **Logés :** 2 Maccabées, Sagesse, Siracide.

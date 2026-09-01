@@ -72,6 +72,20 @@
   html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
   .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
   .circle p{font-size:15.5px;color:#cfc9bb}
+  /* le temps réel : huit périodes, la Bible à côté du monde */
+  .temps{margin-top:56px}
+  .trow{border-inline-start:3px solid var(--tc,var(--gold));padding:2px 0 16px;padding-inline-start:16px;margin-bottom:16px}
+  .trow .tp{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tc,var(--gold))}
+  html[dir="rtl"] .trow .tp{letter-spacing:.04em}
+  .trow h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;margin:2px 0 8px}
+  html[dir="rtl"] .trow h4{font-family:'Amiri',serif}
+  .trow .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.trow .duo{grid-template-columns:1fr;gap:8px}}
+  .trow .lbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  html[dir="rtl"] .trow .lbl{letter-spacing:.04em}
+  .trow .duo p{font-size:14.5px;color:#c6c0b2;line-height:1.65}
+  .trnote{border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px;margin-top:6px}
+
   /* deep */
   .deepz{margin-top:56px}
   details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
@@ -90,7 +104,7 @@
   .next p{color:var(--muted);font-size:15px}
   footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
   @media (prefers-reduced-motion:no-preference){
-    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    .hero,.station,.verbs,.temps,.circles,.deepz,.next{animation:rise .7s ease both}
     @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   }
 
@@ -122,6 +136,9 @@
 <main id="main"></main>
 <footer id="foot"></footer>
 <script>
+// Les huit teintes de periodes.yml, dans l'ordre des lignes de `trows` :
+// une seule carte du temps sur tout le site (décision D-015, règle du relevé Cavins).
+const TCOULEURS=["#6f7a94","#a8763c","#c98a5e","#d3a94f","#6b9bd8","#7cb47c","#a583d6","#d05c5c"];
 const C={
 fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",slabel:"Section · Une Bible digne de confiance",
 eyebrow:"Le socle du site — des faits datés et vérifiables, présentés sans triomphalisme",
@@ -147,6 +164,19 @@ n:["Apocalypse 12:11","Ils l'ont vaincu à cause du sang de l'Agneau."]}],
 vh:"Quatre repères à retenir",vintro:"Les chiffres qui portent la section — chacun renvoie à une source publique :",
 verbs:["≈ 5 800<small>manuscrits grecs du NT catalogués</small>","IIᵉ siècle<small>P52, plus ancien fragment de Jean</small>","125 av. J.-C.<small>rouleau d'Isaïe complet (Qumrân)</small>","IIIᵉ s. av. J.-C.<small>Septante : les prophéties déjà traduites</small>"],
 vp:"Aucun de ces repères n'est un argument d'autorité : le Sinaiticus est numérisé et consultable en ligne, le rouleau d'Isaïe est exposé à Jérusalem, les éditions critiques publient toutes les variantes. La position du site : <b>donner les faits, les dates et les sources — et laisser le lecteur juger</b>.",
+trh:"La Bible en temps réel",
+trp:"Un récit légendaire flotte hors du temps — « il était une fois ». Celui-ci traverse une histoire datable. À chaque période, ce que raconte la Bible se tient à côté de ce que le monde faisait — et chaque jalon du monde se vérifie hors d'elle.",
+trbible:"Dans la Bible",trmonde:"Dans le monde",
+trows:[
+["Les origines","avant l'histoire datée","Genèse 1–11 : la création, le déluge, Babel. Des origines racontées, pas datées — le récit précède les calendriers.","Stonehenge est dressé vers 3000–2000 av. J.-C. ; les grandes pyramides s'élèvent vers 2685 av. J.-C."],
+["Les pères","~2000–1500 av. J.-C.","Abraham quitte Ur ; Jacob et ses fils descendent en Égypte.","Le code d'Hammourabi est gravé vers 1760 av. J.-C. — les pères marchent dans le monde des premières lois écrites."],
+["La Loi","~1500–1200 av. J.-C.","L'Exode, le Sinaï, l'entrée en Canaan.","Chantiers de Séthi Iᵉʳ et de Ramsès II en Égypte ; premières traces d'écriture grecque vers 1450 av. J.-C."],
+["Le Royaume","~1000–930 av. J.-C.","David règne à Jérusalem ; Salomon bâtit le premier Temple vers 960 av. J.-C.","Rome n'existe pas encore — elle ne sera fondée que deux siècles plus tard."],
+["La division & l'exil","~930–587 av. J.-C.","Le royaume se divise vers 930. Samarie tombe devant l'Assyrie en 722 ; Jérusalem devant Babylone en 587.","Premiers Jeux olympiques en 776 av. J.-C. ; fondation de Rome en 753 ; l'Iliade et l'Odyssée vers 750–700."],
+["Le retour","~538–430 av. J.-C.","L'édit de Cyrus ouvre le retour en 538. Le Temple est relevé ; Esdras revient en 458, Néhémie en 444.","Cyrus le Grand règne de 559 à 530 av. J.-C. ; Confucius (551–479) et Bouddha enseignent ; Socrate naît vers 470."],
+["L'attente","~430–5 av. J.-C.","Pas de prophète reconnu par toutes les traditions, mais des écrits : Maccabées, Siracide, Sagesse. Le Temple profané est purifié en 164 av. J.-C. — Hanoukka.","Aristote (384–322) puis Alexandre (336–323) ; la Septante — la Bible traduite en grec — est commencée vers 283 av. J.-C. ; Pompée prend Jérusalem en 63 ; Auguste règne."],
+["L'accomplissement","~5 av.–30 apr. J.-C.","Luc date lui-même son récit par la quinzième année du règne de Tibère César (Luc 3:1). La crucifixion a lieu vers l'an 30, sous Ponce Pilate.","Tibère règne de 14 à 37 ; Pilate est préfet de Judée de 26 à 36 — attesté par une inscription trouvée à Césarée en 1961."]],
+trnote:"Les dates anciennes portent des marges, et les savants ne s'accordent pas sur tout — la chronologie de l'Exode, notamment, se discute entre le XVᵉ et le XIIIᵉ siècle av. J.-C. ; notre carte du temps couvre les deux. Les jalons du monde, eux, ne dépendent pas de la Bible : chacun se vérifie dans ses propres sources.",
 ch:"Notre cadre d'honnêteté",
 c1:["Ce que les faits établissent","Que les textes sont antérieurs aux événements qu'ils annoncent ; que leur transmission est massivement documentée et mesurable ; que les variantes de copie sont cataloguées, publiées, et qu'aucune ne touche un point de foi."],
 c2:["Ce que les textes affirment d'eux-mêmes","« Ta parole est la vérité » (Jean 17:17) · « Toute Écriture est inspirée de Dieu » (2 Timothée 3:16) · « La parole de notre Dieu subsiste éternellement » (Ésaïe 40:8). Nous citons ces affirmations pour ce qu'elles sont : le témoignage du livre sur lui-même."],
@@ -185,6 +215,19 @@ n:["Revelation 12:11","They overcame him because of the Lamb's blood."]}],
 vh:"Four figures to remember",vintro:"The numbers that carry this section — each points to a public source:",
 verbs:["≈ 5,800<small>catalogued Greek NT manuscripts</small>","2nd century<small>P52, oldest fragment of John</small>","125 BC<small>complete Isaiah scroll (Qumran)</small>","3rd c. BC<small>Septuagint: the prophecies already translated</small>"],
 vp:"None of these is an argument from authority: the Sinaiticus is digitized and viewable online, the Isaiah scroll is on display in Jerusalem, the critical editions publish every variant. The site's stance: <b>give the facts, the dates and the sources — and let the reader judge</b>.",
+trh:"The Bible in real time",
+trp:"A legend floats outside time — “once upon a time”. This book crosses datable history. In every period, what the Bible tells stands next to what the world was doing — and every world landmark can be checked outside of it.",
+trbible:"In the Bible",trmonde:"In the world",
+trows:[
+["The origins","before dated history","Genesis 1–11: creation, the flood, Babel. Origins told, not dated — the account precedes the calendars.","Stonehenge is raised c. 3000–2000 BC; the Great Pyramids rise c. 2685 BC."],
+["The fathers","c. 2000–1500 BC","Abraham leaves Ur; Jacob and his sons go down to Egypt.","The Code of Hammurabi is carved c. 1760 BC — the fathers walk in the world of the first written laws."],
+["The Law","c. 1500–1200 BC","The Exodus, Sinai, the entry into Canaan.","Building works of Seti I and Rameses II in Egypt; earliest traces of Greek writing c. 1450 BC."],
+["The Kingdom","c. 1000–930 BC","David reigns in Jerusalem; Solomon builds the first Temple c. 960 BC.","Rome does not exist yet — it will not be founded for another two centuries."],
+["Division & exile","c. 930–587 BC","The kingdom divides c. 930. Samaria falls to Assyria in 722; Jerusalem to Babylon in 587.","First Olympic games in 776 BC; Rome founded in 753; the Iliad and the Odyssey c. 750–700."],
+["The return","c. 538–430 BC","Cyrus's edict opens the return in 538. The Temple is rebuilt; Ezra returns in 458, Nehemiah in 444.","Cyrus the Great reigns 559–530 BC; Confucius (551–479) and Buddha teach; Socrates is born c. 470."],
+["The waiting","c. 430–5 BC","No prophet recognised by every tradition, yet writings: Maccabees, Sirach, Wisdom. The desecrated Temple is purified in 164 BC — Hanukkah.","Aristotle (384–322), then Alexander (336–323); the Septuagint — the Bible in Greek — is begun c. 283 BC; Pompey takes Jerusalem in 63; Augustus reigns."],
+["The fulfilment","c. 5 BC–AD 30","Luke dates his own account by the fifteenth year of the reign of Tiberius Caesar (Luke 3:1). The crucifixion takes place c. AD 30, under Pontius Pilate.","Tiberius reigns 14–37; Pilate is prefect of Judea 26–36 — attested by an inscription found at Caesarea in 1961."]],
+trnote:"Ancient dates carry margins, and scholars do not agree on everything — the chronology of the Exodus, in particular, is debated between the 15th and the 13th century BC; our map of time covers both. The world's landmarks do not depend on the Bible: each is checked in its own sources.",
 ch:"Our framework of honesty",
 c1:["What the facts establish","That the texts predate the events they announce; that their transmission is massively documented and measurable; that the copying variants are catalogued, published, and that none touches a point of faith."],
 c2:["What the texts claim about themselves","“Your word is truth” (John 17:17) · “Every Scripture is God-breathed” (2 Timothy 3:16) · “The word of our God stands forever” (Isaiah 40:8). We quote these claims for what they are: the book's testimony about itself."],
@@ -223,6 +266,19 @@ n:["رؤيا ١٢: ١١","وَهُمْ غَلَبُوهُ بِدَمِ الْخ�
 vh:"أربعة معالم تُحفَظ",vintro:"الأرقام التي يقوم عليها هذا القسم — وكلٌّ منها يحيل إلى مصدر علني:",
 verbs:["≈ ٥٨٠٠<small>مخطوطة يونانية مفهرسة للعهد الجديد</small>","القرن الثاني<small>P52: أقدم قصاصة من يوحنا</small>","١٢٥ ق.م<small>دَرج إشعياء الكامل (قمران)</small>","القرن ٣ ق.م<small>السبعينية: النبوءات مترجمةٌ سلفًا</small>"],
 vp:"ليس في هذه المعالم حجةُ سلطة: فالمخطوطة السينائية مرقمنةٌ ومتاحة على الإنترنت، ودَرجُ إشعياء معروضٌ في أورشليم، والطبعاتُ النقدية تنشر كلَّ الفوارق. موقفُ الموقع: <b>نقدّم الوقائعَ والتواريخَ والمصادر — ونترك للقارئ الحكم</b>.",
+trh:"الكتاب في الزمن الحقيقي",
+trp:"الأسطورة تسبح خارج الزمن — «كان يا ما كان». أما هذا الكتاب فيعبر تاريخًا مؤرَّخًا. في كل حقبة، ما يرويه الكتاب يقف بجانب ما كان يصنعه العالم — وكل مَعلمٍ من معالم العالم يُتحقَّق منه من خارج الكتاب.",
+trbible:"في الكتاب",trmonde:"في العالم",
+trows:[
+["البدايات","قبل التاريخ المؤرَّخ","تكوين ١–١١: الخلق والطوفان وبابل. بداياتٌ مرويّة لا مؤرَّخة — الخبر أسبق من التقاويم.","ستونهنج يُنصَب نحو ٣٠٠٠–٢٠٠٠ ق.م؛ والأهرامات الكبرى تُشاد نحو ٢٦٨٥ ق.م."],
+["الآباء","~٢٠٠٠–١٥٠٠ ق.م","إبراهيم يخرج من أور؛ ويعقوب وبنوه ينزلون إلى مصر.","شريعة حمورابي تُنقَش نحو ١٧٦٠ ق.م — الآباء يسيرون في عالم أولى الشرائع المكتوبة."],
+["الناموس","~١٥٠٠–١٢٠٠ ق.م","الخروج، وسيناء، ودخول كنعان.","مشاريع سيتي الأول ورعمسيس الثاني في مصر؛ وأولى آثار الكتابة اليونانية نحو ١٤٥٠ ق.م."],
+["المملكة","~١٠٠٠–٩٣٠ ق.م","داود يملك في أورشليم؛ وسليمان يبني الهيكل الأول نحو ٩٦٠ ق.م.","روما لم تكن بعد — لن تؤسَّس إلا بعد قرنين."],
+["الانقسام والسبي","~٩٣٠–٥٨٧ ق.م","المملكة تنقسم نحو ٩٣٠. السامرة تسقط أمام أشور سنة ٧٢٢؛ وأورشليم أمام بابل سنة ٥٨٧.","أولى الألعاب الأولمبية سنة ٧٧٦ ق.م؛ وتأسيس روما سنة ٧٥٣؛ والإلياذة والأوديسة نحو ٧٥٠–٧٠٠."],
+["العودة","~٥٣٨–٤٣٠ ق.م","أمرُ كورش يفتح باب العودة سنة ٥٣٨. الهيكل يُرفَع من جديد؛ عزرا يعود سنة ٤٥٨، ونحميا سنة ٤٤٤.","كورش الكبير يملك ٥٥٩–٥٣٠ ق.م؛ كونفوشيوس (٥٥١–٤٧٩) وبوذا يعلّمان؛ وسقراط يولد نحو ٤٧٠."],
+["الانتظار","~٤٣٠–٥ ق.م","لا نبيَّ تعترف به كل التقاليد، لكنْ كتاباتٌ: المكابيون، ويشوع بن سيراخ، والحكمة. الهيكل المدنَّس يُطهَّر سنة ١٦٤ ق.م — عيد التجديد.","أرسطو (٣٨٤–٣٢٢) ثم الإسكندر (٣٣٦–٣٢٣)؛ والسبعينية — الكتاب مترجمًا إلى اليونانية — تبدأ نحو ٢٨٣ ق.م؛ بومبيوس يدخل أورشليم سنة ٦٣؛ وأوغسطس يملك."],
+["الإتمام","~٥ ق.م–٣٠ م","لوقا يؤرّخ خبره بنفسه بالسنة الخامسة عشرة من حكم طيباريوس قيصر (لوقا ٣: ١). والصلب نحو سنة ٣٠، في ولاية بيلاطس البنطي.","طيباريوس يملك ١٤–٣٧؛ وبيلاطس والٍ على اليهودية ٢٦–٣٦ — تشهد له كتابةٌ حجرية وُجدت في قيصرية سنة ١٩٦١."]],
+trnote:"التواريخ القديمة تحمل هوامش، والدارسون لا يتفقون على كل شيء — تاريخ الخروج خاصةً يُناقَش بين القرنين الخامس عشر والثالث عشر قبل الميلاد؛ وخريطتنا للزمن تسع الاثنين. أما معالم العالم فلا تتوقف على الكتاب: كلٌّ منها يُتحقَّق منه في مصادره الخاصة.",
 ch:"إطارُ أمانتنا",
 c1:["ما تثبته الوقائع","أن النصوص سابقةٌ للأحداث التي تعلنها؛ وأن نقلَها موثَّقٌ توثيقًا هائلًا وقابلٌ للقياس؛ وأن فوارقَ النسخ مفهرسةٌ ومنشورة، وليس فيها ما يمسّ عقيدة."],
 c2:["ما تقوله النصوص عن نفسها","«كَلاَمُكَ هُوَ حَقٌّ» (يوحنا ١٧: ١٧) · «كُلُّ الْكِتَابِ هُوَ مُوحًى بِهِ مِنَ اللهِ» (٢ تيموثاوس ٣: ١٦) · «كَلِمَةُ إِلهِنَا تَثْبُتُ إِلَى الأَبَدِ» (إشعياء ٤٠: ٨). نقتبس هذه الشهادات على أنها ما هي: شهادةُ الكتاب عن نفسه."],
@@ -267,6 +323,21 @@ function render(l){
     <p>${c.vintro}</p>
     <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
     <p>${c.vp}</p>
+  </section>
+  <section class="temps">
+    <div class="shead"><h2>${c.trh}</h2><div class="l"></div></div>
+    <p>${c.trp}</p>
+    <div style="margin-top:18px">${c.trows.map((r,i)=>`
+      <div class="trow" style="--tc:${TCOULEURS[i]}">
+        <div class="tp">${r[1]}</div>
+        <h4>${r[0]}</h4>
+        <div class="duo">
+          <div><div class="lbl">${c.trbible}</div><p>${r[2]}</p></div>
+          <div><div class="lbl">${c.trmonde}</div><p>${r[3]}</p></div>
+        </div>
+      </div>`).join("")}
+    </div>
+    <p class="trnote">${c.trnote}</p>
   </section>
   <section class="circles">
     <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
