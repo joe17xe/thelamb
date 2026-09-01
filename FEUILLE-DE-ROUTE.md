@@ -195,9 +195,18 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-022 Ciel des connaissances, phase 1 — le panneau enrichi
 - zone: orange
-- statut: à faire
-- pourquoi: le panneau du ciel ne dit que le nom ; le porteur veut un descriptif en bas de page de ce qui attend dans l'étoile ou la constellation choisie, et des liens nommés navigables
-- fait quand: rôle en une phrase, liens réels nommés (toucher un nom déplace la sélection), choix « ouvrir la constellation / entrer dans la page », descriptif en bas — trois phrases maximum, trilingue, sans dupliquer les strates
+- statut: fait
+- pourquoi: le panneau du ciel ne disait que le nom ; le porteur voulait un descriptif en bas de page de ce qui attend dans l'étoile choisie, et des liens nommés navigables
+- fait quand: rôle en une phrase, liens réels nommés (toucher un nom déplace la sélection), descriptif en bas — trois phrases maximum, trilingue, sans dupliquer les strates
+- résultat: 23 descriptions d'une phrase × 3 langues ; puces de passages aux points de
+  famille, un toucher déplace la sélection ; le choix « ouvrir la constellation »
+  viendra avec la première constellation (phase 2), on ne construit pas de bouton mort.
+  Au passage, le signalement du porteur (« je ne vois pas le lien ») a mis au jour un
+  vrai bug de R-020 : le lien vers la carte se rendait dans le panneau des arcs du
+  diagramme, pas sous les six portes — un remplacement avait frappé la première
+  occurrence du gabarit fermant. Corrigé, et deux accès posés : l'étoile « ✦ La
+  carte » dans la barre du haut (visible sans défiler), et une bande de ciel sous
+  les portes.
 
 ## R-023 Ciel des connaissances, phase 2 — la constellation de la Bibliothèque
 - zone: orange

@@ -64,8 +64,16 @@
     @keyframes scintille{0%,100%{opacity:.08}50%{opacity:.45}}
   }
 
-  .fiche{position:fixed;inset-inline:0;bottom:0;background:var(--bg2);border-top:1px solid var(--line);padding:14px 18px calc(14px + env(safe-area-inset-bottom));display:none;z-index:9}
-  .fiche.show{display:flex;align-items:center;gap:14px}
+  .fiche{position:fixed;inset-inline:0;bottom:0;background:var(--bg2);border-top:1px solid var(--line);padding:14px 18px calc(14px + env(safe-area-inset-bottom));display:none;z-index:9;max-height:46vh;overflow-y:auto}
+  .fiche.show{display:flex;flex-direction:column;gap:9px}
+  .frang{display:flex;align-items:center;gap:14px}
+  .fdesc{color:#c6c0b2;font-size:14.5px;line-height:1.6;max-width:640px}
+  .fliens{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+  .fliens .fllbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+  html[dir="rtl"] .fliens .fllbl{letter-spacing:.03em}
+  .fliens button{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-family:system-ui,sans-serif;font-size:12px;padding:5px 12px;cursor:pointer;transition:border-color .2s}
+  .fliens button::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--fc,var(--muted))}
+  .fliens button:hover{border-color:var(--fc,var(--gold))}
   .fiche .fdot{width:11px;height:11px;border-radius:50%;flex:none}
   .fiche .fnom{font-family:'Cormorant Garamond',serif;font-size:21px;flex:1;min-width:0}
   html[dir="rtl"] .fiche .fnom{font-family:'Amiri',serif}
@@ -101,10 +109,14 @@
 <div class="cielbox"><svg id="ciel" viewBox="0 0 720 790" role="img"></svg></div>
 
 <div class="fiche" id="fiche">
-  <span class="fdot" id="fdot"></span>
-  <span class="fnom"><span class="ffam" id="ffam"></span><span id="fnom"></span></span>
-  <a class="fgo" id="fgo" href="#"></a>
-  <button class="fx" id="fx" aria-label="Fermer">×</button>
+  <div class="frang">
+    <span class="fdot" id="fdot"></span>
+    <span class="fnom"><span class="ffam" id="ffam"></span><span id="fnom"></span></span>
+    <a class="fgo" id="fgo" href="#"></a>
+    <button class="fx" id="fx" aria-label="Fermer">×</button>
+  </div>
+  <p class="fdesc" id="fdesc"></p>
+  <div class="fliens" id="fliens"></div>
 </div>
 
 <footer id="foot"></footer>
@@ -162,6 +174,31 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  vref:"Colossiens 1:17",
  lede:"Chaque page du site est une étoile ; l'Agneau tient le centre. Les lignes ne sont pas un décor : ce sont les vrais passages d'une page à l'autre, mesurés sur le site.",
  hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez.",
+ flien:"Ses passages",
+ descs:{
+  emmaus:"La méthode du site : le Ressuscité explique les Écritures en commençant par Moïse et tous les prophètes.",
+  voici:"Jean-Baptiste désigne Jésus — l'étalon dont tout le parcours mesure les annonces.",
+  regne:"L'agneau de l'Apocalypse : immolé, debout, et régnant — la fin du fil, lue d'abord.",
+  croix:"Jean 19 : l'heure où les agneaux sont immolés, racontée par un témoin oculaire.",
+  isaie:"Le serviteur souffrant, écrit sept siècles avant la croix — le rouleau complet dort à Qumrân.",
+  paque:"Exode 12 : l'agneau sans défaut, le sang sur les portes, le repas qui traverse la nuit.",
+  morija:"Genèse 22 : le fils porte le bois, et Abraham répond que Dieu se pourvoira de l'agneau.",
+  commencement:"Genèse 1–3 : la création, la chute, et la première promesse — le fil commence ici.",
+  trinite:"Un seul Dieu, révélé en trois — qui l'a révélé, et comment, par les textes.",
+  grandesalle:"Les bibliothèques de la Trinité : les textes rangés par question, pour aller aux sources.",
+  offrande:"« Ceci est mon corps » : la table du Seigneur, expliquée comme accomplissement de la Pâque.",
+  bibliotheque:"73 livres sur six étagères : qui a écrit cette bibliothèque, quand, et comment elle tient ensemble.",
+  fiable:"Manuscrits, Qumrân, prophéties datées, histoire du monde : les faits, vérifiables.",
+  veilleurs:"Quatorze prophètes sur mille ans, chacun daté, chacun tourné vers le même point.",
+  cle:"Déjà accompli, pas encore achevé : la clé qui empêche de mal lire les promesses.",
+  sang:"Pourquoi le sang ? De l'agneau d'Abel à la coupe, le plus ancien fil du culte.",
+  bapteme:"Des eaux de la création au Jourdain : ce que le baptême reprend, et ce qu'il inaugure.",
+  parole:"« Au commencement était la Parole » : le Verbe éternel, des premiers mots de la Genèse à Jean.",
+  resurrection:"Le tombeau vide et les témoins : ce qui s'est passé le troisième jour, et ce qui en découle.",
+  temple:"« Détruisez ce temple » : du sanctuaire de pierre au corps relevé en trois jours.",
+  transfiguration:"Moïse, Élie, et le Fils dans la nuée : la Loi et les prophètes rendent témoignage.",
+  accueil:"Le Fil Rouge : 153 correspondances entre les deux Testaments, dessinées en un seul diagramme.",
+  seuil:"La porte du dehors : une phrase, une route — pour un lien qu'on partage."},
  centre:"L'Agneau", centreSub:"toutes choses subsistent en lui",
  fams:{fil:"Le parcours de l'Agneau",salle:"Les salles",pilier:"Les piliers",entree:"Les entrées"},
  go:"Entrer →",
@@ -188,6 +225,31 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  vref:"Colossians 1:17",
  lede:"Every page of the site is a star; the Lamb holds the centre. The lines are not decoration: they are the real passages from one page to another, measured on the site.",
  hint:"Touch a star: its links light up. Touch it again: you enter.",
+ flien:"Its passages",
+ descs:{
+  emmaus:"The site's method: the risen Christ explains the Scriptures, beginning with Moses and all the prophets.",
+  voici:"John the Baptist points to Jesus — the standard by which the whole path measures the announcements.",
+  regne:"The Lamb of Revelation: slain, standing, reigning — the end of the thread, read first.",
+  croix:"John 19: the hour when the lambs are slain, told by an eyewitness.",
+  isaie:"The suffering servant, written seven centuries before the cross — the complete scroll sleeps at Qumran.",
+  paque:"Exodus 12: the spotless lamb, the blood on the doors, the meal that crosses the night.",
+  morija:"Genesis 22: the son carries the wood, and Abraham answers that God will provide the lamb.",
+  commencement:"Genesis 1–3: creation, the fall, and the first promise — the thread begins here.",
+  trinite:"One God, revealed as three — who revealed it, and how, through the texts.",
+  grandesalle:"The libraries of the Trinity: the texts shelved by question, to go to the sources.",
+  offrande:"“This is my body”: the Lord's table, explained as the fulfilment of the Passover.",
+  bibliotheque:"73 books on six shelves: who wrote this library, when, and how it holds together.",
+  fiable:"Manuscripts, Qumran, dated prophecies, world history: the facts, verifiable.",
+  veilleurs:"Fourteen prophets across a thousand years, each dated, each turned toward the same point.",
+  cle:"Already fulfilled, not yet completed: the key that keeps the promises from being misread.",
+  sang:"Why blood? From Abel's lamb to the cup, the oldest thread of worship.",
+  bapteme:"From the waters of creation to the Jordan: what baptism takes up, and what it opens.",
+  parole:"“In the beginning was the Word”: the eternal Word, from the first words of Genesis to John.",
+  resurrection:"The empty tomb and the witnesses: what happened on the third day, and what follows from it.",
+  temple:"“Destroy this temple”: from the sanctuary of stone to the body raised in three days.",
+  transfiguration:"Moses, Elijah, and the Son in the cloud: the Law and the prophets bear witness.",
+  accueil:"The Red Thread: 153 correspondences between the two Testaments, drawn in a single diagram.",
+  seuil:"The door from outside: one sentence, one road — for a link you share."},
  centre:"The Lamb", centreSub:"in him all things hold together",
  fams:{fil:"The Lamb's path",salle:"The rooms",pilier:"The pillars",entree:"The entrances"},
  go:"Enter →",
@@ -214,6 +276,31 @@ ar:{dir:"rtl",brand:"حمل الله",
  vref:"كولوسي ١: ١٧",
  lede:"كل صفحة في الموقع نجمة؛ والحمل يمسك المركز. الخطوط ليست زينة: إنها المعابر الحقيقية من صفحة إلى أخرى، مقيسةً على الموقع.",
  hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل.",
+ flien:"معابرها",
+ descs:{
+  emmaus:"طريقة الموقع: القائم من الموت يشرح الكتب مبتدئًا من موسى وجميع الأنبياء.",
+  voici:"يوحنا المعمدان يشير إلى يسوع — المعيار الذي تُقاس به إعلانات المسيرة كلها.",
+  regne:"حمل الرؤيا: مذبوحًا وقائمًا ومالكًا — نهاية الخيط تُقرأ أولًا.",
+  croix:"يوحنا ١٩: الساعة التي تُذبح فيها الحملان، يرويها شاهد عيان.",
+  isaie:"العبد المتألم، كُتب قبل الصليب بسبعة قرون — والدرج الكامل محفوظ في قمران.",
+  paque:"خروج ١٢: الحمل الصحيح، والدم على الأبواب، والعشاء الذي يعبر الليل.",
+  morija:"تكوين ٢٢: الابن يحمل الحطب، وإبراهيم يجيب أن الله يرى له الحمل.",
+  commencement:"تكوين ١–٣: الخلق والسقوط والوعد الأول — هنا يبدأ الخيط.",
+  trinite:"إله واحد معلَن ثلاثة — من أعلنه وكيف، من النصوص.",
+  grandesalle:"مكتبات الثالوث: النصوص مرتبة بحسب السؤال، للذهاب إلى المصادر.",
+  offrande:"«هذا هو جسدي»: مائدة الرب، مشروحةً إتمامًا للفصح.",
+  bibliotheque:"٧٣ سفرًا على ستة رفوف: من كتب هذه المكتبة، ومتى، وكيف تتماسك.",
+  fiable:"مخطوطات، وقمران، ونبوءات مؤرَّخة، وتاريخ العالم: وقائع يمكن التحقق منها.",
+  veilleurs:"أربعة عشر نبيًا عبر ألف سنة، كلٌّ مؤرَّخ، وكلٌّ متجه إلى النقطة نفسها.",
+  cle:"قد تمّ، ولمّا يكتمل: المفتاح الذي يحفظ الوعود من سوء القراءة.",
+  sang:"لماذا الدم؟ من حمل هابيل إلى الكأس، أقدمُ خيوط العبادة.",
+  bapteme:"من مياه الخلق إلى الأردن: ما تستعيده المعمودية وما تفتتحه.",
+  parole:"«في البدء كان الكلمة»: الكلمة الأزلي، من أولى كلمات التكوين إلى يوحنا.",
+  resurrection:"القبر الفارغ والشهود: ما جرى في اليوم الثالث، وما يترتب عليه.",
+  temple:"«انقضوا هذا الهيكل»: من هيكل الحجر إلى الجسد المُقام في ثلاثة أيام.",
+  transfiguration:"موسى وإيليا والابن في السحابة: الناموس والأنبياء يشهدان.",
+  accueil:"الخيط الأحمر: ١٥٣ تقابلًا بين العهدين مرسومة في رسم واحد.",
+  seuil:"باب الخارج: جملة واحدة وطريق واحدة — لرابطٍ يُشارَك."},
  centre:"الحمل", centreSub:"فيه يقوم الكل",
  fams:{fil:"مسيرة الحمل",salle:"القاعات",pilier:"الأعمدة",entree:"المداخل"},
  go:"ادخل ←",
@@ -313,6 +400,15 @@ function choisir(k){
   document.getElementById('ffam').textContent=c.fams[nd.fam];
   document.getElementById('fnom').textContent=c.pleins[k];
   const go=document.getElementById('fgo');go.textContent=c.go;go.href=nd.href;
+  document.getElementById('fdesc').textContent=c.descs[k]||'';
+  const fl=document.getElementById('fliens');fl.innerHTML='';
+  const lb=document.createElement('span');lb.className='fllbl';lb.textContent=c.flien;fl.appendChild(lb);
+  ARETES.filter(([a,b])=>a===k||b===k).forEach(([a,b])=>{
+    const autre=a===k?b:a, fam=NOEUDS.find(x=>x.k===autre).fam;
+    const bt=document.createElement('button');bt.type='button';bt.textContent=c.noms[autre];
+    bt.style.setProperty('--fc',FAM[fam]);
+    bt.addEventListener('click',()=>choisir(autre));
+    fl.appendChild(bt);});
   document.getElementById('fiche').classList.add('show');
 }
 function fermer(){
