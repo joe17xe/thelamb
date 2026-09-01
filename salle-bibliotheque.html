@@ -70,6 +70,11 @@
   .lectern .bn{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--sc)}
   html[dir="rtl"] .lectern .bn{font-family:'Amiri',serif}
   .lectern .bd{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .bperiodes{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:-4px 0 12px}
+  .bperiodes .plbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  html[dir="rtl"] .bperiodes .plbl{letter-spacing:.03em}
+  .bperiodes .pchip{font-family:system-ui,sans-serif;font-size:11px;color:var(--ink);border:1px solid color-mix(in srgb,var(--pc) 55%,transparent);border-radius:999px;padding:3px 10px;display:inline-flex;align-items:center;gap:6px}
+  .bperiodes .pchip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pc)}
   .lectern .lbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:10px 0 3px}
   html[dir="rtl"] .lectern .lbl{letter-spacing:.03em}
   .lectern .what{font-size:15.5px}
@@ -155,6 +160,26 @@
 // 11 groupes, 7 fêtes. L'étagère deutérocanonique se distingue par son trait discontinu.
 // Chaque livre : {n:nom, a:abbr, d:date approx, w:une phrase "de quoi ça parle", c:lien Christ}
 // Trilingue via clé de langue. Statuts de datation = estimations d'historien (affiché sur la page).
+// Où se situe le récit de chaque livre, sur la carte du temps de periodes.yml
+// (une seule carte pour tout le site — D-015). C'est l'autre dimension que la
+// date d'écriture `d` : 1 Chroniques se situe au Royaume mais s'écrit vers 430.
+// null = notre carte ne parle pas (elle s'arrête à l'accomplissement — les
+// Actes, les lettres et l'Apocalypse sont au-delà), ou la situation est
+// débattue (Joël : le site le dit déjà pour sa date).
+const PCOULEURS={origines:"#6f7a94",peres:"#a8763c",loi:"#c98a5e",royaume:"#d3a94f",exil:"#6b9bd8",retour:"#7cb47c",attente:"#a583d6",christ:"#d05c5c"};
+const PERIODE_LIVRE={
+ loi:[["origines","peres"],["loi"],["loi"],["loi"],["loi"]],
+ histoire:[["loi"],["loi"],["loi"],["royaume"],["royaume"],["royaume","exil"],["exil"],["royaume"],["royaume","exil"],["retour"],["retour"],["retour"]],
+ sagesse:[["peres"],["royaume"],["royaume"],["royaume"],["royaume"]],
+ grands:[["exil"],["exil"],["exil"],["exil"],["exil"]],
+ petits:[["exil"],null,["exil"],["exil"],["exil"],["exil"],["exil"],["exil"],["exil"],["retour"],["retour"],["retour"]],
+ deutero:[["exil"],["retour"],["attente"],["attente"],["exil"],["attente"],["attente"]],
+ evangiles:[["christ"],["christ"],["christ"],["christ"]],
+ actes:[null],
+ paul:[null,null,null,null,null,null,null,null,null,null,null,null,null],
+ generales:[null,null,null,null,null,null,null,null],
+ apocalypse:[null]
+};
 const LIB={
 fr:{
  dir:"ltr",brand:"UN SEUL LIVRE",crumbUp:"Le fil rouge",
@@ -167,6 +192,8 @@ fr:{
  groupLbl:"livres",
  lecternHint:"— Touchez un livre pour l'ouvrir —",
  col:{when:"Quand (estimation)",what:"De quoi ça parle",christ:"Le fil vers le Christ",nuance:"Lire la nuance"},
+ periodeLbl:"Où se situe son récit",
+ periodeNoms:{origines:"Les origines",peres:"Les pères",loi:"La Loi",royaume:"Le Royaume",exil:"La division & l'exil",retour:"Le retour",attente:"L'attente",christ:"L'accomplissement"},
  groups:[
   {k:"loi",t:"La Loi (Torah)",n:"5 livres",sub:"Les fondations : la création, les promesses, la sortie d'Égypte, l'Alliance.",
    intro:"Les cinq premiers livres, la « Torah » (l'instruction), attribués à Moïse. Ils posent tout : d'où vient le monde, d'où vient le mal, comment Dieu se choisit un peuple et lui donne une Alliance. Tout le reste de la Bible s'y appuie. C'est ici que naissent l'agneau pascal, le sacrifice, le sacerdoce — les figures que le Christ accomplira.",
@@ -297,6 +324,8 @@ en:{
  groupLbl:"books",
  lecternHint:"— Touch a book to open it —",
  col:{when:"When (estimate)",what:"What it is about",christ:"The thread to Christ",nuance:"Read the nuance"},
+ periodeLbl:"Where its story sits",
+ periodeNoms:{origines:"The origins",peres:"The fathers",loi:"The Law",royaume:"The Kingdom",exil:"Division & exile",retour:"The return",attente:"The waiting",christ:"The fulfilment"},
  groups:[
   {k:"loi",t:"The Law (Torah)",n:"5 books",sub:"The foundations: creation, the promises, the exodus, the Covenant.",
    intro:"The first five books, the “Torah” (instruction), attributed to Moses. They lay everything: where the world comes from, where evil comes from, how God chooses a people and gives it a Covenant. All the rest of the Bible rests on them. Here are born the Passover lamb, sacrifice, priesthood — the figures Christ will fulfil.",
@@ -427,6 +456,8 @@ ar:{
  groupLbl:"أسفار",
  lecternHint:"— المس سفرًا لفتحه —",
  col:{when:"متى (تقدير)",what:"موضوعه",christ:"الخيط نحو المسيح",nuance:"اقرأ الفارق"},
+ periodeLbl:"أين يقع خبرُه",
+ periodeNoms:{origines:"البدايات",peres:"الآباء",loi:"الناموس",royaume:"المملكة",exil:"الانقسام والسبي",retour:"العودة",attente:"الانتظار",christ:"الإتمام"},
  groups:[
   {k:"loi",t:"الناموس (التوراة)",n:"٥ أسفار",sub:"الأسس: الخلق، والمواعيد، والخروج من مصر، والعهد.",
    intro:"الأسفارُ الخمسة الأولى، «التوراة» (التعليم)، المنسوبة إلى موسى. تضع كلَّ شيء: من أين العالم، ومن أين الشر، وكيف يختار اللهُ شعبًا ويعطيه عهدًا. وعليها يستند سائرُ الكتاب. هنا يولد حملُ الفصح، والذبيحة، والكهنوت — الرموزُ التي سيتمّمها المسيح.",
@@ -564,6 +595,7 @@ function shelfHTML(g,c){
       <div class="spines">${spines}</div>
       <div class="lectern" data-lect="${g.k}" style="--sc:var(--${COLORS[g.k]})">
         <div class="bn"></div><div class="bd"></div>
+        <div class="bperiodes" hidden></div>
         <div class="lbl lbl-what"></div><div class="what"></div>
         <div class="lbl lbl-christ"></div>
         <div class="lientype" hidden></div><div class="christ"></div>
@@ -607,6 +639,14 @@ function render(l){
       const lect=shelf.querySelector('.lectern');
       lect.querySelector('.bn').textContent=b.n;
       lect.querySelector('.bd').textContent=b.d;
+      const pz=lect.querySelector('.bperiodes');
+      const pk=(PERIODE_LIVRE[sp.dataset.g]||[])[+sp.dataset.i];
+      pz.hidden=!pk; pz.innerHTML='';
+      if(pk){
+        const lb=document.createElement('span');lb.className='plbl';lb.textContent=c.periodeLbl;pz.appendChild(lb);
+        pk.forEach(k=>{const ch=document.createElement('span');ch.className='pchip';
+          ch.style.setProperty('--pc',PCOULEURS[k]);ch.textContent=c.periodeNoms[k];pz.appendChild(ch);});
+      }
       lect.querySelector('.lbl-what').textContent=c.col.what;
       lect.querySelector('.what').textContent=b.w;
       lect.querySelector('.lbl-christ').textContent=c.col.christ;

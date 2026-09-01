@@ -64,13 +64,13 @@ periodes:
 
   - cle: exil
     couleur: "#6b9bd8"
-    fr: {nom: "La division & l'exil", dates: "~930–587 av. J.-C.",
+    fr: {nom: "La division & l'exil", dates: "~930–538 av. J.-C.",
          texte: "Le royaume se divise, s'effondre. Les prophètes avertissent, puis Babylone détruit le Temple (587).",
          figures: "Ésaïe, Jérémie, les grands prophètes"}
-    en: {nom: "Division & exile", dates: "~930–587 BC",
+    en: {nom: "Division & exile", dates: "~930–538 BC",
          texte: "The kingdom splits and collapses. The prophets warn, then Babylon destroys the Temple (587).",
          figures: "Isaiah, Jeremiah, the great prophets"}
-    ar: {nom: "الانقسام والسبي", dates: "نحو ٩٣٠–٥٨٧ ق.م",
+    ar: {nom: "الانقسام والسبي", dates: "نحو ٩٣٠–٥٣٨ ق.م",
          texte: "تنقسم المملكةُ وتنهار. ينذر الأنبياء، ثم تدمّر بابلُ الهيكلَ (٥٨٧).",
          figures: "إشعياء، إرميا، كبار الأنبياء"}
 
