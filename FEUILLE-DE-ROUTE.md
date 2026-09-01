@@ -210,9 +210,20 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-023 Ciel des connaissances, phase 2 — la constellation de la Bibliothèque
 - zone: orange
-- statut: à faire
+- statut: fait
 - pourquoi: première descente — 73 étoiles-livres aux couleurs de leur période, arêtes tirées des liens vers le Christ déjà écrits, badges D-013
 - fait quand: la scène lit la même donnée que le pupitre (zéro copie), captures mobiles validées, trois langues
+- résultat: la carte porte deux scènes — le ciel des 23 pages, et la constellation
+  de la Bibliothèque : 73 étoiles-livres en onze amas d'étagère autour de l'Agneau,
+  chacune à la couleur de sa période (gris hors carte du temps), le lien D-013 déjà
+  écrit au pupitre tirant un fil d'or jusqu'au centre. Toute la donnée vient du bloc
+  CONSTEL, généré par `verifier-connaissances.py --ecrire` depuis la même mesure que
+  `connaissances.yml` — le banc refuse toute divergence. Un livre touché ouvre sa
+  fiche (étagère, description, période, badge du lien) ; touché encore, son pupitre.
+  L'étoile Bibliothèque du ciel gagne « ✦ Ouvrir la constellation », une barre
+  « ← Le ciel » remonte, l'adresse `#bibliotheque` est partageable. Étiquettes
+  d'amas mesurées au rendu et ramenées dans le cadre, halo sombre pour rester
+  lisibles à travers les étoiles ; vérifié dans les trois langues au rendu réel.
 
 ## R-024 Ciel des connaissances, phase 3 — la constellation des correspondances
 - zone: orange

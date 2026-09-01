@@ -6,618 +6,2040 @@
 # puis se régénère ici ; la CI refuse tout écart entre les deux.
 # Dossier d'architecture : 15-dossier-ciel-connaissances.md (phase 0).
 correspondances:
-- at: Genèse 4:4
-  nt: Hébreux 11:4
+- at:
+    ar: 'تكوين ٤: ٤'
+    en: Genesis 4:4
+    fr: Genèse 4:4
+  nt:
+    ar: 'عبرانيين ١١: ٤'
+    en: Hebrews 11:4
+    fr: Hébreux 11:4
   theme: agneau
-  titre: 'Abel : le premier agneau offert'
-- at: Genèse 22:8
-  nt: Jean 1:29
+  titre:
+    ar: 'هابيل: أول حمل يُقدَّم'
+    en: 'Abel: the first lamb offered'
+    fr: 'Abel : le premier agneau offert'
+- at:
+    ar: 'تكوين ٢٢: ٨'
+    en: Genesis 22:8
+    fr: Genèse 22:8
+  nt:
+    ar: 'يوحنا ١: ٢٩'
+    en: John 1:29
+    fr: Jean 1:29
   theme: agneau
-  titre: « Dieu se pourvoira de l'agneau »
-- at: Genèse 22:6
-  nt: Jean 19:17
+  titre:
+    ar: «الله يرى له الخروف»
+    en: “God will provide the lamb”
+    fr: « Dieu se pourvoira de l'agneau »
+- at:
+    ar: 'تكوين ٢٢: ٦'
+    en: Genesis 22:6
+    fr: Genèse 22:6
+  nt:
+    ar: 'يوحنا ١٩: ١٧'
+    en: John 19:17
+    fr: Jean 19:17
   theme: agneau
-  titre: Le fils porte le bois
-- at: Genèse 22:13
-  nt: Romains 8:32
+  titre:
+    ar: الابن يحمل الحطب
+    en: The son carries the wood
+    fr: Le fils porte le bois
+- at:
+    ar: 'تكوين ٢٢: ١٣'
+    en: Genesis 22:13
+    fr: Genèse 22:13
+  nt:
+    ar: 'رومية ٨: ٣٢'
+    en: Romans 8:32
+    fr: Romains 8:32
   theme: agneau
-  titre: Le substitut
-- at: Exode 12:5
-  nt: 1 Pierre 1:19
+  titre:
+    ar: البديل
+    en: The substitute
+    fr: Le substitut
+- at:
+    ar: 'خروج ١٢: ٥'
+    en: Exodus 12:5
+    fr: Exode 12:5
+  nt:
+    ar: '١ بطرس ١: ١٩'
+    en: 1 Peter 1:19
+    fr: 1 Pierre 1:19
   theme: agneau
-  titre: Sans défaut et sans tache
-- at: Exode 12:13
-  nt: Romains 5:9
+  titre:
+    ar: بلا عيب ولا دنس
+    en: Without blemish or spot
+    fr: Sans défaut et sans tache
+- at:
+    ar: 'خروج ١٢: ١٣'
+    en: Exodus 12:13
+    fr: Exode 12:13
+  nt:
+    ar: 'رومية ٥: ٩'
+    en: Romans 5:9
+    fr: Romains 5:9
   theme: agneau
-  titre: Le sang qui protège
-- at: Exode 12:46
-  nt: Jean 19:36
+  titre:
+    ar: الدم الذي يحمي
+    en: The blood that protects
+    fr: Le sang qui protège
+- at:
+    ar: 'خروج ١٢: ٤٦'
+    en: Exodus 12:46
+    fr: Exode 12:46
+  nt:
+    ar: 'يوحنا ١٩: ٣٦'
+    en: John 19:36
+    fr: Jean 19:36
   theme: agneau
-  titre: Aucun os brisé
-- at: Lévitique 16:22
-  nt: Hébreux 9:28
+  titre:
+    ar: لا يُكسر منه عظم
+    en: No bone broken
+    fr: Aucun os brisé
+- at:
+    ar: 'لاويين ١٦: ٢٢'
+    en: Leviticus 16:22
+    fr: Lévitique 16:22
+  nt:
+    ar: 'عبرانيين ٩: ٢٨'
+    en: Hebrews 9:28
+    fr: Hébreux 9:28
   theme: agneau
-  titre: Celui qui porte les péchés
-- at: Lévitique 17:11
-  nt: Hébreux 9:22
+  titre:
+    ar: حامل الخطايا
+    en: The sin-bearer
+    fr: Celui qui porte les péchés
+- at:
+    ar: 'لاويين ١٧: ١١'
+    en: Leviticus 17:11
+    fr: Lévitique 17:11
+  nt:
+    ar: 'عبرانيين ٩: ٢٢'
+    en: Hebrews 9:22
+    fr: Hébreux 9:22
   theme: agneau
-  titre: La vie est dans le sang
-- at: Nombres 21:9
-  nt: Jean 3:14
+  titre:
+    ar: الحياة في الدم
+    en: The life is in the blood
+    fr: La vie est dans le sang
+- at:
+    ar: 'عدد ٢١: ٩'
+    en: Numbers 21:9
+    fr: Nombres 21:9
+  nt:
+    ar: 'يوحنا ٣: ١٤'
+    en: John 3:14
+    fr: Jean 3:14
   theme: agneau
-  titre: Élevé pour que l'on vive
-- at: Ésaïe 53:5
-  nt: 1 Pierre 2:24
+  titre:
+    ar: مرفوع لكي نحيا
+    en: Lifted up, that we might live
+    fr: Élevé pour que l'on vive
+- at:
+    ar: 'إشعياء ٥٣: ٥'
+    en: Isaiah 53:5
+    fr: Ésaïe 53:5
+  nt:
+    ar: '١ بطرس ٢: ٢٤'
+    en: 1 Peter 2:24
+    fr: 1 Pierre 2:24
   theme: agneau
-  titre: Blessé pour nos péchés
-- at: Ésaïe 53:7
-  nt: Actes 8:32-35
+  titre:
+    ar: مجروح لأجل معاصينا
+    en: Pierced for our transgressions
+    fr: Blessé pour nos péchés
+- at:
+    ar: 'إشعياء ٥٣: ٧'
+    en: Isaiah 53:7
+    fr: Ésaïe 53:7
+  nt:
+    ar: 'أعمال الرسل ٨: ٣٢-٣٥'
+    en: Acts 8:32-35
+    fr: Actes 8:32-35
   theme: agneau
-  titre: L'agneau muet
-- at: Ésaïe 53:6
-  nt: 1 Pierre 2:25
+  titre:
+    ar: الحمل الصامت
+    en: The silent lamb
+    fr: L'agneau muet
+- at:
+    ar: 'إشعياء ٥٣: ٦'
+    en: Isaiah 53:6
+    fr: Ésaïe 53:6
+  nt:
+    ar: '١ بطرس ٢: ٢٥'
+    en: 1 Peter 2:25
+    fr: 1 Pierre 2:25
   theme: agneau
-  titre: Les brebis errantes
-- at: Ésaïe 53:12
-  nt: Luc 22:37
+  titre:
+    ar: الخراف الضالة
+    en: The straying sheep
+    fr: Les brebis errantes
+- at:
+    ar: 'إشعياء ٥٣: ١٢'
+    en: Isaiah 53:12
+    fr: Ésaïe 53:12
+  nt:
+    ar: 'لوقا ٢٢: ٣٧'
+    en: Luke 22:37
+    fr: Luc 22:37
   theme: agneau
-  titre: Compté parmi les malfaiteurs
-- at: Psaume 22:2
-  nt: Matthieu 27:46
+  titre:
+    ar: أُحصي مع أثمة
+    en: Counted with the transgressors
+    fr: Compté parmi les malfaiteurs
+- at:
+    ar: 'مزمور ٢٢: ٢'
+    en: Psalm 22:2
+    fr: Psaume 22:2
+  nt:
+    ar: 'متى ٢٧: ٤٦'
+    en: Matthew 27:46
+    fr: Matthieu 27:46
   theme: agneau
-  titre: Le cri
-- at: Psaume 22:19
-  nt: Jean 19:24
+  titre:
+    ar: الصرخة
+    en: The cry
+    fr: Le cri
+- at:
+    ar: 'مزمور ٢٢: ١٩'
+    en: Psalm 22:19
+    fr: Psaume 22:19
+  nt:
+    ar: 'يوحنا ١٩: ٢٤'
+    en: John 19:24
+    fr: Jean 19:24
   theme: agneau
-  titre: La tunique tirée au sort
-- at: Psaume 22:17
-  nt: Jean 20:25
+  titre:
+    ar: القرعة على القميص
+    en: Lots cast for the tunic
+    fr: La tunique tirée au sort
+- at:
+    ar: 'مزمور ٢٢: ١٧'
+    en: Psalm 22:17
+    fr: Psaume 22:17
+  nt:
+    ar: 'يوحنا ٢٠: ٢٥'
+    en: John 20:25
+    fr: Jean 20:25
   theme: agneau
-  titre: Mains et pieds percés
-- at: Zacharie 12:10
-  nt: Jean 19:37
+  titre:
+    ar: يدان ورجلان مثقوبتان
+    en: Pierced hands and feet
+    fr: Mains et pieds percés
+- at:
+    ar: 'زكريا ١٢: ١٠'
+    en: Zechariah 12:10
+    fr: Zacharie 12:10
+  nt:
+    ar: 'يوحنا ١٩: ٣٧'
+    en: John 19:37
+    fr: Jean 19:37
   theme: agneau
-  titre: Celui qu'ils ont percé
-- at: Zacharie 13:7
-  nt: Matthieu 26:31
+  titre:
+    ar: الذي طعنوه
+    en: The one they pierced
+    fr: Celui qu'ils ont percé
+- at:
+    ar: 'زكريا ١٣: ٧'
+    en: Zechariah 13:7
+    fr: Zacharie 13:7
+  nt:
+    ar: 'متى ٢٦: ٣١'
+    en: Matthew 26:31
+    fr: Matthieu 26:31
   theme: agneau
-  titre: Le berger frappé
-- at: Ésaïe 53:7
-  nt: Apocalypse 5:6
+  titre:
+    ar: الراعي المضروب
+    en: The shepherd struck
+    fr: Le berger frappé
+- at:
+    ar: 'إشعياء ٥٣: ٧'
+    en: Isaiah 53:7
+    fr: Ésaïe 53:7
+  nt:
+    ar: 'رؤيا ٥: ٦'
+    en: Revelation 5:6
+    fr: Apocalypse 5:6
   theme: agneau
-  titre: L'Agneau immolé règne
-- at: Genèse 3:15
-  nt: Galates 4:4
+  titre:
+    ar: الخروف المذبوح يملك
+    en: The slain Lamb reigns
+    fr: L'Agneau immolé règne
+- at:
+    ar: 'تكوين ٣: ١٥'
+    en: Genesis 3:15
+    fr: Genèse 3:15
+  nt:
+    ar: 'غلاطية ٤: ٤'
+    en: Galatians 4:4
+    fr: Galates 4:4
   theme: prophetie
-  titre: Le premier évangile
-- at: Genèse 12:3
-  nt: Galates 3:8
+  titre:
+    ar: الإنجيل الأول
+    en: The first gospel
+    fr: Le premier évangile
+- at:
+    ar: 'تكوين ١٢: ٣'
+    en: Genesis 12:3
+    fr: Genèse 12:3
+  nt:
+    ar: 'غلاطية ٣: ٨'
+    en: Galatians 3:8
+    fr: Galates 3:8
   theme: prophetie
-  titre: Toutes les nations bénies
-- at: Genèse 49:10
-  nt: Apocalypse 5:5
+  titre:
+    ar: تتبارك جميع الأمم
+    en: All nations blessed
+    fr: Toutes les nations bénies
+- at:
+    ar: 'تكوين ٤٩: ١٠'
+    en: Genesis 49:10
+    fr: Genèse 49:10
+  nt:
+    ar: 'رؤيا ٥: ٥'
+    en: Revelation 5:5
+    fr: Apocalypse 5:5
   theme: prophetie
-  titre: Le lion de la tribu de Juda
-- at: Deutéronome 18:15
-  nt: Actes 3:22
+  titre:
+    ar: الأسد الذي من سبط يهوذا
+    en: The Lion of the tribe of Judah
+    fr: Le lion de la tribu de Juda
+- at:
+    ar: 'تثنية ١٨: ١٥'
+    en: Deuteronomy 18:15
+    fr: Deutéronome 18:15
+  nt:
+    ar: 'أعمال ٣: ٢٢'
+    en: Acts 3:22
+    fr: Actes 3:22
   theme: prophetie
-  titre: Le Prophète à venir
-- at: 2 Samuel 7:13
-  nt: Luc 1:32-33
+  titre:
+    ar: النبي الآتي
+    en: The Prophet to come
+    fr: Le Prophète à venir
+- at:
+    ar: '٢ صموئيل ٧: ١٣'
+    en: 2 Samuel 7:13
+    fr: 2 Samuel 7:13
+  nt:
+    ar: 'لوقا ١: ٣٢-٣٣'
+    en: Luke 1:32-33
+    fr: Luc 1:32-33
   theme: prophetie
-  titre: Le trône de David
-- at: Psaume 2:7
-  nt: Actes 13:33
+  titre:
+    ar: كرسي داود
+    en: The throne of David
+    fr: Le trône de David
+- at:
+    ar: 'مزمور ٢: ٧'
+    en: Psalm 2:7
+    fr: Psaume 2:7
+  nt:
+    ar: 'أعمال ١٣: ٣٣'
+    en: Acts 13:33
+    fr: Actes 13:33
   theme: prophetie
-  titre: « Tu es mon Fils »
-- at: Psaume 16:10
-  nt: Actes 2:31
+  titre:
+    ar: «أنت ابني»
+    en: “You are my Son”
+    fr: « Tu es mon Fils »
+- at:
+    ar: 'مزمور ١٦: ١٠'
+    en: Psalm 16:10
+    fr: Psaume 16:10
+  nt:
+    ar: 'أعمال ٢: ٣١'
+    en: Acts 2:31
+    fr: Actes 2:31
   theme: prophetie
-  titre: Il ne verra pas la corruption
-- at: Psaume 110:1
-  nt: Matthieu 22:44
+  titre:
+    ar: لن يرى فسادا
+    en: He will not see corruption
+    fr: Il ne verra pas la corruption
+- at:
+    ar: 'مزمور ١١٠: ١'
+    en: Psalm 110:1
+    fr: Psaume 110:1
+  nt:
+    ar: 'متى ٢٢: ٤٤'
+    en: Matthew 22:44
+    fr: Matthieu 22:44
   theme: prophetie
-  titre: Le Seigneur de David
-- at: Ésaïe 7:14
-  nt: Matthieu 1:23
+  titre:
+    ar: رب داود
+    en: David's Lord
+    fr: Le Seigneur de David
+- at:
+    ar: 'إشعياء ٧: ١٤'
+    en: Isaiah 7:14
+    fr: Ésaïe 7:14
+  nt:
+    ar: 'متى ١: ٢٣'
+    en: Matthew 1:23
+    fr: Matthieu 1:23
   theme: prophetie
-  titre: La vierge enfantera
-- at: Ésaïe 9:5
-  nt: Luc 2:11
+  titre:
+    ar: العذراء تلد ابنا
+    en: The virgin will bear a son
+    fr: La vierge enfantera
+- at:
+    ar: 'إشعياء ٩: ٥'
+    en: Isaiah 9:5
+    fr: Ésaïe 9:5
+  nt:
+    ar: 'لوقا ٢: ١١'
+    en: Luke 2:11
+    fr: Luc 2:11
   theme: prophetie
-  titre: Un enfant nous est né
-- at: Ésaïe 40:3
-  nt: Marc 1:3
+  titre:
+    ar: يولد لنا ولد
+    en: To us a child is born
+    fr: Un enfant nous est né
+- at:
+    ar: 'إشعياء ٤٠: ٣'
+    en: Isaiah 40:3
+    fr: Ésaïe 40:3
+  nt:
+    ar: 'مرقس ١: ٣'
+    en: Mark 1:3
+    fr: Marc 1:3
   theme: prophetie
-  titre: La voix dans le désert
-- at: Ésaïe 61:1
-  nt: Luc 4:21
+  titre:
+    ar: الصوت الصارخ في البرية
+    en: The voice in the wilderness
+    fr: La voix dans le désert
+- at:
+    ar: 'إشعياء ٦١: ١'
+    en: Isaiah 61:1
+    fr: Ésaïe 61:1
+  nt:
+    ar: 'لوقا ٤: ٢١'
+    en: Luke 4:21
+    fr: Luc 4:21
   theme: prophetie
-  titre: « Aujourd'hui, cette parole est accomplie »
-- at: Michée 5:1
-  nt: Matthieu 2:6
+  titre:
+    ar: «اليوم قد تم هذا المكتوب»
+    en: “Today this Scripture is fulfilled”
+    fr: « Aujourd'hui, cette parole est accomplie »
+- at:
+    ar: 'ميخا ٥: ١'
+    en: Micah 5:1
+    fr: Michée 5:1
+  nt:
+    ar: 'متى ٢: ٦'
+    en: Matthew 2:6
+    fr: Matthieu 2:6
   theme: prophetie
-  titre: Bethléhem
-- at: Osée 11:1
-  nt: Matthieu 2:15
+  titre:
+    ar: بيت لحم
+    en: Bethlehem
+    fr: Bethléhem
+- at:
+    ar: 'هوشع ١١: ١'
+    en: Hosea 11:1
+    fr: Osée 11:1
+  nt:
+    ar: 'متى ٢: ١٥'
+    en: Matthew 2:15
+    fr: Matthieu 2:15
   theme: prophetie
-  titre: Hors d'Égypte
-- at: Zacharie 9:9
-  nt: Matthieu 21:5
+  titre:
+    ar: من مصر
+    en: Out of Egypt
+    fr: Hors d'Égypte
+- at:
+    ar: 'زكريا ٩: ٩'
+    en: Zechariah 9:9
+    fr: Zacharie 9:9
+  nt:
+    ar: 'متى ٢١: ٥'
+    en: Matthew 21:5
+    fr: Matthieu 21:5
   theme: prophetie
-  titre: Le roi humble, sur un âne
-- at: Zacharie 11:12-13
-  nt: Matthieu 27:9
+  titre:
+    ar: الملك الوديع على حمار
+    en: The humble king, on a donkey
+    fr: Le roi humble, sur un âne
+- at:
+    ar: 'زكريا ١١: ١٢-١٣'
+    en: Zechariah 11:12-13
+    fr: Zacharie 11:12-13
+  nt:
+    ar: 'متى ٢٧: ٩'
+    en: Matthew 27:9
+    fr: Matthieu 27:9
   theme: prophetie
-  titre: Trente pièces d'argent
-- at: Malachie 3:1
-  nt: Matthieu 11:10
+  titre:
+    ar: ثلاثون من الفضة
+    en: Thirty pieces of silver
+    fr: Trente pièces d'argent
+- at:
+    ar: 'ملاخي ٣: ١'
+    en: Malachi 3:1
+    fr: Malachie 3:1
+  nt:
+    ar: 'متى ١١: ١٠'
+    en: Matthew 11:10
+    fr: Matthieu 11:10
   theme: prophetie
-  titre: Le messager qui prépare
-- at: Psaume 118:22
-  nt: Actes 4:11
+  titre:
+    ar: الملاك الذي يهيئ الطريق
+    en: The messenger who prepares
+    fr: Le messager qui prépare
+- at:
+    ar: 'مزمور ١١٨: ٢٢'
+    en: Psalm 118:22
+    fr: Psaume 118:22
+  nt:
+    ar: 'أعمال ٤: ١١'
+    en: Acts 4:11
+    fr: Actes 4:11
   theme: prophetie
-  titre: La pierre rejetée
-- at: Psaume 41:10
-  nt: Jean 13:18
+  titre:
+    ar: الحجر المرفوض
+    en: The rejected stone
+    fr: La pierre rejetée
+- at:
+    ar: 'مزمور ٤١: ١٠'
+    en: Psalm 41:10
+    fr: Psaume 41:10
+  nt:
+    ar: 'يوحنا ١٣: ١٨'
+    en: John 13:18
+    fr: Jean 13:18
   theme: prophetie
-  titre: L'ami qui trahit
-- at: Psaume 69:22
-  nt: Jean 19:29
+  titre:
+    ar: الصديق الذي يخون
+    en: The friend who betrays
+    fr: L'ami qui trahit
+- at:
+    ar: 'مزمور ٦٩: ٢٢'
+    en: Psalm 69:22
+    fr: Psaume 69:22
+  nt:
+    ar: 'يوحنا ١٩: ٢٩'
+    en: John 19:29
+    fr: Jean 19:29
   theme: prophetie
-  titre: Le vinaigre
-- at: Daniel 7:13
-  nt: Matthieu 26:64
+  titre:
+    ar: الخل
+    en: The vinegar
+    fr: Le vinaigre
+- at:
+    ar: 'دانيال ٧: ١٣'
+    en: Daniel 7:13
+    fr: Daniel 7:13
+  nt:
+    ar: 'متى ٢٦: ٦٤'
+    en: Matthew 26:64
+    fr: Matthieu 26:64
   theme: filshomme
-  titre: Le Fils de l'homme sur les nuées
-- at: Ésaïe 25:8
-  nt: 1 Corinthiens 15:54
+  titre:
+    ar: ابن الإنسان على السحاب
+    en: The Son of Man on the clouds
+    fr: Le Fils de l'homme sur les nuées
+- at:
+    ar: 'إشعياء ٢٥: ٨'
+    en: Isaiah 25:8
+    fr: Ésaïe 25:8
+  nt:
+    ar: '١ كورنثوس ١٥: ٥٤'
+    en: 1 Corinthians 15:54
+    fr: 1 Corinthiens 15:54
   theme: prophetie
-  titre: La mort engloutie
-- at: Ésaïe 28:16
-  nt: 1 Pierre 2:6
+  titre:
+    ar: ابتلاع الموت
+    en: Death swallowed up
+    fr: La mort engloutie
+- at:
+    ar: 'إشعياء ٢٨: ١٦'
+    en: Isaiah 28:16
+    fr: Ésaïe 28:16
+  nt:
+    ar: '١ بطرس ٢: ٦'
+    en: 1 Peter 2:6
+    fr: 1 Pierre 2:6
   theme: prophetie
-  titre: La pierre angulaire posée en Sion
-- at: Joël 3:1
-  nt: Actes 2:17
+  titre:
+    ar: حجر الزاوية الموضوع في صهيون
+    en: The cornerstone laid in Zion
+    fr: La pierre angulaire posée en Sion
+- at:
+    ar: 'يوئيل ٣: ١'
+    en: Joel 3:1
+    fr: Joël 3:1
+  nt:
+    ar: 'أعمال ٢: ١٧'
+    en: Acts 2:17
+    fr: Actes 2:17
   theme: prophetie
-  titre: L'Esprit répandu sur toute chair
-- at: Psaume 8:3
-  nt: Matthieu 21:16
+  titre:
+    ar: الروح المسكوب على كل بشر
+    en: The Spirit poured out on all flesh
+    fr: L'Esprit répandu sur toute chair
+- at:
+    ar: 'مزمور ٨: ٣'
+    en: Psalm 8:3
+    fr: Psaume 8:3
+  nt:
+    ar: 'متى ٢١: ١٦'
+    en: Matthew 21:16
+    fr: Matthieu 21:16
   theme: prophetie
-  titre: La louange des enfants
-- at: Genèse 9:13
-  nt: Apocalypse 4:3
+  titre:
+    ar: تسبيح الأطفال
+    en: The praise of children
+    fr: La louange des enfants
+- at:
+    ar: 'تكوين ٩: ١٣'
+    en: Genesis 9:13
+    fr: Genèse 9:13
+  nt:
+    ar: 'رؤيا ٤: ٣'
+    en: Revelation 4:3
+    fr: Apocalypse 4:3
   theme: alliance
-  titre: L'arc au-dessus du trône
-- at: Genèse 15:6
-  nt: Romains 4:3
+  titre:
+    ar: القوس فوق العرش
+    en: The bow above the throne
+    fr: L'arc au-dessus du trône
+- at:
+    ar: 'تكوين ١٥: ٦'
+    en: Genesis 15:6
+    fr: Genèse 15:6
+  nt:
+    ar: 'رومية ٤: ٣'
+    en: Romans 4:3
+    fr: Romains 4:3
   theme: alliance
-  titre: La foi comptée comme justice
-- at: Deutéronome 30:6
-  nt: Romains 2:29
+  titre:
+    ar: الإيمان محسوبًا برًّا
+    en: Faith counted as righteousness
+    fr: La foi comptée comme justice
+- at:
+    ar: 'تثنية ٣٠: ٦'
+    en: Deuteronomy 30:6
+    fr: Deutéronome 30:6
+  nt:
+    ar: 'رومية ٢: ٢٩'
+    en: Romans 2:29
+    fr: Romains 2:29
   theme: alliance
-  titre: La circoncision du cœur
-- at: Exode 19:6
-  nt: 1 Pierre 2:9
+  titre:
+    ar: ختان القلب
+    en: The circumcision of the heart
+    fr: La circoncision du cœur
+- at:
+    ar: 'خروج ١٩: ٦'
+    en: Exodus 19:6
+    fr: Exode 19:6
+  nt:
+    ar: '١ بطرس ٢: ٩'
+    en: 1 Peter 2:9
+    fr: 1 Pierre 2:9
   theme: alliance
-  titre: Un royaume de prêtres
-- at: Exode 24:8
-  nt: Matthieu 26:28
+  titre:
+    ar: مملكة كهنة
+    en: A kingdom of priests
+    fr: Un royaume de prêtres
+- at:
+    ar: 'خروج ٢٤: ٨'
+    en: Exodus 24:8
+    fr: Exode 24:8
+  nt:
+    ar: 'متى ٢٦: ٢٨'
+    en: Matthew 26:28
+    fr: Matthieu 26:28
   theme: alliance
-  titre: Le sang de l'alliance
-- at: Jérémie 31:31
-  nt: Luc 22:20
+  titre:
+    ar: دم العهد
+    en: The blood of the covenant
+    fr: Le sang de l'alliance
+- at:
+    ar: 'إرميا ٣١: ٣١'
+    en: Jeremiah 31:31
+    fr: Jérémie 31:31
+  nt:
+    ar: 'لوقا ٢٢: ٢٠'
+    en: Luke 22:20
+    fr: Luc 22:20
   theme: alliance
-  titre: La nouvelle alliance
-- at: Jérémie 31:33
-  nt: Hébreux 8:10
+  titre:
+    ar: العهد الجديد
+    en: The new covenant
+    fr: La nouvelle alliance
+- at:
+    ar: 'إرميا ٣١: ٣٣'
+    en: Jeremiah 31:33
+    fr: Jérémie 31:33
+  nt:
+    ar: 'عبرانيين ٨: ١٠'
+    en: Hebrews 8:10
+    fr: Hébreux 8:10
   theme: alliance
-  titre: La loi écrite dans les cœurs
-- at: Ézéchiel 36:26
-  nt: 2 Corinthiens 3:3
+  titre:
+    ar: الشريعة المكتوبة في القلوب
+    en: The law written on hearts
+    fr: La loi écrite dans les cœurs
+- at:
+    ar: 'حزقيال ٣٦: ٢٦'
+    en: Ezekiel 36:26
+    fr: Ézéchiel 36:26
+  nt:
+    ar: '٢ كورنثوس ٣: ٣'
+    en: 2 Corinthians 3:3
+    fr: 2 Corinthiens 3:3
   theme: alliance
-  titre: Un cœur de chair
-- at: Osée 2:25
-  nt: Romains 9:25
+  titre:
+    ar: قلب لحم
+    en: A heart of flesh
+    fr: Un cœur de chair
+- at:
+    ar: 'هوشع ٢: ٢٥'
+    en: Hosea 2:25
+    fr: Osée 2:25
+  nt:
+    ar: 'رومية ٩: ٢٥'
+    en: Romans 9:25
+    fr: Romains 9:25
   theme: alliance
-  titre: « Pas-mon-peuple » devient mon peuple
-- at: Genèse 2:24
-  nt: Éphésiens 5:31-32
+  titre:
+    ar: «لُوعَمِّي» يصير شعبي
+    en: “Not-my-people” becomes my people
+    fr: « Pas-mon-peuple » devient mon peuple
+- at:
+    ar: 'تكوين ٢: ٢٤'
+    en: Genesis 2:24
+    fr: Genèse 2:24
+  nt:
+    ar: 'أفسس ٥: ٣١-٣٢'
+    en: Ephesians 5:31-32
+    fr: Éphésiens 5:31-32
   theme: alliance
-  titre: L'alliance nuptiale
-- at: Exode 12:6
-  nt: 1 Corinthiens 5:7
+  titre:
+    ar: العهد الزوجي
+    en: The nuptial covenant
+    fr: L'alliance nuptiale
+- at:
+    ar: 'خروج ١٢: ٦'
+    en: Exodus 12:6
+    fr: Exode 12:6
+  nt:
+    ar: '١ كورنثوس ٥: ٧'
+    en: 1 Corinthians 5:7
+    fr: 1 Corinthiens 5:7
   theme: paque
-  titre: Christ, notre Pâque
-- at: Exode 12:14
-  nt: Luc 22:15
+  titre:
+    ar: المسيح فصحنا
+    en: Christ, our Passover
+    fr: Christ, notre Pâque
+- at:
+    ar: 'خروج ١٢: ١٤'
+    en: Exodus 12:14
+    fr: Exode 12:14
+  nt:
+    ar: 'لوقا ٢٢: ١٥'
+    en: Luke 22:15
+    fr: Luc 22:15
   theme: paque
-  titre: La Pâque désirée
-- at: Exode 16:4
-  nt: Jean 6:32-35
+  titre:
+    ar: الفصح المشتهى
+    en: The Passover he longed for
+    fr: La Pâque désirée
+- at:
+    ar: 'خروج ١٦: ٤'
+    en: Exodus 16:4
+    fr: Exode 16:4
+  nt:
+    ar: 'يوحنا ٦: ٣٢-٣٥'
+    en: John 6:32-35
+    fr: Jean 6:32-35
   theme: paque
-  titre: Le vrai pain du ciel
-- at: Psaume 78:24
-  nt: Jean 6:31
+  titre:
+    ar: الخبز الحقيقي من السماء
+    en: The true bread from heaven
+    fr: Le vrai pain du ciel
+- at:
+    ar: 'مزمور ٧٨: ٢٤'
+    en: Psalm 78:24
+    fr: Psaume 78:24
+  nt:
+    ar: 'يوحنا ٦: ٣١'
+    en: John 6:31
+    fr: Jean 6:31
   theme: paque
-  titre: Le blé des cieux
-- at: Exode 17:6
-  nt: 1 Corinthiens 10:4
+  titre:
+    ar: برّ السماء
+    en: The grain of heaven
+    fr: Le blé des cieux
+- at:
+    ar: 'خروج ١٧: ٦'
+    en: Exodus 17:6
+    fr: Exode 17:6
+  nt:
+    ar: '١ كورنثوس ١٠: ٤'
+    en: 1 Corinthians 10:4
+    fr: 1 Corinthiens 10:4
   theme: paque
-  titre: Le rocher frappé
-- at: Genèse 14:18
-  nt: Hébreux 7:1-3
+  titre:
+    ar: الصخرة المضروبة
+    en: The stricken rock
+    fr: Le rocher frappé
+- at:
+    ar: 'تكوين ١٤: ١٨'
+    en: Genesis 14:18
+    fr: Genèse 14:18
+  nt:
+    ar: 'عبرانيين ٧: ١-٣'
+    en: Hebrews 7:1-3
+    fr: Hébreux 7:1-3
   theme: paque
-  titre: Le pain et le vin de Melchisédek
-- at: Proverbes 9:5
-  nt: Jean 6:51
+  titre:
+    ar: خبز ملكي صادق وخمره
+    en: The bread and wine of Melchizedek
+    fr: Le pain et le vin de Melchisédek
+- at:
+    ar: 'أمثال ٩: ٥'
+    en: Proverbs 9:5
+    fr: Proverbes 9:5
+  nt:
+    ar: 'يوحنا ٦: ٥١'
+    en: John 6:51
+    fr: Jean 6:51
   theme: paque
-  titre: « Venez, mangez de mon pain »
-- at: Lévitique 23:10
-  nt: 1 Corinthiens 15:20
+  titre:
+    ar: «هلموا كلوا من طعامي»
+    en: “Come, eat of my bread”
+    fr: « Venez, mangez de mon pain »
+- at:
+    ar: 'لاويين ٢٣: ١٠'
+    en: Leviticus 23:10
+    fr: Lévitique 23:10
+  nt:
+    ar: '١ كورنثوس ١٥: ٢٠'
+    en: 1 Corinthians 15:20
+    fr: 1 Corinthiens 15:20
   theme: paque
-  titre: Les prémices
-- at: Ésaïe 55:1
-  nt: Apocalypse 22:17
+  titre:
+    ar: الباكورة
+    en: The first fruits
+    fr: Les prémices
+- at:
+    ar: 'إشعياء ٥٥: ١'
+    en: Isaiah 55:1
+    fr: Ésaïe 55:1
+  nt:
+    ar: 'رؤيا ٢٢: ١٧'
+    en: Revelation 22:17
+    fr: Apocalypse 22:17
   theme: paque
-  titre: Venez, sans argent
-- at: Genèse 2:7
-  nt: 1 Corinthiens 15:45
+  titre:
+    ar: هلموا بلا فضة
+    en: Come, without money
+    fr: Venez, sans argent
+- at:
+    ar: 'تكوين ٢: ٧'
+    en: Genesis 2:7
+    fr: Genèse 2:7
+  nt:
+    ar: '١ كورنثوس ١٥: ٤٥'
+    en: 1 Corinthians 15:45
+    fr: 1 Corinthiens 15:45
   theme: figures
-  titre: Le premier et le dernier Adam
-- at: Genèse 3:6
-  nt: Romains 5:19
+  titre:
+    ar: آدم الأول وآدم الأخير
+    en: The first and the last Adam
+    fr: Le premier et le dernier Adam
+- at:
+    ar: 'تكوين ٣: ٦'
+    en: Genesis 3:6
+    fr: Genèse 3:6
+  nt:
+    ar: 'رومية ٥: ١٩'
+    en: Romans 5:19
+    fr: Romains 5:19
   theme: figures
-  titre: Par un seul homme
-- at: Genèse 6:14
-  nt: 1 Pierre 3:20-21
+  titre:
+    ar: بإنسان واحد
+    en: Through one man
+    fr: Par un seul homme
+- at:
+    ar: 'تكوين ٦: ١٤'
+    en: Genesis 6:14
+    fr: Genèse 6:14
+  nt:
+    ar: '١ بطرس ٣: ٢٠-٢١'
+    en: 1 Peter 3:20-21
+    fr: 1 Pierre 3:20-21
   theme: figures
-  titre: L'arche et le baptême
-- at: Genèse 28:12
-  nt: Jean 1:51
+  titre:
+    ar: الفلك والمعمودية
+    en: The Ark and Baptism
+    fr: L'arche et le baptême
+- at:
+    ar: 'تكوين ٢٨: ١٢'
+    en: Genesis 28:12
+    fr: Genèse 28:12
+  nt:
+    ar: 'يوحنا ١: ٥١'
+    en: John 1:51
+    fr: Jean 1:51
   theme: figures
-  titre: L'échelle de Jacob
-- at: Genèse 37:28
-  nt: Matthieu 26:15
+  titre:
+    ar: سلّم يعقوب
+    en: Jacob's Ladder
+    fr: L'échelle de Jacob
+- at:
+    ar: 'تكوين ٣٧: ٢٨'
+    en: Genesis 37:28
+    fr: Genèse 37:28
+  nt:
+    ar: 'متى ٢٦: ١٥'
+    en: Matthew 26:15
+    fr: Matthieu 26:15
   theme: figures
-  titre: Vendu par les siens
-- at: Exode 2:14
-  nt: Actes 7:35
+  titre:
+    ar: مُباعٌ من ذويه
+    en: Sold by His Own
+    fr: Vendu par les siens
+- at:
+    ar: 'خروج ٢: ١٤'
+    en: Exodus 2:14
+    fr: Exode 2:14
+  nt:
+    ar: 'أعمال ٧: ٣٥'
+    en: Acts 7:35
+    fr: Actes 7:35
   theme: figures
-  titre: Le libérateur d'abord rejeté
-- at: Josué 1:2
-  nt: Hébreux 4:8
+  titre:
+    ar: الفادي المرفوض أولاً
+    en: The Deliverer First Rejected
+    fr: Le libérateur d'abord rejeté
+- at:
+    ar: 'يشوع ١: ٢'
+    en: Joshua 1:2
+    fr: Josué 1:2
+  nt:
+    ar: 'عبرانيين ٤: ٨'
+    en: Hebrews 4:8
+    fr: Hébreux 4:8
   theme: figures
-  titre: Un repos plus grand que Josué
-- at: Jonas 2:1
-  nt: Matthieu 12:40
+  titre:
+    ar: راحة أعظم من يشوع
+    en: A Rest Greater than Joshua
+    fr: Un repos plus grand que Josué
+- at:
+    ar: 'يونان ٢: ١'
+    en: Jonah 2:1
+    fr: Jonas 2:1
+  nt:
+    ar: 'متى ١٢: ٤٠'
+    en: Matthew 12:40
+    fr: Matthieu 12:40
   theme: figures
-  titre: Le signe de Jonas
-- at: 2 Rois 4:43-44
-  nt: Jean 6:11-13
+  titre:
+    ar: آية يونان
+    en: The Sign of Jonah
+    fr: Le signe de Jonas
+- at:
+    ar: '٢ ملوك ٤: ٤٣-٤٤'
+    en: 2 Kings 4:43-44
+    fr: 2 Rois 4:43-44
+  nt:
+    ar: 'يوحنا ٦: ١١-١٣'
+    en: John 6:11-13
+    fr: Jean 6:11-13
   theme: figures
-  titre: Les pains multipliés
-- at: Exode 25:8
-  nt: Jean 1:14
+  titre:
+    ar: تكثير الأرغفة
+    en: The Loaves Multiplied
+    fr: Les pains multipliés
+- at:
+    ar: 'خروج ٢٥: ٨'
+    en: Exodus 25:8
+    fr: Exode 25:8
+  nt:
+    ar: 'يوحنا ١: ١٤'
+    en: John 1:14
+    fr: Jean 1:14
   theme: temple
-  titre: Dieu habite parmi nous
-- at: Exode 26:33
-  nt: Matthieu 27:51
+  titre:
+    ar: الله يسكن في وسطنا
+    en: God Dwells Among Us
+    fr: Dieu habite parmi nous
+- at:
+    ar: 'خروج ٢٦: ٣٣'
+    en: Exodus 26:33
+    fr: Exode 26:33
+  nt:
+    ar: 'متى ٢٧: ٥١'
+    en: Matthew 27:51
+    fr: Matthieu 27:51
   theme: temple
-  titre: Le voile déchiré
-- at: Exode 26:33
-  nt: Hébreux 10:20
+  titre:
+    ar: الحجاب المنشق
+    en: The Torn Veil
+    fr: Le voile déchiré
+- at:
+    ar: 'خروج ٢٦: ٣٣'
+    en: Exodus 26:33
+    fr: Exode 26:33
+  nt:
+    ar: 'عبرانيين ١٠: ٢٠'
+    en: Hebrews 10:20
+    fr: Hébreux 10:20
   theme: temple
-  titre: Un chemin au travers du voile
-- at: Lévitique 16:15
-  nt: Hébreux 9:12
+  titre:
+    ar: طريق عبر الحجاب
+    en: A Way Through the Veil
+    fr: Un chemin au travers du voile
+- at:
+    ar: 'لاويين ١٦: ١٥'
+    en: Leviticus 16:15
+    fr: Lévitique 16:15
+  nt:
+    ar: 'عبرانيين ٩: ١٢'
+    en: Hebrews 9:12
+    fr: Hébreux 9:12
   theme: temple
-  titre: Le grand prêtre entre une fois
-- at: Psaume 110:4
-  nt: Hébreux 7:17
+  titre:
+    ar: رئيس الكهنة يدخل مرة واحدة
+    en: The High Priest Enters Once
+    fr: Le grand prêtre entre une fois
+- at:
+    ar: 'مزمور ١١٠: ٤'
+    en: Psalm 110:4
+    fr: Psaume 110:4
+  nt:
+    ar: 'عبرانيين ٧: ١٧'
+    en: Hebrews 7:17
+    fr: Hébreux 7:17
   theme: temple
-  titre: Prêtre pour toujours
-- at: 1 Rois 8:11
-  nt: Jean 2:19-21
+  titre:
+    ar: كاهن إلى الأبد
+    en: A Priest Forever
+    fr: Prêtre pour toujours
+- at:
+    ar: '١ ملوك ٨: ١١'
+    en: 1 Kings 8:11
+    fr: 1 Rois 8:11
+  nt:
+    ar: 'يوحنا ٢: ١٩-٢١'
+    en: John 2:19-21
+    fr: Jean 2:19-21
   theme: temple
-  titre: Le temple de son corps
-- at: Ézéchiel 47:1
-  nt: Jean 7:38
+  titre:
+    ar: هيكل جسده
+    en: The Temple of His Body
+    fr: Le temple de son corps
+- at:
+    ar: 'حزقيال ٤٧: ١'
+    en: Ezekiel 47:1
+    fr: Ézéchiel 47:1
+  nt:
+    ar: 'يوحنا ٧: ٣٨'
+    en: John 7:38
+    fr: Jean 7:38
   theme: temple
-  titre: Le fleuve qui sort du temple
-- at: Ézéchiel 47:1
-  nt: Apocalypse 22:1
+  titre:
+    ar: النهر الخارج من الهيكل
+    en: The River Flowing from the Temple
+    fr: Le fleuve qui sort du temple
+- at:
+    ar: 'حزقيال ٤٧: ١'
+    en: Ezekiel 47:1
+    fr: Ézéchiel 47:1
+  nt:
+    ar: 'رؤيا ٢٢: ١'
+    en: Revelation 22:1
+    fr: Apocalypse 22:1
   theme: temple
-  titre: Le fleuve de la vie
-- at: Zacharie 6:12
-  nt: Jean 2:19
+  titre:
+    ar: نهر الحياة
+    en: The River of Life
+    fr: Le fleuve de la vie
+- at:
+    ar: 'زكريا ٦: ١٢'
+    en: Zechariah 6:12
+    fr: Zacharie 6:12
+  nt:
+    ar: 'يوحنا ٢: ١٩'
+    en: John 2:19
+    fr: Jean 2:19
   theme: temple
-  titre: Le Germe bâtira le temple
-- at: Ésaïe 66:1
-  nt: Actes 7:49
+  titre:
+    ar: الغصن يبني الهيكل
+    en: The Branch Will Build the Temple
+    fr: Le Germe bâtira le temple
+- at:
+    ar: 'إشعياء ٦٦: ١'
+    en: Isaiah 66:1
+    fr: Ésaïe 66:1
+  nt:
+    ar: 'أعمال ٧: ٤٩'
+    en: Acts 7:49
+    fr: Actes 7:49
   theme: temple
-  titre: Le ciel est mon trône
-- at: Daniel 7:14
-  nt: Matthieu 28:18
+  titre:
+    ar: السماوات كرسيي
+    en: Heaven Is My Throne
+    fr: Le ciel est mon trône
+- at:
+    ar: 'دانيال ٧: ١٤'
+    en: Daniel 7:14
+    fr: Daniel 7:14
+  nt:
+    ar: 'متى ٢٨: ١٨'
+    en: Matthew 28:18
+    fr: Matthieu 28:18
   theme: filshomme
-  titre: Une domination éternelle
-- at: Psaume 8:5-7
-  nt: Hébreux 2:8-9
+  titre:
+    ar: سلطان أبدي
+    en: An Everlasting Dominion
+    fr: Une domination éternelle
+- at:
+    ar: 'مزمور ٨: ٥-٧'
+    en: Psalm 8:5-7
+    fr: Psaume 8:5-7
+  nt:
+    ar: 'عبرانيين ٢: ٨-٩'
+    en: Hebrews 2:8-9
+    fr: Hébreux 2:8-9
   theme: filshomme
-  titre: « Qu'est-ce que le fils de l'homme ? »
-- at: Ézéchiel 2:1
-  nt: Marc 2:10
+  titre:
+    ar: «من هو ابن الإنسان؟»
+    en: “What Is the Son of Man?”
+    fr: « Qu'est-ce que le fils de l'homme ? »
+- at:
+    ar: 'حزقيال ٢: ١'
+    en: Ezekiel 2:1
+    fr: Ézéchiel 2:1
+  nt:
+    ar: 'مرقس ٢: ١٠'
+    en: Mark 2:10
+    fr: Marc 2:10
   theme: filshomme
-  titre: Le titre préféré de Jésus
-- at: Daniel 7:13
-  nt: Apocalypse 1:13
+  titre:
+    ar: اللقب المفضّل لدى يسوع
+    en: Jesus' Favorite Title
+    fr: Le titre préféré de Jésus
+- at:
+    ar: 'دانيال ٧: ١٣'
+    en: Daniel 7:13
+    fr: Daniel 7:13
+  nt:
+    ar: 'رؤيا ١: ١٣'
+    en: Revelation 1:13
+    fr: Apocalypse 1:13
   theme: filshomme
-  titre: Au milieu des chandeliers
-- at: Daniel 7:13
-  nt: Apocalypse 14:14
+  titre:
+    ar: في وسط المناير
+    en: Among the Lampstands
+    fr: Au milieu des chandeliers
+- at:
+    ar: 'دانيال ٧: ١٣'
+    en: Daniel 7:13
+    fr: Daniel 7:13
+  nt:
+    ar: 'رؤيا ١٤: ١٤'
+    en: Revelation 14:14
+    fr: Apocalypse 14:14
   theme: filshomme
-  titre: La moisson du Fils de l'homme
-- at: Psaume 80:18
-  nt: Luc 22:69
+  titre:
+    ar: حصاد ابن الإنسان
+    en: The Harvest of the Son of Man
+    fr: La moisson du Fils de l'homme
+- at:
+    ar: 'مزمور ٨٠: ١٨'
+    en: Psalm 80:18
+    fr: Psaume 80:18
+  nt:
+    ar: 'لوقا ٢٢: ٦٩'
+    en: Luke 22:69
+    fr: Luc 22:69
   theme: filshomme
-  titre: L'homme de ta droite
-- at: Psaume 8:7
-  nt: 1 Corinthiens 15:27
+  titre:
+    ar: رجل يمينك
+    en: The Man of Your Right Hand
+    fr: L'homme de ta droite
+- at:
+    ar: 'مزمور ٨: ٧'
+    en: Psalm 8:7
+    fr: Psaume 8:7
+  nt:
+    ar: '١ كورنثوس ١٥: ٢٧'
+    en: 1 Corinthians 15:27
+    fr: 1 Corinthiens 15:27
   theme: filshomme
-  titre: Tout sous ses pieds
-- at: Genèse 1:26
-  nt: Colossiens 1:16
+  titre:
+    ar: كل شيء تحت قدميه
+    en: All Things Under His Feet
+    fr: Tout sous ses pieds
+- at:
+    ar: 'تكوين ١: ٢٦'
+    en: Genesis 1:26
+    fr: Genèse 1:26
+  nt:
+    ar: 'كولوسي ١: ١٦'
+    en: Colossians 1:16
+    fr: Colossiens 1:16
   theme: trinite
-  titre: « Faisons l'homme »
-- at: Genèse 1:2
-  nt: Luc 1:35
+  titre:
+    ar: «نعمل الإنسان»
+    en: “Let Us Make Man”
+    fr: « Faisons l'homme »
+- at:
+    ar: 'تكوين ١: ٢'
+    en: Genesis 1:2
+    fr: Genèse 1:2
+  nt:
+    ar: 'لوقا ١: ٣٥'
+    en: Luke 1:35
+    fr: Luc 1:35
   theme: trinite
-  titre: L'Esprit qui couvre
-- at: Psaume 33:6
-  nt: Jean 1:3
+  titre:
+    ar: الروح الذي يظلّل
+    en: The Spirit Who Overshadows
+    fr: L'Esprit qui couvre
+- at:
+    ar: 'مزمور ٣٣: ٦'
+    en: Psalm 33:6
+    fr: Psaume 33:6
+  nt:
+    ar: 'يوحنا ١: ٣'
+    en: John 1:3
+    fr: Jean 1:3
   theme: trinite
-  titre: Par sa Parole et son Souffle
-- at: Exode 3:14
-  nt: Jean 8:58
+  titre:
+    ar: بكلمته ونسمة فيه
+    en: By His Word and His Breath
+    fr: Par sa Parole et son Souffle
+- at:
+    ar: 'خروج ٣: ١٤'
+    en: Exodus 3:14
+    fr: Exode 3:14
+  nt:
+    ar: 'يوحنا ٨: ٥٨'
+    en: John 8:58
+    fr: Jean 8:58
   theme: trinite
-  titre: « JE SUIS »
-- at: Deutéronome 6:4
-  nt: 1 Corinthiens 8:6
+  titre:
+    ar: «أهيه»
+    en: “I AM”
+    fr: « JE SUIS »
+- at:
+    ar: 'تثنية ٦: ٤'
+    en: Deuteronomy 6:4
+    fr: Deutéronome 6:4
+  nt:
+    ar: '١ كورنثوس ٨: ٦'
+    en: 1 Corinthians 8:6
+    fr: 1 Corinthiens 8:6
   theme: trinite
-  titre: Le Shema élargi
-- at: Ésaïe 6:3
-  nt: Jean 12:41
+  titre:
+    ar: «اسمع يا إسرائيل» موسَّعة
+    en: The Shema Enlarged
+    fr: Le Shema élargi
+- at:
+    ar: 'إشعياء ٦: ٣'
+    en: Isaiah 6:3
+    fr: Ésaïe 6:3
+  nt:
+    ar: 'يوحنا ١٢: ٤١'
+    en: John 12:41
+    fr: Jean 12:41
   theme: trinite
-  titre: La gloire qu'Ésaïe a vue
-- at: Psaume 45:7-8
-  nt: Hébreux 1:8-9
+  titre:
+    ar: المجد الذي رآه إشعياء
+    en: The Glory Isaiah Saw
+    fr: La gloire qu'Ésaïe a vue
+- at:
+    ar: 'مزمور ٤٥: ٧-٨'
+    en: Psalm 45:7-8
+    fr: Psaume 45:7-8
+  nt:
+    ar: 'عبرانيين ١: ٨-٩'
+    en: Hebrews 1:8-9
+    fr: Hébreux 1:8-9
   theme: trinite
-  titre: « Ton trône, ô Dieu »
-- at: Psaume 102:26-28
-  nt: Hébreux 1:10-12
+  titre:
+    ar: «كرسيك يا الله»
+    en: “Your Throne, O God”
+    fr: « Ton trône, ô Dieu »
+- at:
+    ar: 'مزمور ١٠٢: ٢٦-٢٨'
+    en: Psalm 102:26-28
+    fr: Psaume 102:26-28
+  nt:
+    ar: 'عبرانيين ١: ١٠-١٢'
+    en: Hebrews 1:10-12
+    fr: Hébreux 1:10-12
   theme: trinite
-  titre: Le Fils créateur
-- at: Joël 3:5
-  nt: Romains 10:13
+  titre:
+    ar: الابن الخالق
+    en: The Creator Son
+    fr: Le Fils créateur
+- at:
+    ar: 'يوئيل ٣: ٥'
+    en: Joel 3:5
+    fr: Joël 3:5
+  nt:
+    ar: 'رومية ١٠: ١٣'
+    en: Romans 10:13
+    fr: Romains 10:13
   theme: trinite
-  titre: Invoquer le Nom
-- at: Ésaïe 44:6
-  nt: Apocalypse 22:13
+  titre:
+    ar: الدعاء بالاسم
+    en: Calling on the Name
+    fr: Invoquer le Nom
+- at:
+    ar: 'إشعياء ٤٤: ٦'
+    en: Isaiah 44:6
+    fr: Ésaïe 44:6
+  nt:
+    ar: 'رؤيا ٢٢: ١٣'
+    en: Revelation 22:13
+    fr: Apocalypse 22:13
   theme: trinite
-  titre: Le premier et le dernier
-- at: Ésaïe 42:1
-  nt: Matthieu 3:16-17
+  titre:
+    ar: الأول والآخر
+    en: The First and the Last
+    fr: Le premier et le dernier
+- at:
+    ar: 'إشعياء ٤٢: ١'
+    en: Isaiah 42:1
+    fr: Ésaïe 42:1
+  nt:
+    ar: 'متى ٣: ١٦-١٧'
+    en: Matthew 3:16-17
+    fr: Matthieu 3:16-17
   theme: trinite
-  titre: La scène du Jourdain
-- at: Psaume 69:10
-  nt: Jean 2:17
+  titre:
+    ar: مشهد الأردن
+    en: The Scene at the Jordan
+    fr: La scène du Jourdain
+- at:
+    ar: 'مزمور ٦٩: ١٠'
+    en: Psalm 69:10
+    fr: Psaume 69:10
+  nt:
+    ar: 'يوحنا ٢: ١٧'
+    en: John 2:17
+    fr: Jean 2:17
   theme: prophetie
-  titre: Le zèle de ta maison
-- at: Psaume 69:5
-  nt: Jean 15:25
+  titre:
+    ar: غيرة بيتك
+    en: The Zeal of Your House
+    fr: Le zèle de ta maison
+- at:
+    ar: 'مزمور ٦٩: ٥'
+    en: Psalm 69:5
+    fr: Psaume 69:5
+  nt:
+    ar: 'يوحنا ١٥: ٢٥'
+    en: John 15:25
+    fr: Jean 15:25
   theme: prophetie
-  titre: Haï sans cause
-- at: Ésaïe 8:14
-  nt: Romains 9:33
+  titre:
+    ar: مُبغَض بلا سبب
+    en: Hated Without a Cause
+    fr: Haï sans cause
+- at:
+    ar: 'إشعياء ٨: ١٤'
+    en: Isaiah 8:14
+    fr: Ésaïe 8:14
+  nt:
+    ar: 'رومية ٩: ٣٣'
+    en: Romans 9:33
+    fr: Romains 9:33
   theme: prophetie
-  titre: Pierre d'achoppement
-- at: Ésaïe 11:10
-  nt: Romains 15:12
+  titre:
+    ar: حجر صدمة
+    en: A Stone of Stumbling
+    fr: Pierre d'achoppement
+- at:
+    ar: 'إشعياء ١١: ١٠'
+    en: Isaiah 11:10
+    fr: Ésaïe 11:10
+  nt:
+    ar: 'رومية ١٥: ١٢'
+    en: Romans 15:12
+    fr: Romains 15:12
   theme: prophetie
-  titre: La racine d'Isaï
-- at: Ésaïe 49:6
-  nt: Actes 13:47
+  titre:
+    ar: أصل يسّى
+    en: The Root of Jesse
+    fr: La racine d'Isaï
+- at:
+    ar: 'إشعياء ٤٩: ٦'
+    en: Isaiah 49:6
+    fr: Ésaïe 49:6
+  nt:
+    ar: 'أعمال ١٣: ٤٧'
+    en: Acts 13:47
+    fr: Actes 13:47
   theme: prophetie
-  titre: Lumière des nations
-- at: Ésaïe 50:6
-  nt: Matthieu 26:67
+  titre:
+    ar: نور للأمم
+    en: A Light to the Nations
+    fr: Lumière des nations
+- at:
+    ar: 'إشعياء ٥٠: ٦'
+    en: Isaiah 50:6
+    fr: Ésaïe 50:6
+  nt:
+    ar: 'متى ٢٦: ٦٧'
+    en: Matthew 26:67
+    fr: Matthieu 26:67
   theme: prophetie
-  titre: Le dos livré
-- at: Amos 8:9
-  nt: Matthieu 27:45
+  titre:
+    ar: الظهر المبذول
+    en: The Back Given Up
+    fr: Le dos livré
+- at:
+    ar: 'عاموس ٨: ٩'
+    en: Amos 8:9
+    fr: Amos 8:9
+  nt:
+    ar: 'متى ٢٧: ٤٥'
+    en: Matthew 27:45
+    fr: Matthieu 27:45
   theme: prophetie
-  titre: Le soleil couché à midi
-- at: Psaume 31:6
-  nt: Luc 23:46
+  titre:
+    ar: الشمس تغيب في الظهر
+    en: The Sun Set at Noon
+    fr: Le soleil couché à midi
+- at:
+    ar: 'مزمور ٣١: ٦'
+    en: Psalm 31:6
+    fr: Psaume 31:6
+  nt:
+    ar: 'لوقا ٢٣: ٤٦'
+    en: Luke 23:46
+    fr: Luc 23:46
   theme: prophetie
-  titre: Entre tes mains
-- at: Ésaïe 35:5-6
-  nt: Matthieu 11:5
+  titre:
+    ar: في يديك
+    en: Into Your Hands
+    fr: Entre tes mains
+- at:
+    ar: 'إشعياء ٣٥: ٥-٦'
+    en: Isaiah 35:5-6
+    fr: Ésaïe 35:5-6
+  nt:
+    ar: 'متى ١١: ٥'
+    en: Matthew 11:5
+    fr: Matthieu 11:5
   theme: prophetie
-  titre: Les signes du Messie
-- at: Malachie 4:5
-  nt: Matthieu 17:11-13
+  titre:
+    ar: علامات المسيّا
+    en: The Signs of the Messiah
+    fr: Les signes du Messie
+- at:
+    ar: 'ملاخي ٤: ٥'
+    en: Malachi 4:5
+    fr: Malachie 4:5
+  nt:
+    ar: 'متى ١٧: ١١-١٣'
+    en: Matthew 17:11-13
+    fr: Matthieu 17:11-13
   theme: prophetie
-  titre: Élie doit venir
-- at: Osée 6:2
-  nt: 1 Corinthiens 15:4
+  titre:
+    ar: لا بد أن يأتي إيليا
+    en: Elijah Must Come
+    fr: Élie doit venir
+- at:
+    ar: 'هوشع ٦: ٢'
+    en: Hosea 6:2
+    fr: Osée 6:2
+  nt:
+    ar: '١ كورنثوس ١٥: ٤'
+    en: 1 Corinthians 15:4
+    fr: 1 Corinthiens 15:4
   theme: prophetie
-  titre: Le troisième jour
-- at: Psaume 68:19
-  nt: Éphésiens 4:8
+  titre:
+    ar: اليوم الثالث
+    en: The Third Day
+    fr: Le troisième jour
+- at:
+    ar: 'مزمور ٦٨: ١٩'
+    en: Psalm 68:19
+    fr: Psaume 68:19
+  nt:
+    ar: 'أفسس ٤: ٨'
+    en: Ephesians 4:8
+    fr: Éphésiens 4:8
   theme: prophetie
-  titre: Monté en haut
-- at: Nombres 24:17
-  nt: Matthieu 2:2
+  titre:
+    ar: صعد إلى العلاء
+    en: Ascended on High
+    fr: Monté en haut
+- at:
+    ar: 'عدد ٢٤: ١٧'
+    en: Numbers 24:17
+    fr: Nombres 24:17
+  nt:
+    ar: 'متى ٢: ٢'
+    en: Matthew 2:2
+    fr: Matthieu 2:2
   theme: prophetie
-  titre: L'étoile de Jacob
-- at: Ésaïe 60:6
-  nt: Matthieu 2:11
+  titre:
+    ar: كوكب يعقوب
+    en: The Star of Jacob
+    fr: L'étoile de Jacob
+- at:
+    ar: 'إشعياء ٦٠: ٦'
+    en: Isaiah 60:6
+    fr: Ésaïe 60:6
+  nt:
+    ar: 'متى ٢: ١١'
+    en: Matthew 2:11
+    fr: Matthieu 2:11
   theme: prophetie
-  titre: L'or et l'encens
-- at: Psaume 22:9
-  nt: Matthieu 27:43
+  titre:
+    ar: الذهب واللبان
+    en: Gold and Frankincense
+    fr: L'or et l'encens
+- at:
+    ar: 'مزمور ٢٢: ٩'
+    en: Psalm 22:9
+    fr: Psaume 22:9
+  nt:
+    ar: 'متى ٢٧: ٤٣'
+    en: Matthew 27:43
+    fr: Matthieu 27:43
   theme: prophetie
-  titre: « Qu'il le délivre ! »
-- at: Ésaïe 52:15
-  nt: Romains 15:21
+  titre:
+    ar: «فلينقذه!»
+    en: “Let Him Deliver Him!”
+    fr: « Qu'il le délivre ! »
+- at:
+    ar: 'إشعياء ٥٢: ١٥'
+    en: Isaiah 52:15
+    fr: Ésaïe 52:15
+  nt:
+    ar: 'رومية ١٥: ٢١'
+    en: Romans 15:21
+    fr: Romains 15:21
   theme: prophetie
-  titre: Ceux qui n'avaient pas entendu
-- at: Psaume 118:26
-  nt: Matthieu 21:9
+  titre:
+    ar: الذين لم يسمعوا
+    en: Those Who Had Not Heard
+    fr: Ceux qui n'avaient pas entendu
+- at:
+    ar: 'مزمور ١١٨: ٢٦'
+    en: Psalm 118:26
+    fr: Psaume 118:26
+  nt:
+    ar: 'متى ٢١: ٩'
+    en: Matthew 21:9
+    fr: Matthieu 21:9
   theme: prophetie
-  titre: Béni soit celui qui vient
-- at: Lévitique 1:4
-  nt: 2 Corinthiens 5:21
+  titre:
+    ar: مبارك الآتي
+    en: Blessed Is He Who Comes
+    fr: Béni soit celui qui vient
+- at:
+    ar: 'لاويين ١: ٤'
+    en: Leviticus 1:4
+    fr: Lévitique 1:4
+  nt:
+    ar: '٢ كورنثوس ٥: ٢١'
+    en: 2 Corinthians 5:21
+    fr: 2 Corinthiens 5:21
   theme: agneau
-  titre: La main posée sur la tête
-- at: Deutéronome 21:23
-  nt: Galates 3:13
+  titre:
+    ar: اليد الموضوعة على الرأس
+    en: The Hand Laid on the Head
+    fr: La main posée sur la tête
+- at:
+    ar: 'تثنية ٢١: ٢٣'
+    en: Deuteronomy 21:23
+    fr: Deutéronome 21:23
+  nt:
+    ar: 'غلاطية ٣: ١٣'
+    en: Galatians 3:13
+    fr: Galates 3:13
   theme: agneau
-  titre: La malédiction du bois
-- at: Ésaïe 53:4
-  nt: Matthieu 8:17
+  titre:
+    ar: لعنة الخشبة
+    en: The Curse of the Tree
+    fr: La malédiction du bois
+- at:
+    ar: 'إشعياء ٥٣: ٤'
+    en: Isaiah 53:4
+    fr: Ésaïe 53:4
+  nt:
+    ar: 'متى ٨: ١٧'
+    en: Matthew 8:17
+    fr: Matthieu 8:17
   theme: agneau
-  titre: Nos maladies portées
-- at: Ésaïe 53:9
-  nt: 1 Pierre 2:22
+  titre:
+    ar: حمل أمراضنا
+    en: Our Diseases Borne
+    fr: Nos maladies portées
+- at:
+    ar: 'إشعياء ٥٣: ٩'
+    en: Isaiah 53:9
+    fr: Ésaïe 53:9
+  nt:
+    ar: '١ بطرس ٢: ٢٢'
+    en: 1 Peter 2:22
+    fr: 1 Pierre 2:22
   theme: agneau
-  titre: Ni violence ni fraude
-- at: Psaume 34:21
-  nt: Jean 19:36
+  titre:
+    ar: لا ظلم ولا غش
+    en: Neither Violence nor Deceit
+    fr: Ni violence ni fraude
+- at:
+    ar: 'مزمور ٣٤: ٢١'
+    en: Psalm 34:21
+    fr: Psaume 34:21
+  nt:
+    ar: 'يوحنا ١٩: ٣٦'
+    en: John 19:36
+    fr: Jean 19:36
   theme: agneau
-  titre: Il garde tous ses os
-- at: Lévitique 16:27
-  nt: Hébreux 13:12
+  titre:
+    ar: يحفظ جميع عظامه
+    en: He Keeps All His Bones
+    fr: Il garde tous ses os
+- at:
+    ar: 'لاويين ١٦: ٢٧'
+    en: Leviticus 16:27
+    fr: Lévitique 16:27
+  nt:
+    ar: 'عبرانيين ١٣: ١٢'
+    en: Hebrews 13:12
+    fr: Hébreux 13:12
   theme: agneau
-  titre: Hors du camp
-- at: Nombres 19:9
-  nt: Hébreux 9:13-14
+  titre:
+    ar: خارج المحلة
+    en: Outside the Camp
+    fr: Hors du camp
+- at:
+    ar: 'عدد ١٩: ٩'
+    en: Numbers 19:9
+    fr: Nombres 19:9
+  nt:
+    ar: 'عبرانيين ٩: ١٣-١٤'
+    en: Hebrews 9:13-14
+    fr: Hébreux 9:13-14
   theme: agneau
-  titre: La cendre qui purifie
-- at: Psaume 40:7-9
-  nt: Hébreux 10:5-7
+  titre:
+    ar: الرماد الذي يطهر
+    en: The Ashes That Purify
+    fr: La cendre qui purifie
+- at:
+    ar: 'مزمور ٤٠: ٧-٩'
+    en: Psalm 40:7-9
+    fr: Psaume 40:7-9
+  nt:
+    ar: 'عبرانيين ١٠: ٥-٧'
+    en: Hebrews 10:5-7
+    fr: Hébreux 10:5-7
   theme: paque
-  titre: « Me voici »
-- at: Exode 16:18
-  nt: 2 Corinthiens 8:15
+  titre:
+    ar: «هأنذا»
+    en: “Here I Am”
+    fr: « Me voici »
+- at:
+    ar: 'خروج ١٦: ١٨'
+    en: Exodus 16:18
+    fr: Exode 16:18
+  nt:
+    ar: '٢ كورنثوس ٨: ١٥'
+    en: 2 Corinthians 8:15
+    fr: 2 Corinthiens 8:15
   theme: paque
-  titre: Ni trop, ni trop peu
-- at: Deutéronome 8:3
-  nt: Matthieu 4:4
+  titre:
+    ar: لا زيادة ولا نقصان
+    en: Neither Too Much nor Too Little
+    fr: Ni trop, ni trop peu
+- at:
+    ar: 'تثنية ٨: ٣'
+    en: Deuteronomy 8:3
+    fr: Deutéronome 8:3
+  nt:
+    ar: 'متى ٤: ٤'
+    en: Matthew 4:4
+    fr: Matthieu 4:4
   theme: paque
-  titre: Pas de pain seulement
-- at: Psaume 116:13
-  nt: 1 Corinthiens 10:16
+  titre:
+    ar: ليس بالخبز وحده
+    en: Not by Bread Alone
+    fr: Pas de pain seulement
+- at:
+    ar: 'مزمور ١١٦: ١٣'
+    en: Psalm 116:13
+    fr: Psaume 116:13
+  nt:
+    ar: '١ كورنثوس ١٠: ١٦'
+    en: 1 Corinthians 10:16
+    fr: 1 Corinthiens 10:16
   theme: paque
-  titre: La coupe du salut
-- at: Exode 24:11
-  nt: Apocalypse 3:20
+  titre:
+    ar: كأس الخلاص
+    en: The Cup of Salvation
+    fr: La coupe du salut
+- at:
+    ar: 'خروج ٢٤: ١١'
+    en: Exodus 24:11
+    fr: Exode 24:11
+  nt:
+    ar: 'رؤيا ٣: ٢٠'
+    en: Revelation 3:20
+    fr: Apocalypse 3:20
   theme: paque
-  titre: Ils virent Dieu, et ils mangèrent
-- at: Genèse 3:6
-  nt: Apocalypse 19:9
+  titre:
+    ar: رأوا الله وأكلوا
+    en: They Saw God, and They Ate
+    fr: Ils virent Dieu, et ils mangèrent
+- at:
+    ar: 'تكوين ٣: ٦'
+    en: Genesis 3:6
+    fr: Genèse 3:6
+  nt:
+    ar: 'رؤيا ١٩: ٩'
+    en: Revelation 19:9
+    fr: Apocalypse 19:9
   theme: paque
-  titre: Du fruit pris au festin offert
-- at: Ésaïe 25:6
-  nt: Apocalypse 19:9
+  titre:
+    ar: من الثمر المأخوذ إلى الوليمة الممنوحة
+    en: From the Fruit Taken to the Feast Given
+    fr: Du fruit pris au festin offert
+- at:
+    ar: 'إشعياء ٢٥: ٦'
+    en: Isaiah 25:6
+    fr: Ésaïe 25:6
+  nt:
+    ar: 'رؤيا ١٩: ٩'
+    en: Revelation 19:9
+    fr: Apocalypse 19:9
   theme: paque
-  titre: Le festin pour tous les peuples
-- at: Exode 12:22
-  nt: Jean 19:29
+  titre:
+    ar: الوليمة لجميع الشعوب
+    en: The Feast for All Peoples
+    fr: Le festin pour tous les peuples
+- at:
+    ar: 'خروج ١٢: ٢٢'
+    en: Exodus 12:22
+    fr: Exode 12:22
+  nt:
+    ar: 'يوحنا ١٩: ٢٩'
+    en: John 19:29
+    fr: Jean 19:29
   theme: paque
-  titre: L'hysope
-- at: Genèse 22:16-17
-  nt: Hébreux 6:13-14
+  titre:
+    ar: الزوفا
+    en: The Hyssop
+    fr: L'hysope
+- at:
+    ar: 'تكوين ٢٢: ١٦-١٧'
+    en: Genesis 22:16-17
+    fr: Genèse 22:16-17
+  nt:
+    ar: 'عبرانيين ٦: ١٣-١٤'
+    en: Hebrews 6:13-14
+    fr: Hébreux 6:13-14
   theme: alliance
-  titre: Le serment de Morija
-- at: 2 Samuel 7:14
-  nt: Hébreux 1:5
+  titre:
+    ar: قسم المريا
+    en: The Oath of Moriah
+    fr: Le serment de Morija
+- at:
+    ar: '٢ صموئيل ٧: ١٤'
+    en: 2 Samuel 7:14
+    fr: 2 Samuel 7:14
+  nt:
+    ar: 'عبرانيين ١: ٥'
+    en: Hebrews 1:5
+    fr: Hébreux 1:5
   theme: alliance
-  titre: « Je serai pour lui un père »
-- at: Ésaïe 54:13
-  nt: Jean 6:45
+  titre:
+    ar: «أنا أكون له أبا»
+    en: “I Will Be His Father”
+    fr: « Je serai pour lui un père »
+- at:
+    ar: 'إشعياء ٥٤: ١٣'
+    en: Isaiah 54:13
+    fr: Ésaïe 54:13
+  nt:
+    ar: 'يوحنا ٦: ٤٥'
+    en: John 6:45
+    fr: Jean 6:45
   theme: alliance
-  titre: Tous enseignés de Dieu
-- at: Jérémie 32:40
-  nt: Hébreux 13:20
+  titre:
+    ar: الجميع متعلمون من الله
+    en: All Taught by God
+    fr: Tous enseignés de Dieu
+- at:
+    ar: 'إرميا ٣٢: ٤٠'
+    en: Jeremiah 32:40
+    fr: Jérémie 32:40
+  nt:
+    ar: 'عبرانيين ١٣: ٢٠'
+    en: Hebrews 13:20
+    fr: Hébreux 13:20
   theme: alliance
-  titre: Une alliance éternelle
-- at: Ézéchiel 34:23
-  nt: Jean 10:11
+  titre:
+    ar: عهد أبدي
+    en: An Everlasting Covenant
+    fr: Une alliance éternelle
+- at:
+    ar: 'حزقيال ٣٤: ٢٣'
+    en: Ezekiel 34:23
+    fr: Ézéchiel 34:23
+  nt:
+    ar: 'يوحنا ١٠: ١١'
+    en: John 10:11
+    fr: Jean 10:11
   theme: alliance
-  titre: Un seul berger
-- at: Deutéronome 30:14
-  nt: Romains 10:8
+  titre:
+    ar: راع واحد
+    en: One Shepherd
+    fr: Un seul berger
+- at:
+    ar: 'تثنية ٣٠: ١٤'
+    en: Deuteronomy 30:14
+    fr: Deutéronome 30:14
+  nt:
+    ar: 'رومية ١٠: ٨'
+    en: Romans 10:8
+    fr: Romains 10:8
   theme: alliance
-  titre: La parole tout près
-- at: Lévitique 26:12
-  nt: 2 Corinthiens 6:16
+  titre:
+    ar: الكلمة القريبة جدا
+    en: The Word Very Near
+    fr: La parole tout près
+- at:
+    ar: 'لاويين ٢٦: ١٢'
+    en: Leviticus 26:12
+    fr: Lévitique 26:12
+  nt:
+    ar: '٢ كورنثوس ٦: ١٦'
+    en: 2 Corinthians 6:16
+    fr: 2 Corinthiens 6:16
   theme: alliance
-  titre: « Je marcherai au milieu de vous »
-- at: Ésaïe 59:20
-  nt: Romains 11:26
+  titre:
+    ar: «أسير بينكم»
+    en: “I Will Walk Among You”
+    fr: « Je marcherai au milieu de vous »
+- at:
+    ar: 'إشعياء ٥٩: ٢٠'
+    en: Isaiah 59:20
+    fr: Ésaïe 59:20
+  nt:
+    ar: 'رومية ١١: ٢٦'
+    en: Romans 11:26
+    fr: Romains 11:26
   theme: alliance
-  titre: Le libérateur de Sion
-- at: Ruth 4:14
-  nt: Luc 1:68
+  titre:
+    ar: منقذ صهيون
+    en: The Deliverer of Zion
+    fr: Le libérateur de Sion
+- at:
+    ar: 'راعوث ٤: ١٤'
+    en: Ruth 4:14
+    fr: Ruth 4:14
+  nt:
+    ar: 'لوقا ١: ٦٨'
+    en: Luke 1:68
+    fr: Luc 1:68
   theme: figures
-  titre: Le proche rédempteur
-- at: 1 Rois 17:22
-  nt: Luc 7:14-15
+  titre:
+    ar: الولي الفادي
+    en: The Kinsman-Redeemer
+    fr: Le proche rédempteur
+- at:
+    ar: '١ ملوك ١٧: ٢٢'
+    en: 1 Kings 17:22
+    fr: 1 Rois 17:22
+  nt:
+    ar: 'لوقا ٧: ١٤-١٥'
+    en: Luke 7:14-15
+    fr: Luc 7:14-15
   theme: figures
-  titre: Le fils rendu à sa mère
-- at: Josué 2:18
-  nt: Matthieu 1:5
+  titre:
+    ar: الابن المردود إلى أمه
+    en: The Son Restored to His Mother
+    fr: Le fils rendu à sa mère
+- at:
+    ar: 'يشوع ٢: ١٨'
+    en: Joshua 2:18
+    fr: Josué 2:18
+  nt:
+    ar: 'متى ١: ٥'
+    en: Matthew 1:5
+    fr: Matthieu 1:5
   theme: figures
-  titre: Le cordon écarlate
-- at: 2 Samuel 17:23
-  nt: Matthieu 27:5
+  titre:
+    ar: خيط القرمز
+    en: The Scarlet Cord
+    fr: Le cordon écarlate
+- at:
+    ar: '٢ صموئيل ١٧: ٢٣'
+    en: 2 Samuel 17:23
+    fr: 2 Samuel 17:23
+  nt:
+    ar: 'متى ٢٧: ٥'
+    en: Matthew 27:5
+    fr: Matthieu 27:5
   theme: figures
-  titre: Le conseiller qui se pend
-- at: Exode 29:38-39
-  nt: Hébreux 10:11-12
+  titre:
+    ar: المشير الذي خنق نفسه
+    en: The Counselor Who Hanged Himself
+    fr: Le conseiller qui se pend
+- at:
+    ar: 'خروج ٢٩: ٣٨-٣٩'
+    en: Exodus 29:38-39
+    fr: Exode 29:38-39
+  nt:
+    ar: 'عبرانيين ١٠: ١١-١٢'
+    en: Hebrews 10:11-12
+    fr: Hébreux 10:11-12
   theme: temple
-  titre: Chaque jour — une seule fois
-- at: Exode 34:34
-  nt: 2 Corinthiens 3:16
+  titre:
+    ar: كل يوم — مرة واحدة
+    en: Every Day — Once for All
+    fr: Chaque jour — une seule fois
+- at:
+    ar: 'خروج ٣٤: ٣٤'
+    en: Exodus 34:34
+    fr: Exode 34:34
+  nt:
+    ar: '٢ كورنثوس ٣: ١٦'
+    en: 2 Corinthians 3:16
+    fr: 2 Corinthiens 3:16
   theme: temple
-  titre: Le voile ôté
-- at: Aggée 2:9
-  nt: Luc 2:27-32
+  titre:
+    ar: البرقع المرفوع
+    en: The Veil Taken Away
+    fr: Le voile ôté
+- at:
+    ar: 'حجي ٢: ٩'
+    en: Haggai 2:9
+    fr: Aggée 2:9
+  nt:
+    ar: 'لوقا ٢: ٢٧-٣٢'
+    en: Luke 2:27-32
+    fr: Luc 2:27-32
   theme: temple
-  titre: La gloire de la seconde maison
-- at: Malachie 3:1
-  nt: Matthieu 21:12
+  titre:
+    ar: مجد البيت الثاني
+    en: The Glory of the Second House
+    fr: La gloire de la seconde maison
+- at:
+    ar: 'ملاخي ٣: ١'
+    en: Malachi 3:1
+    fr: Malachie 3:1
+  nt:
+    ar: 'متى ٢١: ١٢'
+    en: Matthew 21:12
+    fr: Matthieu 21:12
   theme: temple
-  titre: Le Seigneur entre dans son temple
-- at: Ésaïe 56:7
-  nt: Marc 11:17
+  titre:
+    ar: السيد يأتي إلى هيكله
+    en: The Lord Comes to His Temple
+    fr: Le Seigneur entre dans son temple
+- at:
+    ar: 'إشعياء ٥٦: ٧'
+    en: Isaiah 56:7
+    fr: Ésaïe 56:7
+  nt:
+    ar: 'مرقس ١١: ١٧'
+    en: Mark 11:17
+    fr: Marc 11:17
   theme: temple
-  titre: Maison de prière pour tous
-- at: Ésaïe 48:16
-  nt: Jean 20:21-22
+  titre:
+    ar: بيت صلاة لجميع الشعوب
+    en: A House of Prayer for All
+    fr: Maison de prière pour tous
+- at:
+    ar: 'إشعياء ٤٨: ١٦'
+    en: Isaiah 48:16
+    fr: Ésaïe 48:16
+  nt:
+    ar: 'يوحنا ٢٠: ٢١-٢٢'
+    en: John 20:21-22
+    fr: Jean 20:21-22
   theme: trinite
-  titre: Trois dans un verset
-- at: Proverbes 30:4
-  nt: Jean 3:13
+  titre:
+    ar: ثلاثة في آية واحدة
+    en: Three in One Verse
+    fr: Trois dans un verset
+- at:
+    ar: 'أمثال ٣٠: ٤'
+    en: Proverbs 30:4
+    fr: Proverbes 30:4
+  nt:
+    ar: 'يوحنا ٣: ١٣'
+    en: John 3:13
+    fr: Jean 3:13
   theme: trinite
-  titre: « Quel est le nom de son fils ? »
-- at: Ésaïe 63:10
-  nt: Éphésiens 4:30
+  titre:
+    ar: «ما اسم ابنه؟»
+    en: “What Is His Son's Name?”
+    fr: « Quel est le nom de son fils ? »
+- at:
+    ar: 'إشعياء ٦٣: ١٠'
+    en: Isaiah 63:10
+    fr: Ésaïe 63:10
+  nt:
+    ar: 'أفسس ٤: ٣٠'
+    en: Ephesians 4:30
+    fr: Éphésiens 4:30
   theme: trinite
-  titre: L'Esprit que l'on peut attrister
+  titre:
+    ar: الروح الذي يمكن إحزانه
+    en: The Spirit Who Can Be Grieved
+    fr: L'Esprit que l'on peut attrister
+etageres:
+  actes:
+    ar: الأعمال
+    en: The Acts
+    fr: Les Actes
+  apocalypse:
+    ar: الرؤيا
+    en: Revelation
+    fr: L'Apocalypse
+  deutero:
+    ar: الأسفار القانونية الثانية
+    en: The deuterocanonical books
+    fr: Les livres deutérocanoniques
+  evangiles:
+    ar: الأناجيل
+    en: The Gospels
+    fr: Les Évangiles
+  generales:
+    ar: الرسائل العامة
+    en: The general letters
+    fr: Les lettres générales
+  grands:
+    ar: الأنبياء الكبار
+    en: The major prophets
+    fr: Les grands prophètes
+  histoire:
+    ar: الأسفار التاريخية
+    en: The historical books
+    fr: Les livres historiques
+  loi:
+    ar: الناموس (التوراة)
+    en: The Law (Torah)
+    fr: La Loi (Torah)
+  paul:
+    ar: رسائل بولس
+    en: Paul's letters
+    fr: Les lettres de Paul
+  petits:
+    ar: الأنبياء الصغار
+    en: The minor prophets
+    fr: Les petits prophètes
+  sagesse:
+    ar: أسفار الشعر والحكمة
+    en: The poetic & wisdom books
+    fr: Les livres poétiques & de sagesse
 generations:
 - nom:
     ar: يسوع
@@ -730,6 +2152,10 @@ livres:
   periodes:
   - origines
   - peres
+  w:
+    ar: 'الخلق، والسقوط، ونوح، وإبراهيم، وإسحاق، ويعقوب، ويوسف: البداياتُ والمواعيد.'
+    en: 'Creation, fall, Noah, Abraham, Isaac, Jacob, Joseph: beginnings and promises.'
+    fr: 'Création, chute, Noé, Abraham, Isaac, Jacob, Joseph : les commencements et les promesses.'
 - etagere: loi
   id: exode
   nom:
@@ -738,6 +2164,10 @@ livres:
     fr: Exode
   periodes:
   - loi
+  w:
+    ar: العبودية في مصر، وموسى، والضربات، والفصح، والبحر المشقوق، وسيناء، والمسكن.
+    en: Slavery in Egypt, Moses, the plagues, the Passover, the parted sea, Sinai, the tabernacle.
+    fr: L'esclavage en Égypte, Moïse, les plaies, la Pâque, la mer fendue, le Sinaï, le tabernacle.
 - etagere: loi
   id: levitique
   nom:
@@ -746,6 +2176,10 @@ livres:
     fr: Lévitique
   periodes:
   - loi
+  w:
+    ar: الذبائح، والكهنوت، والطهارة، ويوم الكفارة، والأعياد.
+    en: Sacrifices, priesthood, purity, the Day of Atonement, the feasts.
+    fr: Les sacrifices, le sacerdoce, la pureté, le grand jour des Expiations, les fêtes.
 - etagere: loi
   id: nombres
   nom:
@@ -754,6 +2188,10 @@ livres:
     fr: Nombres
   periodes:
   - loi
+  w:
+    ar: أربعون سنةً من التيه، والتذمر، والحية النحاسية، والإحصاءات.
+    en: Forty years of wandering, the grumbling, the bronze serpent, the censuses.
+    fr: Quarante ans d'errance, les murmures, le serpent d'airain, les recensements.
 - etagere: loi
   id: deuteronome
   nom:
@@ -762,6 +2200,10 @@ livres:
     fr: Deutéronome
   periodes:
   - loi
+  w:
+    ar: 'خطبُ موسى الوداعية: الناموسُ يُعاد قبل دخول أرض الموعد.'
+    en: 'Moses'' farewell speeches: the Law given again before entering the Promised Land.'
+    fr: 'Les discours d''adieu de Moïse : la Loi redonnée avant d''entrer dans la Terre promise.'
 - etagere: histoire
   id: josue
   nom:
@@ -770,6 +2212,10 @@ livres:
     fr: Josué
   periodes:
   - loi
+  w:
+    ar: دخولُ كنعان، وعبورُ الأردن، وسقوطُ أريحا.
+    en: Entry into Canaan, crossing the Jordan, the fall of Jericho.
+    fr: L'entrée en Canaan, la traversée du Jourdain, la prise de Jéricho.
 - etagere: histoire
   id: juges
   nom:
@@ -778,6 +2224,10 @@ livres:
     fr: Juges
   periodes:
   - loi
+  w:
+    ar: دورةُ السقطات والمخلّصين الذين يقيمهم الله (جدعون، شمشون…).
+    en: The cycle of falls and God-raised deliverers (Gideon, Samson…).
+    fr: Le cycle des chutes et des libérateurs suscités par Dieu (Gédéon, Samson…).
 - etagere: histoire
   id: ruth
   nom:
@@ -786,6 +2236,10 @@ livres:
     fr: Ruth
   periodes:
   - loi
+  w:
+    ar: 'غريبةٌ أمينة، جدّةُ داود الكبرى: النعمةُ تدخل النسل.'
+    en: 'A faithful foreigner, David''s great-grandmother: grace enters the line.'
+    fr: 'Une étrangère fidèle, arrière-grand-mère de David : la grâce entre dans la lignée.'
 - etagere: histoire
   id: 1-samuel
   nom:
@@ -794,6 +2248,10 @@ livres:
     fr: 1 Samuel
   periodes:
   - royaume
+  w:
+    ar: صموئيل، وشاول، وصعودُ داود؛ «اللهُ ينظر إلى القلب».
+    en: Samuel, Saul, David's rise; “God looks at the heart”.
+    fr: Samuel, Saül, l'ascension de David ; « Dieu regarde au cœur ».
 - etagere: histoire
   id: 2-samuel
   nom:
@@ -802,6 +2260,10 @@ livres:
     fr: 2 Samuel
   periodes:
   - royaume
+  w:
+    ar: مُلكُ داود، ومجدُه، وخطيتُه، والوعدُ العظيم.
+    en: David's reign, his glory, his sin, and the great promise.
+    fr: Le règne de David, sa gloire, sa faute, et la grande promesse.
 - etagere: histoire
   id: 1-rois
   nom:
@@ -811,6 +2273,10 @@ livres:
   periodes:
   - royaume
   - exil
+  w:
+    ar: سليمان، وبناءُ الهيكل، ثم انقسامُ المملكة؛ إيليا.
+    en: Solomon, the Temple built, then the kingdom divided; Elijah.
+    fr: Salomon, le Temple bâti, puis la division du royaume ; Élie.
 - etagere: histoire
   id: 2-rois
   nom:
@@ -819,6 +2285,10 @@ livres:
     fr: 2 Rois
   periodes:
   - exil
+  w:
+    ar: انحطاطُ المملكتين حتى السقوطين؛ أليشع.
+    en: The decline of both kingdoms to their two falls; Elisha.
+    fr: La décadence des deux royaumes jusqu'aux deux chutes ; Élisée.
 - etagere: histoire
   id: 1-chroniques
   nom:
@@ -827,6 +2297,10 @@ livres:
     fr: 1 Chroniques
   periodes:
   - royaume
+  w:
+    ar: 'إعادةُ سردٍ كهنوتية: الأنساب، وداود، وتجهيزاتُ الهيكل.'
+    en: 'A priestly retelling: genealogies, David, preparations for the Temple.'
+    fr: 'Relecture sacerdotale : généalogies, David, préparatifs du Temple.'
 - etagere: histoire
   id: 2-chroniques
   nom:
@@ -836,6 +2310,10 @@ livres:
   periodes:
   - royaume
   - exil
+  w:
+    ar: من سليمان إلى السبي، من زاوية الهيكل والعبادة.
+    en: From Solomon to the exile, seen from the Temple and worship.
+    fr: De Salomon à l'exil, vue du côté du Temple et du culte.
 - etagere: histoire
   id: esdras
   nom:
@@ -844,6 +2322,10 @@ livres:
     fr: Esdras
   periodes:
   - retour
+  w:
+    ar: العودةُ من السبي، وإعادةُ بناء الهيكل.
+    en: The return from exile, the rebuilding of the Temple.
+    fr: Le retour d'exil, la reconstruction du Temple.
 - etagere: histoire
   id: nehemie
   nom:
@@ -852,6 +2334,10 @@ livres:
     fr: Néhémie
   periodes:
   - retour
+  w:
+    ar: إعادةُ بناء أسوار أورشليم، وإصلاحُ الشعب.
+    en: Rebuilding Jerusalem's walls, reforming the people.
+    fr: La reconstruction des murs de Jérusalem, la réforme du peuple.
 - etagere: histoire
   id: esther
   nom:
@@ -860,6 +2346,10 @@ livres:
     fr: Esther
   periodes:
   - retour
+  w:
+    ar: ملكةٌ يهودية تنقذ شعبها من إبادةٍ في فارس (عيد الفوريم).
+    en: A Jewish queen saves her people from genocide in Persia (feast of Purim).
+    fr: Une reine juive sauve son peuple d'un génocide en Perse (fête de Pourim).
 - etagere: sagesse
   id: job
   nom:
@@ -868,6 +2358,10 @@ livres:
     fr: Job
   periodes:
   - peres
+  w:
+    ar: لماذا يتألم البارّ؟ نقاشٌ مذهل، بلا جوابٍ سهل.
+    en: Why does the righteous suffer? A dizzying debate, with no easy answer.
+    fr: Pourquoi le juste souffre-t-il ? Un débat vertigineux, sans réponse facile.
 - etagere: sagesse
   id: psaumes
   nom:
@@ -876,6 +2370,10 @@ livres:
     fr: Psaumes
   periodes:
   - royaume
+  w:
+    ar: '١٥٠ صلاةً وترنيمة: تسبيح، وشكوى، وثقة، ومُلك. كتابُ صلاة إسرائيل.'
+    en: '150 prayers and songs: praise, lament, trust, kingship. Israel''s prayer book.'
+    fr: '150 prières et chants : louange, plainte, confiance, royauté. Le livre de prière d''Israël.'
 - etagere: sagesse
   id: proverbes
   nom:
@@ -884,6 +2382,10 @@ livres:
     fr: Proverbes
   periodes:
   - royaume
+  w:
+    ar: حكمةُ الحياة اليومية العملية؛ والحكمةُ مشخَّصةً، حاضرةً في الخلق.
+    en: Practical daily wisdom; Wisdom personified, present at creation.
+    fr: La sagesse pratique du quotidien ; la Sagesse personnifiée, présente à la création.
 - etagere: sagesse
   id: ecclesiaste
   nom:
@@ -892,6 +2394,10 @@ livres:
     fr: Ecclésiaste
   periodes:
   - royaume
+  w:
+    ar: '«باطلُ الأباطيل»: البحثُ عن المعنى تحت الشمس، وأمانةُ الفراغ.'
+    en: '“Vanity of vanities”: the search for meaning under the sun, the honesty of emptiness.'
+    fr: '« Vanité des vanités » : la quête du sens sous le soleil, l''honnêteté du vide.'
 - etagere: sagesse
   id: cantique
   nom:
@@ -900,6 +2406,10 @@ livres:
     fr: Cantique
   periodes:
   - royaume
+  w:
+    ar: قصيدةُ حبٍّ عرسية، احتفاءٌ بالحب البشري.
+    en: A nuptial love poem, a celebration of human love.
+    fr: Un poème d'amour nuptial, célébration de l'amour humain.
 - etagere: grands
   id: esaie
   nom:
@@ -908,6 +2418,10 @@ livres:
     fr: Ésaïe
   periodes:
   - exil
+  w:
+    ar: 'أكثرُ الأنبياء اقتباسًا: دينونةٌ وعزاء، وعمانوئيل، والعبدُ المتألم.'
+    en: 'The most quoted prophet: judgment and comfort, Immanuel, the suffering Servant.'
+    fr: 'Le prophète le plus cité : jugement et consolation, l''Emmanuel, le Serviteur souffrant.'
 - etagere: grands
   id: jeremie
   nom:
@@ -916,6 +2430,10 @@ livres:
     fr: Jérémie
   periodes:
   - exil
+  w:
+    ar: نبيُّ الدموع، شاهدُ سقوط أورشليم؛ والعهدُ الجديد.
+    en: The prophet of tears, witness of Jerusalem's fall; the new covenant.
+    fr: Le prophète des larmes, témoin de la chute de Jérusalem ; l'alliance nouvelle.
 - etagere: grands
   id: lamentations
   nom:
@@ -924,6 +2442,10 @@ livres:
     fr: Lamentations
   periodes:
   - exil
+  w:
+    ar: خمسُ قصائد رثاءٍ لأورشليم المدمَّرة؛ «مراحمُه تتجدد».
+    en: Five poems of grief over destroyed Jerusalem; “his mercies are new”.
+    fr: Cinq poèmes de deuil sur Jérusalem détruite ; « ses compassions se renouvellent ».
 - etagere: grands
   id: ezechiel
   nom:
@@ -932,6 +2454,10 @@ livres:
     fr: Ézéchiel
   periodes:
   - exil
+  w:
+    ar: 'كاهنٌ مسبيّ: رؤًى مذهلة، والقلبُ الجديد، والراعي، والعظامُ اليابسة.'
+    en: 'An exiled priest: striking visions, the new heart, the shepherd, the dry bones.'
+    fr: 'Prêtre exilé : visions saisissantes, le cœur nouveau, le berger, les ossements desséchés.'
 - etagere: grands
   id: daniel
   nom:
@@ -940,6 +2466,10 @@ livres:
     fr: Daniel
   periodes:
   - exil
+  w:
+    ar: 'في بلاط بابل: أمانةٌ تحت الضغط، ورؤى الإمبراطوريات وابن الإنسان.'
+    en: 'At Babylon''s court: faithfulness under pressure, visions of empires and the Son of Man.'
+    fr: 'À la cour de Babylone : fidélité sous la pression, visions des empires et du Fils de l''homme.'
 - etagere: petits
   id: osee
   nom:
@@ -948,6 +2478,10 @@ livres:
     fr: Osée
   periodes:
   - exil
+  w:
+    ar: زواجٌ مكسور صورةً لمحبة الله الأمينة لشعبٍ خائن.
+    en: A broken marriage as an image of God's faithful love for an unfaithful people.
+    fr: Un mariage brisé comme image de l'amour fidèle de Dieu pour un peuple infidèle.
 - etagere: petits
   id: joel
   nom:
@@ -955,6 +2489,10 @@ livres:
     en: Joel
     fr: Joël
   periodes: null
+  w:
+    ar: «يومُ الرب»، وغزوُ الجراد، والروحُ المسكوب على الجميع.
+    en: The “day of the LORD”, a locust invasion, the Spirit poured on all.
+    fr: Le « jour de l'Éternel », une invasion de sauterelles, l'Esprit répandu sur tous.
 - etagere: petits
   id: amos
   nom:
@@ -963,6 +2501,10 @@ livres:
     fr: Amos
   periodes:
   - exil
+  w:
+    ar: راعٍ يرعد ضد الظلم الاجتماعي باسم الله.
+    en: A shepherd who thunders against social injustice in God's name.
+    fr: Un berger qui tonne contre l'injustice sociale au nom de Dieu.
 - etagere: petits
   id: abdias
   nom:
@@ -971,6 +2513,10 @@ livres:
     fr: Abdias
   periodes:
   - exil
+  w:
+    ar: 'الأقصر: دينونةٌ على أدوم، وكبرياءٌ يُذَلّ.'
+    en: 'The shortest: judgment on Edom, pride brought low.'
+    fr: 'Le plus court : jugement sur Édom, orgueil abaissé.'
 - etagere: petits
   id: jonas
   nom:
@@ -979,6 +2525,10 @@ livres:
     fr: Jonas
   periodes:
   - exil
+  w:
+    ar: النبيُّ الهارب، يبتلعه الحوت، ويُرسَل إلى نينوى الوثنية.
+    en: The fleeing prophet, swallowed by a fish, sent to pagan Nineveh.
+    fr: Le prophète en fuite, avalé par un poisson, envoyé à Ninive la païenne.
 - etagere: petits
   id: michee
   nom:
@@ -987,6 +2537,10 @@ livres:
     fr: Michée
   periodes:
   - exil
+  w:
+    ar: العدلُ والتواضع، والقريةُ التي منها يخرج متسلّطُ إسرائيل.
+    en: Justice, humility, and the village from which Israel's ruler will come.
+    fr: Justice, humilité, et le village d'où sortira le dominateur d'Israël.
 - etagere: petits
   id: nahum
   nom:
@@ -995,6 +2549,10 @@ livres:
     fr: Nahum
   periodes:
   - exil
+  w:
+    ar: 'سقوطُ نينوى المُعلَن: اللهُ يدين الإمبراطوريات القاسية.'
+    en: 'The announced fall of Nineveh: God judges cruel empires.'
+    fr: 'La chute annoncée de Ninive : Dieu juge les empires cruels.'
 - etagere: petits
   id: habacuc
   nom:
@@ -1003,6 +2561,10 @@ livres:
     fr: Habacuc
   periodes:
   - exil
+  w:
+    ar: حوارُ نبيٍّ يسائل اللهَ عن الشر؛ «البارُّ بإيمانه يحيا».
+    en: A prophet's dialogue questioning God about evil; “the righteous will live by faith”.
+    fr: Le dialogue d'un prophète qui questionne Dieu sur le mal ; « le juste vivra par la foi ».
 - etagere: petits
   id: sophonie
   nom:
@@ -1011,6 +2573,10 @@ livres:
     fr: Sophonie
   periodes:
   - exil
+  w:
+    ar: يومُ الدينونة، لكن بقيةً تخلص؛ «اللهُ يبتهج بك».
+    en: The day of judgment, but a saved remnant; “God will rejoice over you”.
+    fr: Le jour du jugement, mais un reste sauvé ; « Dieu tressaillira de joie ».
 - etagere: petits
   id: aggee
   nom:
@@ -1019,6 +2585,10 @@ livres:
     fr: Aggée
   periodes:
   - retour
+  w:
+    ar: 'دعوةٌ لإعادة بناء الهيكل بعد السبي: «مجدُ هذا البيت».'
+    en: 'A call to rebuild the Temple after exile: “the glory of this house”.'
+    fr: 'Un appel à rebâtir le Temple après l''exil : « la gloire de cette maison ».'
 - etagere: petits
   id: zacharie
   nom:
@@ -1027,6 +2597,10 @@ livres:
     fr: Zacharie
   periodes:
   - retour
+  w:
+    ar: رؤى الملك الوديع، والراعي المضروب، و«الذي طعنوه».
+    en: Visions of the humble king, the struck shepherd, “the one they pierced”.
+    fr: Visions du roi humble, du berger frappé, de « celui qu'ils ont percé ».
 - etagere: petits
   id: malachie
   nom:
@@ -1035,6 +2609,10 @@ livres:
     fr: Malachie
   periodes:
   - retour
+  w:
+    ar: 'آخرُ صوتٍ في العهد القديم: الرسولُ الذي يهيّئ، ورجوعُ إيليا.'
+    en: 'The last voice of the OT: the messenger who prepares, the return of Elijah.'
+    fr: 'La dernière voix de l''AT : le messager qui prépare, le retour d''Élie.'
 - etagere: deutero
   id: tobie
   nom:
@@ -1043,6 +2621,12 @@ livres:
     fr: Tobie
   periodes:
   - exil
+  w:
+    ar: أبٌ أعمى، وفتاةٌ مثقلة، ورفيقُ سفرٍ يتبيّن أنه ملاك. حكايةُ عائلةٍ وصلاةٍ وشفاء.
+    en: A blind father, a young woman in distress, a travelling companion who turns out to be an angel.
+      A story of family, prayer and healing.
+    fr: Un père aveugle, une jeune femme accablée, un compagnon de voyage qui se révèle être un ange.
+      Un récit de famille, de prière et de guérison.
 - etagere: deutero
   id: judith
   nom:
@@ -1051,6 +2635,12 @@ livres:
     fr: Judith
   periodes:
   - retour
+  w:
+    ar: 'أرملةٌ تنقذ مدينتَها وحدَها من قائدٍ يحاصرها. السردُ مبنيٌّ كبرهان: اللهُ يخلّص بما يبدو ضعيفًا.'
+    en: 'A widow alone saves her city from the general besieging it. The story is built as a demonstration:
+      God delivers by what looks weak.'
+    fr: 'Une veuve sauve seule sa ville d''un général qui l''assiège. Le récit est bâti comme une démonstration
+      : Dieu délivre par ce qui paraît faible.'
 - etagere: deutero
   id: sagesse
   nom:
@@ -1059,6 +2649,13 @@ livres:
     fr: Sagesse
   periodes:
   - attente
+  w:
+    ar: كُتب باليونانية في الإسكندرية. الحكمةُ مشخَّصة، وقيمةُ عدم الفساد، وصورةُ البارِّ المضطهَد لأنه
+      يزعج.
+    en: Written in Greek at Alexandria. Wisdom personified, the worth of immortality, and the portrait
+      of the righteous man persecuted because he is in the way.
+    fr: Écrit en grec à Alexandrie. La Sagesse personnifiée, la valeur de l'immortalité, et le portrait
+      du juste persécuté parce qu'il gêne.
 - etagere: deutero
   id: siracide
   nom:
@@ -1067,6 +2664,12 @@ livres:
     fr: Siracide
   periodes:
   - attente
+  w:
+    ar: 'حكمةُ كاتبٍ أورشليمي العملية، ثم مديحُ الآباء: إعادةُ قراءةٍ لتاريخ إسرائيل كلِّه عبر شخصياته.'
+    en: 'The practical wisdom of a Jerusalem scribe, then the praise of the fathers: the whole history
+      of Israel re-read through its figures.'
+    fr: 'La sagesse pratique d''un scribe de Jérusalem, puis l''éloge des pères : une relecture de toute
+      l''histoire d''Israël par ses figures.'
 - etagere: deutero
   id: baruch
   nom:
@@ -1075,6 +2678,12 @@ livres:
     fr: Baruch
   periodes:
   - exil
+  w:
+    ar: يُنسب إلى كاتب إرميا. اعترافٌ جماعي، ثم رجاءُ العودة ومديحٌ للحكمة.
+    en: Attributed to Jeremiah's secretary. A collective confession, then the hope of return and a praise
+      of wisdom.
+    fr: Attribué au secrétaire de Jérémie. Une confession collective, puis l'espérance du retour et un
+      éloge de la sagesse.
 - etagere: deutero
   id: 1-maccabees
   nom:
@@ -1083,15 +2692,30 @@ livres:
     fr: 1 Maccabées
   periodes:
   - attente
+  w:
+    ar: الثورةُ على أنطيوخوس الرابع، واستعادةُ الهيكل المدنَّس، وتدشينُه من جديد. تاريخٌ يُروى برصانة.
+    en: The revolt against Antiochus IV, the recapture of the desecrated Temple, its new dedication. History,
+      soberly told.
+    fr: La révolte contre Antiochus IV, la reprise du Temple profané, sa dédicace nouvelle. De l'histoire,
+      sobrement racontée.
 - etagere: deutero
   id: 2-maccabees
-  lien: Allusion largement reconnue
+  lien:
+    ar: تلميح معترَف به على نطاق واسع
+    en: Widely recognised allusion
+    fr: Allusion largement reconnue
   nom:
     ar: المكابيّين الثاني
     en: 2 Maccabees
     fr: 2 Maccabées
   periodes:
   - attente
+  w:
+    ar: 'قراءةٌ أخرى للسنوات نفسها، أكثرُ لاهوتية: استشهادُ سبعة إخوة وأمِّهم، ورجاءُ قيامةٍ صريح.'
+    en: 'Another reading of the same years, more theological: the martyrdom of seven brothers and their
+      mother, and an explicit hope of resurrection.'
+    fr: 'Une autre relecture des mêmes années, plus théologique : le martyre de sept frères et de leur
+      mère, et l''espérance explicite d''une résurrection.'
 - etagere: evangiles
   id: matthieu
   nom:
@@ -1100,6 +2724,10 @@ livres:
     fr: Matthieu
   periodes:
   - christ
+  w:
+    ar: يسوع، الملكُ ومتمِّمُ الكتب، مكتوبٌ لقرّاءٍ يهود.
+    en: Jesus, king and fulfilment of the Scriptures, written for Jewish readers.
+    fr: Jésus, roi et accomplissement des Écritures, écrit pour des lecteurs juifs.
 - etagere: evangiles
   id: marc
   nom:
@@ -1108,6 +2736,10 @@ livres:
     fr: Marc
   periodes:
   - christ
+  w:
+    ar: 'الأقصرُ والأحيَى: يسوع العبد، في الفعل، «للوقت».'
+    en: 'The shortest and liveliest: Jesus the Servant, in action, “immediately”.'
+    fr: 'Le plus court et le plus vif : Jésus le Serviteur, en action, « aussitôt ».'
 - etagere: evangiles
   id: luc
   nom:
@@ -1116,6 +2748,10 @@ livres:
     fr: Luc
   periodes:
   - christ
+  w:
+    ar: 'الطبيبُ المؤرّخ: يسوع مخلّصُ المنبوذين والفقراء والغرباء.'
+    en: 'The physician-historian: Jesus, savior of the excluded, the poor, the foreigner.'
+    fr: 'Le médecin historien : Jésus sauveur des exclus, des pauvres, des étrangers.'
 - etagere: evangiles
   id: jean
   nom:
@@ -1124,6 +2760,10 @@ livres:
     fr: Jean
   periodes:
   - christ
+  w:
+    ar: 'الأكثرُ لاهوتًا: يسوع الكلمةُ الأزلية المتجسّدة، و«الأنا هو» السبع.'
+    en: 'The most theological: Jesus the eternal Word made flesh, the seven “I am”.'
+    fr: 'Le plus théologique : Jésus la Parole éternelle faite chair, les sept « Je suis ».'
 - etagere: actes
   id: actes
   nom:
@@ -1131,6 +2771,10 @@ livres:
     en: Acts
     fr: Actes
   periodes: null
+  w:
+    ar: الخمسين، والمسيحيون الأوائل، بطرس ثم بولس، والإنجيلُ حتى رومية.
+    en: Pentecost, the first Christians, Peter then Paul, the Gospel as far as Rome.
+    fr: La Pentecôte, les premiers chrétiens, Pierre puis Paul, l'Évangile jusqu'à Rome.
 - etagere: paul
   id: romains
   nom:
@@ -1138,6 +2782,10 @@ livres:
     en: Romans
     fr: Romains
   periodes: null
+  w:
+    ar: 'أوفى عرضٍ للإنجيل: الخطية، والنعمة، والإيمان، وإسرائيل، والحياةُ الجديدة.'
+    en: 'The fullest exposition of the Gospel: sin, grace, faith, Israel, new life.'
+    fr: 'L''exposé le plus complet de l''Évangile : péché, grâce, foi, Israël, vie nouvelle.'
 - etagere: paul
   id: 1-corinthiens
   nom:
@@ -1145,6 +2793,10 @@ livres:
     en: 1 Corinthians
     fr: 1 Corinthiens
   periodes: null
+  w:
+    ar: 'أجوبةٌ لكنيسةٍ منقسمة: الصليب، والمحبة (ص ١٣)، والقيامة (ص ١٥).'
+    en: 'Answers to a divided church: the cross, love (ch. 13), the resurrection (ch. 15).'
+    fr: 'Réponses à une église divisée : la croix, l''amour (ch. 13), la résurrection (ch. 15).'
 - etagere: paul
   id: 2-corinthiens
   nom:
@@ -1152,6 +2804,10 @@ livres:
     en: 2 Corinthians
     fr: 2 Corinthiens
   periodes: null
+  w:
+    ar: الدفاعُ عن الخدمة، والضعفُ موضعًا لقوة الله.
+    en: The defense of ministry, weakness as the place of God's power.
+    fr: La défense du ministère, la faiblesse comme lieu de la puissance de Dieu.
 - etagere: paul
   id: galates
   nom:
@@ -1159,6 +2815,10 @@ livres:
     en: Galatians
     fr: Galates
   periodes: null
+  w:
+    ar: 'حريةُ الإنجيل ضد العودة إلى الناموس: نخلص بالإيمان.'
+    en: 'The freedom of the Gospel against returning to the Law: saved by faith.'
+    fr: 'La liberté de l''Évangile contre le retour à la Loi : on est sauvé par la foi.'
 - etagere: paul
   id: ephesiens
   nom:
@@ -1166,6 +2826,10 @@ livres:
     en: Ephesians
     fr: Éphésiens
   periodes: null
+  w:
+    ar: 'تدبيرُ الله العظيم: جمعُ كل شيء في المسيح؛ والكنيسةُ جسدُه.'
+    en: 'God''s great design: to unite all in Christ; the Church, his body.'
+    fr: 'Le grand dessein de Dieu : tout réunir en Christ ; l''Église, son corps.'
 - etagere: paul
   id: philippiens
   nom:
@@ -1173,6 +2837,10 @@ livres:
     en: Philippians
     fr: Philippiens
   periodes: null
+  w:
+    ar: الفرحُ في السجن؛ ونشيدُ الاتضاع والتمجيد العظيم.
+    en: Joy in prison; the great hymn of the lowering and exaltation.
+    fr: La joie en prison ; le grand hymne de l'abaissement et de l'exaltation.
 - etagere: paul
   id: colossiens
   nom:
@@ -1180,6 +2848,10 @@ livres:
     en: Colossians
     fr: Colossiens
   periodes: null
+  w:
+    ar: سموُّ المسيح على كل الخليقة؛ ضد الحكمة الباطلة.
+    en: The supremacy of Christ over all creation; against false wisdoms.
+    fr: La suprématie du Christ sur toute la création ; contre les fausses sagesses.
 - etagere: paul
   id: 1-thessaloniciens
   nom:
@@ -1187,6 +2859,10 @@ livres:
     en: 1 Thessalonians
     fr: 1 Thessaloniciens
   periodes: null
+  w:
+    ar: تشجيعُ كنيسةٍ فتيّة؛ ورجاءُ رجوع المسيح.
+    en: Encouragement to a young church; the hope of Christ's return.
+    fr: Encouragement à une jeune église ; l'espérance du retour du Christ.
 - etagere: paul
   id: 2-thessaloniciens
   nom:
@@ -1194,6 +2870,10 @@ livres:
     en: 2 Thessalonians
     fr: 2 Thessaloniciens
   periodes: null
+  w:
+    ar: إيضاحاتٌ عن رجوع المسيح، ضد الذعر والبطالة.
+    en: Clarifications on Christ's return, against panic and idleness.
+    fr: Précisions sur le retour du Christ, contre la panique et l'oisiveté.
 - etagere: paul
   id: 1-timothee
   nom:
@@ -1201,6 +2881,10 @@ livres:
     en: 1 Timothy
     fr: 1 Timothée
   periodes: null
+  w:
+    ar: 'نصائحُ لمسؤولٍ شاب: تعليمٌ سليم، ونظام، ونزاهة.'
+    en: 'Advice to a young church leader: sound doctrine, order, integrity.'
+    fr: 'Conseils à un jeune responsable d''église : doctrine saine, ordre, intégrité.'
 - etagere: paul
   id: 2-timothee
   nom:
@@ -1208,6 +2892,10 @@ livres:
     en: 2 Timothy
     fr: 2 Timothée
   periodes: null
+  w:
+    ar: 'رسالةُ بولس الأخيرة، أمام الموت: «حفظتُ الإيمان».'
+    en: 'Paul''s last letter, facing death: “I have kept the faith”.'
+    fr: 'La dernière lettre de Paul, face à la mort : « j''ai gardé la foi ».'
 - etagere: paul
   id: tite
   nom:
@@ -1215,6 +2903,10 @@ livres:
     en: Titus
     fr: Tite
   periodes: null
+  w:
+    ar: تنظيمُ كنيسةٍ سليمة في كريت؛ والنعمةُ التي تصوغ الحياة.
+    en: Organizing a healthy church in Crete; grace that shapes life.
+    fr: Organiser une église saine en Crète ; la grâce qui forme la vie.
 - etagere: paul
   id: philemon
   nom:
@@ -1222,6 +2914,10 @@ livres:
     en: Philemon
     fr: Philémon
   periodes: null
+  w:
+    ar: 'بطاقةٌ شخصية: عبدٌ هارب يُقبَل كأخ.'
+    en: 'A personal note: a runaway slave received as a brother.'
+    fr: 'Un billet personnel : un esclave fugitif accueilli comme un frère.'
 - etagere: generales
   id: hebreux
   nom:
@@ -1229,6 +2925,10 @@ livres:
     en: Hebrews
     fr: Hébreux
   periodes: null
+  w:
+    ar: المسيح، رئيسُ كهنةٍ كامل وذبيحةٌ واحدة، أسمى من العبادة القديمة كلِّها.
+    en: Christ, perfect high priest and one sacrifice, superior to all the old worship.
+    fr: Le Christ, grand-prêtre parfait et sacrifice unique, supérieur à tout l'ancien culte.
 - etagere: generales
   id: jacques
   nom:
@@ -1236,6 +2936,10 @@ livres:
     en: James
     fr: Jacques
   periodes: null
+  w:
+    ar: 'الإيمانُ الذي يعمل: إيمانٌ بلا أعمال ميت؛ وضبطُ اللسان.'
+    en: 'Faith that acts: faith without works is dead; taming the tongue.'
+    fr: 'La foi qui agit : une foi sans œuvres est morte ; la maîtrise de la langue.'
 - etagere: generales
   id: 1-pierre
   nom:
@@ -1243,6 +2947,10 @@ livres:
     en: 1 Peter
     fr: 1 Pierre
   periodes: null
+  w:
+    ar: الثباتُ في الألم؛ والحملُ بلا عيب؛ وكهنوتٌ جديد.
+    en: Standing in suffering; the Lamb without defect; a new priesthood.
+    fr: Tenir dans la souffrance ; l'Agneau sans défaut ; un sacerdoce nouveau.
 - etagere: generales
   id: 2-pierre
   nom:
@@ -1250,6 +2958,10 @@ livres:
     en: 2 Peter
     fr: 2 Pierre
   periodes: null
+  w:
+    ar: ضد المعلّمين الكذبة؛ وشاهدُ عيان التجلّي.
+    en: Against false teachers; the eyewitness of the Transfiguration.
+    fr: Contre les faux docteurs ; le témoin oculaire de la Transfiguration.
 - etagere: generales
   id: 1-jean
   nom:
@@ -1257,6 +2969,10 @@ livres:
     en: 1 John
     fr: 1 Jean
   periodes: null
+  w:
+    ar: 'أن نحبّ ونثبت: «اللهُ محبة»؛ ويقينُ الخلاص.'
+    en: 'To love and abide: “God is love”; the assurance of salvation.'
+    fr: 'Aimer et demeurer : « Dieu est amour » ; l''assurance du salut.'
 - etagere: generales
   id: 2-jean
   nom:
@@ -1264,6 +2980,10 @@ livres:
     en: 2 John
     fr: 2 Jean
   periodes: null
+  w:
+    ar: 'بطاقةٌ قصيرة: السلوكُ في الحق والمحبة، والحذرُ من المضلِّين.'
+    en: 'A short note: walking in truth and love, guarding against deceivers.'
+    fr: 'Un court billet : marcher dans la vérité et l''amour, se garder des séducteurs.'
 - etagere: generales
   id: 3-jean
   nom:
@@ -1271,6 +2991,10 @@ livres:
     en: 3 John
     fr: 3 Jean
   periodes: null
+  w:
+    ar: 'بطاقةٌ قصيرة: الضيافةُ المسيحية، ودعمُ الخدام الحقيقيين.'
+    en: 'A short note: Christian hospitality, supporting true servants.'
+    fr: 'Un court billet : l''hospitalité chrétienne, soutenir les vrais serviteurs.'
 - etagere: generales
   id: jude
   nom:
@@ -1278,6 +3002,10 @@ livres:
     en: Jude
     fr: Jude
   periodes: null
+  w:
+    ar: دعوةٌ موجزة للمجاهدة لأجل الإيمان ضد المندسّين.
+    en: A brief call to contend for the faith against infiltrators.
+    fr: Un appel bref à combattre pour la foi contre les infiltrés.
 - etagere: apocalypse
   id: apocalypse
   nom:
@@ -1285,6 +3013,10 @@ livres:
     en: Revelation
     fr: Apocalypse
   periodes: null
+  w:
+    ar: رؤى الحمل، والحرب، والدينونة، وأورشليمَ الجديدة، والعرس.
+    en: Visions of the Lamb, the battle, the judgment, the new Jerusalem and the wedding.
+    fr: Visions de l'Agneau, du combat, du jugement, de la Jérusalem nouvelle et des noces.
 pages:
 - carte-du-ciel.html
 - cle-deja-pas-encore.html
@@ -1405,11 +3137,59 @@ prophetes:
     fr: Jean-Baptiste
   phase: christ
 themes:
-  agneau: 27
-  alliance: 18
-  figures: 13
-  filshomme: 8
-  paque: 17
-  prophetie: 41
-  temple: 15
-  trinite: 14
+  agneau:
+    compte: 27
+    hex: '#e0b04f'
+    nom:
+      ar: الحمل
+      en: The Lamb
+      fr: L'Agneau
+  alliance:
+    compte: 18
+    hex: '#7cb47c'
+    nom:
+      ar: العهود
+      en: Covenants
+      fr: Alliances
+  figures:
+    compte: 13
+    hex: '#a583d6'
+    nom:
+      ar: الرموز
+      en: Figures
+      fr: Figures
+  filshomme:
+    compte: 8
+    hex: '#c98a5e'
+    nom:
+      ar: ابن الإنسان
+      en: Son of Man
+      fr: Fils de l'homme
+  paque:
+    compte: 17
+    hex: '#d05c5c'
+    nom:
+      ar: الفصح والتقدمة
+      en: Passover & offering
+      fr: Pâque & offrande
+  prophetie:
+    compte: 41
+    hex: '#6b9bd8'
+    nom:
+      ar: النبوءات
+      en: Prophecies
+      fr: Prophéties
+  temple:
+    compte: 15
+    hex: '#57b3ab'
+    nom:
+      ar: الهيكل
+      en: Temple
+      fr: Temple
+  trinite:
+    compte: 14
+    hex: '#ededed'
+    nom:
+      ar: إله واحد — الآب والابن والروح
+      en: One God — Father, Son, Spirit
+      fr: Un seul Dieu — Père, Fils, Esprit
