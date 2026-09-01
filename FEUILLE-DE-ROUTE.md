@@ -253,6 +253,19 @@ boucle à l'exécution suivante. Le supprimer la relance.
   fondu commun (230 ms), immédiat quand le lecteur préfère un mouvement réduit.
   Un seul geste suffit désormais vers l'Agneau — mieux que les deux promis.
 
+## R-026 Toucher l'Agneau rallume tout le ciel
+- zone: verte
+- statut: fait
+- pourquoi: suggestion du porteur après les quatre phases — le centre de la carte était décoratif ; le toucher doit rallumer ou rendre visibles tous les points
+- fait quand: le centre agit dans les trois scènes, au doigt comme au clavier, sans piéger les taps du voisinage
+- résultat: le disque de l'Agneau est un bouton dans les trois scènes. Le toucher
+  éteint la sélection, ferme la fiche, rend tous les points visibles — et le ciel
+  entier s'éclaire un instant (immédiat sans lueur si le lecteur préfère un
+  mouvement réduit). Le halo respirant ne capte pas les taps : seul le disque
+  agit. Accessible au clavier (Entrée, espace), étiquette dans les trois
+  langues ; l'indice du ciel gagne sa troisième phrase — « Touchez l'Agneau :
+  tout se rallume. »
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
