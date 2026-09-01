@@ -41,21 +41,28 @@
   .cielbox{max-width:900px;margin:6px auto 0;padding:0 8px}
   svg{width:100%;height:auto;display:block}
   .etoile-fond{fill:#e9e3d3}
-  .arete{stroke:rgba(233,227,211,.07);stroke-width:1;transition:stroke .25s}
-  .arete.fil{stroke:rgba(211,169,79,.22);stroke-width:1.4}
-  .arete.on{stroke-width:1.8}
-  .noeud{cursor:pointer}
-  .noeud circle.c{transition:r .2s}
-  .noeud text{font-family:system-ui,sans-serif;font-size:14px;fill:var(--ink);opacity:.85;text-anchor:middle;transition:opacity .25s}
+  .arete{stroke-width:1;transition:stroke .25s,opacity .25s}
+  .arete.afil{stroke:rgba(211,169,79,.16)}
+  .arete.asalle{stroke:rgba(79,147,220,.13)}
+  .arete.apilier{stroke:rgba(209,80,80,.13)}
+  .arete.aentree{stroke:rgba(233,227,211,.05)}
+  .arete.chaine{stroke:rgba(211,169,79,.30);stroke-width:1.5}
+  .arete.on{stroke-width:1.9}
+  .noeud{cursor:pointer;transition:opacity .25s}
+  .noeud text{font-family:system-ui,sans-serif;font-size:13.5px;fill:var(--ink);opacity:.85;text-anchor:middle;transition:opacity .25s;paint-order:stroke;stroke:rgba(12,14,24,.75);stroke-width:3px}
   html[dir="rtl"] .noeud text{font-family:'Amiri',sans-serif;font-size:16px}
-  .noeud.dim circle.c{opacity:.25}
-  .noeud.dim text{opacity:.18}
-  .noeud.sel circle.c,.noeud.lie circle.c{opacity:1}
+  .noeud.menu text{opacity:.66}
+  .noeud.dim{opacity:.14}
   .noeud.sel text,.noeud.lie text{opacity:1}
-  .noeud.sel circle.halo{opacity:.5}
-  circle.halo{opacity:0;transition:opacity .25s}
+  .noeud.sel circle.c{stroke:#fff;stroke-width:1.4}
   .centre text{font-family:'Cormorant Garamond',serif;font-size:22px;fill:var(--gold);text-anchor:middle}
   html[dir="rtl"] .centre text{font-family:'Amiri',serif}
+  @media (prefers-reduced-motion:no-preference){
+    .souffle{transform-box:fill-box;transform-origin:center;animation:souffle 7s ease-in-out infinite}
+    @keyframes souffle{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.12);opacity:1}}
+    .scin{animation:scintille 4.5s ease-in-out infinite}
+    @keyframes scintille{0%,100%{opacity:.08}50%{opacity:.45}}
+  }
 
   .fiche{position:fixed;inset-inline:0;bottom:0;background:var(--bg2);border-top:1px solid var(--line);padding:14px 18px calc(14px + env(safe-area-inset-bottom));display:none;z-index:9}
   .fiche.show{display:flex;align-items:center;gap:14px}
@@ -108,31 +115,34 @@
 //    dédoublonnés. Palette des familles validée (CVD, contraste) sur ce fond.
 const FAM={fil:"#b98b2a",salle:"#4f93dc",pilier:"#d15050",entree:"#9a94a8"};
 const CX=360, CY=352;
-function pos(r,deg){const a=(deg-90)*Math.PI/180;return [CX+r*Math.cos(a),CY+r*Math.sin(a)];}
+// Positions figées d'un relâchement calculé hors ligne : ressorts sur les
+// arêtes réelles, répulsion entre nœuds, chaque famille dans sa bande radiale.
+// La taille d'une étoile suit son nombre de liens réels (deg).
+const COEUR={fil:"#ffd98a",salle:"#a8ccf2",pilier:"#f2a3a3",entree:"#cfc9bb"};
 const NOEUDS=[
- {k:"emmaus",href:"page-fondatrice-emmaus.html",fam:"fil",p:pos(135,0)},
- {k:"voici",href:"page-etalon-voici-agneau.html",fam:"fil",p:pos(135,45)},
- {k:"regne",href:"page-etape2-agneau-regne.html",fam:"fil",p:pos(135,90)},
- {k:"croix",href:"page-etape3-la-croix.html",fam:"fil",p:pos(135,135)},
- {k:"isaie",href:"page-etape4-isaie-53.html",fam:"fil",p:pos(135,180)},
- {k:"paque",href:"page-etape5-la-paque.html",fam:"fil",p:pos(135,225)},
- {k:"morija",href:"page-etape6-morija.html",fam:"fil",p:pos(135,270)},
- {k:"commencement",href:"page-etape7-commencement.html",fam:"fil",p:pos(135,315)},
- {k:"trinite",href:"salle-trinite.html",fam:"salle",p:pos(228,26)},
- {k:"grandesalle",href:"salle-trinite-bibliotheques.html",fam:"salle",p:pos(228,77)},
- {k:"offrande",href:"section-offrande.html",fam:"salle",p:pos(228,129)},
- {k:"bibliotheque",href:"salle-bibliotheque.html",fam:"salle",p:pos(228,180)},
- {k:"fiable",href:"section-bible-fiable.html",fam:"salle",p:pos(228,231)},
- {k:"veilleurs",href:"frise-prophetes.html",fam:"salle",p:pos(228,283)},
- {k:"cle",href:"cle-deja-pas-encore.html",fam:"salle",p:pos(228,334)},
- {k:"sang",href:"pilier-le-sang.html",fam:"pilier",p:pos(305,150)},
- {k:"bapteme",href:"pilier-bapteme.html",fam:"pilier",p:pos(305,30)},
- {k:"parole",href:"pilier-parole-eternelle.html",fam:"pilier",p:pos(305,90)},
- {k:"resurrection",href:"pilier-resurrection.html",fam:"pilier",p:pos(305,210)},
- {k:"temple",href:"pilier-temple-detruit.html",fam:"pilier",p:pos(305,270)},
- {k:"transfiguration",href:"pilier-transfiguration.html",fam:"pilier",p:pos(305,330)},
- {k:"accueil",href:"index.html",fam:"entree",p:[96,742]},
- {k:"seuil",href:"seuil-landing.html",fam:"entree",p:[624,742]},
+ {k:"emmaus",href:"page-fondatrice-emmaus.html",fam:"fil",p:[353.4,234.2],deg:5},
+ {k:"voici",href:"page-etalon-voici-agneau.html",fam:"fil",p:[477,336.6],deg:2},
+ {k:"regne",href:"page-etape2-agneau-regne.html",fam:"fil",p:[382.9,512.7],deg:4},
+ {k:"croix",href:"page-etape3-la-croix.html",fam:"fil",p:[472.5,472.7],deg:3},
+ {k:"isaie",href:"page-etape4-isaie-53.html",fam:"fil",p:[308.3,458.1],deg:3},
+ {k:"paque",href:"page-etape5-la-paque.html",fam:"fil",p:[243.2,335.4],deg:2},
+ {k:"morija",href:"page-etape6-morija.html",fam:"fil",p:[232.5,247.2],deg:2},
+ {k:"commencement",href:"page-etape7-commencement.html",fam:"fil",p:[218.7,437.3],deg:2},
+ {k:"trinite",href:"salle-trinite.html",fam:"salle",p:[149.3,341.4],deg:3},
+ {k:"grandesalle",href:"salle-trinite-bibliotheques.html",fam:"salle",p:[149.6,207.9],deg:1},
+ {k:"offrande",href:"section-offrande.html",fam:"salle",p:[317.9,603.5],deg:3},
+ {k:"bibliotheque",href:"salle-bibliotheque.html",fam:"salle",p:[249.1,581.6],deg:2},
+ {k:"fiable",href:"section-bible-fiable.html",fam:"salle",p:[230.1,510.6],deg:4},
+ {k:"veilleurs",href:"frise-prophetes.html",fam:"salle",p:[140.5,420.2],deg:3},
+ {k:"cle",href:"cle-deja-pas-encore.html",fam:"salle",p:[179.4,532],deg:2},
+ {k:"sang",href:"pilier-le-sang.html",fam:"pilier",p:[482.7,617.8],deg:2},
+ {k:"bapteme",href:"pilier-bapteme.html",fam:"pilier",p:[421,98],deg:2},
+ {k:"parole",href:"pilier-parole-eternelle.html",fam:"pilier",p:[617.4,451.7],deg:2},
+ {k:"resurrection",href:"pilier-resurrection.html",fam:"pilier",p:[352,673.9],deg:2},
+ {k:"temple",href:"pilier-temple-detruit.html",fam:"pilier",p:[197.2,629.8],deg:2},
+ {k:"transfiguration",href:"pilier-transfiguration.html",fam:"pilier",p:[266,72],deg:4},
+ {k:"accueil",href:"index.html",fam:"entree",p:[96,742],deg:11},
+ {k:"seuil",href:"seuil-landing.html",fam:"entree",p:[624,742],deg:2},
 ];
 const ARETES=[["accueil","bibliotheque"],["accueil","cle"],["accueil","commencement"],["accueil","emmaus"],
 ["accueil","fiable"],["accueil","offrande"],["accueil","parole"],["accueil","seuil"],["accueil","temple"],
@@ -231,21 +241,36 @@ function alea(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.
 
 function bati(){
   const svg=document.getElementById('ciel');svg.innerHTML='';
+  // les lueurs : un dégradé par famille, réutilisé par toutes ses étoiles
+  const defs=S('defs');
+  for(const [fam,col] of Object.entries(Object.assign({agneau:"#d3a94f"},FAM))){
+    const g=S('radialGradient');g.id='g-'+fam;
+    [["0%","#ffffff",".9"],["30%",col,".55"],["100%",col,"0"]].forEach(([o,c,a])=>{
+      const st=S('stop');st.setAttribute('offset',o);st.setAttribute('stop-color',c);
+      st.setAttribute('stop-opacity',a);g.appendChild(st);});
+    defs.appendChild(g);}
+  svg.appendChild(defs);
   const r=alea(1517);
-  for(let i=0;i<110;i++){const e=S('circle');e.setAttribute('class','etoile-fond');
+  for(let i=0;i<130;i++){const e=S('circle');
+    const scin=i%9===0;
+    e.setAttribute('class','etoile-fond'+(scin?' scin':''));
     e.setAttribute('cx',(r()*720).toFixed(1));e.setAttribute('cy',(r()*790).toFixed(1));
     e.setAttribute('r',(r()*1.1+0.3).toFixed(2));e.setAttribute('opacity',(r()*.25+.06).toFixed(2));
+    if(scin)e.style.animationDelay=(r()*4.5).toFixed(1)+'s';
     svg.appendChild(e);}
   const par={};NOEUDS.forEach(nd=>par[nd.k]=nd);
   ARETES.forEach(([a,b])=>{
     const l=S('line');const A=par[a].p,B=par[b].p;
     l.setAttribute('x1',A[0]);l.setAttribute('y1',A[1]);l.setAttribute('x2',B[0]);l.setAttribute('y2',B[1]);
-    l.setAttribute('class','arete'+(CHAINE.has([a,b].sort().join('|'))?' fil':''));
+    const rang={fil:0,salle:1,pilier:2,entree:3};
+    const dom=rang[par[a].fam]<=rang[par[b].fam]?par[a].fam:par[b].fam;
+    l.setAttribute('class','arete a'+dom+(CHAINE.has([a,b].sort().join('|'))?' chaine':''));
     l.dataset.a=a;l.dataset.b=b;svg.appendChild(l);});
-  // le centre
+  // le centre : l'Agneau, en respiration lente
   const g=S('g');g.setAttribute('class','centre');
-  const halo=S('circle');halo.setAttribute('cx',CX);halo.setAttribute('cy',CY);halo.setAttribute('r',74);
-  halo.setAttribute('fill','rgba(211,169,79,.06)');g.appendChild(halo);
+  const halo=S('circle');halo.setAttribute('class','souffle');
+  halo.setAttribute('cx',CX);halo.setAttribute('cy',CY);halo.setAttribute('r',105);
+  halo.setAttribute('fill','url(#g-agneau)');halo.setAttribute('opacity','.35');g.appendChild(halo);
   const cc=S('circle');cc.setAttribute('cx',CX);cc.setAttribute('cy',CY);cc.setAttribute('r',47);
   cc.setAttribute('fill','#171320');cc.setAttribute('stroke','var(--gold)');cc.setAttribute('stroke-width','1.5');g.appendChild(cc);
   const ct=S('text');ct.setAttribute('x',CX);ct.setAttribute('y',CY+8);ct.id='centreTxt';g.appendChild(ct);
@@ -255,13 +280,16 @@ function bati(){
   // les nœuds
   NOEUDS.forEach(nd=>{
     const a=document.createElementNS("http://www.w3.org/2000/svg","a");
-    a.setAttribute('href',nd.href);a.setAttribute('class','noeud');a.dataset.k=nd.k;
-    const [x,y]=nd.p, col=FAM[nd.fam], rr=nd.fam==='fil'?11:nd.fam==='salle'?10:nd.fam==='pilier'?8.5:9;
-    const hl=S('circle');hl.setAttribute('class','halo');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
-    hl.setAttribute('r',rr+9);hl.setAttribute('fill',col);a.appendChild(hl);
+    a.setAttribute('href',nd.href);a.setAttribute('class','noeud'+(nd.deg<3?' menu':''));a.dataset.k=nd.k;
+    const [x,y]=nd.p;
+    const base=nd.fam==='fil'?7.5:nd.fam==='salle'?7:nd.fam==='pilier'?6:6;
+    const rr=Math.min(base+nd.deg*1.1, base+9);
+    const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
+    hl.setAttribute('r',(rr*2.9).toFixed(1));hl.setAttribute('fill','url(#g-'+nd.fam+')');
+    hl.setAttribute('opacity',nd.fam==='entree'?'.35':'.8');a.appendChild(hl);
     const c=S('circle');c.setAttribute('class','c');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',rr);
-    if(nd.fam==='entree'){c.setAttribute('fill','none');c.setAttribute('stroke',col);c.setAttribute('stroke-width','1.6');}
-    else c.setAttribute('fill',col);
+    if(nd.fam==='entree'){c.setAttribute('fill','rgba(12,14,24,.6)');c.setAttribute('stroke',COEUR.entree);c.setAttribute('stroke-width','1.4');}
+    else c.setAttribute('fill',COEUR[nd.fam]);
     a.appendChild(c);
     const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r',26);
     cible.setAttribute('fill','transparent');a.appendChild(cible);

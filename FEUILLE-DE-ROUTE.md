@@ -177,7 +177,10 @@ boucle à l'exécution suivante. Le supprimer la relance.
   dessinée) ; palette des familles validée par calcul (daltonisme, contraste) sur le
   fond du site ; toucher une étoile allume ses liens, la retoucher fait entrer ;
   vérifiée par captures réelles en mobile, bureau et arabe. Verset socle :
-  Colossiens 1:17.
+  Colossiens 1:17. Affinée le même jour sur une référence visuelle du porteur
+  (graphe de connaissances) : lueurs en dégradés, taille des étoiles selon leur
+  nombre de liens, positions relâchées par simulation hors ligne puis figées,
+  respiration lente du centre — toujours sans bibliothèque.
 
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
