@@ -188,7 +188,9 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  lede:"Chaque page du site est une étoile ; l'Agneau tient le centre. Les lignes ne sont pas un décor : ce sont les vrais passages d'une page à l'autre, mesurés sur le site.",
  hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez.",
  hintBiblio:"Touchez un livre : sa fiche s'ouvre. Touchez-le encore : vous ouvrez son pupitre.",
+ hintCorr:"Touchez une correspondance : sa fiche s'ouvre. Touchez-la encore : vous l'ouvrez dans le fil rouge.",
  constOuvrir:"✦ Ouvrir la constellation", pupitre:"Ouvrir le pupitre →",
+ diagramme:"Ouvrir dans le fil rouge →", vers:"→",
  retour:"← Le ciel", horsCarte:"hors de la carte du temps",
  flien:"Ses passages",
  descs:{
@@ -242,7 +244,9 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  lede:"Every page of the site is a star; the Lamb holds the centre. The lines are not decoration: they are the real passages from one page to another, measured on the site.",
  hint:"Touch a star: its links light up. Touch it again: you enter.",
  hintBiblio:"Touch a book: its card opens. Touch it again: you open its lectern.",
+ hintCorr:"Touch a correspondence: its card opens. Touch it again: you open it in the red thread.",
  constOuvrir:"✦ Open the constellation", pupitre:"Open the lectern →",
+ diagramme:"Open in the red thread →", vers:"→",
  retour:"← The sky", horsCarte:"outside the map of time",
  flien:"Its passages",
  descs:{
@@ -296,7 +300,9 @@ ar:{dir:"rtl",brand:"حمل الله",
  lede:"كل صفحة في الموقع نجمة؛ والحمل يمسك المركز. الخطوط ليست زينة: إنها المعابر الحقيقية من صفحة إلى أخرى، مقيسةً على الموقع.",
  hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل.",
  hintBiblio:"المس سفرًا: تنفتح بطاقته. المسه ثانيةً: تفتح منبره.",
+ hintCorr:"المس تناظرًا: تنفتح بطاقته. المسه ثانيةً: تفتحه في الخيط الأحمر.",
  constOuvrir:"✦ افتح الكوكبة", pupitre:"افتح المنبر ←",
+ diagramme:"افتح في الخيط الأحمر ←", vers:"←",
  retour:"→ السماء", horsCarte:"خارج خريطة الزمن",
  flien:"معابرها",
  descs:{
@@ -343,13 +349,14 @@ ar:{dir:"rtl",brand:"حمل الله",
   accueil:"الخيط الأحمر — الاستقبال",seuil:"العتبة — باب الخارج"},
  foot:"العقد والخطوط تتبع navigation.yml: الخريطة مقيسة لا مرسومة.<br>سيجون ١٩١٠ · World English Bible · فانديك."}};
 
-let LANG="fr", SEL=null, SELL=null;
-let SCENE=(location.hash.slice(1)==='bibliotheque')?'bibliotheque':'ciel';
+let LANG="fr", SEL=null, SELL=null, SELC=null;
+const SCENES=new Set(['bibliotheque','correspondances']);
+let SCENE=SCENES.has(location.hash.slice(1))?location.hash.slice(1):'ciel';
 function allerScene(sc){ if(sc===SCENE)return; SCENE=sc; fermer();
   if(sc==='ciel') history.pushState('', '', location.pathname); else location.hash=sc;
   bati(); }
 window.addEventListener('hashchange',()=>{ const h=location.hash.slice(1);
-  const sc=(h==='bibliotheque')?h:'ciel';
+  const sc=SCENES.has(h)?h:'ciel';
   if(sc!==SCENE){ SCENE=sc; fermer(); bati(); } });
 const S=(t)=>document.createElementNS("http://www.w3.org/2000/svg",t);
 // petites étoiles de fond, déterministes
@@ -399,6 +406,33 @@ function bati(){
       const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r','14');
       cible.setAttribute('fill','transparent');a.appendChild(cible);
       a.addEventListener('click',ev=>{ if(SELL!==l[0]){ev.preventDefault();choisirLivre(l[0]);} });
+      svg.appendChild(a);});
+    svg.querySelectorAll('.etq').forEach(t=>svg.appendChild(t));
+    render();
+    return;}
+  if(SCENE==='correspondances'){
+    // un dégradé par thème du fil rouge
+    for(const [cle,th] of Object.entries(CONSTEL.themes)){
+      const g2=S('radialGradient');g2.id='g-t-'+cle;
+      [["0%","#ffffff",".85"],["32%",th.hex,".5"],["100%",th.hex,"0"]].forEach(([o,c2,a2])=>{
+        const st=S('stop');st.setAttribute('offset',o);st.setAttribute('stop-color',c2);
+        st.setAttribute('stop-opacity',a2);g2.appendChild(st);});
+      defs.appendChild(g2);}
+    const etoiles=batiCorr(svg);
+    poserCentre(svg);
+    etoiles.forEach(([n,x,y])=>{
+      const co=CONSTEL.corr[n],th=CONSTEL.themes[co[0]];
+      const a=document.createElementNS("http://www.w3.org/2000/svg","a");
+      a.setAttribute('href','index.html#c='+(n+1));
+      a.setAttribute('class','noeud corr');a.dataset.corr=n;
+      const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
+      hl.setAttribute('r','11');hl.setAttribute('fill','url(#g-t-'+co[0]+')');
+      hl.setAttribute('opacity','.7');a.appendChild(hl);
+      const cc2=S('circle');cc2.setAttribute('class','c');cc2.setAttribute('cx',x);cc2.setAttribute('cy',y);
+      cc2.setAttribute('r','4.8');cc2.setAttribute('fill',th.hex);a.appendChild(cc2);
+      const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r','13');
+      cible.setAttribute('fill','transparent');a.appendChild(cible);
+      a.addEventListener('click',ev=>{ if(SELC!==n){ev.preventDefault();choisirCorr(n);} });
       svg.appendChild(a);});
     svg.querySelectorAll('.etq').forEach(t=>svg.appendChild(t));
     render();
@@ -490,6 +524,40 @@ function choisirLivre(id){
   const go=document.getElementById('fgo');go.textContent=c.pupitre;go.href='salle-bibliotheque.html';
   document.getElementById('fiche').classList.add('show');
 }
+// Les huit thèmes du fil rouge en amas ; chaque correspondance à la couleur
+// de son thème. La donnée est celle du diagramme de l'accueil, sans copie.
+function batiCorr(svg){
+  const par={};CONSTEL.corr.forEach((co,i)=>{(par[co[0]]=par[co[0]]||[]).push(i);});
+  const cles=Object.keys(CONSTEL.themes);
+  let tot=0;const spans=cles.map(k=>{const t=(par[k]||[]).length+3;tot+=t;return t;});
+  let a0=-90;const etoiles=[];
+  cles.forEach((k,ci)=>{
+    const span=spans[ci]/tot*360, idx=par[k]||[];
+    const am=a0+span/2, pl=posC(318,am);
+    const et=S('text');et.setAttribute('x',pl[0]);et.setAttribute('y',pl[1]);
+    et.setAttribute('class','etq');et.dataset.t=k;et.dataset.x=pl[0];svg.appendChild(et);
+    const cols=Math.max(1,Math.ceil(idx.length/4)), pad=Math.min(span*0.14,6);
+    idx.forEach((n,j)=>{
+      const col=j%cols,row=(j/cols)|0;
+      const ang=a0+pad+(col+0.5)*(span-2*pad)/cols, ray=170+row*42;
+      const xy=posC(ray,ang);etoiles.push([n,xy[0],xy[1]]);});
+    a0+=span;});
+  return etoiles;
+}
+function choisirCorr(n){
+  SELC=n;const c=C[LANG];
+  const co=CONSTEL.corr[n],th=CONSTEL.themes[co[0]];
+  const tri=co[{fr:1,en:2,ar:3}[LANG]];
+  document.querySelectorAll('.noeud.corr').forEach(nn=>nn.classList.toggle('sel',+nn.dataset.corr===n));
+  document.getElementById('fdot').style.background=th.hex;
+  document.getElementById('ffam').textContent=th.nom[LANG];
+  document.getElementById('fnom').textContent=tri[0];
+  document.getElementById('fdesc').textContent=tri[1]+'  '+c.vers+'  '+tri[2];
+  document.getElementById('fliens').innerHTML='';
+  document.getElementById('fconst').hidden=true;
+  const go=document.getElementById('fgo');go.textContent=c.diagramme;go.href='index.html#c='+(n+1);
+  document.getElementById('fiche').classList.add('show');
+}
 function choisir(k){
   SEL=k;const c=C[LANG];const nd=NOEUDS.find(n=>n.k===k);
   document.querySelectorAll('.noeud').forEach(n=>{
@@ -514,12 +582,13 @@ function choisir(k){
     bt.style.setProperty('--fc',FAM[fam]);
     bt.addEventListener('click',()=>choisir(autre));
     fl.appendChild(bt);});
-  const fc=document.getElementById('fconst');fc.hidden=(k!=='bibliotheque');
-  if(!fc.hidden){fc.textContent=c.constOuvrir;fc.onclick=()=>allerScene('bibliotheque');}
+  const sc={bibliotheque:'bibliotheque',accueil:'correspondances'}[k];
+  const fc=document.getElementById('fconst');fc.hidden=!sc;
+  if(sc){fc.textContent=c.constOuvrir;fc.onclick=()=>allerScene(sc);}
   document.getElementById('fiche').classList.add('show');
 }
 function fermer(){
-  SEL=null;SELL=null;
+  SEL=null;SELL=null;SELC=null;
   document.querySelectorAll('.noeud').forEach(n=>n.classList.remove('sel','lie','dim'));
   document.querySelectorAll('.arete').forEach(l=>{l.classList.remove('on');l.style.stroke='';l.style.opacity='';});
   document.getElementById('fiche').classList.remove('show');
@@ -534,12 +603,16 @@ function render(l){
   document.getElementById('verse').textContent=c.verse;
   document.getElementById('vref').textContent=c.vref;
   document.getElementById('lede').textContent=c.lede;
-  document.getElementById('hint').textContent=SCENE==='ciel'?c.hint:c.hintBiblio;
+  document.getElementById('hint').textContent=
+    SCENE==='ciel'?c.hint:(SCENE==='bibliotheque'?c.hintBiblio:c.hintCorr);
   const lg=document.getElementById('legende');
   if(SCENE==='bibliotheque'){
     lg.innerHTML=Object.values(CONSTEL.periodes).map(p=>
       `<span><i style="background:${p.c}"></i>${p[LANG]}</span>`).join('')+
       `<span><i class="vide"></i>${c.horsCarte}</span>`;
+  }else if(SCENE==='correspondances'){
+    lg.innerHTML=Object.values(CONSTEL.themes).map(t=>
+      `<span><i style="background:${t.hex}"></i>${t.nom[LANG]}</span>`).join('');
   }else{
     lg.innerHTML=
       `<span><i style="background:${FAM.fil}"></i>${c.fams.fil}</span>`+
@@ -552,13 +625,14 @@ function render(l){
   const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
   document.querySelectorAll('.etq').forEach(t=>{
-    t.textContent=CONSTEL.etageres[t.dataset.k][LANG];
+    t.textContent=t.dataset.t?CONSTEL.themes[t.dataset.t].nom[LANG]:CONSTEL.etageres[t.dataset.k][LANG];
     t.setAttribute('x',t.dataset.x);
     const bb=t.getBBox();
     if(bb.x<4)t.setAttribute('x',+t.dataset.x+(4-bb.x));
     else if(bb.x+bb.width>716)t.setAttribute('x',+t.dataset.x-(bb.x+bb.width-716));});
   const li={fr:0,en:1,ar:2}[LANG];
   document.querySelectorAll('.noeud').forEach(n=>{
+    if(n.dataset.corr){n.setAttribute('aria-label',CONSTEL.corr[+n.dataset.corr][li+1][0]);return;}
     if(n.dataset.livre){const lv=CONSTEL.livres.find(x=>x[0]===n.dataset.livre);
       if(lv)n.setAttribute('aria-label',lv[3][li]);return;}
     const t=n.querySelector('text');if(t)t.textContent=c.noms[n.dataset.k];
@@ -567,6 +641,7 @@ function render(l){
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===LANG?'true':'false'));
   if(SCENE==='ciel'&&SEL)choisir(SEL);
   if(SCENE==='bibliotheque'&&SELL)choisirLivre(SELL);
+  if(SCENE==='correspondances'&&SELC!=null)choisirCorr(SELC);
 }
 document.getElementById('fx').addEventListener('click',fermer);
 document.getElementById('retourCiel').addEventListener('click',()=>allerScene('ciel'));

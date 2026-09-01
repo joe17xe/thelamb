@@ -672,7 +672,18 @@ render=function(l){_renduSansRail(l);if(SCRUB.visibles.length)scrubPeindre();};
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
 
 /* ---------- Initialisation ---------- */
-loadStore().then(()=>{renderAll();render('fr');});
+/* #c=N (1..153) ouvre la correspondance N : c'est l'adresse que donne la
+   constellation de la carte du ciel. On centre le panneau, à toute largeur. */
+function ouvrirDepuisAdresse(){
+  const m=location.hash.match(/^#c=(\d+)$/);
+  if(!m)return;
+  const i=+m[1]-1;
+  if(i<0||i>=D.length)return;
+  select(i,true);
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+window.addEventListener('hashchange',ouvrirDepuisAdresse);
+loadStore().then(()=>{renderAll();render('fr');ouvrirDepuisAdresse();});
 </script>
 </body>
 </html>

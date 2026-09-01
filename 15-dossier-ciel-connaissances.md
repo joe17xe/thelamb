@@ -126,3 +126,11 @@ vit dans le bloc `CONSTEL` de la carte, généré et vérifié par
 zéro copie éditée à la main. Fiche au premier toucher, pupitre au second,
 « ✦ Ouvrir la constellation » sur l'étoile Bibliothèque, « ← Le ciel » pour
 remonter, `#bibliotheque` partageable. Trois langues vérifiées au rendu réel.
+
+**Phase 3 : faite** (R-024). La constellation des correspondances : les 153
+en huit amas de thème autour de l'Agneau, aux couleurs mêmes du diagramme du
+fil rouge. Fiche au premier toucher — thème, titre, références AT → NT ; au
+second, la correspondance s'ouvre au bon arc du diagramme de l'accueil, qui
+comprend désormais l'adresse `#c=N` (1..153). Entrée par l'étoile « Le fil
+rouge » du ciel ; `#correspondances` partageable ; même bloc CONSTEL mesuré,
+zéro copie.
