@@ -2061,67 +2061,67 @@ generations:
     ar: يسّى
     en: Jesse
     fr: Jessé
-  periode: loi
+  periode: juges
 - nom:
     ar: عوبيد
     en: Obed
     fr: Obed
-  periode: loi
+  periode: juges
 - nom:
     ar: بوعز
     en: Boaz
     fr: Boaz
-  periode: loi
+  periode: juges
 - nom:
     ar: سلمون
     en: Salmon
     fr: Salmon
-  periode: loi
+  periode: juges
 - nom:
     ar: نحشون
     en: Nahshon
     fr: Nahshon
-  periode: loi
+  periode: exode
 - nom:
     ar: عميناداب
     en: Amminadab
     fr: Amminadab
-  periode: loi
+  periode: patriarches
 - nom:
     ar: رام
     en: Ram
     fr: Ram
-  periode: peres
+  periode: patriarches
 - nom:
     ar: حصرون
     en: Hezron
     fr: Hetsron
-  periode: peres
+  periode: patriarches
 - nom:
     ar: فارص
     en: Perez
     fr: Pérets
-  periode: peres
+  periode: patriarches
 - nom:
     ar: يهوذا
     en: Judah
     fr: Juda
-  periode: peres
+  periode: patriarches
 - nom:
     ar: يعقوب
     en: Jacob
     fr: Jacob
-  periode: peres
+  periode: patriarches
 - nom:
     ar: إسحاق
     en: Isaac
     fr: Isaac
-  periode: peres
+  periode: patriarches
 - nom:
     ar: إبراهيم
     en: Abraham
     fr: Abraham
-  periode: peres
+  periode: origines
 - nom:
     ar: سام
     en: Shem
@@ -2141,7 +2141,6 @@ generations:
     ar: آدم
     en: Adam
     fr: Adam
-  periode: origines
 livres:
 - etagere: loi
   id: genese
@@ -2151,7 +2150,10 @@ livres:
     fr: Genèse
   periodes:
   - origines
-  - peres
+  - patriarches
+  tranches:
+    origines: 1–11
+    patriarches: 12–50
   w:
     ar: 'الخلق، والسقوط، ونوح، وإبراهيم، وإسحاق، ويعقوب، ويوسف: البداياتُ والمواعيد.'
     en: 'Creation, fall, Noah, Abraham, Isaac, Jacob, Joseph: beginnings and promises.'
@@ -2163,7 +2165,7 @@ livres:
     en: Exodus
     fr: Exode
   periodes:
-  - loi
+  - exode
   w:
     ar: العبودية في مصر، وموسى، والضربات، والفصح، والبحر المشقوق، وسيناء، والمسكن.
     en: Slavery in Egypt, Moses, the plagues, the Passover, the parted sea, Sinai, the tabernacle.
@@ -2175,7 +2177,7 @@ livres:
     en: Leviticus
     fr: Lévitique
   periodes:
-  - loi
+  - exode
   w:
     ar: الذبائح، والكهنوت، والطهارة، ويوم الكفارة، والأعياد.
     en: Sacrifices, priesthood, purity, the Day of Atonement, the feasts.
@@ -2187,7 +2189,7 @@ livres:
     en: Numbers
     fr: Nombres
   periodes:
-  - loi
+  - desert
   w:
     ar: أربعون سنةً من التيه، والتذمر، والحية النحاسية، والإحصاءات.
     en: Forty years of wandering, the grumbling, the bronze serpent, the censuses.
@@ -2199,7 +2201,7 @@ livres:
     en: Deuteronomy
     fr: Deutéronome
   periodes:
-  - loi
+  - desert
   w:
     ar: 'خطبُ موسى الوداعية: الناموسُ يُعاد قبل دخول أرض الموعد.'
     en: 'Moses'' farewell speeches: the Law given again before entering the Promised Land.'
@@ -2211,7 +2213,7 @@ livres:
     en: Joshua
     fr: Josué
   periodes:
-  - loi
+  - juges
   w:
     ar: دخولُ كنعان، وعبورُ الأردن، وسقوطُ أريحا.
     en: Entry into Canaan, crossing the Jordan, the fall of Jericho.
@@ -2223,7 +2225,7 @@ livres:
     en: Judges
     fr: Juges
   periodes:
-  - loi
+  - juges
   w:
     ar: دورةُ السقطات والمخلّصين الذين يقيمهم الله (جدعون، شمشون…).
     en: The cycle of falls and God-raised deliverers (Gideon, Samson…).
@@ -2235,7 +2237,7 @@ livres:
     en: Ruth
     fr: Ruth
   periodes:
-  - loi
+  - juges
   w:
     ar: 'غريبةٌ أمينة، جدّةُ داود الكبرى: النعمةُ تدخل النسل.'
     en: 'A faithful foreigner, David''s great-grandmother: grace enters the line.'
@@ -2247,7 +2249,11 @@ livres:
     en: 1 Samuel
     fr: 1 Samuel
   periodes:
+  - juges
   - royaume
+  tranches:
+    juges: 1–8
+    royaume: 9–31
   w:
     ar: صموئيل، وشاول، وصعودُ داود؛ «اللهُ ينظر إلى القلب».
     en: Samuel, Saul, David's rise; “God looks at the heart”.
@@ -2272,7 +2278,10 @@ livres:
     fr: 1 Rois
   periodes:
   - royaume
-  - exil
+  - division
+  tranches:
+    division: 12–22
+    royaume: 1–11
   w:
     ar: سليمان، وبناءُ الهيكل، ثم انقسامُ المملكة؛ إيليا.
     en: Solomon, the Temple built, then the kingdom divided; Elijah.
@@ -2284,7 +2293,11 @@ livres:
     en: 2 Kings
     fr: 2 Rois
   periodes:
+  - division
   - exil
+  tranches:
+    division: 1–16
+    exil: 17–25
   w:
     ar: انحطاطُ المملكتين حتى السقوطين؛ أليشع.
     en: The decline of both kingdoms to their two falls; Elisha.
@@ -2309,7 +2322,6 @@ livres:
     fr: 2 Chroniques
   periodes:
   - royaume
-  - exil
   w:
     ar: من سليمان إلى السبي، من زاوية الهيكل والعبادة.
     en: From Solomon to the exile, seen from the Temple and worship.
@@ -2357,7 +2369,7 @@ livres:
     en: Job
     fr: Job
   periodes:
-  - peres
+  - patriarches
   w:
     ar: لماذا يتألم البارّ؟ نقاشٌ مذهل، بلا جوابٍ سهل.
     en: Why does the righteous suffer? A dizzying debate, with no easy answer.
@@ -2417,7 +2429,7 @@ livres:
     en: Isaiah
     fr: Ésaïe
   periodes:
-  - exil
+  - division
   w:
     ar: 'أكثرُ الأنبياء اقتباسًا: دينونةٌ وعزاء، وعمانوئيل، والعبدُ المتألم.'
     en: 'The most quoted prophet: judgment and comfort, Immanuel, the suffering Servant.'
@@ -2477,7 +2489,7 @@ livres:
     en: Hosea
     fr: Osée
   periodes:
-  - exil
+  - division
   w:
     ar: زواجٌ مكسور صورةً لمحبة الله الأمينة لشعبٍ خائن.
     en: A broken marriage as an image of God's faithful love for an unfaithful people.
@@ -2488,7 +2500,8 @@ livres:
     ar: يوئيل
     en: Joel
     fr: Joël
-  periodes: null
+  periodes:
+  - division
   w:
     ar: «يومُ الرب»، وغزوُ الجراد، والروحُ المسكوب على الجميع.
     en: The “day of the LORD”, a locust invasion, the Spirit poured on all.
@@ -2500,7 +2513,7 @@ livres:
     en: Amos
     fr: Amos
   periodes:
-  - exil
+  - division
   w:
     ar: راعٍ يرعد ضد الظلم الاجتماعي باسم الله.
     en: A shepherd who thunders against social injustice in God's name.
@@ -2524,7 +2537,7 @@ livres:
     en: Jonah
     fr: Jonas
   periodes:
-  - exil
+  - division
   w:
     ar: النبيُّ الهارب، يبتلعه الحوت، ويُرسَل إلى نينوى الوثنية.
     en: The fleeing prophet, swallowed by a fish, sent to pagan Nineveh.
@@ -2536,7 +2549,7 @@ livres:
     en: Micah
     fr: Michée
   periodes:
-  - exil
+  - division
   w:
     ar: العدلُ والتواضع، والقريةُ التي منها يخرج متسلّطُ إسرائيل.
     en: Justice, humility, and the village from which Israel's ruler will come.
@@ -2620,7 +2633,7 @@ livres:
     en: Tobit
     fr: Tobie
   periodes:
-  - exil
+  - division
   w:
     ar: أبٌ أعمى، وفتاةٌ مثقلة، ورفيقُ سفرٍ يتبيّن أنه ملاك. حكايةُ عائلةٍ وصلاةٍ وشفاء.
     en: A blind father, a young woman in distress, a travelling companion who turns out to be an angel.
@@ -2648,7 +2661,7 @@ livres:
     en: Wisdom
     fr: Sagesse
   periodes:
-  - attente
+  - maccabees
   w:
     ar: كُتب باليونانية في الإسكندرية. الحكمةُ مشخَّصة، وقيمةُ عدم الفساد، وصورةُ البارِّ المضطهَد لأنه
       يزعج.
@@ -2663,7 +2676,7 @@ livres:
     en: Sirach
     fr: Siracide
   periodes:
-  - attente
+  - maccabees
   w:
     ar: 'حكمةُ كاتبٍ أورشليمي العملية، ثم مديحُ الآباء: إعادةُ قراءةٍ لتاريخ إسرائيل كلِّه عبر شخصياته.'
     en: 'The practical wisdom of a Jerusalem scribe, then the praise of the fathers: the whole history
@@ -2691,7 +2704,7 @@ livres:
     en: 1 Maccabees
     fr: 1 Maccabées
   periodes:
-  - attente
+  - maccabees
   w:
     ar: الثورةُ على أنطيوخوس الرابع، واستعادةُ الهيكل المدنَّس، وتدشينُه من جديد. تاريخٌ يُروى برصانة.
     en: The revolt against Antiochus IV, the recapture of the desecrated Temple, its new dedication. History,
@@ -2709,7 +2722,7 @@ livres:
     en: 2 Maccabees
     fr: 2 Maccabées
   periodes:
-  - attente
+  - maccabees
   w:
     ar: 'قراءةٌ أخرى للسنوات نفسها، أكثرُ لاهوتية: استشهادُ سبعة إخوة وأمِّهم، ورجاءُ قيامةٍ صريح.'
     en: 'Another reading of the same years, more theological: the martyrdom of seven brothers and their
@@ -2770,7 +2783,8 @@ livres:
     ar: أعمال الرسل
     en: Acts
     fr: Actes
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: الخمسين، والمسيحيون الأوائل، بطرس ثم بولس، والإنجيلُ حتى رومية.
     en: Pentecost, the first Christians, Peter then Paul, the Gospel as far as Rome.
@@ -2781,7 +2795,8 @@ livres:
     ar: رومية
     en: Romans
     fr: Romains
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'أوفى عرضٍ للإنجيل: الخطية، والنعمة، والإيمان، وإسرائيل، والحياةُ الجديدة.'
     en: 'The fullest exposition of the Gospel: sin, grace, faith, Israel, new life.'
@@ -2792,7 +2807,8 @@ livres:
     ar: ١ كورنثوس
     en: 1 Corinthians
     fr: 1 Corinthiens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'أجوبةٌ لكنيسةٍ منقسمة: الصليب، والمحبة (ص ١٣)، والقيامة (ص ١٥).'
     en: 'Answers to a divided church: the cross, love (ch. 13), the resurrection (ch. 15).'
@@ -2803,7 +2819,8 @@ livres:
     ar: ٢ كورنثوس
     en: 2 Corinthians
     fr: 2 Corinthiens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: الدفاعُ عن الخدمة، والضعفُ موضعًا لقوة الله.
     en: The defense of ministry, weakness as the place of God's power.
@@ -2814,7 +2831,8 @@ livres:
     ar: غلاطية
     en: Galatians
     fr: Galates
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'حريةُ الإنجيل ضد العودة إلى الناموس: نخلص بالإيمان.'
     en: 'The freedom of the Gospel against returning to the Law: saved by faith.'
@@ -2825,7 +2843,8 @@ livres:
     ar: أفسس
     en: Ephesians
     fr: Éphésiens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'تدبيرُ الله العظيم: جمعُ كل شيء في المسيح؛ والكنيسةُ جسدُه.'
     en: 'God''s great design: to unite all in Christ; the Church, his body.'
@@ -2836,7 +2855,8 @@ livres:
     ar: فيلبي
     en: Philippians
     fr: Philippiens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: الفرحُ في السجن؛ ونشيدُ الاتضاع والتمجيد العظيم.
     en: Joy in prison; the great hymn of the lowering and exaltation.
@@ -2847,7 +2867,8 @@ livres:
     ar: كولوسي
     en: Colossians
     fr: Colossiens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: سموُّ المسيح على كل الخليقة؛ ضد الحكمة الباطلة.
     en: The supremacy of Christ over all creation; against false wisdoms.
@@ -2858,7 +2879,8 @@ livres:
     ar: ١ تسالونيكي
     en: 1 Thessalonians
     fr: 1 Thessaloniciens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: تشجيعُ كنيسةٍ فتيّة؛ ورجاءُ رجوع المسيح.
     en: Encouragement to a young church; the hope of Christ's return.
@@ -2869,7 +2891,8 @@ livres:
     ar: ٢ تسالونيكي
     en: 2 Thessalonians
     fr: 2 Thessaloniciens
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: إيضاحاتٌ عن رجوع المسيح، ضد الذعر والبطالة.
     en: Clarifications on Christ's return, against panic and idleness.
@@ -2880,7 +2903,8 @@ livres:
     ar: ١ تيموثاوس
     en: 1 Timothy
     fr: 1 Timothée
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'نصائحُ لمسؤولٍ شاب: تعليمٌ سليم، ونظام، ونزاهة.'
     en: 'Advice to a young church leader: sound doctrine, order, integrity.'
@@ -2891,7 +2915,8 @@ livres:
     ar: ٢ تيموثاوس
     en: 2 Timothy
     fr: 2 Timothée
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'رسالةُ بولس الأخيرة، أمام الموت: «حفظتُ الإيمان».'
     en: 'Paul''s last letter, facing death: “I have kept the faith”.'
@@ -2902,7 +2927,8 @@ livres:
     ar: تيطس
     en: Titus
     fr: Tite
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: تنظيمُ كنيسةٍ سليمة في كريت؛ والنعمةُ التي تصوغ الحياة.
     en: Organizing a healthy church in Crete; grace that shapes life.
@@ -2913,7 +2939,8 @@ livres:
     ar: فليمون
     en: Philemon
     fr: Philémon
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'بطاقةٌ شخصية: عبدٌ هارب يُقبَل كأخ.'
     en: 'A personal note: a runaway slave received as a brother.'
@@ -2924,7 +2951,8 @@ livres:
     ar: العبرانيون
     en: Hebrews
     fr: Hébreux
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: المسيح، رئيسُ كهنةٍ كامل وذبيحةٌ واحدة، أسمى من العبادة القديمة كلِّها.
     en: Christ, perfect high priest and one sacrifice, superior to all the old worship.
@@ -2935,7 +2963,8 @@ livres:
     ar: يعقوب
     en: James
     fr: Jacques
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'الإيمانُ الذي يعمل: إيمانٌ بلا أعمال ميت؛ وضبطُ اللسان.'
     en: 'Faith that acts: faith without works is dead; taming the tongue.'
@@ -2946,7 +2975,8 @@ livres:
     ar: ١ بطرس
     en: 1 Peter
     fr: 1 Pierre
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: الثباتُ في الألم؛ والحملُ بلا عيب؛ وكهنوتٌ جديد.
     en: Standing in suffering; the Lamb without defect; a new priesthood.
@@ -2957,7 +2987,8 @@ livres:
     ar: ٢ بطرس
     en: 2 Peter
     fr: 2 Pierre
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: ضد المعلّمين الكذبة؛ وشاهدُ عيان التجلّي.
     en: Against false teachers; the eyewitness of the Transfiguration.
@@ -2968,7 +2999,8 @@ livres:
     ar: ١ يوحنا
     en: 1 John
     fr: 1 Jean
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'أن نحبّ ونثبت: «اللهُ محبة»؛ ويقينُ الخلاص.'
     en: 'To love and abide: “God is love”; the assurance of salvation.'
@@ -2979,7 +3011,8 @@ livres:
     ar: ٢ يوحنا
     en: 2 John
     fr: 2 Jean
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'بطاقةٌ قصيرة: السلوكُ في الحق والمحبة، والحذرُ من المضلِّين.'
     en: 'A short note: walking in truth and love, guarding against deceivers.'
@@ -2990,7 +3023,8 @@ livres:
     ar: ٣ يوحنا
     en: 3 John
     fr: 3 Jean
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: 'بطاقةٌ قصيرة: الضيافةُ المسيحية، ودعمُ الخدام الحقيقيين.'
     en: 'A short note: Christian hospitality, supporting true servants.'
@@ -3001,7 +3035,8 @@ livres:
     ar: يهوذا
     en: Jude
     fr: Jude
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: دعوةٌ موجزة للمجاهدة لأجل الإيمان ضد المندسّين.
     en: A brief call to contend for the faith against infiltrators.
@@ -3012,7 +3047,8 @@ livres:
     ar: الرؤيا
     en: Revelation
     fr: Apocalypse
-  periodes: null
+  periodes:
+  - eglise
   w:
     ar: رؤى الحمل، والحرب، والدينونة، وأورشليمَ الجديدة، والعرس.
     en: Visions of the Lamb, the battle, the judgment, the new Jerusalem and the wedding.
@@ -3044,13 +3080,17 @@ pages:
 - seuil-landing.html
 periodes:
 - origines
-- peres
-- loi
+- patriarches
+- exode
+- desert
+- juges
 - royaume
+- division
 - exil
 - retour
-- attente
+- maccabees
 - christ
+- eglise
 prophetes:
 - id: moise
   nom:

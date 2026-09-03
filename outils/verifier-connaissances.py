@@ -106,9 +106,10 @@ def bloc_constel(d):
                                 "ar": p["ar"]["nom"]} for p in pers},
         "livres": [[l["id"], l["etagere"], l["periodes"],
                     [l["nom"]["fr"], l["nom"]["en"], l["nom"]["ar"]],
-                    [l["w"]["fr"], l["w"]["en"], l["w"]["ar"]]]
-                   + ([[l["lien"]["fr"], l["lien"]["en"], l["lien"]["ar"]]]
-                      if "lien" in l else [])
+                    [l["w"]["fr"], l["w"]["en"], l["w"]["ar"]],
+                    ([l["lien"]["fr"], l["lien"]["en"], l["lien"]["ar"]]
+                     if "lien" in l else None),
+                    l.get("tranches")]
                    for l in d["livres"]],
         "themes": d["themes"],
         "corr": [[c["theme"],
