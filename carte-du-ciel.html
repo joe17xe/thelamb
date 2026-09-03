@@ -63,6 +63,7 @@
   .arete.apilier{stroke:rgba(209,80,80,.13)}
   .arete.aentree{stroke:rgba(233,227,211,.05)}
   .arete.chaine{stroke:rgba(211,169,79,.30);stroke-width:1.5}
+  .arete.filchrist{stroke:var(--gold)}
   .arete.on{stroke-width:1.9}
   .noeud{cursor:pointer;transition:opacity .25s}
   .noeud text{font-family:system-ui,sans-serif;font-size:13.5px;fill:var(--ink);opacity:.85;text-anchor:middle;transition:opacity .25s;paint-order:stroke;stroke:rgba(12,14,24,.75);stroke-width:3px}
@@ -275,7 +276,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  lede:"Chaque page du site est une étoile ; l'Agneau tient le centre. Les lignes ne sont pas un décor : ce sont les vrais passages d'une page à l'autre, mesurés sur le site.",
  hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez. Touchez l'Agneau : tout se rallume.",
  centreA11y:"L'Agneau — rallumer tout le ciel",
- hintBiblio:"Les sections se lisent dans l'ordre, de 1 à 11. Un fil d'or vers le centre marque un lien nommé au Christ. Touchez un livre, puis encore pour son pupitre.",
+ hintBiblio:"Les sections se lisent dans l'ordre, de 1 à 11. Un fil d'or va vers l'Agneau : plus il est net, plus ce livre porte de passages qui le relient au Christ.",
  hintCorr:"Touchez une correspondance : sa fiche s'ouvre. Touchez-la encore : vous l'ouvrez dans le fil rouge.",
  vueNom:{ciel:"Le ciel",bibliotheque:"Le livre",epoques:"Les époques",correspondances:"Les correspondances",veilleurs:"Les veilleurs",genealogie:"La généalogie"},
  vueOuvrir:{bibliotheque:"✦ Ouvrir le livre",epoques:"✦ Ouvrir les époques",correspondances:"✦ Ouvrir les correspondances",veilleurs:"✦ Ouvrir les veilleurs",genealogie:"✦ Ouvrir la généalogie"},
@@ -284,7 +285,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  arianeLbl:"Fil d'Ariane", arianeAgneau:"✦ L'Agneau", arianeCiel:"Le ciel",
  horsCarte:"hors de la carte du temps", chap:"ch.",
  aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", tblVoir:"voir la liste", tblSur:"sur",
- recitLbl:"Récit", placeDebat:"Place non tranchée", tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
+ recitLbl:"Récit", placeDebat:"Place non tranchée", liensChrist:"passages vers le Christ", tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintVeilleurs:"Quatorze veilleurs, chacun dans son époque, sur le même cadran que le chemin : de 1, le Christ, à 12. Tous sont tournés vers le même point.",
  hintGenealogie:"La chaîne part du Christ, au centre, et remonte jusqu'à Adam, maillon par maillon. Touchez-en un : sa fiche s'ouvre.",
  hintEpoques:"Le fil d'or relie les quatorze livres du récit, du Christ — l'époque 1 — jusqu'à 12. Touchez une époque, ou un livre.",
@@ -340,7 +341,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  lede:"Every page of the site is a star; the Lamb holds the centre. The lines are not decoration: they are the real passages from one page to another, measured on the site.",
  hint:"Touch a star: its links light up. Touch it again: you enter. Touch the Lamb: everything lights up again.",
  centreA11y:"The Lamb — relight the whole sky",
- hintBiblio:"The sections read in order, 1 to 11. A gold thread to the centre marks a named link to Christ. Touch a book, then again for its lectern.",
+ hintBiblio:"The sections read in order, 1 to 11. A gold thread runs to the Lamb: the clearer it is, the more passages of that book tie it to Christ.",
  hintCorr:"Touch a correspondence: its card opens. Touch it again: you open it in the red thread.",
  vueNom:{ciel:"The sky",bibliotheque:"The book",epoques:"The epochs",correspondances:"The correspondences",veilleurs:"The watchmen",genealogie:"The genealogy"},
  vueOuvrir:{bibliotheque:"✦ Open the book",epoques:"✦ Open the epochs",correspondances:"✦ Open the correspondences",veilleurs:"✦ Open the watchmen",genealogie:"✦ Open the genealogy"},
@@ -349,7 +350,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  arianeLbl:"Breadcrumb", arianeAgneau:"✦ The Lamb", arianeCiel:"The sky",
  horsCarte:"outside the map of time", chap:"ch.",
  aConstellation:"opens a constellation", filtreTout:"✕ Show all", tblVoir:"see the list", tblSur:"of",
- recitLbl:"Narrative", placeDebat:"Placement not settled", tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
+ recitLbl:"Narrative", placeDebat:"Placement not settled", liensChrist:"passages to Christ", tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintVeilleurs:"Fourteen watchmen, each in his epoch, on the same dial as the path: from 1, Christ, to 12. All are turned towards the same point.",
  hintGenealogie:"The chain starts from Christ, at the centre, and goes back to Adam, link by link. Touch one: its card opens.",
  hintEpoques:"The gold thread joins the fourteen narrative books, from Christ — epoch 1 — back to 12. Touch an epoch, or a book.",
@@ -405,7 +406,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  lede:"كل صفحة في الموقع نجمة؛ والحمل يمسك المركز. الخطوط ليست زينة: إنها المعابر الحقيقية من صفحة إلى أخرى، مقيسةً على الموقع.",
  hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل. المس الحمل: يضيء الكل من جديد.",
  centreA11y:"الحمل — أضئ السماء كلها",
- hintBiblio:"تُقرأ الأقسام بالترتيب من ١ إلى ١١. وخيطٌ ذهبي إلى المركز يدلّ على صلةٍ مُسمّاة بالمسيح. المس سفرًا، ثم المسه ثانيةً لمنبره.",
+ hintBiblio:"تُقرأ الأقسام بالترتيب من ١ إلى ١١. وخيطٌ ذهبي يمضي إلى الحمل: كلّما كان أوضح، حمل السفرُ مقاطعَ أكثر تصله بالمسيح.",
  hintCorr:"المس تناظرًا: تنفتح بطاقته. المسه ثانيةً: تفتحه في الخيط الأحمر.",
  vueNom:{ciel:"السماء",bibliotheque:"الكتاب",epoques:"العصور",correspondances:"التناظرات",veilleurs:"الحرّاس",genealogie:"سلسلة النسب"},
  vueOuvrir:{bibliotheque:"✦ افتح الكتاب",epoques:"✦ افتح العصور",correspondances:"✦ افتح التناظرات",veilleurs:"✦ افتح الحرّاس",genealogie:"✦ افتح سلسلة النسب"},
@@ -414,7 +415,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  arianeLbl:"مسار التنقّل", arianeAgneau:"✦ الحمل", arianeCiel:"السماء",
  horsCarte:"خارج خريطة الزمن", chap:"أص.",
  aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", tblVoir:"اعرض القائمة", tblSur:"من",
- recitLbl:"السرد", placeDebat:"موضعٌ غير محسوم", tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
+ recitLbl:"السرد", placeDebat:"موضعٌ غير محسوم", liensChrist:"مقطعًا نحو المسيح", tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintVeilleurs:"أربعة عشر حارسًا، كلٌّ في عصره، على القرص نفسه الذي يسير عليه الطريق: من ١، المسيح، إلى ١٢. وكلُّهم متّجهون إلى النقطة نفسها.",
  hintGenealogie:"تبدأ السلسلةُ من المسيح في المركز، وتصعد إلى آدم، حلقةً حلقة. المس حلقةً: تنفتح بطاقتها.",
  hintEpoques:"الخيطُ الذهبي يصل الأسفارَ الأربعةَ عشرَ التي تروي الخبر، من المسيح — العصر ١ — إلى ١٢. المس عصرًا، أو سفرًا.",
@@ -687,10 +688,17 @@ function batiBiblio(svg){
       const ang=a1+pad+(col+0.5)*(span-2*pad)/cols, ray=176+row*40;
       const xy=posC(ray,ang);etoiles.push([l,xy[0],xy[1]]);});
     a0+=span;});
-  etoiles.forEach(([l,x,y])=>{ if(l[5]){
+  // Les fils vers l'Agneau : un par livre que les correspondances relient au
+  // Christ, l'épaisseur suivant leur nombre. Un livre qui porte un lien nommé
+  // (D-013) sans correspondance chiffrée garde son fil, au plus ténu.
+  etoiles.forEach(([l,x,y])=>{ const n=CORR_LIVRE[l[0]]||(l[5]?1:0); if(!n) return;
+    const f=Math.sqrt(n/CORR_MAX);
     const ln=S('line');ln.setAttribute('x1',x);ln.setAttribute('y1',y);
     ln.setAttribute('x2',CX);ln.setAttribute('y2',CY);
-    ln.setAttribute('class','arete chaine');svg.appendChild(ln);} });
+    ln.setAttribute('class','arete filchrist');
+    ln.setAttribute('stroke-opacity',(0.10+0.22*f).toFixed(2));
+    ln.setAttribute('stroke-width',(0.8+1.3*f).toFixed(2));
+    svg.appendChild(ln);} );
   return etoiles;
 }
 function choisirLivre(id){
@@ -715,6 +723,15 @@ function choisirLivre(id){
   if(l[5]){const b=document.createElement('span');b.className='pchip2 lienor';b.textContent=l[5][li];fl.appendChild(b);}
   if(l[7]){const nt=document.createElement('span');nt.className='fnote';
     nt.textContent='* '+l[7][li];fl.appendChild(nt);}
+  const ouL=CONSTEL.corr.map((co,i)=>[co,i]).filter(([co])=>
+    [livreDeRef(co[1][1]),livreDeRef(co[1][2])].some(x=>x&&x[0]===l[0]));
+  if(ouL.length){const lb=document.createElement('span');lb.className='fllbl';
+    lb.textContent=c.ouJesus+' · '+ouL.length;fl.appendChild(lb);
+    ouL.slice(0,12).forEach(([co,i])=>{const a=document.createElement('a');a.className='pchip2';
+      a.href='index.html#c='+(i+1);a.style.setProperty('--pc',CONSTEL.themes[co[0]].hex);
+      a.textContent=co[li+1][0];fl.appendChild(a);});
+    if(ouL.length>12){const sp=document.createElement('span');sp.className='pchip2';
+      sp.textContent='+'+(ouL.length-12);fl.appendChild(sp);}}
   document.getElementById('fconst').hidden=true;document.getElementById('fconst2').hidden=true;
   SELE=null;document.querySelectorAll('.secteur').forEach(s=>s.classList.remove('sel'));
   document.querySelectorAll('.noeud.livre').forEach(n=>n.classList.remove('dim'));
@@ -849,11 +866,23 @@ function coeurLivre(a,x,y,pers,r,deb){
   if(deb)a.classList.add('debat');
 }
 function defs_of(svg){ let d=svg.querySelector('defs'); if(!d){d=S('defs');svg.insertBefore(d,svg.firstChild);} return d; }
-// dans quelle époque tombe une référence de l'Ancien Testament (livre, et chapitre pour les livres coupés)
-function epoqueDeRef(ref){
+// de quel livre relève une référence de l'Ancien Testament
+function livreDeRef(ref){
   const m=ref.match(/^(.*?)\s+(\d+)/); if(!m) return null;
   let nom=m[1].trim(); if(nom==='Psaume') nom='Psaumes';
-  const l=CONSTEL.livres.find(x=>x[3][0]===nom); if(!l||!l[2]) return null;
+  return CONSTEL.livres.find(x=>x[3][0]===nom)||null;
+}
+// Combien de passages relient chaque livre au Christ. C'est la mesure, pas une
+// appréciation : les 153 correspondances du fil rouge, comptées par livre — des
+// deux côtés du lien, celui qui annonce et celui qui accomplit.
+const CORR_LIVRE=(()=>{const n={};CONSTEL.corr.forEach(co=>{
+  [livreDeRef(co[1][1]),livreDeRef(co[1][2])].forEach(l=>{if(l)n[l[0]]=(n[l[0]]||0)+1;});});
+  return n;})();
+const CORR_MAX=Math.max(1,...Object.values(CORR_LIVRE));
+// dans quelle époque tombe une référence (livre, et chapitre pour les livres coupés)
+function epoqueDeRef(ref){
+  const m=ref.match(/^(.*?)\s+(\d+)/); if(!m) return null;
+  const l=livreDeRef(ref); if(!l||!l[2]) return null;
   if(l[6]){ const ch=+m[2]; for(const [p,tr] of Object.entries(l[6])){ const [d1,d2]=tr.split('–').map(Number); if(ch>=d1&&ch<=d2) return p; } }
   return l[2][0];
 }
@@ -1050,7 +1079,8 @@ function lignesTableau(li){
     const quand=pers.length?pers.map(k=>ep(k)+(tr[k]?' '+c.chap+' '+tr[k]:'')).join(' · '):c.horsCarte;
     return {cat:pers.length?pers:['mut'],lc:pers.length?P[pers[0]].c:'#9a94a8',
       n:l[3][li]+(l[7]?' *':''),
-      m:CONSTEL.etageres[l[1]][LANG]+' · '+quand+(l[7]?' · '+c.placeDebat:'')+(l[5]?' · '+l[5][li]:''),
+      m:CONSTEL.etageres[l[1]][LANG]+' · '+quand+(l[7]?' · '+c.placeDebat:'')
+        +(CORR_LIVRE[l[0]]?' · '+CORR_LIVRE[l[0]]+' '+c.liensChrist:'')+(l[5]?' · '+l[5][li]:''),
       go:()=>choisirLivre(l[0])};});
 }
 function construireTableau(){
