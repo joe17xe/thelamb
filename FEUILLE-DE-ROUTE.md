@@ -437,6 +437,28 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-045 Chaque fil dit pourquoi il existe
+- zone: verte
+- statut: fait
+- pourquoi: le porteur, après le correctif de visibilité — « le fil, il est très bien ; moi je pense que le lien qui est fait entre l'Agneau et Maccabée n'est pas expliqué, on sait pas pourquoi il est là ; chaque lien doit donner sa raison d'être, une explication des correspondances »
+- fait quand: toucher un livre dit pourquoi son fil va vers l'Agneau, et ce que la correspondance relie
+- résultat: la raison **existait déjà** — chaque pupitre de la salle porte un champ « Le fil
+  vers le Christ », rédigé dans les trois langues pour les 73 livres. La carte ne le
+  remontait pas. Le miroir le porte désormais, avec la nuance de D-013 quand elle existe.
+  Toucher 2 Maccabées affiche maintenant : « Hébreux 11:35 fait vraisemblablement écho aux
+  martyrs de 2 Maccabées 6–7 : ils préfèrent la mort à l'infidélité, *afin d'obtenir une
+  meilleure résurrection* », puis un dépliant « Lire la nuance » qui explique pourquoi
+  c'est une allusion et non une citation.
+  **Les correspondances disent ce qu'elles relient** : chaque pastille porte sa référence
+  — « Le substitut · Genèse 22:13 → Romains 8:32 ». La fiche donne d'abord la raison,
+  ensuite le détail.
+  **Les 73 livres portent leur fil**, puisque les 73 peuvent dire pourquoi. L'épaisseur
+  continue de mesurer les passages recensés par le fil rouge ; un livre dont aucun passage
+  n'est encore recensé a son fil **en pointillé**, et sa fiche le dit.
+- vérifié: 73 fils au rendu à 393 × 852 ; fiches de 2 Maccabées, Tobie et la Genèse
+  relues ; la CI contrôle désormais que le fil vers le Christ existe dans les trois
+  langues pour chaque livre ; les huit contrôles.
+
 ## R-044 Les fils se voient sur un téléphone, et celui qu'on touche s'allume
 - zone: verte
 - statut: fait
