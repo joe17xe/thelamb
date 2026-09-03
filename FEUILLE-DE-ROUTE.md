@@ -437,6 +437,34 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-050 Le baptême au Jourdain — ce que la recherche ajoute, et deux pièges de traduction
+- zone: verte
+- statut: fait
+- pourquoi: seconde recherche apportée par le porteur, à vérifier et à ranger
+- fait quand: chaque référence est confrontée au texte, et le dossier existant est complété plutôt que doublé
+- résultat: inventaire d'abord — `09-dossier-bapteme-parole.md` **existait déjà** et portait
+  les trois citations tissées de la voix (Psaume 2:7 + Genèse 22:2 LXX + Ésaïe 42:1), la
+  solidarité avec les pécheurs comme amorce d'Ésaïe 53:12, et le Jourdain chargé de mémoire.
+  Le dossier est donc **complété**, section A.5, non redoublé.
+  **Le garde-fou qui manquait**, et c'est le plus important : on est tenté de lire le
+  baptême comme une ordination sacerdotale — Exode 29:4 lave Aaron avant de le consacrer,
+  Nombres 4:3 fixe le service à trente ans, Luc 3:23 donne cet âge à Jésus. Mais
+  **Hébreux 7:14** l'interdit : « notre Seigneur est sorti de Juda, tribu dont Moïse n'a
+  rien dit pour ce qui concerne le sacerdoce ». Le mot juste est *seuil*, ou *investiture*
+  — jamais *ordination*.
+- deux pièges de traduction, trouvés en vérifiant: **Marc 1:10** emploie en grec le même
+  verbe que Marc 15:38 — les cieux et le voile *déchirés* —, mais **Segond ne le montre
+  pas** : « les cieux s'ouvrir » d'un côté, « le voile se déchira » de l'autre. Le point ne
+  peut donc pas être *montré* au lecteur français, seulement expliqué. · **« Si tu
+  déchirais les cieux » est en Ésaïe 63:19 chez Segond**, et en 64:1 dans les bibles
+  anglaises : deuxième divergence de numérotation après Malachie. Toute référence reprise
+  d'une source anglophone est à vérifier avant d'être écrite.
+- proposition du porteur, à trancher: une constellation « Jésus le Juif » — sa pratique, la
+  Loi, les fêtes. Voir la note dans le dossier : les **sept fêtes existent déjà en donnée**
+  (`salle-bibliotheque.html`, rayon spécial), le reste non. Ce qui a une structure ici,
+  c'est l'**année** — une roue des fêtes et ce que chacune accomplit —, tandis que « Jésus
+  le Juif » est un thème, qui appelle d'abord une page.
+
 ## R-049 « Pourquoi l'agneau ? » — le dossier de fond, vérifié au texte
 - zone: orange
 - statut: fait — dossier, décisions tranchées, contenu intégré aux pages existantes
