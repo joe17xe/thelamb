@@ -429,6 +429,29 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-042 Le fil vers l'Agneau se mesure, il ne se décrète pas
+- zone: verte
+- statut: fait
+- pourquoi: question du porteur — « pourquoi ça commence par Maccabée, c'est quoi l'histoire, je vois pas le lien ; est-ce que c'est pas plutôt on fait le lien autrement par la Genèse ? »
+- fait quand: le fil d'or dit une mesure du dépôt, et non le hasard d'un badge posé à la main
+- résultat: le porteur avait raison. Le trait unique qui partait de 2 Maccabées venait
+  d'un champ `lien` — un badge de nomenclature D-013 — que **un seul livre du dépôt
+  portait**, parce que c'était le cas le plus contesté : un livre reçu diversement, un
+  lien discuté (Hébreux 11:35 ↔ 2 Maccabées 6–7). Les liens évidents, eux, n'avaient
+  jamais reçu de badge : ils n'avaient pas l'air d'en avoir besoin. La carte a donc promu
+  au rang de seul fil visible le lien le plus faible du corpus, pendant que la Genèse,
+  qui porte vingt correspondances en base, n'avait rien. Un échantillon de taille un qui
+  se lit comme une thèse — et une thèse contraire à la charte.
+  Le fil se **dérive maintenant des 153 correspondances** que le site porte déjà, comptées
+  par livre et des deux côtés du lien : celui qui annonce et celui qui accomplit. Trente-neuf
+  livres reçoivent leur fil, l'épaisseur suivant le nombre — Ésaïe 31, Matthieu 30, Jean 29,
+  les Psaumes 27, la Genèse 20, l'Exode 19, Hébreux 19. Un livre qui porte un lien nommé
+  sans correspondance chiffrée garde son fil, au plus ténu : 2 Maccabées n'est pas effacé,
+  il reprend sa taille. La fiche d'un livre liste désormais ses passages, cliquables vers
+  le diagramme, comme le faisait déjà celle d'une époque.
+- vérifié: 39 fils mesurés au rendu, gradués de 0,14 à 0,32 d'opacité ; les 153
+  correspondances rattachées des deux côtés, aucune orpheline ; les huit contrôles.
+
 ## R-041 Le contraste des époques voisines : ne plus délaver la couleur
 - zone: verte
 - statut: fait
