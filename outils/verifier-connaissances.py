@@ -103,7 +103,12 @@ def bloc_constel(d):
         "etageres": d["etageres"],
         "periodes": {p["cle"]: {"c": p["couleur"],
                                 "fr": p["fr"]["nom"], "en": p["en"]["nom"],
-                                "ar": p["ar"]["nom"]} for p in pers},
+                                "ar": p["ar"]["nom"],
+                                "d": {l: p[l]["dates"] for l in ("fr", "en", "ar")},
+                                "t": {l: p[l]["texte"] for l in ("fr", "en", "ar")},
+                                "f": {l: p[l]["figures"] for l in ("fr", "en", "ar")},
+                                "e": {l: p[l].get("evenements", []) for l in ("fr", "en", "ar")}}
+                     for p in pers},
         "livres": [[l["id"], l["etagere"], l["periodes"],
                     [l["nom"]["fr"], l["nom"]["en"], l["nom"]["ar"]],
                     [l["w"]["fr"], l["w"]["en"], l["w"]["ar"]],

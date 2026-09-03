@@ -18,145 +18,181 @@ periodes:
     couleur: "#22a89a"
     fr: {nom: "Monde des origines", dates: "Création → ~2200 av. J.-C.",
          texte: "La création, la chute, et la promesse faite le jour même de la faute ; le déluge, Babel. Des origines racontées, pas datées.",
-         figures: "Adam, Abel, Noé"}
+         figures: "Adam, Abel, Noé",
+         evenements: ["La création", "La chute", "La promesse faite le jour même", "Le déluge", "Babel et la dispersion"]}
     en: {nom: "Early World", dates: "Creation → c. 2200 BC",
          texte: "Creation, the fall, and the promise made on the very day of the fault; the flood, Babel. Origins told, not dated.",
-         figures: "Adam, Abel, Noah"}
+         figures: "Adam, Abel, Noah",
+         evenements: ["Creation", "The fall", "The promise made that very day", "The flood", "Babel and the scattering"]}
     ar: {nom: "عالم البدايات", dates: "الخلق ← نحو ٢٢٠٠ ق.م",
          texte: "الخلقُ، والسقوط، والوعدُ المُعطى في يوم الخطيئة نفسه؛ والطوفان، وبابل. بداياتٌ مرويّة لا مؤرَّخة.",
-         figures: "آدم، هابيل، نوح"}
+         figures: "آدم، هابيل، نوح",
+         evenements: ["الخلق", "السقوط", "الوعدُ في اليوم نفسه", "الطوفان", "بابل والتشتّت"]}
 
   - cle: patriarches
     couleur: "#944887"
     fr: {nom: "Les Patriarches", dates: "~2200–1800 av. J.-C.",
          texte: "Dieu choisit une famille : Abraham, Isaac, Jacob, Joseph. Sur le mont Morija, la question de l'agneau est posée pour la première fois.",
-         figures: "Abraham, Isaac, Jacob, Joseph"}
+         figures: "Abraham, Isaac, Jacob, Joseph",
+         evenements: ["L'appel d'Abram hors d'Ur", "Melchisédek bénit Abram", "L'alliance avec Abraham", "Sodome et Gomorrhe", "Isaac lié sur le bois", "Jacob béni, Jacob en fuite", "Jacob lutte avec Dieu", "Joseph vendu par ses frères", "La famille descend en Égypte"]}
     en: {nom: "The Patriarchs", dates: "c. 2200–1800 BC",
          texte: "God chooses a family: Abraham, Isaac, Jacob, Joseph. On Mount Moriah, the question of the lamb is asked for the first time.",
-         figures: "Abraham, Isaac, Jacob, Joseph"}
+         figures: "Abraham, Isaac, Jacob, Joseph",
+         evenements: ["Abram called out of Ur", "Melchizedek blesses Abram", "The covenant with Abraham", "Sodom and Gomorrah", "Isaac bound on the wood", "Jacob blessed, Jacob in flight", "Jacob wrestles with God", "Joseph sold by his brothers", "The family goes down to Egypt"]}
     ar: {nom: "الآباء", dates: "نحو ٢٢٠٠–١٨٠٠ ق.م",
          texte: "يختار اللهُ عائلة: إبراهيم، وإسحاق، ويعقوب، ويوسف. وعلى جبل المريّا يُطرح سؤالُ الحمل لأولِ مرة.",
-         figures: "إبراهيم، إسحاق، يعقوب، يوسف"}
+         figures: "إبراهيم، إسحاق، يعقوب، يوسف",
+         evenements: ["دعوةُ أبرام من أور", "ملكيصادق يبارك أبرام", "العهدُ مع إبراهيم", "سدوم وعمورة", "إسحاق مربوطًا على الحطب", "يعقوب مباركًا، يعقوب هاربًا", "يعقوب يصارع الله", "يوسف يبيعه إخوته", "العائلة تنزل إلى مصر"]}
 
   - cle: exode
     couleur: "#d66f6a"
     fr: {nom: "Égypte et Exode", dates: "~1800–1446 av. J.-C.",
          texte: "Israël asservi en Égypte ; les dix plaies ; la première Pâque et la sortie ; l'alliance au Sinaï. Naissance d'un peuple.",
-         figures: "Moïse, Aaron"}
+         figures: "Moïse, Aaron",
+         evenements: ["Israël asservi", "Le buisson ardent", "Les dix plaies", "La première Pâque et la sortie", "La mer Rouge", "La manne", "L'alliance au Sinaï", "Le veau d'or", "Le tabernacle"]}
     en: {nom: "Egypt and Exodus", dates: "c. 1800–1446 BC",
          texte: "Israel enslaved in Egypt; the ten plagues; the first Passover and the going out; the covenant at Sinai. A people is born.",
-         figures: "Moses, Aaron"}
+         figures: "Moses, Aaron",
+         evenements: ["Israel enslaved", "The burning bush", "The ten plagues", "The first Passover and the going out", "The Red Sea", "The manna", "The covenant at Sinai", "The golden calf", "The tabernacle"]}
     ar: {nom: "مصر والخروج", dates: "نحو ١٨٠٠–١٤٤٦ ق.م",
          texte: "إسرائيلُ مستعبَدٌ في مصر؛ والضربات العشر؛ والفصحُ الأول والخروج؛ والعهدُ في سيناء. ميلادُ شعب.",
-         figures: "موسى، هارون"}
+         figures: "موسى، هارون",
+         evenements: ["إسرائيلُ مستعبَد", "العُلَّيقة المشتعلة", "الضربات العشر", "الفصحُ الأول والخروج", "البحر الأحمر", "المنّ", "العهدُ في سيناء", "العجل الذهبي", "خيمة الاجتماع"]}
 
   - cle: desert
     couleur: "#8e5e01"
     fr: {nom: "Le Désert", dates: "1446–1406 av. J.-C.",
          texte: "Quarante ans au désert : la manne, les douze espions, le serpent d'airain, l'alliance renouvelée en Moab.",
-         figures: "Moïse, Josué"}
+         figures: "Moïse, Josué",
+         evenements: ["Les douze espions", "La verge d'Aaron", "Moïse frappe le rocher", "Le serpent d'airain", "L'alliance renouvelée en Moab"]}
     en: {nom: "Desert Wanderings", dates: "1446–1406 BC",
          texte: "Forty years in the desert: the manna, the twelve spies, the bronze serpent, the covenant renewed in Moab.",
-         figures: "Moses, Joshua"}
+         figures: "Moses, Joshua",
+         evenements: ["The twelve spies", "Aaron's rod", "Moses strikes the rock", "The bronze serpent", "The covenant renewed in Moab"]}
     ar: {nom: "البرية", dates: "١٤٤٦–١٤٠٦ ق.م",
          texte: "أربعون سنةً في البرية: المنّ، والجواسيس الاثنا عشر، والحيّة النحاسية، والعهدُ المجدَّد في موآب.",
-         figures: "موسى، يشوع"}
+         figures: "موسى، يشوع",
+         evenements: ["الجواسيس الاثنا عشر", "عصا هارون", "موسى يضرب الصخرة", "الحيّة النحاسية", "العهدُ المجدَّد في موآب"]}
 
   - cle: juges
     couleur: "#66a555"
     fr: {nom: "Conquête et Juges", dates: "1406–1050 av. J.-C.",
          texte: "Le Jourdain, Jéricho, le partage du pays ; puis le cycle des juges, d'Othniel à Samson. Israël demande un roi.",
-         figures: "Josué, Débora, Gédéon, Samson, Ruth, Samuel"}
+         figures: "Josué, Débora, Gédéon, Samson, Ruth, Samuel",
+         evenements: ["Le Jourdain traversé", "Jéricho tombe", "L'alliance renouvelée à Sichem", "Le pays partagé entre les tribus", "Débora, Gédéon, Samson", "Ruth et Boaz", "Israël demande un roi"]}
     en: {nom: "Conquest and Judges", dates: "1406–1050 BC",
          texte: "The Jordan, Jericho, the dividing of the land; then the cycle of the judges, from Othniel to Samson. Israel asks for a king.",
-         figures: "Joshua, Deborah, Gideon, Samson, Ruth, Samuel"}
+         figures: "Joshua, Deborah, Gideon, Samson, Ruth, Samuel",
+         evenements: ["The Jordan crossed", "Jericho falls", "The covenant renewed at Shechem", "The land divided among the tribes", "Deborah, Gideon, Samson", "Ruth and Boaz", "Israel asks for a king"]}
     ar: {nom: "الفتح والقضاة", dates: "١٤٠٦–١٠٥٠ ق.م",
          texte: "الأردن، وأريحا، وقسمةُ الأرض؛ ثم دورةُ القضاة من عثنيئيل إلى شمشون. ويطلب إسرائيلُ ملكًا.",
-         figures: "يشوع، دبورة، جدعون، شمشون، راعوث، صموئيل"}
+         figures: "يشوع، دبورة، جدعون، شمشون، راعوث، صموئيل",
+         evenements: ["عبورُ الأردن", "سقوطُ أريحا", "العهدُ المجدَّد في شكيم", "قسمةُ الأرض بين الأسباط", "دبورة، جدعون، شمشون", "راعوث وبوعز", "إسرائيلُ يطلب ملكًا"]}
 
   - cle: royaume
     couleur: "#7a53a5"
     fr: {nom: "Le Royaume", dates: "1050–930 av. J.-C.",
          texte: "Saül, puis David règne à Jérusalem ; l'arche y monte ; Dieu fait alliance avec David. Salomon bâtit le Temple — et la promesse d'un trône éternel.",
-         figures: "Saül, David, Salomon, Nathan"}
+         figures: "Saül, David, Salomon, Nathan",
+         evenements: ["Saül, premier roi", "David et Goliath", "L'arche monte à Jérusalem", "L'alliance avec David", "Salomon bâtit le premier Temple"]}
     en: {nom: "Royal Kingdom", dates: "1050–930 BC",
          texte: "Saul, then David reigns in Jerusalem; the ark goes up; God makes covenant with David. Solomon builds the Temple — and the promise of an eternal throne.",
-         figures: "Saul, David, Solomon, Nathan"}
+         figures: "Saul, David, Solomon, Nathan",
+         evenements: ["Saul, first king", "David and Goliath", "The ark goes up to Jerusalem", "The covenant with David", "Solomon builds the first Temple"]}
     ar: {nom: "المملكة", dates: "١٠٥٠–٩٣٠ ق.م",
          texte: "شاول، ثم داود يملك في أورشليم؛ والتابوتُ يصعد إليها؛ ويقطع اللهُ عهدًا مع داود. وسليمان يبني الهيكل — ووعدُ عرشٍ أبدي.",
-         figures: "شاول، داود، سليمان، ناثان"}
+         figures: "شاول، داود، سليمان، ناثان",
+         evenements: ["شاول، أولُ ملك", "داود وجليات", "التابوتُ يصعد إلى أورشليم", "العهدُ مع داود", "سليمان يبني الهيكل الأول"]}
 
   - cle: division
     couleur: "#13a7a6"
     fr: {nom: "Le Royaume divisé", dates: "930–722 av. J.-C.",
          texte: "Le royaume se divise : Israël au nord, Juda au sud. Élie, Élisée, Amos, Osée, Isaïe, Michée avertissent. Samarie tombe devant l'Assyrie.",
-         figures: "Élie, Élisée, Isaïe, Amos, Osée, Michée"}
+         figures: "Élie, Élisée, Isaïe, Amos, Osée, Michée",
+         evenements: ["Le royaume se divise", "Jézabel égare Israël", "Élie au Carmel", "Amos, Osée, Isaïe, Michée", "Samarie tombe, Israël déporté en Assyrie"]}
     en: {nom: "Divided Kingdom", dates: "930–722 BC",
          texte: "The kingdom splits: Israel in the north, Judah in the south. Elijah, Elisha, Amos, Hosea, Isaiah, Micah warn. Samaria falls to Assyria.",
-         figures: "Elijah, Elisha, Isaiah, Amos, Hosea, Micah"}
+         figures: "Elijah, Elisha, Isaiah, Amos, Hosea, Micah",
+         evenements: ["The kingdom divides", "Jezebel leads Israel astray", "Elijah on Carmel", "Amos, Hosea, Isaiah, Micah", "Samaria falls, Israel deported to Assyria"]}
     ar: {nom: "المملكة المنقسمة", dates: "٩٣٠–٧٢٢ ق.م",
          texte: "تنقسم المملكة: إسرائيل في الشمال، ويهوذا في الجنوب. إيليا، وأليشع، وعاموس، وهوشع، وإشعياء، وميخا ينذرون. وتسقط السامرةُ أمام أشور.",
-         figures: "إيليا، أليشع، إشعياء، عاموس، هوشع، ميخا"}
+         figures: "إيليا، أليشع، إشعياء، عاموس، هوشع، ميخا",
+         evenements: ["المملكة تنقسم", "إيزابل تُضلّ إسرائيل", "إيليا على الكرمل", "عاموس، هوشع، إشعياء، ميخا", "سقوطُ السامرة وسبيُ إسرائيل إلى أشور"]}
 
   - cle: exil
     couleur: "#1570a1"
     fr: {nom: "L'Exil", dates: "722–538 av. J.-C.",
          texte: "Juda part en exil en trois déportations (605, 597, 587) ; Babylone détruit le Temple. Jérémie, Ézéchiel, Daniel parlent depuis la captivité.",
-         figures: "Jérémie, Ézéchiel, Daniel"}
+         figures: "Jérémie, Ézéchiel, Daniel",
+         evenements: ["Jérémie avertit Jérusalem", "Trois déportations à Babylone", "Le Temple détruit (587)", "Ézéchiel et Daniel en exil", "La statue des royaumes (Daniel 2)"]}
     en: {nom: "Exile", dates: "722–538 BC",
          texte: "Judah goes into exile in three deportations (605, 597, 587); Babylon destroys the Temple. Jeremiah, Ezekiel, Daniel speak from captivity.",
-         figures: "Jeremiah, Ezekiel, Daniel"}
+         figures: "Jeremiah, Ezekiel, Daniel",
+         evenements: ["Jeremiah warns Jerusalem", "Three deportations to Babylon", "The Temple destroyed (587)", "Ezekiel and Daniel in exile", "The statue of the kingdoms (Daniel 2)"]}
     ar: {nom: "السبي", dates: "٧٢٢–٥٣٨ ق.م",
          texte: "يذهب يهوذا إلى السبي في ثلاثة سبايا (٦٠٥، ٥٩٧، ٥٨٧)؛ وتدمّر بابلُ الهيكل. إرميا، وحزقيال، ودانيال يتكلمون من الأسر.",
-         figures: "إرميا، حزقيال، دانيال"}
+         figures: "إرميا، حزقيال، دانيال",
+         evenements: ["إرميا ينذر أورشليم", "ثلاثةُ سبايا إلى بابل", "الهيكل مُدمَّرًا (٥٨٧)", "حزقيال ودانيال في السبي", "تمثالُ الممالك (دانيال ٢)"]}
 
   - cle: retour
     couleur: "#a6931a"
     fr: {nom: "Le Retour", dates: "538–167 av. J.-C.",
          texte: "La Perse renvoie les exilés ; le Temple est rebâti, plus modeste ; Esdras enseigne, Néhémie relève les murailles. On attend « quelque chose de plus ».",
-         figures: "Zorobabel, Esdras, Néhémie, Aggée, Zacharie, Malachie"}
+         figures: "Zorobabel, Esdras, Néhémie, Aggée, Zacharie, Malachie",
+         evenements: ["L'édit de Cyrus", "Zorobabel rebâtit le Temple", "Esther sauve son peuple", "Esdras revient et enseigne", "Néhémie relève les murailles", "Malachie, dernier prophète"]}
     en: {nom: "Return", dates: "538–167 BC",
          texte: "Persia sends the exiles home; the Temple is rebuilt, more modest; Ezra teaches, Nehemiah raises the walls. They await “something more”.",
-         figures: "Zerubbabel, Ezra, Nehemiah, Haggai, Zechariah, Malachi"}
+         figures: "Zerubbabel, Ezra, Nehemiah, Haggai, Zechariah, Malachi",
+         evenements: ["The edict of Cyrus", "Zerubbabel rebuilds the Temple", "Esther saves her people", "Ezra returns and teaches", "Nehemiah raises the walls", "Malachi, last prophet"]}
     ar: {nom: "العودة", dates: "٥٣٨–١٦٧ ق.م",
          texte: "تُعيد فارسُ المسبيّين؛ ويُبنى الهيكلُ ثانيةً، أكثرَ تواضعًا؛ عزرا يعلّم، ونحميا يرفع الأسوار. ويُنتظَر «شيءٌ أعظم».",
-         figures: "زربابل، عزرا، نحميا، حجي، زكريا، ملاخي"}
+         figures: "زربابل، عزرا، نحميا، حجي، زكريا، ملاخي",
+         evenements: ["أمرُ كورش", "زربابل يبني الهيكل من جديد", "أستير تخلّص شعبها", "عزرا يعود ويعلّم", "نحميا يرفع الأسوار", "ملاخي، آخرُ الأنبياء"]}
 
   - cle: maccabees
     couleur: "#a24d13"
     fr: {nom: "La révolte des Maccabées", dates: "167 av. J.-C. → an 1",
          texte: "Antiochos profane le Temple ; les Maccabées le reprennent et le purifient (Hanoukka, 164). Pas de prophète reconnu par toutes les traditions, mais des écrits — Maccabées, Siracide, Sagesse — reçus diversement selon les Églises. Rome arrive.",
-         figures: "Judas Maccabée, les Hasmonéens, Hérode"}
+         figures: "Judas Maccabée, les Hasmonéens, Hérode",
+         evenements: ["Antiochos profane le Temple", "La révolte des Maccabées", "Le Temple purifié — Hanoukka", "Rome entre à Jérusalem (63)", "Hérode le Grand"]}
     en: {nom: "Maccabean Revolt", dates: "167 BC → AD 1",
          texte: "Antiochus desecrates the Temple; the Maccabees retake and purify it (Hanukkah, 164). No prophet recognised by every tradition, but writings — Maccabees, Sirach, Wisdom — received differently across the Churches. Rome arrives.",
-         figures: "Judas Maccabeus, the Hasmoneans, Herod"}
+         figures: "Judas Maccabeus, the Hasmoneans, Herod",
+         evenements: ["Antiochus desecrates the Temple", "The Maccabean revolt", "The Temple purified — Hanukkah", "Rome enters Jerusalem (63)", "Herod the Great"]}
     ar: {nom: "ثورة المكابيين", dates: "١٦٧ ق.م ← سنة ١",
          texte: "يدنّس أنطيوخس الهيكل؛ ويسترده المكابيون ويطهّرونه (عيد التجديد، ١٦٤). لا نبيَّ تعترف به كلُّ التقاليد، لكن كتاباتٍ — المكابيون، وابن سيراخ، والحكمة — تتلقّاها الكنائسُ على نحوٍ مختلف. وتصل روما.",
-         figures: "يهوذا المكابي، الحشمونيون، هيرودس"}
+         figures: "يهوذا المكابي، الحشمونيون، هيرودس",
+         evenements: ["أنطيوخس يدنّس الهيكل", "ثورةُ المكابيين", "تطهيرُ الهيكل — عيد التجديد", "روما تدخل أورشليم (٦٣)", "هيرودس الكبير"]}
 
   - cle: christ
     couleur: "#bc871b"
     fr: {nom: "L'Accomplissement", dates: "an 1–33",
          texte: "Jean-Baptiste rompt le silence : « Voici l'Agneau ». Baptême, Transfiguration, dernière Cène, croix, résurrection. Tout ce qui était annoncé prend un visage.",
-         figures: "Jean-Baptiste, le Christ"}
+         figures: "Jean-Baptiste, le Christ",
+         evenements: ["L'annonciation", "Le baptême au Jourdain", "Le sermon sur la montagne", "Cana", "Les clés à Pierre", "La Transfiguration", "La dernière Cène", "La croix", "La résurrection", "L'ascension"]}
     en: {nom: "Messianic Fulfillment", dates: "AD 1–33",
          texte: "John the Baptist breaks the silence: “Behold the Lamb”. Baptism, Transfiguration, Last Supper, cross, resurrection. All that was announced takes a face.",
-         figures: "John the Baptist, the Christ"}
+         figures: "John the Baptist, the Christ",
+         evenements: ["The annunciation", "The baptism in the Jordan", "The sermon on the mount", "Cana", "The keys to Peter", "The Transfiguration", "The Last Supper", "The cross", "The resurrection", "The ascension"]}
     ar: {nom: "الإتمام المسيحاني", dates: "سنة ١–٣٣",
          texte: "يوحنا المعمدان يكسر الصمت: «هوذا الحمل». المعمودية، والتجلي، والعشاء الأخير، والصليب، والقيامة. وكلُّ ما أُعلن يأخذ وجهًا.",
-         figures: "يوحنا المعمدان، المسيح"}
+         figures: "يوحنا المعمدان، المسيح",
+         evenements: ["البشارة", "المعموديةُ في الأردن", "الموعظةُ على الجبل", "قانا", "المفاتيحُ لبطرس", "التجلي", "العشاءُ الأخير", "الصليب", "القيامة", "الصعود"]}
 
   - cle: eglise
     couleur: "#e9e3d3"
     fr: {nom: "L'Église", dates: "an 33 →",
          texte: "L'Esprit descend à la Pentecôte ; le témoignage part de Jérusalem jusqu'aux extrémités de la terre. Les lettres, l'Apocalypse — et le retour du Christ attendu.",
-         figures: "Pierre, Étienne, Paul, Jean"}
+         figures: "Pierre, Étienne, Paul, Jean",
+         evenements: ["La Pentecôte", "Étienne, premier martyr", "La conversion de Saul", "Les voyages de Paul", "Le concile de Jérusalem", "L'Apocalypse", "Le Temple détruit par Titus (70)", "Le retour du Christ, attendu"]}
     en: {nom: "The Church", dates: "AD 33 →",
          texte: "The Spirit comes down at Pentecost; the witness goes out from Jerusalem to the ends of the earth. The letters, Revelation — and the awaited return of Christ.",
-         figures: "Peter, Stephen, Paul, John"}
+         figures: "Peter, Stephen, Paul, John",
+         evenements: ["Pentecost", "Stephen, first martyr", "The conversion of Saul", "Paul's journeys", "The council of Jerusalem", "Revelation", "The Temple destroyed by Titus (70)", "The awaited return of Christ"]}
     ar: {nom: "الكنيسة", dates: "سنة ٣٣ ←",
          texte: "ينزل الروحُ في العنصرة؛ وتنطلق الشهادةُ من أورشليم إلى أقاصي الأرض. الرسائل، والرؤيا — وعودةُ المسيح المنتظَرة.",
-         figures: "بطرس، استفانوس، بولس، يوحنا"}
+         figures: "بطرس، استفانوس، بولس، يوحنا",
+         evenements: ["العنصرة", "استفانوس، أولُ شهيد", "اهتداءُ شاول", "أسفارُ بولس", "مجمعُ أورشليم", "الرؤيا", "تيطس يدمّر الهيكل (٧٠)", "عودةُ المسيح المنتظَرة"]}
 
 # ————— Où chaque page se situe —————
 # Une page sans ancrage historique (une salle thématique) n'en a pas : le bandeau

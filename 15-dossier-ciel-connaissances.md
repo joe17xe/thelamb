@@ -301,6 +301,19 @@ livres récit coupés (Genèse 1–11 / 12–50, 1 Samuel 1–8 / 9–31, 1 Rois
 l'Église — plus aucun livre hors de la carte. « La Bible en temps réel » passe
 à douze lignes, la frise et la carte suivent par les miroirs.
 
+**PR 2 — la vue des époques : faite** (R-029). Douze secteurs cadrés dans
+l'ordre du temps, l'Accomplissement en haut ; chaque époque étiquetée sur son arc
+avec son cran du chemin. Les 77 étoiles-livres — les quatre livres récit coupés
+paraissent dans leurs deux époques —, les quatorze du récit cerclées d'or, et le
+fil d'or du chemin qui les relie de Luc aux origines, puis aux Actes : la boucle
+d'Emmaüs, dessinée. La fiche d'une époque dit son cran, ses dates, trois phrases,
+ce qui s'y passe (nos événements, écrits d'après le relevé — la liste fermée des
+soixante-dix reste celle du dépliant), et *où Jésus s'y trouve* : les
+correspondances du fil rouge dont le texte de l'Ancien Testament tombe dans
+l'époque, en puces qui ouvrent le diagramme au bon arc. Les 153 trouvent toutes
+leur époque. Reste la PR 3 : « Le livre » refaite avec le même moteur de
+secteurs.
+
 Le compte des livres, lui, est corrigé sans attendre (R-030) : **66 + 7**, les sept
 venus de la Bible grecque, et la note « Pourquoi 66 + 7 ? » qui explique la
 différence en toute transparence.
