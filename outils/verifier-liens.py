@@ -71,10 +71,15 @@ def main():
 
     carte = yaml.safe_load(open(CARTE, encoding="utf-8"))
     obsoletes = {e["fichier"] for e in (carte.get("obsoletes") or [])}
-    plan = declarees({k: v for k, v in carte.items() if k != "obsoletes"})
+    # Les ateliers sont publiés mais ne font pas partie du parcours : ni orphelines
+    # ni culs-de-sac, ce sont des outils de travail. On les nomme pour qu'on ne les
+    # prenne pas pour un oubli.
+    ateliers = {e["fichier"] for e in (carte.get("ateliers") or [])}
+    plan = declarees({k: v for k, v in carte.items()
+                      if k not in ("obsoletes", "ateliers")})
 
     sur_disque = {f for f in os.listdir(".") if f.endswith(".html")}
-    non_declarees = sorted(sur_disque - set(plan) - obsoletes)
+    non_declarees = sorted(sur_disque - set(plan) - obsoletes - ateliers)
     fantomes = sorted(set(plan) - sur_disque)
 
     reels, morts = liens_rendus(sorted(set(plan) & sur_disque))
@@ -95,8 +100,8 @@ def main():
             ecarts.append((f, manquants))
 
     print("## Maillage du site\n")
-    print("%d pages déclarées · %d sur disque · %d obsolète(s)\n"
-          % (len(plan), len(sur_disque), len(obsoletes)))
+    print("%d pages déclarées · %d sur disque · %d obsolète(s) · %d atelier(s)\n"
+          % (len(plan), len(sur_disque), len(obsoletes), len(ateliers)))
 
     def bloc(titre, elements, rendu):
         if not elements:

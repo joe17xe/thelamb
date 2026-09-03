@@ -49,8 +49,11 @@ def mesure():
         elif isinstance(o, list):
             for x in o:
                 visite(x)
-    visite(yaml.safe_load(open(os.path.join(RACINE, "navigation.yml"),
-                               encoding="utf-8")))
+    carte = yaml.safe_load(open(os.path.join(RACINE, "navigation.yml"),
+                                encoding="utf-8"))
+    # Les ateliers et les pages retirées ne font pas partie du parcours : le
+    # miroir compte les pages que le lecteur peut atteindre.
+    visite({k: v for k, v in carte.items() if k not in ("ateliers", "obsoletes")})
     d["pages"] = sorted(pages)
     return d
 

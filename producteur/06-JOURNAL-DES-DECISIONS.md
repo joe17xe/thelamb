@@ -70,6 +70,26 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-021 — Le troisième cercle part de la lecture catholique, et nomme toujours les autres
+**Date :** 3 septembre 2026 — **Statut :** tranchée par le porteur
+**La question :** la nomenclature des liens (D-013) demande de dire de quelle nature est
+chaque rapprochement. Or certains dépendent de la tradition : le pain et le vin de
+Melchisédek lus comme figure eucharistique sont une lecture reçue chez les catholiques,
+un simple écho pour beaucoup de lecteurs évangéliques. La règle des trois cercles disait
+« côte à côte, sans arbitrer » — mais côte à côte ne dit pas par où commencer, et il
+fallait bien commencer par quelque part.
+**Ce qui a été décidé :** on part de la lecture catholique, **avec toujours une mention
+pour les autres Églises**. La mention n'est pas facultative et n'est jamais à charge :
+elle dit ce que les autres traditions lisent, dans leurs termes.
+**Ce que cela change dans la charte :** le troisième cercle avait pour consigne de ne pas
+arbitrer. Il a désormais un point de départ. Assumer un point de départ n'est pas trancher
+qui a raison : la lecture des autres n'est ni omise, ni résumée pour être écartée. C'est
+la cohérence du site — le cadre narratif, les douze époques, les sept livres présentés
+viennent déjà d'un cadre catholique (D-008, D-009) ; ce qui était implicite devient dit.
+**Le garde-fou :** un lien marqué « lecture chrétienne » qui dépend de la tradition porte
+obligatoirement sa mention. Sept des 153 correspondances sont dans ce cas à ce jour ; la
+donnée les nomme (`tradition: catholique` + `mention`), et rien n'interdit d'en ajouter.
+
 ### D-020 — La carte du temps a le droit de dire qu'elle ne sait pas
 **Date :** 3 septembre 2026 — **Statut :** tranchée — sur signalement du porteur
 **La question :** Judith se donne pour cadre « Nabuchodonosor, roi des Assyriens », à

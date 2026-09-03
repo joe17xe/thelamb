@@ -437,6 +437,28 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-046 La page où le producteur valide la nature des 153 liens
+- zone: verte
+- statut: fait — en attente du relevé du producteur
+- pourquoi: le porteur a tranché les trois décisions de R-013 et demandé une page à cocher, ouverte au producteur derrière un mot convenu
+- fait quand: les 153 liens portent une proposition motivée, et le producteur peut la corriger depuis un téléphone
+- résultat: **les 153 propositions sont écrites** dans `producteur/nature-des-liens.yml` —
+  79 citations explicites, 44 allusions largement reconnues, 16 lectures chrétiennes,
+  9 échos thématiques, 5 débats interprétatifs. Chacune porte l'indice qui la justifie
+  (« afin que l'Écriture fût accomplie », « parallèle narratif », « la source exacte est
+  discutée »). Sept relèvent de **D-021** : la lecture part de la tradition catholique et
+  porte sa mention pour les autres Églises — Melchisédek, le pain du ciel de Jean 6, la
+  coupe de bénédiction, la gloire de la seconde maison, la lecture trinitaire d'Ésaïe 48:16.
+  **`validation-liens.html`** est générée depuis cette donnée par `outils/poser-validation.py`,
+  idempotent comme le générateur du bandeau. Le producteur ouvre la page avec le mot convenu,
+  corrige ce qui lui paraît faux, et copie un relevé qui ne contient que les écarts.
+  Le maillage connaît désormais les **ateliers** : publiés, mais hors du parcours du lecteur —
+  ni orphelins ni culs-de-sac, et déclarés pour qu'on ne les prenne pas pour un oubli.
+- limite: la page n'est pas protégée. Le site est statique : le mot convenu écarte le
+  passant, rien de plus, et seule son empreinte figure au dépôt. La page le dit elle-même.
+- vérifié: mot refusé puis accepté, 153 liens et 8 thèmes affichés, une correction suivie
+  jusqu'au relevé, mémoire tenue au rechargement, arabe en RTL ; les huit contrôles.
+
 ## R-045 Chaque fil dit pourquoi il existe
 - zone: verte
 - statut: fait

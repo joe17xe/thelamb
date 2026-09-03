@@ -21,8 +21,10 @@ savoir pour ne pas produire du contenu hors charte ni casser l'architecture.
 5. **Règle des trois cercles** sur tout sujet qui divise :
    ce que tous les chrétiens confessent → on l'affirme ;
    ce que les Écritures disent → on cite intégralement ;
-   ce que les traditions interprètent → catholique et évangélique côte à côte,
-   **sans arbitrer**.
+   ce que les traditions interprètent → **on part de la lecture catholique et l'on dit
+   toujours ce que les autres Églises en font** (décision D-021). La mention n'est pas
+   facultative et n'est jamais à charge. Assumer un point de départ n'est pas trancher
+   qui a raison : la lecture des autres n'est ni omise ni résumée pour être écartée.
 
 **Ton.** Sobre, dense, respectueux. Pas d'exclamation, pas d'emphase publicitaire, pas
 d'« incroyable » ni de « bouleversant ». Phrases courtes. Le verset porte l'émotion,
