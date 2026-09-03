@@ -321,6 +321,17 @@ boucle à l'exécution suivante. Le supprimer la relance.
   les orthodoxes — 66 d'un côté, 73 de l'autre, davantage ailleurs, sans décréter
   pour personne (D-008 tenu).
 
+## R-031 Les étoiles profondes s'annoncent d'elles-mêmes
+- zone: verte
+- statut: fait
+- pourquoi: remarque du porteur — pour découvrir qu'une constellation se cache derrière une étoile, il fallait la toucher puis lire le panneau ; l'invitation doit se voir, pas s'expliquer
+- fait quand: les trois étoiles qui ouvrent une constellation se signalent au ciel, sans un mot de plus, sans gêner le geste ni la sobriété du fond
+- résultat: leur lueur respire, et une onde s'ouvre lentement autour d'elles — Le livre,
+  Le fil rouge, Les veilleurs, décalées de 1,8 s l'une sur l'autre : une seule pulse à
+  la fois, le ciel reste calme. Rien d'ajouté au texte. Sous mouvement réduit, l'anneau
+  demeure posé, discret — l'invitation se voit encore. L'onde ne capte pas le toucher,
+  et l'étiquette d'accessibilité dit « ouvre une constellation » dans les trois langues.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

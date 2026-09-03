@@ -60,7 +60,15 @@
   .centre{cursor:pointer;outline:none}
   .centre circle.souffle{pointer-events:none}
   .centre:focus-visible circle:not(.souffle){stroke-width:2.5}
+  /* Une étoile qui cache une constellation le dit d'elle-même : sa lueur
+     respire, et une onde s'ouvre lentement autour d'elle. Sans mouvement,
+     l'anneau reste posé — l'invitation se voit encore. */
+  .onde{fill:none;stroke-width:1.1;opacity:.2;pointer-events:none}
   @media (prefers-reduced-motion:no-preference){
+    .onde{opacity:0;transform-box:fill-box;transform-origin:center;animation:onde 5.5s ease-out infinite}
+    @keyframes onde{0%{transform:scale(.72);opacity:0}18%{opacity:.42}70%,100%{transform:scale(1.9);opacity:0}}
+    .respire{transform-box:fill-box;transform-origin:center;animation:respire 5.5s ease-in-out infinite}
+    @keyframes respire{0%,100%{transform:scale(1);opacity:.7}45%{transform:scale(1.09);opacity:1}}
     .souffle{transform-box:fill-box;transform-origin:center;animation:souffle 7s ease-in-out infinite}
     @keyframes souffle{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.12);opacity:1}}
     .scin{animation:scintille 4.5s ease-in-out infinite}
@@ -174,6 +182,8 @@ const CX=360, CY=352;
 // arêtes réelles, répulsion entre nœuds, chaque famille dans sa bande radiale.
 // La taille d'une étoile suit son nombre de liens réels (deg).
 const COEUR={fil:"#ffd98a",salle:"#a8ccf2",pilier:"#f2a3a3",entree:"#cfc9bb"};
+// Les trois étoiles qui ouvrent une constellation — elles s'annoncent au ciel
+const PROFONDES={bibliotheque:"bibliotheque",accueil:"correspondances",veilleurs:"epoques"};
 const NOEUDS=[
  {k:"emmaus",href:"page-fondatrice-emmaus.html",fam:"fil",p:[353.4,234.2],deg:5},
  {k:"voici",href:"page-etalon-voici-agneau.html",fam:"fil",p:[477,336.6],deg:2},
@@ -224,7 +234,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  diagramme:"Ouvrir dans le fil rouge →", vers:"→",
  arianeLbl:"Fil d'Ariane", arianeAgneau:"✦ L'Agneau", arianeCiel:"Le ciel",
  arianeSep:"›", corrNom:"Les correspondances", horsCarte:"hors de la carte du temps", chap:"ch.",
- epoquesNom:"Les époques", constEpoques:"✦ Ouvrir les époques", chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
+ epoquesNom:"Les époques", constEpoques:"✦ Ouvrir les époques", aConstellation:"ouvre une constellation", chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintEpoques:"Le chemin part du Christ et remonte le temps. Touchez une époque : sa fiche s'ouvre. Touchez un livre : la sienne.",
  flien:"Ses passages",
  descs:{
@@ -284,7 +294,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  diagramme:"Open in the red thread →", vers:"→",
  arianeLbl:"Breadcrumb", arianeAgneau:"✦ The Lamb", arianeCiel:"The sky",
  arianeSep:"›", corrNom:"The correspondences", horsCarte:"outside the map of time", chap:"ch.",
- epoquesNom:"The epochs", constEpoques:"✦ Open the epochs", chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
+ epoquesNom:"The epochs", constEpoques:"✦ Open the epochs", aConstellation:"opens a constellation", chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintEpoques:"The path starts from Christ and goes back in time. Touch an epoch: its card opens. Touch a book: its own.",
  flien:"Its passages",
  descs:{
@@ -344,7 +354,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  diagramme:"افتح في الخيط الأحمر ←", vers:"←",
  arianeLbl:"مسار التنقّل", arianeAgneau:"✦ الحمل", arianeCiel:"السماء",
  arianeSep:"‹", corrNom:"التناظرات", horsCarte:"خارج خريطة الزمن", chap:"أص.",
- epoquesNom:"العصور", constEpoques:"✦ افتح العصور", chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
+ epoquesNom:"العصور", constEpoques:"✦ افتح العصور", aConstellation:"تفتح كوكبة", chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintEpoques:"يبدأ الطريق من المسيح ويعود في الزمن. المس عصرًا: تنفتح بطاقته. المس سفرًا: بطاقته هو.",
  flien:"معابرها",
  descs:{
@@ -541,6 +551,13 @@ function bati(){
     const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
     hl.setAttribute('r',(rr*2.9).toFixed(1));hl.setAttribute('fill','url(#g-'+nd.fam+')');
     hl.setAttribute('opacity',nd.fam==='entree'?'.35':'.8');a.appendChild(hl);
+    if(PROFONDES[nd.k]){
+      hl.setAttribute('class','respire');
+      const on=S('circle');on.setAttribute('class','onde');
+      on.setAttribute('cx',x);on.setAttribute('cy',y);on.setAttribute('r',(rr*1.85).toFixed(1));
+      on.setAttribute('stroke',COEUR[nd.fam]);
+      on.style.animationDelay=(Object.keys(PROFONDES).indexOf(nd.k)*1.8).toFixed(1)+'s';
+      a.appendChild(on);}
     const c=S('circle');c.setAttribute('class','c');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',rr);
     if(nd.fam==='entree'){c.setAttribute('fill','rgba(12,14,24,.6)');c.setAttribute('stroke',COEUR.entree);c.setAttribute('stroke-width','1.4');}
     else c.setAttribute('fill',COEUR[nd.fam]);
@@ -761,7 +778,7 @@ function choisir(k){
     bt.style.setProperty('--fc',FAM[fam]);
     bt.addEventListener('click',()=>choisir(autre));
     fl.appendChild(bt);});
-  const sc={bibliotheque:'bibliotheque',accueil:'correspondances',veilleurs:'epoques'}[k];
+  const sc=PROFONDES[k];
   const fc=document.getElementById('fconst');fc.hidden=!sc;
   if(sc){fc.textContent=(sc==='epoques')?c.constEpoques:c.constOuvrir;fc.onclick=()=>allerScene(sc);}
   const fc2=document.getElementById('fconst2');fc2.hidden=(k!=='bibliotheque');
@@ -844,7 +861,8 @@ function render(l){
     if(n.dataset.livre){const lv=CONSTEL.livres.find(x=>x[0]===n.dataset.livre);
       if(lv)n.setAttribute('aria-label',lv[3][li]);return;}
     const t=n.querySelector('text');if(t)t.textContent=c.noms[n.dataset.k];
-    n.setAttribute('aria-label',c.pleins[n.dataset.k]);});
+    n.setAttribute('aria-label',c.pleins[n.dataset.k]
+      +(PROFONDES[n.dataset.k]?' — '+c.aConstellation:''));});
   document.getElementById('foot').innerHTML=c.foot;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===LANG?'true':'false'));
   if(SCENE==='ciel'&&SEL)choisir(SEL);
