@@ -280,14 +280,24 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-028 Le livre en deux vues, sur douze époques (D-018)
 - zone: orange
-- statut: en cours — PR 1 (la donnée) faite ; restent la vue des époques (R-029) et « Le livre » refaite
+- statut: en cours — PR 1 (la donnée) et PR 2 (la vue des époques, R-029) faites ; reste « Le livre » refaite
 - pourquoi: la constellation mêle étagères et époques ; couleurs indistinctes, étiquettes sur les étoiles, sections sans cadre, Joël et le Nouveau Testament gris, un livre à deux époques invisible
 - fait quand: periodes.yml à douze ; vue « Le livre » cadrée, étiquetée sur l'arc, palette validée, étoiles bicolores ; vue « Les époques » avec ses 70 événements ; trois langues ; captures réelles
 - plan: dossier 15, section « Révision » — trois PR (la donnée · le livre · les époques)
 
 ## R-029 Le récit — la vue des époques, point de départ du débutant (D-019)
 - zone: orange
-- statut: à faire — le sens est tranché : le chemin part du Christ et remonte, l'Église en dernier pas
+- statut: fait
+- résultat: quatrième scène de la carte — douze secteurs cadrés dans l'ordre du temps,
+  l'Accomplissement en haut, chaque époque étiquetée sur son arc avec son cran du chemin
+  (« 1 · L'Accomplissement » … « 12 · L'Église »). Les 77 étoiles-livres (73 livres, les
+  quatre livres récit coupés paraissant dans leurs deux époques), les quatorze du récit
+  cerclées d'or, et le fil d'or du chemin qui les relie de Luc aux origines, puis aux
+  Actes. Toucher une époque : sa fiche — cran, dates, trois phrases, ce qui s'y passe
+  (nos événements, d'après le relevé), et « où Jésus s'y trouve » : les correspondances
+  du fil rouge dont le texte tombe dans l'époque, en puces vers le diagramme ; les 153
+  trouvent toutes leur époque. Entrées : l'étoile « Le livre » offre les deux
+  constellations, « Les veilleurs » offre les époques ; adresse `#epoques`.
 - pourquoi: le but principal, convenu avec le product owner, est de raconter comment on trouve Jésus de la Genèse au dernier livre ; il faut une voie facile pour commencer — les quatorze livres du récit, par époques
 - fait quand: la constellation « Les époques » existe, ses douze secteurs aux termes du dépliant, les quatorze livres du récit en étoiles principales par chapitres, chaque époque disant où Jésus s'y trouve (les correspondances du fil rouge situées dans l'époque), trois langues, captures réelles
 - ordre: d'abord la donnée (periodes.yml à douze, remappage), puis cette vue, puis « Le livre » refaite — le plan de D-018 dans un autre ordre
