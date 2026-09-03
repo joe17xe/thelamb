@@ -437,6 +437,32 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-052 La roue des fêtes — septième carte du ciel
+- zone: orange
+- statut: fait
+- pourquoi: seconde moitié de la proposition du porteur (« les fêtes ont une signification,
+  nous les avons citées, on peut faire le lien ») ; la page portait l'enseignement (R-051),
+  la carte montre maintenant la structure (D-016)
+- fait quand: les sept fêtes de Lévitique 23 tiennent sur une année de 354 jours, chacune
+  à sa date, chacune reliée à l'Agneau, lisibles dans les trois langues
+- résultat: la scène `#fetes` de `carte-du-ciel.html`. Sept points sur un anneau, placés
+  au jour de l'année — (mois − 1) × 29,5 + jour. Trois amas, et un grand vide : l'été,
+  que le calendrier d'Israël laisse sans fête. La fiche donne la date **et le verset qui
+  la fixe** (Lv 23:5, 6, 11, 15-16, 24, 27, 34), vérifiés un à un dans les textes importés :
+  la position sur la roue n'est pas une estimation, elle se contrôle. Les Prémices n'ont
+  pas de quantième — « le lendemain du sabbat » — et la fiche cite la formule, pas un chiffre.
+- ce qu'il a fallu défaire: trois amas serrés — trois fêtes en trois jours au printemps,
+  trois en trois semaines à l'automne — rendaient les noms illisibles. Deux causes.
+  La première, invisible à la lecture du code : la règle `.noeud text{text-anchor:middle}`
+  l'emportait sur l'attribut `text-anchor` posé en JavaScript, et les sept noms se
+  centraient sur leur point. La seconde : un décalage en anneaux successifs ne sépare
+  rien au bas de la roue, où quinze degrés ne font que trois pixels de hauteur. Chaque
+  nom glisse désormais le long de **son propre rayon**, vers l'extérieur, jusqu'à laisser
+  une ligne libre — il reste aligné sur son point sans le recouvrir. Mesuré au rendu,
+  393 × 852 : aucun recouvrement, rien hors cadre, dans les trois langues.
+- défaut corrigé au passage: la légende par saison éteignait les **sept** fils vers
+  l'Agneau au lieu de trois — le filtre ne reconnaissait que les fils partant d'un livre.
+
 ## R-051 « Jésus dans sa religion » — six pratiques, six prescriptions
 - zone: orange
 - statut: fait
