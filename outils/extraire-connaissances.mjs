@@ -68,11 +68,13 @@ const prophetes = fr.fr.prophets.map((p, i) => ({
   id: p.k, epoque: p.phase, pos: +p.x.toFixed(2),   // pos : place sur l'axe, 0 = −1500, 100 = +30
   nom: { fr: p.n, en: fr.en.prophets[i].n, ar: fr.ar.prophets[i].n },
   date: { fr: p.d, en: fr.en.prophets[i].d, ar: fr.ar.prophets[i].d },
+  vers: { fr: p.christ, en: fr.en.prophets[i].christ, ar: fr.ar.prophets[i].christ },
 }));
 const srcFrise = readFileSync('frise-prophetes.html', 'utf8');
 const GENCLES = eval(srcFrise.match(/const GENCLES=(\[[^\]]*\]);/)[1]);
 const generations = fr.fr.gen.map((g, i) => ({
   nom: { fr: g[0], en: fr.en.gen[i][0], ar: fr.ar.gen[i][0] },
+  note: { fr: g[1] || '', en: fr.en.gen[i][1] || '', ar: fr.ar.gen[i][1] || '' },
   periode: GENCLES[i] === 'fourche' ? null : GENCLES[i],
   fourche: GENCLES[i] === 'fourche' || undefined,
 }));

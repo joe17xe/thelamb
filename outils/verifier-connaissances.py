@@ -122,11 +122,13 @@ def bloc_constel(d):
         "themes": d["themes"],
         "prophetes": [[p["id"], p["epoque"], p["pos"],
                        [p["nom"]["fr"], p["nom"]["en"], p["nom"]["ar"]],
-                       [p["date"]["fr"], p["date"]["en"], p["date"]["ar"]]]
+                       [p["date"]["fr"], p["date"]["en"], p["date"]["ar"]],
+                       [p["vers"]["fr"], p["vers"]["en"], p["vers"]["ar"]]]
                       for p in d["prophetes"]],
         "generations": [[g.get("periode"),
                          [g["nom"]["fr"], g["nom"]["en"], g["nom"]["ar"]],
-                         1 if g.get("fourche") else 0]
+                         1 if g.get("fourche") else 0,
+                         [g["note"]["fr"], g["note"]["en"], g["note"]["ar"]]]
                         for g in d["generations"]],
         "corr": [[c["theme"],
                   [c["titre"]["fr"], c["at"]["fr"], c["nt"]["fr"]],

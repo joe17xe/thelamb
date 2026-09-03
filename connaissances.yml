@@ -2045,102 +2045,182 @@ generations:
     ar: يسوع
     en: Jesus
     fr: Jésus
+  note:
+    ar: المولود من مريم
+    en: born of Mary
+    fr: né de Marie
   periode: christ
 - fourche: true
   nom:
     ar: من يسوع إلى داود طريقان — انظر الفارق
     en: from Jesus to David, two paths — see the nuance
     fr: de Jésus à David, deux chemins — voir la nuance
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: null
 - nom:
     ar: داود
     en: David
     fr: David
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: royaume
 - nom:
     ar: يسّى
     en: Jesse
     fr: Jessé
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: juges
 - nom:
     ar: عوبيد
     en: Obed
     fr: Obed
+  note:
+    ar: من راعوث
+    en: by Ruth
+    fr: par Ruth
   periode: juges
 - nom:
     ar: بوعز
     en: Boaz
     fr: Boaz
+  note:
+    ar: من راحاب
+    en: by Rahab
+    fr: par Rahab
   periode: juges
 - nom:
     ar: سلمون
     en: Salmon
     fr: Salmon
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: juges
 - nom:
     ar: نحشون
     en: Nahshon
     fr: Nahshon
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: exode
 - nom:
     ar: عميناداب
     en: Amminadab
     fr: Amminadab
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: رام
     en: Ram
     fr: Ram
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: حصرون
     en: Hezron
     fr: Hetsron
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: فارص
     en: Perez
     fr: Pérets
+  note:
+    ar: من ثامار
+    en: by Tamar
+    fr: par Tamar
   periode: patriarches
 - nom:
     ar: يهوذا
     en: Judah
     fr: Juda
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: يعقوب
     en: Jacob
     fr: Jacob
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: إسحاق
     en: Isaac
     fr: Isaac
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: إبراهيم
     en: Abraham
     fr: Abraham
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: patriarches
 - nom:
     ar: سام
     en: Shem
     fr: Sem
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: origines
 - nom:
     ar: نوح
     en: Noah
     fr: Noé
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: origines
 - nom:
     ar: شيت
     en: Seth
     fr: Seth
+  note:
+    ar: ''
+    en: ''
+    fr: ''
   periode: origines
 - nom:
     ar: آدم
     en: Adam
     fr: Adam
+  note:
+    ar: 'لوقا ٣: ٣٨'
+    en: Luke 3:38
+    fr: Luc 3:38
   periode: origines
 livres:
 - etagere: loi
@@ -3104,6 +3184,10 @@ prophetes:
     en: Moses
     fr: Moïse
   pos: 12.9
+  vers:
+    ar: 'في التجلّي، يعيد الصوتُ هذه الكلماتِ عينَها: «له اسمعوا».'
+    en: 'At the Transfiguration, the voice repeats these exact words: “listen to him”.'
+    fr: 'À la Transfiguration, la voix reprend ces mots exacts : « écoutez-le ».'
 - date:
     ar: نحو ١٠٠٠ ق.م
     en: ~1000 BC
@@ -3115,6 +3199,12 @@ prophetes:
     en: Nathan / David
     fr: Nathan / David
   pos: 32.26
+  vers:
+    ar: 'الملاكُ لمريم: «يعطيه الربُّ كرسيَّ داود… ولا يكون لملكه نهاية» (لوقا ١: ٣٢-٣٣).'
+    en: 'The angel to Mary: “the Lord will give him the throne of David… his reign will have no end” (Luke
+      1:32-33).'
+    fr: 'L''ange à Marie : « le Seigneur lui donnera le trône de David… son règne n''aura point de fin
+      » (Luc 1:32-33).'
 - date:
     ar: نحو ٨٣٠ ق.م (مختلَف فيه)
     en: ~830 BC (debated)
@@ -3126,6 +3216,12 @@ prophetes:
     en: Joel
     fr: Joël
   pos: 43.23
+  vers:
+    ar: 'بطرس صباح الخمسين: «هذا ما قيل بالنبي يوئيل» (أعمال ٢: ١٦-١٧).'
+    en: 'Peter, on the morning of Pentecost: “this is what was spoken through the prophet Joel” (Acts
+      2:16-17).'
+    fr: 'Pierre, au matin de la Pentecôte : « c''est ici ce qui a été dit par le prophète Joël » (Actes
+      2:16-17).'
 - date:
     ar: نحو ٧٦٠ ق.م
     en: ~760 BC
@@ -3137,6 +3233,12 @@ prophetes:
     en: Amos
     fr: Amos
   pos: 47.74
+  vers:
+    ar: 'يُقتبَس في مجمع أورشليم ليقول إن الأمم مشمولةٌ في المملكة المُقامة (أعمال ١٥: ١٦).'
+    en: Cited at the Council of Jerusalem to show the nations are included in the raised kingdom (Acts
+      15:16).
+    fr: Cité au concile de Jérusalem pour dire que les nations sont incluses dans le royaume relevé (Actes
+      15:16).
 - date:
     ar: نحو ٧٥٠ ق.م
     en: ~750 BC
@@ -3148,6 +3250,10 @@ prophetes:
     en: Hosea
     fr: Osée
   pos: 48.39
+  vers:
+    ar: 'يقرأ فيه متى عودةَ الطفل يسوع من مصر (متى ٢: ١٥).'
+    en: Matthew reads in it the return of the child Jesus from Egypt (Matthew 2:15).
+    fr: Matthieu y lit le retour d'Égypte de l'enfant Jésus (Matthieu 2:15).
 - date:
     ar: نحو ٧٠٠ ق.م
     en: ~700 BC
@@ -3159,6 +3265,10 @@ prophetes:
     en: Isaiah
     fr: Ésaïe
   pos: 51.61
+  vers:
+    ar: الأصحاحُ الأكثرُ اقتباسًا في العهد الجديد؛ نسخةٌ كاملة وُجدت في قمران، قبل الميلاد.
+    en: The chapter most quoted by the New Testament; a complete copy found at Qumran, before Christ.
+    fr: Le chapitre le plus cité par le Nouveau Testament ; copie complète retrouvée à Qumrân, avant J.-C.
 - date:
     ar: نحو ٧٠٠ ق.م
     en: ~700 BC
@@ -3170,6 +3280,10 @@ prophetes:
     en: Micah
     fr: Michée
   pos: 51.55
+  vers:
+    ar: 'يقتبس الكتبةُ هذه الآيةَ لهيرودس ليدلّوا على مكان ميلاد المسيّا (متى ٢: ٦).'
+    en: The scribes quote this verse to Herod to point out the Messiah's birthplace (Matthew 2:6).
+    fr: Les scribes citent ce verset à Hérode pour indiquer le lieu de naissance du Messie (Matthieu 2:6).
 - date:
     ar: نحو ٦٠٠ ق.م
     en: ~600 BC
@@ -3181,6 +3295,10 @@ prophetes:
     en: Jeremiah
     fr: Jérémie
   pos: 58.06
+  vers:
+    ar: 'يسوع والكأسُ في يده: «هذه الكأسُ هي العهدُ الجديد بدمي» (لوقا ٢٢: ٢٠).'
+    en: 'Jesus, cup in hand: “this cup is the new covenant in my blood” (Luke 22:20).'
+    fr: 'Jésus, la coupe en main : « cette coupe est la nouvelle alliance en mon sang » (Luc 22:20).'
 - date:
     ar: نحو ٥٩٠ ق.م
     en: ~590 BC
@@ -3192,6 +3310,10 @@ prophetes:
     en: Ezekiel
     fr: Ézéchiel
   pos: 58.71
+  vers:
+    ar: '«أنا هو الراعي الصالح؛ الراعي الصالح يبذل نفسه عن الخراف» (يوحنا ١٠: ١١).'
+    en: “I am the good shepherd; the good shepherd lays down his life for the sheep” (John 10:11).
+    fr: « Je suis le bon berger ; le bon berger donne sa vie pour ses brebis » (Jean 10:11).
 - date:
     ar: نحو ٥٥٠ ق.م
     en: ~550 BC
@@ -3203,6 +3325,11 @@ prophetes:
     en: Daniel
     fr: Daniel
   pos: 61.29
+  vers:
+    ar: 'أمام رئيس الكهنة، ينسب يسوع هذه الرؤيا إلى نفسه — وهي التي تحسم إدانته (متى ٢٦: ٦٤).'
+    en: Before the high priest, Jesus claims this vision — and it decides his condemnation (Matthew 26:64).
+    fr: Devant le grand prêtre, Jésus s'attribue cette vision — et c'est elle qui décide de sa condamnation
+      (Matthieu 26:64).
 - date:
     ar: نحو ٥٢٠ ق.م
     en: ~520 BC
@@ -3214,6 +3341,10 @@ prophetes:
     en: Haggai
     fr: Aggée
   pos: 63.23
+  vers:
+    ar: 'الهيكلُ الثاني لم يكن فيه التابوت — لكن الطفل يسوع قُدِّم فيه (لوقا ٢: ٢٧-٣٢).'
+    en: The second Temple had no ark — but the child Jesus was presented there (Luke 2:27-32).
+    fr: Le second Temple n'eut pas l'arche — mais l'enfant Jésus y fut présenté (Luc 2:27-32).
 - date:
     ar: نحو ٥٢٠ ق.م
     en: ~520 BC
@@ -3225,6 +3356,10 @@ prophetes:
     en: Zechariah
     fr: Zacharie
   pos: 63.29
+  vers:
+    ar: 'الدخولُ إلى أورشليم، أحدُ الشعانين (متى ٢١: ٥)؛ والجنبُ المطعون (يوحنا ١٩: ٣٧).'
+    en: The entry into Jerusalem, Palm Sunday (Matthew 21:5); the pierced side (John 19:37).
+    fr: L'entrée à Jérusalem, les Rameaux (Matthieu 21:5) ; le côté transpercé (Jean 19:37).
 - date:
     ar: نحو ٤٣٠ ق.م
     en: ~430 BC
@@ -3236,6 +3371,10 @@ prophetes:
     en: Malachi
     fr: Malachie
   pos: 69.03
+  vers:
+    ar: 'يوحنا المعمدان هو هذا الرسول (متى ١١: ١٠) و«إيليا المزمع أن يأتي» (متى ١١: ١٤).'
+    en: John the Baptist is this messenger (Matthew 11:10) and “the Elijah who was to come” (Matthew 11:14).
+    fr: Jean-Baptiste est ce messager (Matthieu 11:10) et « l'Élie qui devait venir » (Matthieu 11:14).
 - date:
     ar: نحو ٢٨ م
     en: ~AD 28
@@ -3247,6 +3386,12 @@ prophetes:
     en: John the Baptist
     fr: Jean-Baptiste
   pos: 98.58
+  vers:
+    ar: 'خيطُ الحرّاس ينتهي هنا: يصير الإعلانُ حضورًا. وهنا يبدأ مسارُ الحمل.'
+    en: 'The thread of the watchmen ends here: announcement becomes presence. This is where the journey
+      of the Lamb begins.'
+    fr: 'Le fil des veilleurs s''achève ici : l''annonce devient présence. C''est le début du parcours
+      de l''Agneau.'
 themes:
   agneau:
     compte: 27
