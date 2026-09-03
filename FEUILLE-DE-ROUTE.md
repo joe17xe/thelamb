@@ -98,7 +98,15 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-013 Étendre la nomenclature des liens aux pages qui en ont besoin
 - zone: orange
-- statut: à faire
+- statut: en attente du porteur — le dossier de travail est prêt
+- dossier: `producteur/10-NATURE-DES-LIENS.md` — la nomenclature rappelée avec un exemple
+  réel par catégorie, les **trois décisions** qui commandent tout le reste (le niveau de
+  preuve exigé d'une « citation explicite » tant que R-004 n'a pas livré les textes ; qui
+  tranche entre écho thématique et lecture chrétienne quand les traditions divergent ; où
+  la nature doit se voir), et **les 27 correspondances du thème « L'Agneau » déjà classées
+  en proposition** — 14 citations, 6 allusions, 3 échos, 2 lectures chrétiennes, 2 débats,
+  plus une référence à revoir (Genèse 22:13 → Romains 8:32 : la reprise verbale est en
+  Genèse 22:16). Le porteur corrige ce qui lui paraît faux ; le silence vaut accord.
 - pourquoi: le site montre environ mille renvois sans jamais dire de quelle nature ils
   sont. Une citation explicite, une allusion reconnue et une lecture typologique n'ont pas
   la même force, et le lecteur ne peut pas les distinguer.
