@@ -388,6 +388,20 @@ boucle à l'exécution suivante. Le supprimer la relance.
   déclaration unique des vues : une carte de plus s'y ajoutera d'elle-même. Au passage,
   la légende se resserre sur petit écran — cinq lignes avant, quatre maintenant.
 
+## R-036 La légende devient un filtre, cumulable, dans toutes les vues
+- zone: verte
+- statut: fait
+- pourquoi: demande du porteur — « quand j'appuie sur la légende, elle se met en surbrillance et on voit les étoiles concernées » ; la légende ne servait qu'à lire les couleurs
+- fait quand: dans les six vues, toucher une entrée de légende n'allume que les étoiles concernées, plusieurs se cumulent, et les noms s'affichent sur ce qui reste allumé
+- résultat: chaque entrée devient un bouton — surbrillance, halo autour de sa pastille,
+  `aria-pressed` pour les lecteurs d'écran. Les étoiles retenues restent pleines, les
+  autres s'effacent presque entièrement. **Plusieurs filtres se cumulent** (deux époques,
+  deux thèmes, deux familles). Sous douze étoiles retenues, chacune affiche son nom
+  directement sur la carte ; au-delà, les noms restent au tableau — quarante étiquettes
+  qui se chevauchent ne se lisent plus. Un « ✕ Tout rallumer » paraît dès qu'un filtre
+  est actif, et **toucher l'Agneau efface tout**, comme il éteignait déjà la sélection.
+  Le filtre survit au changement de langue et se vide en changeant de carte.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
