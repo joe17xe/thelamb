@@ -285,6 +285,26 @@ boucle à l'exécution suivante. Le supprimer la relance.
 - fait quand: periodes.yml à douze ; vue « Le livre » cadrée, étiquetée sur l'arc, palette validée, étoiles bicolores ; vue « Les époques » avec ses 70 événements ; trois langues ; captures réelles
 - plan: dossier 15, section « Révision » — trois PR (la donnée · le livre · les époques)
 
+## R-029 Le récit — la vue des époques, point de départ du débutant (D-019)
+- zone: orange
+- statut: à faire — après le mot du porteur sur le sens de lecture (D-019)
+- pourquoi: le but principal, convenu avec le product owner, est de raconter comment on trouve Jésus de la Genèse au dernier livre ; il faut une voie facile pour commencer — les quatorze livres du récit, par époques
+- fait quand: la constellation « Les époques » existe, ses douze secteurs aux termes du dépliant, les quatorze livres du récit en étoiles principales par chapitres, chaque époque disant où Jésus s'y trouve (les correspondances du fil rouge situées dans l'époque), trois langues, captures réelles
+- ordre: d'abord la donnée (periodes.yml à douze, remappage), puis cette vue, puis « Le livre » refaite — le plan de D-018 dans un autre ordre
+
+## R-030 Le compte complet — 66 + 7 — et la note transparente sur la différence
+- zone: verte
+- statut: fait
+- pourquoi: demande du porteur — afficher le nombre complet des livres, dire que les sept nous viennent des sources grecques, et expliquer pourquoi les traditions diffèrent, en toute transparence
+- fait quand: plus aucun « 66 livres » affiché seul ; la mention grecque partout où le compte s'affiche ; la note explique la différence sans arbitrer
+- résultat: « 66 + 7 » sur l'accueil (chiffres et porte), le seuil, la salle du livre
+  (bandeau, entrée, chiffres, pied), la section fiable et la carte du ciel — trois
+  langues. La note de la salle devient « Pourquoi 66 + 7 ? » : la Septante,
+  Alexandrie, IIIᵉ siècle av. ; la liste hébraïque fixée entre le Iᵉʳ et le IIᵉ
+  siècle ; Hippone 393 et Carthage 397 ; Jérôme ; Luther et l'annexe ; Trente 1546 ;
+  les orthodoxes — 66 d'un côté, 73 de l'autre, davantage ailleurs, sans décréter
+  pour personne (D-008 tenu).
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
