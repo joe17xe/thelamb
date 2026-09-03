@@ -311,8 +311,14 @@ ce qui s'y passe (nos événements, écrits d'après le relevé — la liste fer
 soixante-dix reste celle du dépliant), et *où Jésus s'y trouve* : les
 correspondances du fil rouge dont le texte de l'Ancien Testament tombe dans
 l'époque, en puces qui ouvrent le diagramme au bon arc. Les 153 trouvent toutes
-leur époque. Reste la PR 3 : « Le livre » refaite avec le même moteur de
-secteurs.
+leur époque.
+
+**PR 3 — « Le livre » refaite : faite.** Le même moteur de secteurs : onze
+sections cadrées d'un trait fin, étiquettes sur l'arc hors du champ d'étoiles,
+halos à la couleur même de l'étoile — c'est le blanc au centre des halos qui
+brouillait les jaunes —, étoiles bicolores pour les quatre livres à deux
+époques, légende à douze. **La révision est achevée** : les deux vues, « Le
+livre » (le canon) et « Les époques » (le chemin), lisent la même donnée.
 
 Le compte des livres, lui, est corrigé sans attendre (R-030) : **66 + 7**, les sept
 venus de la Bible grecque, et la note « Pourquoi 66 + 7 ? » qui explique la

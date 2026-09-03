@@ -95,6 +95,8 @@
   html[dir="rtl"] .etqarc{font-family:'Amiri',serif;font-size:13px;letter-spacing:0;text-transform:none}
   .secteur{fill:rgba(233,227,211,.02);stroke:rgba(233,227,211,.09);stroke-width:1;cursor:pointer;transition:fill .25s}
   .secteur:hover,.secteur.sel{fill:rgba(233,227,211,.07)}
+  .secteur.inerte{cursor:default;pointer-events:none}
+  .secteur.inerte:hover{fill:rgba(233,227,211,.02)}
   .secteur.sel{stroke:rgba(211,169,79,.5)}
   .chemin{fill:none;stroke:rgba(211,169,79,.5);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
   .chemin.retour{stroke-dasharray:3 6;stroke-width:1.3;opacity:.8}
@@ -435,7 +437,7 @@ function bati(){
     const pals=Object.entries(CONSTEL.periodes).map(([k,p])=>[k,p.c]).concat([["mut","#9a94a8"]]);
     for(const [cle,col] of pals){
       const g2=S('radialGradient');g2.id='g-p-'+cle;
-      [["0%","#ffffff",".85"],["32%",col,".5"],["100%",col,"0"]].forEach(([o,c2,a2])=>{
+      [["0%",col,".95"],["40%",col,".45"],["100%",col,"0"]].forEach(([o,c2,a2])=>{
         const st=S('stop');st.setAttribute('offset',o);st.setAttribute('stop-color',c2);
         st.setAttribute('stop-opacity',a2);g2.appendChild(st);});
       defs.appendChild(g2);}
@@ -450,13 +452,21 @@ function bati(){
       const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
       hl.setAttribute('r','15');hl.setAttribute('fill','url(#g-p-'+(per||'mut')+')');
       hl.setAttribute('opacity','.75');a.appendChild(hl);
-      const cc2=S('circle');cc2.setAttribute('class','c');cc2.setAttribute('cx',x);cc2.setAttribute('cy',y);
-      cc2.setAttribute('r','6.2');cc2.setAttribute('fill',col);a.appendChild(cc2);
+      const pers=l[2]||[];
+      if(pers.length>1){ // deux époques : deux demi-disques
+        const cA=CONSTEL.periodes[pers[0]].c, cB=CONSTEL.periodes[pers[1]].c, xs=x.toFixed(1);
+        const h1=S('path');h1.setAttribute('d',`M${xs} ${(y-6.2).toFixed(1)} A6.2 6.2 0 0 0 ${xs} ${(y+6.2).toFixed(1)} Z`);h1.setAttribute('fill',cA);a.appendChild(h1);
+        const h2=S('path');h2.setAttribute('d',`M${xs} ${(y-6.2).toFixed(1)} A6.2 6.2 0 0 1 ${xs} ${(y+6.2).toFixed(1)} Z`);h2.setAttribute('fill',cB);a.appendChild(h2);
+        const ring=S('circle');ring.setAttribute('class','c');ring.setAttribute('cx',x);ring.setAttribute('cy',y);
+        ring.setAttribute('r','6.2');ring.setAttribute('fill','none');a.appendChild(ring);
+      }else{
+        const cc2=S('circle');cc2.setAttribute('class','c');cc2.setAttribute('cx',x);cc2.setAttribute('cy',y);
+        cc2.setAttribute('r','6.2');cc2.setAttribute('fill',col);a.appendChild(cc2);}
       const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r','14');
       cible.setAttribute('fill','transparent');a.appendChild(cible);
       a.addEventListener('click',ev=>{ if(SELL!==l[0]){ev.preventDefault();choisirLivre(l[0]);} });
       svg.appendChild(a);});
-    svg.querySelectorAll('.etq').forEach(t=>svg.appendChild(t));
+    svg.querySelectorAll('.etqarc').forEach(t=>svg.appendChild(t));
     render();
     return;}
   if(SCENE==='correspondances'){
@@ -563,17 +573,27 @@ const ETG_ORD=["loi","histoire","sagesse","grands","petits","deutero","evangiles
 function posC(r,deg){const a=(deg-90)*Math.PI/180;return [CX+r*Math.cos(a),CY+r*Math.sin(a)];}
 function batiBiblio(svg){
   const parEt={};CONSTEL.livres.forEach(l=>{(parEt[l[1]]=parEt[l[1]]||[]).push(l);});
-  let tot=0;const spans=ETG_ORD.map(k=>{const t=(parEt[k]||[]).length+2;tot+=t;return t;});
-  let a0=-90;const etoiles=[];
+  let tot=0;const spans=ETG_ORD.map(k=>{const t=(parEt[k]||[]).length+3;tot+=t;return t;});
+  let a0=0;const etoiles=[];SECTEURS={};
   ETG_ORD.forEach((k,ci)=>{
-    const span=spans[ci]/tot*360, livres=parEt[k]||[];
-    const am=a0+span/2, pl=posC(302,am);
-    const et=S('text');et.setAttribute('x',pl[0]);et.setAttribute('y',pl[1]);
-    et.setAttribute('class','etq');et.dataset.k=k;et.dataset.x=pl[0];svg.appendChild(et);
+    const span=spans[ci]/tot*360, livres=parEt[k]||[], a1=a0, a2=a0+span, am=a0+span/2;
+    const haut=Math.sin((am-90)*Math.PI/180)<0;
+    SECTEURS[k]={a1,a2,am,len:(haut?318:328)*span*Math.PI/180};
+    // le cadre léger de la section
+    const P=S('path');P.setAttribute('class','secteur inerte');P.dataset.k=k;
+    const o1=posC(300,a1),o2=posC(300,a2),i1=posC(150,a1),i2=posC(150,a2),large=span>180?1:0;
+    P.setAttribute('d',`M${o1[0].toFixed(1)} ${o1[1].toFixed(1)} A300 300 0 ${large} 1 ${o2[0].toFixed(1)} ${o2[1].toFixed(1)} L${i2[0].toFixed(1)} ${i2[1].toFixed(1)} A150 150 0 ${large} 0 ${i1[0].toFixed(1)} ${i1[1].toFixed(1)} Z`);
+    svg.appendChild(P);
+    // l'étiquette sur l'arc, hors du champ d'étoiles
+    const dp=S('path');dp.id='arc-'+k;dp.setAttribute('fill','none');
+    dp.setAttribute('d',haut?arcPath(318,a1,a2,1):arcPath(328,a2,a1,0));defs_of(svg).appendChild(dp);
+    const tx=S('text');tx.setAttribute('class','etqarc');tx.dataset.k=k;
+    const tp=S('textPath');tp.setAttribute('href','#arc-'+k);tp.setAttribute('startOffset','50%');
+    tp.setAttribute('text-anchor','middle');tx.appendChild(tp);svg.appendChild(tx);
     const cols=Math.max(1,Math.ceil(livres.length/3)), pad=Math.min(span*0.14,6);
     livres.forEach((l,j)=>{
       const col=j%cols,row=(j/cols)|0;
-      const ang=a0+pad+(col+0.5)*(span-2*pad)/cols, ray=176+row*40;
+      const ang=a1+pad+(col+0.5)*(span-2*pad)/cols, ray=176+row*40;
       const xy=posC(ray,ang);etoiles.push([l,xy[0],xy[1]]);});
     a0+=span;});
   etoiles.forEach(([l,x,y])=>{ if(l[5]){
@@ -805,8 +825,8 @@ function render(l){
   const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
   const gc=document.querySelector('.centre');if(gc)gc.setAttribute('aria-label',c.centreA11y);
-  document.querySelectorAll('.etqarc').forEach(t=>{const k=t.dataset.p, tp=t.firstChild;
-    tp.textContent=(CHEMIN.indexOf(k)+1)+' · '+CONSTEL.periodes[k][LANG];
+  document.querySelectorAll('.etqarc').forEach(t=>{const k=t.dataset.p||t.dataset.k, tp=t.firstChild;
+    tp.textContent=t.dataset.p?(CHEMIN.indexOf(k)+1)+' · '+CONSTEL.periodes[k][LANG]:CONSTEL.etageres[k][LANG];
     t.style.fontSize='';tp.removeAttribute('textLength');tp.removeAttribute('lengthAdjust');
     const arc=(SECTEURS[k]&&SECTEURS[k].len)||160;let len=tp.getComputedTextLength();
     if(len>arc-8){const fs0=parseFloat(getComputedStyle(t).fontSize)||10.5;

@@ -280,7 +280,13 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-028 Le livre en deux vues, sur douze époques (D-018)
 - zone: orange
-- statut: en cours — PR 1 (la donnée) et PR 2 (la vue des époques, R-029) faites ; reste « Le livre » refaite
+- statut: fait — trois PR : la donnée, la vue des époques (R-029), « Le livre » refaite
+- résultat: « Le livre » refaite avec le moteur de secteurs des époques — onze sections
+  cadrées d'un trait fin, étiquettes sur l'arc hors du champ d'étoiles (mesurées au rendu,
+  réduites pour tenir, retournées en bas), halos à la couleur même de l'étoile sans blanc
+  au centre, étoiles bicolores pour les quatre livres à deux époques (Samuel demi Juges,
+  demi Royaume), légende à douze ; plus aucune étiquette sur une étoile. Les deux vues
+  lisent la même donnée.
 - pourquoi: la constellation mêle étagères et époques ; couleurs indistinctes, étiquettes sur les étoiles, sections sans cadre, Joël et le Nouveau Testament gris, un livre à deux époques invisible
 - fait quand: periodes.yml à douze ; vue « Le livre » cadrée, étiquetée sur l'arc, palette validée, étoiles bicolores ; vue « Les époques » avec ses 70 événements ; trois langues ; captures réelles
 - plan: dossier 15, section « Révision » — trois PR (la donnée · le livre · les époques)
