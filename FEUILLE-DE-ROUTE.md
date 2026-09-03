@@ -437,6 +437,32 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-049 « Pourquoi l'agneau ? » — le dossier de fond, vérifié au texte
+- zone: orange
+- statut: fait pour le dossier — la page reste à écrire, trois décisions attendent le porteur
+- pourquoi: le porteur apporte une recherche sur la question qu'il juge centrale, et demande qu'on la vérifie, qu'on la garde, et que le sang à la porte entre enfin dans les dossiers
+- fait quand: chaque référence est confrontée au texte, le contenu est rangé, et ce qui reste à décider est nommé
+- résultat: **toutes les références du document source ont été vérifiées, aucune n'était
+  fausse.** C'est le premier usage réel des textes importés (R-004) : dix-huit versets lus
+  dans nos quatre traductions plutôt que de mémoire.
+  `17-dossier-pourquoi-agneau.md` range la matière en quatre couches — la Pâque, le
+  sacrifice quotidien, le Serviteur d'Isaïe, l'Agneau de l'Apocalypse — chacune avec la
+  nature de ses liens au sens de D-013, et sépare ce qui est vérifié au texte de ce qui
+  n'est que rapporté. Deux vérifications valent d'être notées : **Exode 12:5 en Segond dit
+  « vous pourrez prendre un agneau ou un chevreau »** — la Pâque n'exigeait pas un agneau
+  au sens strict — et **l'hysope d'Exode 12:22 reparaît en Jean 19:29**, le même objet dans
+  les deux scènes.
+  `08-dossier-sang.md` reçoit une section 6 : **le sang à la porte**. Le mot « linteau »
+  n'apparaissait nulle part dans le dépôt, alors que c'est la première fois que le sang
+  sauve quelqu'un dans l'Écriture. Le dossier distingue désormais le sang qui **protège**
+  (Exode 12) du sang qui **expie** (Lévitique 17:11, Ésaïe 53) — deux couches que le
+  Nouveau Testament réunit et que le site doit d'abord distinguer.
+- décisions en attente: Nombres 9:12 entre-t-il au fil rouge ? Ce serait la **154ᵉ**
+  correspondance, et le site tient à 153 — le nombre des poissons de Jean 21:11 · Le geste
+  sur l'Agneau : il rallume le ciel (R-026), doit-il aussi ouvrir cette fiche, et par quel
+  second geste ? · Les travaux savants cités par le document source n'ont pas été consultés
+  ici : ils restent marqués « rapporté » et ne peuvent pas s'afficher comme établis.
+
 ## R-048 La légende dit ce qu'elle allume — et le déploiement voit ce qu'un visiteur reçoit
 - zone: verte
 - statut: fait
