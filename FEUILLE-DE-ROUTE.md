@@ -348,6 +348,34 @@ boucle à l'exécution suivante. Le supprimer la relance.
   quatorze prophètes (époque, date, place sur l'axe) et les vingt maillons aux
   constellations — c'est la donnée dont vivront « Les veilleurs » et « La généalogie ».
 
+## R-033 Deux constellations de plus — les veilleurs, la généalogie remontante
+- zone: orange
+- statut: fait
+- pourquoi: choisies par le porteur — la frise et la généalogie dormaient dans le site sans être des cartes ; il voulait pouvoir les parcourir comme les autres
+- fait quand: les deux scènes lisent la même donnée mesurée, trois langues, captures réelles
+- résultat: **Les veilleurs** — les quatorze prophètes posés sur le cadran des douze
+  époques, chacun dans la sienne, et un rayon de chacun vers le centre : ils sont tous
+  tournés vers le même point, c'est la thèse de la page devenue dessin. Sa fiche dit
+  l'époque, la date, et ce qui le relie au Christ. **La généalogie** — les vingt maillons
+  de Luc 3:23-38, du Christ à Adam, en spirale qui s'éloigne du centre : le mouvement du
+  site, dessiné. Chaque maillon à la couleur de son époque, la fourche à part, et sa
+  fiche dit son rang, son époque et sa précision (« par Ruth », « par Rahab »).
+  Entrées : l'étoile « Les veilleurs » ouvre les deux ; adresses `#veilleurs` et
+  `#genealogie`. Six vues déclarées en une liste — la barre des cartes s'y branchera.
+
+## R-034 Les douze couleurs, aussi séparables que douze couleurs peuvent l'être
+- zone: verte
+- statut: fait
+- pourquoi: deux paires étaient indistinguables — « Monde des origines » et « Le Royaume divisé » à ΔE 1,9, « L'Accomplissement » et « Le Retour » à ΔE 0,2 pour un daltonien ; le porteur l'avait signalé
+- fait quand: la pire paire est aussi éloignée que le procédé le permet, mesurée au vérificateur, et la limite est dite
+- résultat: la pire paire passe de **ΔE 1,9 à 9,8** — cinq fois mieux — l'or restant à
+  l'Accomplissement et l'encre à l'Église. Les teintes suivent désormais la roue dans
+  l'ordre du temps : le lecteur voit une progression, pas douze étiquettes.
+  **La limite, dite franchement :** douze catégories ne se distinguent pas par la
+  couleur seule — le seuil de lisibilité est à ΔE 15, aucune combinaison des douze ne
+  l'atteint (le meilleur schéma à cinq familles de nuances plafonne à 7,9). La couleur
+  groupe ; ce sont les étiquettes, le filtre et le tableau qui identifient.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
