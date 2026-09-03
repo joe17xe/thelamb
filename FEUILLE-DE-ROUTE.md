@@ -429,6 +429,26 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-044 Les fils se voient sur un téléphone, et celui qu'on touche s'allume
+- zone: verte
+- statut: fait
+- pourquoi: signalement du porteur, capture à l'appui — « le fil d'or est toujours là, pas de changement, il est pas mobile, je vois pas les références les liens ou les correspondances »
+- fait quand: les trente-neuf fils se voient sur un écran de téléphone, et toucher un livre montre ce qui le relie au Christ
+- résultat: trois défauts, mesurés puis corrigés.
+  **Les fils étaient invisibles.** Ils étaient réglés dans le repère du dessin, que
+  l'écran d'un téléphone réduit de moitié (échelle mesurée : 0,52) : le plus ténu faisait
+  **0,54 px de large à 14 % d'opacité** sur fond noir. Ils passent de 1,06 à 2,09 px
+  réels, et de 38 à 75 % d'opacité. La gerbe de rayons vers l'Agneau se voit maintenant.
+  **Le fil ne répondait pas au toucher.** Toucher un livre allume son fil — or plein,
+  4,2 d'épaisseur — et éteint les trente-huit autres. Refermer la fiche leur rend leur
+  poids ; le filtre les emporte comme il emporte les étoiles.
+  **La fiche se taisait quand il n'y avait rien à dire.** Le porteur avait touché Tobie,
+  qui ne porte aucune correspondance : la fiche n'affichait donc aucun lien, sans dire
+  pourquoi. Elle le dit désormais — « aucun passage de ce livre n'est encore recensé dans
+  le fil rouge, le recensement se poursuit » —, dans les trois langues.
+- vérifié: rendu à 393 × 852, densité 3, l'écran du porteur ; largeurs et opacités
+  mesurées à l'écran et non dans le repère du dessin ; les huit contrôles.
+
 ## R-043 Le chemin s'arrête à la Genèse ; l'Église suit le Christ, pas les origines
 - zone: verte
 - statut: fait

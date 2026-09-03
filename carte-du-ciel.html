@@ -64,6 +64,9 @@
   .arete.aentree{stroke:rgba(233,227,211,.05)}
   .arete.chaine{stroke:rgba(211,169,79,.30);stroke-width:1.5}
   .arete.filchrist{stroke:var(--gold)}
+  .arete.filchrist.vif{stroke-opacity:1;stroke-width:4.2}
+  .arete.filchrist.pale{stroke-opacity:.07}
+  .arete.filchrist.efface{stroke-opacity:0}
   .arete.on{stroke-width:1.9}
   .noeud{cursor:pointer;transition:opacity .25s}
   .noeud text{font-family:system-ui,sans-serif;font-size:13.5px;fill:var(--ink);opacity:.85;text-anchor:middle;transition:opacity .25s;paint-order:stroke;stroke:rgba(12,14,24,.75);stroke-width:3px}
@@ -285,7 +288,8 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  arianeLbl:"Fil d'Ariane", arianeAgneau:"✦ L'Agneau", arianeCiel:"Le ciel",
  horsCarte:"hors de la carte du temps", chap:"ch.",
  aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", tblVoir:"voir la liste", tblSur:"sur",
- recitLbl:"Récit", placeDebat:"Place non tranchée", liensChrist:"passages vers le Christ", tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
+ recitLbl:"Récit", placeDebat:"Place non tranchée", liensChrist:"passages vers le Christ",
+ sansLien:"Aucun passage de ce livre n'est encore recensé dans le fil rouge. Le recensement se poursuit.", tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintVeilleurs:"Quatorze veilleurs, chacun dans son époque, sur le même cadran que le chemin : de 1, le Christ, à 12. Tous sont tournés vers le même point.",
  hintGenealogie:"La chaîne part du Christ, au centre, et remonte jusqu'à Adam, maillon par maillon. Touchez-en un : sa fiche s'ouvre.",
  hintEpoques:"Le fil d'or relie les quatorze livres du récit, du Christ — l'époque 1 — jusqu'à 12. Touchez une époque, ou un livre.",
@@ -350,7 +354,8 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  arianeLbl:"Breadcrumb", arianeAgneau:"✦ The Lamb", arianeCiel:"The sky",
  horsCarte:"outside the map of time", chap:"ch.",
  aConstellation:"opens a constellation", filtreTout:"✕ Show all", tblVoir:"see the list", tblSur:"of",
- recitLbl:"Narrative", placeDebat:"Placement not settled", liensChrist:"passages to Christ", tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
+ recitLbl:"Narrative", placeDebat:"Placement not settled", liensChrist:"passages to Christ",
+ sansLien:"No passage of this book is listed in the red thread yet. The survey is ongoing.", tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintVeilleurs:"Fourteen watchmen, each in his epoch, on the same dial as the path: from 1, Christ, to 12. All are turned towards the same point.",
  hintGenealogie:"The chain starts from Christ, at the centre, and goes back to Adam, link by link. Touch one: its card opens.",
  hintEpoques:"The gold thread joins the fourteen narrative books, from Christ — epoch 1 — back to 12. Touch an epoch, or a book.",
@@ -415,7 +420,8 @@ ar:{dir:"rtl",brand:"حمل الله",
  arianeLbl:"مسار التنقّل", arianeAgneau:"✦ الحمل", arianeCiel:"السماء",
  horsCarte:"خارج خريطة الزمن", chap:"أص.",
  aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", tblVoir:"اعرض القائمة", tblSur:"من",
- recitLbl:"السرد", placeDebat:"موضعٌ غير محسوم", liensChrist:"مقطعًا نحو المسيح", tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
+ recitLbl:"السرد", placeDebat:"موضعٌ غير محسوم", liensChrist:"مقطعًا نحو المسيح",
+ sansLien:"لم يُسجَّل بعدُ أيُّ مقطعٍ من هذا السفر في الخيط الأحمر. والإحصاء مستمر.", tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintVeilleurs:"أربعة عشر حارسًا، كلٌّ في عصره، على القرص نفسه الذي يسير عليه الطريق: من ١، المسيح، إلى ١٢. وكلُّهم متّجهون إلى النقطة نفسها.",
  hintGenealogie:"تبدأ السلسلةُ من المسيح في المركز، وتصعد إلى آدم، حلقةً حلقة. المس حلقةً: تنفتح بطاقتها.",
  hintEpoques:"الخيطُ الذهبي يصل الأسفارَ الأربعةَ عشرَ التي تروي الخبر، من المسيح — العصر ١ — إلى ١٢. المس عصرًا، أو سفرًا.",
@@ -695,14 +701,19 @@ function batiBiblio(svg){
     const f=Math.sqrt(n/CORR_MAX);
     const ln=S('line');ln.setAttribute('x1',x);ln.setAttribute('y1',y);
     ln.setAttribute('x2',CX);ln.setAttribute('y2',CY);
-    ln.setAttribute('class','arete filchrist');
-    ln.setAttribute('stroke-opacity',(0.10+0.22*f).toFixed(2));
-    ln.setAttribute('stroke-width',(0.8+1.3*f).toFixed(2));
+    ln.setAttribute('class','arete filchrist');ln.dataset.livre=l[0];ln.dataset.n=n;
+    // l'écran d'un téléphone réduit le dessin de moitié : ces valeurs sont
+    // celles du repère du dessin, pas celles que l'œil reçoit
+    ln.setAttribute('stroke-opacity',(0.30+0.45*f).toFixed(2));
+    ln.setAttribute('stroke-width',(1.6+2.4*f).toFixed(2));
     svg.appendChild(ln);} );
   return etoiles;
 }
 function choisirLivre(id){
   SELL=id;const c=C[LANG];
+  document.querySelectorAll('.arete.filchrist').forEach(x=>{
+    x.classList.toggle('vif',x.dataset.livre===id);
+    x.classList.toggle('pale',x.dataset.livre!==id);});
   const l=CONSTEL.livres.find(x=>x[0]===id);
   const li={fr:0,en:1,ar:2}[LANG];
   document.querySelectorAll('.noeud.livre').forEach(nn=>nn.classList.toggle('sel',nn.dataset.livre===id));
@@ -732,6 +743,8 @@ function choisirLivre(id){
       a.textContent=co[li+1][0];fl.appendChild(a);});
     if(ouL.length>12){const sp=document.createElement('span');sp.className='pchip2';
       sp.textContent='+'+(ouL.length-12);fl.appendChild(sp);}}
+  else{const nt=document.createElement('span');nt.className='fnote';
+    nt.textContent=c.sansLien;fl.appendChild(nt);}
   document.getElementById('fconst').hidden=true;document.getElementById('fconst2').hidden=true;
   SELE=null;document.querySelectorAll('.secteur').forEach(s=>s.classList.remove('sel'));
   document.querySelectorAll('.noeud.livre').forEach(n=>n.classList.remove('dim'));
@@ -1046,6 +1059,9 @@ function appliquerFiltre(){
     const garde=!actif||cat.some(k=>FILTRE.has(k));
     n.classList.toggle('efface',actif&&!garde);
     if(actif&&garde)retenues.push(n);});
+  const gardes=new Set(retenues.map(n=>n.dataset.livre).filter(Boolean));
+  document.querySelectorAll('.arete.filchrist').forEach(x=>
+    x.classList.toggle('efface',actif&&!gardes.has(x.dataset.livre)));
   const nommer=actif&&retenues.length<=SEUIL_NOMS;
   document.querySelectorAll('.noeud .nomdir').forEach(x=>{x.textContent='';});
   if(nommer)retenues.forEach(n=>{const nm=n.querySelector('.nomdir');
@@ -1107,7 +1123,7 @@ function fermer(){
   SEL=null;SELL=null;SELC=null;SELE=null;SELP=null;SELG=null;
   document.querySelectorAll('.secteur').forEach(s=>s.classList.remove('sel'));
   document.querySelectorAll('.noeud').forEach(n=>n.classList.remove('sel','lie','dim'));
-  document.querySelectorAll('.arete').forEach(l=>{l.classList.remove('on');l.style.stroke='';l.style.opacity='';});
+  document.querySelectorAll('.arete').forEach(l=>{l.classList.remove('on','vif','pale');l.style.stroke='';l.style.opacity='';});
   document.getElementById('fiche').classList.remove('show');
 }
 function render(l){
