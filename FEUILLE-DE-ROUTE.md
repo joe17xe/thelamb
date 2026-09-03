@@ -278,6 +278,13 @@ boucle à l'exécution suivante. Le supprimer la relance.
   diversement ») sans trancher le canon. Intacts : les bibliothèques de la
   Trinité, la bibliothèque de Qumrân, la métaphore d'Emmaüs, le nom du fichier.
 
+## R-028 Le livre en deux vues, sur douze époques (D-018)
+- zone: orange
+- statut: à faire — après le Go du porteur sur D-018
+- pourquoi: la constellation mêle étagères et époques ; couleurs indistinctes, étiquettes sur les étoiles, sections sans cadre, Joël et le Nouveau Testament gris, un livre à deux époques invisible
+- fait quand: periodes.yml à douze ; vue « Le livre » cadrée, étiquetée sur l'arc, palette validée, étoiles bicolores ; vue « Les époques » avec ses 70 événements ; trois langues ; captures réelles
+- plan: dossier 15, section « Révision » — trois PR (la donnée · le livre · les époques)
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire

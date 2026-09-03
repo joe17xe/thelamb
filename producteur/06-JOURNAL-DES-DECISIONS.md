@@ -70,6 +70,25 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-018 — Douze époques, aux termes du dépliant ; deux constellations pour le livre
+**Date :** septembre 2026 — **Statut :** à trancher (proposition au porteur) — **Dossier :** `15-dossier-ciel-connaissances.md`, section « Révision »
+**La question :** la constellation du livre range par étagère et colore par
+époque : deux logiques mêlées, illisibles ensemble. Et notre carte du temps
+(huit périodes) ne suit pas le dépliant Cavins, que le porteur veut pour
+référence — « utilise les mêmes termes ».
+**Ce qui est proposé :** `periodes.yml` passe aux douze époques du dépliant, aux
+mêmes termes (traduits dans les trois langues), aux dates du dépliant ; une
+seule carte du temps, toujours. Deux constellations sur la même donnée : « Le
+livre » (le canon, par sections cadrées) et « Les époques » (le récit, par
+époques, les livres par chapitres). Les couleurs restent les nôtres, validées
+sur le ciel sombre.
+**Ce qu'on abandonne :** la ligne du relevé « on ne reprend pas le découpage en
+douze » — le porteur choisit la structure du dépliant, Cavins crédité en
+source. Les huit périodes de D-008 ; sa formule sur les livres « reçus
+diversement » demeure, dans l'époque des Maccabées.
+**Pourquoi :** « on mélange deux choses, les époques et les livres » — le
+diagnostic est juste, et la correction demande une vue par logique.
+
 ### D-017 — La salle de la composition s'appelle « Le livre »
 **Date :** 1ᵉʳ septembre 2026 — **Statut :** tranchée
 **La question :** la salle qui explique la composition de la Bible s'appelait
