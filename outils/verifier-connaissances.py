@@ -63,6 +63,14 @@ def coherence(d):
         for p in (l["periodes"] or []):
             if p not in pers:
                 fautes.append("livre %s : période inconnue %r" % (l["id"], p))
+        # Une place non tranchée est une hypothèse, pas un parcours : on ne peut
+        # pas en même temps ignorer où le récit se situe et le couper en deux
+        # tranches de chapitres.
+        if "debat" in l:
+            if l.get("tranches"):
+                fautes.append("livre %s : place débattue et tranches à la fois" % l["id"])
+            if not all(l["debat"].get(k) for k in ("fr", "en", "ar")):
+                fautes.append("livre %s : la raison du débat manque dans une langue" % l["id"])
     for p in d["prophetes"]:
         if p["epoque"] not in pers:
             fautes.append("prophète %s : époque inconnue %r" % (p["id"], p["epoque"]))
@@ -117,7 +125,9 @@ def bloc_constel(d):
                     [l["w"]["fr"], l["w"]["en"], l["w"]["ar"]],
                     ([l["lien"]["fr"], l["lien"]["en"], l["lien"]["ar"]]
                      if "lien" in l else None),
-                    l.get("tranches")]
+                    l.get("tranches"),
+                    ([l["debat"]["fr"], l["debat"]["en"], l["debat"]["ar"]]
+                     if "debat" in l else None)]
                    for l in d["livres"]],
         "themes": d["themes"],
         "prophetes": [[p["id"], p["epoque"], p["pos"],

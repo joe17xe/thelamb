@@ -2714,20 +2714,31 @@ livres:
     en: Tobit
     fr: Tobie
   periodes:
-  - division
+  - exil
   w:
     ar: أبٌ أعمى، وفتاةٌ مثقلة، ورفيقُ سفرٍ يتبيّن أنه ملاك. حكايةُ عائلةٍ وصلاةٍ وشفاء.
     en: A blind father, a young woman in distress, a travelling companion who turns out to be an angel.
       A story of family, prayer and healing.
     fr: Un père aveugle, une jeune femme accablée, un compagnon de voyage qui se révèle être un ange.
       Un récit de famille, de prière et de guérison.
-- etagere: deutero
+- debat:
+    ar: 'يضع السفر خبرَه بعد العودة من السبي (يهوديت ٤: ٣، والهيكل مُطهَّر)، لكن في أيام «نبوخذنصر ملك
+      الأشوريين» في نينوى (يهوديت ١: ١) — وهما معلمان لا يجمعهما التاريخ. فموضعُه على خريطة الزمن غير
+      محسوم.'
+    en: The book sets its story after the return from exile (Judith 4:3, the Temple purified), yet under
+      “Nebuchadnezzar, king of the Assyrians”, at Nineveh (Judith 1:1) — two markers history does not
+      bring together. Its place on the timeline is not settled.
+    fr: Le livre situe son récit après le retour de l’exil (Judith 4:3, le Temple purifié), mais sous
+      « Nabuchodonosor, roi des Assyriens », à Ninive (Judith 1:1) — deux repères que l’histoire ne réunit
+      pas. Sa place sur la carte du temps n’est pas tranchée.
+  etagere: deutero
   id: judith
   nom:
     ar: يهوديت
     en: Judith
     fr: Judith
   periodes:
+  - exil
   - retour
   w:
     ar: 'أرملةٌ تنقذ مدينتَها وحدَها من قائدٍ يحاصرها. السردُ مبنيٌّ كبرهان: اللهُ يخلّص بما يبدو ضعيفًا.'

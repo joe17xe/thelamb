@@ -70,6 +70,23 @@ relie, c'est une quinzième page orpheline.
 
 ## Tranchées
 
+### D-020 — La carte du temps a le droit de dire qu'elle ne sait pas
+**Date :** 3 septembre 2026 — **Statut :** tranchée — sur signalement du porteur
+**La question :** Judith se donne pour cadre « Nabuchodonosor, roi des Assyriens », à
+Ninive (Judith 1:1), et situe pourtant son récit après le retour de l'exil, le Temple
+purifié (Judith 4:3). L'histoire ne réunit pas ces deux repères. La carte du temps
+range chaque livre sous une époque : fallait-il en choisir une ?
+**Ce qui a été décidé :** non. Un livre dont la place n'est pas assurée porte ses deux
+époques *et* la raison du doute, en trois langues, tirée du texte lui-même. Sur les
+cartes, son étoile est cerclée de pointillé et son nom suivi d'un astérisque ; dans son
+pupitre et dans les tableaux, la note dit pourquoi. La CI refuse une place débattue qui
+serait en même temps découpée en tranches de chapitres : on ne peut pas ignorer où un
+récit se situe et prétendre le couper.
+**Ce qu'on abandonne :** l'uniformité — une page où chaque livre aurait sa case unique.
+C'est le prix de l'honnêteté : la même règle que pour la nomenclature des liens (D-013),
+appliquée cette fois à la place dans le temps. Le lecteur voit la nature de l'incertitude,
+jamais un doute brut ni une fausse assurance.
+
 ### D-019 — Le point de départ : trouver Jésus de la Genèse au dernier livre, par le récit ; et le compte 66 + 7
 **Date :** 3 septembre 2026 — **Statut :** tranchée — confirmée par le porteur le même jour : « le plus important c'est le chemin ; on part du Christ »
 **La question :** quel est le but principal du site, et par où un débutant commence-t-il ?
