@@ -116,6 +116,7 @@
   .pchip2.lienor::before{background:var(--gold)}
   .etq{font-family:system-ui,sans-serif;font-size:10.5px;fill:var(--muted);text-anchor:middle;letter-spacing:.1em;text-transform:uppercase;paint-order:stroke;stroke:rgba(12,14,24,.8);stroke-width:3px;pointer-events:none}
   .etqarc{font-family:system-ui,sans-serif;font-size:10.5px;fill:var(--muted);letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+  .etqarc.depart{fill:var(--gold)}
   html[dir="rtl"] .etqarc{font-family:'Amiri',serif;font-size:13px;letter-spacing:0;text-transform:none}
   .secteur{fill:rgba(233,227,211,.02);stroke:rgba(233,227,211,.09);stroke-width:1;cursor:pointer;transition:fill .25s}
   .secteur:hover,.secteur.sel{fill:rgba(233,227,211,.07)}
@@ -271,7 +272,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  lede:"Chaque page du site est une étoile ; l'Agneau tient le centre. Les lignes ne sont pas un décor : ce sont les vrais passages d'une page à l'autre, mesurés sur le site.",
  hint:"Touchez une étoile : ses liens s'allument. Touchez-la encore : vous entrez. Touchez l'Agneau : tout se rallume.",
  centreA11y:"L'Agneau — rallumer tout le ciel",
- hintBiblio:"Touchez un livre : sa fiche s'ouvre. Touchez-le encore : vous ouvrez son pupitre.",
+ hintBiblio:"Les sections se lisent dans l'ordre, de 1 à 11. Un fil d'or vers le centre marque un lien nommé au Christ. Touchez un livre, puis encore pour son pupitre.",
  hintCorr:"Touchez une correspondance : sa fiche s'ouvre. Touchez-la encore : vous l'ouvrez dans le fil rouge.",
  vueNom:{ciel:"Le ciel",bibliotheque:"Le livre",epoques:"Les époques",correspondances:"Les correspondances",veilleurs:"Les veilleurs",genealogie:"La généalogie"},
  vueOuvrir:{bibliotheque:"✦ Ouvrir le livre",epoques:"✦ Ouvrir les époques",correspondances:"✦ Ouvrir les correspondances",veilleurs:"✦ Ouvrir les veilleurs",genealogie:"✦ Ouvrir la généalogie"},
@@ -281,9 +282,9 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  horsCarte:"hors de la carte du temps", chap:"ch.",
  aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", tblVoir:"voir la liste", tblSur:"sur",
  tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
- hintVeilleurs:"Quatorze veilleurs sur mille ans, chacun dans son époque — et tous tournés vers le même point. Touchez-en un.",
- hintGenealogie:"La chaîne remonte du Christ jusqu'à Adam, maillon par maillon. Touchez-en un : sa fiche s'ouvre.",
- hintEpoques:"Le chemin part du Christ et remonte le temps. Touchez une époque : sa fiche s'ouvre. Touchez un livre : la sienne.",
+ hintVeilleurs:"Quatorze veilleurs, chacun dans son époque, sur le même cadran que le chemin : de 1, le Christ, à 12. Tous sont tournés vers le même point.",
+ hintGenealogie:"La chaîne part du Christ, au centre, et remonte jusqu'à Adam, maillon par maillon. Touchez-en un : sa fiche s'ouvre.",
+ hintEpoques:"Le chemin part du Christ, à l'époque 1, et remonte le temps jusqu'à 12. Touchez une époque, ou un livre : sa fiche s'ouvre.",
  flien:"Ses passages",
  descs:{
   emmaus:"La méthode du site : le Ressuscité explique les Écritures en commençant par Moïse et tous les prophètes.",
@@ -336,7 +337,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  lede:"Every page of the site is a star; the Lamb holds the centre. The lines are not decoration: they are the real passages from one page to another, measured on the site.",
  hint:"Touch a star: its links light up. Touch it again: you enter. Touch the Lamb: everything lights up again.",
  centreA11y:"The Lamb — relight the whole sky",
- hintBiblio:"Touch a book: its card opens. Touch it again: you open its lectern.",
+ hintBiblio:"The sections read in order, 1 to 11. A gold thread to the centre marks a named link to Christ. Touch a book, then again for its lectern.",
  hintCorr:"Touch a correspondence: its card opens. Touch it again: you open it in the red thread.",
  vueNom:{ciel:"The sky",bibliotheque:"The book",epoques:"The epochs",correspondances:"The correspondences",veilleurs:"The watchmen",genealogie:"The genealogy"},
  vueOuvrir:{bibliotheque:"✦ Open the book",epoques:"✦ Open the epochs",correspondances:"✦ Open the correspondences",veilleurs:"✦ Open the watchmen",genealogie:"✦ Open the genealogy"},
@@ -346,9 +347,9 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  horsCarte:"outside the map of time", chap:"ch.",
  aConstellation:"opens a constellation", filtreTout:"✕ Show all", tblVoir:"see the list", tblSur:"of",
  tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
- hintVeilleurs:"Fourteen watchmen across a thousand years, each in his epoch — and all turned towards the same point. Touch one.",
- hintGenealogie:"The chain goes back from Christ to Adam, link by link. Touch one: its card opens.",
- hintEpoques:"The path starts from Christ and goes back in time. Touch an epoch: its card opens. Touch a book: its own.",
+ hintVeilleurs:"Fourteen watchmen, each in his epoch, on the same dial as the path: from 1, Christ, to 12. All are turned towards the same point.",
+ hintGenealogie:"The chain starts from Christ, at the centre, and goes back to Adam, link by link. Touch one: its card opens.",
+ hintEpoques:"The path starts from Christ, at epoch 1, and goes back in time to 12. Touch an epoch, or a book: its card opens.",
  flien:"Its passages",
  descs:{
   emmaus:"The site's method: the risen Christ explains the Scriptures, beginning with Moses and all the prophets.",
@@ -401,7 +402,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  lede:"كل صفحة في الموقع نجمة؛ والحمل يمسك المركز. الخطوط ليست زينة: إنها المعابر الحقيقية من صفحة إلى أخرى، مقيسةً على الموقع.",
  hint:"المس نجمةً: تضيء وصلاتها. المسها ثانيةً: تدخل. المس الحمل: يضيء الكل من جديد.",
  centreA11y:"الحمل — أضئ السماء كلها",
- hintBiblio:"المس سفرًا: تنفتح بطاقته. المسه ثانيةً: تفتح منبره.",
+ hintBiblio:"تُقرأ الأقسام بالترتيب من ١ إلى ١١. وخيطٌ ذهبي إلى المركز يدلّ على صلةٍ مُسمّاة بالمسيح. المس سفرًا، ثم المسه ثانيةً لمنبره.",
  hintCorr:"المس تناظرًا: تنفتح بطاقته. المسه ثانيةً: تفتحه في الخيط الأحمر.",
  vueNom:{ciel:"السماء",bibliotheque:"الكتاب",epoques:"العصور",correspondances:"التناظرات",veilleurs:"الحرّاس",genealogie:"سلسلة النسب"},
  vueOuvrir:{bibliotheque:"✦ افتح الكتاب",epoques:"✦ افتح العصور",correspondances:"✦ افتح التناظرات",veilleurs:"✦ افتح الحرّاس",genealogie:"✦ افتح سلسلة النسب"},
@@ -411,9 +412,9 @@ ar:{dir:"rtl",brand:"حمل الله",
  horsCarte:"خارج خريطة الزمن", chap:"أص.",
  aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", tblVoir:"اعرض القائمة", tblSur:"من",
  tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
- hintVeilleurs:"أربعة عشر حارسًا على مدى ألف سنة، كلٌّ في عصره — وكلُّهم متّجهون إلى النقطة نفسها. المس واحدًا منهم.",
- hintGenealogie:"تصعد السلسلةُ من المسيح إلى آدم، حلقةً حلقة. المس حلقةً: تنفتح بطاقتها.",
- hintEpoques:"يبدأ الطريق من المسيح ويعود في الزمن. المس عصرًا: تنفتح بطاقته. المس سفرًا: بطاقته هو.",
+ hintVeilleurs:"أربعة عشر حارسًا، كلٌّ في عصره، على القرص نفسه الذي يسير عليه الطريق: من ١، المسيح، إلى ١٢. وكلُّهم متّجهون إلى النقطة نفسها.",
+ hintGenealogie:"تبدأ السلسلةُ من المسيح في المركز، وتصعد إلى آدم، حلقةً حلقة. المس حلقةً: تنفتح بطاقتها.",
+ hintEpoques:"يبدأ الطريق من المسيح، في العصر ١، ويعود في الزمن إلى ١٢. المس عصرًا أو سفرًا: تنفتح بطاقته.",
  flien:"معابرها",
  descs:{
   emmaus:"طريقة الموقع: القائم من الموت يشرح الكتب مبتدئًا من موسى وجميع الأنبياء.",
@@ -1086,7 +1087,9 @@ function render(l){
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
   const gc=document.querySelector('.centre');if(gc)gc.setAttribute('aria-label',c.centreA11y);
   document.querySelectorAll('.etqarc').forEach(t=>{const k=t.dataset.p||t.dataset.k, tp=t.firstChild;
-    tp.textContent=t.dataset.p?(CHEMIN.indexOf(k)+1)+' · '+CONSTEL.periodes[k][LANG]:CONSTEL.etageres[k][LANG];
+    const rang=t.dataset.p?CHEMIN.indexOf(k)+1:ETG_ORD.indexOf(k)+1;
+    tp.textContent=rang+' · '+(t.dataset.p?CONSTEL.periodes[k][LANG]:CONSTEL.etageres[k][LANG]);
+    t.classList.toggle('depart',rang===1);
     t.style.fontSize='';tp.removeAttribute('textLength');tp.removeAttribute('lengthAdjust');
     const arc=(SECTEURS[k]&&SECTEURS[k].len)||160;let len=tp.getComputedTextLength();
     if(len>arc-8){const fs0=parseFloat(getComputedStyle(t).fontSize)||10.5;

@@ -429,6 +429,20 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-039 Par où commencer sur un cadran — et ce que dit le fil d'or
+- zone: verte
+- statut: fait
+- pourquoi: deux questions du porteur — « il faut qu'on regarde par où il faut commencer quand nous sommes sur un cercle », et « ce trait entre l'Agneau et 2 Maccabées, il tourne ou il est fixe, et pourquoi ? »
+- fait quand: chaque cadran dit où l'on commence et dans quel sens, et le fil d'or ne se comprend plus seulement en touchant l'étoile
+- résultat: les onze sections du livre sont **numérotées** comme les douze époques
+  l'étaient — « 1 · La Loi (Torah) » … « 11 · L'Apocalypse » — et dans les trois cadrans
+  **le départ est en or** : « 1 · La Loi » pour le livre, « 1 · L'Accomplissement » pour
+  les époques et les veilleurs. Le numéro donne le point de départ, la suite donne le
+  sens. Les indices le disent en une phrase, et nomment enfin **le fil d'or** : il relie
+  au centre les livres dont le lien au Christ est nommé (D-013) — un seul aujourd'hui,
+  2 Maccabées, dont Hébreux 11:35 reprend les sept frères. Rien ne tourne : le trait est
+  fixe et mesuré. Les indices raccourcis tiennent en deux lignes sur téléphone.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
