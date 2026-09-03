@@ -416,6 +416,19 @@ boucle à l'exécution suivante. Le supprimer la relance.
   ligne allume son étoile** sur la carte et ouvre sa fiche. Le tableau liste, il
   n'enseigne pas (D-016) : l'enseignement reste sur les pages.
 
+## R-038 La barre des cartes est elle-même une constellation
+- zone: verte
+- statut: fait
+- pourquoi: remarque du porteur — « on pourrait relier ces en-têtes comme une constellation, le fil entre, pour avoir une même logique » ; la barre parlait un autre langage que les cartes qu'elle ouvre
+- fait quand: la barre se lit comme une constellation, sans perdre en lisibilité ni en cible de toucher
+- résultat: les séparateurs deviennent un **fil d'or** et chaque carte une **étoile** sur ce
+  fil ; la carte courante est l'étoile allumée, avec son halo. Le fil part de l'Agneau —
+  ce n'est pas un décor : « toutes choses subsistent en lui » est ce que la page enseigne,
+  et la barre le redit. Un bénéfice au passage : un segment de fil n'a pas de sens de
+  lecture, là où le chevron devait se retourner en arabe. Défaut corrigé dans la foulée :
+  le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
+  l'emportait sur l'attribut `hidden`.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
