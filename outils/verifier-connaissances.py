@@ -84,6 +84,13 @@ def coherence(d):
         if g.get("periode") and g["periode"] not in pers:
             fautes.append("génération %s : période inconnue %r"
                           % (g["nom"]["fr"], g["periode"]))
+    saisons = {f["saison"] for f in d.get("fetes", [])}
+    for f in d.get("fetes", []):
+        if not all(f["christ"].get(k) for k in ("fr", "en", "ar")):
+            fautes.append("fête %s : le fil vers le Christ manque dans une langue"
+                          % f["id"])
+    if d.get("fetes") and len(saisons) < 2:
+        fautes.append("les fêtes n'ont plus qu'une saison : la roue serait plate")
     if sum(t["compte"] for t in d["themes"].values()) != len(d["correspondances"]):
         fautes.append("les thèmes ne comptent pas les correspondances")
     return fautes
@@ -139,6 +146,12 @@ def bloc_constel(d):
                      if "nuance" in l else None)]
                    for l in d["livres"]],
         "themes": d["themes"],
+        "fetes": [[f["id"], f["saison"],
+                   [f["nom"]["fr"], f["nom"]["en"], f["nom"]["ar"]],
+                   [f["quand"]["fr"], f["quand"]["en"], f["quand"]["ar"]],
+                   [f["quoi"]["fr"], f["quoi"]["en"], f["quoi"]["ar"]],
+                   [f["christ"]["fr"], f["christ"]["en"], f["christ"]["ar"]]]
+                  for f in d["fetes"]],
         "prophetes": [[p["id"], p["epoque"], p["pos"],
                        [p["nom"]["fr"], p["nom"]["en"], p["nom"]["ar"]],
                        [p["date"]["fr"], p["date"]["en"], p["date"]["ar"]],
@@ -201,9 +214,9 @@ def main(argv):
             else:
                 print("carte-du-ciel.html : bloc CONSTEL inchangé")
         print("connaissances.yml : %d livres · %d correspondances · %d prophètes · "
-              "%d générations · %d pages%s"
+              "%d générations · %d fêtes · %d pages%s"
               % (len(d["livres"]), len(d["correspondances"]), len(d["prophetes"]),
-                 len(d["generations"]), len(d["pages"]),
+                 len(d["generations"]), len(d["fetes"]), len(d["pages"]),
                  "" if contenu != ancien else " (inchangé)"))
         return 0
 
@@ -220,9 +233,9 @@ def main(argv):
                       " — régénérer avec --ecrire")
     print("## Base de connaissances\n")
     print("%d livres · %d correspondances · %d prophètes · %d générations · "
-          "%d périodes · %d pages" %
+          "%d fêtes · %d périodes · %d pages" %
           (len(d["livres"]), len(d["correspondances"]), len(d["prophetes"]),
-           len(d["generations"]), len(d["periodes"]), len(d["pages"])))
+           len(d["generations"]), len(d["fetes"]), len(d["periodes"]), len(d["pages"])))
     if ecarts:
         print("\nLe miroir a divergé des pages — corriger la page ou régénérer :\n")
         for e in ecarts[:20]:

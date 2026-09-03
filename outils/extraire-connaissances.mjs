@@ -53,6 +53,16 @@ for (const [gi, g] of [...bib.fr.groups, ...bib.fr.groupsNT].entries()) {
   });
 }
 
+// ── les sept fêtes d'Israël, telles que la salle les décrit ────────────────
+const fetes = bib.fr.feasts.items.map((f, i) => ({
+  id: slug(f.n),
+  saison: f.d,
+  nom: { fr: f.n, en: bib.en.feasts.items[i].n, ar: bib.ar.feasts.items[i].n },
+  quand: { fr: f.d, en: bib.en.feasts.items[i].d, ar: bib.ar.feasts.items[i].d },
+  quoi: { fr: f.w, en: bib.en.feasts.items[i].w, ar: bib.ar.feasts.items[i].w },
+  christ: { fr: f.c, en: bib.en.feasts.items[i].c, ar: bib.ar.feasts.items[i].c },
+}));
+
 // ── les 153 correspondances du Fil Rouge ───────────────────────────────────
 const srcIndex = readFileSync('index.html', 'utf8');
 const D = eval(srcIndex.match(/const D=(\[[\s\S]*?\]);/)[1]);
@@ -90,4 +100,4 @@ const generations = fr.fr.gen.map((g, i) => ({
 }));
 
 process.stdout.write(JSON.stringify(
-  { livres, etageres, correspondances, themes, prophetes, generations }, null, 1));
+  { livres, etageres, correspondances, themes, prophetes, generations, fetes }, null, 1));

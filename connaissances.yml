@@ -2040,6 +2040,140 @@ etageres:
     ar: أسفار الشعر والحكمة
     en: The poetic & wisdom books
     fr: Les livres poétiques & de sagesse
+fetes:
+- christ:
+    ar: 'يموت يسوع في الفصح، في ساعة ذبح الحملان. وهو الحمل (١ كورنثوس ٥: ٧). والعشاءُ الأخير وجبةُ فصح.'
+    en: Jesus dies at Passover, at the hour the lambs are slain. He IS the Lamb (1 Corinthians 5:7). The
+      Last Supper is a Passover meal.
+    fr: Jésus meurt à la Pâque, à l'heure où l'on immole les agneaux. Il EST l'Agneau (1 Corinthiens 5:7).
+      La Cène est un repas de Pâque.
+  id: la-paque-pessah
+  nom:
+    ar: الفصح (بيساح)
+    en: Passover (Pesach)
+    fr: La Pâque (Pessah)
+  quand:
+    ar: الربيع
+    en: spring
+    fr: printemps
+  quoi:
+    ar: 'يُذبَح الحمل، ويُؤكَل الفطير: ذكرى الخروج من مصر.'
+    en: 'The lamb is slain, unleavened bread eaten: memory of the exodus from Egypt.'
+    fr: 'On immole l''agneau, on mange le pain sans levain : mémoire de la sortie d''Égypte.'
+  saison: printemps
+- christ:
+    ar: '«الخمير» = الخطية؛ المسيح، خبزُ الفطير، «نقّوا منكم الخميرةَ العتيقة» (١ كورنثوس ٥: ٧-٨).'
+    en: “Leaven” = sin; Christ, unleavened bread, “cleanse out the old leaven” (1 Corinthians 5:7-8).
+    fr: « Le levain » = le péché ; le Christ, pain sans levain, « purifiez-vous du vieux levain » (1 Corinthiens
+      5:7-8).
+  id: les-pains-sans-levain
+  nom:
+    ar: الفطير
+    en: Unleavened Bread
+    fr: Les Pains sans levain
+  quand:
+    ar: الربيع
+    en: spring
+    fr: printemps
+  quoi:
+    ar: سبعةُ أيام بلا خمير، رمزُ الطهارة والعجلة.
+    en: Seven days without leaven, a symbol of purity and haste.
+    fr: Sept jours sans levain, symbole de pureté et de hâte.
+  saison: printemps
+- christ:
+    ar: 'يقوم يسوع في ذلك اليوم: «باكورةُ الراقدين» (١ كورنثوس ١٥: ٢٠).'
+    en: 'Jesus rises that day: “the firstfruits of those who have died” (1 Corinthians 15:20).'
+    fr: 'Jésus ressuscite ce jour-là : « les prémices de ceux qui sont morts » (1 Corinthiens 15:20).'
+  id: les-premices
+  nom:
+    ar: الباكورة
+    en: Firstfruits
+    fr: Les Prémices
+  quand:
+    ar: الربيع
+    en: spring
+    fr: printemps
+  quoi:
+    ar: تُقدَّم أولُ حزمةٍ من الحصاد، في غد سبت الفصح.
+    en: The first sheaf of harvest is offered, the day after the Passover sabbath.
+    fr: On offre la première gerbe de la moisson, le lendemain du sabbat pascal.
+  saison: printemps
+- christ:
+    ar: 'يُسكَب الروحُ في ذلك اليوم (أعمال ٢): لا الناموسُ على الحجر بعدُ، بل الروحُ في القلوب.'
+    en: 'The Spirit is poured out that day (Acts 2): no longer the Law on stone, but the Spirit in hearts.'
+    fr: 'L''Esprit est répandu ce jour-là (Actes 2) : non plus la Loi sur la pierre, mais l''Esprit dans
+      les cœurs.'
+  id: la-pentecote-chavouot
+  nom:
+    ar: الخمسين (شفوعوت)
+    en: Pentecost (Shavuot)
+    fr: La Pentecôte (Chavouot)
+  quand:
+    ar: +٥٠ يومًا
+    en: +50 days
+    fr: +50 jours
+  quoi:
+    ar: عيدُ الحصاد وإعطاء الناموس في سيناء، بعد الفصح بخمسين يومًا.
+    en: Feast of harvest and of the Law given at Sinai, fifty days after Passover.
+    fr: Fête de la moisson et du don de la Loi au Sinaï, cinquante jours après la Pâque.
+  saison: +50 jours
+- christ:
+    ar: '«ببوق الله»: صورةُ الاجتماع النهائي (١ تسالونيكي ٤: ١٦).'
+    en: '“At the trumpet of God”: an image of the final gathering (1 Thessalonians 4:16).'
+    fr: '« Au son de la trompette de Dieu » : image du rassemblement final (1 Thessaloniciens 4:16).'
+  id: les-trompettes-le-nouvel-an
+  nom:
+    ar: الأبواق / رأس السنة
+    en: Trumpets / New Year
+    fr: Les Trompettes / le Nouvel An
+  quand:
+    ar: الخريف
+    en: autumn
+    fr: automne
+  quoi:
+    ar: يومُ نفخٍ بالبوق (شوفار)، دعوةٌ للاجتماع واليقظة.
+    en: A day of ram's-horn (shofar) blasts, a call to gather and awake.
+    fr: Un jour de sonneries de cor (shofar), appel au rassemblement et au réveil.
+  saison: automne
+- christ:
+    ar: 'عبرانيين ٩: المسيح يدخل «مرةً واحدة» إلى القدس الحقيقي، بدمه.'
+    en: 'Hebrews 9: Christ enters “once for all” into the true sanctuary, with his own blood.'
+    fr: 'Hébreux 9 : le Christ entre « une fois pour toutes » dans le vrai sanctuaire, avec son propre
+      sang.'
+  id: le-grand-pardon-yom-kippour
+  nom:
+    ar: الكفارة (يوم كيبور)
+    en: Atonement (Yom Kippur)
+    fr: Le Grand Pardon (Yom Kippour)
+  quand:
+    ar: الخريف
+    en: autumn
+    fr: automne
+  quoi:
+    ar: اليومُ الوحيد الذي يدخل فيه رئيسُ الكهنة قدسَ الأقداس، بالدم، عن كل الشعب.
+    en: The one day the high priest enters the Most Holy Place, with blood, for all the people.
+    fr: Le seul jour où le grand-prêtre entre dans le Lieu très-saint, avec le sang, pour tout le peuple.
+  saison: automne
+- christ:
+    ar: 'يسوع في هذا العيد: «إن عطش أحدٌ فليأتِ إليّ» (يوحنا ٧: ٣٧)؛ «أنا نورُ العالم» (٨: ١٢).'
+    en: 'Jesus, at this feast: “if anyone thirsts, let him come to me” (John 7:37); “I am the light of
+      the world” (8:12).'
+    fr: 'Jésus, à cette fête : « si quelqu''un a soif, qu''il vienne à moi » (Jean 7:37) ; « je suis la
+      lumière du monde » (8:12).'
+  id: les-tentes-souccot
+  nom:
+    ar: المظالّ (سُكّوت)
+    en: Tabernacles (Sukkot)
+    fr: Les Tentes (Souccot)
+  quand:
+    ar: الخريف
+    en: autumn
+    fr: automne
+  quoi:
+    ar: 'يُسكَن سبعةَ أيام في مظالّ: ذكرى البرية، عيدُ الماء والنور.'
+    en: 'Seven days living in booths: memory of the desert, feast of water and light.'
+    fr: 'On habite sept jours sous des cabanes : mémoire du désert, fête de l''eau et de la lumière.'
+  saison: automne
 generations:
 - nom:
     ar: يسوع
