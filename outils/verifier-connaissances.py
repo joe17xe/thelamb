@@ -66,6 +66,9 @@ def coherence(d):
         # Une place non tranchée est une hypothèse, pas un parcours : on ne peut
         # pas en même temps ignorer où le récit se situe et le couper en deux
         # tranches de chapitres.
+        if not all(l.get("christ", {}).get(k) for k in ("fr", "en", "ar")):
+            fautes.append("livre %s : le fil vers le Christ manque dans une langue"
+                          % l["id"])
         if "debat" in l:
             if l.get("tranches"):
                 fautes.append("livre %s : place débattue et tranches à la fois" % l["id"])
@@ -127,7 +130,10 @@ def bloc_constel(d):
                      if "lien" in l else None),
                     l.get("tranches"),
                     ([l["debat"]["fr"], l["debat"]["en"], l["debat"]["ar"]]
-                     if "debat" in l else None)]
+                     if "debat" in l else None),
+                    [l["christ"]["fr"], l["christ"]["en"], l["christ"]["ar"]],
+                    ([l["nuance"]["fr"], l["nuance"]["en"], l["nuance"]["ar"]]
+                     if "nuance" in l else None)]
                    for l in d["livres"]],
         "themes": d["themes"],
         "prophetes": [[p["id"], p["epoque"], p["pos"],

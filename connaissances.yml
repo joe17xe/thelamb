@@ -2223,7 +2223,11 @@ generations:
     fr: Luc 3:38
   periode: origines
 livres:
-- etagere: loi
+- christ:
+    ar: 'وعدُ نسلٍ يسحق الحية (٣: ١٥)؛ والابنُ المُقدَّم على المريّا (٢٢).'
+    en: The promise of an offspring who will crush the serpent (3:15); the son offered at Moriah (22).
+    fr: La promesse d'une descendance qui écrasera le serpent (3:15) ; le fils offert à Morija (22).
+  etagere: loi
   id: genese
   nom:
     ar: التكوين
@@ -2239,7 +2243,11 @@ livres:
     ar: 'الخلق، والسقوط، ونوح، وإبراهيم، وإسحاق، ويعقوب، ويوسف: البداياتُ والمواعيد.'
     en: 'Creation, fall, Noah, Abraham, Isaac, Jacob, Joseph: beginnings and promises.'
     fr: 'Création, chute, Noé, Abraham, Isaac, Jacob, Joseph : les commencements et les promesses.'
-- etagere: loi
+- christ:
+    ar: حملُ الفصح الذي يحمي دمُه (١٢) — الذي سيسمّيه يوحنا «حمل الله».
+    en: The Passover lamb whose blood protects (12) — whom John will call “the Lamb of God”.
+    fr: L'agneau pascal dont le sang protège (12) — que Jean nommera « l'Agneau de Dieu ».
+  etagere: loi
   id: exode
   nom:
     ar: الخروج
@@ -2251,7 +2259,12 @@ livres:
     ar: العبودية في مصر، وموسى، والضربات، والفصح، والبحر المشقوق، وسيناء، والمسكن.
     en: Slavery in Egypt, Moses, the plagues, the Passover, the parted sea, Sinai, the tabernacle.
     fr: L'esclavage en Égypte, Moïse, les plaies, la Pâque, la mer fendue, le Sinaï, le tabernacle.
-- etagere: loi
+- christ:
+    ar: '«الدمُ يكفّر» (١٧: ١١)؛ والنظامُ كلُّه الذي سيتمّمه المسيح مرةً واحدة.'
+    en: “The blood makes atonement” (17:11); the whole system Christ will fulfil once for all.
+    fr: « Le sang fait l'expiation » (17:11) ; tout le système que le Christ accomplira une fois pour
+      toutes.
+  etagere: loi
   id: levitique
   nom:
     ar: اللاويين
@@ -2263,7 +2276,11 @@ livres:
     ar: الذبائح، والكهنوت، والطهارة، ويوم الكفارة، والأعياد.
     en: Sacrifices, priesthood, purity, the Day of Atonement, the feasts.
     fr: Les sacrifices, le sacerdoce, la pureté, le grand jour des Expiations, les fêtes.
-- etagere: loi
+- christ:
+    ar: 'الحيةُ المرفوعة التي تشفي (٢١: ٩) — صورةُ الصليب (يوحنا ٣: ١٤).'
+    en: The lifted serpent that heals (21:9) — an image of the cross (John 3:14).
+    fr: Le serpent élevé qui guérit (21:9) — image de la croix (Jean 3:14).
+  etagere: loi
   id: nombres
   nom:
     ar: العدد
@@ -2275,7 +2292,11 @@ livres:
     ar: أربعون سنةً من التيه، والتذمر، والحية النحاسية، والإحصاءات.
     en: Forty years of wandering, the grumbling, the bronze serpent, the censuses.
     fr: Quarante ans d'errance, les murmures, le serpent d'airain, les recensements.
-- etagere: loi
+- christ:
+    ar: 'وعدُ نبيٍّ «مثل موسى» يجب أن يُسمَع له (١٨: ١٥).'
+    en: The promise of a prophet “like Moses” who must be heard (18:15).
+    fr: La promesse d'un prophète « comme Moïse » qu'il faudra écouter (18:15).
+  etagere: loi
   id: deuteronome
   nom:
     ar: التثنية
@@ -2287,7 +2308,11 @@ livres:
     ar: 'خطبُ موسى الوداعية: الناموسُ يُعاد قبل دخول أرض الموعد.'
     en: 'Moses'' farewell speeches: the Law given again before entering the Promised Land.'
     fr: 'Les discours d''adieu de Moïse : la Loi redonnée avant d''entrer dans la Terre promise.'
-- etagere: histoire
+- christ:
+    ar: يشوع (الاسم نفسه لـ«يسوع») يُدخل الشعبَ إلى الراحة الموعودة.
+    en: Joshua (same name as “Jesus”) brings the people into the promised rest.
+    fr: Josué (même nom que « Jésus ») fait entrer le peuple dans le repos promis.
+  etagere: histoire
   id: josue
   nom:
     ar: يشوع
@@ -2299,7 +2324,11 @@ livres:
     ar: دخولُ كنعان، وعبورُ الأردن، وسقوطُ أريحا.
     en: Entry into Canaan, crossing the Jordan, the fall of Jericho.
     fr: L'entrée en Canaan, la traversée du Jourdain, la prise de Jéricho.
-- etagere: histoire
+- christ:
+    ar: كلُّ «مخلّص» جزئي يجعلنا ننتظر المخلّصَ النهائي.
+    en: Each partial “savior” makes us await the definitive Savior.
+    fr: Chaque « sauveur » partiel fait attendre le Sauveur définitif.
+  etagere: histoire
   id: juges
   nom:
     ar: القضاة
@@ -2311,7 +2340,11 @@ livres:
     ar: دورةُ السقطات والمخلّصين الذين يقيمهم الله (جدعون، شمشون…).
     en: The cycle of falls and God-raised deliverers (Gideon, Samson…).
     fr: Le cycle des chutes et des libérateurs suscités par Dieu (Gédéon, Samson…).
-- etagere: histoire
+- christ:
+    ar: 'مؤابيةٌ في نسب المسيح (متى ١: ٥): الأممُ مشمولةٌ سلفًا.'
+    en: 'A Moabite in the Messiah''s genealogy (Matthew 1:5): the nations already included.'
+    fr: 'Une Moabite dans la généalogie du Messie (Matthieu 1:5) : les nations déjà incluses.'
+  etagere: histoire
   id: ruth
   nom:
     ar: راعوث
@@ -2323,7 +2356,11 @@ livres:
     ar: 'غريبةٌ أمينة، جدّةُ داود الكبرى: النعمةُ تدخل النسل.'
     en: 'A faithful foreigner, David''s great-grandmother: grace enters the line.'
     fr: 'Une étrangère fidèle, arrière-grand-mère de David : la grâce entre dans la lignée.'
-- etagere: histoire
+- christ:
+    ar: داود، الملكُ حسب قلب الله، رمزُ المسيح الآتي.
+    en: David, the king after God's heart, a type of the Messiah to come.
+    fr: David, le roi selon le cœur de Dieu, type du Messie à venir.
+  etagere: histoire
   id: 1-samuel
   nom:
     ar: ١ صموئيل
@@ -2339,7 +2376,11 @@ livres:
     ar: صموئيل، وشاول، وصعودُ داود؛ «اللهُ ينظر إلى القلب».
     en: Samuel, Saul, David's rise; “God looks at the heart”.
     fr: Samuel, Saül, l'ascension de David ; « Dieu regarde au cœur ».
-- etagere: histoire
+- christ:
+    ar: '«يُثبَّت عرشُك إلى الأبد» (٧: ١٣): الوعدُ الداودي.'
+    en: '“Your throne will be established forever” (7:13): the Davidic promise.'
+    fr: '« Ton trône sera affermi pour toujours » (7:13) : la promesse davidique.'
+  etagere: histoire
   id: 2-samuel
   nom:
     ar: ٢ صموئيل
@@ -2351,7 +2392,11 @@ livres:
     ar: مُلكُ داود، ومجدُه، وخطيتُه، والوعدُ العظيم.
     en: David's reign, his glory, his sin, and the great promise.
     fr: Le règne de David, sa gloire, sa faute, et la grande promesse.
-- etagere: histoire
+- christ:
+    ar: الهيكل — الذي سيسمّيه المسيح «هيكل جسده».
+    en: The Temple — which Christ will call “the temple of his body”.
+    fr: Le Temple — que le Christ nommera « le temple de son corps ».
+  etagere: histoire
   id: 1-rois
   nom:
     ar: ١ ملوك
@@ -2367,7 +2412,11 @@ livres:
     ar: سليمان، وبناءُ الهيكل، ثم انقسامُ المملكة؛ إيليا.
     en: Solomon, the Temple built, then the kingdom divided; Elijah.
     fr: Salomon, le Temple bâti, puis la division du royaume ; Élie.
-- etagere: histoire
+- christ:
+    ar: إيليا، الذي يُنتظَر رجوعُه — المتمِّم في يوحنا المعمدان.
+    en: Elijah, whose return is awaited — fulfilled in John the Baptist.
+    fr: Élie, dont le retour est attendu — accompli en Jean-Baptiste.
+  etagere: histoire
   id: 2-rois
   nom:
     ar: ٢ ملوك
@@ -2383,7 +2432,11 @@ livres:
     ar: انحطاطُ المملكتين حتى السقوطين؛ أليشع.
     en: The decline of both kingdoms to their two falls; Elisha.
     fr: La décadence des deux royaumes jusqu'aux deux chutes ; Élisée.
-- etagere: histoire
+- christ:
+    ar: التشديدُ على نسل داود والعبادة، ما يشير إلى المسيح الكاهن.
+    en: The stress on David's line and worship, pointing to the Messiah-priest.
+    fr: L'accent sur la lignée de David et le culte, qui pointent vers le Messie-prêtre.
+  etagere: histoire
   id: 1-chroniques
   nom:
     ar: ١ أخبار
@@ -2395,7 +2448,11 @@ livres:
     ar: 'إعادةُ سردٍ كهنوتية: الأنساب، وداود، وتجهيزاتُ الهيكل.'
     en: 'A priestly retelling: genealogies, David, preparations for the Temple.'
     fr: 'Relecture sacerdotale : généalogies, David, préparatifs du Temple.'
-- etagere: histoire
+- christ:
+    ar: انتظارُ عبادةٍ كاملة، تتمّمها التقدمةُ الواحدة.
+    en: The longing for perfect worship, fulfilled by the one Offering.
+    fr: L'attente d'un culte parfait, que l'Offrande unique accomplira.
+  etagere: histoire
   id: 2-chroniques
   nom:
     ar: ٢ أخبار
@@ -2407,7 +2464,11 @@ livres:
     ar: من سليمان إلى السبي، من زاوية الهيكل والعبادة.
     en: From Solomon to the exile, seen from the Temple and worship.
     fr: De Salomon à l'exil, vue du côté du Temple et du culte.
-- etagere: histoire
+- christ:
+    ar: الهيكلُ الثاني، حيث سيُقدَّم الطفلُ يسوع.
+    en: The second Temple, where the child Jesus will be presented.
+    fr: Le second Temple, où l'enfant Jésus sera présenté.
+  etagere: histoire
   id: esdras
   nom:
     ar: عزرا
@@ -2419,7 +2480,11 @@ livres:
     ar: العودةُ من السبي، وإعادةُ بناء الهيكل.
     en: The return from exile, the rebuilding of the Temple.
     fr: Le retour d'exil, la reconstruction du Temple.
-- etagere: histoire
+- christ:
+    ar: المدينةُ المستعادة، في انتظار «أورشليم العليا».
+    en: The restored city, awaiting “the Jerusalem above”.
+    fr: La ville restaurée, en attente de « la Jérusalem d'en haut ».
+  etagere: histoire
   id: nehemie
   nom:
     ar: نحميا
@@ -2431,7 +2496,11 @@ livres:
     ar: إعادةُ بناء أسوار أورشليم، وإصلاحُ الشعب.
     en: Rebuilding Jerusalem's walls, reforming the people.
     fr: La reconstruction des murs de Jérusalem, la réforme du peuple.
-- etagere: histoire
+- christ:
+    ar: اللهُ، غيرُ المذكور أبدًا، يعمل سرًّا ليخلّص — العنايةُ الخفية.
+    en: God, never named, works in secret to save — hidden providence.
+    fr: Dieu, jamais nommé, agit en secret pour sauver — la providence cachée.
+  etagere: histoire
   id: esther
   nom:
     ar: أستير
@@ -2443,7 +2512,11 @@ livres:
     ar: ملكةٌ يهودية تنقذ شعبها من إبادةٍ في فارس (عيد الفوريم).
     en: A Jewish queen saves her people from genocide in Persia (feast of Purim).
     fr: Une reine juive sauve son peuple d'un génocide en Perse (fête de Pourim).
-- etagere: sagesse
+- christ:
+    ar: 'أيوب يطلب وسيطًا بين الله والإنسان (٩: ٣٣): المسيحُ سيكونه.'
+    en: 'Job longs for a mediator between God and man (9:33): Christ will be that.'
+    fr: 'Job réclame un médiateur entre Dieu et l''homme (9:33) : le Christ le sera.'
+  etagere: sagesse
   id: job
   nom:
     ar: أيوب
@@ -2455,7 +2528,12 @@ livres:
     ar: لماذا يتألم البارّ؟ نقاشٌ مذهل، بلا جوابٍ سهل.
     en: Why does the righteous suffer? A dizzying debate, with no easy answer.
     fr: Pourquoi le juste souffre-t-il ? Un débat vertigineux, sans réponse facile.
-- etagere: sagesse
+- christ:
+    ar: 'الكتابُ الأكثرُ اقتباسًا عن المسيح: مز ٢٢ (الصليب)، مز ١١٠ (الرب)، مز ١٦ (القيامة).'
+    en: 'The book most quoted about Christ: Ps 22 (the cross), Ps 110 (the Lord), Ps 16 (the resurrection).'
+    fr: 'Le livre le plus cité au sujet du Christ : Ps 22 (la croix), Ps 110 (le Seigneur), Ps 16 (la
+      résurrection).'
+  etagere: sagesse
   id: psaumes
   nom:
     ar: المزامير
@@ -2467,7 +2545,11 @@ livres:
     ar: '١٥٠ صلاةً وترنيمة: تسبيح، وشكوى، وثقة، ومُلك. كتابُ صلاة إسرائيل.'
     en: '150 prayers and songs: praise, lament, trust, kingship. Israel''s prayer book.'
     fr: '150 prières et chants : louange, plainte, confiance, royauté. Le livre de prière d''Israël.'
-- etagere: sagesse
+- christ:
+    ar: 'الحكمةُ «عند الله» قبل العالم (٨: ٣٠) — تُقرأ في المسيح.'
+    en: Wisdom “beside God” before the world (8:30) — reread in Christ.
+    fr: La Sagesse « auprès de Dieu » avant le monde (8:30) — relue en Christ.
+  etagere: sagesse
   id: proverbes
   nom:
     ar: الأمثال
@@ -2479,7 +2561,11 @@ livres:
     ar: حكمةُ الحياة اليومية العملية؛ والحكمةُ مشخَّصةً، حاضرةً في الخلق.
     en: Practical daily wisdom; Wisdom personified, present at creation.
     fr: La sagesse pratique du quotidien ; la Sagesse personnifiée, présente à la création.
-- etagere: sagesse
+- christ:
+    ar: اعترافُ الفراغ بلا الله، الذي يهيّئ لقبول الحياة «بأفضل».
+    en: The confession of emptiness without God, preparing to receive life “in abundance”.
+    fr: L'aveu du vide sans Dieu, qui prépare à recevoir la vie « en abondance ».
+  etagere: sagesse
   id: ecclesiaste
   nom:
     ar: الجامعة
@@ -2491,7 +2577,11 @@ livres:
     ar: '«باطلُ الأباطيل»: البحثُ عن المعنى تحت الشمس، وأمانةُ الفراغ.'
     en: '“Vanity of vanities”: the search for meaning under the sun, the honesty of emptiness.'
     fr: '« Vanité des vanités » : la quête du sens sous le soleil, l''honnêteté du vide.'
-- etagere: sagesse
+- christ:
+    ar: يقرأه التقليدُ محبةَ الله لشعبه — عرسُ الحمل.
+    en: Read by tradition as God's love for his people — the wedding of the Lamb.
+    fr: Lu par la tradition comme l'amour de Dieu pour son peuple — les noces de l'Agneau.
+  etagere: sagesse
   id: cantique
   nom:
     ar: نشيد الأنشاد
@@ -2503,7 +2593,11 @@ livres:
     ar: قصيدةُ حبٍّ عرسية، احتفاءٌ بالحب البشري.
     en: A nuptial love poem, a celebration of human love.
     fr: Un poème d'amour nuptial, célébration de l'amour humain.
-- etagere: grands
+- christ:
+    ar: 'إشعياء ٥٣، الأصحاحُ الأكثرُ اقتباسًا في العهد الجديد: «بحُبُره شُفينا».'
+    en: 'Isaiah 53, the chapter most quoted in the NT: “by his wounds we are healed”.'
+    fr: 'Ésaïe 53, le chapitre le plus cité du NT : « par ses meurtrissures nous sommes guéris ».'
+  etagere: grands
   id: esaie
   nom:
     ar: إشعياء
@@ -2515,7 +2609,11 @@ livres:
     ar: 'أكثرُ الأنبياء اقتباسًا: دينونةٌ وعزاء، وعمانوئيل، والعبدُ المتألم.'
     en: 'The most quoted prophet: judgment and comfort, Immanuel, the suffering Servant.'
     fr: 'Le prophète le plus cité : jugement et consolation, l''Emmanuel, le Serviteur souffrant.'
-- etagere: grands
+- christ:
+    ar: '«أقطع عهدًا جديدًا» (٣١: ٣١) — المتمِّم في العشاء الأخير.'
+    en: “I will make a new covenant” (31:31) — fulfilled at the Last Supper.
+    fr: « Je ferai une alliance nouvelle » (31:31) — accomplie à la Cène.
+  etagere: grands
   id: jeremie
   nom:
     ar: إرميا
@@ -2527,7 +2625,11 @@ livres:
     ar: نبيُّ الدموع، شاهدُ سقوط أورشليم؛ والعهدُ الجديد.
     en: The prophet of tears, witness of Jerusalem's fall; the new covenant.
     fr: Le prophète des larmes, témoin de la chute de Jérusalem ; l'alliance nouvelle.
-- etagere: grands
+- christ:
+    ar: في قاع الحزن، رجاءٌ عنيد — صورةُ الرجاء الفصحي.
+    en: At the depth of grief, tenacious hope — a figure of Easter hope.
+    fr: Au fond du deuil, l'espérance tenace — figure de l'espérance pascale.
+  etagere: grands
   id: lamentations
   nom:
     ar: مراثي إرميا
@@ -2539,7 +2641,11 @@ livres:
     ar: خمسُ قصائد رثاءٍ لأورشليم المدمَّرة؛ «مراحمُه تتجدد».
     en: Five poems of grief over destroyed Jerusalem; “his mercies are new”.
     fr: Cinq poèmes de deuil sur Jérusalem détruite ; « ses compassions se renouvellent ».
-- etagere: grands
+- christ:
+    ar: '«راعٍ واحد، عبدي داود» (٣٤: ٢٣) — «أنا هو الراعي الصالح».'
+    en: “One shepherd, my servant David” (34:23) — “I am the good shepherd”.
+    fr: « Un seul berger, mon serviteur David » (34:23) — « je suis le bon berger ».
+  etagere: grands
   id: ezechiel
   nom:
     ar: حزقيال
@@ -2551,7 +2657,11 @@ livres:
     ar: 'كاهنٌ مسبيّ: رؤًى مذهلة، والقلبُ الجديد، والراعي، والعظامُ اليابسة.'
     en: 'An exiled priest: striking visions, the new heart, the shepherd, the dry bones.'
     fr: 'Prêtre exilé : visions saisissantes, le cœur nouveau, le berger, les ossements desséchés.'
-- etagere: grands
+- christ:
+    ar: '«ابنُ إنسان» ينال ملكًا أبديًّا (٧: ١٣) — لقبٌ ينسبه يسوع لنفسه.'
+    en: “One like a son of man” receiving an eternal reign (7:13) — a title Jesus claims.
+    fr: « Un fils de l'homme » recevant un règne éternel (7:13) — titre que Jésus s'attribue.
+  etagere: grands
   id: daniel
   nom:
     ar: دانيال
@@ -2563,7 +2673,11 @@ livres:
     ar: 'في بلاط بابل: أمانةٌ تحت الضغط، ورؤى الإمبراطوريات وابن الإنسان.'
     en: 'At Babylon''s court: faithfulness under pressure, visions of empires and the Son of Man.'
     fr: 'À la cour de Babylone : fidélité sous la pression, visions des empires et du Fils de l''homme.'
-- etagere: petits
+- christ:
+    ar: '«من مصرَ دعوتُ ابني» (١١: ١) — يُقرأ من عودة الطفل يسوع.'
+    en: “I called my son out of Egypt” (11:1) — reread from the child Jesus' return.
+    fr: « J'ai appelé mon fils hors d'Égypte » (11:1) — relu du retour de l'enfant Jésus.
+  etagere: petits
   id: osee
   nom:
     ar: هوشع
@@ -2575,7 +2689,11 @@ livres:
     ar: زواجٌ مكسور صورةً لمحبة الله الأمينة لشعبٍ خائن.
     en: A broken marriage as an image of God's faithful love for an unfaithful people.
     fr: Un mariage brisé comme image de l'amour fidèle de Dieu pour un peuple infidèle.
-- etagere: petits
+- christ:
+    ar: '«أسكب روحي على كل بشر» (٢: ٢٨) — المتمِّم في الخمسين.'
+    en: “I will pour out my Spirit on all flesh” (2:28) — fulfilled at Pentecost.
+    fr: « Je répandrai mon Esprit sur toute chair » (3:1) — accompli à la Pentecôte.
+  etagere: petits
   id: joel
   nom:
     ar: يوئيل
@@ -2587,7 +2705,11 @@ livres:
     ar: «يومُ الرب»، وغزوُ الجراد، والروحُ المسكوب على الجميع.
     en: The “day of the LORD”, a locust invasion, the Spirit poured on all.
     fr: Le « jour de l'Éternel », une invasion de sauterelles, l'Esprit répandu sur tous.
-- etagere: petits
+- christ:
+    ar: '«أقيم مظلّة داود» (٩: ١١) — الأممُ مشمولة (أعمال ١٥).'
+    en: “I will raise up the booth of David” (9:11) — the nations included (Acts 15).
+    fr: « Je relèverai la hutte de David » (9:11) — les nations incluses (Actes 15).
+  etagere: petits
   id: amos
   nom:
     ar: عاموس
@@ -2599,7 +2721,11 @@ livres:
     ar: راعٍ يرعد ضد الظلم الاجتماعي باسم الله.
     en: A shepherd who thunders against social injustice in God's name.
     fr: Un berger qui tonne contre l'injustice sociale au nom de Dieu.
-- etagere: petits
+- christ:
+    ar: '«ويكون المُلكُ للرب»: الملكوتُ الآتي.'
+    en: '“The kingdom will be the LORD''s”: the coming kingdom.'
+    fr: '« La royauté sera à l''Éternel » : le royaume qui vient.'
+  etagere: petits
   id: abdias
   nom:
     ar: عوبديا
@@ -2611,7 +2737,11 @@ livres:
     ar: 'الأقصر: دينونةٌ على أدوم، وكبرياءٌ يُذَلّ.'
     en: 'The shortest: judgment on Edom, pride brought low.'
     fr: 'Le plus court : jugement sur Édom, orgueil abaissé.'
-- etagere: petits
+- christ:
+    ar: '«ثلاثةُ أيام وثلاثُ ليال» (٢: ١): علامةُ يونان التي ينسبها يسوع لنفسه.'
+    en: '“Three days and three nights” (1:17): the sign of Jonah Jesus applies to himself.'
+    fr: '« Trois jours et trois nuits » (2:1) : le signe de Jonas que Jésus s''applique.'
+  etagere: petits
   id: jonas
   nom:
     ar: يونان
@@ -2623,7 +2753,11 @@ livres:
     ar: النبيُّ الهارب، يبتلعه الحوت، ويُرسَل إلى نينوى الوثنية.
     en: The fleeing prophet, swallowed by a fish, sent to pagan Nineveh.
     fr: Le prophète en fuite, avalé par un poisson, envoyé à Ninive la païenne.
-- etagere: petits
+- christ:
+    ar: '«من بيت لحمَ يخرج…» (٥: ٢): مكانُ ميلاد المسيّا.'
+    en: '“From Bethlehem will come…” (5:2): the Messiah''s birthplace.'
+    fr: '« De Bethléhem sortira… » (5:1) : le lieu de naissance du Messie.'
+  etagere: petits
   id: michee
   nom:
     ar: ميخا
@@ -2635,7 +2769,11 @@ livres:
     ar: العدلُ والتواضع، والقريةُ التي منها يخرج متسلّطُ إسرائيل.
     en: Justice, humility, and the village from which Israel's ruler will come.
     fr: Justice, humilité, et le village d'où sortira le dominateur d'Israël.
-- etagere: petits
+- christ:
+    ar: '«على الجبال قدما مبشِّرٍ بالخير» (١: ١٥).'
+    en: “On the mountains the feet of him who brings good news” (1:15).
+    fr: « Voici sur les montagnes les pieds de celui qui apporte de bonnes nouvelles » (1:15).
+  etagere: petits
   id: nahum
   nom:
     ar: ناحوم
@@ -2647,7 +2785,11 @@ livres:
     ar: 'سقوطُ نينوى المُعلَن: اللهُ يدين الإمبراطوريات القاسية.'
     en: 'The announced fall of Nineveh: God judges cruel empires.'
     fr: 'La chute annoncée de Ninive : Dieu juge les empires cruels.'
-- etagere: petits
+- christ:
+    ar: '«البارُّ بإيمانه يحيا» (٢: ٤): قلبُ رسالة رومية.'
+    en: '“The righteous will live by his faith” (2:4): the heart of Romans.'
+    fr: '« Le juste vivra par sa foi » (2:4) : le cœur de l''épître aux Romains.'
+  etagere: petits
   id: habacuc
   nom:
     ar: حبقوق
@@ -2659,7 +2801,11 @@ livres:
     ar: حوارُ نبيٍّ يسائل اللهَ عن الشر؛ «البارُّ بإيمانه يحيا».
     en: A prophet's dialogue questioning God about evil; “the righteous will live by faith”.
     fr: Le dialogue d'un prophète qui questionne Dieu sur le mal ; « le juste vivra par la foi ».
-- etagere: petits
+- christ:
+    ar: «البقيةُ» المخلَّصة، صورةُ الشعب المفديّ بالحمل.
+    en: The saved “remnant”, an image of the people redeemed by the Lamb.
+    fr: Le « reste » sauvé, image du peuple racheté par l'Agneau.
+  etagere: petits
   id: sophonie
   nom:
     ar: صفنيا
@@ -2671,7 +2817,11 @@ livres:
     ar: يومُ الدينونة، لكن بقيةً تخلص؛ «اللهُ يبتهج بك».
     en: The day of judgment, but a saved remnant; “God will rejoice over you”.
     fr: Le jour du jugement, mais un reste sauvé ; « Dieu tressaillira de joie ».
-- etagere: petits
+- christ:
+    ar: '«مجدُ هذا البيت الأخير يكون أعظم» (٢: ٩): المسيحُ في الهيكل.'
+    en: '“The latter glory of this house will be greater” (2:9): Christ in the Temple.'
+    fr: '« La gloire de cette dernière maison sera plus grande » (2:9) : le Christ au Temple.'
+  etagere: petits
   id: aggee
   nom:
     ar: حجي
@@ -2683,7 +2833,11 @@ livres:
     ar: 'دعوةٌ لإعادة بناء الهيكل بعد السبي: «مجدُ هذا البيت».'
     en: 'A call to rebuild the Temple after exile: “the glory of this house”.'
     fr: 'Un appel à rebâtir le Temple après l''exil : « la gloire de cette maison ».'
-- etagere: petits
+- christ:
+    ar: '«ملكُك يأتي راكبًا على أتان» (٩: ٩)؛ «ينظرون إلى الذي طعنوه» (١٢: ١٠).'
+    en: “Your king comes, riding on a donkey” (9:9); “they will look on him whom they pierced” (12:10).
+    fr: « Ton roi vient, monté sur un âne » (9:9) ; « ils regarderont vers celui qu'ils ont percé » (12:10).
+  etagere: petits
   id: zacharie
   nom:
     ar: زكريا
@@ -2695,7 +2849,11 @@ livres:
     ar: رؤى الملك الوديع، والراعي المضروب، و«الذي طعنوه».
     en: Visions of the humble king, the struck shepherd, “the one they pierced”.
     fr: Visions du roi humble, du berger frappé, de « celui qu'ils ont percé ».
-- etagere: petits
+- christ:
+    ar: '«أُرسل رسولي» (٣: ١): يوحنا المعمدان، قبل أربعة قرون من الصمت.'
+    en: '“I will send my messenger” (3:1): John the Baptist, before four centuries of silence.'
+    fr: '« J''enverrai mon messager » (3:1) : Jean-Baptiste, avant quatre siècles de silence.'
+  etagere: petits
   id: malachie
   nom:
     ar: ملاخي
@@ -2707,7 +2865,13 @@ livres:
     ar: 'آخرُ صوتٍ في العهد القديم: الرسولُ الذي يهيّئ، ورجوعُ إيليا.'
     en: 'The last voice of the OT: the messenger who prepares, the return of Elijah.'
     fr: 'La dernière voix de l''AT : le messager qui prépare, le retour d''Élie.'
-- etagere: deutero
+- christ:
+    ar: صلاةٌ مسموعة، وملاكٌ يرافق الطريق — تقوى يجدها العهدُ الجديد ثانيةً في مشاهد البشارة.
+    en: Prayer heard, the angel who walks the road — a piety the New Testament will meet again in its
+      annunciation scenes.
+    fr: La prière entendue, l'ange qui accompagne le chemin — une piété que le Nouveau Testament retrouvera
+      dans ses récits d'annonce.
+  etagere: deutero
   id: tobie
   nom:
     ar: طوبيا
@@ -2721,7 +2885,11 @@ livres:
       A story of family, prayer and healing.
     fr: Un père aveugle, une jeune femme accablée, un compagnon de voyage qui se révèle être un ange.
       Un récit de famille, de prière et de guérison.
-- debat:
+- christ:
+    ar: 'الخلاصُ بالضعيف — الانقلابُ الذي سينشده نشيدُ مريم (لوقا ١: ٥٢).'
+    en: Deliverance through the weak — the reversal the Magnificat will sing (Luke 1:52).
+    fr: La délivrance par le faible — le renversement que chantera le Magnificat (Luc 1:52).
+  debat:
     ar: 'يضع السفر خبرَه بعد العودة من السبي (يهوديت ٤: ٣، والهيكل مُطهَّر)، لكن في أيام «نبوخذنصر ملك
       الأشوريين» في نينوى (يهوديت ١: ١) — وهما معلمان لا يجمعهما التاريخ. فموضعُه على خريطة الزمن غير
       محسوم.'
@@ -2746,7 +2914,14 @@ livres:
       God delivers by what looks weak.'
     fr: 'Une veuve sauve seule sa ville d''un général qui l''assiège. Le récit est bâti comme une démonstration
       : Dieu délivre par ce qui paraît faible.'
-- etagere: deutero
+- christ:
+    ar: 'الحكمة ٢: ١٢-٢٠ تصف بارًّا يُهزأ به ويُمتحن ويُحكم عليه بموتٍ مشين — وروايات الآلام تحمل صداها
+      الأدبي.'
+    en: Wisdom 2:12-20 describes a righteous man mocked, tested, condemned to a shameful death — the Passion
+      narratives carry its literary echo.
+    fr: Sagesse 2:12-20 décrit un juste raillé, mis à l'épreuve, condamné à une mort honteuse — les récits
+      de la Passion en portent l'écho littéraire.
+  etagere: deutero
   id: sagesse
   nom:
     ar: الحكمة
@@ -2761,7 +2936,13 @@ livres:
       of the righteous man persecuted because he is in the way.
     fr: Écrit en grec à Alexandrie. La Sagesse personnifiée, la valeur de l'immortalité, et le portrait
       du juste persécuté parce qu'il gêne.
-- etagere: deutero
+- christ:
+    ar: 'الحكمةُ تنصب خيمتَها في إسرائيل (سيراخ ٢٤) — ويوحنا ١: ١٤ سيقول إنّ الكلمة نصب خيمتَه بيننا.'
+    en: Wisdom pitching her tent in Israel (Sirach 24) — John 1:14 will say the Word pitched his tent
+      among us.
+    fr: La Sagesse qui plante sa tente en Israël (Siracide 24) — Jean 1:14 dira que la Parole a planté
+      sa tente parmi nous.
+  etagere: deutero
   id: siracide
   nom:
     ar: يشوع بن سيراخ
@@ -2775,7 +2956,12 @@ livres:
       of Israel re-read through its figures.'
     fr: 'La sagesse pratique d''un scribe de Jérusalem, puis l''éloge des pères : une relecture de toute
       l''histoire d''Israël par ses figures.'
-- etagere: deutero
+- christ:
+    ar: '«ظهرت على الأرض وعاشت بين الناس» (باروخ ٣: ٣٨) — الحكمةُ تصير مرئية.'
+    en: “She appeared on earth and lived among men” (Baruch 3:38) — wisdom made visible.
+    fr: « Elle est apparue sur la terre et a vécu parmi les hommes » (Baruch 3:38) — la sagesse qui se
+      rend visible.
+  etagere: deutero
   id: baruch
   nom:
     ar: باروخ
@@ -2789,7 +2975,14 @@ livres:
       of wisdom.
     fr: Attribué au secrétaire de Jérémie. Une confession collective, puis l'espérance du retour et un
       éloge de la sagesse.
-- etagere: deutero
+- christ:
+    ar: 'هذا التدشينُ هو ما يسميه يوحنا ١٠: ٢٢ «عيد التجديد»: إنجيلٌ يحدّد مشهدًا بحدثٍ لا يرويه إلا هذا
+      السفر.'
+    en: 'It is that dedication John 10:22 calls “the Feast of the Dedication”: a gospel places a scene
+      by an event only this book recounts.'
+    fr: 'C''est cette dédicace que Jean 10:22 appelle « la fête de la Dédicace » : un évangile situe une
+      scène par un événement que seul ce livre raconte.'
+  etagere: deutero
   id: 1-maccabees
   nom:
     ar: المكابيّين الأول
@@ -2803,7 +2996,14 @@ livres:
       soberly told.
     fr: La révolte contre Antiochus IV, la reprise du Temple profané, sa dédicace nouvelle. De l'histoire,
       sobrement racontée.
-- etagere: deutero
+- christ:
+    ar: 'يُرجَّح أنّ عبرانيين ١١: ٣٥ تُصدي لشهداء ٢ المكابيّين ٦–٧: يؤثرون الموتَ على الخيانة، «لكي ينالوا
+      قيامةً أفضل».'
+    en: 'Hebrews 11:35 most likely echoes the martyrs of 2 Maccabees 6–7: they choose death over unfaithfulness,
+      “that they might obtain a better resurrection”.'
+    fr: 'Hébreux 11:35 fait vraisemblablement écho aux martyrs de 2 Maccabées 6–7 : ils préfèrent la mort
+      à l''infidélité, « afin d''obtenir une meilleure résurrection ».'
+  etagere: deutero
   id: 2-maccabees
   lien:
     ar: تلميح معترَف به على نطاق واسع
@@ -2813,6 +3013,21 @@ livres:
     ar: المكابيّين الثاني
     en: 2 Maccabees
     fr: 2 Maccabées
+  nuance:
+    ar: لماذا تلميحٌ لا اقتباس؟ لا يسمّي كاتبُ العبرانيين سفرَ المكابيّين الثاني، ولا يقدّم المقطعَ بصيغة
+      اقتباس. لكنّ اجتماعَ ثلاث سمات — التعذيب، ورفضَ نجاةٍ معروضة، ورجاءَ القيامة — يطابق عن قربٍ روايةَ
+      الأمِّ وأبنائها السبعة. ويختلف الوضعُ القانوني لهذا السفر بحسب التقاليد المسيحية؛ ومسألةُ الصلة
+      الأدبية تُدرَس بمعزلٍ عن هذا الاختلاف.
+    en: Why an allusion and not a quotation? The author of Hebrews does not name 2 Maccabees and does
+      not introduce the passage with a citation formula. But the combination of three traits — torture,
+      the refusal of an offered deliverance, the hope of resurrection — corresponds closely to the account
+      of the mother and her seven sons. The canonical status of 2 Maccabees differs across Christian traditions;
+      the question of the literary link can be studied independently of that difference.
+    fr: Pourquoi une allusion et non une citation ? L'auteur d'Hébreux ne nomme pas 2 Maccabées et n'introduit
+      pas le passage par une formule de citation. Mais la combinaison de trois traits — la torture, le
+      refus d'une délivrance offerte, l'espérance de la résurrection — correspond de très près au récit
+      de la mère et de ses sept fils. Le statut canonique de 2 Maccabées diffère selon les traditions
+      chrétiennes ; la question du lien littéraire s'étudie indépendamment de cette différence.
   periodes:
   - maccabees
   w:
@@ -2821,7 +3036,11 @@ livres:
       mother, and an explicit hope of resurrection.'
     fr: 'Une autre relecture des mêmes années, plus théologique : le martyre de sept frères et de leur
       mère, et l''espérance explicite d''une résurrection.'
-- etagere: evangiles
+- christ:
+    ar: '«كان هذا لكي يتمّ ما قيل»: الصيغةُ المتكررة.'
+    en: '“This happened that what was said might be fulfilled”: the recurring formula.'
+    fr: '« Cela arriva afin que s''accomplît ce qui avait été dit » : la formule qui revient sans cesse.'
+  etagere: evangiles
   id: matthieu
   nom:
     ar: متى
@@ -2833,7 +3052,11 @@ livres:
     ar: يسوع، الملكُ ومتمِّمُ الكتب، مكتوبٌ لقرّاءٍ يهود.
     en: Jesus, king and fulfilment of the Scriptures, written for Jewish readers.
     fr: Jésus, roi et accomplissement des Écritures, écrit pour des lecteurs juifs.
-- etagere: evangiles
+- christ:
+    ar: '«ابنُ الإنسان جاء… ليبذل نفسه فدية» (١٠: ٤٥).'
+    en: “The Son of Man came… to give his life as a ransom” (10:45).
+    fr: « Le Fils de l'homme est venu… donner sa vie en rançon » (10:45).
+  etagere: evangiles
   id: marc
   nom:
     ar: مرقس
@@ -2845,7 +3068,11 @@ livres:
     ar: 'الأقصرُ والأحيَى: يسوع العبد، في الفعل، «للوقت».'
     en: 'The shortest and liveliest: Jesus the Servant, in action, “immediately”.'
     fr: 'Le plus court et le plus vif : Jésus le Serviteur, en action, « aussitôt ».'
-- etagere: evangiles
+- christ:
+    ar: 'طريقُ عمواس (٢٤): القائمُ يشرح الكتبَ كلَّها — مفتاحُ الموقع.'
+    en: 'The road to Emmaus (24): the Risen One explains all the Scriptures — the site''s key.'
+    fr: 'La route d''Emmaüs (24) : le Ressuscité explique toutes les Écritures — la clé du site.'
+  etagere: evangiles
   id: luc
   nom:
     ar: لوقا
@@ -2857,7 +3084,11 @@ livres:
     ar: 'الطبيبُ المؤرّخ: يسوع مخلّصُ المنبوذين والفقراء والغرباء.'
     en: 'The physician-historian: Jesus, savior of the excluded, the poor, the foreigner.'
     fr: 'Le médecin historien : Jésus sauveur des exclus, des pauvres, des étrangers.'
-- etagere: evangiles
+- christ:
+    ar: '«في البدء كان الكلمة» (١: ١)؛ «هوذا حمل الله» (١: ٢٩).'
+    en: “In the beginning was the Word” (1:1); “Behold the Lamb of God” (1:29).
+    fr: « Au commencement était la Parole » (1:1) ; « Voici l'Agneau de Dieu » (1:29).
+  etagere: evangiles
   id: jean
   nom:
     ar: يوحنا
@@ -2869,7 +3100,11 @@ livres:
     ar: 'الأكثرُ لاهوتًا: يسوع الكلمةُ الأزلية المتجسّدة، و«الأنا هو» السبع.'
     en: 'The most theological: Jesus the eternal Word made flesh, the seven “I am”.'
     fr: 'Le plus théologique : Jésus la Parole éternelle faite chair, les sept « Je suis ».'
-- etagere: actes
+- christ:
+    ar: 'الروحُ الموعود به عند يوئيل، مسكوبًا (٢): «تمُّ» الملكوت في العمل.'
+    en: 'The Spirit promised by Joel, poured out (2): the “already” of the Kingdom at work.'
+    fr: 'L''Esprit promis par Joël, répandu (2) : le « déjà » du Royaume à l''œuvre.'
+  etagere: actes
   id: actes
   nom:
     ar: أعمال الرسل
@@ -2881,7 +3116,11 @@ livres:
     ar: الخمسين، والمسيحيون الأوائل، بطرس ثم بولس، والإنجيلُ حتى رومية.
     en: Pentecost, the first Christians, Peter then Paul, the Gospel as far as Rome.
     fr: La Pentecôte, les premiers chrétiens, Pierre puis Paul, l'Évangile jusqu'à Rome.
-- etagere: paul
+- christ:
+    ar: '«أُسلم لأجل خطايانا وأُقيم لأجل تبريرنا» (٤: ٢٥).'
+    en: “Delivered for our trespasses, raised for our justification” (4:25).
+    fr: « Il l'a livré pour nos offenses, ressuscité pour notre justification » (4:25).
+  etagere: paul
   id: romains
   nom:
     ar: رومية
@@ -2893,7 +3132,11 @@ livres:
     ar: 'أوفى عرضٍ للإنجيل: الخطية، والنعمة، والإيمان، وإسرائيل، والحياةُ الجديدة.'
     en: 'The fullest exposition of the Gospel: sin, grace, faith, Israel, new life.'
     fr: 'L''exposé le plus complet de l''Évangile : péché, grâce, foi, Israël, vie nouvelle.'
-- etagere: paul
+- christ:
+    ar: 'قانونُ الإيمان من الثلاثينيات: «المسيح مات… قام… حسب الكتب» (١٥: ٣-٤).'
+    en: 'The creed dated to the 30s: “Christ died… raised… according to the Scriptures” (15:3-4).'
+    fr: 'Le credo daté des années 30 : « Christ est mort… ressuscité… selon les Écritures » (15:3-4).'
+  etagere: paul
   id: 1-corinthiens
   nom:
     ar: ١ كورنثوس
@@ -2905,7 +3148,11 @@ livres:
     ar: 'أجوبةٌ لكنيسةٍ منقسمة: الصليب، والمحبة (ص ١٣)، والقيامة (ص ١٥).'
     en: 'Answers to a divided church: the cross, love (ch. 13), the resurrection (ch. 15).'
     fr: 'Réponses à une église divisée : la croix, l''amour (ch. 13), la résurrection (ch. 15).'
-- etagere: paul
+- christ:
+    ar: '«اللهُ كان في المسيح مصالحًا العالم» (٥: ١٩).'
+    en: “God was in Christ, reconciling the world” (5:19).
+    fr: « Dieu était en Christ, réconciliant le monde » (5:19).
+  etagere: paul
   id: 2-corinthiens
   nom:
     ar: ٢ كورنثوس
@@ -2917,7 +3164,11 @@ livres:
     ar: الدفاعُ عن الخدمة، والضعفُ موضعًا لقوة الله.
     en: The defense of ministry, weakness as the place of God's power.
     fr: La défense du ministère, la faiblesse comme lieu de la puissance de Dieu.
-- etagere: paul
+- christ:
+    ar: '«البارُّ بالإيمان يحيا»؛ «المسيحُ افتدانا» (٣: ١٣).'
+    en: “The righteous will live by faith”; “Christ redeemed us” (3:13).
+    fr: « Le juste vivra par la foi » ; « Christ nous a rachetés » (3:13).
+  etagere: paul
   id: galates
   nom:
     ar: غلاطية
@@ -2929,7 +3180,11 @@ livres:
     ar: 'حريةُ الإنجيل ضد العودة إلى الناموس: نخلص بالإيمان.'
     en: 'The freedom of the Gospel against returning to the Law: saved by faith.'
     fr: 'La liberté de l''Évangile contre le retour à la Loi : on est sauvé par la foi.'
-- etagere: paul
+- christ:
+    ar: '«جمعُ كل شيء في المسيح» (١: ١٠).'
+    en: “To sum up all things in Christ” (1:10).
+    fr: « Récapituler toutes choses en Christ » (1:10).
+  etagere: paul
   id: ephesiens
   nom:
     ar: أفسس
@@ -2941,7 +3196,11 @@ livres:
     ar: 'تدبيرُ الله العظيم: جمعُ كل شيء في المسيح؛ والكنيسةُ جسدُه.'
     en: 'God''s great design: to unite all in Christ; the Church, his body.'
     fr: 'Le grand dessein de Dieu : tout réunir en Christ ; l''Église, son corps.'
-- etagere: paul
+- christ:
+    ar: '«أخلى نفسه آخذًا صورة عبد» (٢: ٦-٨).'
+    en: “He emptied himself, taking the form of a servant” (2:6-8).
+    fr: « Il s'est dépouillé lui-même, prenant la forme d'un serviteur » (2:6-8).
+  etagere: paul
   id: philippiens
   nom:
     ar: فيلبي
@@ -2953,7 +3212,11 @@ livres:
     ar: الفرحُ في السجن؛ ونشيدُ الاتضاع والتمجيد العظيم.
     en: Joy in prison; the great hymn of the lowering and exaltation.
     fr: La joie en prison ; le grand hymne de l'abaissement et de l'exaltation.
-- etagere: paul
+- christ:
+    ar: '«الكلُّ به وله خُلق… وفيه يقوم الكل» (١: ١٦-١٧).'
+    en: “All things were created through him and for him… in him all things hold together” (1:16-17).
+    fr: « Tout a été créé par lui et pour lui… tout subsiste en lui » (1:16-17).
+  etagere: paul
   id: colossiens
   nom:
     ar: كولوسي
@@ -2965,7 +3228,11 @@ livres:
     ar: سموُّ المسيح على كل الخليقة؛ ضد الحكمة الباطلة.
     en: The supremacy of Christ over all creation; against false wisdoms.
     fr: La suprématie du Christ sur toute la création ; contre les fausses sagesses.
-- etagere: paul
+- christ:
+    ar: 'الانتظارُ الحيُّ للرجوع: «لم يتمّ» الملكوت.'
+    en: 'The lively expectation of the return: the Kingdom''s “not yet”.'
+    fr: 'L''attente vive du retour : le « pas encore » du Royaume.'
+  etagere: paul
   id: 1-thessaloniciens
   nom:
     ar: ١ تسالونيكي
@@ -2977,7 +3244,11 @@ livres:
     ar: تشجيعُ كنيسةٍ فتيّة؛ ورجاءُ رجوع المسيح.
     en: Encouragement to a young church; the hope of Christ's return.
     fr: Encouragement à une jeune église ; l'espérance du retour du Christ.
-- etagere: paul
+- christ:
+    ar: الصبرُ في الانتظار، بلا تحديد موعد.
+    en: Patience in waiting, without fixing a date.
+    fr: La patience dans l'attente, sans fixer de date.
+  etagere: paul
   id: 2-thessaloniciens
   nom:
     ar: ٢ تسالونيكي
@@ -2989,7 +3260,11 @@ livres:
     ar: إيضاحاتٌ عن رجوع المسيح، ضد الذعر والبطالة.
     en: Clarifications on Christ's return, against panic and idleness.
     fr: Précisions sur le retour du Christ, contre la panique et l'oisiveté.
-- etagere: paul
+- christ:
+    ar: '«وسيطٌ واحد بين الله والناس» (٢: ٥).'
+    en: “One mediator between God and men” (2:5).
+    fr: « Un seul médiateur entre Dieu et les hommes » (2:5).
+  etagere: paul
   id: 1-timothee
   nom:
     ar: ١ تيموثاوس
@@ -3001,7 +3276,11 @@ livres:
     ar: 'نصائحُ لمسؤولٍ شاب: تعليمٌ سليم، ونظام، ونزاهة.'
     en: 'Advice to a young church leader: sound doctrine, order, integrity.'
     fr: 'Conseils à un jeune responsable d''église : doctrine saine, ordre, intégrité.'
-- etagere: paul
+- christ:
+    ar: '«كلُّ الكتاب موحًى به من الله» (٣: ١٦): الكتابُ عن نفسه.'
+    en: '“All Scripture is God-breathed” (3:16): the Bible on itself.'
+    fr: '« Toute Écriture est inspirée de Dieu » (3:16) : la Bible sur elle-même.'
+  etagere: paul
   id: 2-timothee
   nom:
     ar: ٢ تيموثاوس
@@ -3013,7 +3292,11 @@ livres:
     ar: 'رسالةُ بولس الأخيرة، أمام الموت: «حفظتُ الإيمان».'
     en: 'Paul''s last letter, facing death: “I have kept the faith”.'
     fr: 'La dernière lettre de Paul, face à la mort : « j''ai gardé la foi ».'
-- etagere: paul
+- christ:
+    ar: '«ظهورُ مجد إلهنا ومخلّصنا العظيم يسوع المسيح» (٢: ١٣).'
+    en: “The appearing of the glory of our great God and Savior Jesus Christ” (2:13).
+    fr: « L'apparition de la gloire de notre grand Dieu et Sauveur Jésus-Christ » (2:13).
+  etagere: paul
   id: tite
   nom:
     ar: تيطس
@@ -3025,7 +3308,11 @@ livres:
     ar: تنظيمُ كنيسةٍ سليمة في كريت؛ والنعمةُ التي تصوغ الحياة.
     en: Organizing a healthy church in Crete; grace that shapes life.
     fr: Organiser une église saine en Crète ; la grâce qui forme la vie.
-- etagere: paul
+- christ:
+    ar: 'الإنجيلُ الذي يحوّل العلاقات: اقبله «كنفسي».'
+    en: 'The Gospel that transforms relationships: receive him “as myself”.'
+    fr: 'L''Évangile qui transforme les relations : reçois-le « comme moi-même ».'
+  etagere: paul
   id: philemon
   nom:
     ar: فليمون
@@ -3037,7 +3324,11 @@ livres:
     ar: 'بطاقةٌ شخصية: عبدٌ هارب يُقبَل كأخ.'
     en: 'A personal note: a runaway slave received as a brother.'
     fr: 'Un billet personnel : un esclave fugitif accueilli comme un frère.'
-- etagere: generales
+- christ:
+    ar: '«ذبيحةٌ واحدة عن الخطايا، ثم جلس» (١٠: ١٢): قلبُ التقدمة.'
+    en: '“One sacrifice for sins, then he sat down” (10:12): the heart of the Offering.'
+    fr: '« Un seul sacrifice pour les péchés, puis il s''est assis » (10:12) : le cœur de l''Offrande.'
+  etagere: generales
   id: hebreux
   nom:
     ar: العبرانيون
@@ -3049,7 +3340,11 @@ livres:
     ar: المسيح، رئيسُ كهنةٍ كامل وذبيحةٌ واحدة، أسمى من العبادة القديمة كلِّها.
     en: Christ, perfect high priest and one sacrifice, superior to all the old worship.
     fr: Le Christ, grand-prêtre parfait et sacrifice unique, supérieur à tout l'ancien culte.
-- etagere: generales
+- christ:
+    ar: الإيمانُ الحيّ، ثمرُ «تمّ» الولادة الجديدة.
+    en: Living faith, fruit of the “already” of the new birth.
+    fr: La foi vivante, fruit du « déjà » de la nouvelle naissance.
+  etagere: generales
   id: jacques
   nom:
     ar: يعقوب
@@ -3061,7 +3356,11 @@ livres:
     ar: 'الإيمانُ الذي يعمل: إيمانٌ بلا أعمال ميت؛ وضبطُ اللسان.'
     en: 'Faith that acts: faith without works is dead; taming the tongue.'
     fr: 'La foi qui agit : une foi sans œuvres est morte ; la maîtrise de la langue.'
-- etagere: generales
+- christ:
+    ar: '«الدمُ الكريم، كما من حملٍ بلا عيب» (١: ١٩).'
+    en: “The precious blood of Christ, as of a lamb without blemish” (1:19).
+    fr: « Le sang précieux de Christ, comme d'un agneau sans défaut » (1:19).
+  etagere: generales
   id: 1-pierre
   nom:
     ar: ١ بطرس
@@ -3073,7 +3372,11 @@ livres:
     ar: الثباتُ في الألم؛ والحملُ بلا عيب؛ وكهنوتٌ جديد.
     en: Standing in suffering; the Lamb without defect; a new priesthood.
     fr: Tenir dans la souffrance ; l'Agneau sans défaut ; un sacerdoce nouveau.
-- etagere: generales
+- christ:
+    ar: '«كنا معاينين عظمته» على الجبل (١: ١٦-١٨).'
+    en: “We were eyewitnesses of his majesty” on the mountain (1:16-18).
+    fr: « Nous avons été témoins de sa majesté » sur la montagne (1:16-18).
+  etagere: generales
   id: 2-pierre
   nom:
     ar: ٢ بطرس
@@ -3085,7 +3388,11 @@ livres:
     ar: ضد المعلّمين الكذبة؛ وشاهدُ عيان التجلّي.
     en: Against false teachers; the eyewitness of the Transfiguration.
     fr: Contre les faux docteurs ; le témoin oculaire de la Transfiguration.
-- etagere: generales
+- christ:
+    ar: '«اللهُ محبة» (٤: ٨): القلبُ الذي يستلزم الثالوث.'
+    en: '“God is love” (4:8): the heart that requires the Trinity.'
+    fr: '« Dieu est amour » (4:8) : le cœur qui exige la Trinité.'
+  etagere: generales
   id: 1-jean
   nom:
     ar: ١ يوحنا
@@ -3097,7 +3404,11 @@ livres:
     ar: 'أن نحبّ ونثبت: «اللهُ محبة»؛ ويقينُ الخلاص.'
     en: 'To love and abide: “God is love”; the assurance of salvation.'
     fr: 'Aimer et demeurer : « Dieu est amour » ; l''assurance du salut.'
-- etagere: generales
+- christ:
+    ar: الحقُّ والمحبةُ معًا في المسيح.
+    en: Truth and love held together in Christ.
+    fr: La vérité et l'amour tenus ensemble en Christ.
+  etagere: generales
   id: 2-jean
   nom:
     ar: ٢ يوحنا
@@ -3109,7 +3420,11 @@ livres:
     ar: 'بطاقةٌ قصيرة: السلوكُ في الحق والمحبة، والحذرُ من المضلِّين.'
     en: 'A short note: walking in truth and love, guarding against deceivers.'
     fr: 'Un court billet : marcher dans la vérité et l''amour, se garder des séducteurs.'
-- etagere: generales
+- christ:
+    ar: '«السلوكُ في الحق»: الحياةُ المتحوّلة.'
+    en: '“Walking in the truth”: the transformed life.'
+    fr: '« Marcher dans la vérité » : la vie transformée.'
+  etagere: generales
   id: 3-jean
   nom:
     ar: ٣ يوحنا
@@ -3121,7 +3436,11 @@ livres:
     ar: 'بطاقةٌ قصيرة: الضيافةُ المسيحية، ودعمُ الخدام الحقيقيين.'
     en: 'A short note: Christian hospitality, supporting true servants.'
     fr: 'Un court billet : l''hospitalité chrétienne, soutenir les vrais serviteurs.'
-- etagere: generales
+- christ:
+    ar: '«محفوظون ليسوع المسيح»: المثابرةُ المضمونة.'
+    en: '“Kept for Jesus Christ”: assured perseverance.'
+    fr: '« Gardés pour Jésus-Christ » : la persévérance assurée.'
+  etagere: generales
   id: jude
   nom:
     ar: يهوذا
@@ -3133,7 +3452,11 @@ livres:
     ar: دعوةٌ موجزة للمجاهدة لأجل الإيمان ضد المندسّين.
     en: A brief call to contend for the faith against infiltrators.
     fr: Un appel bref à combattre pour la foi contre les infiltrés.
-- etagere: apocalypse
+- christ:
+    ar: '«الحملُ المذبوح، قائمًا» (٥: ٦)؛ «الربُّ الإلهُ والخروفُ هيكلُها» (٢١: ٢٢).'
+    en: “The slain Lamb, standing” (5:6); “the temple is the Lord God and the Lamb” (21:22).
+    fr: « L'Agneau immolé, debout » (5:6) ; « le temple, c'est le Seigneur Dieu et l'Agneau » (21:22).
+  etagere: apocalypse
   id: apocalypse
   nom:
     ar: الرؤيا

@@ -37,10 +37,14 @@ for (const [gi, g] of [...bib.fr.groups, ...bib.fr.groupsNT].entries()) {
       id: slug(b.n), etagere: g.k,
       nom: { fr: b.n, en: gEn.books[i].n, ar: gAr.books[i].n },
       w: { fr: b.w, en: gEn.books[i].w, ar: gAr.books[i].w },
+      // le fil vers le Christ, tel que le pupitre l'explique déjà
+      christ: { fr: b.c, en: gEn.books[i].c, ar: gAr.books[i].c },
       periodes: (PERIODE_LIVRE[g.k] || [])[i] || null,
     };
     if (b.lien)   // badge D-013 déjà posé sur le pupitre, dans les trois langues
       entree.lien = { fr: b.lien, en: gEn.books[i].lien, ar: gAr.books[i].lien };
+    if (b.nuance)   // pourquoi ce lien n'est pas de la première catégorie
+      entree.nuance = { fr: b.nuance, en: gEn.books[i].nuance, ar: gAr.books[i].nuance };
     const tr = (TRANCHES[g.k] || {})[i];   // un livre récit coupé entre deux époques
     if (tr) entree.tranches = tr;
     if ((DEBAT[g.k] || {})[i])   // place non tranchée : la raison, dans les trois langues
