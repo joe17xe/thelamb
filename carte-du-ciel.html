@@ -34,6 +34,12 @@
   .hint{font-family:system-ui,sans-serif;font-size:12.5px;color:var(--gold);margin-top:12px}
 
   .legende{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:18px;font-family:system-ui,sans-serif;font-size:12px;color:var(--muted)}
+  @media (max-width:620px){
+    .legende{gap:5px 10px;font-size:11px;margin-top:12px}
+    .legende i{width:8px;height:8px}
+    .ariane{font-size:12px;gap:8px}
+    .ariane .vues{gap:8px}
+  }
   .legende span{display:inline-flex;align-items:center;gap:7px}
   .legende i{width:9px;height:9px;border-radius:50%;display:inline-block}
   .legende i.vide{background:none;border:1.5px solid var(--muted)}
@@ -116,7 +122,10 @@
   .fliens a.pchip2{text-decoration:none;cursor:pointer;color:var(--ink)}
   .fliens a.pchip2:hover{border-color:var(--gold)}
   html[dir="rtl"] .etq{font-family:'Amiri',serif;font-size:13px;letter-spacing:0;text-transform:none}
-  .ariane{max-width:900px;margin:14px auto 0;padding:0 16px;display:flex;align-items:center;gap:10px;font-family:system-ui,sans-serif;font-size:12.5px}
+  .ariane{max-width:900px;margin:14px auto 0;padding:0 16px;display:flex;align-items:center;gap:10px;font-family:system-ui,sans-serif;font-size:12.5px;overflow-x:auto;scrollbar-width:none}
+  .ariane::-webkit-scrollbar{display:none}
+  .ariane>*{flex:none}
+  .ariane .vues{display:flex;align-items:center;gap:10px}
   .ariane a,.ariane button{background:none;border:none;padding:4px 2px;margin:0;color:var(--muted);font-family:system-ui,sans-serif;font-size:12.5px;cursor:pointer;text-decoration:none;transition:color .2s}
   .ariane a:hover,.ariane button:not(:disabled):hover{color:var(--gold)}
   .ariane button:disabled{color:var(--ink);cursor:default}
@@ -152,9 +161,7 @@
 <nav class="ariane" id="ariane">
   <a id="arAgneau" href="index.html"></a>
   <span class="sep" aria-hidden="true" id="arSep1"></span>
-  <button id="arCiel" type="button"></button>
-  <span class="sep" aria-hidden="true" id="arSep2"></span>
-  <span class="cran" id="arConst" aria-current="page"></span>
+  <span class="vues" id="arVues"></span>
 </nav>
 
 <div class="cielbox"><svg id="ciel" viewBox="0 0 720 790" role="img"></svg></div>
@@ -950,13 +957,15 @@ function render(l){
   document.getElementById('ariane').setAttribute('aria-label',c.arianeLbl);
   document.getElementById('arAgneau').textContent=c.arianeAgneau;
   document.getElementById('arSep1').textContent=c.arianeSep;
-  document.getElementById('arSep2').textContent=c.arianeSep;
-  const enCiel=(SCENE==='ciel');
-  const ac=document.getElementById('arCiel');ac.textContent=c.arianeCiel;ac.disabled=enCiel;
-  if(enCiel)ac.setAttribute('aria-current','page');else ac.removeAttribute('aria-current');
-  document.getElementById('arSep2').hidden=enCiel;
-  const cr=document.getElementById('arConst');cr.hidden=enCiel;
-  if(!enCiel)cr.textContent=c.vueNom[SCENE];
+  // les six cartes, toujours nommées : d'où qu'on soit, chacune est à un toucher
+  const av=document.getElementById('arVues');av.innerHTML='';
+  VUES.forEach((v,i)=>{
+    if(i){const s=document.createElement('span');s.className='sep';s.setAttribute('aria-hidden','true');
+      s.textContent='·';av.appendChild(s);}
+    if(v===SCENE){const s=document.createElement('span');s.className='cran';
+      s.setAttribute('aria-current','page');s.textContent=c.vueNom[v];av.appendChild(s);}
+    else{const b=document.createElement('button');b.type='button';b.textContent=c.vueNom[v];
+      b.addEventListener('click',()=>allerScene(v));av.appendChild(b);}});
   const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
   const gc=document.querySelector('.centre');if(gc)gc.setAttribute('aria-label',c.centreA11y);
@@ -998,7 +1007,6 @@ function render(l){
   if(SCENE==='genealogie'&&SELG!=null)choisirMaillon(SELG);
 }
 document.getElementById('fx').addEventListener('click',fermer);
-document.getElementById('arCiel').addEventListener('click',()=>allerScene('ciel'));
 document.getElementById('ciel').addEventListener('animationend',e=>{
   if(e.animationName==='cielLueur')document.getElementById('ciel').classList.remove('lueur');});
 document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));

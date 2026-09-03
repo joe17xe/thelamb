@@ -376,6 +376,18 @@ boucle à l'exécution suivante. Le supprimer la relance.
   l'atteint (le meilleur schéma à cinq familles de nuances plafonne à 7,9). La couleur
   groupe ; ce sont les étiquettes, le filtre et le tableau qui identifient.
 
+## R-035 La barre des cartes — six vues, accessibles de partout
+- zone: verte
+- statut: fait
+- pourquoi: demande du porteur — « toutes ces cartes doivent être accessibles de n'importe quel endroit » ; il fallait jusque-là remonter au ciel, trouver la bonne étoile et la toucher deux fois
+- fait quand: depuis n'importe quelle vue, chacune des cinq autres est à un seul toucher, et la vue courante se voit
+- résultat: le fil d'Ariane devient un commutateur — « ✦ L'Agneau › Le ciel · Le livre ·
+  Les époques · Les correspondances · Les veilleurs · La généalogie », la vue courante
+  à l'encre et inerte, les autres cliquables. Il tient sur une ligne et défile
+  horizontalement sur téléphone plutôt que de s'empiler. La liste vient de la
+  déclaration unique des vues : une carte de plus s'y ajoutera d'elle-même. Au passage,
+  la légende se resserre sur petit écran — cinq lignes avant, quatre maintenant.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
