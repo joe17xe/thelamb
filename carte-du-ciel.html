@@ -46,6 +46,10 @@
   .legende i.vide{background:none;border:1.5px solid var(--muted)}
   .legende button{display:inline-flex;align-items:center;gap:7px;background:none;border:1px solid transparent;border-radius:999px;color:var(--muted);font:inherit;padding:3px 9px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
   .legende button:hover{color:var(--ink)}
+  .legende button em{font-style:normal;font-size:10.5px;opacity:.5;margin-left:5px;font-variant-numeric:tabular-nums}
+  html[dir="rtl"] .legende button em{margin:0 5px 0 0}
+  .legende button.rien{opacity:.34;cursor:default}
+  .legende button.rien:hover{color:var(--muted)}
   .legende button[aria-pressed="true"]{color:var(--ink);border-color:color-mix(in srgb,var(--lc,var(--gold)) 60%,transparent);background:color-mix(in srgb,var(--lc,var(--gold)) 14%,transparent)}
   .legende button[aria-pressed="true"] i{box-shadow:0 0 0 3px color-mix(in srgb,var(--lc,var(--gold)) 32%,transparent)}
   .legende button.tout{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 45%,transparent)}
@@ -302,6 +306,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  horsCarte:"hors de la carte du temps", chap:"ch.",
  aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", tblVoir:"voir la liste", tblSur:"sur",
  recitLbl:"Récit", placeDebat:"Place non tranchée", liensChrist:"passages vers le Christ",
+ filtreRien:"Aucune étoile de cette carte n'appartient à cette catégorie.",
  sansLien:"Le fil rouge ne recense encore aucun passage précis de ce livre. Le recensement se poursuit.",
  filChrist:"Le fil vers le Christ", lireNuance:"Lire la nuance", tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintVeilleurs:"Quatorze veilleurs, chacun dans son époque, sur le même cadran que le chemin : de 1, le Christ, à 12. Tous sont tournés vers le même point.",
@@ -369,6 +374,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  horsCarte:"outside the map of time", chap:"ch.",
  aConstellation:"opens a constellation", filtreTout:"✕ Show all", tblVoir:"see the list", tblSur:"of",
  recitLbl:"Narrative", placeDebat:"Placement not settled", liensChrist:"passages to Christ",
+ filtreRien:"No star on this map belongs to this category.",
  sansLien:"The red thread lists no precise passage of this book yet. The survey is ongoing.",
  filChrist:"The thread to Christ", lireNuance:"Read the nuance", tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintVeilleurs:"Fourteen watchmen, each in his epoch, on the same dial as the path: from 1, Christ, to 12. All are turned towards the same point.",
@@ -436,6 +442,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  horsCarte:"خارج خريطة الزمن", chap:"أص.",
  aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", tblVoir:"اعرض القائمة", tblSur:"من",
  recitLbl:"السرد", placeDebat:"موضعٌ غير محسوم", liensChrist:"مقطعًا نحو المسيح",
+ filtreRien:"لا نجمةَ في هذه الخريطة تنتمي إلى هذه الفئة.",
  sansLien:"لم يُسجِّل الخيطُ الأحمر بعدُ أيَّ مقطعٍ محدَّد من هذا السفر. والإحصاء مستمر.",
  filChrist:"الخيط نحو المسيح", lireNuance:"اقرأ الفارق", tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintVeilleurs:"أربعة عشر حارسًا، كلٌّ في عصره، على القرص نفسه الذي يسير عليه الطريق: من ١، المسيح، إلى ١٢. وكلُّهم متّجهون إلى النقطة نفسها.",
@@ -1179,13 +1186,22 @@ function render(l){
     entrees=Object.entries(CONSTEL.periodes).map(([k,p])=>[k,p.c,p[LANG]]);
     if(SCENE==='bibliotheque'&&CONSTEL.livres.some(l=>!l[2]))entrees.push(['mut',null,c.horsCarte]);
   }
+  // Combien d'étoiles chaque entrée allume dans la carte présente : le dire
+  // évite de vider le ciel en touchant une époque qui n'y a personne.
+  const combien={};
+  document.querySelectorAll('.noeud').forEach(n=>
+    (n.dataset.cat||'').split(' ').filter(Boolean).forEach(k=>combien[k]=(combien[k]||0)+1));
   entrees.forEach(([k,coul,nom])=>{
     const b=document.createElement('button');b.type='button';b.dataset.k=k;
     b.setAttribute('aria-pressed','false');
     if(coul)b.style.setProperty('--lc',coul);
     b.innerHTML=`<i class="${coul?'':'vide'}"${coul?` style="background:${coul}"`:''}></i>`;
     b.appendChild(document.createTextNode(nom));
-    b.addEventListener('click',()=>basculerFiltre(k));lg.appendChild(b);});
+    const n=combien[k]||0;
+    const q=document.createElement('em');q.textContent=n;b.appendChild(q);
+    if(!n){b.disabled=true;b.classList.add('rien');b.title=c.filtreRien;}
+    else b.addEventListener('click',()=>basculerFiltre(k));
+    lg.appendChild(b);});
   const bt=document.createElement('button');bt.type='button';bt.className='tout';bt.hidden=true;
   bt.textContent=c.filtreTout;bt.addEventListener('click',viderFiltre);lg.appendChild(bt);
   document.getElementById('ariane').setAttribute('aria-label',c.arianeLbl);

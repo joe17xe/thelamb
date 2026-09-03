@@ -437,6 +437,30 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-048 La légende dit ce qu'elle allume — et le déploiement voit ce qu'un visiteur reçoit
+- zone: verte
+- statut: fait
+- pourquoi: question du porteur — « les points en-têtes ne sont pas cliquables pour filtrer les étoiles ? » — posée sur une capture qui montrait une version vieille de plusieurs jours
+- fait quand: le filtre se comprend sans l'essayer, et une version périmée servie au public se lit dans le journal du déploiement
+- résultat: les pastilles **étaient** cliquables — le filtre fonctionne dans les six cartes,
+  mesuré. Mais deux choses expliquaient le doute.
+  **La légende ne disait pas ce qu'elle allume.** Chaque pastille porte maintenant son
+  compte — « Le Royaume divisé 5 » —, et celle qui ne retiendrait aucune étoile est grisée
+  et ne se laisse plus toucher. Toucher « Monde des origines » dans la carte des veilleurs
+  vidait le ciel sans un mot ; six des douze époques n'ont pas de veilleur, et cela se voit
+  d'un coup d'œil.
+  **Le déploiement ne voyait pas le cache.** Il comparait les fichiers au bit près sur le
+  disque du VPS — cela, c'était solide — puis vérifiait par HTTP… le `<title>` d'index.html,
+  qui ne change jamais. Un cache de bord pouvait servir une page vieille de trois jours sans
+  que rien ne s'allume, et c'est exactement ce qui est arrivé : le porteur a vu trois fois
+  de suite un site figé pendant que le dépôt avançait. La vérification demande désormais
+  trois pages témoins **deux fois** — avec et sans contournement de cache — et compare les
+  deux à ce qui vient d'être déposé. Rien n'échoue le déploiement, mais le journal dit
+  lequel est en retard, et quoi purger.
+- vérifié: filtre éprouvé dans les six cartes ; comptes justes (78 pour 73 livres — cinq
+  livres appartiennent à deux époques) ; six pastilles inertes dans les veilleurs, sans
+  effet au clic ; les huit contrôles.
+
 ## R-047 « Le substitut » renvoyait au mauvais verset
 - zone: verte
 - statut: fait
