@@ -121,6 +121,41 @@ jobs:
             exit 1
           fi
 
+          # Le titre d'index.html ne change jamais : ce contrôle passait au vert
+          # même quand un cache servait une page vieille de plusieurs jours — et
+          # le porteur voyait un site figé pendant que le dépôt avançait. On
+          # compare donc ce que reçoit un visiteur à ce qui vient d'être déposé.
+          #
+          # Un paramètre d'adresse suffit à contourner un cache de bord : la même
+          # page demandée deux fois, avec et sans, dit lequel des deux est en
+          # retard. Rien ici n'échoue le déploiement — les fichiers sont déjà
+          # vérifiés au bit près sur le disque du VPS — mais tout se lit dans le
+          # journal, et c'est ce qui manquait.
+          echo
+          echo "── Ce que reçoit un visiteur"
+          for page in index.html carte-du-ciel.html salle-bibliotheque.html; do
+            [ -f "$page" ] || continue
+            ici=$(md5sum "$page" | cut -d' ' -f1)
+            frais=$(curl -fsS --retry 2 --retry-delay 3 "$SITE/$page?v=${GITHUB_SHA:-0}" \
+                    2>/dev/null | md5sum | cut -d' ' -f1)
+            public=$(curl -fsS --retry 2 --retry-delay 3 "$SITE/$page" \
+                     2>/dev/null | md5sum | cut -d' ' -f1)
+            if [ "$frais" = "$ici" ] && [ "$public" = "$ici" ]; then
+              echo "  ✅ $page — servi tel qu'il vient d'être déposé"
+            elif [ "$frais" = "$ici" ]; then
+              echo "::warning::$page : l'origine est à jour, mais un cache sert encore"
+              echo "::warning::une version antérieure. Purger le cache (Cloudflare →"
+              echo "::warning::Caching → Purge Everything) ou attendre son expiration."
+            elif [ "$public" = "$frais" ]; then
+              echo "::warning::$page : le serveur répond la même chose avec ou sans"
+              echo "::warning::contournement de cache, mais ce n'est pas le fichier déposé."
+              echo "::warning::Vérifier la racine servie par Nginx."
+            else
+              echo "::warning::$page : ni la version fraîche ni la version publique ne"
+              echo "::warning::correspondent au fichier déposé. Voir Nginx et le cache."
+            fi
+          done
+
       # Une fusion verte qui n'atteint pas le site en silence, c'est le trou
       # que ce ticket ferme : si le déploiement casse, on le lit dans le dépôt.
       - name: Signaler l'échec dans un ticket
