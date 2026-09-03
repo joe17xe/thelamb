@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33;
-    --loi:#c98a5e;--royaume:#d3a94f;--exil:#6b9bd8;--retour:#7cb47c;--attente:#a583d6;--christ:#d05c5c}
+}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--ink);font-family:Georgia,serif;line-height:1.6}
   html[dir="rtl"] body{font-family:'Amiri',serif;line-height:1.9}
@@ -49,8 +49,7 @@
   .fchip[aria-pressed="true"]{color:var(--ink);border-color:var(--c,var(--gold));background:color-mix(in srgb,var(--c,#888) 12%,transparent)}
   .timeline{max-width:1160px;margin:14px auto 0;padding:0 16px}
   .tlwrap{position:relative;overflow-x:auto;padding:20px 0 8px}
-  .axis{position:relative;height:2px;background:linear-gradient(90deg,var(--loi),var(--royaume),var(--exil),var(--retour),var(--attente),var(--christ));min-width:900px;margin:0 10px}
-  html[dir="rtl"] .axis{background:linear-gradient(270deg,var(--loi),var(--royaume),var(--exil),var(--retour),var(--attente),var(--christ))}
+  .axis{position:relative;height:2px;min-width:900px;margin:0 10px}
   .tick{position:absolute;top:-6px;width:1px;height:14px;background:var(--line)}
   .tlabel{position:absolute;top:14px;font-family:system-ui,sans-serif;font-size:10px;color:#6b6f85;transform:translateX(-50%);white-space:nowrap}
   .prow{position:relative;min-width:900px;margin:26px 10px 0;height:auto}
@@ -167,11 +166,7 @@
 <footer id="foot"></footer>
 
 <script>
-// Phases = "l'Ancien Testament expliqué" en 6 grandes étapes
-const PHASES={
- loi:{c:"var(--loi)"},royaume:{c:"var(--royaume)"},exil:{c:"var(--exil)"},
- retour:{c:"var(--retour)"},attente:{c:"var(--attente)"},christ:{c:"var(--christ)"}
-};
+// Les douze époques viennent de periodes.yml — une seule carte du temps.
 // Prophètes : x = position sur l'axe (0=−1500, 100=+30). date affichée, phase, contexte, message, lien Christ.
 const AXIS_MIN=-1500, AXIS_MAX=50;
 function px(year){return ((year-AXIS_MIN)/(AXIS_MAX-AXIS_MIN))*100;}
@@ -180,20 +175,26 @@ const T={
 fr:{dir:"ltr",albl:"Approfondir",liens:["Isaïe 53 — écrit sept siècles avant","La Transfiguration — Moïse, Élie, et le Fils"],brand:"L'AGNEAU DE DIEU",
  eyebrow:"L'Ancien Testament expliqué · la frise des veilleurs",
  title:"Pendant mille ans, des veilleurs ont décrit <em>un homme qu'ils ne verraient jamais</em>",
- lede:"Comprendre l'Ancien Testament, c'est d'abord comprendre son fil. Six grandes phases, une poignée de prophètes — et une seule direction : le Christ. Touchez une phase, puis un prophète.",
- phtitle:"Les six âges de l'Ancien Testament — en un coup d'œil",
+ lede:"Comprendre l'Ancien Testament, c'est d'abord comprendre son fil. Douze époques, une poignée de prophètes — et une seule direction : le Christ. Touchez une époque, puis un prophète.",
+ phtitle:"Les douze époques de l'histoire — en un coup d'œil",
  phases:[
-  ["loi","Phase 1","La Loi","~1500–1200 av. J.-C.","Dieu fait sortir un peuple d'Égypte, lui donne la Loi et l'Alliance au Sinaï. Naissance d'Israël.","Moïse, Josué"],
-  ["royaume","Phase 2","Le Royaume","~1000–930 av. J.-C.","David unifie le royaume, Salomon bâtit le Temple. L'apogée — et la promesse d'un trône éternel.","David, Salomon, Nathan"],
-  ["exil","Phase 3","La division & l'exil","~930–587 av. J.-C.","Le royaume se divise, s'effondre. Les prophètes avertissent, puis Babylone détruit le Temple (587).","Ésaïe, Jérémie, les grands prophètes"],
-  ["retour","Phase 4","Le retour","~538–430 av. J.-C.","La Perse renvoie les exilés. Le Temple est rebâti, plus modeste. On attend « quelque chose de plus ».","Aggée, Zacharie, Malachie"],
-  ["attente","Phase 5","L'attente","~430–5 av. J.-C.","Quatre siècles sans prophète reconnu par toutes les traditions — mais non sans écrits : Maccabées, Siracide, Sagesse, reçus diversement selon les Églises. Empires grec puis romain. L'attente du Messie monte.","les Maccabées, les sages"],
-  ["christ","Phase 6","L'accomplissement","~5 av.–30 apr. J.-C.","Jean-Baptiste rompt le silence : « Voici l'Agneau ». Tout ce qui était annoncé prend un visage.","Jean-Baptiste, le Christ"]],
- filterAll:"Toutes les phases",
+  ["origines","Époque 1","Monde des origines","Création → ~2200 av. J.-C.","La création, la chute, et la promesse faite le jour même de la faute ; le déluge, Babel. Des origines racontées, pas datées.","Adam, Abel, Noé"],
+  ["patriarches","Époque 2","Les Patriarches","~2200–1800 av. J.-C.","Dieu choisit une famille : Abraham, Isaac, Jacob, Joseph. Sur le mont Morija, la question de l'agneau est posée pour la première fois.","Abraham, Isaac, Jacob, Joseph"],
+  ["exode","Époque 3","Égypte et Exode","~1800–1446 av. J.-C.","Israël asservi en Égypte ; les dix plaies ; la première Pâque et la sortie ; l'alliance au Sinaï. Naissance d'un peuple.","Moïse, Aaron"],
+  ["desert","Époque 4","Le Désert","1446–1406 av. J.-C.","Quarante ans au désert : la manne, les douze espions, le serpent d'airain, l'alliance renouvelée en Moab.","Moïse, Josué"],
+  ["juges","Époque 5","Conquête et Juges","1406–1050 av. J.-C.","Le Jourdain, Jéricho, le partage du pays ; puis le cycle des juges, d'Othniel à Samson. Israël demande un roi.","Josué, Débora, Gédéon, Samson, Ruth, Samuel"],
+  ["royaume","Époque 6","Le Royaume","1050–930 av. J.-C.","Saül, puis David règne à Jérusalem ; l'arche y monte ; Dieu fait alliance avec David. Salomon bâtit le Temple — et la promesse d'un trône éternel.","Saül, David, Salomon, Nathan"],
+  ["division","Époque 7","Le Royaume divisé","930–722 av. J.-C.","Le royaume se divise : Israël au nord, Juda au sud. Élie, Élisée, Amos, Osée, Isaïe, Michée avertissent. Samarie tombe devant l'Assyrie.","Élie, Élisée, Isaïe, Amos, Osée, Michée"],
+  ["exil","Époque 8","L'Exil","722–538 av. J.-C.","Juda part en exil en trois déportations (605, 597, 587) ; Babylone détruit le Temple. Jérémie, Ézéchiel, Daniel parlent depuis la captivité.","Jérémie, Ézéchiel, Daniel"],
+  ["retour","Époque 9","Le Retour","538–167 av. J.-C.","La Perse renvoie les exilés ; le Temple est rebâti, plus modeste ; Esdras enseigne, Néhémie relève les murailles. On attend « quelque chose de plus ».","Zorobabel, Esdras, Néhémie, Aggée, Zacharie, Malachie"],
+  ["maccabees","Époque 10","La révolte des Maccabées","167 av. J.-C. → an 1","Antiochos profane le Temple ; les Maccabées le reprennent et le purifient (Hanoukka, 164). Pas de prophète reconnu par toutes les traditions, mais des écrits — Maccabées, Siracide, Sagesse — reçus diversement selon les Églises. Rome arrive.","Judas Maccabée, les Hasmonéens, Hérode"],
+  ["christ","Époque 11","L'Accomplissement","an 1–33","Jean-Baptiste rompt le silence : « Voici l'Agneau ». Baptême, Transfiguration, dernière Cène, croix, résurrection. Tout ce qui était annoncé prend un visage.","Jean-Baptiste, le Christ"],
+  ["eglise","Époque 12","L'Église","an 33 →","L'Esprit descend à la Pentecôte ; le témoignage part de Jérusalem jusqu'aux extrémités de la terre. Les lettres, l'Apocalypse — et le retour du Christ attendu.","Pierre, Étienne, Paul, Jean"]],
+ filterAll:"Toutes les époques",
  placeholder:"— Touchez un prophète sur la frise pour lire son message —",
  axislabels:[["-1500","−1500"],["-1000","−1000"],["-587","−587 (exil)"],["-500","−500"],["0","An 0"]],
  prophets:[
-  {k:"moise",n:"Moïse",d:"~1300 av. J.-C.",phase:"loi",x:px(-1300),
+  {k:"moise",n:"Moïse",d:"~1300 av. J.-C.",phase:"exode",x:px(-1300),
    ctx:"À la sortie d'Égypte, le fondateur du peuple, celui qui reçoit la Loi et bâtit le premier culte sacrificiel.",
    msg:"Un prophète « comme moi » viendra, que Dieu suscitera du milieu du peuple : c'est lui qu'il faudra écouter.",
    ref:"Deutéronome 18:15",v:"L'Éternel suscitera un prophète comme moi : vous l'écouterez.",
@@ -203,27 +204,27 @@ fr:{dir:"ltr",albl:"Approfondir",liens:["Isaïe 53 — écrit sept siècles avan
    msg:"Ton trône sera affermi pour toujours : un descendant de David régnera sans fin.",
    ref:"2 Samuel 7:13",v:"J'affermirai pour toujours le trône de son royaume.",
    christ:"L'ange à Marie : « le Seigneur lui donnera le trône de David… son règne n'aura point de fin » (Luc 1:32-33)."},
-  {k:"joel",n:"Joël",d:"~830 av. J.-C. (débattu)",phase:"exil",x:px(-830),
+  {k:"joel",n:"Joël",d:"~830 av. J.-C. (débattu)",phase:"division",x:px(-830),
    ctx:"Prophète de Juda, difficile à dater ; il annonce un jour où l'Esprit de Dieu ne sera plus réservé à quelques-uns.",
    msg:"Dieu répandra son Esprit sur toute chair — fils, filles, serviteurs : tous prophétiseront.",
    ref:"Joël 3:1",v:"Je répandrai mon Esprit sur toute chair.",
    christ:"Pierre, au matin de la Pentecôte : « c'est ici ce qui a été dit par le prophète Joël » (Actes 2:16-17)."},
-  {k:"amos",n:"Amos",d:"~760 av. J.-C.",phase:"exil",x:px(-760),
+  {k:"amos",n:"Amos",d:"~760 av. J.-C.",phase:"division",x:px(-760),
    ctx:"Un berger de Juda envoyé au riche royaume du Nord, qui dénonce l'injustice sociale au nom de Dieu.",
    msg:"Dieu rejette le culte sans justice ; mais il relèvera un jour « la hutte tombée de David ».",
    ref:"Amos 9:11",v:"En ce jour, je relèverai de sa chute la maison de David.",
    christ:"Cité au concile de Jérusalem pour dire que les nations sont incluses dans le royaume relevé (Actes 15:16)."},
-  {k:"osee",n:"Osée",d:"~750 av. J.-C.",phase:"exil",x:px(-750),
+  {k:"osee",n:"Osée",d:"~750 av. J.-C.",phase:"division",x:px(-750),
    ctx:"Prophète du royaume du Nord, dont le mariage douloureux devient l'image de l'amour fidèle de Dieu pour un peuple infidèle.",
    msg:"Malgré la trahison, Dieu rappellera son fils, et fera de « pas-mon-peuple » son peuple.",
    ref:"Osée 11:1",v:"Quand Israël était jeune, je l'aimais, et j'appelai mon fils hors d'Égypte.",
    christ:"Matthieu y lit le retour d'Égypte de l'enfant Jésus (Matthieu 2:15)."},
-  {k:"esaie",n:"Ésaïe",d:"~700 av. J.-C.",phase:"exil",x:px(-700),
+  {k:"esaie",n:"Ésaïe",d:"~700 av. J.-C.",phase:"division",x:px(-700),
    ctx:"Le plus cité des prophètes, actif à Jérusalem sous la menace assyrienne. Vision d'un Messie, d'un Serviteur souffrant, d'un salut pour toutes les nations.",
    msg:"Une vierge enfantera l'Emmanuel ; un serviteur portera, en silence, le péché de beaucoup.",
    ref:"Ésaïe 53:5",v:"Il était blessé pour nos péchés… par ses meurtrissures nous sommes guéris.",
    christ:"Le chapitre le plus cité par le Nouveau Testament ; copie complète retrouvée à Qumrân, avant J.-C."},
-  {k:"michee",n:"Michée",d:"~700 av. J.-C.",phase:"exil",x:px(-701),
+  {k:"michee",n:"Michée",d:"~700 av. J.-C.",phase:"division",x:px(-701),
    ctx:"Contemporain d'Ésaïe, prophète des campagnes, qui nomme le village d'où sortira le dominateur d'Israël.",
    msg:"De Bethléhem, petite entre les villes, sortira celui dont l'origine remonte aux temps anciens.",
    ref:"Michée 5:1",v:"Et toi, Bethléhem… de toi sortira celui qui dominera sur Israël.",
@@ -275,20 +276,26 @@ fr:{dir:"ltr",albl:"Approfondir",liens:["Isaïe 53 — écrit sept siècles avan
 en:{dir:"ltr",albl:"Go deeper",liens:["Isaiah 53 — written seven centuries before","The Transfiguration — Moses, Elijah, and the Son"],brand:"THE LAMB OF GOD",
  eyebrow:"The Old Testament explained · the timeline of the watchmen",
  title:"For a thousand years, watchmen described <em>a man they would never see</em>",
- lede:"To understand the Old Testament is first to understand its thread. Six great phases, a handful of prophets — and one single direction: Christ. Touch a phase, then a prophet.",
- phtitle:"The six ages of the Old Testament — at a glance",
+ lede:"To understand the Old Testament is first to understand its thread. Twelve epochs, a handful of prophets — and one single direction: Christ. Touch an epoch, then a prophet.",
+ phtitle:"The twelve epochs of the story — at a glance",
  phases:[
-  ["loi","Phase 1","The Law","~1500–1200 BC","God brings a people out of Egypt, gives the Law and the Covenant at Sinai. Israel is born.","Moses, Joshua"],
-  ["royaume","Phase 2","The Kingdom","~1000–930 BC","David unites the kingdom, Solomon builds the Temple. The peak — and the promise of an eternal throne.","David, Solomon, Nathan"],
-  ["exil","Phase 3","Division & exile","~930–587 BC","The kingdom splits and collapses. The prophets warn, then Babylon destroys the Temple (587).","Isaiah, Jeremiah, the great prophets"],
-  ["retour","Phase 4","The return","~538–430 BC","Persia sends the exiles home. The Temple is rebuilt, more modest. They await “something more”.","Haggai, Zechariah, Malachi"],
-  ["attente","Phase 5","The waiting","~430–5 BC","Four centuries with no prophet recognised by every tradition — but not without writings: Maccabees, Sirach, Wisdom, received differently across the Churches. Greek then Roman empires. Expectation of the Messiah rises.","the Maccabees, the sages"],
-  ["christ","Phase 6","The fulfilment","~5 BC–AD 30","John the Baptist breaks the silence: “Behold the Lamb”. All that was announced takes a face.","John the Baptist, the Christ"]],
- filterAll:"All phases",
+  ["origines","Epoch 1","Early World","Creation → c. 2200 BC","Creation, the fall, and the promise made on the very day of the fault; the flood, Babel. Origins told, not dated.","Adam, Abel, Noah"],
+  ["patriarches","Epoch 2","The Patriarchs","c. 2200–1800 BC","God chooses a family: Abraham, Isaac, Jacob, Joseph. On Mount Moriah, the question of the lamb is asked for the first time.","Abraham, Isaac, Jacob, Joseph"],
+  ["exode","Epoch 3","Egypt and Exodus","c. 1800–1446 BC","Israel enslaved in Egypt; the ten plagues; the first Passover and the going out; the covenant at Sinai. A people is born.","Moses, Aaron"],
+  ["desert","Epoch 4","Desert Wanderings","1446–1406 BC","Forty years in the desert: the manna, the twelve spies, the bronze serpent, the covenant renewed in Moab.","Moses, Joshua"],
+  ["juges","Epoch 5","Conquest and Judges","1406–1050 BC","The Jordan, Jericho, the dividing of the land; then the cycle of the judges, from Othniel to Samson. Israel asks for a king.","Joshua, Deborah, Gideon, Samson, Ruth, Samuel"],
+  ["royaume","Epoch 6","Royal Kingdom","1050–930 BC","Saul, then David reigns in Jerusalem; the ark goes up; God makes covenant with David. Solomon builds the Temple — and the promise of an eternal throne.","Saul, David, Solomon, Nathan"],
+  ["division","Epoch 7","Divided Kingdom","930–722 BC","The kingdom splits: Israel in the north, Judah in the south. Elijah, Elisha, Amos, Hosea, Isaiah, Micah warn. Samaria falls to Assyria.","Elijah, Elisha, Isaiah, Amos, Hosea, Micah"],
+  ["exil","Epoch 8","Exile","722–538 BC","Judah goes into exile in three deportations (605, 597, 587); Babylon destroys the Temple. Jeremiah, Ezekiel, Daniel speak from captivity.","Jeremiah, Ezekiel, Daniel"],
+  ["retour","Epoch 9","Return","538–167 BC","Persia sends the exiles home; the Temple is rebuilt, more modest; Ezra teaches, Nehemiah raises the walls. They await “something more”.","Zerubbabel, Ezra, Nehemiah, Haggai, Zechariah, Malachi"],
+  ["maccabees","Epoch 10","Maccabean Revolt","167 BC → AD 1","Antiochus desecrates the Temple; the Maccabees retake and purify it (Hanukkah, 164). No prophet recognised by every tradition, but writings — Maccabees, Sirach, Wisdom — received differently across the Churches. Rome arrives.","Judas Maccabeus, the Hasmoneans, Herod"],
+  ["christ","Epoch 11","Messianic Fulfillment","AD 1–33","John the Baptist breaks the silence: “Behold the Lamb”. Baptism, Transfiguration, Last Supper, cross, resurrection. All that was announced takes a face.","John the Baptist, the Christ"],
+  ["eglise","Epoch 12","The Church","AD 33 →","The Spirit comes down at Pentecost; the witness goes out from Jerusalem to the ends of the earth. The letters, Revelation — and the awaited return of Christ.","Peter, Stephen, Paul, John"]],
+ filterAll:"All epochs",
  placeholder:"— Touch a prophet on the timeline to read his message —",
  axislabels:[["-1500","−1500"],["-1000","−1000"],["-587","−587 (exile)"],["-500","−500"],["0","Year 0"]],
  prophets:[
-  {k:"moise",n:"Moses",d:"~1300 BC",phase:"loi",x:px(-1300),
+  {k:"moise",n:"Moses",d:"~1300 BC",phase:"exode",x:px(-1300),
    ctx:"At the exodus, the founder of the people, who receives the Law and builds the first sacrificial worship.",
    msg:"A prophet “like me” will come, whom God will raise up from among the people: him you shall hear.",
    ref:"Deuteronomy 18:15",v:"The LORD will raise up a prophet like me: you shall listen to him.",
@@ -298,27 +305,27 @@ en:{dir:"ltr",albl:"Go deeper",liens:["Isaiah 53 — written seven centuries bef
    msg:"Your throne will be established forever: a descendant of David will reign without end.",
    ref:"2 Samuel 7:13",v:"I will establish the throne of his kingdom forever.",
    christ:"The angel to Mary: “the Lord will give him the throne of David… his reign will have no end” (Luke 1:32-33)."},
-  {k:"joel",n:"Joel",d:"~830 BC (debated)",phase:"exil",x:px(-830),
+  {k:"joel",n:"Joel",d:"~830 BC (debated)",phase:"division",x:px(-830),
    ctx:"A prophet of Judah, hard to date; he announces a day when God's Spirit will no longer be reserved for a few.",
    msg:"God will pour out his Spirit on all flesh — sons, daughters, servants: all will prophesy.",
    ref:"Joel 2:28",v:"I will pour out my Spirit on all flesh.",
    christ:"Peter, on the morning of Pentecost: “this is what was spoken through the prophet Joel” (Acts 2:16-17)."},
-  {k:"amos",n:"Amos",d:"~760 BC",phase:"exil",x:px(-760),
+  {k:"amos",n:"Amos",d:"~760 BC",phase:"division",x:px(-760),
    ctx:"A shepherd of Judah sent to the wealthy northern kingdom, denouncing social injustice in God's name.",
    msg:"God rejects worship without justice; but one day he will raise up “the fallen booth of David”.",
    ref:"Amos 9:11",v:"In that day I will raise up the tent of David that is fallen.",
    christ:"Cited at the Council of Jerusalem to show the nations are included in the raised kingdom (Acts 15:16)."},
-  {k:"osee",n:"Hosea",d:"~750 BC",phase:"exil",x:px(-750),
+  {k:"osee",n:"Hosea",d:"~750 BC",phase:"division",x:px(-750),
    ctx:"A prophet of the northern kingdom, whose painful marriage becomes the image of God's faithful love for an unfaithful people.",
    msg:"Despite betrayal, God will call back his son, and make “not-my-people” his people.",
    ref:"Hosea 11:1",v:"When Israel was a child, I loved him, and called my son out of Egypt.",
    christ:"Matthew reads in it the return of the child Jesus from Egypt (Matthew 2:15)."},
-  {k:"esaie",n:"Isaiah",d:"~700 BC",phase:"exil",x:px(-700),
+  {k:"esaie",n:"Isaiah",d:"~700 BC",phase:"division",x:px(-700),
    ctx:"The most quoted of the prophets, active in Jerusalem under the Assyrian threat. Vision of a Messiah, a suffering Servant, salvation for all nations.",
    msg:"A virgin will bear Immanuel; a servant will bear, in silence, the sin of many.",
    ref:"Isaiah 53:5",v:"He was wounded for our transgressions… by his wounds we are healed.",
    christ:"The chapter most quoted by the New Testament; a complete copy found at Qumran, before Christ."},
-  {k:"michee",n:"Micah",d:"~700 BC",phase:"exil",x:px(-701),
+  {k:"michee",n:"Micah",d:"~700 BC",phase:"division",x:px(-701),
    ctx:"A contemporary of Isaiah, a prophet of the countryside, who names the village from which the ruler of Israel will come.",
    msg:"From Bethlehem, little among the towns, will come one whose origin is from ancient days.",
    ref:"Micah 5:2",v:"You, Bethlehem… out of you will come forth one who will rule Israel.",
@@ -370,20 +377,26 @@ en:{dir:"ltr",albl:"Go deeper",liens:["Isaiah 53 — written seven centuries bef
 ar:{dir:"rtl",albl:"تعمَّق أكثر",liens:["إشعياء ٥٣ — كُتب قبل سبعة قرون","التجلّي — موسى، وإيليا، والابن"],brand:"حَمَلُ الله",
  eyebrow:"العهد القديم مشروحًا · الخط الزمني للحرّاس",
  title:"ألفَ سنة، وصف الحرّاسُ <em>رجلًا لن يروه أبدًا</em>",
- lede:"أن تفهم العهدَ القديم يعني أولًا أن تفهم خيطَه. ست مراحل كبرى، وحفنةٌ من الأنبياء — واتجاهٌ واحد: المسيح. المس مرحلةً، ثم نبيًّا.",
- phtitle:"العصور الستة للعهد القديم — في نظرة",
+ lede:"أن تفهم العهدَ القديم يعني أولًا أن تفهم خيطَه. اثنا عشر عصرًا، وحفنةٌ من الأنبياء — واتجاهٌ واحد: المسيح. المس عصرًا، ثم نبيًّا.",
+ phtitle:"العصور الاثنا عشر للتاريخ — في نظرة",
  phases:[
-  ["loi","المرحلة ١","الناموس","نحو ١٥٠٠–١٢٠٠ ق.م","يُخرج اللهُ شعبًا من مصر، ويعطيه الناموسَ والعهدَ في سيناء. ميلادُ إسرائيل.","موسى، يشوع"],
-  ["royaume","المرحلة ٢","المملكة","نحو ١٠٠٠–٩٣٠ ق.م","داود يوحّد المملكة، وسليمان يبني الهيكل. الذروة — ووعدُ عرشٍ أبدي.","داود، سليمان، ناثان"],
-  ["exil","المرحلة ٣","الانقسام والسبي","نحو ٩٣٠–٥٨٧ ق.م","تنقسم المملكةُ وتنهار. ينذر الأنبياء، ثم تدمّر بابلُ الهيكلَ (٥٨٧).","إشعياء، إرميا، كبار الأنبياء"],
-  ["retour","المرحلة ٤","العودة","نحو ٥٣٨–٤٣٠ ق.م","تُعيد فارسُ المسبيّين. يُبنى الهيكلُ ثانيةً، أكثرَ تواضعًا. ويُنتظَر «شيءٌ أعظم».","حجي، زكريا، ملاخي"],
-  ["attente","المرحلة ٥","الانتظار","نحو ٤٣٠–٥ ق.م","أربعةُ قرون بلا نبيٍّ تعترف به كلُّ التقاليد — لكن ليست بلا كتابات: المكابيّون، وابن سيراخ، والحكمة، تتلقّاها الكنائسُ على نحوٍ مختلف. إمبراطوريتان يونانية ثم رومانية. ويتصاعد انتظارُ المسيّا.","المكابيّون، الحكماء"],
-  ["christ","المرحلة ٦","الإتمام","نحو ٥ ق.م–٣٠ م","يوحنا المعمدان يكسر الصمت: «هوذا الحمل». وكلُّ ما أُعلن يأخذ وجهًا.","يوحنا المعمدان، المسيح"]],
- filterAll:"كل المراحل",
+  ["origines","العصر ١","عالم البدايات","الخلق ← نحو ٢٢٠٠ ق.م","الخلقُ، والسقوط، والوعدُ المُعطى في يوم الخطيئة نفسه؛ والطوفان، وبابل. بداياتٌ مرويّة لا مؤرَّخة.","آدم، هابيل، نوح"],
+  ["patriarches","العصر ٢","الآباء","نحو ٢٢٠٠–١٨٠٠ ق.م","يختار اللهُ عائلة: إبراهيم، وإسحاق، ويعقوب، ويوسف. وعلى جبل المريّا يُطرح سؤالُ الحمل لأولِ مرة.","إبراهيم، إسحاق، يعقوب، يوسف"],
+  ["exode","العصر ٣","مصر والخروج","نحو ١٨٠٠–١٤٤٦ ق.م","إسرائيلُ مستعبَدٌ في مصر؛ والضربات العشر؛ والفصحُ الأول والخروج؛ والعهدُ في سيناء. ميلادُ شعب.","موسى، هارون"],
+  ["desert","العصر ٤","البرية","١٤٤٦–١٤٠٦ ق.م","أربعون سنةً في البرية: المنّ، والجواسيس الاثنا عشر، والحيّة النحاسية، والعهدُ المجدَّد في موآب.","موسى، يشوع"],
+  ["juges","العصر ٥","الفتح والقضاة","١٤٠٦–١٠٥٠ ق.م","الأردن، وأريحا، وقسمةُ الأرض؛ ثم دورةُ القضاة من عثنيئيل إلى شمشون. ويطلب إسرائيلُ ملكًا.","يشوع، دبورة، جدعون، شمشون، راعوث، صموئيل"],
+  ["royaume","العصر ٦","المملكة","١٠٥٠–٩٣٠ ق.م","شاول، ثم داود يملك في أورشليم؛ والتابوتُ يصعد إليها؛ ويقطع اللهُ عهدًا مع داود. وسليمان يبني الهيكل — ووعدُ عرشٍ أبدي.","شاول، داود، سليمان، ناثان"],
+  ["division","العصر ٧","المملكة المنقسمة","٩٣٠–٧٢٢ ق.م","تنقسم المملكة: إسرائيل في الشمال، ويهوذا في الجنوب. إيليا، وأليشع، وعاموس، وهوشع، وإشعياء، وميخا ينذرون. وتسقط السامرةُ أمام أشور.","إيليا، أليشع، إشعياء، عاموس، هوشع، ميخا"],
+  ["exil","العصر ٨","السبي","٧٢٢–٥٣٨ ق.م","يذهب يهوذا إلى السبي في ثلاثة سبايا (٦٠٥، ٥٩٧، ٥٨٧)؛ وتدمّر بابلُ الهيكل. إرميا، وحزقيال، ودانيال يتكلمون من الأسر.","إرميا، حزقيال، دانيال"],
+  ["retour","العصر ٩","العودة","٥٣٨–١٦٧ ق.م","تُعيد فارسُ المسبيّين؛ ويُبنى الهيكلُ ثانيةً، أكثرَ تواضعًا؛ عزرا يعلّم، ونحميا يرفع الأسوار. ويُنتظَر «شيءٌ أعظم».","زربابل، عزرا، نحميا، حجي، زكريا، ملاخي"],
+  ["maccabees","العصر ١٠","ثورة المكابيين","١٦٧ ق.م ← سنة ١","يدنّس أنطيوخس الهيكل؛ ويسترده المكابيون ويطهّرونه (عيد التجديد، ١٦٤). لا نبيَّ تعترف به كلُّ التقاليد، لكن كتاباتٍ — المكابيون، وابن سيراخ، والحكمة — تتلقّاها الكنائسُ على نحوٍ مختلف. وتصل روما.","يهوذا المكابي، الحشمونيون، هيرودس"],
+  ["christ","العصر ١١","الإتمام المسيحاني","سنة ١–٣٣","يوحنا المعمدان يكسر الصمت: «هوذا الحمل». المعمودية، والتجلي، والعشاء الأخير، والصليب، والقيامة. وكلُّ ما أُعلن يأخذ وجهًا.","يوحنا المعمدان، المسيح"],
+  ["eglise","العصر ١٢","الكنيسة","سنة ٣٣ ←","ينزل الروحُ في العنصرة؛ وتنطلق الشهادةُ من أورشليم إلى أقاصي الأرض. الرسائل، والرؤيا — وعودةُ المسيح المنتظَرة.","بطرس، استفانوس، بولس، يوحنا"]],
+ filterAll:"كل العصور",
  placeholder:"— المس نبيًّا على الخط الزمني لتقرأ رسالته —",
  axislabels:[["-1500","−١٥٠٠"],["-1000","−١٠٠٠"],["-587","−٥٨٧ (السبي)"],["-500","−٥٠٠"],["0","سنة ٠"]],
  prophets:[
-  {k:"moise",n:"موسى",d:"نحو ١٣٠٠ ق.م",phase:"loi",x:px(-1300),
+  {k:"moise",n:"موسى",d:"نحو ١٣٠٠ ق.م",phase:"exode",x:px(-1300),
    ctx:"عند الخروج من مصر، مؤسّسُ الشعب، الذي يتلقى الناموسَ ويقيم أولَ عبادةٍ ذبائحية.",
    msg:"سيأتي نبيٌّ «مثلي» يقيمه اللهُ من وسط الشعب: له تسمعون.",
    ref:"تثنية ١٨: ١٥",v:"يُقيمُ لكَ الربُّ نبيًّا مثلي، له تسمعون.",
@@ -393,27 +406,27 @@ ar:{dir:"rtl",albl:"تعمَّق أكثر",liens:["إشعياء ٥٣ — كُت�
    msg:"سيُثبَّت عرشُك إلى الأبد: نسلٌ لداود يملك بلا نهاية.",
    ref:"٢ صموئيل ٧: ١٣",v:"وأُثبِّتُ كرسيَّ مملكته إلى الأبد.",
    christ:"الملاكُ لمريم: «يعطيه الربُّ كرسيَّ داود… ولا يكون لملكه نهاية» (لوقا ١: ٣٢-٣٣)."},
-  {k:"joel",n:"يوئيل",d:"نحو ٨٣٠ ق.م (مختلَف فيه)",phase:"exil",x:px(-830),
+  {k:"joel",n:"يوئيل",d:"نحو ٨٣٠ ق.م (مختلَف فيه)",phase:"division",x:px(-830),
    ctx:"نبيٌّ ليهوذا، يصعب تأريخه؛ يعلن يومًا لا يعود فيه روحُ الله محصورًا في القلّة.",
    msg:"سيسكب اللهُ روحه على كل بشر — بنين وبنات وعبيد: الكلُّ يتنبأون.",
    ref:"يوئيل ٢: ٢٨",v:"أسكبُ روحي على كل بشر.",
    christ:"بطرس صباح الخمسين: «هذا ما قيل بالنبي يوئيل» (أعمال ٢: ١٦-١٧)."},
-  {k:"amos",n:"عاموس",d:"نحو ٧٦٠ ق.م",phase:"exil",x:px(-760),
+  {k:"amos",n:"عاموس",d:"نحو ٧٦٠ ق.م",phase:"division",x:px(-760),
    ctx:"راعٍ من يهوذا مُرسَلٌ إلى مملكة الشمال الغنية، يندّد بالظلم الاجتماعي باسم الله.",
    msg:"يرفض اللهُ عبادةً بلا عدل؛ لكنه سيقيم يومًا «مظلّةَ داود الساقطة».",
    ref:"عاموس ٩: ١١",v:"في ذلك اليوم أقيم مظلّةَ داود الساقطة.",
    christ:"يُقتبَس في مجمع أورشليم ليقول إن الأمم مشمولةٌ في المملكة المُقامة (أعمال ١٥: ١٦)."},
-  {k:"osee",n:"هوشع",d:"نحو ٧٥٠ ق.م",phase:"exil",x:px(-750),
+  {k:"osee",n:"هوشع",d:"نحو ٧٥٠ ق.م",phase:"division",x:px(-750),
    ctx:"نبيُّ مملكة الشمال، يصير زواجُه الأليم صورةَ محبةِ الله الأمينة لشعبٍ خائن.",
    msg:"رغم الخيانة، سيدعو اللهُ ابنه، ويجعل «ليس-شعبي» شعبَه.",
    ref:"هوشع ١١: ١",v:"لما كان إسرائيلُ غلامًا أحببتُه، ومن مصرَ دعوتُ ابني.",
    christ:"يقرأ فيه متى عودةَ الطفل يسوع من مصر (متى ٢: ١٥)."},
-  {k:"esaie",n:"إشعياء",d:"نحو ٧٠٠ ق.م",phase:"exil",x:px(-700),
+  {k:"esaie",n:"إشعياء",d:"نحو ٧٠٠ ق.م",phase:"division",x:px(-700),
    ctx:"أكثرُ الأنبياء اقتباسًا، عملَ في أورشليم تحت التهديد الأشوري. رؤيا مسيّا، وعبدٍ متألم، وخلاصٍ لكل الأمم.",
    msg:"عذراءُ تلد عمانوئيل؛ وعبدٌ يحمل، في صمت، خطيةَ كثيرين.",
    ref:"إشعياء ٥٣: ٥",v:"وهو مجروحٌ لأجل معاصينا… وبحُبُره شُفينا.",
    christ:"الأصحاحُ الأكثرُ اقتباسًا في العهد الجديد؛ نسخةٌ كاملة وُجدت في قمران، قبل الميلاد."},
-  {k:"michee",n:"ميخا",d:"نحو ٧٠٠ ق.م",phase:"exil",x:px(-701),
+  {k:"michee",n:"ميخا",d:"نحو ٧٠٠ ق.م",phase:"division",x:px(-701),
    ctx:"معاصرُ إشعياء، نبيُّ الأرياف، يسمّي القريةَ التي منها يخرج متسلّطُ إسرائيل.",
    msg:"من بيت لحم، الصغيرة بين المدن، يخرج مَن مخارجُه منذ القديم.",
    ref:"ميخا ٥: ٢",v:"وأنتِ يا بيتَ لحمَ… منكِ يخرج لي مَن يكون متسلطًا على إسرائيل.",
@@ -467,8 +480,10 @@ const LIENS=["page-etape4-isaie-53.html","pilier-transfiguration.html"];
 // La remontée : une clé de periodes.yml par maillon, "fourche" pour l'embranchement
 // Matthieu/Luc entre Jésus et David. Alignée par position sur c.gen (les noms,
 // traduits). Mêmes teintes que partout : une seule carte du temps (D-015).
-const GENCOULEURS={origines:"#22a89a",patriarches:"#944887",exode:"#d66f6a",desert:"#8e5e01",juges:"#66a555",royaume:"#7a53a5",division:"#13a7a6",exil:"#1570a1",retour:"#a6931a",maccabees:"#a24d13",christ:"#bc871b",eglise:"#e9e3d3"};
-const GENCLES=["christ","fourche","royaume","juges","juges","juges","juges","exode","patriarches","patriarches","patriarches","patriarches","patriarches","patriarches","patriarches","origines","origines","origines","origines"];
+const EPOCOULEURS={origines:"#22a89a",patriarches:"#944887",exode:"#d66f6a",desert:"#8e5e01",juges:"#66a555",royaume:"#7a53a5",division:"#13a7a6",exil:"#1570a1",retour:"#a6931a",maccabees:"#a24d13",christ:"#bc871b",eglise:"#e9e3d3"};
+const GENCLES=["christ","fourche","royaume","juges","juges","juges","juges","exode",
+ "patriarches","patriarches","patriarches","patriarches","patriarches","patriarches","patriarches","patriarches",
+ "origines","origines","origines","origines"];
 function render(l){
   const c=T[l];
   document.documentElement.lang=l;document.documentElement.dir=c.dir;
@@ -480,7 +495,7 @@ function render(l){
   // phases
   const pf=document.getElementById('pflow');pf.innerHTML="";
   c.phases.forEach(p=>{
-    const d=document.createElement('div');d.className='phase';d.style.setProperty('--pc',PHASES[p[0]].c);
+    const d=document.createElement('div');d.className='phase';d.style.setProperty('--pc',EPOCOULEURS[p[0]]);
     d.innerHTML=`<div class="pnum">${p[1]}</div><h3>${p[2]}</h3><div class="pdate">${p[3]}</div><p>${p[4]}</p><span class="pwho">${p[5]}</span>`;
     d.addEventListener('click',()=>{setFilter(p[0]);});
     pf.appendChild(d);
@@ -491,12 +506,14 @@ function render(l){
   all.innerHTML=`${c.filterAll}`;all.addEventListener('click',()=>setFilter("__all"));fl.appendChild(all);
   c.phases.forEach(p=>{
     const b=document.createElement('button');b.className='fchip';b.dataset.k=p[0];b.setAttribute('aria-pressed','false');
-    b.style.setProperty('--c',PHASES[p[0]].c);
+    b.style.setProperty('--c',EPOCOULEURS[p[0]]);
     b.innerHTML=`<span class="d"></span>${p[2]}`;
     b.addEventListener('click',()=>setFilter(p[0]));fl.appendChild(b);
   });
   // axe : graduations
-  const ax=document.getElementById('axis');ax.querySelectorAll('.tick,.tlabel').forEach(e=>e.remove());
+  const ax=document.getElementById('axis');
+  // l'axe porte les couleurs des époques traversées, d'Égypte à l'accomplissement
+  ax.style.background='linear-gradient('+(l==='ar'?270:90)+'deg,'+Object.values(EPOCOULEURS).slice(2,11).join(',')+')';ax.querySelectorAll('.tick,.tlabel').forEach(e=>e.remove());
   c.axislabels.forEach(([y,lab])=>{
     const x=px(+y);
     const t=document.createElement('div');t.className='tick';t.style.left=x+"%";ax.appendChild(t);
@@ -517,7 +534,7 @@ function render(l){
   c.prophets.forEach(p=>{
     const node=document.createElement('div');node.className='pnode';node.dataset.k=p.k;node.dataset.phase=p.phase;
     node.style.left=p.x+"%";node.style.top=(laneOf[p.k]*laneH)+"px";
-    node.style.setProperty('--c',PHASES[p.phase].c);
+    node.style.setProperty('--c',EPOCOULEURS[p.phase]);
     node.innerHTML=`<div class="dot"></div><div class="pn">${p.n}</div><div class="pd">${p.d}</div>`;
     node.addEventListener('click',()=>select(p,l));
     rows.appendChild(node);
@@ -530,7 +547,7 @@ function render(l){
       const cle=GENCLES[i];
       const chip=cle==="fourche"
         ? `<span class="maillon fourche"><span class="mn">${g[0]}</span></span>`
-        : `<span class="maillon" style="--pc:${GENCOULEURS[cle]}"><span class="mn">${g[0]}</span>${g[1]?`<span class="mq">${g[1]}</span>`:""}</span>`;
+        : `<span class="maillon" style="--pc:${EPOCOULEURS[cle]}"><span class="mn">${g[0]}</span>${g[1]?`<span class="mq">${g[1]}</span>`:""}</span>`;
       return chip+(i<c.gen.length-1?`<span class="fleche">→</span>`:"");
     }).join("")}</div>
     <details class="gnuance"><summary><span class="gbadge">${c.genBadge}</span>${c.genWhy}</summary><p>${c.genNuance}</p></details>`;
@@ -550,7 +567,7 @@ function select(p,l){
   const c=T[l];
   document.querySelectorAll('.pnode .dot').forEach(d=>d.style.transform="");
   const panel=document.getElementById('panel');
-  const col=PHASES[p.phase].c;
+  const col=EPOCOULEURS[p.phase];
   panel.innerHTML=`<div class="card show" style="--pc:${col}">
     <span class="badge">${c.phases.find(ph=>ph[0]===p.phase)[2]}</span>
     <h2>${p.n}</h2>

@@ -332,6 +332,22 @@ boucle à l'exécution suivante. Le supprimer la relance.
   demeure posé, discret — l'invitation se voit encore. L'onde ne capte pas le toucher,
   et l'étiquette d'accessibilité dit « ouvre une constellation » dans les trois langues.
 
+## R-032 Une seule carte du temps — la frise rattrapée, et la copie rendue impossible
+- zone: verte
+- statut: fait
+- pourquoi: la migration aux douze époques (R-028) avait laissé la frise derrière — elle affichait encore six phases aux anciennes dates (« la division & l'exil ~930–587 » quand le site dit 930–722 puis 722–538), un maillon de la généalogie avait perdu son époque, et trois pages portaient une carte de couleurs recopiée que rien ne contrôlait
+- fait quand: aucune page ne porte plus une carte du temps qui lui soit propre, et ce qui est copié est généré
+- résultat: la frise montre les douze époques, **générées depuis periodes.yml** par
+  `outils/poser-situation.py` — titre, dates, texte, figures, numéro, dans les trois
+  langues ; ses filtres et ses prophètes suivent (Moïse à l'Égypte et Exode, Joël, Amos,
+  Osée, Ésaïe et Michée au Royaume divisé), et l'axe prend ses couleurs de la même
+  source au lieu de six variables figées. Les vingt maillons retrouvent leur époque —
+  Abraham était rangé aux origines, Adam n'en avait plus. Les trois cartes de couleurs
+  (`PCOULEURS`, `EPOCOULEURS`, `TCOULEURS`) sont désormais écrites par le générateur :
+  le banc les rejoue et refuse la moindre divergence. La mesure expose enfin les
+  quatorze prophètes (époque, date, place sur l'axe) et les vingt maillons aux
+  constellations — c'est la donnée dont vivront « Les veilleurs » et « La généalogie ».
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
