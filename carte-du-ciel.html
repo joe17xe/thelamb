@@ -43,6 +43,14 @@
   .legende span{display:inline-flex;align-items:center;gap:7px}
   .legende i{width:9px;height:9px;border-radius:50%;display:inline-block}
   .legende i.vide{background:none;border:1.5px solid var(--muted)}
+  .legende button{display:inline-flex;align-items:center;gap:7px;background:none;border:1px solid transparent;border-radius:999px;color:var(--muted);font:inherit;padding:3px 9px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+  .legende button:hover{color:var(--ink)}
+  .legende button[aria-pressed="true"]{color:var(--ink);border-color:color-mix(in srgb,var(--lc,var(--gold)) 60%,transparent);background:color-mix(in srgb,var(--lc,var(--gold)) 14%,transparent)}
+  .legende button[aria-pressed="true"] i{box-shadow:0 0 0 3px color-mix(in srgb,var(--lc,var(--gold)) 32%,transparent)}
+  .legende button.tout{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 45%,transparent)}
+  .noeud.efface{opacity:.07}
+  .noeud .nomdir{font-family:system-ui,sans-serif;font-size:10.5px;fill:var(--ink);opacity:.9;text-anchor:middle;paint-order:stroke;stroke:rgba(12,14,24,.8);stroke-width:3px;pointer-events:none}
+  html[dir="rtl"] .noeud .nomdir{font-family:'Amiri',serif;font-size:12px}
 
   .cielbox{max-width:900px;margin:6px auto 0;padding:0 8px}
   svg{width:100%;height:auto;display:block}
@@ -247,7 +255,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  diagramme:"Ouvrir dans le fil rouge →", vers:"→",
  arianeLbl:"Fil d'Ariane", arianeAgneau:"✦ L'Agneau", arianeCiel:"Le ciel",
  arianeSep:"›", horsCarte:"hors de la carte du temps", chap:"ch.",
- aConstellation:"ouvre une constellation", chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
+ aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintVeilleurs:"Quatorze veilleurs sur mille ans, chacun dans son époque — et tous tournés vers le même point. Touchez-en un.",
  hintGenealogie:"La chaîne remonte du Christ jusqu'à Adam, maillon par maillon. Touchez-en un : sa fiche s'ouvre.",
  hintEpoques:"Le chemin part du Christ et remonte le temps. Touchez une époque : sa fiche s'ouvre. Touchez un livre : la sienne.",
@@ -311,7 +319,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  diagramme:"Open in the red thread →", vers:"→",
  arianeLbl:"Breadcrumb", arianeAgneau:"✦ The Lamb", arianeCiel:"The sky",
  arianeSep:"›", horsCarte:"outside the map of time", chap:"ch.",
- aConstellation:"opens a constellation", chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
+ aConstellation:"opens a constellation", filtreTout:"✕ Show all", chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintVeilleurs:"Fourteen watchmen across a thousand years, each in his epoch — and all turned towards the same point. Touch one.",
  hintGenealogie:"The chain goes back from Christ to Adam, link by link. Touch one: its card opens.",
  hintEpoques:"The path starts from Christ and goes back in time. Touch an epoch: its card opens. Touch a book: its own.",
@@ -375,7 +383,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  diagramme:"افتح في الخيط الأحمر ←", vers:"←",
  arianeLbl:"مسار التنقّل", arianeAgneau:"✦ الحمل", arianeCiel:"السماء",
  arianeSep:"‹", horsCarte:"خارج خريطة الزمن", chap:"أص.",
- aConstellation:"تفتح كوكبة", chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
+ aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintVeilleurs:"أربعة عشر حارسًا على مدى ألف سنة، كلٌّ في عصره — وكلُّهم متّجهون إلى النقطة نفسها. المس واحدًا منهم.",
  hintGenealogie:"تصعد السلسلةُ من المسيح إلى آدم، حلقةً حلقة. المس حلقةً: تنفتح بطاقتها.",
  hintEpoques:"يبدأ الطريق من المسيح ويعود في الزمن. المس عصرًا: تنفتح بطاقته. المس سفرًا: بطاقته هو.",
@@ -425,6 +433,9 @@ ar:{dir:"rtl",brand:"حمل الله",
  foot:"العقد والخطوط تتبع navigation.yml: الخريطة مقيسة لا مرسومة.<br>سيجون ١٩١٠ · World English Bible · فانديك."}};
 
 let LANG="fr", SEL=null, SELL=null, SELC=null, SELE=null, SELP=null, SELG=null;
+// Le filtre : plusieurs catégories cumulables. Au-delà de ce seuil, les noms
+// restent au tableau — quarante étiquettes qui se chevauchent ne se lisent plus.
+const FILTRE=new Set(), SEUIL_NOMS=12;
 // l'adresse dit #livre (la salle s'appelle « Le livre », D-017) ; l'ancienne
 // #bibliotheque reste comprise pour ne casser aucun lien déjà partagé
 const normScene=h=>(h==='livre')?'bibliotheque':(VUES.includes(h)?h:'ciel');
@@ -436,12 +447,12 @@ function basculer(){
   document.body.classList.add('fondu');
   setTimeout(()=>{bati();document.body.classList.remove('fondu');},230);
 }
-function allerScene(sc){ if(sc===SCENE)return; SCENE=sc; fermer();
+function allerScene(sc){ if(sc===SCENE)return; SCENE=sc; FILTRE.clear(); fermer();
   if(sc==='ciel') history.pushState('', '', location.pathname);
   else location.hash=(sc==='bibliotheque')?'livre':sc;
   basculer(); }
 window.addEventListener('hashchange',()=>{ const sc=normScene(location.hash.slice(1));
-  if(sc!==SCENE){ SCENE=sc; fermer(); basculer(); } });
+  if(sc!==SCENE){ SCENE=sc; FILTRE.clear(); fermer(); basculer(); } });
 const S=(t)=>document.createElementNS("http://www.w3.org/2000/svg",t);
 // petites étoiles de fond, déterministes
 function alea(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
@@ -479,7 +490,7 @@ function bati(){
     etoiles.forEach(([l,x,y])=>{
       const a=document.createElementNS("http://www.w3.org/2000/svg","a");
       a.setAttribute('href','salle-bibliotheque.html');
-      a.setAttribute('class','noeud livre');a.dataset.livre=l[0];
+      a.setAttribute('class','noeud livre');a.dataset.livre=l[0];a.dataset.cat=(l[2]||['mut']).join(' ');
       const per=l[2]&&l[2][0];
       const col=per?CONSTEL.periodes[per].c:'#9a94a8';
       const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
@@ -497,6 +508,7 @@ function bati(){
         cc2.setAttribute('r','6.2');cc2.setAttribute('fill',col);a.appendChild(cc2);}
       const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r','14');
       cible.setAttribute('fill','transparent');a.appendChild(cible);
+      const nm=S('text');nm.setAttribute('class','nomdir');nm.setAttribute('x',x);nm.setAttribute('y',y+16);a.appendChild(nm);
       a.addEventListener('click',ev=>{ if(SELL!==l[0]){ev.preventDefault();choisirLivre(l[0]);} });
       svg.appendChild(a);});
     svg.querySelectorAll('.etqarc').forEach(t=>svg.appendChild(t));
@@ -516,7 +528,7 @@ function bati(){
       const co=CONSTEL.corr[n],th=CONSTEL.themes[co[0]];
       const a=document.createElementNS("http://www.w3.org/2000/svg","a");
       a.setAttribute('href','index.html#c='+(n+1));
-      a.setAttribute('class','noeud corr');a.dataset.corr=n;
+      a.setAttribute('class','noeud corr');a.dataset.corr=n;a.dataset.cat=co[0];
       const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
       hl.setAttribute('r','11');hl.setAttribute('fill','url(#g-t-'+co[0]+')');
       hl.setAttribute('opacity','.7');a.appendChild(hl);
@@ -524,6 +536,7 @@ function bati(){
       cc2.setAttribute('r','4.8');cc2.setAttribute('fill',th.hex);a.appendChild(cc2);
       const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r','13');
       cible.setAttribute('fill','transparent');a.appendChild(cible);
+      const nm=S('text');nm.setAttribute('class','nomdir');nm.setAttribute('x',x);nm.setAttribute('y',y+16);a.appendChild(nm);
       a.addEventListener('click',ev=>{ if(SELC!==n){ev.preventDefault();choisirCorr(n);} });
       svg.appendChild(a);});
     svg.querySelectorAll('.etq').forEach(t=>svg.appendChild(t));
@@ -541,7 +554,7 @@ function bati(){
     etoiles.forEach(([l,x,y,per,recit])=>{
       const a=document.createElementNS("http://www.w3.org/2000/svg","a");
       a.setAttribute('href','salle-bibliotheque.html');
-      a.setAttribute('class','noeud livre'+(recit?' recit':''));a.dataset.livre=l[0];a.dataset.per=per;
+      a.setAttribute('class','noeud livre'+(recit?' recit':''));a.dataset.livre=l[0];a.dataset.per=per;a.dataset.cat=per;
       const col=CONSTEL.periodes[per].c, rr=recit?6.6:4.6;
       const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);
       hl.setAttribute('r',recit?'16':'11');hl.setAttribute('fill','url(#g-p-'+per+')');
@@ -550,6 +563,7 @@ function bati(){
       cc2.setAttribute('r',rr);cc2.setAttribute('fill',col);a.appendChild(cc2);
       const cible=S('circle');cible.setAttribute('cx',x);cible.setAttribute('cy',y);cible.setAttribute('r','13');
       cible.setAttribute('fill','transparent');a.appendChild(cible);
+      const nm=S('text');nm.setAttribute('class','nomdir');nm.setAttribute('x',x);nm.setAttribute('y',y+16);a.appendChild(nm);
       a.addEventListener('click',ev=>{ if(SELL!==l[0]){ev.preventDefault();choisirLivre(l[0]);} });
       svg.appendChild(a);});
     svg.querySelectorAll('.etqarc').forEach(t=>svg.appendChild(t));
@@ -579,7 +593,7 @@ function bati(){
   // les nœuds
   NOEUDS.forEach(nd=>{
     const a=document.createElementNS("http://www.w3.org/2000/svg","a");
-    a.setAttribute('href',nd.href);a.setAttribute('class','noeud'+(nd.deg<3?' menu':''));a.dataset.k=nd.k;
+    a.setAttribute('href',nd.href);a.setAttribute('class','noeud'+(nd.deg<3?' menu':''));a.dataset.k=nd.k;a.dataset.cat=nd.fam;
     const [x,y]=nd.p;
     const base=nd.fam==='fil'?7.5:nd.fam==='salle'?7:nd.fam==='pilier'?6:6;
     const rr=Math.min(base+nd.deg*1.1, base+9);
@@ -803,7 +817,7 @@ function choisirEpoque(k){
 function etoileNommee(svg,x,y,col,nom,cls,per){
   const a=document.createElementNS("http://www.w3.org/2000/svg","a");
   a.setAttribute('href','frise-prophetes.html');a.setAttribute('class','noeud pet '+cls);
-  if(per)a.dataset.per=per;
+  if(per){a.dataset.per=per;a.dataset.cat=per;}
   const hl=S('circle');hl.setAttribute('cx',x);hl.setAttribute('cy',y);hl.setAttribute('r','14');
   hl.setAttribute('fill','url(#g-p-'+(per||'christ')+')');hl.setAttribute('opacity',per?'.7':'.25');a.appendChild(hl);
   const cc=S('circle');cc.setAttribute('class','c');cc.setAttribute('cx',x);cc.setAttribute('cy',y);cc.setAttribute('r','5.6');
@@ -913,12 +927,35 @@ function choisir(k){
 // tous les points redeviennent visibles — et le ciel entier s'éclaire un
 // instant, sauf si le lecteur préfère un mouvement réduit.
 function illuminer(){
-  fermer();
+  viderFiltre();fermer();
   if(!matchMedia('(prefers-reduced-motion: no-preference)').matches)return;
   const svg=document.getElementById('ciel');
   svg.classList.remove('lueur');
   requestAnimationFrame(()=>requestAnimationFrame(()=>svg.classList.add('lueur')));
 }
+function nomEtoile(n,li){
+  if(n.dataset.livre){const l=CONSTEL.livres.find(x=>x[0]===n.dataset.livre);return l?l[3][li]:'';}
+  if(n.dataset.corr!==undefined){return CONSTEL.corr[+n.dataset.corr][li+1][0];}
+  return '';
+}
+function appliquerFiltre(){
+  const actif=FILTRE.size>0, li={fr:0,en:1,ar:2}[LANG];
+  const retenues=[];
+  document.querySelectorAll('.noeud').forEach(n=>{
+    const cat=(n.dataset.cat||'').split(' ').filter(Boolean);
+    const garde=!actif||cat.some(k=>FILTRE.has(k));
+    n.classList.toggle('efface',actif&&!garde);
+    if(actif&&garde)retenues.push(n);});
+  const nommer=actif&&retenues.length<=SEUIL_NOMS;
+  document.querySelectorAll('.noeud .nomdir').forEach(x=>{x.textContent='';});
+  if(nommer)retenues.forEach(n=>{const nm=n.querySelector('.nomdir');
+    if(nm)nm.textContent=nomEtoile(n,li);});
+  document.querySelectorAll('.legende button[data-k]').forEach(b=>
+    b.setAttribute('aria-pressed',FILTRE.has(b.dataset.k)?'true':'false'));
+  const tout=document.querySelector('.legende button.tout');if(tout)tout.hidden=!actif;
+}
+function basculerFiltre(k){ if(FILTRE.has(k))FILTRE.delete(k);else FILTRE.add(k); appliquerFiltre(); }
+function viderFiltre(){ if(FILTRE.size){FILTRE.clear();appliquerFiltre();} }
 function fermer(){
   SEL=null;SELL=null;SELC=null;SELE=null;SELP=null;SELG=null;
   document.querySelectorAll('.secteur').forEach(s=>s.classList.remove('sel'));
@@ -939,21 +976,26 @@ function render(l){
   document.getElementById('hint').textContent=
     {ciel:c.hint,bibliotheque:c.hintBiblio,epoques:c.hintEpoques,correspondances:c.hintCorr,
      veilleurs:c.hintVeilleurs,genealogie:c.hintGenealogie}[SCENE];
-  const lg=document.getElementById('legende');
-  if(SCENE!=='ciel'&&SCENE!=='correspondances'){
-    lg.innerHTML=Object.values(CONSTEL.periodes).map(p=>
-      `<span><i style="background:${p.c}"></i>${p[LANG]}</span>`).join('')+
-      (CONSTEL.livres.some(l=>!l[2])?`<span><i class="vide"></i>${c.horsCarte}</span>`:'');
-  }else if(SCENE==='correspondances'){
-    lg.innerHTML=Object.values(CONSTEL.themes).map(t=>
-      `<span><i style="background:${t.hex}"></i>${t.nom[LANG]}</span>`).join('');
-  }else{
-    lg.innerHTML=
-      `<span><i style="background:${FAM.fil}"></i>${c.fams.fil}</span>`+
-      `<span><i style="background:${FAM.salle}"></i>${c.fams.salle}</span>`+
-      `<span><i style="background:${FAM.pilier}"></i>${c.fams.pilier}</span>`+
-      `<span><i class="vide"></i>${c.fams.entree}</span>`;
+  // La légende filtre : toucher une entrée n'allume qu'elle, plusieurs se cumulent
+  const lg=document.getElementById('legende');lg.innerHTML='';
+  let entrees;
+  if(SCENE==='correspondances')
+    entrees=Object.entries(CONSTEL.themes).map(([k,th])=>[k,th.hex,th.nom[LANG]]);
+  else if(SCENE==='ciel')
+    entrees=['fil','salle','pilier','entree'].map(k=>[k,k==='entree'?null:FAM[k],c.fams[k]]);
+  else{
+    entrees=Object.entries(CONSTEL.periodes).map(([k,p])=>[k,p.c,p[LANG]]);
+    if(SCENE==='bibliotheque'&&CONSTEL.livres.some(l=>!l[2]))entrees.push(['mut',null,c.horsCarte]);
   }
+  entrees.forEach(([k,coul,nom])=>{
+    const b=document.createElement('button');b.type='button';b.dataset.k=k;
+    b.setAttribute('aria-pressed','false');
+    if(coul)b.style.setProperty('--lc',coul);
+    b.innerHTML=`<i class="${coul?'':'vide'}"${coul?` style="background:${coul}"`:''}></i>`;
+    b.appendChild(document.createTextNode(nom));
+    b.addEventListener('click',()=>basculerFiltre(k));lg.appendChild(b);});
+  const bt=document.createElement('button');bt.type='button';bt.className='tout';bt.hidden=true;
+  bt.textContent=c.filtreTout;bt.addEventListener('click',viderFiltre);lg.appendChild(bt);
   document.getElementById('ariane').setAttribute('aria-label',c.arianeLbl);
   document.getElementById('arAgneau').textContent=c.arianeAgneau;
   document.getElementById('arSep1').textContent=c.arianeSep;
@@ -999,6 +1041,7 @@ function render(l){
       +(PROFONDES[n.dataset.k]?' — '+c.aConstellation:''));});
   document.getElementById('foot').innerHTML=c.foot;
   document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===LANG?'true':'false'));
+  appliquerFiltre();
   if(SCENE==='ciel'&&SEL)choisir(SEL);
   if(SCENE==='bibliotheque'&&SELL)choisirLivre(SELL);
   if(SCENE==='correspondances'&&SELC!=null)choisirCorr(SELC);
