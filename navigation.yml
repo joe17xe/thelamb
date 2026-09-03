@@ -64,6 +64,7 @@ carte:
     - pilier-resurrection.html
     - pilier-temple-detruit.html
     - pilier-transfiguration.html
+    - page-jesus-dans-sa-religion.html
 
 methode:
   fichier: page-fondatrice-emmaus.html
@@ -146,6 +147,16 @@ transversales:
 # Les ateliers : publiés pour être ouverts depuis un téléphone, mais hors du
 # parcours du lecteur. Ils ne mènent nulle part et personne n'y mène : c'est
 # voulu, et déclaré ici pour qu'on ne le prenne pas pour un oubli.
+religion:
+  fichier: page-jesus-dans-sa-religion.html
+  role: Jésus dans sa religion — six pratiques, six prescriptions
+  # Hors du parcours des sept étapes : elle éclaire le fil sans en être une
+  # étape. La carte du ciel y mène ; elle repart vers l'étalon, qui ouvre le fil.
+  suite: page-etalon-voici-agneau.html
+  annexes:
+    - index.html
+    - frise-prophetes.html
+
 ateliers:
   - fichier: validation-liens.html
     role: Valider la nature des 153 liens du fil rouge (R-013)

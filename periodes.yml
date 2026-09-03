@@ -198,6 +198,7 @@ periodes:
 # Une page sans ancrage historique (une salle thématique) n'en a pas : le bandeau
 # ne s'affiche que là où il dit quelque chose de vrai.
 ancrages:
+  page-jesus-dans-sa-religion.html: christ
   page-etalon-voici-agneau.html:  christ
   page-etape2-agneau-regne.html:  christ
   page-etape3-la-croix.html:      christ

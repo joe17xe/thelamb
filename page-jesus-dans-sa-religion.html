@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jésus dans sa religion — un juif observant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0e18;--bg2:#11141f;--ink:#e9e3d3;--muted:#9a94a8;--gold:#d3a94f;--line:#23273a;--crimson:#a33}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+  html[dir="rtl"] body{font-family:'Amiri',Georgia,serif;line-height:1.9}
+  .display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+  html[dir="rtl"] .display{font-family:'Amiri',serif;font-weight:700}
+  .top{max-width:1060px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .brand{font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.34em;color:var(--gold)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:system-ui,sans-serif;font-size:12px;background:none;border:1px solid var(--line);border-radius:6px;color:var(--muted);padding:6px 12px;cursor:pointer}
+  .langs button[aria-pressed="true"]{color:var(--ink);border-color:var(--gold)}
+  .hero{max-width:820px;margin:0 auto;padding:54px 22px 26px;text-align:center}
+  .slabel{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+  html[dir="rtl"] .slabel,html[dir="rtl"] .eyebrow{letter-spacing:.05em;font-family:'Amiri',sans-serif}
+  .eyebrow{font-family:system-ui,sans-serif;font-size:11.5px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+  html[dir="rtl"] .eyebrow{font-size:15px}
+  .verse{font-size:clamp(28px,5.6vw,48px);line-height:1.22;font-style:italic}
+  html[dir="rtl"] .verse{font-style:normal}
+  .verse .g{color:var(--gold)}
+  .scene{max-width:620px;margin:24px auto 0;color:var(--muted);font-size:16px}
+  main{max-width:820px;margin:0 auto;padding:26px 22px 70px}
+  /* stations */
+  .stations{position:relative;margin-top:26px;padding-inline-start:44px}
+  .stations::before{content:"";position:absolute;inset-inline-start:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .station{position:relative;padding-bottom:44px}
+  .station:last-child{padding-bottom:8px}
+  .snum{position:absolute;inset-inline-start:-44px;top:0;width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px}
+  html[dir="rtl"] .snum{font-family:'Amiri',serif}
+  .sctx{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  html[dir="rtl"] .sctx{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .station h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:27px;margin-bottom:6px}
+  html[dir="rtl"] .station h3{font-family:'Amiri',serif}
+  .simg{color:var(--gold);font-style:italic;font-size:16px;margin-bottom:10px}
+  html[dir="rtl"] .simg{font-style:normal}
+  .station>p{font-size:16.5px;margin-bottom:14px}
+  .pair{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .pair .ref{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+  html[dir="rtl"] .pair .ref{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .pair p{font-style:italic;font-size:15.5px}
+  html[dir="rtl"] .pair p{font-style:normal}
+  .pair .th{display:flex;align-items:center;gap:10px;margin:10px 0;color:#7a5540;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.18em}
+  .pair .th .l{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),var(--crimson))}
+  /* quatre verbes */
+  .verbs{margin-top:56px}
+  .shead{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .shead h2{font-family:system-ui,sans-serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+  html[dir="rtl"] .shead h2{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:17px}
+  .shead .l{flex:1;height:1px;background:var(--line)}
+  .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+  @media(max-width:620px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  .verb{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:18px 8px;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--gold)}
+  .verb small{display:block;font-size:11px;font-family:system-ui,sans-serif;letter-spacing:.04em;color:var(--muted);margin-top:7px;line-height:1.4}
+  html[dir="rtl"] .verb small{font-family:'Amiri',sans-serif;font-size:12.5px}
+  html[dir="rtl"] .verb{font-family:'Amiri',serif}
+  .verbs p{font-size:16.5px}
+  /* trois cercles */
+  .circles{margin-top:56px}
+  .circle{border-radius:12px;padding:20px 22px;margin-bottom:12px}
+  .c1{border:1.5px solid var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
+  .c2{border:1px solid var(--line);background:var(--bg2)}
+  .c3{border:1px dashed var(--line)}
+  .circle .cl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px}
+  html[dir="rtl"] .circle .cl{letter-spacing:.04em;font-family:'Amiri',sans-serif;font-size:13px}
+  .c1 .cl{color:var(--gold)} .c2 .cl{color:var(--ink)} .c3 .cl{color:var(--muted)}
+  .circle p{font-size:15.5px;color:#cfc9bb}
+  /* deep */
+  .deepz{margin-top:56px}
+  details.deep{border:1px solid var(--line);border-radius:10px;background:var(--bg2);margin-bottom:10px}
+  details.deep summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Cormorant Garamond',serif;font-size:20px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  html[dir="rtl"] details.deep summary{font-family:'Amiri',serif}
+  details.deep summary::-webkit-details-marker{display:none}
+  details.deep summary::after{content:"+";color:var(--gold);font-size:22px;flex:none}
+  details.deep[open] summary::after{content:"−"}
+  details.deep .body{padding:0 20px 18px;color:#c6c0b2;font-size:15.5px}
+  .next{margin-top:56px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg2),#171426);padding:28px;display:block;text-decoration:none;color:var(--ink);position:relative;overflow:hidden}
+  .next::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--crimson))}
+  .next .nlbl{font-family:system-ui,sans-serif;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  html[dir="rtl"] .next .nlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:13px}
+  .next h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;margin:8px 0 6px}
+  html[dir="rtl"] .next h3{font-family:'Amiri',serif;font-weight:700}
+  .next p{color:var(--muted);font-size:15px}
+  footer{max-width:820px;margin:0 auto 46px;padding:22px 22px 0;color:#5c6077;font-size:12.5px;font-family:system-ui,sans-serif;text-align:center;line-height:1.8;border-top:1px solid var(--line)}
+  @media (prefers-reduced-motion:no-preference){
+    .hero,.station,.verbs,.circles,.deepz,.next{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+
+  /* navigation : la marque ramène à l'accueil, le fil est cliquable */
+  a.brand{text-decoration:none}
+  a.brand:hover{color:var(--ink)}
+  a.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  a.dot{text-decoration:none;color:inherit}
+  a.dot[href]:hover .nm{color:var(--gold)}
+  a.dot[href]:hover .pt{border-color:var(--gold)}
+  a.dot[href]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+/* ——— bandeau de situation (généré : outils/poser-situation.py) ——— */
+  .situation{max-width:1060px;margin:24px auto 0;padding:0 20px}
+  .situation a{display:block;text-decoration:none;color:inherit}
+  .situation a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
+  .sitlbl{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:9px}
+  html[dir="rtl"] .sitlbl{letter-spacing:.05em;font-family:'Amiri',sans-serif;font-size:12.5px}
+  .sitbar{display:flex;gap:3px}
+  .sitseg{flex:1;height:5px;border-radius:2px;background:var(--sc);opacity:.2;transition:opacity .25s}
+  .sitseg.on{opacity:1;box-shadow:0 0 10px var(--sc)}
+  .situation a:hover .sitseg{opacity:.42}
+  .situation a:hover .sitseg.on{opacity:1}
+  .sitnow{margin-top:10px;text-align:center;font-family:system-ui,sans-serif;font-size:11.5px;color:var(--muted)}
+  html[dir="rtl"] .sitnow{font-family:'Amiri',sans-serif;font-size:14px}
+  .sitnow b{font-weight:600}
+/* ——— fin du bandeau de situation ——— */
+</style>
+</head>
+<body>
+<div class="top">
+  <a class="brand" id="brand" href="index.html"></a>
+  <div class="langs" role="group" aria-label="Langue">
+    <button data-l="fr" aria-pressed="true">FR</button>
+    <button data-l="en" aria-pressed="false">EN</button>
+    <button data-l="ar" aria-pressed="false">عربي</button>
+  </div>
+</div>
+<div class="situation" id="situation"></div>
+
+<div class="hero">
+  <div class="slabel" id="slabel"></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <div class="verse display" id="verse"></div>
+  <p class="scene" id="scene"></p>
+</div>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+const C={"fr": {"dir": "ltr", "brand": "L'AGNEAU DE DIEU", "slabel": "Jésus dans sa religion — un juif observant", "eyebrow": "Luc 2 · Luc 4 · Matthieu 5 · la Galilée et Jérusalem, de l'an 1 à l'an 30 environ", "verse": "« Ne croyez pas que je sois venu pour abolir la loi ou les prophètes ; je suis venu non pour abolir, mais <span class='g'>pour accomplir</span>. »<cite>Matthieu 5:17</cite>", "scene": "On lit souvent l'Évangile comme s'il commençait par une rupture. Les textes disent autre chose : un enfant circoncis au huitième jour, une famille qui monte à Jérusalem chaque année, un homme qui entre à la synagogue « selon sa coutume », un vêtement à franges, un lépreux renvoyé au prêtre. Avant d'être lu comme celui qui accomplit la Loi, Jésus l'a vécue.", "stations": [{"ctx": "Lévitique 12:3 · la règle", "t": "Le huitième jour", "img": "un couteau de silex et un nom", "p": "Huit jours après sa naissance, Jésus reçoit le signe de l'alliance faite à Abraham. Il n'entre pas dans l'histoire d'Israël par la porte de derrière : il y entre par le rite que tout fils d'Israël reçoit, et c'est le même jour qu'on lui donne son nom.", "o": ["Lévitique 12:3", "Le huitième jour, l’enfant sera circoncis."], "n": ["Luc 2:21", "Le huitième jour, auquel l’enfant devait être circoncis, étant arrivé, on lui donna le nom de Jésus, nom qu’avait indiqué l’ange avant qu’il fût conçu dans le sein de sa mère."]}, {"ctx": "Lévitique 12:8 · la règle du pauvre", "t": "L'offrande de ceux qui n'ont pas d'agneau", "img": "deux tourterelles dans une cage d'osier", "p": "Quarante jours plus tard, ses parents montent au Temple. La Loi demande un agneau — et prévoit, pour qui n'en a pas les moyens, deux tourterelles. C'est cette offrande-là qu'ils apportent. Celui que Jean appellera l'Agneau est présenté par une famille trop pauvre pour en offrir un.", "o": ["Lévitique 12:8", "Si elle n’a pas de quoi se procurer un agneau, elle prendra deux tourterelles ou deux jeunes pigeons, l’un pour l’holocauste, l’autre pour le sacrifice d’expiation.…"], "n": ["Luc 2:24", "et pour offrir en sacrifice deux tourterelles ou deux jeunes pigeons, comme cela est prescrit dans la loi du Seigneur."]}, {"ctx": "Deutéronome 16:16 · la règle", "t": "Trois fois par année, à Jérusalem", "img": "une route de poussière qui monte", "p": "La Loi demande à tout homme de se présenter trois fois l'an au lieu que Dieu choisira. Luc note que ses parents y montaient chaque année, et qu'à douze ans il y monte avec eux. Ce n'est pas un détail d'enfance : c'est la pratique d'une famille observante, année après année.", "o": ["Deutéronome 16:16", "Trois fois par année, tous les mâles d’entre vous se présenteront devant l’Éternel, ton Dieu, dans le lieu qu’il choisira: à la fête des pains sans levain, à la fête des semaines, et à la fête des tabernacles.…"], "n": ["Luc 2:41-42", "Les parents de Jésus allaient chaque année à Jérusalem, à la fête de Pâque. Lorsqu’il fut âgé de douze ans, ils y montèrent, selon la coutume de la fête."]}, {"ctx": "Exode 20:8 · la règle", "t": "Le sabbat, selon sa coutume", "img": "un rouleau qu'on déroule debout", "p": "Luc emploie deux mots qui disent tout : « selon sa coutume ». Ce n'est pas une visite exceptionnelle, c'est une habitude. Il entre, on lui donne le rouleau, il se lève pour lire. Les débats qui suivront sur le sabbat ne sont pas ceux d'un homme du dehors : ce sont ceux d'un homme qui y était chaque semaine.", "o": ["Exode 20:8", "Souviens-toi du jour du repos, pour le sanctifier."], "n": ["Luc 4:16", "Il se rendit à Nazareth, où il avait été élevé, et, selon sa coutume, il entra dans la synagogue le jour du sabbat. Il se leva pour faire la lecture,"]}, {"ctx": "Nombres 15:38 · la règle", "t": "Le bord du vêtement", "img": "quatre franges au bas d'un manteau", "p": "La Loi demande une frange au bord du vêtement, avec un cordon bleu, pour se souvenir des commandements. Quand la femme malade s'approche par derrière, ce qu'elle touche, c'est ce bord-là. Le détail ne s'explique que d'une façon : Jésus portait le vêtement d'un juif observant.", "o": ["Nombres 15:38", "Parle aux enfants d’Israël, et dis-leur qu’ils se fassent, de génération en génération, une frange au bord de leurs vêtements, et qu’ils mettent un cordon bleu sur cette frange du bord de leurs vêtements."], "n": ["Matthieu 9:20", "Et voici, une femme atteinte d’une perte de sang depuis douze ans s’approcha par derrière, et toucha le bord de son vêtement."]}, {"ctx": "Lévitique 14:2 · la règle", "t": "Va te montrer au prêtre", "img": "une main qui montre le chemin du Temple", "p": "Il guérit, puis il renvoie à la Loi. Le lépreux guéri doit aller au sacrificateur et offrir ce que Moïse a prescrit. Celui qui pouvait se dispenser du rite y renvoie l'homme qu'il vient de guérir — et le dit « en témoignage ».", "o": ["Lévitique 14:2", "Voici quelle sera la loi sur le lépreux, pour le jour de sa purification. On l’amènera devant le sacrificateur."], "n": ["Marc 1:44", "et lui dit: Garde-toi de rien dire à personne; mais va te montrer au sacrificateur, et offre pour ta purification ce queMoïse a prescrit, afin que cela leur serve de témoignage."]}], "vh": "Ce que cela change à la lecture", "vintro": "Quatre conséquences, qui ne sont pas des opinions mais des lectures de ces textes.", "verbs": ["L'accomplissement<small>« Non pour abolir, mais pour accomplir » (Matthieu 5:17). Accomplir n'est pas annuler : c'est mener à son terme.</small>", "La continuité<small>Les fêtes qu'il célèbre, les Écritures qu'il lit, le vêtement qu'il porte : tout vient d'Israël. Rien n'est importé d'ailleurs.</small>", "L'autorité<small>C'est de l'intérieur qu'il conteste, jamais du dehors : « Les scribes et les pharisiens sont assis dans la chaire de Moïse » (Matthieu 23:2).</small>", "La pauvreté<small>Deux tourterelles au lieu d'un agneau (Luc 2:24) : la Loi elle-même prévoyait cette offrande pour les pauvres.</small>"], "vp": "On tire souvent de l'Évangile l'image d'un homme en rupture avec sa religion. Les textes montrent l'inverse : quelqu'un qui la pratique, qui en discute les interprétations comme on le faisait de son temps, et qui déclare la mener à son terme. C'est ce qui rend le fil de ce site lisible — l'Ancien Testament n'est pas l'arrière-plan du Nouveau : il en est la langue maternelle.", "ch": "Ce que cette page dit, et ce qu'elle ne dit pas", "c1": ["Ce que confessent tous les chrétiens", "Jésus est né juif, a vécu en juif et est mort sous une inscription qui le désignait roi des Juifs. Aucune Église ne le conteste, et le Nouveau Testament ne le cache nulle part."], "c2": ["Ce que disent les textes", "Les six pratiques ci-dessus sont écrites, avec leur prescription dans la Loi et leur mention dans les évangiles. Aucune ne demande d'interprétation pour être lue."], "c3": ["Ce que nous ne forçons pas", "Ce que la Loi devient pour les chrétiens après Pâques est une question que le Nouveau Testament lui-même travaille — Actes 15, l'épître aux Galates, l'épître aux Hébreux — et que les Églises n'ont pas tranchée de la même façon. Nous partons de la lecture catholique, qui distingue la loi morale, toujours reçue, des prescriptions rituelles et judiciaires qui visaient l'Israël d'avant le Christ ; les Églises issues de la Réforme insistent davantage sur l'unité de la Loi et sur la liberté chrétienne à son égard. Cette page ne tranche pas ce débat. Elle ne dit pas non plus que les chrétiens devraient observer ces rites, ni que le judaïsme aurait cessé d'être vivant : il l'est, et il a sa propre histoire depuis deux mille ans."], "dh": "Aller plus loin", "deep": [["Une fête qui n'est pas dans la Loi", "Jean situe une scène « à la fête de la Dédicace ; c'était l'hiver » (Jean 10:22). Or cette fête ne figure dans aucun livre de Moïse : elle commémore la purification du Temple après sa profanation, et c'est 1 Maccabées qui la raconte. Un évangile date donc une scène par un événement que seul ce livre rapporte — celui-là même que les Églises ne reçoivent pas toutes. La correspondance est dans notre fil rouge."], ["La taxe du Temple", "« Votre maître ne paie-t-il pas les deux drachmes ? » (Matthieu 17:24). La réponse de Jésus est double : il expose pourquoi les fils en seraient exempts, puis il la fait payer quand même — « pour ne pas les scandaliser » (17:27). La liberté qu'il revendique n'entraîne pas le mépris du rite."], ["Les franges, et pourquoi les toucher", "Nombres 15:39 donne la raison de la frange : « vous vous en souviendrez, et vous pratiquerez tous mes commandements ». La femme de Matthieu 9 ne touche donc pas un ourlet quelconque : elle touche le signe visible de l'obéissance à la Loi, porté par celui qui l'accomplit."], ["« Selon la coutume »", "Luc emploie deux fois cette formule pour la famille de Jésus (2:42) et pour lui-même (4:16). C'est le vocabulaire de l'habitude, pas de l'exception. Le même Luc écrira les Actes, où la première communauté continue de monter au Temple (Actes 2:46 ; 3:1)."], ["Ce que cette page ne prouve pas", "Qu'un homme pratique sa religion ne dit rien, à soi seul, de qui il est. La page ne démontre donc pas la foi chrétienne : elle enlève un contresens. Le reste du site travaille l'autre question — celle que Jean-Baptiste pose en le désignant du doigt."]], "nlbl": "Continuer", "ntitle": "Voici l'Agneau — Jean 1:29", "ntext": "Celui qui a vécu la Loi est désigné, un matin, comme la victime que la Loi prévoyait. C'est là que le fil du site commence.", "foot": "Textes bibliques : Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Page « Jésus dans sa religion » — six pratiques, six prescriptions, aucune interprétation nécessaire."}, "en": {"dir": "ltr", "brand": "THE LAMB OF GOD", "slabel": "Jesus within his religion — an observant Jew", "eyebrow": "Luke 2 · Luke 4 · Matthew 5 · Galilee and Jerusalem, from about AD 1 to AD 30", "verse": "“Don't think that I came to destroy the law or the prophets. I didn't come to destroy, but <span class='g'>to fulfill</span>.”<cite>Matthew 5:17</cite>", "scene": "The Gospel is often read as though it began with a break. The texts say otherwise: a child circumcised on the eighth day, a family going up to Jerusalem every year, a man entering the synagogue “as was his custom”, a fringed garment, a leper sent back to the priest. Before being read as the one who fulfils the Law, Jesus lived it.", "stations": [{"ctx": "Leviticus 12:3 · the rule", "t": "The eighth day", "img": "a flint knife and a name", "p": "Eight days after his birth, Jesus receives the sign of the covenant made with Abraham. He does not enter Israel's history by a side door: he enters by the rite every son of Israel receives — and on the same day he is given his name.", "o": ["Leviticus 12:3", "In the eighth day the flesh of his foreskin shall be circumcised."], "n": ["Luke 2:21", "When eight days were fulfilled for the circumcision of the child, his name was called Jesus, which was given by the angel before he was conceived in the womb."]}, {"ctx": "Leviticus 12:8 · the poor man's rule", "t": "The offering of those who have no lamb", "img": "two turtledoves in a wicker cage", "p": "Forty days later his parents go up to the Temple. The Law asks for a lamb, and provides two turtledoves for those who cannot afford one. That is the offering they bring. The one John will call the Lamb is presented by a family too poor to offer one.", "o": ["Leviticus 12:8", "If she cannot afford a lamb, then she shall take two turtledoves or two young pigeons: the one for a burnt offering, and the other for a sin offering.…"], "n": ["Luke 2:24", "and to offer a sacrifice according to that which is said in the law of the Lord, “A pair of turtledoves, or two young pigeons.”"]}, {"ctx": "Deuteronomy 16:16 · the rule", "t": "Three times a year, in Jerusalem", "img": "a dusty road going up", "p": "The Law asks every man to appear three times a year at the place God chooses. Luke notes that his parents went up every year, and that at twelve he goes up with them. Not a detail of childhood: the practice of an observant family, year after year.", "o": ["Deuteronomy 16:16", "Three times in a year all of your males shall appear before the LORD your God in the place which he chooses: in the feast of unleavened bread, in the feast of weeks, and in the feast of booths.…"], "n": ["Luke 2:41-42", "His parents went every year to Jerusalem at the feast of the Passover. When he was twelve years old, they went up to Jerusalem according to the custom of the feast;"]}, {"ctx": "Exodus 20:8 · the rule", "t": "The Sabbath, as was his custom", "img": "a scroll unrolled standing up", "p": "Luke uses three words that say everything: “as was his custom.” Not an exceptional visit, a habit. He enters, the scroll is handed to him, he stands to read. The later arguments about the Sabbath are not those of an outsider: they are those of a man who was there every week.", "o": ["Exodus 20:8", "“Remember the Sabbath day, to keep it holy."], "n": ["Luke 4:16", "He came to Nazareth, where he had been brought up. He entered, as was his custom, into the synagogue on the Sabbath day, and stood up to read."]}, {"ctx": "Numbers 15:38 · the rule", "t": "The edge of the garment", "img": "four fringes at the hem of a cloak", "p": "The Law asks for a fringe at the edge of the garment, with a blue cord, to remember the commandments. When the sick woman comes up behind him, what she touches is that fringe. The detail has only one explanation: Jesus wore the garment of an observant Jew.", "o": ["Numbers 15:38", "“Speak to the children of Israel, and tell them that they should make themselves fringes on the borders of their garments throughout their generations…"], "n": ["Matthew 9:20", "Behold, a woman who had a discharge of blood for twelve years came behind him, and touched the fringe of his garment;"]}, {"ctx": "Leviticus 14:2 · the rule", "t": "Go show yourself to the priest", "img": "a hand pointing the way to the Temple", "p": "He heals, then sends the man back to the Law. The cleansed leper must go to the priest and offer what Moses commanded. The one who could have dispensed with the rite sends to it the man he has just healed — and calls it a testimony.", "o": ["Leviticus 14:2", "“This shall be the law of the leper in the day of his cleansing: He shall be brought to the priest,"], "n": ["Mark 1:44", "and said to him, “See that you say nothing to anybody, but go show yourself to the priest and offer for your cleansing the things which Moses commanded, for a testimony to them.”"]}], "vh": "What this changes in the reading", "vintro": "Four consequences — not opinions, but readings of these texts.", "verbs": ["Fulfilment<small>“Not to destroy, but to fulfil” (Matthew 5:17). To fulfil is not to cancel: it is to bring to its end.</small>", "Continuity<small>The feasts he keeps, the Scriptures he reads, the garment he wears: all of it comes from Israel. Nothing is imported.</small>", "Authority<small>He disputes from within, never from outside: “The scribes and the Pharisees sat on Moses' seat” (Matthew 23:2).</small>", "Poverty<small>Two turtledoves instead of a lamb (Luke 2:24): the Law itself provided that offering for the poor.</small>"], "vp": "People often draw from the Gospel the image of a man at odds with his religion. The texts show the opposite: someone who practises it, who argues its interpretations as men did in his day, and who declares that he brings it to its end. That is what makes this site's thread legible — the Old Testament is not the background of the New: it is its mother tongue.", "ch": "What this page says, and what it does not", "c1": ["What all Christians confess", "Jesus was born a Jew, lived as a Jew, and died under an inscription naming him king of the Jews. No Church disputes this, and the New Testament hides it nowhere."], "c2": ["What the texts say", "The six practices above are written down, each with its prescription in the Law and its mention in the Gospels. None needs interpreting to be read."], "c3": ["What we do not force", "What the Law becomes for Christians after Easter is a question the New Testament itself works through — Acts 15, Galatians, Hebrews — and the Churches have not settled it the same way. We start from the Catholic reading, which distinguishes the moral law, always received, from the ritual and judicial prescriptions given to Israel before Christ; the Churches of the Reformation stress rather the unity of the Law and Christian freedom towards it. This page does not settle that debate. Nor does it say that Christians should keep these rites, or that Judaism has ceased to be alive: it is alive, with its own history over two thousand years."], "dh": "Going further", "deep": [["A feast not found in the Law", "John sets a scene “at the Feast of the Dedication; it was winter” (John 10:22). That feast appears in no book of Moses: it commemorates the cleansing of the Temple after its desecration, and it is 1 Maccabees that tells the story. A gospel therefore dates a scene by an event only that book records — the very book the Churches do not all receive. The correspondence is in our red thread."], ["The Temple tax", "“Doesn't your teacher pay the didrachma?” (Matthew 17:24). Jesus' answer is twofold: he sets out why the sons would be exempt, then has it paid anyway — “lest we cause them to stumble” (17:27). The freedom he claims does not bring contempt for the rite."], ["The fringes, and why touch them", "Numbers 15:39 gives the reason for the fringe: “that you may look at it, and remember all the commandments”. The woman of Matthew 9 is not touching some hem: she touches the visible sign of obedience to the Law, worn by the one who fulfils it. In English and in Arabic the same word links the two verses; the French of Segond hides it."], ["“As was his custom”", "Luke uses the phrase for Jesus' family (2:42) and for Jesus himself (4:16). It is the vocabulary of habit, not of exception. The same Luke will write Acts, where the first community keeps going up to the Temple (Acts 2:46; 3:1)."], ["What this page does not prove", "That a man practises his religion says nothing, by itself, about who he is. So this page does not demonstrate the Christian faith: it removes a misunderstanding. The rest of the site works on the other question — the one John the Baptist asks by pointing at him."]], "nlbl": "Continue", "ntitle": "Behold the Lamb — John 1:29", "ntext": "The one who lived the Law is pointed out, one morning, as the victim the Law provided for. That is where this site's thread begins.", "foot": "Bible texts: Louis Segond 1910 (FR) · World English Bible (EN) · Van Dyck (AR).<br>Page “Jesus within his religion” — six practices, six prescriptions, no interpretation required."}, "ar": {"dir": "rtl", "brand": "حمل الله", "slabel": "يسوع في ديانته — يهوديٌّ متمسّك", "eyebrow": "لوقا ٢ · لوقا ٤ · متى ٥ · الجليل وأورشليم، من نحو سنة ١ إلى سنة ٣٠", "verse": "«لا تظنوا أني جئت لأنقض الناموس أو الأنبياء. ما جئت لأنقض بل <span class='g'>لأكمّل</span>.»<cite>متى ٥: ١٧</cite>", "scene": "كثيرًا ما يُقرأ الإنجيلُ كأنه يبدأ بقطيعة. والنصوصُ تقول غير ذلك: طفلٌ يُختن في اليوم الثامن، وعائلةٌ تصعد إلى أورشليم كلَّ سنة، ورجلٌ يدخل المجمع «حسب عادته»، وثوبٌ بأهداب، وأبرصُ يُردّ إلى الكاهن. قبل أن يُقرأ يسوعُ بوصفه مَن يُكمّل الناموس، عاشه.", "stations": [{"ctx": "لاويين ١٢: ٣ · الفريضة", "t": "اليومُ الثامن", "img": "سكينُ صوّان واسم", "p": "بعد ولادته بثمانية أيام ينال يسوعُ علامةَ العهد المقطوع مع إبراهيم. لا يدخل تاريخَ إسرائيل من بابٍ خلفي: بل يدخله بالطقس الذي يناله كلُّ ابنٍ في إسرائيل — وفي اليوم نفسه يُعطى اسمَه.", "o": ["لاويين ١٢: ٣", "وفي اليوم الثامن يختن لحم غرلته"], "n": ["لوقا ٢: ٢١", "ولما تمت ثمانية ايام ليختنوا الصبي سمي يسوع كما تسمى من الملاك قبل ان حبل به في البطن"]}, {"ctx": "لاويين ١٢: ٨ · فريضةُ الفقير", "t": "تقدمةُ من لا خروفَ له", "img": "يمامتان في قفصٍ من خوص", "p": "وبعد أربعين يومًا يصعد أبواه إلى الهيكل. تطلب الشريعةُ خروفًا، وتتيح يمامتين لمن لا تبلغ يدُه. وهذه هي التقدمةُ التي يقدّمانها. فالذي سيدعوه يوحنا الحمل تقدّمه عائلةٌ أفقرُ من أن تقدّم خروفًا.", "o": ["لاويين ١٢: ٨", "وان لم تنل يدها كفاية لشاة تاخذ يمامتين او فرخي حمام الواحد محرقة والآخر ذبيحة خطية فيكفّر عنها الكاهن فتطهر"], "n": ["لوقا ٢: ٢٤", "ولكي يقدموا ذبيحة كما قيل في ناموس الرب زوج يمام او فرخي حمام"]}, {"ctx": "تثنية ١٦: ١٦ · الفريضة", "t": "ثلاثَ مرات في السنة، إلى أورشليم", "img": "طريقٌ ترابيّ صاعد", "p": "تطلب الشريعةُ من كل رجلٍ أن يحضر ثلاث مرات في السنة في المكان الذي يختاره الله. ويلاحظ لوقا أنّ أبويه كانا يصعدان كلَّ سنة، وأنه في الثانية عشرة صعد معهما. ليست تفصيلةَ طفولة: بل ممارسةُ عائلةٍ متمسّكة، سنةً بعد سنة.", "o": ["تثنية ١٦: ١٦", "ثلاث مرات في السنة يحضر جميع ذكورك امام الرب الهك في المكان الذي يختاره في عيد الفطير وعيد الاسابيع وعيد المظال. ولا يحضروا امام الرب فارغين."], "n": ["لوقا ٢: ٤١-٤٢", "وكان ابواه يذهبان كل سنة الى اورشليم في عيد الفصح. ولما كانت له اثنتا عشرة سنة صعدوا الى اورشليم كعادة العيد."]}, {"ctx": "خروج ٢٠: ٨ · الفريضة", "t": "السبت، حسب عادته", "img": "درجٌ يُفتح وقوفًا", "p": "يستعمل لوقا عبارةً تقول كلَّ شيء: «حسب عادته». ليست زيارةً استثنائية، بل عادة. يدخل، فيُدفع إليه الدرج، فيقوم ليقرأ. والمجادلاتُ التي ستأتي حول السبت ليست مجادلاتِ غريب: بل مجادلاتُ رجلٍ كان هناك كلَّ أسبوع.", "o": ["خروج ٢٠: ٨", "اذكر يوم السبت لتقدسه."], "n": ["لوقا ٤: ١٦", "وجاء الى الناصرة حيث كان قد تربى. ودخل المجمع حسب عادته يوم السبت وقام ليقرأ."]}, {"ctx": "عدد ١٥: ٣٨ · الفريضة", "t": "هدبُ الثوب", "img": "أربعةُ أهداب في ذيل رداء", "p": "تطلب الشريعةُ هدبًا في ذيل الثوب، بخيطٍ أسمانجوني، للتذكّر بالوصايا. وحين تقترب المرأةُ المريضة من ورائه، فالذي تمسّه هو ذلك الهدب. وللتفصيل تفسيرٌ واحد: كان يسوع يلبس ثوبَ يهوديٍّ متمسّك.", "o": ["عدد ١٥: ٣٨", "كلم بني اسرائيل وقل لهم ان يصنعوا لهم اهدابا في اذيال ثيابهم في اجيالهم ويجعلوا على هدب الذيل عصابة من اسمانجوني."], "n": ["متى ٩: ٢٠", "واذا امرأة نازفة دم منذ اثنتي عشرة سنة قد جاءت من ورائه ومسّت هدب ثوبه."]}, {"ctx": "لاويين ١٤: ٢ · الفريضة", "t": "اذهب أرِ نفسك للكاهن", "img": "يدٌ تشير إلى طريق الهيكل", "p": "يشفي، ثم يردّ إلى الشريعة. فالأبرصُ المطهَّر عليه أن يذهب إلى الكاهن ويقدّم ما أمر به موسى. والذي كان يمكنه الاستغناءُ عن الطقس يردّ إليه الرجلَ الذي شفاه للتوّ — ويسمّي ذلك شهادة.", "o": ["لاويين ١٤: ٢", "هذه تكون شريعة الابرص يوم طهره يؤتى به الى الكاهن."], "n": ["مرقس ١: ٤٤", "وقال له انظر لا تقل لاحد شيئا بل اذهب أر نفسك للكاهن وقدّم عن تطهيرك ما أمر به موسى شهادة لهم."]}], "vh": "ما الذي يغيّره هذا في القراءة", "vintro": "أربعُ نتائج، ليست آراءً بل قراءاتٍ لهذه النصوص.", "verbs": ["الإكمال<small>«ما جئت لأنقض بل لأكمّل» (متى ٥: ١٧). والإكمالُ ليس إلغاءً: بل بلوغٌ بالشيء إلى غايته.</small>", "الاتصال<small>الأعيادُ التي يحفظها، والكتبُ التي يقرأها، والثوبُ الذي يلبسه: كلُّه من إسرائيل. لا شيءَ مستوردٌ من خارج.</small>", "السلطان<small>يجادل من الداخل لا من الخارج: «على كرسي موسى جلس الكتبة والفريسيون» (متى ٢٣: ٢).</small>", "الفقر<small>يمامتان بدل خروف (لوقا ٢: ٢٤): والناموسُ نفسُه أتاح هذه التقدمة للفقراء.</small>"], "vp": "كثيرًا ما تُستخلَص من الإنجيل صورةُ رجلٍ في قطيعةٍ مع ديانته. والنصوصُ تُظهر العكس: رجلٌ يمارسها، ويجادل في تفاسيرها كما كان يُفعل في زمنه، ويعلن أنه يبلغ بها غايتها. وهذا ما يجعل خيطَ هذا الموقع مقروءًا — فالعهدُ القديم ليس خلفيةَ الجديد: بل لغتُه الأم.", "ch": "ما تقوله هذه الصفحة، وما لا تقوله", "c1": ["ما يعترف به المسيحيون جميعًا", "وُلد يسوعُ يهوديًا، وعاش يهوديًا، ومات تحت كتابةٍ تدعوه ملكَ اليهود. لا كنيسةَ تنازع في ذلك، والعهدُ الجديد لا يُخفيه في أي موضع."], "c2": ["ما تقوله النصوص", "الممارساتُ الستُّ أعلاه مكتوبة، ولكلٍّ منها فريضتُها في الناموس وذكرُها في الأناجيل. ولا واحدةَ منها تحتاج إلى تأويلٍ لتُقرأ."], "c3": ["ما لا نفرضه", "ما يصير إليه الناموسُ عند المسيحيين بعد الفصح مسألةٌ يشتغل بها العهدُ الجديد نفسُه — أعمال ١٥، وغلاطية، والعبرانيين — ولم تحسمها الكنائسُ على نحوٍ واحد. ننطلق من القراءة الكاثوليكية، التي تميّز الناموسَ الأدبي، المقبولَ دائمًا، من الفرائض الطقسية والقضائية التي أُعطيت لإسرائيل قبل المسيح؛ أما كنائسُ الإصلاح فتشدّد على وحدة الناموس وعلى الحرية المسيحية تجاهه. وهذه الصفحةُ لا تحسم هذا الجدل. ولا تقول إنّ على المسيحيين حفظَ هذه الطقوس، ولا إنّ اليهوديةَ كفّت عن الحياة: فهي حيّة، ولها تاريخُها الخاص منذ ألفَي سنة."], "dh": "للتعمّق", "deep": [["عيدٌ ليس في الناموس", "يحدّد يوحنا مشهدًا «في عيد التجديد، وكان شتاء» (يوحنا ١٠: ٢٢). وهذا العيدُ لا يرد في أيّ سفرٍ من أسفار موسى: فهو يحيي ذكرى تطهير الهيكل بعد تدنيسه، والذي يرويه هو سفرُ المكابيّين الأول. فإنجيلٌ يؤرّخ مشهدًا بحدثٍ لا يرويه إلا ذلك السفر — وهو بعينه السفرُ الذي لا تتلقّاه الكنائسُ كلُّها. والتناظرُ مثبتٌ في خيطنا الأحمر."], ["ضريبةُ الهيكل", "«أما يوفي معلمكم الدرهمين؟» (متى ١٧: ٢٤). وجوابُ يسوع مزدوج: يبيّن لماذا يكون البنون أحرارًا، ثم يأمر بدفعها مع ذلك — «لئلا نعثرهم» (١٧: ٢٧). فالحريةُ التي يدّعيها لا تجرّ احتقارَ الطقس."], ["الأهداب، ولماذا تُمسّ", "يعطي عدد ١٥: ٣٩ سببَ الهدب: «فتذكرون كل وصايا الرب وتعملونها». فالمرأةُ في متى ٩ لا تمسّ ذيلًا ما: بل تمسّ العلامةَ المنظورة للطاعة للناموس، يلبسها الذي يُكمّله. وفي العربية والإنجليزية تربط الكلمةُ نفسُها بين الآيتين؛ أما فرنسيةُ سيغوند فتُخفي ذلك."], ["«حسب عادته»", "يستعمل لوقا العبارةَ لعائلة يسوع (٢: ٤٢) وله هو (٤: ١٦). وهي لغةُ العادة لا الاستثناء. ولوقا نفسُه سيكتب سفرَ الأعمال، حيث تظلّ الجماعةُ الأولى تصعد إلى الهيكل (أعمال ٢: ٤٦؛ ٣: ١)."], ["ما لا تبرهنه هذه الصفحة", "كونُ رجلٍ يمارس ديانتَه لا يقول شيئًا، بذاته، عمّن يكون. فالصفحةُ إذًا لا تبرهن الإيمانَ المسيحي: بل تزيل سوءَ فهم. وسائرُ الموقع يشتغل بالسؤال الآخر — السؤالِ الذي يطرحه يوحنا المعمدان حين يشير إليه بإصبعه."]], "nlbl": "تابع", "ntitle": "هوذا حمل الله — يوحنا ١: ٢٩", "ntext": "الذي عاش الناموسَ يُشار إليه، ذات صباح، بوصفه الذبيحةَ التي كان الناموسُ يهيّئ لها. ومن هناك يبدأ خيطُ هذا الموقع.", "foot": "النصوص الكتابية: لويس سيغوند ١٩١٠ (فر) · النسخة الإنجليزية العالمية (إن) · فان دايك (عربي).<br>صفحة «يسوع في ديانته» — ستُّ ممارسات، وستُّ فرائض، ولا حاجة إلى تأويل."}};
+
+function render(l){
+  const c=C[l];
+  document.documentElement.lang=l;document.documentElement.dir=c.dir;
+  document.getElementById('brand').textContent=c.brand;
+  document.getElementById('slabel').textContent=c.slabel;
+  document.getElementById('eyebrow').textContent=c.eyebrow;
+  document.getElementById('verse').innerHTML=c.verse;
+  document.getElementById('scene').textContent=c.scene;
+  const m=document.getElementById('main');
+  m.innerHTML=`
+  <div class="stations">${c.stations.map((s,i)=>`
+    <div class="station">
+      <div class="snum display">${i+1}</div>
+      <div class="sctx">${s.ctx}</div>
+      <h3>${s.t}</h3>
+      <div class="simg">${s.img}</div>
+      <p>${s.p}</p>
+      <div class="pair">
+        <div class="ref">${s.o[0]}</div><p>« ${s.o[1]} »</p>
+        <div class="th"><span class="l"></span>ACCOMPLI<span class="l"></span></div>
+        <div class="ref">${s.n[0]}</div><p>« ${s.n[1]} »</p>
+      </div>
+    </div>`).join("")}
+  </div>
+  <section class="verbs">
+    <div class="shead"><h2>${c.vh}</h2><div class="l"></div></div>
+    <p>${c.vintro}</p>
+    <div class="vgrid">${c.verbs.map(v=>`<div class="verb">${v}</div>`).join("")}</div>
+    <p>${c.vp}</p>
+  </section>
+  <section class="circles">
+    <div class="shead"><h2>${c.ch}</h2><div class="l"></div></div>
+    <div class="circle c1"><div class="cl">${c.c1[0]}</div><p>${c.c1[1]}</p></div>
+    <div class="circle c2"><div class="cl">${c.c2[0]}</div><p>${c.c2[1]}</p></div>
+    <div class="circle c3"><div class="cl">${c.c3[0]}</div><p>${c.c3[1]}</p></div>
+  </section>
+  <section class="deepz">
+    <div class="shead"><h2>${c.dh}</h2><div class="l"></div></div>
+    ${c.deep.map(d=>`<details class="deep"><summary>${d[0]}</summary><div class="body"><p>${d[1]}</p></div></details>`).join("")}
+  </section>
+  <a class="next" href="page-etalon-voici-agneau.html"><div class="nlbl">${c.nlbl}</div><h3>${c.ntitle}</h3><p>${c.ntext}</p></a>`;
+  document.getElementById('foot').innerHTML=c.foot;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false'));
+}
+/* situation — généré */
+const PERIODES={"fr": [["origines", "Monde des origines", "Création → ~2200 av. J.-C.", "#a84600"], ["patriarches", "Les Patriarches", "~2200–1800 av. J.-C.", "#bc931a"], ["exode", "Égypte et Exode", "~1800–1446 av. J.-C.", "#4f6d41"], ["desert", "Le Désert", "1446–1406 av. J.-C.", "#4fa678"], ["juges", "Conquête et Juges", "1406–1050 av. J.-C.", "#1c7171"], ["royaume", "Le Royaume", "1050–930 av. J.-C.", "#2aaad0"], ["division", "Le Royaume divisé", "930–722 av. J.-C.", "#2d72c4"], ["exil", "L'Exil", "722–538 av. J.-C.", "#73a2ff"], ["retour", "Le Retour", "538–167 av. J.-C.", "#744e9b"], ["maccabees", "La révolte des Maccabées", "167 av. J.-C. → an 1", "#d678af"], ["christ", "L'Accomplissement", "an 1–33", "#d3a94f"], ["eglise", "L'Église", "an 33 →", "#e9e3d3"]], "en": [["origines", "Early World", "Creation → c. 2200 BC", "#a84600"], ["patriarches", "The Patriarchs", "c. 2200–1800 BC", "#bc931a"], ["exode", "Egypt and Exodus", "c. 1800–1446 BC", "#4f6d41"], ["desert", "Desert Wanderings", "1446–1406 BC", "#4fa678"], ["juges", "Conquest and Judges", "1406–1050 BC", "#1c7171"], ["royaume", "Royal Kingdom", "1050–930 BC", "#2aaad0"], ["division", "Divided Kingdom", "930–722 BC", "#2d72c4"], ["exil", "Exile", "722–538 BC", "#73a2ff"], ["retour", "Return", "538–167 BC", "#744e9b"], ["maccabees", "Maccabean Revolt", "167 BC → AD 1", "#d678af"], ["christ", "Messianic Fulfillment", "AD 1–33", "#d3a94f"], ["eglise", "The Church", "AD 33 →", "#e9e3d3"]], "ar": [["origines", "عالم البدايات", "الخلق ← نحو ٢٢٠٠ ق.م", "#a84600"], ["patriarches", "الآباء", "نحو ٢٢٠٠–١٨٠٠ ق.م", "#bc931a"], ["exode", "مصر والخروج", "نحو ١٨٠٠–١٤٤٦ ق.م", "#4f6d41"], ["desert", "البرية", "١٤٤٦–١٤٠٦ ق.م", "#4fa678"], ["juges", "الفتح والقضاة", "١٤٠٦–١٠٥٠ ق.م", "#1c7171"], ["royaume", "المملكة", "١٠٥٠–٩٣٠ ق.م", "#2aaad0"], ["division", "المملكة المنقسمة", "٩٣٠–٧٢٢ ق.م", "#2d72c4"], ["exil", "السبي", "٧٢٢–٥٣٨ ق.م", "#73a2ff"], ["retour", "العودة", "٥٣٨–١٦٧ ق.م", "#744e9b"], ["maccabees", "ثورة المكابيين", "١٦٧ ق.م ← سنة ١", "#d678af"], ["christ", "الإتمام المسيحاني", "سنة ١–٣٣", "#d3a94f"], ["eglise", "الكنيسة", "سنة ٣٣ ←", "#e9e3d3"]]};
+const PERIODE_ICI="christ";
+const PERIODE_LBL={"fr": "Où nous sommes dans l'histoire", "en": "Where we are in the story", "ar": "أين نحن من التاريخ"};
+function posSituation(l){
+  const zone=document.getElementById('situation');
+  if(!zone) return;
+  const liste=PERIODES[l]||PERIODES.fr;
+  const i=liste.findIndex(p=>p[0]===PERIODE_ICI);
+  const ici=liste[i];
+  zone.innerHTML='<a href="frise-prophetes.html">'
+    +'<div class="sitlbl">'+PERIODE_LBL[l]+'</div>'
+    +'<div class="sitbar">'+liste.map((p,k)=>
+        '<span class="sitseg'+(k===i?' on':'')+'" style="--sc:'+p[3]+'"></span>').join('')
+    +'</div>'
+    +'<div class="sitnow"><b style="color:'+ici[3]+'">'+ici[1]+'</b> · '+ici[2]+'</div>'
+    +'</a>';
+}
+const _renduSansSituation=render;
+render=function(l){_renduSansSituation(l);posSituation(l);};
+/* fin situation */
+document.querySelectorAll('.langs button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.l)));
+render('fr');
+</script>
+</body>
+</html>
