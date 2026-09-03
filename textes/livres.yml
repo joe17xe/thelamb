@@ -1,0 +1,383 @@
+# livres.yml — les 73 livres du site vers la versification de référence
+#
+# `code` est celui de `textes/vref.txt` : c'est la clé qui donne accès aux
+# textes. Les trois noms sont ceux des pupitres — la source reste
+# salle-bibliotheque.html, ce fichier n'en est qu'une projection pour les outils.
+# `autres` liste les formes que le site emploie ailleurs (« Psaume 22:2 »).
+#
+# Régénérer :  python3 outils/importer-textes.py --livres
+
+livres:
+  - id: genese
+    code: GEN
+    fr: Genèse
+    en: Genesis
+    ar: التكوين
+  - id: exode
+    code: EXO
+    fr: Exode
+    en: Exodus
+    ar: الخروج
+  - id: levitique
+    code: LEV
+    fr: Lévitique
+    en: Leviticus
+    ar: اللاويين
+  - id: nombres
+    code: NUM
+    fr: Nombres
+    en: Numbers
+    ar: العدد
+  - id: deuteronome
+    code: DEU
+    fr: Deutéronome
+    en: Deuteronomy
+    ar: التثنية
+  - id: josue
+    code: JOS
+    fr: Josué
+    en: Joshua
+    ar: يشوع
+  - id: juges
+    code: JDG
+    fr: Juges
+    en: Judges
+    ar: القضاة
+  - id: ruth
+    code: RUT
+    fr: Ruth
+    en: Ruth
+    ar: راعوث
+  - id: 1-samuel
+    code: 1SA
+    fr: 1 Samuel
+    en: 1 Samuel
+    ar: ١ صموئيل
+  - id: 2-samuel
+    code: 2SA
+    fr: 2 Samuel
+    en: 2 Samuel
+    ar: ٢ صموئيل
+  - id: 1-rois
+    code: 1KI
+    fr: 1 Rois
+    en: 1 Kings
+    ar: ١ ملوك
+  - id: 2-rois
+    code: 2KI
+    fr: 2 Rois
+    en: 2 Kings
+    ar: ٢ ملوك
+  - id: 1-chroniques
+    code: 1CH
+    fr: 1 Chroniques
+    en: 1 Chronicles
+    ar: ١ أخبار
+  - id: 2-chroniques
+    code: 2CH
+    fr: 2 Chroniques
+    en: 2 Chronicles
+    ar: ٢ أخبار
+  - id: esdras
+    code: EZR
+    fr: Esdras
+    en: Ezra
+    ar: عزرا
+  - id: nehemie
+    code: NEH
+    fr: Néhémie
+    en: Nehemiah
+    ar: نحميا
+  - id: esther
+    code: EST
+    fr: Esther
+    en: Esther
+    ar: أستير
+  - id: job
+    code: JOB
+    fr: Job
+    en: Job
+    ar: أيوب
+  - id: psaumes
+    code: PSA
+    fr: Psaumes
+    en: Psalms
+    ar: المزامير
+    autres:
+    - Psaume
+  - id: proverbes
+    code: PRO
+    fr: Proverbes
+    en: Proverbs
+    ar: الأمثال
+  - id: ecclesiaste
+    code: ECC
+    fr: Ecclésiaste
+    en: Ecclesiastes
+    ar: الجامعة
+  - id: cantique
+    code: SNG
+    fr: Cantique
+    en: Song of Songs
+    ar: نشيد الأنشاد
+    autres:
+    - Cantique des cantiques
+  - id: esaie
+    code: ISA
+    fr: Ésaïe
+    en: Isaiah
+    ar: إشعياء
+  - id: jeremie
+    code: JER
+    fr: Jérémie
+    en: Jeremiah
+    ar: إرميا
+  - id: lamentations
+    code: LAM
+    fr: Lamentations
+    en: Lamentations
+    ar: مراثي إرميا
+  - id: ezechiel
+    code: EZK
+    fr: Ézéchiel
+    en: Ezekiel
+    ar: حزقيال
+  - id: daniel
+    code: DAN
+    fr: Daniel
+    en: Daniel
+    ar: دانيال
+  - id: osee
+    code: HOS
+    fr: Osée
+    en: Hosea
+    ar: هوشع
+  - id: joel
+    code: JOL
+    fr: Joël
+    en: Joel
+    ar: يوئيل
+  - id: amos
+    code: AMO
+    fr: Amos
+    en: Amos
+    ar: عاموس
+  - id: abdias
+    code: OBA
+    fr: Abdias
+    en: Obadiah
+    ar: عوبديا
+  - id: jonas
+    code: JON
+    fr: Jonas
+    en: Jonah
+    ar: يونان
+  - id: michee
+    code: MIC
+    fr: Michée
+    en: Micah
+    ar: ميخا
+  - id: nahum
+    code: NAM
+    fr: Nahum
+    en: Nahum
+    ar: ناحوم
+  - id: habacuc
+    code: HAB
+    fr: Habacuc
+    en: Habakkuk
+    ar: حبقوق
+  - id: sophonie
+    code: ZEP
+    fr: Sophonie
+    en: Zephaniah
+    ar: صفنيا
+  - id: aggee
+    code: HAG
+    fr: Aggée
+    en: Haggai
+    ar: حجي
+  - id: zacharie
+    code: ZEC
+    fr: Zacharie
+    en: Zechariah
+    ar: زكريا
+  - id: malachie
+    code: MAL
+    fr: Malachie
+    en: Malachi
+    ar: ملاخي
+  - id: tobie
+    code: TOB
+    fr: Tobie
+    en: Tobit
+    ar: طوبيا
+  - id: judith
+    code: JDT
+    fr: Judith
+    en: Judith
+    ar: يهوديت
+  - id: sagesse
+    code: WIS
+    fr: Sagesse
+    en: Wisdom
+    ar: الحكمة
+  - id: siracide
+    code: SIR
+    fr: Siracide
+    en: Sirach
+    ar: يشوع بن سيراخ
+    autres:
+    - Ecclésiastique
+  - id: baruch
+    code: BAR
+    fr: Baruch
+    en: Baruch
+    ar: باروخ
+  - id: 1-maccabees
+    code: 1MA
+    fr: 1 Maccabées
+    en: 1 Maccabees
+    ar: المكابيّين الأول
+  - id: 2-maccabees
+    code: 2MA
+    fr: 2 Maccabées
+    en: 2 Maccabees
+    ar: المكابيّين الثاني
+  - id: matthieu
+    code: MAT
+    fr: Matthieu
+    en: Matthew
+    ar: متى
+  - id: marc
+    code: MRK
+    fr: Marc
+    en: Mark
+    ar: مرقس
+  - id: luc
+    code: LUK
+    fr: Luc
+    en: Luke
+    ar: لوقا
+  - id: jean
+    code: JHN
+    fr: Jean
+    en: John
+    ar: يوحنا
+  - id: actes
+    code: ACT
+    fr: Actes
+    en: Acts
+    ar: أعمال الرسل
+  - id: romains
+    code: ROM
+    fr: Romains
+    en: Romans
+    ar: رومية
+  - id: 1-corinthiens
+    code: 1CO
+    fr: 1 Corinthiens
+    en: 1 Corinthians
+    ar: ١ كورنثوس
+  - id: 2-corinthiens
+    code: 2CO
+    fr: 2 Corinthiens
+    en: 2 Corinthians
+    ar: ٢ كورنثوس
+  - id: galates
+    code: GAL
+    fr: Galates
+    en: Galatians
+    ar: غلاطية
+  - id: ephesiens
+    code: EPH
+    fr: Éphésiens
+    en: Ephesians
+    ar: أفسس
+  - id: philippiens
+    code: PHP
+    fr: Philippiens
+    en: Philippians
+    ar: فيلبي
+  - id: colossiens
+    code: COL
+    fr: Colossiens
+    en: Colossians
+    ar: كولوسي
+  - id: 1-thessaloniciens
+    code: 1TH
+    fr: 1 Thessaloniciens
+    en: 1 Thessalonians
+    ar: ١ تسالونيكي
+  - id: 2-thessaloniciens
+    code: 2TH
+    fr: 2 Thessaloniciens
+    en: 2 Thessalonians
+    ar: ٢ تسالونيكي
+  - id: 1-timothee
+    code: 1TI
+    fr: 1 Timothée
+    en: 1 Timothy
+    ar: ١ تيموثاوس
+  - id: 2-timothee
+    code: 2TI
+    fr: 2 Timothée
+    en: 2 Timothy
+    ar: ٢ تيموثاوس
+  - id: tite
+    code: TIT
+    fr: Tite
+    en: Titus
+    ar: تيطس
+  - id: philemon
+    code: PHM
+    fr: Philémon
+    en: Philemon
+    ar: فليمون
+  - id: hebreux
+    code: HEB
+    fr: Hébreux
+    en: Hebrews
+    ar: العبرانيون
+  - id: jacques
+    code: JAS
+    fr: Jacques
+    en: James
+    ar: يعقوب
+  - id: 1-pierre
+    code: 1PE
+    fr: 1 Pierre
+    en: 1 Peter
+    ar: ١ بطرس
+  - id: 2-pierre
+    code: 2PE
+    fr: 2 Pierre
+    en: 2 Peter
+    ar: ٢ بطرس
+  - id: 1-jean
+    code: 1JN
+    fr: 1 Jean
+    en: 1 John
+    ar: ١ يوحنا
+  - id: 2-jean
+    code: 2JN
+    fr: 2 Jean
+    en: 2 John
+    ar: ٢ يوحنا
+  - id: 3-jean
+    code: 3JN
+    fr: 3 Jean
+    en: 3 John
+    ar: ٣ يوحنا
+  - id: jude
+    code: JUD
+    fr: Jude
+    en: Jude
+    ar: يهوذا
+  - id: apocalypse
+    code: REV
+    fr: Apocalypse
+    en: Revelation
+    ar: الرؤيا
+    autres:
+    - Apocalypse
