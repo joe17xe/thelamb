@@ -402,6 +402,20 @@ boucle à l'exécution suivante. Le supprimer la relance.
   est actif, et **toucher l'Agneau efface tout**, comme il éteignait déjà la sélection.
   Le filtre survit au changement de langue et se vide en changeant de carte.
 
+## R-037 Un tableau sous chaque carte, qui suit le filtre
+- zone: verte
+- statut: fait
+- pourquoi: demande du porteur — « en affichant plus bas un tableau qui détaille ce qui a été filtré, avec une description », et pour les correspondances un tableau qui les liste toutes
+- fait quand: chaque vue porte sa liste, repliée avec le compte, déployée dès qu'un filtre est actif, et chaque ligne ramène à son étoile
+- résultat: sous chaque carte, un tableau tiré de la même donnée mesurée — zéro copie.
+  Replié, il annonce ce qu'il contient : « 153 correspondances — voir la liste ».
+  Filtré, il se déploie seul et dit « 17 sur 153 ». Une ligne porte la pastille de sa
+  catégorie, son nom, et ce qui la classe : l'étagère et l'époque avec ses chapitres
+  pour un livre, le thème et les deux références pour une correspondance, la date et
+  l'époque pour un veilleur, le rang et la précision pour un maillon. **Toucher une
+  ligne allume son étoile** sur la carte et ouvre sa fiche. Le tableau liste, il
+  n'enseigne pas (D-016) : l'enseignement reste sur les pages.
+
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
 - statut: à faire
