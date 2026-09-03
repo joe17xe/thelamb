@@ -18,6 +18,10 @@ const PERIODE_LIVRE = eval('(' + srcBib
   .match(/const PERIODE_LIVRE=\{([\s\S]*?)\};/)[0]
   .replace('const PERIODE_LIVRE=', '').replace(/;$/, '') + ')');
 
+const TRANCHES = (srcBib.match(/const TRANCHES=\{([\s\S]*?)\};/) || [null])[0]
+  ? eval('(' + srcBib.match(/const TRANCHES=\{([\s\S]*?)\};/)[0].replace('const TRANCHES=', '').replace(/;$/, '') + ')')
+  : {};
+
 const livres = [];
 const etageres = {};
 for (const [gi, g] of [...bib.fr.groups, ...bib.fr.groupsNT].entries()) {
@@ -33,6 +37,8 @@ for (const [gi, g] of [...bib.fr.groups, ...bib.fr.groupsNT].entries()) {
     };
     if (b.lien)   // badge D-013 déjà posé sur le pupitre, dans les trois langues
       entree.lien = { fr: b.lien, en: gEn.books[i].lien, ar: gAr.books[i].lien };
+    const tr = (TRANCHES[g.k] || {})[i];   // un livre récit coupé entre deux époques
+    if (tr) entree.tranches = tr;
     livres.push(entree);
   });
 }

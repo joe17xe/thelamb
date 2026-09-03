@@ -166,19 +166,24 @@
 // null = notre carte ne parle pas (elle s'arrête à l'accomplissement — les
 // Actes, les lettres et l'Apocalypse sont au-delà), ou la situation est
 // débattue (Joël : le site le dit déjà pour sa date).
-const PCOULEURS={origines:"#6f7a94",peres:"#a8763c",loi:"#c98a5e",royaume:"#d3a94f",exil:"#6b9bd8",retour:"#7cb47c",attente:"#a583d6",christ:"#d05c5c"};
+const PCOULEURS={origines:"#22a89a",patriarches:"#944887",exode:"#d66f6a",desert:"#8e5e01",juges:"#66a555",royaume:"#7a53a5",division:"#13a7a6",exil:"#1570a1",retour:"#a6931a",maccabees:"#a24d13",christ:"#bc871b",eglise:"#e9e3d3"};
 const PERIODE_LIVRE={
- loi:[["origines","peres"],["loi"],["loi"],["loi"],["loi"]],
- histoire:[["loi"],["loi"],["loi"],["royaume"],["royaume"],["royaume","exil"],["exil"],["royaume"],["royaume","exil"],["retour"],["retour"],["retour"]],
- sagesse:[["peres"],["royaume"],["royaume"],["royaume"],["royaume"]],
- grands:[["exil"],["exil"],["exil"],["exil"],["exil"]],
- petits:[["exil"],null,["exil"],["exil"],["exil"],["exil"],["exil"],["exil"],["exil"],["retour"],["retour"],["retour"]],
- deutero:[["exil"],["retour"],["attente"],["attente"],["exil"],["attente"],["attente"]],
+ loi:[["origines","patriarches"],["exode"],["exode"],["desert"],["desert"]],
+ histoire:[["juges"],["juges"],["juges"],["juges","royaume"],["royaume"],["royaume","division"],["division","exil"],["royaume"],["royaume"],["retour"],["retour"],["retour"]],
+ sagesse:[["patriarches"],["royaume"],["royaume"],["royaume"],["royaume"]],
+ grands:[["division"],["exil"],["exil"],["exil"],["exil"]],
+ petits:[["division"],["division"],["division"],["exil"],["division"],["division"],["exil"],["exil"],["exil"],["retour"],["retour"],["retour"]],
+ deutero:[["division"],["retour"],["maccabees"],["maccabees"],["exil"],["maccabees"],["maccabees"]],
  evangiles:[["christ"],["christ"],["christ"],["christ"]],
- actes:[null],
- paul:[null,null,null,null,null,null,null,null,null,null,null,null,null],
- generales:[null,null,null,null,null,null,null,null],
- apocalypse:[null]
+ actes:[["eglise"]],
+ paul:[["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"]],
+ generales:[["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"],["eglise"]],
+ apocalypse:[["eglise"]]
+};
+// Les livres « récit » que le dépliant coupe entre deux époques, par chapitres.
+const TRANCHES={
+ loi:{0:{origines:"1–11",patriarches:"12–50"}},
+ histoire:{3:{juges:"1–8",royaume:"9–31"},5:{royaume:"1–11",division:"12–22"},6:{division:"1–16",exil:"17–25"}}
 };
 const LIB={
 fr:{
@@ -193,7 +198,7 @@ fr:{
  lecternHint:"— Touchez un livre pour l'ouvrir —",
  col:{when:"Quand (estimation)",what:"De quoi ça parle",christ:"Le fil vers le Christ",nuance:"Lire la nuance"},
  periodeLbl:"Où se situe son récit",
- periodeNoms:{origines:"Les origines",peres:"Les pères",loi:"La Loi",royaume:"Le Royaume",exil:"La division & l'exil",retour:"Le retour",attente:"L'attente",christ:"L'accomplissement"},
+ periodeNoms:{origines:"Monde des origines",patriarches:"Les Patriarches",exode:"Égypte et Exode",desert:"Le Désert",juges:"Conquête et Juges",royaume:"Le Royaume",division:"Le Royaume divisé",exil:"L'Exil",retour:"Le Retour",maccabees:"La révolte des Maccabées",christ:"L'Accomplissement",eglise:"L'Église"}, chap:"ch.",
  groups:[
   {k:"loi",t:"La Loi (Torah)",n:"5 livres",sub:"Les fondations : la création, les promesses, la sortie d'Égypte, l'Alliance.",
    intro:"Les cinq premiers livres, la « Torah » (l'instruction), attribués à Moïse. Ils posent tout : d'où vient le monde, d'où vient le mal, comment Dieu se choisit un peuple et lui donne une Alliance. Tout le reste de la Bible s'y appuie. C'est ici que naissent l'agneau pascal, le sacrifice, le sacerdoce — les figures que le Christ accomplira.",
@@ -325,7 +330,7 @@ en:{
  lecternHint:"— Touch a book to open it —",
  col:{when:"When (estimate)",what:"What it is about",christ:"The thread to Christ",nuance:"Read the nuance"},
  periodeLbl:"Where its story sits",
- periodeNoms:{origines:"The origins",peres:"The fathers",loi:"The Law",royaume:"The Kingdom",exil:"Division & exile",retour:"The return",attente:"The waiting",christ:"The fulfilment"},
+ periodeNoms:{origines:"Early World",patriarches:"The Patriarchs",exode:"Egypt and Exodus",desert:"Desert Wanderings",juges:"Conquest and Judges",royaume:"Royal Kingdom",division:"Divided Kingdom",exil:"Exile",retour:"Return",maccabees:"Maccabean Revolt",christ:"Messianic Fulfillment",eglise:"The Church"}, chap:"ch.",
  groups:[
   {k:"loi",t:"The Law (Torah)",n:"5 books",sub:"The foundations: creation, the promises, the exodus, the Covenant.",
    intro:"The first five books, the “Torah” (instruction), attributed to Moses. They lay everything: where the world comes from, where evil comes from, how God chooses a people and gives it a Covenant. All the rest of the Bible rests on them. Here are born the Passover lamb, sacrifice, priesthood — the figures Christ will fulfil.",
@@ -457,7 +462,7 @@ ar:{
  lecternHint:"— المس سفرًا لفتحه —",
  col:{when:"متى (تقدير)",what:"موضوعه",christ:"الخيط نحو المسيح",nuance:"اقرأ الفارق"},
  periodeLbl:"أين يقع خبرُه",
- periodeNoms:{origines:"البدايات",peres:"الآباء",loi:"الناموس",royaume:"المملكة",exil:"الانقسام والسبي",retour:"العودة",attente:"الانتظار",christ:"الإتمام"},
+ periodeNoms:{origines:"عالم البدايات",patriarches:"الآباء",exode:"مصر والخروج",desert:"البرية",juges:"الفتح والقضاة",royaume:"المملكة",division:"المملكة المنقسمة",exil:"السبي",retour:"العودة",maccabees:"ثورة المكابيين",christ:"الإتمام المسيحاني",eglise:"الكنيسة"}, chap:"أص.",
  groups:[
   {k:"loi",t:"الناموس (التوراة)",n:"٥ أسفار",sub:"الأسس: الخلق، والمواعيد، والخروج من مصر، والعهد.",
    intro:"الأسفارُ الخمسة الأولى، «التوراة» (التعليم)، المنسوبة إلى موسى. تضع كلَّ شيء: من أين العالم، ومن أين الشر، وكيف يختار اللهُ شعبًا ويعطيه عهدًا. وعليها يستند سائرُ الكتاب. هنا يولد حملُ الفصح، والذبيحة، والكهنوت — الرموزُ التي سيتمّمها المسيح.",
@@ -645,7 +650,8 @@ function render(l){
       if(pk){
         const lb=document.createElement('span');lb.className='plbl';lb.textContent=c.periodeLbl;pz.appendChild(lb);
         pk.forEach(k=>{const ch=document.createElement('span');ch.className='pchip';
-          ch.style.setProperty('--pc',PCOULEURS[k]);ch.textContent=c.periodeNoms[k];pz.appendChild(ch);});
+          ch.style.setProperty('--pc',PCOULEURS[k]);const tr=(TRANCHES[sp.dataset.g]||{})[+sp.dataset.i];
+          ch.textContent=c.periodeNoms[k]+(tr&&tr[k]?' · '+c.chap+' '+tr[k]:'');pz.appendChild(ch);});
       }
       lect.querySelector('.lbl-what').textContent=c.col.what;
       lect.querySelector('.what').textContent=b.w;

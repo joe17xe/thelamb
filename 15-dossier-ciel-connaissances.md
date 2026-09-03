@@ -281,10 +281,25 @@ rouge dont le texte de l'Ancien Testament tombe dans l'époque, en puces dans la
 fiche. Le débutant lit ainsi la Bible comme une seule histoire, et voit à chaque
 époque le fil qui la traverse.
 
-Un point reste à confirmer par le porteur : le sens (D-019). Le parcours en sept
-étapes descend du Christ (D-007) ; le récit monte de la Genèse à l'Église. Les
-deux se tiennent si on les nomme — la méthode d'Emmaüs d'un côté, le chemin de
-lecture du débutant de l'autre — et le récit regarde le Christ à chaque pas.
+**Le sens est tranché : on part du Christ.** Le chemin des époques commence à
+l'Accomplissement, sous la lumière de l'Agneau, et remonte le temps de secteur
+en secteur jusqu'aux origines ; le dernier pas est l'Église, voisine de
+l'Accomplissement sur l'anneau — la boucle d'Emmaüs : on quitte Jérusalem, les
+Écritures s'ouvrent « en commençant par Moïse », et l'on revient à Jérusalem, où
+les Actes commencent. Un tour complet, à rebours du temps, qui ramène au Christ.
+Les crans du chemin sont numérotés dans ce sens ; l'Accomplissement est le
+premier.
+
+**PR 1 — la donnée : faite.** `periodes.yml` compte douze époques aux termes du
+dépliant, dates du dépliant (chronologie haute, dite), couleurs validées au
+vérificateur sur le fond du site (bande de clarté, chroma, séparation
+daltonienne et normale entre époques voisines, contraste), l'Église à l'encre.
+Les quatorze pages remappées et leurs bandeaux régénérés ; la salle reçoit ses
+époques depuis les « logés » du dépliant, avec les tranches de chapitres des
+livres récit coupés (Genèse 1–11 / 12–50, 1 Samuel 1–8 / 9–31, 1 Rois 1–11 /
+12–22, 2 Rois 1–16 / 17–25) ; Joël au Royaume divisé ; le Nouveau Testament à
+l'Église — plus aucun livre hors de la carte. « La Bible en temps réel » passe
+à douze lignes, la frise et la carte suivent par les miroirs.
 
 Le compte des livres, lui, est corrigé sans attendre (R-030) : **66 + 7**, les sept
 venus de la Bible grecque, et la note « Pourquoi 66 + 7 ? » qui explique la

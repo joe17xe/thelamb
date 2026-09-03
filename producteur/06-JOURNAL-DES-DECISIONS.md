@@ -71,7 +71,7 @@ relie, c'est une quinzième page orpheline.
 ## Tranchées
 
 ### D-019 — Le point de départ : trouver Jésus de la Genèse au dernier livre, par le récit ; et le compte 66 + 7
-**Date :** 3 septembre 2026 — **Statut :** tranchée avec le product owner — un point à confirmer (le sens de lecture, voir plus bas)
+**Date :** 3 septembre 2026 — **Statut :** tranchée — confirmée par le porteur le même jour : « le plus important c'est le chemin ; on part du Christ »
 **La question :** quel est le but principal du site, et par où un débutant commence-t-il ?
 **Ce qui a été décidé :** le but est de raconter comment on trouve Jésus depuis la
 création jusqu'au dernier livre — tout tourne autour de lui. Le point de départ est
@@ -88,17 +88,20 @@ construire, et son fil est le récit — les quatorze livres dans l'ordre, chaqu
 disant *où Jésus s'y trouve* : les correspondances du fil rouge dont le texte de
 l'Ancien Testament tombe dans l'époque. La vue « Le livre » refaite suit ; le reste
 du plan de D-018 tient.
-**À confirmer :** le sens. D-007 dit « la frise est une carte, pas un chemin ; le
-parcours descend du Christ ». Le récit, lui, monte, de la Genèse à l'Église. Les deux
-tiennent ensemble si on les nomme : le parcours en sept étapes reste la méthode
-d'Emmaüs, descendante ; le récit des époques est le chemin de lecture du débutant,
-montant — et il regarde le Christ à chaque pas. Le porteur confirme cette lecture,
-ou en choisit une autre.
+**Le sens, tranché :** on part du Christ. Le chemin des époques commence à
+l'Accomplissement — le Christ, sous la lumière de l'Agneau — et remonte le temps :
+les Maccabées, le Retour, l'Exil, le Royaume divisé, le Royaume, les Juges, le
+Désert, l'Exode, les Patriarches, les origines. Puis un dernier pas : l'Église,
+voisine de l'Accomplissement sur l'anneau — comme les disciples d'Emmaüs, qui
+quittent Jérusalem, se font ouvrir les Écritures « en commençant par Moïse », et
+reviennent à Jérusalem, où les Actes commencent. Un tour complet de l'anneau, à
+rebours du temps, qui ramène au Christ. D-007 tient : le chemin descend ; la
+frise reste une carte.
 **Ce qu'on abandonne :** « 66 livres » affiché seul ; la constellation du livre comme
 premier livrable.
 
 ### D-018 — Douze époques, aux termes du dépliant ; deux constellations pour le livre
-**Date :** septembre 2026 — **Statut :** à trancher (proposition au porteur) — **Dossier :** `15-dossier-ciel-connaissances.md`, section « Révision »
+**Date :** 3 septembre 2026 — **Statut :** tranchée (« Parfait », le porteur) — **Dossier :** `15-dossier-ciel-connaissances.md`, section « Révision »
 **La question :** la constellation du livre range par étagère et colore par
 époque : deux logiques mêlées, illisibles ensemble. Et notre carte du temps
 (huit périodes) ne suit pas le dépliant Cavins, que le porteur veut pour

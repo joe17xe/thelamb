@@ -33,6 +33,12 @@ Le volet de l'Exil et du Retour, absent du premier scan, a été transmis le
 1ᵉʳ septembre : le relevé est **complet**, les 70 événements et les 14 livres
 récit sont tous en place.
 
+**Mise à jour du 3 septembre (D-018, D-019) :** le porteur a choisi d'adopter le
+découpage en douze époques et ses termes, traduits, comme carte du temps du site
+— la ligne ci-dessus qui l'excluait est dépassée sur ce point. Les couleurs et
+la liste fermée des événements restent l'œuvre du dépliant ; les nôtres sont
+les nôtres. Cavins est crédité en source.
+
 ---
 
 ## Correspondance : ses 12 périodes, nos 8
