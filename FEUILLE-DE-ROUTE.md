@@ -439,7 +439,7 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-049 « Pourquoi l'agneau ? » — le dossier de fond, vérifié au texte
 - zone: orange
-- statut: fait pour le dossier — la page reste à écrire, trois décisions attendent le porteur
+- statut: fait — dossier, décisions tranchées, contenu intégré aux pages existantes
 - pourquoi: le porteur apporte une recherche sur la question qu'il juge centrale, et demande qu'on la vérifie, qu'on la garde, et que le sang à la porte entre enfin dans les dossiers
 - fait quand: chaque référence est confrontée au texte, le contenu est rangé, et ce qui reste à décider est nommé
 - résultat: **toutes les références du document source ont été vérifiées, aucune n'était
@@ -457,11 +457,24 @@ boucle à l'exécution suivante. Le supprimer la relance.
   sauve quelqu'un dans l'Écriture. Le dossier distingue désormais le sang qui **protège**
   (Exode 12) du sang qui **expie** (Lévitique 17:11, Ésaïe 53) — deux couches que le
   Nouveau Testament réunit et que le site doit d'abord distinguer.
-- décisions en attente: Nombres 9:12 entre-t-il au fil rouge ? Ce serait la **154ᵉ**
-  correspondance, et le site tient à 153 — le nombre des poissons de Jean 21:11 · Le geste
-  sur l'Agneau : il rallume le ciel (R-026), doit-il aussi ouvrir cette fiche, et par quel
-  second geste ? · Les travaux savants cités par le document source n'ont pas été consultés
-  ici : ils restent marqués « rapporté » et ne peuvent pas s'afficher comme établis.
+- décisions tranchées par le porteur, le même jour: **Nombres 9:12 est joint à la
+  correspondance qui existe** (n° 7, Exode 12:46 → Jean 19:36), dont le commentaire dit
+  maintenant les deux témoins dans les trois langues — le fil rouge garde ses 153, le
+  nombre des poissons de Jean 21:11 · **« Pourquoi l'agneau ? » se pose à côté du disque,
+  non dessus** : toucher l'Agneau rallume le ciel (R-026) et ce geste garde son sens ·
+  **les travaux savants restent « rapporté »** tant qu'ils n'ont pas été consultés.
+- rectification: j'avais écrit que le sang à la porte n'était nulle part dans le dépôt.
+  **C'était faux** — j'avais cherché les mots « linteau » et « poteaux », pas l'idée.
+  `page-etape5-la-paque.html` a pour image mentale « une porte marquée de sang » et sa
+  deuxième carte cite Exode 12:7 et 12:13. Les deux dossiers le disent désormais.
+- ce que l'inventaire a montré: **la question est déjà largement traitée**. La page étalon
+  porte les trois couches (Exode 12, Exode 29:38-39, Ésaïe 53:7), les deux mots grecs,
+  l'heure de Jean 19:14 ; l'étape 2 porte l'Agneau qui règne ; l'étape 5 porte le sang et
+  les os non brisés. **Une page neuve aurait fait doublon** — ce que la charte interdit.
+  Trois manques réels seulement, comblés dans les pages qui existent : le *seh*
+  (« un agneau ou un chevreau », Exode 12:5) et **l'hysope qui traverse** (Exode 12:22 →
+  Jean 19:29) dans la page de la Pâque ; **le berger qui devient l'agneau** (Psaume 23:1,
+  Jean 10:11, Apocalypse 7:17) dans la page étalon. Toutes les références vérifiées au texte.
 
 ## R-048 La légende dit ce qu'elle allume — et le déploiement voit ce qu'un visiteur reçoit
 - zone: verte

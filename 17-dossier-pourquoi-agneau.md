@@ -59,7 +59,12 @@ C'est un point à dire, pas à cacher : il ne fragilise rien. Il déplace seulem
 question. L'agneau n'est pas devenu l'image du Christ parce qu'un texte l'aurait imposé,
 mais parce que plusieurs traditions l'ont porté ensemble.
 
-**Le sang à la porte.** C'est la fonction que le texte donne au sang, et elle est précise :
+**Le sang à la porte.** *Rectification du 3 septembre, le jour même : j'ai d'abord écrit
+que le dépôt n'en portait rien, ayant cherché les mots « linteau » et « poteaux ». C'était
+faux.* `page-etape5-la-paque.html` a pour image mentale « une porte marquée de sang », et
+sa deuxième carte est « Exode 12:7, 13 → Romains 5:9 · Le sang sur la porte ». Ce qui
+manque est plus précis : les versets 12:22 et 12:23, et la distinction entre protéger et
+expier. Voici la fonction que le texte donne au sang :
 
 > « On prendra de son sang, et on en mettra sur les deux poteaux et sur le linteau de la
 > porte des maisons où on le mangera. » — **Exode 12:7** [VÉRIFIÉ AU TEXTE]
@@ -163,6 +168,28 @@ C'est l'articulation la plus dense du dossier, et probablement la meilleure fin 
 le passage exact n'a pas été retrouvé ici : à sourcer avant publication]
 
 ---
+
+## 8 bis. Ce que le site porte déjà — inventaire avant d'écrire quoi que ce soit
+
+Fait après coup, et il change le plan. **La question « pourquoi l'agneau ? » est déjà
+largement traitée**, et une page neuve ferait doublon — ce que la charte interdit
+(« une seule image mentale par page », ne pas multiplier les pages).
+
+| ce que le dossier apporte | déjà sur le site ? |
+|---|---|
+| les trois couches — Pâque, agneau quotidien, Isaïe 53 | **oui** — `page-etalon-voici-agneau.html`, les trois cartes : Exode 12, Exode 29:38-39, Ésaïe 53:7 |
+| *amnos* / *arnion* | **oui** — étalon (strate 3) et `page-etape2-agneau-regne.html` |
+| l'heure de Jean 19:14 | **oui** — étalon, strate 3 |
+| le sang sur la porte | **oui** — `page-etape5-la-paque.html`, image mentale et carte 2 |
+| aucun os brisé | **oui** — étape 5, carte 3 |
+| l'Agneau qui règne (Apocalypse 5) | **oui** — `page-etape2-agneau-regne.html`, étape entière |
+| l'hysope | **partiellement** — dans l'étape 2 et dans le fil rouge (n° 133), **pas** dans la page de la Pâque, là où la porte est montrée |
+| le *seh* : « un agneau **ou un chevreau** » | **non** — le mot ne paraît que dans Morija, à propos d'un autre sujet |
+| le paradoxe berger / agneau | **non** — nulle part développé dans une page |
+| le garde-fou « la Pâque n'est pas un sacrifice pour le péché » | **non** — et l'étape 5 dit « une vie donnée à la place de la maison », ce qu'Exode 12 ne dit pas |
+
+**Conclusion : pas de page neuve.** Trois ajouts précis dans deux pages qui existent, et un
+accès depuis la carte du ciel vers l'étalon, qui est déjà la page de cette question.
 
 ## 9. Ce qui doit être décidé avant d'écrire la page
 

@@ -34,8 +34,10 @@ Cinq maillons, dans cet ordre — chacun est une station de la page :
 référence (`outils/citer.py`) : tous **[ÉTABLI]**.*
 
 Avant d'être le sang de l'expiation, le sang est, dans l'ordre du récit, un **signe posé
-sur une porte**. Le dossier n'en disait rien, et le mot « linteau » n'apparaissait nulle
-part dans le dépôt. C'est pourtant la première fois que le sang sauve quelqu'un.
+sur une porte**. Ce dossier n'en disait rien — la page de la Pâque, elle, le porte déjà :
+son image mentale est « une porte marquée de sang », et sa deuxième carte cite Exode 12:7
+et 12:13. Ce qui manquait ici, c'est le détail du geste (12:22) et la distinction entre
+protéger et expier.
 
 | ce que dit le texte | référence |
 |---|---|
