@@ -63,6 +63,9 @@ def coherence(d):
         for p in (l["periodes"] or []):
             if p not in pers:
                 fautes.append("livre %s : période inconnue %r" % (l["id"], p))
+    for p in d["prophetes"]:
+        if p["epoque"] not in pers:
+            fautes.append("prophète %s : époque inconnue %r" % (p["id"], p["epoque"]))
     for g in d["generations"]:
         if g.get("periode") and g["periode"] not in pers:
             fautes.append("génération %s : période inconnue %r"
@@ -117,6 +120,14 @@ def bloc_constel(d):
                     l.get("tranches")]
                    for l in d["livres"]],
         "themes": d["themes"],
+        "prophetes": [[p["id"], p["epoque"], p["pos"],
+                       [p["nom"]["fr"], p["nom"]["en"], p["nom"]["ar"]],
+                       [p["date"]["fr"], p["date"]["en"], p["date"]["ar"]]]
+                      for p in d["prophetes"]],
+        "generations": [[g.get("periode"),
+                         [g["nom"]["fr"], g["nom"]["en"], g["nom"]["ar"]],
+                         1 if g.get("fourche") else 0]
+                        for g in d["generations"]],
         "corr": [[c["theme"],
                   [c["titre"]["fr"], c["at"]["fr"], c["nt"]["fr"]],
                   [c["titre"]["en"], c["at"]["en"], c["nt"]["en"]],

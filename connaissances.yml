@@ -2121,7 +2121,7 @@ generations:
     ar: إبراهيم
     en: Abraham
     fr: Abraham
-  periode: origines
+  periode: patriarches
 - nom:
     ar: سام
     en: Shem
@@ -2141,6 +2141,7 @@ generations:
     ar: آدم
     en: Adam
     fr: Adam
+  periode: origines
 livres:
 - etagere: loi
   id: genese
@@ -3092,90 +3093,160 @@ periodes:
 - christ
 - eglise
 prophetes:
-- id: moise
+- date:
+    ar: نحو ١٣٠٠ ق.م
+    en: ~1300 BC
+    fr: ~1300 av. J.-C.
+  epoque: exode
+  id: moise
   nom:
     ar: موسى
     en: Moses
     fr: Moïse
-  phase: loi
-- id: nathan
+  pos: 12.9
+- date:
+    ar: نحو ١٠٠٠ ق.م
+    en: ~1000 BC
+    fr: ~1000 av. J.-C.
+  epoque: royaume
+  id: nathan
   nom:
     ar: ناثان / داود
     en: Nathan / David
     fr: Nathan / David
-  phase: royaume
-- id: joel
+  pos: 32.26
+- date:
+    ar: نحو ٨٣٠ ق.م (مختلَف فيه)
+    en: ~830 BC (debated)
+    fr: ~830 av. J.-C. (débattu)
+  epoque: division
+  id: joel
   nom:
     ar: يوئيل
     en: Joel
     fr: Joël
-  phase: exil
-- id: amos
+  pos: 43.23
+- date:
+    ar: نحو ٧٦٠ ق.م
+    en: ~760 BC
+    fr: ~760 av. J.-C.
+  epoque: division
+  id: amos
   nom:
     ar: عاموس
     en: Amos
     fr: Amos
-  phase: exil
-- id: osee
+  pos: 47.74
+- date:
+    ar: نحو ٧٥٠ ق.م
+    en: ~750 BC
+    fr: ~750 av. J.-C.
+  epoque: division
+  id: osee
   nom:
     ar: هوشع
     en: Hosea
     fr: Osée
-  phase: exil
-- id: esaie
+  pos: 48.39
+- date:
+    ar: نحو ٧٠٠ ق.م
+    en: ~700 BC
+    fr: ~700 av. J.-C.
+  epoque: division
+  id: esaie
   nom:
     ar: إشعياء
     en: Isaiah
     fr: Ésaïe
-  phase: exil
-- id: michee
+  pos: 51.61
+- date:
+    ar: نحو ٧٠٠ ق.م
+    en: ~700 BC
+    fr: ~700 av. J.-C.
+  epoque: division
+  id: michee
   nom:
     ar: ميخا
     en: Micah
     fr: Michée
-  phase: exil
-- id: jeremie
+  pos: 51.55
+- date:
+    ar: نحو ٦٠٠ ق.م
+    en: ~600 BC
+    fr: ~600 av. J.-C.
+  epoque: exil
+  id: jeremie
   nom:
     ar: إرميا
     en: Jeremiah
     fr: Jérémie
-  phase: exil
-- id: ezechiel
+  pos: 58.06
+- date:
+    ar: نحو ٥٩٠ ق.م
+    en: ~590 BC
+    fr: ~590 av. J.-C.
+  epoque: exil
+  id: ezechiel
   nom:
     ar: حزقيال
     en: Ezekiel
     fr: Ézéchiel
-  phase: exil
-- id: daniel
+  pos: 58.71
+- date:
+    ar: نحو ٥٥٠ ق.م
+    en: ~550 BC
+    fr: ~550 av. J.-C.
+  epoque: exil
+  id: daniel
   nom:
     ar: دانيال
     en: Daniel
     fr: Daniel
-  phase: exil
-- id: aggee
+  pos: 61.29
+- date:
+    ar: نحو ٥٢٠ ق.م
+    en: ~520 BC
+    fr: ~520 av. J.-C.
+  epoque: retour
+  id: aggee
   nom:
     ar: حجي
     en: Haggai
     fr: Aggée
-  phase: retour
-- id: zacharie
+  pos: 63.23
+- date:
+    ar: نحو ٥٢٠ ق.م
+    en: ~520 BC
+    fr: ~520 av. J.-C.
+  epoque: retour
+  id: zacharie
   nom:
     ar: زكريا
     en: Zechariah
     fr: Zacharie
-  phase: retour
-- id: malachie
+  pos: 63.29
+- date:
+    ar: نحو ٤٣٠ ق.م
+    en: ~430 BC
+    fr: ~430 av. J.-C.
+  epoque: retour
+  id: malachie
   nom:
     ar: ملاخي
     en: Malachi
     fr: Malachie
-  phase: retour
-- id: jean
+  pos: 69.03
+- date:
+    ar: نحو ٢٨ م
+    en: ~AD 28
+    fr: ~28 apr. J.-C.
+  epoque: christ
+  id: jean
   nom:
     ar: يوحنا المعمدان
     en: John the Baptist
     fr: Jean-Baptiste
-  phase: christ
+  pos: 98.58
 themes:
   agneau:
     compte: 27

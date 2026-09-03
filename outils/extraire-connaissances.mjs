@@ -65,8 +65,9 @@ correspondances.forEach(c => {
 // ── les 14 veilleurs et les 20 générations de la frise ─────────────────────
 const fr = lireC('frise-prophetes.html');
 const prophetes = fr.fr.prophets.map((p, i) => ({
-  id: p.k, phase: p.phase,
+  id: p.k, epoque: p.phase, pos: +p.x.toFixed(2),   // pos : place sur l'axe, 0 = −1500, 100 = +30
   nom: { fr: p.n, en: fr.en.prophets[i].n, ar: fr.ar.prophets[i].n },
+  date: { fr: p.d, en: fr.en.prophets[i].d, ar: fr.ar.prophets[i].d },
 }));
 const srcFrise = readFileSync('frise-prophetes.html', 'utf8');
 const GENCLES = eval(srcFrise.match(/const GENCLES=(\[[^\]]*\]);/)[1]);

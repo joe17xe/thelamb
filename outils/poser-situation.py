@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Pose sur chaque page ancrée le bandeau « où nous sommes dans l'histoire ».
+"""Pose dans les pages ce qu'elles copient de `periodes.yml`.
+
+Le bandeau « où nous sommes dans l'histoire » sur chaque page ancrée, les
+cartes de couleurs des trois pages qui en portent une, et les douze époques
+en toutes lettres dans la frise.
 
     python3 outils/poser-situation.py            applique
     python3 outils/poser-situation.py --retirer  enlève tout
@@ -108,6 +112,54 @@ def poser(chemin, cle, periodes):
     ecrire(chemin, t, origine)
 
 
+# ————— Ce que les pages copient de periodes.yml —————
+# Trois pages portent la carte des couleurs, et la frise porte les douze époques
+# en toutes lettres. Ce sont des copies : le générateur les réécrit depuis
+# periodes.yml, et la CI refuse toute divergence — une seule carte du temps.
+COULEURS = [("salle-bibliotheque.html", "PCOULEURS"),
+            ("frise-prophetes.html", "EPOCOULEURS"),
+            ("section-bible-fiable.html", "TCOULEURS")]
+NUMERO = {"fr": "Époque %s", "en": "Epoch %s", "ar": "العصر %s"}
+CHIFFRES_AR = "٠١٢٣٤٥٦٧٨٩"
+
+
+def _num(lang, i):
+    return ("".join(CHIFFRES_AR[int(c)] for c in str(i)) if lang == "ar" else str(i))
+
+
+def poser_copies(periodes):
+    couleurs = {p["cle"]: p["couleur"] for p in periodes}
+    for chemin, nom in COULEURS:
+        origine = open(chemin, encoding="utf-8").read()
+        m = re.search(r"const " + nom + r"=(\{.*?\}|\[.*?\]);", origine)
+        if not m:
+            raise SystemExit("%s : %s introuvable" % (chemin, nom))
+        valeur = ("[" + ",".join('"%s"' % c for c in couleurs.values()) + "]"
+                  if m.group(1).startswith("[") else
+                  "{" + ",".join('%s:"%s"' % kv for kv in couleurs.items()) + "}")
+        t = origine[:m.start()] + "const %s=%s;" % (nom, valeur) + origine[m.end():]
+        ecrire(chemin, t, origine)
+        print("  %-32s %s" % (chemin, nom))
+
+    chemin = "frise-prophetes.html"
+    origine = open(chemin, encoding="utf-8").read()
+    langues = iter(("fr", "en", "ar"))
+
+    def bloc(_m):
+        l = next(langues)
+        lignes = [json.dumps([p["cle"], NUMERO[l] % _num(l, i + 1), p[l]["nom"],
+                              p[l]["dates"], p[l]["texte"], p[l]["figures"]],
+                             ensure_ascii=False, separators=(",", ":"))
+                  for i, p in enumerate(periodes)]
+        return " phases:[\n  " + ",\n  ".join(lignes) + "],"
+
+    t, n = re.subn(r" phases:\[.*?\]\],", bloc, origine, flags=re.S)
+    if n != 3:
+        raise SystemExit("%s : %d bloc(s) « phases » au lieu de 3" % (chemin, n))
+    ecrire(chemin, t, origine)
+    print("  %-32s les douze époques, en toutes lettres ×3" % chemin)
+
+
 def main(argv):
     doc = yaml.safe_load(open("periodes.yml", encoding="utf-8"))
     periodes, ancrages = doc["periodes"], doc["ancrages"]
@@ -122,6 +174,9 @@ def main(argv):
         nom = next(p["fr"]["nom"] for p in periodes if p["cle"] == cle)
         poser(chemin, cle, periodes)
         print("  %-32s %s" % (chemin, nom))
+
+    if not retirer:
+        poser_copies(periodes)
     return 0
 
 
