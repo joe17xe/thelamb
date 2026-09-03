@@ -248,3 +248,45 @@ l'étoile « Les veilleurs » offre « Les époques ». Adresses `#livre` et
 
 Ce que le plan ne fait pas : renommer des fichiers, toucher aux strates des
 pages, créer une deuxième carte du temps.
+
+## Recentrage — le récit d'abord (3 septembre, D-019)
+
+Le porteur et le product owner ont fixé le but principal : **raconter comment on
+trouve Jésus depuis la création jusqu'au dernier livre — tout tourne autour de
+lui** — et le point de départ pour un débutant : **le récit**, les quatorze livres
+qui tiennent l'histoire d'un trait.
+
+| # | Livre | Époques |
+|---|---|---|
+| 1 | Genèse | Monde des origines (1–11) · Patriarches (12–50) |
+| 2 | Exode | Égypte et Exode |
+| 3 | Nombres | Désert |
+| 4 | Josué | Conquête |
+| 5 | Juges | Juges |
+| 6 | 1 Samuel | Conquête et Juges (1–8) · Royaume (9–31) |
+| 7 | 2 Samuel | Royaume |
+| 8 | 1 Rois | Royaume (1–11) · Royaume divisé (12–22) |
+| 9 | 2 Rois | Royaume divisé (1–16) · Exil (17–25) |
+| 10 | Esdras | Retour |
+| 11 | Néhémie | Retour |
+| 12 | 1 Maccabées | Révolte des Maccabées |
+| 13 | Luc | Accomplissement |
+| 14 | Actes | L'Église |
+
+Ce que cela change au plan de la section précédente : **l'ordre**. La vue « Les
+époques » passe devant « Le livre », et elle porte le récit : les quatorze livres
+en étoiles principales, par chapitres, dans l'ordre ; les autres livres « logés »
+autour ; et dans chaque époque, *où Jésus s'y trouve* — les correspondances du fil
+rouge dont le texte de l'Ancien Testament tombe dans l'époque, en puces dans la
+fiche. Le débutant lit ainsi la Bible comme une seule histoire, et voit à chaque
+époque le fil qui la traverse.
+
+Un point reste à confirmer par le porteur : le sens (D-019). Le parcours en sept
+étapes descend du Christ (D-007) ; le récit monte de la Genèse à l'Église. Les
+deux se tiennent si on les nomme — la méthode d'Emmaüs d'un côté, le chemin de
+lecture du débutant de l'autre — et le récit regarde le Christ à chaque pas.
+
+Le compte des livres, lui, est corrigé sans attendre (R-030) : **66 + 7**, les sept
+venus de la Bible grecque, et la note « Pourquoi 66 + 7 ? » qui explique la
+différence en toute transparence.
+
