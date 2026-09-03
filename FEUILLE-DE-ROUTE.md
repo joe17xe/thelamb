@@ -429,6 +429,32 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-041 Le contraste des époques voisines : ne plus délaver la couleur
+- zone: verte
+- statut: fait
+- pourquoi: signalement du porteur — « the first kings / second colors are so close, increase contrast »
+- fait quand: deux époques qui se touchent se distinguent à l'œil, mesures à l'appui
+- résultat: deux causes mesurées, deux corrections.
+  **La couleur était délavée avant d'atteindre l'œil.** Le halo d'une étoile était peint
+  à 55 % d'opacité sur un dégradé qui retombait à 45 % dès le premier tiers : la couleur
+  effective tournait autour de 25 %. Deux époques voisines à ΔE 10 en teinte pleine se
+  retrouvaient à ΔE 5,9 à l'écran, et à 3,5 pour un lecteur daltonien. Le cœur plein —
+  la seule surface qui portait vraiment l'époque — mesurait 4,6 de rayon. Il passe à 5,4
+  (7,2 pour un livre du récit, 6,9 dans la vue du livre), le dégradé ne retombe plus
+  qu'à 60 %, et l'opacité du halo monte de 55 à 70 %.
+  **La palette elle-même séparait mal les voisines.** Chaque époque garde sa teinte à
+  ±16° près — la terre des origines, le vert du désert, le bleu de l'exil, l'or du Christ,
+  l'encre de l'Église — mais la clarté alterne désormais d'une époque à la suivante. La
+  pire paire voisine passe de **ΔE 5,6 à 15,7** (mesure au pire des trois visions :
+  normale, protanope, deutéranope), et la pire paire toutes distances confondues de
+  4,7 à 6,7. Les paires que le porteur cite : le Royaume ↔ le Royaume divisé passe de
+  16,9 à 15,7 après un détour par 25,2, et le Royaume divisé ↔ l'Exil de 7,8 à 16,2.
+- limite: douze catégories ne peuvent pas toutes atteindre le seuil de 15 entre elles ;
+  ce sont les **voisines** qui l'atteignent. La couleur groupe, l'étiquette et le filtre
+  identifient.
+- vérifié: validateur de palette du dépôt d'outils, toutes les paires ; rendu réel en
+  430 × 932 sur les époques, le livre et la frise ; les huit contrôles.
+
 ## R-040 Tobie à l'exil, Judith non tranchée, et le récit compté quatorze
 - zone: verte
 - statut: fait

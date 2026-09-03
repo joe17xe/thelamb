@@ -15,7 +15,7 @@
 periodes:
 
   - cle: origines
-    couleur: "#934f00"
+    couleur: "#a84600"
     fr: {nom: "Monde des origines", dates: "Création → ~2200 av. J.-C.",
          texte: "La création, la chute, et la promesse faite le jour même de la faute ; le déluge, Babel. Des origines racontées, pas datées.",
          figures: "Adam, Abel, Noé",
@@ -30,7 +30,7 @@ periodes:
          evenements: ["الخلق", "السقوط", "الوعدُ في اليوم نفسه", "الطوفان", "بابل والتشتّت"]}
 
   - cle: patriarches
-    couleur: "#967600"
+    couleur: "#bc931a"
     fr: {nom: "Les Patriarches", dates: "~2200–1800 av. J.-C.",
          texte: "Dieu choisit une famille : Abraham, Isaac, Jacob, Joseph. Sur le mont Morija, la question de l'agneau est posée pour la première fois.",
          figures: "Abraham, Isaac, Jacob, Joseph",
@@ -45,7 +45,7 @@ periodes:
          evenements: ["دعوةُ أبرام من أور", "ملكيصادق يبارك أبرام", "العهدُ مع إبراهيم", "سدوم وعمورة", "إسحاق مربوطًا على الحطب", "يعقوب مباركًا، يعقوب هاربًا", "يعقوب يصارع الله", "يوسف يبيعه إخوته", "العائلة تنزل إلى مصر"]}
 
   - cle: exode
-    couleur: "#889d37"
+    couleur: "#4f6d41"
     fr: {nom: "Égypte et Exode", dates: "~1800–1446 av. J.-C.",
          texte: "Israël asservi en Égypte ; les dix plaies ; la première Pâque et la sortie ; l'alliance au Sinaï. Naissance d'un peuple.",
          figures: "Moïse, Aaron",
@@ -60,7 +60,7 @@ periodes:
          evenements: ["إسرائيلُ مستعبَد", "العُلَّيقة المشتعلة", "الضربات العشر", "الفصحُ الأول والخروج", "البحر الأحمر", "المنّ", "العهدُ في سيناء", "العجل الذهبي", "خيمة الاجتماع"]}
 
   - cle: desert
-    couleur: "#137738"
+    couleur: "#4fa678"
     fr: {nom: "Le Désert", dates: "1446–1406 av. J.-C.",
          texte: "Quarante ans au désert : la manne, les douze espions, le serpent d'airain, l'alliance renouvelée en Moab.",
          figures: "Moïse, Josué",
@@ -75,7 +75,7 @@ periodes:
          evenements: ["الجواسيس الاثنا عشر", "عصا هارون", "موسى يضرب الصخرة", "الحيّة النحاسية", "العهدُ المجدَّد في موآب"]}
 
   - cle: juges
-    couleur: "#188d7c"
+    couleur: "#1c7171"
     fr: {nom: "Conquête et Juges", dates: "1406–1050 av. J.-C.",
          texte: "Le Jourdain, Jéricho, le partage du pays ; puis le cycle des juges, d'Othniel à Samson. Israël demande un roi.",
          figures: "Josué, Débora, Gédéon, Samson, Ruth, Samuel",
@@ -90,7 +90,7 @@ periodes:
          evenements: ["عبورُ الأردن", "سقوطُ أريحا", "العهدُ المجدَّد في شكيم", "قسمةُ الأرض بين الأسباط", "دبورة، جدعون، شمشون", "راعوث وبوعز", "إسرائيلُ يطلب ملكًا"]}
 
   - cle: royaume
-    couleur: "#19a4b7"
+    couleur: "#2aaad0"
     fr: {nom: "Le Royaume", dates: "1050–930 av. J.-C.",
          texte: "Saül, puis David règne à Jérusalem ; l'arche y monte ; Dieu fait alliance avec David. Salomon bâtit le Temple — et la promesse d'un trône éternel.",
          figures: "Saül, David, Salomon, Nathan",
@@ -105,7 +105,7 @@ periodes:
          evenements: ["شاول، أولُ ملك", "داود وجليات", "التابوتُ يصعد إلى أورشليم", "العهدُ مع داود", "سليمان يبني الهيكل الأول"]}
 
   - cle: division
-    couleur: "#0e6a9b"
+    couleur: "#2d72c4"
     fr: {nom: "Le Royaume divisé", dates: "930–722 av. J.-C.",
          texte: "Le royaume se divise : Israël au nord, Juda au sud. Élie, Élisée, Amos, Osée, Isaïe, Michée avertissent. Samarie tombe devant l'Assyrie.",
          figures: "Élie, Élisée, Isaïe, Amos, Osée, Michée",
@@ -120,7 +120,7 @@ periodes:
          evenements: ["المملكة تنقسم", "إيزابل تُضلّ إسرائيل", "إيليا على الكرمل", "عاموس، هوشع، إشعياء، ميخا", "سقوطُ السامرة وسبيُ إسرائيل إلى أشور"]}
 
   - cle: exil
-    couleur: "#5d74c7"
+    couleur: "#73a2ff"
     fr: {nom: "L'Exil", dates: "722–538 av. J.-C.",
          texte: "Juda part en exil en trois déportations (605, 597, 587) ; Babylone détruit le Temple. Jérémie, Ézéchiel, Daniel parlent depuis la captivité.",
          figures: "Jérémie, Ézéchiel, Daniel",
@@ -135,7 +135,7 @@ periodes:
          evenements: ["إرميا ينذر أورشليم", "ثلاثةُ سبايا إلى بابل", "الهيكل مُدمَّرًا (٥٨٧)", "حزقيال ودانيال في السبي", "تمثالُ الممالك (دانيال ٢)"]}
 
   - cle: retour
-    couleur: "#9f7ed6"
+    couleur: "#744e9b"
     fr: {nom: "Le Retour", dates: "538–167 av. J.-C.",
          texte: "La Perse renvoie les exilés ; le Temple est rebâti, plus modeste ; Esdras enseigne, Néhémie relève les murailles. On attend « quelque chose de plus ».",
          figures: "Zorobabel, Esdras, Néhémie, Aggée, Zacharie, Malachie",
@@ -150,7 +150,7 @@ periodes:
          evenements: ["أمرُ كورش", "زربابل يبني الهيكل من جديد", "أستير تخلّص شعبها", "عزرا يعود ويعلّم", "نحميا يرفع الأسوار", "ملاخي، آخرُ الأنبياء"]}
 
   - cle: maccabees
-    couleur: "#8b4486"
+    couleur: "#d678af"
     fr: {nom: "La révolte des Maccabées", dates: "167 av. J.-C. → an 1",
          texte: "Antiochos profane le Temple ; les Maccabées le reprennent et le purifient (Hanoukka, 164). Pas de prophète reconnu par toutes les traditions, mais des écrits — Maccabées, Siracide, Sagesse — reçus diversement selon les Églises. Rome arrive.",
          figures: "Judas Maccabée, les Hasmonéens, Hérode",
