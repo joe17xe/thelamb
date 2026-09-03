@@ -39,15 +39,34 @@ situation() {
   return 1
 }
 
-# Échoue ouvert tant que textes/ est vide : sans traductions de référence, la
-# vérification au mot près est impossible. Le jour où R-004 les importe, ce
-# contrôle devient bloquant (R-005).
+# Les textes de référence sont importés (R-004) : ce contrôle vérifie qu'ils sont
+# entiers et alignés — même nombre de lignes que `vref.txt`, sans quoi toute
+# lecture par référence serait décalée d'un verset sans qu'on le voie. La
+# comparaison des citations au mot près reste à brancher (R-005).
 citations() {
-  if ls textes/*.json >/dev/null 2>&1; then
-    echo "Textes présents — vérification au mot près à brancher (R-005)."
-  else
+  local vref=textes/vref.txt
+  if [ ! -f "$vref" ]; then
     echo "::warning::textes/ est vide — les citations ne sont pas vérifiées au mot près (R-004)."
+    return 0
   fi
+  local n dur=0
+  n=$(wc -l < "$vref")
+  echo "vref.txt : $n références"
+  for f in textes/*.txt; do
+    [ "$f" = "$vref" ] && continue
+    local m plein
+    m=$(wc -l < "$f")
+    plein=$(grep -c '[^[:space:]]' "$f" || true)
+    if [ "$m" != "$n" ]; then
+      echo "::error::$f : $m lignes contre $n — l'alignement sur vref.txt est rompu"
+      dur=1
+    else
+      echo "  ✅ $(basename "$f") — $plein versets, alignés"
+    fi
+  done
+  python3 outils/citer.py --existe "Genèse 22:16" >/dev/null || dur=1
+  [ "$dur" = 0 ] && echo "Vérification au mot près à brancher (R-005)."
+  return $dur
 }
 
 controle "Syntaxe des scripts de page" \

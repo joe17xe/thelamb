@@ -437,6 +437,20 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-047 « Le substitut » renvoyait au mauvais verset
+- zone: verte
+- statut: fait
+- pourquoi: demande du porteur, après le signalement fait en préparant R-013
+- fait quand: la correspondance cite le verset que le Nouveau Testament reprend vraiment
+- résultat: la correspondance renvoyait à **Genèse 22:13**, le bélier pris dans le buisson.
+  Or ce que Romains 8:32 reprend, ce sont les mots de **Genèse 22:16** : « tu n'as pas
+  refusé ton fils » répond à « il n'a point épargné son propre Fils ». La référence, la
+  citation et le titre suivent — « Tu n'as pas refusé ton fils » —, dans les trois langues.
+  Le commentaire n'a pas bougé : « Sur Morija, Dieu épargne le fils d'Abraham. Au Calvaire,
+  il n'épargne pas le sien » — il visait déjà 22:16 sans le savoir.
+  Le texte retenu vient des traductions importées le même jour (R-004) : c'est la première
+  correction du site appuyée sur le texte plutôt que sur la mémoire.
+
 ## R-046 La page où le producteur valide la nature des 153 liens
 - zone: verte
 - statut: fait — en attente du relevé du producteur
@@ -605,16 +619,39 @@ boucle à l'exécution suivante. Le supprimer la relance.
 
 ## R-004 Choisir et importer les textes bibliques de référence
 - zone: rouge
-- statut: à faire
+- statut: fait
 - pourquoi: sans eux, la vérification des citations est impossible — et la fusion automatique du contenu repose dessus
 - fait quand: textes/ contient les trois traductions au format normalisé, avec leur licence documentée
+- résultat: les trois traductions de la charte sont importées, toutes **domaine public** :
+  Segond 1910 (31 060 versets), World English Bible (30 959), Smith & Van Dyck
+  (30 966). Format normalisé : un verset par ligne, aligné ligne à ligne sur
+  `textes/vref.txt`, la liste canonique des 41 899 références. Le banc refuse tout
+  fichier désaligné — un décalage d'une ligne ferait lire un verset pour un autre.
+  **Une quatrième traduction est entrée avec elles** : la néo-Crampon libre. Les trois
+  traductions de la charte sont des éditions à 66 livres et le site en présente 73 ; la
+  Crampon est le seul texte libre qui porte les sept deutérocanoniques. Sans elle, Tobie,
+  Judith, Sagesse, Siracide, Baruch et les deux Maccabées n'auraient aucun texte de
+  référence. `textes/LICENCES.md` le documente, avec les trous connus.
+  `outils/importer-textes.py` refait l'import ; `outils/citer.py "Genèse 22:16"` rend un
+  verset dans les quatre textes ; `textes/livres.yml` relie les 73 noms de livres du site,
+  dans les trois langues, aux codes de la versification.
+- mesuré: sur les 306 références des 153 correspondances, **305 se lisent**. La seule qui
+  manquait, « Malachie 4:5 », relevait d'une divergence de numérotation — la liste de
+  référence suit l'hébreu et met Élie en Malachie 3:23 ; l'équivalence est posée.
+- limite: l'extraction Segond s'arrête à Malachie 3:18 (la Crampon porte la fin) ; la Van
+  Dyck disponible n'est pas vocalisée ; 136 de ses versets n'entrent pas dans la
+  versification de référence. Tout est écrit dans `textes/LICENCES.md`.
 
 ## R-005 Vérifier toutes les citations existantes contre les textes
 - zone: verte
-- statut: bloqué
+- statut: à faire — débloqué par R-004
 - pourquoi: 998 références sont citées sur le site ; aucune n'a jamais été vérifiée au mot près
 - fait quand: verifier-citations passe sur les 24 pages, ou signale les écarts dans une issue
-- bloqué par: R-004
+- ce qu'il faudra décider: les citations du site sont **abrégées** (« …par le sang précieux
+  de Christ, comme d'un agneau sans défaut et sans tache »), et l'arabe du site est plus
+  simple que la Van Dyck. La comparaison ne peut donc pas être une égalité de chaînes : il
+  faudra dire ce qui est toléré — l'abrègement, la ponctuation, les diacritiques arabes —
+  et ce qui ne l'est pas.
 
 ## R-006 Donner les trois strates aux 15 pages qui ne les ont pas
 - zone: orange
