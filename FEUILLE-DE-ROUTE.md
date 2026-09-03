@@ -429,6 +429,23 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-043 Le chemin s'arrête à la Genèse ; l'Église suit le Christ, pas les origines
+- zone: verte
+- statut: fait
+- pourquoi: signalement du porteur — « la ligne qui part de la Genèse vers Maccabée »
+- fait quand: aucun trait du cadran ne dit une succession que l'histoire ne connaît pas
+- résultat: le fil du récit reliait les quatorze livres d'un seul trait continu, la Genèse
+  suivie des Actes. Ce dernier segment traversait tout le haut du cadran, passait sous
+  l'étiquette de l'Accomplissement et frôlait celle des Maccabées — d'où la ligne que le
+  porteur voyait partir de la Genèse. Elle était surtout **fausse** : les Actes ne suivent
+  pas les origines, l'Église suit l'Accomplissement.
+  Le trait plein descend désormais du Christ à la Genèse et s'arrête là — treize livres,
+  le parcours du site (D-019). Les Actes, quatorzième livre du récit, sont rattachés à Luc
+  par un trait pointillé court : ce qui suit l'Accomplissement dans le temps, et non ce qui
+  prolongerait la remontée. Deux traits, deux natures, chacun juste.
+- vérifié: trait plein de Luc à la Genèse en 13 points, pointillé de Luc aux Actes,
+  quatorze étoiles du récit intactes ; les huit contrôles.
+
 ## R-042 Le fil vers l'Agneau se mesure, il ne se décrète pas
 - zone: verte
 - statut: fait

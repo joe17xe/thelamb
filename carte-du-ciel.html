@@ -778,9 +778,10 @@ function choisirCorr(n){
 // « récit » sont les étoiles cerclées d'or ; le fil d'or les relie dans cet ordre.
 const RECIT_ORD=["genese","exode","nombres","josue","juges","1-samuel","2-samuel","1-rois","2-rois","esdras","nehemie","1-maccabees","luc","actes"];
 const RECIT=new Set(RECIT_ORD);
-// Le chemin les parcourt à l'envers — il part du Christ (D-019) —, et l'Église
-// ferme la boucle : Luc, puis on remonte jusqu'à la Genèse, puis les Actes.
-const RECIT_CHEMIN=RECIT_ORD.slice(0,13).reverse().concat(["actes"]);
+// Le chemin les parcourt à l'envers — il part du Christ (D-019) : Luc, puis on
+// remonte jusqu'à la Genèse. Les Actes ne sont pas au bout de cette descente :
+// l'Église suit l'Accomplissement, pas les origines. Elle est rattachée à Luc.
+const RECIT_CHEMIN=RECIT_ORD.slice(0,13).reverse();
 const CHEMIN=["christ","maccabees","retour","exil","division","royaume","juges","desert","exode","patriarches","origines","eglise"];
 let SECTEURS={};
 function arcPath(r,a1,a2,sens){ // sens 1 : horaire ; 0 : antihoraire (pour les étiquettes du bas)
@@ -834,16 +835,18 @@ function batiEpoques(svg){
     if(A&&B){ if(Math.abs(A.a2-B.a1)<0.01)ang=A.a2; else if(Math.abs(B.a2-A.a1)<0.01)ang=B.a2; }
     const xy=posC(ang===null?176:202,ang===null?(A?A.am:0):ang);
     etoiles.push([l,xy[0],xy[1],p1,RECIT.has(l[0])]);});
-  // le chemin : le fil d'or à travers les quatorze livres du récit, dans leur
-  // ordre — du Christ vers les origines, puis l'Église referme la boucle
+  // le chemin : le fil d'or à travers les treize livres du récit qui descendent,
+  // dans leur ordre — de Luc, le Christ, jusqu'à la Genèse
   const oue={};etoiles.forEach(e=>{oue[e[0][0]]=e;});
   const pts=RECIT_CHEMIN.map(id=>oue[id]).filter(Boolean)
     .map(e=>e[1].toFixed(1)+','+e[2].toFixed(1));
   const pl=S('polyline');pl.setAttribute('class','chemin');pl.setAttribute('points',pts.join(' '));svg.appendChild(pl);
-  // … et l'on revient au Christ : d'Actes à Luc, en pointillé — la boucle se referme
-  if(pts.length>1){const [x1,y1]=pts[pts.length-1].split(','),[x2,y2]=pts[0].split(',');
-    const rt=S('line');rt.setAttribute('class','chemin retour');
-    rt.setAttribute('x1',x1);rt.setAttribute('y1',y1);rt.setAttribute('x2',x2);rt.setAttribute('y2',y2);svg.appendChild(rt);}
+  // … et l'Église, quatorzième livre du récit : elle ne prolonge pas la Genèse,
+  // elle suit l'Accomplissement. Le trait part donc de Luc, et il est pointillé.
+  const lu=oue['luc'], ac=oue['actes'];
+  if(lu&&ac){const rt=S('line');rt.setAttribute('class','chemin retour');
+    rt.setAttribute('x1',lu[1].toFixed(1));rt.setAttribute('y1',lu[2].toFixed(1));
+    rt.setAttribute('x2',ac[1].toFixed(1));rt.setAttribute('y2',ac[2].toFixed(1));svg.appendChild(rt);}
   return etoiles;
 }
 // Le cœur d'une étoile-livre. Deux époques se lisent en deux demi-disques —
