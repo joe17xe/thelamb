@@ -43,7 +43,52 @@ porter aujourd'hui son badge.
 
 ---
 
-## Ce que j'attends du porteur : trois décisions, pas cent cinquante-trois
+## Les trois décisions — tranchées le 3 septembre 2026
+
+Le porteur a répondu. Ce qui suit est acquis ; la suite du document garde la trace du
+raisonnement.
+
+**1. Niveau de preuve — on avance sur la proposition, qu'il valide.** Claude classe les
+153 liens ; le producteur relit et corrige sur la page `validation-liens.html` ; le porteur
+valide. La garantie est humaine tant que R-004 n'a pas livré les textes en base ; le jour
+où ils y seront, un contrôle automatique confrontera les « citations explicites » au texte.
+
+**2. La lecture part de la tradition catholique, avec toujours une mention pour les autres
+Églises** — décision **D-021**, qui modifie la règle des trois cercles dans la charte. La
+mention n'est ni facultative ni à charge. Sept des 153 correspondances sont dans ce cas à
+ce jour ; la donnée les nomme.
+
+**3. La nature se voit dans la fiche.** Pas sur la carte, pas sur les pages — pour l'instant.
+
+---
+
+## Comment le producteur travaille
+
+La page **`validation-liens.html`**, publiée sur le site, s'ouvre avec le mot convenu.
+Elle présente les 153 liens groupés par thème ; pour chacun, la proposition est déjà
+cochée, en pointillé, avec l'indice qui la justifie. Le producteur corrige ce qui lui
+paraît faux, ajoute une remarque s'il le souhaite, puis **copie le relevé** et le transmet.
+Son travail est gardé sur son appareil au fur et à mesure.
+
+Le relevé ne contient que les écarts : ce qui n'a pas été touché vaut accord.
+
+> **La page n'est pas protégée.** Le site est statique, sans serveur : le mot convenu ne
+> fait qu'écarter le passant, et son empreinte seule figure au dépôt. La page le dit
+> elle-même. Rien de ce qu'elle contient n'est sensible — ce sont des références bibliques,
+> déjà publiques sur le site.
+
+La donnée vit dans `producteur/nature-des-liens.yml` ; la page s'en génère :
+
+```
+python3 outils/poser-validation.py
+```
+
+Le générateur est idempotent, comme celui du bandeau de situation : on ne modifie pas la
+page à la main.
+
+---
+
+## Le raisonnement qui a conduit à ces décisions
 
 Le reste est mécanique. Ces trois-là ne le sont pas.
 

@@ -142,3 +142,10 @@ transversales:
   - fichier: cle-deja-pas-encore.html
     role: Déjà / Pas encore — la clé de lecture
     suite: index.html
+
+# Les ateliers : publiés pour être ouverts depuis un téléphone, mais hors du
+# parcours du lecteur. Ils ne mènent nulle part et personne n'y mène : c'est
+# voulu, et déclaré ici pour qu'on ne le prenne pas pour un oubli.
+ateliers:
+  - fichier: validation-liens.html
+    role: Valider la nature des 153 liens du fil rouge (R-013)
