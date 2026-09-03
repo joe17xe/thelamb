@@ -429,6 +429,28 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-040 Tobie à l'exil, Judith non tranchée, et le récit compté quatorze
+- zone: verte
+- statut: fait
+- pourquoi: trois signalements du porteur sur la donnée du livre — « Tobit is not under the divided kingdom → first exil », « Judith is not confirmed in the return », « narrative books, keep them 14 instead of 18 : they explain history of salvation »
+- fait quand: la carte du temps dit vrai de Tobie, avoue son ignorance sur Judith, et le récit se compte quatorze partout
+- résultat: **Tobie passe au Royaume divisé à l'Exil.** Son récit se déroule à Ninive,
+  parmi les déportés de Nephtali (Tobie 1:2) : dans notre carte, l'exil s'ouvre en 722
+  avec la chute de Samarie, il y est chez lui.
+  **Judith reçoit ses deux époques et la raison du doute** (décision D-020) : le livre
+  se donne pour cadre « Nabuchodonosor, roi des Assyriens », à Ninive (Judith 1:1), et
+  situe pourtant son récit après le retour de l'exil, le Temple purifié (Judith 4:3).
+  Étoile en pointillé, astérisque au nom, note dans le pupitre, la fiche et le tableau.
+  **Le récit se compte quatorze.** La vue des époques dessinait dix-huit étoiles d'or
+  pour quatorze livres : Genèse, 1 Samuel, 1 Rois et 2 Rois y paraissaient deux fois,
+  une par époque. Un livre vaut désormais une étoile — posée sur la frontière de ses
+  deux époques, le cœur partagé en deux couleurs. Le fil d'or passe par quatorze points
+  au lieu de dix-huit, dans l'ordre du récit : Luc, puis on remonte jusqu'à la Genèse,
+  et les Actes referment la boucle. La fiche d'un livre du récit porte son rang — « Récit
+  9/14 » pour 2 Rois — sans concurrencer le numéro d'époque affiché sur le cadran.
+- vérifié: quatorze `.noeud.recit` et quatorze points de chemin mesurés au rendu ;
+  73 étoiles au lieu de 77 ; les quatre bicolores nommées ; les huit contrôles passent.
+
 ## R-039 Par où commencer sur un cadran — et ce que dit le fil d'or
 - zone: verte
 - statut: fait
