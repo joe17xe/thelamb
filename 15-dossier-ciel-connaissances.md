@@ -146,3 +146,105 @@ est à un geste depuis n'importe où.
 1ᵉʳ septembre sont sur le site. Prochaine descente possible, quand le
 porteur le voudra : les 70 événements en constellation du temps, depuis
 `contenus/frise-cavins-releve.md`.
+
+## Révision — douze époques, deux vues (proposition à trancher, D-018)
+
+Le porteur a regardé la constellation du livre et relevé sept choses. Chacune
+avec sa correction.
+
+**1. « Utilise les mêmes termes que Cavins. »** Notre carte du temps compte
+huit périodes ; le dépliant en compte douze, et le relevé
+(`contenus/frise-cavins-releve.md`) les met déjà en correspondance. On passe
+`periodes.yml` à douze : **Monde des origines · Patriarches · Égypte et Exode ·
+Désert · Conquête et Juges · Royaume · Royaume divisé · Exil · Retour · Révolte
+des Maccabées · Accomplissement · L'Église** — aux dates du dépliant
+(chronologie haute, Exode en 1446, à dire quand on l'emploie). Une seule carte
+du temps, toujours : on remplace la nôtre, on n'en ajoute pas une deuxième.
+Ce qui suit en cascade, par les miroirs : les bandeaux des quatorze pages
+(chaque page reçoit son époque parmi les douze, puis `poser-situation.py`),
+« La Bible en temps réel » (douze lignes — les jalons du monde par époque
+sont au relevé), les couleurs de génération de la frise, les puces de période
+de la salle, la légende de la carte. D-008 tient : « Révolte des Maccabées »
+nomme un fait d'histoire, et le texte de l'époque garde « reçus diversement ».
+Ce qui change par rapport à la ligne du relevé (« on ne reprend pas le
+découpage en douze ») : le porteur choisit de l'adopter comme structure — c'est
+D-018, et Cavins reste crédité en source. Les couleurs, elles, restent les
+nôtres : le noir et le blanc du dépliant n'existent pas sur un ciel de nuit.
+
+**2. « Les petits prophètes au-dessus du point, difficile à cliquer. »**
+Corrigé aussitôt (PR #29) : les étiquettes ne captent plus le toucher. Dans la
+refonte, elles quittent le champ d'étoiles : chaque étiquette suit l'arc
+extérieur de sa section, retournée dans la moitié basse pour se lire à
+l'endroit, réduite si l'arc est court. Plus jamais d'étiquette sur une étoile.
+
+**3. « Séparer par un cadre léger les sections. »** Chaque section — la Loi,
+les Historiques… — devient un secteur d'anneau dessiné d'un trait fin (la
+couleur de ligne du site), fond à peine relevé, rayon intérieur au bord du halo
+de l'Agneau, rayon extérieur sous l'étiquette. Les étoiles vivent dedans. Même
+principe pour les douze époques de l'autre vue.
+
+**4. « Les couleurs ne sont pas distinctables, surtout les jaunes ; les pères,
+la Loi et le Royaume trop proches. »** Deux causes, deux corrections. Les halos
+commencent par du blanc au centre : toutes les étoiles claires tirent vers le
+même jaune blanchâtre — le halo prendra la couleur même de l'étoile, sans blanc,
+avec un cœur plein et un anneau fin pour les teintes sombres. Et trois teintes
+chaudes se suivaient (brun, ocre, or) : la palette de douze alterne chaud et
+froid, et se valide au vérificateur (contraste sur le fond, séparation pour
+les daltoniens) avant d'être posée. Les familles de teintes suivent l'ordre du
+dépliant, pour qu'un lecteur qui le connaît s'y retrouve — sans en copier les
+valeurs.
+
+**5. « Selon Cavins, des chapitres peuvent appartenir à deux périodes —
+Genèse, Rois ; Samuel est demi juge et demi roi. »** La donnée le sait déjà
+(une liste de périodes par livre) ; le rendu ne le montrait pas. Deux réponses
+selon la vue. Dans « Le livre », l'étoile devient **bicolore** — deux
+demi-disques : Genèse origines | Patriarches · 1 Samuel Conquête et Juges |
+Royaume · 1 Rois Royaume | Royaume divisé · 2 Rois Royaume divisé | Exil. Dans
+« Les époques », le livre paraît dans chacune de ses époques **avec ses
+chapitres**, comme le dépliant : « Genèse 1–11 » aux origines, « Genèse 12–50 »
+chez les Patriarches ; « 1 Samuel 1–8 » et « 1 Samuel 9–31 ». La salle reçoit
+ces tranches de chapitres dans sa donnée, et le miroir les mesure.
+
+**6. « Petits prophètes : un seul gris — Joël doit être bleu, sinon explique
+pourquoi. »** Joël était le seul livre sans période, parce que sa date est
+disputée (IXᵉ siècle pour les uns, Vᵉ–IVᵉ pour les autres). Le dépliant
+tranche : il range Joël parmi les prophètes du Sud au Royaume divisé, avec
+Isaïe et Michée. On suit le dépliant — Joël prend la couleur du Royaume
+divisé — et sa fiche porte la nuance « Débat interprétatif » sur la date. Au
+passage, les gris du Nouveau Testament disparaissent aussi : Actes, les lettres
+et l'Apocalypse étaient gris parce que notre carte s'arrêtait à
+l'Accomplissement ; l'époque « L'Église » les accueille. Plus aucun livre hors
+de la carte du temps.
+
+**7. « On mélange les époques et les livres ; deux vues. »** C'est le vrai
+diagnostic : la constellation range par étagère et colore par époque, si bien
+qu'on ne lit le temps nulle part dans la disposition. Deux constellations, même
+donnée :
+
+- **« Le livre »** — le canon. Onze sections cadrées, étiquetées sur l'arc ;
+  73 étoiles à la couleur de leur époque, bicolores quand il faut. Toucher un
+  livre : sa fiche ; encore : son pupitre.
+- **« Les époques »** — le récit. Douze secteurs cadrés dans l'ordre du temps,
+  dans le sens des aiguilles depuis le haut, l'Église refermant le cercle sur
+  les origines (le dernier événement du relevé est le retour du Christ). Dans
+  chaque secteur : les livres « récit » de l'époque, par chapitres — ses
+  étoiles principales — et ses livres « logés », plus petits. Toucher une
+  étoile : la fiche du livre, avec sa tranche de chapitres. Toucher le secteur
+  ou son étiquette : la fiche de l'époque — dates, figures, trois phrases, ses
+  livres en puces, ses événements en puces (les 70 du relevé, enfin en ligne),
+  « Entrer → la frise ».
+
+Entrées : l'étoile « Le livre » du ciel offre les deux constellations ;
+l'étoile « Les veilleurs » offre « Les époques ». Adresses `#livre` et
+`#epoques`. Fil d'Ariane inchangé.
+
+**Ordre de construction — trois PR après le Go :**
+
+| | Livrable | Ce qui est vérifié |
+|---|---|---|
+| 1 | **La donnée** — `periodes.yml` à douze ; les quatorze pages remappées ; la salle reçoit ses époques depuis les « logés » du dépliant, avec les chapitres des livres récit ; temps réel à douze lignes ; frise remappée ; miroirs régénérés ; D-018 tranchée | les huit contrôles ; les bandeaux regénérés par le générateur, jamais à la main |
+| 2 | **« Le livre » refaite** — cadres, étiquettes sur l'arc, halos, étoiles bicolores, légende à douze, palette validée | rendu réel trois langues ; aucune étiquette sur une étoile ; validateur de palette |
+| 3 | **« Les époques »** — la nouvelle scène, la fiche d'époque, les deux entrées, l'adresse | rendu réel ; 70 événements et 73 livres tous placés ; fil d'Ariane |
+
+Ce que le plan ne fait pas : renommer des fichiers, toucher aux strates des
+pages, créer une deuxième carte du temps.
