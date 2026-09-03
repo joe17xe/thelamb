@@ -39,6 +39,7 @@
     .legende i{width:8px;height:8px}
     .ariane{font-size:12px;gap:8px}
     .ariane .vues{gap:8px}
+    .ariane .fil{width:12px}
   }
   .legende span{display:inline-flex;align-items:center;gap:7px}
   .legende i{width:9px;height:9px;border-radius:50%;display:inline-block}
@@ -48,6 +49,7 @@
   .legende button[aria-pressed="true"]{color:var(--ink);border-color:color-mix(in srgb,var(--lc,var(--gold)) 60%,transparent);background:color-mix(in srgb,var(--lc,var(--gold)) 14%,transparent)}
   .legende button[aria-pressed="true"] i{box-shadow:0 0 0 3px color-mix(in srgb,var(--lc,var(--gold)) 32%,transparent)}
   .legende button.tout{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 45%,transparent)}
+  .legende button[hidden]{display:none}
   .noeud.efface{opacity:.07}
   .noeud .nomdir{font-family:system-ui,sans-serif;font-size:10.5px;fill:var(--ink);opacity:.9;text-anchor:middle;paint-order:stroke;stroke:rgba(12,14,24,.8);stroke-width:3px;pointer-events:none}
   html[dir="rtl"] .noeud .nomdir{font-family:'Amiri',serif;font-size:12px}
@@ -134,6 +136,10 @@
   .ariane::-webkit-scrollbar{display:none}
   .ariane>*{flex:none}
   .ariane .vues{display:flex;align-items:center;gap:10px}
+  .ariane .fil{flex:none;width:18px;height:1px;background:rgba(211,169,79,.3)}
+  .ariane .pt{display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.5;margin-inline-end:7px;vertical-align:middle}
+  .ariane .cran .pt{background:var(--gold);opacity:1;box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 20%,transparent)}
+  .ariane a:hover .pt,.ariane button:not(:disabled):hover .pt{opacity:.9}
   .ariane a,.ariane button{background:none;border:none;padding:4px 2px;margin:0;color:var(--muted);font-family:system-ui,sans-serif;font-size:12.5px;cursor:pointer;text-decoration:none;transition:color .2s}
   .ariane a:hover,.ariane button:not(:disabled):hover{color:var(--gold)}
   .ariane button:disabled{color:var(--ink);cursor:default}
@@ -181,7 +187,7 @@
 
 <nav class="ariane" id="ariane">
   <a id="arAgneau" href="index.html"></a>
-  <span class="sep" aria-hidden="true" id="arSep1"></span>
+  <span class="fil" aria-hidden="true"></span>
   <span class="vues" id="arVues"></span>
 </nav>
 
@@ -272,7 +278,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  maillon:"Maillon", fourche:"La fourche", pupitre:"Ouvrir le pupitre →",
  diagramme:"Ouvrir dans le fil rouge →", vers:"→",
  arianeLbl:"Fil d'Ariane", arianeAgneau:"✦ L'Agneau", arianeCiel:"Le ciel",
- arianeSep:"›", horsCarte:"hors de la carte du temps", chap:"ch.",
+ horsCarte:"hors de la carte du temps", chap:"ch.",
  aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", tblVoir:"voir la liste", tblSur:"sur",
  tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintVeilleurs:"Quatorze veilleurs sur mille ans, chacun dans son époque — et tous tournés vers le même point. Touchez-en un.",
@@ -337,7 +343,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  maillon:"Link", fourche:"The fork", pupitre:"Open the lectern →",
  diagramme:"Open in the red thread →", vers:"→",
  arianeLbl:"Breadcrumb", arianeAgneau:"✦ The Lamb", arianeCiel:"The sky",
- arianeSep:"›", horsCarte:"outside the map of time", chap:"ch.",
+ horsCarte:"outside the map of time", chap:"ch.",
  aConstellation:"opens a constellation", filtreTout:"✕ Show all", tblVoir:"see the list", tblSur:"of",
  tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintVeilleurs:"Fourteen watchmen across a thousand years, each in his epoch — and all turned towards the same point. Touch one.",
@@ -402,7 +408,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  maillon:"حلقة", fourche:"المفترق", pupitre:"افتح المنبر ←",
  diagramme:"افتح في الخيط الأحمر ←", vers:"←",
  arianeLbl:"مسار التنقّل", arianeAgneau:"✦ الحمل", arianeCiel:"السماء",
- arianeSep:"‹", horsCarte:"خارج خريطة الزمن", chap:"أص.",
+ horsCarte:"خارج خريطة الزمن", chap:"أص.",
  aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", tblVoir:"اعرض القائمة", tblSur:"من",
  tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintVeilleurs:"أربعة عشر حارسًا على مدى ألف سنة، كلٌّ في عصره — وكلُّهم متّجهون إلى النقطة نفسها. المس واحدًا منهم.",
@@ -1066,16 +1072,16 @@ function render(l){
   bt.textContent=c.filtreTout;bt.addEventListener('click',viderFiltre);lg.appendChild(bt);
   document.getElementById('ariane').setAttribute('aria-label',c.arianeLbl);
   document.getElementById('arAgneau').textContent=c.arianeAgneau;
-  document.getElementById('arSep1').textContent=c.arianeSep;
-  // les six cartes, toujours nommées : d'où qu'on soit, chacune est à un toucher
+  // les six cartes en étoiles sur un fil, comme les constellations qu'elles ouvrent
   const av=document.getElementById('arVues');av.innerHTML='';
   VUES.forEach((v,i)=>{
-    if(i){const s=document.createElement('span');s.className='sep';s.setAttribute('aria-hidden','true');
-      s.textContent='·';av.appendChild(s);}
-    if(v===SCENE){const s=document.createElement('span');s.className='cran';
-      s.setAttribute('aria-current','page');s.textContent=c.vueNom[v];av.appendChild(s);}
-    else{const b=document.createElement('button');b.type='button';b.textContent=c.vueNom[v];
-      b.addEventListener('click',()=>allerScene(v));av.appendChild(b);}});
+    if(i){const s=document.createElement('span');s.className='fil';
+      s.setAttribute('aria-hidden','true');av.appendChild(s);}
+    const el=(v===SCENE)?document.createElement('span'):document.createElement('button');
+    if(v===SCENE){el.className='cran';el.setAttribute('aria-current','page');}
+    else{el.type='button';el.addEventListener('click',()=>allerScene(v));}
+    const pt=document.createElement('i');pt.className='pt';pt.setAttribute('aria-hidden','true');
+    el.appendChild(pt);el.appendChild(document.createTextNode(c.vueNom[v]));av.appendChild(el);});
   const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
   const gc=document.querySelector('.centre');if(gc)gc.setAttribute('aria-label',c.centreA11y);
