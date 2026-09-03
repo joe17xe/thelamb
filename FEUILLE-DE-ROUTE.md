@@ -437,6 +437,32 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-051 « Jésus dans sa religion » — six pratiques, six prescriptions
+- zone: orange
+- statut: fait
+- pourquoi: proposition du porteur (« une constellation qui montre Jésus le juif, sa pratique, la Loi, les fêtes ») ; la donnée d'abord, la carte ensuite (D-016)
+- fait quand: une page porte l'enseignement, vérifiée au texte, et le maillage la connaît
+- résultat: `page-jesus-dans-sa-religion.html`, bâtie sur le gabarit des piliers — six
+  stations, chacune adossée à **une prescription de la Loi et à sa mention dans les
+  évangiles**, sans qu'aucune n'ait besoin d'être interprétée :
+  circoncis le huitième jour (Lévitique 12:3 → Luc 2:21) · présenté avec l'offrande de
+  ceux qui n'ont pas d'agneau (Lévitique 12:8 → Luc 2:24) · monté à Jérusalem chaque année
+  (Deutéronome 16:16 → Luc 2:41-42) · à la synagogue « selon sa coutume » (Exode 20:8 →
+  Luc 4:16) · le bord du vêtement (Nombres 15:38 → Matthieu 9:20) · le lépreux renvoyé au
+  prêtre (Lévitique 14:2 → Marc 1:44).
+  **Les douze citations sont tirées des textes importés**, dans les trois langues, jamais
+  de mémoire — premier contenu du site écrit ainsi.
+  Les trois cercles portent le sujet sensible : ce que tous confessent · ce que disent les
+  textes · ce que nous ne forçons pas — la place de la Loi après Pâques, où l'on part de la
+  lecture catholique en disant ce que les Églises de la Réforme en font (D-021), sans dire
+  que les chrétiens devraient observer ces rites ni que le judaïsme aurait cessé d'être vivant.
+- remarqué en vérifiant: le lien des franges se **voit** en anglais (« fringes » /
+  « fringe ») et en arabe (أهداب / هدب), et **se perd en Segond** (« une frange » / « le
+  bord de son vêtement »). Dit dans la strate 3.
+- vérifié: 6 stations, 3 cercles, 5 entrées de strate 3, dans les trois langues ; bandeau à
+  l'Accomplissement, régénéré par le générateur ; nœud posé dans la carte du ciel ; maillage
+  sans orpheline ni cul-de-sac ; les huit contrôles.
+
 ## R-050 Le baptême au Jourdain — ce que la recherche ajoute, et deux pièges de traduction
 - zone: verte
 - statut: fait
