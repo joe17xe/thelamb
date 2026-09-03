@@ -153,6 +153,12 @@
   html[dir="rtl"] .noeud.pet text{font-size:13px}
   .noeud.recit circle.c{stroke:var(--gold);stroke-width:1.3}
   .noeud.debat circle.c{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:2.6 2.2}
+  .pourquoi{cursor:pointer}
+  .pourquoi text{font-family:system-ui,sans-serif;font-size:12.5px;fill:var(--gold);text-anchor:middle;letter-spacing:.04em;
+    paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+  html[dir="rtl"] .pourquoi text{font-family:'Amiri',sans-serif;font-size:14px;letter-spacing:0}
+  .pourquoi .soul{stroke:var(--gold);stroke-width:1;opacity:.35;transition:opacity .2s}
+  .pourquoi:hover .soul,.pourquoi:focus .soul{opacity:.85}
   .noeud.recit.sel circle.c{stroke:#fff}
   .fliens a.pchip2{text-decoration:none;cursor:pointer;color:var(--ink)}
   .fliens a.pchip2:hover{border-color:var(--gold)}
@@ -307,6 +313,7 @@ fr:{dir:"ltr",brand:"L'AGNEAU DE DIEU",
  aConstellation:"ouvre une constellation", filtreTout:"✕ Tout rallumer", tblVoir:"voir la liste", tblSur:"sur",
  recitLbl:"Récit", placeDebat:"Place non tranchée", liensChrist:"passages vers le Christ",
  filtreRien:"Aucune étoile de cette carte n'appartient à cette catégorie.",
+ pourquoi:"Pourquoi l'agneau ?",
  sansLien:"Le fil rouge ne recense encore aucun passage précis de ce livre. Le recensement se poursuit.",
  filChrist:"Le fil vers le Christ", lireNuance:"Lire la nuance", tblUnite:{ciel:"pages",bibliotheque:"livres",epoques:"livres",correspondances:"correspondances",veilleurs:"veilleurs",genealogie:"maillons"}, chemin:"Le chemin", evenements:"Ce qui s'y passe", ouJesus:"Où Jésus s'y trouve", frise:"Ouvrir la frise →",
  hintVeilleurs:"Quatorze veilleurs, chacun dans son époque, sur le même cadran que le chemin : de 1, le Christ, à 12. Tous sont tournés vers le même point.",
@@ -375,6 +382,7 @@ en:{dir:"ltr",brand:"THE LAMB OF GOD",
  aConstellation:"opens a constellation", filtreTout:"✕ Show all", tblVoir:"see the list", tblSur:"of",
  recitLbl:"Narrative", placeDebat:"Placement not settled", liensChrist:"passages to Christ",
  filtreRien:"No star on this map belongs to this category.",
+ pourquoi:"Why the lamb?",
  sansLien:"The red thread lists no precise passage of this book yet. The survey is ongoing.",
  filChrist:"The thread to Christ", lireNuance:"Read the nuance", tblUnite:{ciel:"pages",bibliotheque:"books",epoques:"books",correspondances:"correspondences",veilleurs:"watchmen",genealogie:"links"}, chemin:"The path", evenements:"What happens there", ouJesus:"Where Jesus is found there", frise:"Open the timeline →",
  hintVeilleurs:"Fourteen watchmen, each in his epoch, on the same dial as the path: from 1, Christ, to 12. All are turned towards the same point.",
@@ -443,6 +451,7 @@ ar:{dir:"rtl",brand:"حمل الله",
  aConstellation:"تفتح كوكبة", filtreTout:"✕ أظهر الكل", tblVoir:"اعرض القائمة", tblSur:"من",
  recitLbl:"السرد", placeDebat:"موضعٌ غير محسوم", liensChrist:"مقطعًا نحو المسيح",
  filtreRien:"لا نجمةَ في هذه الخريطة تنتمي إلى هذه الفئة.",
+ pourquoi:"لماذا الحمل؟",
  sansLien:"لم يُسجِّل الخيطُ الأحمر بعدُ أيَّ مقطعٍ محدَّد من هذا السفر. والإحصاء مستمر.",
  filChrist:"الخيط نحو المسيح", lireNuance:"اقرأ الفارق", tblUnite:{ciel:"صفحة",bibliotheque:"سفرًا",epoques:"سفرًا",correspondances:"تناظرًا",veilleurs:"حارسًا",genealogie:"حلقة"}, chemin:"الطريق", evenements:"ما يجري فيه", ouJesus:"أين يوجد يسوع فيه", frise:"افتح الخط الزمني ←",
  hintVeilleurs:"أربعة عشر حارسًا، كلٌّ في عصره، على القرص نفسه الذي يسير عليه الطريق: من ١، المسيح، إلى ١٢. وكلُّهم متّجهون إلى النقطة نفسها.",
@@ -687,6 +696,15 @@ function poserCentre(svg){
   const cs=S('text');cs.setAttribute('x',CX);cs.setAttribute('y',CY+70);cs.id='centreSub';
   cs.setAttribute('style','font-family:system-ui;font-size:11px;fill:var(--muted);text-anchor:middle');g.appendChild(cs);
   svg.appendChild(g);
+  // La question du site — « pourquoi l'agneau ? » — s'ouvre à côté du disque, et
+  // non dessus : le toucher rallume le ciel, et ce geste garde son sens.
+  const a=document.createElementNS("http://www.w3.org/2000/svg","a");
+  a.setAttribute('href','page-etalon-voici-agneau.html');a.setAttribute('class','pourquoi');
+  const pf=S('text');pf.setAttribute('x',CX);pf.setAttribute('y',CY+96);pf.id='pourquoiTxt';
+  a.appendChild(pf);
+  const so=S('line');so.setAttribute('x1',CX-52);so.setAttribute('y1',CY+104);
+  so.setAttribute('x2',CX+52);so.setAttribute('y2',CY+104);so.setAttribute('class','soul');
+  a.appendChild(so);svg.appendChild(a);
 }
 // Les onze étagères en amas autour de l'Agneau ; chaque livre à la couleur de
 // sa période. Les liens nommés (D-013) tirent un fil d'or jusqu'au centre.
@@ -1218,6 +1236,7 @@ function render(l){
     el.appendChild(pt);el.appendChild(document.createTextNode(c.vueNom[v]));av.appendChild(el);});
   const ct=document.getElementById('centreTxt');if(ct)ct.textContent=c.centre;
   const cs=document.getElementById('centreSub');if(cs)cs.textContent=c.centreSub;
+  const pq=document.getElementById('pourquoiTxt');if(pq)pq.textContent=c.pourquoi;
   const gc=document.querySelector('.centre');if(gc)gc.setAttribute('aria-label',c.centreA11y);
   document.querySelectorAll('.etqarc').forEach(t=>{const k=t.dataset.p||t.dataset.k, tp=t.firstChild;
     const rang=t.dataset.p?CHEMIN.indexOf(k)+1:ETG_ORD.indexOf(k)+1;

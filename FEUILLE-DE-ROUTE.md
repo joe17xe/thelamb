@@ -437,6 +437,73 @@ boucle à l'exécution suivante. Le supprimer la relance.
   le bouton « ✕ Tout rallumer » restait visible sans filtre — le `display` de la légende
   l'emportait sur l'attribut `hidden`.
 
+## R-050 Le baptême au Jourdain — ce que la recherche ajoute, et deux pièges de traduction
+- zone: verte
+- statut: fait
+- pourquoi: seconde recherche apportée par le porteur, à vérifier et à ranger
+- fait quand: chaque référence est confrontée au texte, et le dossier existant est complété plutôt que doublé
+- résultat: inventaire d'abord — `09-dossier-bapteme-parole.md` **existait déjà** et portait
+  les trois citations tissées de la voix (Psaume 2:7 + Genèse 22:2 LXX + Ésaïe 42:1), la
+  solidarité avec les pécheurs comme amorce d'Ésaïe 53:12, et le Jourdain chargé de mémoire.
+  Le dossier est donc **complété**, section A.5, non redoublé.
+  **Le garde-fou qui manquait**, et c'est le plus important : on est tenté de lire le
+  baptême comme une ordination sacerdotale — Exode 29:4 lave Aaron avant de le consacrer,
+  Nombres 4:3 fixe le service à trente ans, Luc 3:23 donne cet âge à Jésus. Mais
+  **Hébreux 7:14** l'interdit : « notre Seigneur est sorti de Juda, tribu dont Moïse n'a
+  rien dit pour ce qui concerne le sacerdoce ». Le mot juste est *seuil*, ou *investiture*
+  — jamais *ordination*.
+- deux pièges de traduction, trouvés en vérifiant: **Marc 1:10** emploie en grec le même
+  verbe que Marc 15:38 — les cieux et le voile *déchirés* —, mais **Segond ne le montre
+  pas** : « les cieux s'ouvrir » d'un côté, « le voile se déchira » de l'autre. Le point ne
+  peut donc pas être *montré* au lecteur français, seulement expliqué. · **« Si tu
+  déchirais les cieux » est en Ésaïe 63:19 chez Segond**, et en 64:1 dans les bibles
+  anglaises : deuxième divergence de numérotation après Malachie. Toute référence reprise
+  d'une source anglophone est à vérifier avant d'être écrite.
+- proposition du porteur, à trancher: une constellation « Jésus le Juif » — sa pratique, la
+  Loi, les fêtes. Voir la note dans le dossier : les **sept fêtes existent déjà en donnée**
+  (`salle-bibliotheque.html`, rayon spécial), le reste non. Ce qui a une structure ici,
+  c'est l'**année** — une roue des fêtes et ce que chacune accomplit —, tandis que « Jésus
+  le Juif » est un thème, qui appelle d'abord une page.
+
+## R-049 « Pourquoi l'agneau ? » — le dossier de fond, vérifié au texte
+- zone: orange
+- statut: fait — dossier, décisions tranchées, contenu intégré aux pages existantes
+- pourquoi: le porteur apporte une recherche sur la question qu'il juge centrale, et demande qu'on la vérifie, qu'on la garde, et que le sang à la porte entre enfin dans les dossiers
+- fait quand: chaque référence est confrontée au texte, le contenu est rangé, et ce qui reste à décider est nommé
+- résultat: **toutes les références du document source ont été vérifiées, aucune n'était
+  fausse.** C'est le premier usage réel des textes importés (R-004) : dix-huit versets lus
+  dans nos quatre traductions plutôt que de mémoire.
+  `17-dossier-pourquoi-agneau.md` range la matière en quatre couches — la Pâque, le
+  sacrifice quotidien, le Serviteur d'Isaïe, l'Agneau de l'Apocalypse — chacune avec la
+  nature de ses liens au sens de D-013, et sépare ce qui est vérifié au texte de ce qui
+  n'est que rapporté. Deux vérifications valent d'être notées : **Exode 12:5 en Segond dit
+  « vous pourrez prendre un agneau ou un chevreau »** — la Pâque n'exigeait pas un agneau
+  au sens strict — et **l'hysope d'Exode 12:22 reparaît en Jean 19:29**, le même objet dans
+  les deux scènes.
+  `08-dossier-sang.md` reçoit une section 6 : **le sang à la porte**. Le mot « linteau »
+  n'apparaissait nulle part dans le dépôt, alors que c'est la première fois que le sang
+  sauve quelqu'un dans l'Écriture. Le dossier distingue désormais le sang qui **protège**
+  (Exode 12) du sang qui **expie** (Lévitique 17:11, Ésaïe 53) — deux couches que le
+  Nouveau Testament réunit et que le site doit d'abord distinguer.
+- décisions tranchées par le porteur, le même jour: **Nombres 9:12 est joint à la
+  correspondance qui existe** (n° 7, Exode 12:46 → Jean 19:36), dont le commentaire dit
+  maintenant les deux témoins dans les trois langues — le fil rouge garde ses 153, le
+  nombre des poissons de Jean 21:11 · **« Pourquoi l'agneau ? » se pose à côté du disque,
+  non dessus** : toucher l'Agneau rallume le ciel (R-026) et ce geste garde son sens ·
+  **les travaux savants restent « rapporté »** tant qu'ils n'ont pas été consultés.
+- rectification: j'avais écrit que le sang à la porte n'était nulle part dans le dépôt.
+  **C'était faux** — j'avais cherché les mots « linteau » et « poteaux », pas l'idée.
+  `page-etape5-la-paque.html` a pour image mentale « une porte marquée de sang » et sa
+  deuxième carte cite Exode 12:7 et 12:13. Les deux dossiers le disent désormais.
+- ce que l'inventaire a montré: **la question est déjà largement traitée**. La page étalon
+  porte les trois couches (Exode 12, Exode 29:38-39, Ésaïe 53:7), les deux mots grecs,
+  l'heure de Jean 19:14 ; l'étape 2 porte l'Agneau qui règne ; l'étape 5 porte le sang et
+  les os non brisés. **Une page neuve aurait fait doublon** — ce que la charte interdit.
+  Trois manques réels seulement, comblés dans les pages qui existent : le *seh*
+  (« un agneau ou un chevreau », Exode 12:5) et **l'hysope qui traverse** (Exode 12:22 →
+  Jean 19:29) dans la page de la Pâque ; **le berger qui devient l'agneau** (Psaume 23:1,
+  Jean 10:11, Apocalypse 7:17) dans la page étalon. Toutes les références vérifiées au texte.
+
 ## R-048 La légende dit ce qu'elle allume — et le déploiement voit ce qu'un visiteur reçoit
 - zone: verte
 - statut: fait

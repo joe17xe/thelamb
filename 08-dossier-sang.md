@@ -29,6 +29,52 @@ Cinq maillons, dans cet ordre — chacun est une station de la page :
 ## 3. Glossaire à intégrer (strate 3 transversale)
 *nefesh* (âme/vie) · *nefesh tachat nefesh* (vie pour vie, Ex 21:23) · *kaphar / kippour* (couvrir, effacer) · *kapporet / hilastèrion* (propitiatoire — Rm 3:25 !) · *lytron anti / antilytron* (rançon-à-la-place, Mc 10:45 ; 1 Tm 2:6) · *zikkaron* (mémorial) · *Hallel* (Ps 113–118) · *Qiddush* (sanctification).
 
+## 6. Le sang à la porte — la première fonction du sang dans l'Écriture
+*Ajouté le 3 septembre 2026, à la demande du porteur. Versets lus dans nos traductions de
+référence (`outils/citer.py`) : tous **[ÉTABLI]**.*
+
+Avant d'être le sang de l'expiation, le sang est, dans l'ordre du récit, un **signe posé
+sur une porte**. Ce dossier n'en disait rien — la page de la Pâque, elle, le porte déjà :
+son image mentale est « une porte marquée de sang », et sa deuxième carte cite Exode 12:7
+et 12:13. Ce qui manquait ici, c'est le détail du geste (12:22) et la distinction entre
+protéger et expier.
+
+| ce que dit le texte | référence |
+|---|---|
+| « On prendra de son sang, et on en mettra sur les deux poteaux et sur le linteau de la porte des maisons où on le mangera. » | **Exode 12:7** |
+| « Le sang vous servira de **signe** sur les maisons où vous serez ; je verrai le sang, et je passerai par-dessus vous, et il n'y aura point de plaie qui vous détruise. » | **Exode 12:13** |
+| « Vous prendrez un bouquet d'**hysope**, vous le tremperez dans le sang […] et vous toucherez le linteau et les deux poteaux de la porte. » | **Exode 12:22** |
+| « L'Éternel passera par-dessus la porte, et il ne permettra pas au **destructeur** d'entrer dans vos maisons pour frapper. » | **Exode 12:23** |
+
+**Trois choses que ce passage établit, et qu'il faut tenir ensemble :**
+
+1. **Le sang est un signe, pas un paiement.** Exode 12 ne dit pas que l'agneau meurt pour
+   les péchés d'Israël. Il dit que le sang **marque** une maison, et que ce qui frappe
+   passe outre. Confondre les deux — protection et expiation — est l'erreur la plus
+   répandue sur ce texte, et un lecteur qui a lu Exode 12 le verra. La logique
+   expiatoire, elle, vient de Lévitique 17:11 et d'Ésaïe 53. Ce sont deux couches
+   distinctes, que le Nouveau Testament réunit ; le site doit les distinguer avant de les
+   réunir. **[ÉTABLI — voir `17-dossier-pourquoi-agneau.md`, § 3 et § 10]**
+2. **Le sang est posé là où l'on entre.** Pas sur l'autel, pas sur le front : sur le seuil.
+   Ce qui est protégé n'est pas un individu, c'est une **maisonnée** — et la porte est
+   l'endroit exact où l'on passe du dehors au dedans. L'image se redessine de mémoire :
+   deux montants, un linteau, et du sang aux trois points.
+3. **L'hysope traverse.** Le bouquet d'hysope qui applique le sang sur la porte
+   (Exode 12:22) reparaît à la croix : « l'ayant fixée à une **branche d'hysope**, ils
+   l'approchèrent de sa bouche » (**Jean 19:29**). Le même objet, dans les deux scènes.
+   Aucun texte ne commente ce rapprochement — c'est une **allusion largement reconnue**
+   (D-013), déjà portée par le fil rouge (correspondance n° 133).
+
+**Pour la page** : cette section donne au pilier du sang son premier maillon, avant même
+« la vie est dans le sang ». Ordre proposé : *le sang qui protège une porte* (Ex 12) →
+*la vie est dans le sang* (Lv 17:11) → *le péché, c'est être mort* → … Le lecteur
+rencontre d'abord le sang comme **abri**, et seulement ensuite comme **prix**.
+
+**À ne pas écrire** : « le destructeur » d'Exode 12:23 n'est pas décrit par le texte. On
+le nomme, on ne le commente pas.
+
+---
+
 ## 4. COMMENT CETTE NOTION S'INTÈGRE DANS L'EXISTANT
 1. **Navigation** : nouveau pilier inséré **entre le Parcours et L'Offrande**. Ordre de lecture devenu : Emmaüs → Parcours (7) → **Le Sang (pourquoi)** → L'Offrande (comment) → Bible fiable (sur quoi). Le « pourquoi » précède le « comment » : c'est l'ordre pédagogique naturel.
 2. **Accueil** : ajouter une 4ᵉ porte n'est PAS retenu (règle : ne pas multiplier). À la place : le pilier devient l'étape charnière du bouton « Continuer » de l'étape 7 et l'intro de L'Offrande y renvoie.
@@ -46,3 +92,5 @@ Cinq maillons, dans cet ordre — chacun est une station de la page :
 | 4 | FAQ Bible : « Pourquoi un Dieu bon exige-t-il du sang ? » | Haute |
 | 5 | Page détaillée « La Cène pas à pas » (déroulé du seder annoté, sources Mishna) | Moyenne |
 | 6 | 3 cartes Instagram (§4.5) | Moyenne |
+| 7 | Poser le maillon « le sang qui protège une porte » (§6) en tête du pilier | Haute |
+| 8 | Trancher : Nombres 9:12 entre-t-il au fil rouge ? (154ᵉ correspondance — voir `17-dossier-pourquoi-agneau.md` §9) | Porteur |

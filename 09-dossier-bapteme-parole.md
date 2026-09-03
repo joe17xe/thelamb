@@ -25,6 +25,66 @@ Les paroles du Père = **trois citations tissées** : Ps 2:7 (Roi) + Gn 22:2 LXX
 ### A.4 Données strate 3
 Jourdain chargé de mémoire (Jos 3 ; 2 R 5 ; 2 R 2) · « accomplir tout ce qui est juste » = solidarité avec les pécheurs, amorce d'És 53:12 · texte majeur du fil « Un seul Dieu » (les trois distincts, un seul Dieu agissant).
 
+### A.5 Ce qu'une seconde recherche ajoute — et deux pièges de traduction
+*Ajouté le 3 septembre 2026. Recherche apportée par le porteur, confrontée verset par
+verset aux textes de référence (`outils/citer.py`). Toutes les références vérifiées ;
+deux corrections de numérotation et deux avertissements de traduction en sont sortis.*
+
+**Le garde-fou qui manquait au dossier — et c'est le plus important.** On est tenté de
+lire le baptême comme une **ordination sacerdotale** : Exode 29:4 lave Aaron et ses fils
+avant de les consacrer, Exode 30:19 leur fait laver mains et pieds avant tout service, et
+Nombres 4:3 fixe à trente ans l'entrée en fonction — l'âge que Luc 3:23 donne à Jésus.
+Le parallèle est réel. Mais il ne peut pas être présenté comme une ordination, et
+l'Écriture le dit elle-même :
+
+> « Il est notoire que notre Seigneur est sorti de **Juda**, tribu dont Moïse n'a rien dit
+> pour ce qui concerne le sacerdoce. » — **Hébreux 7:14** [ÉTABLI]
+
+Hébreux ne fait donc pas de Jésus un prêtre selon Aaron : il le dit prêtre **selon l'ordre
+de Melchisédek** (Hébreux 7), ce qui est une rupture, non une continuité. Formulation
+juste : le baptême a la **forme** d'une entrée en fonction — eau, Esprit, désignation,
+mission — sans être l'ordination que la Loi prévoit. Le mot à préférer est **seuil**, ou
+**investiture**, jamais « ordination ».
+
+**Piège de traduction n° 1 — les cieux « déchirés ».** Marc 1:10 emploie en grec le verbe
+*schizō*, qu'il reprend en Marc 15:38 pour le voile du Temple : le baptême et la croix se
+répondent d'un bout à l'autre de l'évangile. **Mais la Segond ne le montre pas** : elle
+traduit Marc 1:10 par « il vit les cieux **s'ouvrir** » et Marc 15:38 par « le voile du
+temple **se déchira** ». Un lecteur français ne peut pas voir le lien. Il en va de même
+pour Ésaïe 63:19 — « Oh ! si tu **déchirais** les cieux, et si tu descendais » —, où
+Segond emploie bien le mot, mais dont l'écho vers Marc 1:10 reste invisible.
+**Conséquence pour le site : ce point ne peut pas être montré, il doit être expliqué.**
+Il appartient à la strate 3, avec la mention explicite que c'est le grec qui le porte.
+[ÉTABLI pour les traductions — le grec reste **[À VÉRIFIER]** : le dépôt n'a pas encore
+de texte grec]
+
+**Piège de traduction n° 2 — la numérotation d'Isaïe.** « Si tu déchirais les cieux » est
+en **Ésaïe 63:19** dans Segond, et en Isaïe 64:1 dans la plupart des bibles anglaises.
+Deuxième cas après Malachie 4:5 / 3:23. Toute référence reprise d'une source anglophone
+doit être vérifiée avant d'être écrite.
+
+**Ce que la recherche ajoute encore, et qui tient :**
+
+| apport | référence | statut |
+|---|---|---|
+| eau + Esprit + cœur nouveau, annoncés comme une restauration | **Ézéchiel 36:25-27** | [ÉTABLI] — « Je répandrai sur vous une eau pure » ; « Je mettrai mon esprit en vous » |
+| le lavage précède le service sacré | **Exode 29:4 ; 30:19** | [ÉTABLI] |
+| trente ans, l'âge du service | **Nombres 4:3 → Luc 3:23** | [SUGGESTIF] — indice, jamais preuve : Nombres parle des Lévites |
+| prêtre **et** victime | **Hébreux 7 ; 9** | [ÉTABLI] — c'est ce qui permet de dire ensemble « voici le prêtre » et « voici l'Agneau » |
+
+**Ce qu'il ne faut pas écrire :**
+- « Le baptême de Jésus est le sacrifice prescrit par la Loi. » Il ne l'est pas : le
+  baptême emploie l'eau, le sacrifice emploie le sang (Lévitique 17:11). Deux rites, une
+  seule trajectoire.
+- « Le baptême de Jean remplaçait les sacrifices. » La recherche récente le conteste
+  explicitement ; le rite de Jean mêle purification, changement de conduite et attente,
+  sans se substituer au Temple. [RAPPORTÉ — Kazen 2024, non consulté ici]
+- « Jésus est ordonné prêtre au Jourdain. » Hébreux 7:14 l'interdit.
+
+**Le fil qui en sort, et qu'une page pourrait porter :** eau → identification avec les
+pécheurs → Esprit → désignation (Fils, Serviteur) → désert → ministère → croix → sanctuaire.
+Le baptême n'est pas le sacrifice : c'est le commencement public de ce qui s'y achèvera.
+
 ---
 
 ## PARTIE B — LE FILS ÉTERNEL, LA PAROLE, ET L'AGNEAU
